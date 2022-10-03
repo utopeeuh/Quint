@@ -1,0 +1,6 @@
+module Pods_Quint {
+  umbrella header "Pods-Quint-umbrella.h"
+
+  export *
+  module * { export * }
+}

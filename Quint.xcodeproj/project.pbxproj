@@ -15,6 +15,7 @@
 		95EB50EF28EA821600412176 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 95EB50EE28EA821600412176 /* Assets.xcassets */; };
 		95EB50F228EA821600412176 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 95EB50F028EA821600412176 /* LaunchScreen.storyboard */; };
 		95EB50FA28EA82D700412176 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 95EB50F928EA82D700412176 /* Podfile */; };
+		A016580028EBD3D80048CBCC /* DismissKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = A01657FF28EBD3D80048CBCC /* DismissKeyboard.swift */; };
 		C9131C6A5795F6F5C360774C /* libPods-Quint.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A4222B49AA562D57AC4B33E /* libPods-Quint.a */; };
 /* End PBXBuildFile section */
 
@@ -30,7 +31,8 @@
 		95EB50EE28EA821600412176 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		95EB50F128EA821600412176 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		95EB50F328EA821600412176 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		95EB50F928EA82D700412176 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = SOURCE_ROOT; };
+		95EB50F928EA82D700412176 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		A01657FF28EBD3D80048CBCC /* DismissKeyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DismissKeyboard.swift; sourceTree = "<group>"; };
 		EC353203A173754AD46E48CF /* Pods-Quint.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Quint.debug.xcconfig"; path = "Target Support Files/Pods-Quint/Pods-Quint.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -52,7 +54,6 @@
 				EC353203A173754AD46E48CF /* Pods-Quint.debug.xcconfig */,
 				1DE7348A28BE8A5E92A105D1 /* Pods-Quint.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -86,8 +87,17 @@
 				95EB50F328EA821600412176 /* Info.plist */,
 				95EB50EB28EA821400412176 /* Quint.xcdatamodeld */,
 				95EB50F928EA82D700412176 /* Podfile */,
+				A016580128EBD3DF0048CBCC /* Helper */,
 			);
 			path = Quint;
+			sourceTree = "<group>";
+		};
+		A016580128EBD3DF0048CBCC /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				A01657FF28EBD3D80048CBCC /* DismissKeyboard.swift */,
+			);
+			path = Helper;
 			sourceTree = "<group>";
 		};
 		DB8EE3D5BA362498C5AC9D3D /* Frameworks */ = {
@@ -200,6 +210,7 @@
 				95EB50E328EA821400412176 /* AppDelegate.swift in Sources */,
 				95EB50E528EA821400412176 /* SceneDelegate.swift in Sources */,
 				95EB50ED28EA821400412176 /* Quint.xcdatamodeld in Sources */,
+				A016580028EBD3D80048CBCC /* DismissKeyboard.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

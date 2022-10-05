@@ -70,6 +70,20 @@
 			path = Controller;
 			sourceTree = "<group>";
 		};
+		72C1646528ED1DC4001B8195 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		72C1646828ED32E2001B8195 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		72F6195428EBD0D900A6BC41 /* Routine */ = {
 			isa = PBXGroup;
 			children = (
@@ -117,7 +131,9 @@
 			isa = PBXGroup;
 			children = (
 				72F6195F28EBFC9600A6BC41 /* Quint.entitlements */,
+				72C1646528ED1DC4001B8195 /* Model */,
 				72F6195528EBD2B500A6BC41 /* View */,
+				72C1646828ED32E2001B8195 /* ViewModel */,
 				72BDD7A728EBCDF50004A9A1 /* Controller */,
 				95EB50E228EA821400412176 /* AppDelegate.swift */,
 				95EB50E428EA821400412176 /* SceneDelegate.swift */,

@@ -15,6 +15,7 @@
 			dependencies = (
 			);
 			name = SwiftLint;
+			productName = SwiftLint;
 		};
 /* End PBXAggregateTarget section */
 
@@ -1127,7 +1128,7 @@
 		9CAD480745EEBD09A9679522C93B2599 /* RxDataSources-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "RxDataSources-umbrella.h"; sourceTree = "<group>"; };
 		9CE501DBD53367C2D486CBDEE6FB8F6E /* Trim.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Trim.swift; path = Sources/Algorithms/Trim.swift; sourceTree = "<group>"; };
 		9D5D66A805B86711CD460B09B5F6F6EE /* ImagePrefetcher.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ImagePrefetcher.swift; path = Sources/Networking/ImagePrefetcher.swift; sourceTree = "<group>"; };
-		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; };
 		9F26891C484AED091355977D97AB15BA /* FirstNonNil.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FirstNonNil.swift; path = Sources/Algorithms/FirstNonNil.swift; sourceTree = "<group>"; };
 		9F45B8A47B4D95BD4511B92005A3050C /* BubbleChartDataSetProtocol.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BubbleChartDataSetProtocol.swift; path = Source/Charts/Data/Interfaces/BubbleChartDataSetProtocol.swift; sourceTree = "<group>"; };
 		9F5A1D286B062382355326EA7F31F54A /* LockOwnerType.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LockOwnerType.swift; path = RxSwift/Concurrency/LockOwnerType.swift; sourceTree = "<group>"; };
@@ -1463,7 +1464,6 @@
 				940313056B0F400A5CCA1D3265A0FF82 /* Utilities.swift */,
 				B9F1EB05270A377EC971CDA39408C231 /* Support Files */,
 			);
-			name = Differentiator;
 			path = Differentiator;
 			sourceTree = "<group>";
 		};
@@ -1486,7 +1486,6 @@
 			children = (
 				412672ED6A7B712C2951EB2785D65428 /* Support Files */,
 			);
-			name = SwiftLint;
 			path = SwiftLint;
 			sourceTree = "<group>";
 		};
@@ -1669,7 +1668,6 @@
 				F820987AEB95ECD5BB5C7D9B93837965 /* Zip+Collection.swift */,
 				573ACB89DD64DDA905EB6BFA60DC0D18 /* Support Files */,
 			);
-			name = RxSwift;
 			path = RxSwift;
 			sourceTree = "<group>";
 		};
@@ -1798,7 +1796,6 @@
 				27937ECB0650D51B30F4E886E9A739CA /* WKWebView+Rx.swift */,
 				94A3ABDF9CE9D563F9C0C1A2F4526FF9 /* Support Files */,
 			);
-			name = RxCocoa;
 			path = RxCocoa;
 			sourceTree = "<group>";
 		};
@@ -1875,7 +1872,6 @@
 				20929E347C2B854456557F773737DE8B /* UILayoutSupport+Extensions.swift */,
 				FCA76EF91542D47CFE2E1272BC9E4A6C /* Support Files */,
 			);
-			name = SnapKit;
 			path = SnapKit;
 			sourceTree = "<group>";
 		};
@@ -1908,7 +1904,6 @@
 				067E190B64B41151E5FB17308BECBDDB /* Windows.swift */,
 				644E402D426EA1E2874DB350F049B781 /* Support Files */,
 			);
-			name = SwiftAlgorithms;
 			path = SwiftAlgorithms;
 			sourceTree = "<group>";
 		};
@@ -1932,7 +1927,6 @@
 				753862B30A3DF4CE38C34D3D076FE5A9 /* Core */,
 				204AC45321F34B9C5F728135C3AB6633 /* Support Files */,
 			);
-			name = Charts;
 			path = Charts;
 			sourceTree = "<group>";
 		};
@@ -2119,7 +2113,6 @@
 				724A41802B96FC9DC94F5B87BAEDA92F /* ViewTransition.swift */,
 				260B988CB84156A8B3904E6A7AB15958 /* Support Files */,
 			);
-			name = RxDataSources;
 			path = RxDataSources;
 			sourceTree = "<group>";
 		};
@@ -2243,7 +2236,6 @@
 				5FC250AA98683F0192B362F84DA8CF16 /* WKInterfaceImage+Kingfisher.swift */,
 				A47E3788C58003E00E955E301645FD26 /* Support Files */,
 			);
-			name = Kingfisher;
 			path = Kingfisher;
 			sourceTree = "<group>";
 		};
@@ -2271,7 +2263,6 @@
 				505ABB0B4A2A9FFC9694EEE49FF3BCE0 /* Utils.swift */,
 				734CDE0861055FD19A7562F368047519 /* Support Files */,
 			);
-			name = RxRelay;
 			path = RxRelay;
 			sourceTree = "<group>";
 		};

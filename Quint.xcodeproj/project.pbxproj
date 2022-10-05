@@ -7,9 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		95078B1428EC7F5600093069 /* IngredientDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95078B1328EC7F5600093069 /* IngredientDetailVC.swift */; };
+		95078B1628EC7F6100093069 /* ProductDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95078B1528EC7F6100093069 /* ProductDetailVC.swift */; };
+		95078B1928EC8D6800093069 /* ProductView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95078B1828EC8D6800093069 /* ProductView.swift */; };
 		95EB50E328EA821400412176 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95EB50E228EA821400412176 /* AppDelegate.swift */; };
 		95EB50E528EA821400412176 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95EB50E428EA821400412176 /* SceneDelegate.swift */; };
-		95EB50E728EA821400412176 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95EB50E628EA821400412176 /* ViewController.swift */; };
+		95EB50E728EA821400412176 /* TreatmentsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95EB50E628EA821400412176 /* TreatmentsVC.swift */; };
 		95EB50EA28EA821400412176 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 95EB50E828EA821400412176 /* Main.storyboard */; };
 		95EB50ED28EA821400412176 /* Quint.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 95EB50EB28EA821400412176 /* Quint.xcdatamodeld */; };
 		95EB50EF28EA821600412176 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 95EB50EE28EA821600412176 /* Assets.xcassets */; };
@@ -22,10 +25,13 @@
 /* Begin PBXFileReference section */
 		1DE7348A28BE8A5E92A105D1 /* Pods-Quint.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Quint.release.xcconfig"; path = "Target Support Files/Pods-Quint/Pods-Quint.release.xcconfig"; sourceTree = "<group>"; };
 		6A4222B49AA562D57AC4B33E /* libPods-Quint.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Quint.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		95078B1328EC7F5600093069 /* IngredientDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientDetailVC.swift; sourceTree = "<group>"; };
+		95078B1528EC7F6100093069 /* ProductDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailVC.swift; sourceTree = "<group>"; };
+		95078B1828EC8D6800093069 /* ProductView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductView.swift; sourceTree = "<group>"; };
 		95EB50DF28EA821400412176 /* Quint.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Quint.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		95EB50E228EA821400412176 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		95EB50E428EA821400412176 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		95EB50E628EA821400412176 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		95EB50E628EA821400412176 /* TreatmentsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreatmentsVC.swift; sourceTree = "<group>"; };
 		95EB50E928EA821400412176 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		95EB50EC28EA821400412176 /* Quint.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Quint.xcdatamodel; sourceTree = "<group>"; };
 		95EB50EE28EA821600412176 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -57,6 +63,17 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		95078B1728EC7F8500093069 /* Treatments */ = {
+			isa = PBXGroup;
+			children = (
+				95EB50E628EA821400412176 /* TreatmentsVC.swift */,
+				95078B1828EC8D6800093069 /* ProductView.swift */,
+				95078B1328EC7F5600093069 /* IngredientDetailVC.swift */,
+				95078B1528EC7F6100093069 /* ProductDetailVC.swift */,
+			);
+			path = Treatments;
+			sourceTree = "<group>";
+		};
 		95EB50D628EA821400412176 = {
 			isa = PBXGroup;
 			children = (
@@ -80,7 +97,7 @@
 			children = (
 				95EB50E228EA821400412176 /* AppDelegate.swift */,
 				95EB50E428EA821400412176 /* SceneDelegate.swift */,
-				95EB50E628EA821400412176 /* ViewController.swift */,
+				95078B1728EC7F8500093069 /* Treatments */,
 				95EB50E828EA821400412176 /* Main.storyboard */,
 				95EB50EE28EA821600412176 /* Assets.xcassets */,
 				95EB50F028EA821600412176 /* LaunchScreen.storyboard */,
@@ -206,10 +223,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				95EB50E728EA821400412176 /* ViewController.swift in Sources */,
+				95078B1928EC8D6800093069 /* ProductView.swift in Sources */,
+				95078B1428EC7F5600093069 /* IngredientDetailVC.swift in Sources */,
+				95EB50E728EA821400412176 /* TreatmentsVC.swift in Sources */,
 				95EB50E328EA821400412176 /* AppDelegate.swift in Sources */,
 				95EB50E528EA821400412176 /* SceneDelegate.swift in Sources */,
 				95EB50ED28EA821400412176 /* Quint.xcdatamodeld in Sources */,
+				95078B1628EC7F6100093069 /* ProductDetailVC.swift in Sources */,
 				A016580028EBD3D80048CBCC /* DismissKeyboard.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

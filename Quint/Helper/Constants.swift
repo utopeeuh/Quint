@@ -17,16 +17,16 @@ struct K{
     }
     
     struct Color{
-        static let lgreen = UIColor(red: 255, green: 87, blue: 51, alpha: 1)
-        static let lyellow = UIColor(red: 255, green: 211, blue: 99, alpha: 1)
-        static let lorange = UIColor(red: 255, green: 149, blue: 73, alpha: 1)
-        static let lred = UIColor(red: 255, green: 99, blue: 99, alpha: 1)
-        static let lpurple = UIColor(red: 169, green: 99, blue: 255, alpha: 1)
+        static let lgreen = UIColor(red: 255/255, green: 87/255, blue: 51/255, alpha: 1)
+        static let lyellow = UIColor(red: 255/255, green: 211/255, blue: 99/255, alpha: 1)
+        static let lorange = UIColor(red: 255/255, green: 149/255, blue: 73/255, alpha: 1)
+        static let lred = UIColor(red: 255/255, green: 99/255, blue: 99/255, alpha: 1)
+        static let lblue = UIColor(red: 169/255, green: 99/255, blue: 255/255, alpha: 1)
         
-        static let green = UIColor(red: 29, green: 53, blue: 44, alpha: 1)
-        static let yellow = UIColor(red: 239, green: 179, blue: 28, alpha: 1)
-        static let orange = UIColor(red: 243, green: 106, blue: 7, alpha: 1)
-        static let red = UIColor(red: 199, green: 59, blue: 59, alpha: 1)
-        static let purple = UIColor(red: 121, green: 31, blue: 238, alpha: 1)
+        static let green = UIColor(red: 29/255, green: 53/255, blue: 44/255, alpha: 1)
+        static let yellow = UIColor(red: 239/255, green: 179/255, blue: 28/255, alpha: 1)
+        static let orange = UIColor(red: 243/255, green: 106/255, blue: 7/255, alpha: 1)
+        static let red = UIColor(red: 199/255, green: 59/255, blue: 59/255, alpha: 1)
+        static let blue = UIColor(red: 121/255, green: 31/255, blue: 238/255, alpha: 1)
     }
 }

@@ -29,8 +29,8 @@ extension CAGradientLayer {
         self.locations = [0, 0.5]
     }
     
-    func purpleGradient(){
-        self.colors = [K.Color.lpurple, K.Color.purple]
+    func blueGradient(){
+        self.colors = [K.Color.lblue, K.Color.blue]
         self.locations = [0, 0.5]
     }
 }

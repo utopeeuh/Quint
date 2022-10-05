@@ -1,13 +1,14 @@
 //
-//  DismissKeyboard.swift
+//  UIViewController+DismissKeyboard.swift
 //  Quint
 //
-//  Created by Vendly on 04/10/22.
+//  Created by Vendly on 05/10/22.
 //
 
 import UIKit
 
-public extension UIViewController {
+extension UIViewController {
+    
     func hideKeyboardWhenTappedAround() {
         let tap = UITapGestureRecognizer(target: self, action: #selector(UIViewController.dismissKeyboard))
         tap.cancelsTouchesInView = false
@@ -17,4 +18,5 @@ public extension UIViewController {
     @objc func dismissKeyboard() {
         view.endEditing(true)
     }
+    
 }

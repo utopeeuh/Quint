@@ -9,13 +9,16 @@
 /* Begin PBXBuildFile section */
 		95EB50E328EA821400412176 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95EB50E228EA821400412176 /* AppDelegate.swift */; };
 		95EB50E528EA821400412176 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95EB50E428EA821400412176 /* SceneDelegate.swift */; };
-		95EB50E728EA821400412176 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95EB50E628EA821400412176 /* ViewController.swift */; };
+		95EB50E728EA821400412176 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95EB50E628EA821400412176 /* LoginController.swift */; };
 		95EB50EA28EA821400412176 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 95EB50E828EA821400412176 /* Main.storyboard */; };
 		95EB50ED28EA821400412176 /* Quint.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 95EB50EB28EA821400412176 /* Quint.xcdatamodeld */; };
 		95EB50EF28EA821600412176 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 95EB50EE28EA821600412176 /* Assets.xcassets */; };
 		95EB50F228EA821600412176 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 95EB50F028EA821600412176 /* LaunchScreen.storyboard */; };
 		95EB50FA28EA82D700412176 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 95EB50F928EA82D700412176 /* Podfile */; };
-		A016580028EBD3D80048CBCC /* DismissKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = A01657FF28EBD3D80048CBCC /* DismissKeyboard.swift */; };
+		A0B4D2F028ED2B9600987F84 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B4D2EF28ED2B9600987F84 /* Constants.swift */; };
+		A0B4D2F228ED2D5700987F84 /* UIViewController+DismissKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B4D2F128ED2D5700987F84 /* UIViewController+DismissKeyboard.swift */; };
+		A0B4D2F428ED41FF00987F84 /* UIImageView+DropShadow.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B4D2F328ED41FF00987F84 /* UIImageView+DropShadow.swift */; };
+		A0B4D2F628ED5BA800987F84 /* CAGradientLayer+SetGradient.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B4D2F528ED5BA800987F84 /* CAGradientLayer+SetGradient.swift */; };
 		C9131C6A5795F6F5C360774C /* libPods-Quint.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A4222B49AA562D57AC4B33E /* libPods-Quint.a */; };
 /* End PBXBuildFile section */
 
@@ -25,14 +28,18 @@
 		95EB50DF28EA821400412176 /* Quint.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Quint.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		95EB50E228EA821400412176 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		95EB50E428EA821400412176 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		95EB50E628EA821400412176 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		95EB50E628EA821400412176 /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
 		95EB50E928EA821400412176 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		95EB50EC28EA821400412176 /* Quint.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Quint.xcdatamodel; sourceTree = "<group>"; };
 		95EB50EE28EA821600412176 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		95EB50F128EA821600412176 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		95EB50F328EA821600412176 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		95EB50F928EA82D700412176 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		A01657FF28EBD3D80048CBCC /* DismissKeyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DismissKeyboard.swift; sourceTree = "<group>"; };
+		A016580228EBFC9E0048CBCC /* Quint.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Quint.entitlements; sourceTree = "<group>"; };
+		A0B4D2EF28ED2B9600987F84 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		A0B4D2F128ED2D5700987F84 /* UIViewController+DismissKeyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+DismissKeyboard.swift"; sourceTree = "<group>"; };
+		A0B4D2F328ED41FF00987F84 /* UIImageView+DropShadow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+DropShadow.swift"; sourceTree = "<group>"; };
+		A0B4D2F528ED5BA800987F84 /* CAGradientLayer+SetGradient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CAGradientLayer+SetGradient.swift"; sourceTree = "<group>"; };
 		EC353203A173754AD46E48CF /* Pods-Quint.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Quint.debug.xcconfig"; path = "Target Support Files/Pods-Quint/Pods-Quint.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -78,9 +85,10 @@
 		95EB50E128EA821400412176 /* Quint */ = {
 			isa = PBXGroup;
 			children = (
+				A016580228EBFC9E0048CBCC /* Quint.entitlements */,
 				95EB50E228EA821400412176 /* AppDelegate.swift */,
 				95EB50E428EA821400412176 /* SceneDelegate.swift */,
-				95EB50E628EA821400412176 /* ViewController.swift */,
+				A02BCFA428EC850F0099AB42 /* Controller */,
 				95EB50E828EA821400412176 /* Main.storyboard */,
 				95EB50EE28EA821600412176 /* Assets.xcassets */,
 				95EB50F028EA821600412176 /* LaunchScreen.storyboard */,
@@ -95,9 +103,28 @@
 		A016580128EBD3DF0048CBCC /* Helper */ = {
 			isa = PBXGroup;
 			children = (
-				A01657FF28EBD3D80048CBCC /* DismissKeyboard.swift */,
+				A0B4D2EF28ED2B9600987F84 /* Constants.swift */,
+				A0B4D2F128ED2D5700987F84 /* UIViewController+DismissKeyboard.swift */,
+				A0B4D2F328ED41FF00987F84 /* UIImageView+DropShadow.swift */,
+				A0B4D2F528ED5BA800987F84 /* CAGradientLayer+SetGradient.swift */,
 			);
 			path = Helper;
+			sourceTree = "<group>";
+		};
+		A02BCFA428EC850F0099AB42 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				A02BCFA528EC852B0099AB42 /* Authentication */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		A02BCFA528EC852B0099AB42 /* Authentication */ = {
+			isa = PBXGroup;
+			children = (
+				95EB50E628EA821400412176 /* LoginController.swift */,
+			);
+			path = Authentication;
 			sourceTree = "<group>";
 		};
 		DB8EE3D5BA362498C5AC9D3D /* Frameworks */ = {
@@ -206,11 +233,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				95EB50E728EA821400412176 /* ViewController.swift in Sources */,
+				95EB50E728EA821400412176 /* LoginController.swift in Sources */,
+				A0B4D2F428ED41FF00987F84 /* UIImageView+DropShadow.swift in Sources */,
 				95EB50E328EA821400412176 /* AppDelegate.swift in Sources */,
 				95EB50E528EA821400412176 /* SceneDelegate.swift in Sources */,
 				95EB50ED28EA821400412176 /* Quint.xcdatamodeld in Sources */,
-				A016580028EBD3D80048CBCC /* DismissKeyboard.swift in Sources */,
+				A0B4D2F228ED2D5700987F84 /* UIViewController+DismissKeyboard.swift in Sources */,
+				A0B4D2F028ED2B9600987F84 /* Constants.swift in Sources */,
+				A0B4D2F628ED5BA800987F84 /* CAGradientLayer+SetGradient.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -356,9 +386,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Quint/Quint.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = M3J6YQYJKM;
+				DEVELOPMENT_TEAM = J3D4SXSPFL;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Quint/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -372,7 +403,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.hotdaffa.Quint;
+				PRODUCT_BUNDLE_IDENTIFIER = com.vendly.quint;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -386,9 +417,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Quint/Quint.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = M3J6YQYJKM;
+				DEVELOPMENT_TEAM = J3D4SXSPFL;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Quint/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -402,7 +434,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.hotdaffa.Quint;
+				PRODUCT_BUNDLE_IDENTIFIER = com.vendly.quint;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;

@@ -1,15 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "logo_splashscreen.png",
+      "filename" : "path4.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
+      "filename" : "path4@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
+      "filename" : "path4@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

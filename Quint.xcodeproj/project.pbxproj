@@ -7,14 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		95078B1428EC7F5600093069 /* IngredientDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95078B1328EC7F5600093069 /* IngredientDetailVC.swift */; };
-		95078B1628EC7F6100093069 /* ProductDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95078B1528EC7F6100093069 /* ProductDetailVC.swift */; };
+		9538752128EDE2A1001979A8 /* UICollectionView+Loading.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9538751B28EDE2A1001979A8 /* UICollectionView+Loading.swift */; };
+		9538752228EDE2A1001979A8 /* ApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9538751C28EDE2A1001979A8 /* ApiService.swift */; };
+		9538752328EDE2A1001979A8 /* FeedsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9538751D28EDE2A1001979A8 /* FeedsView.swift */; };
+		9538752528EDE2A1001979A8 /* FeedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9538751F28EDE2A1001979A8 /* FeedCell.swift */; };
+		9538752628EDE2A1001979A8 /* PinterestLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9538752028EDE2A1001979A8 /* PinterestLayout.swift */; };
+		9538752A28EDE53C001979A8 /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9538752828EDE53C001979A8 /* Comment.swift */; };
+		9538752B28EDE53C001979A8 /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9538752928EDE53C001979A8 /* Photo.swift */; };
 		959C2BF528ED341E007B1251 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 959C2BF328ED341E007B1251 /* Constants.swift */; };
 		959C2BF628ED341E007B1251 /* CAGradientLayer+SetGradient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 959C2BF428ED341E007B1251 /* CAGradientLayer+SetGradient.swift */; };
-		959C2BFE28ED442D007B1251 /* ProductView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 959C2BFD28ED442D007B1251 /* ProductView.swift */; };
-		959C2C0028ED4437007B1251 /* IngredientVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 959C2BFF28ED4437007B1251 /* IngredientVC.swift */; };
 		959C2C0228ED44A3007B1251 /* UIViewController+ConfigureUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 959C2C0128ED44A3007B1251 /* UIViewController+ConfigureUI.swift */; };
-		959C2C0428ED4D0D007B1251 /* CategoriesScrollableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 959C2C0328ED4D0D007B1251 /* CategoriesScrollableView.swift */; };
 		95EB50E328EA821400412176 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95EB50E228EA821400412176 /* AppDelegate.swift */; };
 		95EB50E528EA821400412176 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95EB50E428EA821400412176 /* SceneDelegate.swift */; };
 		95EB50E728EA821400412176 /* TreatmentsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95EB50E628EA821400412176 /* TreatmentsVC.swift */; };
@@ -30,14 +32,16 @@
 /* Begin PBXFileReference section */
 		1DE7348A28BE8A5E92A105D1 /* Pods-Quint.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Quint.release.xcconfig"; path = "Target Support Files/Pods-Quint/Pods-Quint.release.xcconfig"; sourceTree = "<group>"; };
 		6A4222B49AA562D57AC4B33E /* libPods-Quint.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Quint.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		95078B1328EC7F5600093069 /* IngredientDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientDetailVC.swift; sourceTree = "<group>"; };
-		95078B1528EC7F6100093069 /* ProductDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailVC.swift; sourceTree = "<group>"; };
+		9538751B28EDE2A1001979A8 /* UICollectionView+Loading.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UICollectionView+Loading.swift"; sourceTree = "<group>"; };
+		9538751C28EDE2A1001979A8 /* ApiService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiService.swift; sourceTree = "<group>"; };
+		9538751D28EDE2A1001979A8 /* FeedsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedsView.swift; sourceTree = "<group>"; };
+		9538751F28EDE2A1001979A8 /* FeedCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedCell.swift; sourceTree = "<group>"; };
+		9538752028EDE2A1001979A8 /* PinterestLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PinterestLayout.swift; sourceTree = "<group>"; };
+		9538752828EDE53C001979A8 /* Comment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
+		9538752928EDE53C001979A8 /* Photo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
 		959C2BF328ED341E007B1251 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		959C2BF428ED341E007B1251 /* CAGradientLayer+SetGradient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CAGradientLayer+SetGradient.swift"; sourceTree = "<group>"; };
-		959C2BFD28ED442D007B1251 /* ProductView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductView.swift; sourceTree = "<group>"; };
-		959C2BFF28ED4437007B1251 /* IngredientVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientVC.swift; sourceTree = "<group>"; };
 		959C2C0128ED44A3007B1251 /* UIViewController+ConfigureUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+ConfigureUI.swift"; sourceTree = "<group>"; };
-		959C2C0328ED4D0D007B1251 /* CategoriesScrollableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesScrollableView.swift; sourceTree = "<group>"; };
 		95EB50DF28EA821400412176 /* Quint.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Quint.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		95EB50E228EA821400412176 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		95EB50E428EA821400412176 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -76,22 +80,40 @@
 		95078B1728EC7F8500093069 /* Treatments */ = {
 			isa = PBXGroup;
 			children = (
+				9538752728EDE53C001979A8 /* Models */,
+				9538751A28EDE292001979A8 /* Components */,
+				9538751D28EDE2A1001979A8 /* FeedsView.swift */,
 				95EB50E628EA821400412176 /* TreatmentsVC.swift */,
-				959C2C0328ED4D0D007B1251 /* CategoriesScrollableView.swift */,
-				959C2BFD28ED442D007B1251 /* ProductView.swift */,
-				959C2BFF28ED4437007B1251 /* IngredientVC.swift */,
-				95078B1328EC7F5600093069 /* IngredientDetailVC.swift */,
-				95078B1528EC7F6100093069 /* ProductDetailVC.swift */,
 			);
 			path = Treatments;
+			sourceTree = "<group>";
+		};
+		9538751A28EDE292001979A8 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				9538751F28EDE2A1001979A8 /* FeedCell.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		9538752728EDE53C001979A8 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				9538752828EDE53C001979A8 /* Comment.swift */,
+				9538752928EDE53C001979A8 /* Photo.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		959C2BF228ED341E007B1251 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				9538751C28EDE2A1001979A8 /* ApiService.swift */,
 				959C2BF328ED341E007B1251 /* Constants.swift */,
 				959C2BF428ED341E007B1251 /* CAGradientLayer+SetGradient.swift */,
+				9538751B28EDE2A1001979A8 /* UICollectionView+Loading.swift */,
 				959C2C0128ED44A3007B1251 /* UIViewController+ConfigureUI.swift */,
+				9538752028EDE2A1001979A8 /* PinterestLayout.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -159,6 +181,7 @@
 				95EB50DB28EA821400412176 /* Sources */,
 				95EB50DC28EA821400412176 /* Frameworks */,
 				95EB50DD28EA821400412176 /* Resources */,
+				C1CFCFC7D9323B0716C3D010 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -239,6 +262,23 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		C1CFCFC7D9323B0716C3D010 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Quint/Pods-Quint-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Quint/Pods-Quint-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Quint/Pods-Quint-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -246,17 +286,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				959C2BFE28ED442D007B1251 /* ProductView.swift in Sources */,
-				95078B1428EC7F5600093069 /* IngredientDetailVC.swift in Sources */,
+				9538752B28EDE53C001979A8 /* Photo.swift in Sources */,
+				9538752628EDE2A1001979A8 /* PinterestLayout.swift in Sources */,
+				9538752128EDE2A1001979A8 /* UICollectionView+Loading.swift in Sources */,
 				95EB50E728EA821400412176 /* TreatmentsVC.swift in Sources */,
+				9538752328EDE2A1001979A8 /* FeedsView.swift in Sources */,
 				959C2C0228ED44A3007B1251 /* UIViewController+ConfigureUI.swift in Sources */,
 				95EB50E328EA821400412176 /* AppDelegate.swift in Sources */,
+				9538752228EDE2A1001979A8 /* ApiService.swift in Sources */,
 				95EB50E528EA821400412176 /* SceneDelegate.swift in Sources */,
 				95EB50ED28EA821400412176 /* Quint.xcdatamodeld in Sources */,
-				959C2C0028ED4437007B1251 /* IngredientVC.swift in Sources */,
-				95078B1628EC7F6100093069 /* ProductDetailVC.swift in Sources */,
+				9538752528EDE2A1001979A8 /* FeedCell.swift in Sources */,
+				9538752A28EDE53C001979A8 /* Comment.swift in Sources */,
 				A016580028EBD3D80048CBCC /* DismissKeyboard.swift in Sources */,
-				959C2C0428ED4D0D007B1251 /* CategoriesScrollableView.swift in Sources */,
 				959C2BF628ED341E007B1251 /* CAGradientLayer+SetGradient.swift in Sources */,
 				959C2BF528ED341E007B1251 /* Constants.swift in Sources */,
 			);

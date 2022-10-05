@@ -9,4 +9,5 @@ target 'Quint' do
   pod 'SwiftLint'
   pod 'Charts'
   pod 'IGListKit', '~> 4.0.0'
+  pod 'Fakery'
 end

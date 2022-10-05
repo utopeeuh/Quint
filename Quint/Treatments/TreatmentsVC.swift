@@ -14,11 +14,11 @@ class TreatmentsVC: UIViewController{
 
     private var vstack = UIStackView()
     private var segmentedControl = UISegmentedControl(items: ["Products", "Ingredients"])
-    private var productView = ProductView()
     private var scrollView: UIScrollView!
     private var cats = ["1", "2", "3", "4"]
 //    private var prodCategries = CategoriesScrollableView()
 //    private var ingredientView = IngredientVC()
+    private var feedView = FeedsView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -59,6 +59,7 @@ class TreatmentsVC: UIViewController{
     override func configureLayout(){
         view.addSubview(segmentedControl)
         view.addSubview(scrollView)
+        view.addSubview(feedView)
         
         segmentedControl.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
@@ -70,9 +71,15 @@ class TreatmentsVC: UIViewController{
         
         scrollView.snp.makeConstraints { make in
             make.top.equalTo(segmentedControl.snp.bottom).offset(K.Offset.sm)
-            make.bottom.equalToSuperview()
+            make.height.equalTo(60)
             make.left.equalToSuperview().offset(K.Offset.sm)
             make.right.equalToSuperview()
+        }
+        
+        feedView.snp.makeConstraints { make in
+            make.top.equalTo(scrollView.snp.bottom).offset(K.Offset.sm)
+            make.centerX.bottom.equalToSuperview()
+            make.width.equalToSuperview().offset(-K.Offset.md)
         }
         
 //        productView.snp.makeConstraints { make in

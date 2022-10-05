@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		72BDD7A928EBCE300004A9A1 /* SkincareGuideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72BDD7A828EBCE300004A9A1 /* SkincareGuideViewController.swift */; };
+		72C1646B28ED369A001B8195 /* TodayRoutineViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72C1646A28ED369A001B8195 /* TodayRoutineViewModel.swift */; };
 		72F6195A28EBD9D400A6BC41 /* SkincareGuideTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72F6195928EBD9D400A6BC41 /* SkincareGuideTableViewCell.swift */; };
 		72F6195C28EBEA8A00A6BC41 /* RoutineHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72F6195B28EBEA8A00A6BC41 /* RoutineHomeViewController.swift */; };
 		95EB50E328EA821400412176 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95EB50E228EA821400412176 /* AppDelegate.swift */; };
@@ -25,6 +26,7 @@
 		1DE7348A28BE8A5E92A105D1 /* Pods-Quint.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Quint.release.xcconfig"; path = "Target Support Files/Pods-Quint/Pods-Quint.release.xcconfig"; sourceTree = "<group>"; };
 		6A4222B49AA562D57AC4B33E /* libPods-Quint.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Quint.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		72BDD7A828EBCE300004A9A1 /* SkincareGuideViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkincareGuideViewController.swift; sourceTree = "<group>"; };
+		72C1646A28ED369A001B8195 /* TodayRoutineViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayRoutineViewModel.swift; sourceTree = "<group>"; };
 		72F6195928EBD9D400A6BC41 /* SkincareGuideTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkincareGuideTableViewCell.swift; sourceTree = "<group>"; };
 		72F6195B28EBEA8A00A6BC41 /* RoutineHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutineHomeViewController.swift; sourceTree = "<group>"; };
 		72F6195F28EBFC9600A6BC41 /* Quint.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Quint.entitlements; sourceTree = "<group>"; };
@@ -70,16 +72,10 @@
 			path = Controller;
 			sourceTree = "<group>";
 		};
-		72C1646528ED1DC4001B8195 /* Model */ = {
+		72C1646928ED35F2001B8195 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		72C1646828ED32E2001B8195 /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
+				72C1646A28ED369A001B8195 /* TodayRoutineViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -131,9 +127,8 @@
 			isa = PBXGroup;
 			children = (
 				72F6195F28EBFC9600A6BC41 /* Quint.entitlements */,
-				72C1646528ED1DC4001B8195 /* Model */,
 				72F6195528EBD2B500A6BC41 /* View */,
-				72C1646828ED32E2001B8195 /* ViewModel */,
+				72C1646928ED35F2001B8195 /* ViewModel */,
 				72BDD7A728EBCDF50004A9A1 /* Controller */,
 				95EB50E228EA821400412176 /* AppDelegate.swift */,
 				95EB50E428EA821400412176 /* SceneDelegate.swift */,
@@ -258,6 +253,7 @@
 				95EB50E328EA821400412176 /* AppDelegate.swift in Sources */,
 				72BDD7A928EBCE300004A9A1 /* SkincareGuideViewController.swift in Sources */,
 				72F6195C28EBEA8A00A6BC41 /* RoutineHomeViewController.swift in Sources */,
+				72C1646B28ED369A001B8195 /* TodayRoutineViewModel.swift in Sources */,
 				95EB50E528EA821400412176 /* SceneDelegate.swift in Sources */,
 				72F6195A28EBD9D400A6BC41 /* SkincareGuideTableViewCell.swift in Sources */,
 				95EB50ED28EA821400412176 /* Quint.xcdatamodeld in Sources */,
@@ -407,9 +403,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Quint/Quint.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 58LNBVCQG4;
+				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Quint/Info.plist;
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Please allow access to get weather.";
@@ -424,8 +421,9 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.macro.quint;
+				PRODUCT_BUNDLE_IDENTIFIER = com.vendly.quint;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -439,9 +437,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Quint/Quint.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 58LNBVCQG4;
+				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Quint/Info.plist;
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Please allow access to get weather.";
@@ -456,8 +455,9 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.macro.quint;
+				PRODUCT_BUNDLE_IDENTIFIER = com.vendly.quint;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

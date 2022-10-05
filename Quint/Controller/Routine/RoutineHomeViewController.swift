@@ -7,7 +7,8 @@
 import CoreLocation
 import UIKit
 import WeatherKit
-
+import RxCocoa
+import RxSwift
 
 @available(iOS 16.0, *)
 class RoutineHomeViewController: UIViewController, CLLocationManagerDelegate {
@@ -19,7 +20,7 @@ class RoutineHomeViewController: UIViewController, CLLocationManagerDelegate {
         super.viewDidLoad()
         view.backgroundColor =  UIColor(red: 244/255, green: 244/255, blue: 244/255, alpha: 1)
         ConfigureUI()
-        
+//        view.addSubview(routineTableView)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -158,6 +159,33 @@ class RoutineHomeViewController: UIViewController, CLLocationManagerDelegate {
         return table
     }()
     
+    private var routineViewModel = TodayRoutineViewModel()
+    private var bag = DisposeBag()
+    
+    func bindTableData() {
+        //Bind items to table
+        routineViewModel.items.bind(to: routineTableView.rx.items(cellIdentifier: "cell", cellType: UITableViewCell.self)) { row, model, cell in
+            cell.textLabel?.text = model.title
+            cell.imageView?.image = UIImage(named: model.imageName)
+        }.disposed(by: bag)
+        
+        //Bind a model selected handler
+        routineTableView.rx.modelSelected(Routine.self).bind { routine in
+            print(routine.title)
+        }.disposed(by: bag)
+        
+        //Fetch items
+        routineViewModel.fetchItems()
+    }
+    
+    private var productGuide: UILabel = {
+        let label = UILabel()
+        label.text = "Product usage guide"
+        label.numberOfLines = 0
+        label.textColor = .black
+        return label
+    }()
+    
     func configureComponents() {
         vStackViewUV.addArrangedSubview(UVLevelLabel)
         vStackViewUV.addArrangedSubview(UVLevelParameter)
@@ -172,6 +200,9 @@ class RoutineHomeViewController: UIViewController, CLLocationManagerDelegate {
         mainStackView.addArrangedSubview(hStackViewUV)
         mainStackView.addArrangedSubview(hStackReminder)
         mainStackView.addArrangedSubview(todayRoutine)
+        mainStackView.addArrangedSubview(routineTableView)
+        mainStackView.addArrangedSubview(productGuide)
+        
     }
     
     func configureLayout() {
@@ -215,8 +246,18 @@ class RoutineHomeViewController: UIViewController, CLLocationManagerDelegate {
             make.top.equalTo(hStackReminder.snp.bottom).offset(25)
         }
         
+        routineTableView.snp.makeConstraints { make in
+            make.top.equalTo(todayRoutine.snp.bottom).offset(10)
+            make.bottom.equalTo(-510)
+        }
         
+        mainStackView.snp.makeConstraints { make in
+            make.top.right.bottom.left.equalToSuperview()
+        }
         
+        productGuide.snp.makeConstraints { make in
+            make.top.equalTo(routineTableView.snp.bottom).offset(-500)
+        }
     }
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]){
@@ -238,11 +279,11 @@ class RoutineHomeViewController: UIViewController, CLLocationManagerDelegate {
             make.top.equalTo(self.topLayoutGuide.snp.top)
             make.bottom.equalTo(self.topLayoutGuide.snp.bottom)
         }
+        bindTableData()
         configureComponents()
         configureLayout()
         
     }
-    
 
 }
 

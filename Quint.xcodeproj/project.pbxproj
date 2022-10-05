@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		959C2BED28ED2B98007B1251 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 959C2BEC28ED2B98007B1251 /* Constants.swift */; };
+		959C2BEF28ED2EE8007B1251 /* CAGradientLayer+SetGradient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 959C2BEE28ED2EE8007B1251 /* CAGradientLayer+SetGradient.swift */; };
 		95EB50E328EA821400412176 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95EB50E228EA821400412176 /* AppDelegate.swift */; };
 		95EB50E528EA821400412176 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95EB50E428EA821400412176 /* SceneDelegate.swift */; };
 		95EB50E728EA821400412176 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95EB50E628EA821400412176 /* ViewController.swift */; };
@@ -21,6 +23,8 @@
 /* Begin PBXFileReference section */
 		1DE7348A28BE8A5E92A105D1 /* Pods-Quint.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Quint.release.xcconfig"; path = "Target Support Files/Pods-Quint/Pods-Quint.release.xcconfig"; sourceTree = "<group>"; };
 		6A4222B49AA562D57AC4B33E /* libPods-Quint.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Quint.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		959C2BEC28ED2B98007B1251 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		959C2BEE28ED2EE8007B1251 /* CAGradientLayer+SetGradient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CAGradientLayer+SetGradient.swift"; sourceTree = "<group>"; };
 		95EB50DF28EA821400412176 /* Quint.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Quint.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		95EB50E228EA821400412176 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		95EB50E428EA821400412176 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -52,8 +56,16 @@
 				EC353203A173754AD46E48CF /* Pods-Quint.debug.xcconfig */,
 				1DE7348A28BE8A5E92A105D1 /* Pods-Quint.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		959C2BEB28ED2B8D007B1251 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				959C2BEC28ED2B98007B1251 /* Constants.swift */,
+				959C2BEE28ED2EE8007B1251 /* CAGradientLayer+SetGradient.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 		95EB50D628EA821400412176 = {
@@ -77,6 +89,7 @@
 		95EB50E128EA821400412176 /* Quint */ = {
 			isa = PBXGroup;
 			children = (
+				959C2BEB28ED2B8D007B1251 /* Helpers */,
 				95EB50E228EA821400412176 /* AppDelegate.swift */,
 				95EB50E428EA821400412176 /* SceneDelegate.swift */,
 				95EB50E628EA821400412176 /* ViewController.swift */,
@@ -196,7 +209,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				959C2BED28ED2B98007B1251 /* Constants.swift in Sources */,
 				95EB50E728EA821400412176 /* ViewController.swift in Sources */,
+				959C2BEF28ED2EE8007B1251 /* CAGradientLayer+SetGradient.swift in Sources */,
 				95EB50E328EA821400412176 /* AppDelegate.swift in Sources */,
 				95EB50E528EA821400412176 /* SceneDelegate.swift in Sources */,
 				95EB50ED28EA821400412176 /* Quint.xcdatamodeld in Sources */,

@@ -9,6 +9,7 @@ import UIKit
 import WeatherKit
 import RxCocoa
 import RxSwift
+import RxDataSources
 
 @available(iOS 16.0, *)
 class RoutineHomeViewController: UIViewController, CLLocationManagerDelegate {
@@ -153,26 +154,29 @@ class RoutineHomeViewController: UIViewController, CLLocationManagerDelegate {
         return label
     }()
     
-    private var routineTableView: UITableView = {
-        let table = UITableView()
-        table.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
-        return table
-    }()
-    
     private var routineViewModel = TodayRoutineViewModel()
     private var bag = DisposeBag()
     
+    private var routineTableView: UITableView = {
+        let table = UITableView()
+        table.translatesAutoresizingMaskIntoConstraints = false
+        table.register(RoutineTableViewCell.self, forCellReuseIdentifier: "RoutineTableViewCell")
+        return table
+    }()
+    
+  
     func bindTableData() {
-        //Bind items to table
-        routineViewModel.items.bind(to: routineTableView.rx.items(cellIdentifier: "cell", cellType: UITableViewCell.self)) { row, model, cell in
-            cell.textLabel?.text = model.title
-            cell.imageView?.image = UIImage(named: model.imageName)
-        }.disposed(by: bag)
+        let dataSource = RxTableViewSectionedReloadDataSource<SectionModel<String, Routine>> { _, routineTableView, indexPath, item in
+            let cell = routineTableView.dequeueReusableCell(withIdentifier: "RoutineTableViewCell", for: indexPath) as! RoutineTableViewCell
+            cell.textLabel?.text = item.title
+            cell.imageView?.image = UIImage(named: item.imageName)
+            return cell
+        } titleForHeaderInSection: { dataSource, sectionIndex in
+            return dataSource[sectionIndex].model
+        }
         
-        //Bind a model selected handler
-        routineTableView.rx.modelSelected(Routine.self).bind { routine in
-            print(routine.title)
-        }.disposed(by: bag)
+        self.routineViewModel.items.bind(to: self.routineTableView.rx.items(dataSource: dataSource)).disposed(by: bag)
+        
         
         //Fetch items
         routineViewModel.fetchItems()
@@ -201,7 +205,7 @@ class RoutineHomeViewController: UIViewController, CLLocationManagerDelegate {
         mainStackView.addArrangedSubview(hStackReminder)
         mainStackView.addArrangedSubview(todayRoutine)
         mainStackView.addArrangedSubview(routineTableView)
-        mainStackView.addArrangedSubview(productGuide)
+//        mainStackView.addArrangedSubview(productGuide)
         
     }
     
@@ -255,9 +259,9 @@ class RoutineHomeViewController: UIViewController, CLLocationManagerDelegate {
             make.top.right.bottom.left.equalToSuperview()
         }
         
-        productGuide.snp.makeConstraints { make in
-            make.top.equalTo(routineTableView.snp.bottom).offset(-500)
-        }
+//        productGuide.snp.makeConstraints { make in
+//            make.top.equalTo(routineTableView.snp.bottom).offset(-500)
+//        }
     }
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]){

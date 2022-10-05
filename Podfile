@@ -8,4 +8,5 @@ target 'Quint' do
   pod 'SnapKit', '~> 5.6'
   pod 'SwiftLint'
   pod 'Charts'
+  pod 'RxDataSources', '~> 5.0'
 end

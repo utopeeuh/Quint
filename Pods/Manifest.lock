@@ -3,10 +3,15 @@ PODS:
     - Charts/Core (= 4.1.0)
   - Charts/Core (4.1.0):
     - SwiftAlgorithms (~> 1.0)
+  - Differentiator (5.0.0)
   - Kingfisher (7.3.2)
   - RxCocoa (6.5.0):
     - RxRelay (= 6.5.0)
     - RxSwift (= 6.5.0)
+  - RxDataSources (5.0.0):
+    - Differentiator (~> 5.0)
+    - RxCocoa (~> 6.0)
+    - RxSwift (~> 6.0)
   - RxRelay (6.5.0):
     - RxSwift (= 6.5.0)
   - RxSwift (6.5.0)
@@ -18,6 +23,7 @@ DEPENDENCIES:
   - Charts
   - Kingfisher (~> 7.0)
   - RxCocoa (= 6.5.0)
+  - RxDataSources (~> 5.0)
   - RxSwift (= 6.5.0)
   - SnapKit (~> 5.6)
   - SwiftLint
@@ -25,8 +31,10 @@ DEPENDENCIES:
 SPEC REPOS:
   trunk:
     - Charts
+    - Differentiator
     - Kingfisher
     - RxCocoa
+    - RxDataSources
     - RxRelay
     - RxSwift
     - SnapKit
@@ -35,14 +43,16 @@ SPEC REPOS:
 
 SPEC CHECKSUMS:
   Charts: 354f86803d11d9c35de280587fef50d1af063978
+  Differentiator: e8497ceab83c1b10ca233716d547b9af21b9344d
   Kingfisher: 0086ad83719761ba9b2cdaf6ef4d5b4878cbae23
   RxCocoa: 94f817b71c07517321eb4f9ad299112ca8af743b
+  RxDataSources: aa47cc1ed6c500fa0dfecac5c979b723542d79cf
   RxRelay: 1de1523e604c72b6c68feadedd1af3b1b4d0ecbd
   RxSwift: 5710a9e6b17f3c3d6e40d6e559b9fa1e813b2ef8
   SnapKit: e01d52ebb8ddbc333eefe2132acf85c8227d9c25
   SwiftAlgorithms: 38dda4731d19027fdeee1125f973111bf3386b53
   SwiftLint: 32ee33ded0636d0905ef6911b2b67bbaeeedafa5
 
-PODFILE CHECKSUM: 716425976fba60b3e034b0f3e5963fb2a6a64cec
+PODFILE CHECKSUM: dfb9b724ee4ffd7489ad4928d5a7d5d29e4411d6
 
 COCOAPODS: 1.11.3

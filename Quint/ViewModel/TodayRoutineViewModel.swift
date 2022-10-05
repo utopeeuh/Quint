@@ -8,6 +8,7 @@
 import UIKit
 import RxSwift
 import RxCocoa
+import RxDataSources
 
 struct Routine {
     let imageDoneLock: String
@@ -16,16 +17,15 @@ struct Routine {
 }
 
 class TodayRoutineViewModel: UIViewController {
-    var items = PublishSubject<[Routine]>()
+    var items = BehaviorSubject(value: [SectionModel(model: "", items: [Routine]())])
     
     func fetchItems() {
-        let routines = [
-            Routine(imageDoneLock: "circle", imageName: "iconMorning", title: "Morning Routine"),
-            Routine(imageDoneLock: "circle",imageName: "iconNight", title: "Night Routine"),
-            Routine(imageDoneLock: "lock",imageName: "iconLog", title: "Daily skin condition log")
-        ]
         
-        items.onNext(routines)
-        items.onCompleted()
+        let firstSection = SectionModel(model: "first", items: [Routine(imageDoneLock: "circle",imageName: "iconMorning", title: "Morning Routine")])
+        let secondSection = SectionModel(model: "second", items: [Routine(imageDoneLock: "circle",imageName: "iconNight", title: "Night Routine")])
+        let thirdSection = SectionModel(model: "third", items: [Routine(imageDoneLock: "lock",imageName: "iconLog", title: "Daily skin condition log")])
+        
+        
+        self.items.on(.next([firstSection,secondSection,thirdSection]))
     }
 }

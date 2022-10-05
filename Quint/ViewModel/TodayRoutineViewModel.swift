@@ -21,9 +21,9 @@ class TodayRoutineViewModel: UIViewController {
     
     func fetchItems() {
         
-        let firstSection = SectionModel(model: "first", items: [Routine(imageDoneLock: "circle",imageName: "iconMorning", title: "Morning Routine")])
-        let secondSection = SectionModel(model: "second", items: [Routine(imageDoneLock: "circle",imageName: "iconNight", title: "Night Routine")])
-        let thirdSection = SectionModel(model: "third", items: [Routine(imageDoneLock: "lock",imageName: "iconLog", title: "Daily skin condition log")])
+        let firstSection = SectionModel(model: "", items: [Routine(imageDoneLock: "circle",imageName: "iconMorning", title: "Morning Routine")])
+        let secondSection = SectionModel(model: "", items: [Routine(imageDoneLock: "circle",imageName: "iconNight", title: "Night Routine")])
+        let thirdSection = SectionModel(model: "", items: [Routine(imageDoneLock: "lock",imageName: "iconLog", title: "Daily skin condition log")])
         
         
         self.items.on(.next([firstSection,secondSection,thirdSection]))

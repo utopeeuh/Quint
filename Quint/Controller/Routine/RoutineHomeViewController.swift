@@ -158,7 +158,7 @@ class RoutineHomeViewController: UIViewController, CLLocationManagerDelegate {
     private var bag = DisposeBag()
     
     private var routineTableView: UITableView = {
-        let table = UITableView()
+        let table = UITableView(frame: .zero, style: .insetGrouped)
         table.translatesAutoresizingMaskIntoConstraints = false
         table.register(RoutineTableViewCell.self, forCellReuseIdentifier: "RoutineTableViewCell")
         return table
@@ -251,8 +251,7 @@ class RoutineHomeViewController: UIViewController, CLLocationManagerDelegate {
         }
         
         routineTableView.snp.makeConstraints { make in
-            make.top.equalTo(todayRoutine.snp.bottom).offset(10)
-            make.bottom.equalTo(-510)
+            make.top.equalTo(todayRoutine.snp.bottom)
         }
         
         mainStackView.snp.makeConstraints { make in

@@ -191,7 +191,7 @@ class RoutineHomeViewController: UIViewController, CLLocationManagerDelegate {
         nightRoutine.leftBtn.setImage(UIImage(systemName: "circle"), for: .normal)
         nightRoutine.imageRoutine.image = UIImage(named: "iconNight")
         nightRoutine.chevRight.image = UIImage(systemName: "chevron.right")
-        nightRoutine.titleRoutine.text = "Night Routine"
+        nightRoutine.titleRoutine.text = "Night Routine     "
         
         logRoutine.leftBtn.setImage(UIImage(systemName: "lock"), for: .normal)
         logRoutine.imageRoutine.image = UIImage(named: "iconLog")
@@ -200,6 +200,7 @@ class RoutineHomeViewController: UIViewController, CLLocationManagerDelegate {
         mainStackView.addArrangedSubview(morningRoutine)
         mainStackView.addArrangedSubview(nightRoutine)
         mainStackView.addArrangedSubview(logRoutine)
+        mainStackView.addArrangedSubview(productGuide)
     }
     
     func configureLayout() {
@@ -345,25 +346,21 @@ class RoutineUIView: UIView {
     
     var leftBtn: UIButton = {
         let button = UIButton()
-//        button.setImage(UIImage(systemName: "circle"), for: .normal)
         return button
     }()
     
     var chevRight: UIImageView = {
         let image = UIImageView()
-//        image.image = UIImage(systemName: "chevron.right")
         return image
     }()
     
     var imageRoutine: UIImageView = {
         let image = UIImageView()
-//        image.image = UIImage(named: "iconMorning")
         return image
     }()
     
     var titleRoutine: UILabel = {
         let label = UILabel()
-//        label.text = "Morning Routine"
         return label
     }()
     
@@ -391,7 +388,7 @@ class RoutineUIView: UIView {
         }
         
         chevRight.snp.makeConstraints { make in
-            make.left.equalTo(titleRoutine.snp.right).offset(1250)
+            make.left.equalTo(titleRoutine.snp.right).offset(120)
             make.right.equalTo(self.safeAreaLayoutGuide).offset(-10)
         }
     }

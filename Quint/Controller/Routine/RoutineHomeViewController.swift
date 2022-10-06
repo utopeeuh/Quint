@@ -21,7 +21,6 @@ class RoutineHomeViewController: UIViewController, CLLocationManagerDelegate {
         super.viewDidLoad()
         view.backgroundColor =  UIColor(red: 244/255, green: 244/255, blue: 244/255, alpha: 1)
         ConfigureUI()
-//        view.addSubview(routineTableView)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -188,11 +187,13 @@ class RoutineHomeViewController: UIViewController, CLLocationManagerDelegate {
         morningRoutine.imageRoutine.image = UIImage(named: "iconMorning")
         morningRoutine.chevRight.image = UIImage(systemName: "chevron.right")
         morningRoutine.titleRoutine.text = "Morning Routine"
+        morningRoutine.btnId = 1
         
         nightRoutine.leftBtn.setImage(UIImage(systemName: "circle"), for: .normal)
         nightRoutine.imageRoutine.image = UIImage(named: "iconNight")
         nightRoutine.chevRight.image = UIImage(systemName: "chevron.right")
         nightRoutine.titleRoutine.text = "Night Routine     "
+        nightRoutine.btnId = 2
         
         logRoutine.leftBtn.setImage(UIImage(systemName: "lock"), for: .normal)
         logRoutine.imageRoutine.image = UIImage(named: "iconLog")
@@ -320,7 +321,10 @@ extension UIImage {
     }
 }
 
+@available(iOS 16.0, *)
 class RoutineUIView: UIView {
+    
+    var btnId: Int?
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -357,6 +361,11 @@ class RoutineUIView: UIView {
         self.backgroundColor = .systemGray3
         self.isUserInteractionEnabled = false
         leftBtn.setImage(UIImage(systemName: "checkmark.circle.fill"), for: .normal)
+        if btnId == 1 {
+            imageRoutine.image = UIImage(named: "iconMorningDisabled")
+        } else if btnId == 2 {
+            imageRoutine.image = UIImage(named: "iconNightDisabled")
+        }
     }
 
     

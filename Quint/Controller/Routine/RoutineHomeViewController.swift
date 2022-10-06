@@ -162,11 +162,12 @@ class RoutineHomeViewController: UIViewController, CLLocationManagerDelegate {
         return label
     }()
     
-    private var morningRoutine = RoutineUIView()
+    var morningRoutine = RoutineUIView()
     
-    private var nightRoutine = RoutineUIView()
+    var nightRoutine = RoutineUIView()
     
-    private var logRoutine = RoutineUIView()
+    var logRoutine = RoutineUIView()
+    
     
     func configureComponents() {
         vStackViewUV.addArrangedSubview(UVLevelLabel)
@@ -201,6 +202,7 @@ class RoutineHomeViewController: UIViewController, CLLocationManagerDelegate {
         mainStackView.addArrangedSubview(nightRoutine)
         mainStackView.addArrangedSubview(logRoutine)
         mainStackView.addArrangedSubview(productGuide)
+        
     }
     
     func configureLayout() {
@@ -324,6 +326,7 @@ class RoutineUIView: UIView {
         super.init(frame: frame)
         self.backgroundColor = .white
         self.layer.cornerRadius = 8.0
+        self.isUserInteractionEnabled = true
         setupView()
         setupConstraints()
     }
@@ -334,7 +337,7 @@ class RoutineUIView: UIView {
         setupView()
         setupConstraints()
     }
-    
+
     private lazy var hStackViewRoutine: UIStackView = {
         let stackView = UIStackView()
         stackView.translatesAutoresizingMaskIntoConstraints = false
@@ -348,6 +351,14 @@ class RoutineUIView: UIView {
         let button = UIButton()
         return button
     }()
+    
+    @objc func pressed(){
+        self.alpha = 0.6
+        self.backgroundColor = .systemGray3
+        self.isUserInteractionEnabled = false
+        leftBtn.setImage(UIImage(systemName: "checkmark.circle.fill"), for: .normal)
+    }
+
     
     var chevRight: UIImageView = {
         let image = UIImageView()
@@ -366,6 +377,7 @@ class RoutineUIView: UIView {
     
     func setupView() {
         hStackViewRoutine.addArrangedSubview(leftBtn)
+        leftBtn.addTarget(self, action: #selector(pressed), for: .touchUpInside)
         hStackViewRoutine.addArrangedSubview(imageRoutine)
         hStackViewRoutine.addArrangedSubview(titleRoutine)
         hStackViewRoutine.addArrangedSubview(chevRight)
@@ -394,3 +406,4 @@ class RoutineUIView: UIView {
     }
     
 }
+

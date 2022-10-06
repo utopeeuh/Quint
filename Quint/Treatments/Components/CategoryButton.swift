@@ -8,21 +8,13 @@
 import UIKit
 
 class CategoryButton: UIButton {
-    private var categoryId: Int!
+    var categoryId: Int!
+    var width: Int!
+    var height: Int!
     
-    required init(categoryId: Int, totalWidth: Int, index: Int) {
+    required init(categoryId: Int) {
         super.init(frame: .zero)
-        let button = UIButton(type: .custom)
-        button.frame = CGRect(x: totalWidth+K.Offset.sm*2*index, y: 10, width: 130, height: 40)
-        
         self.categoryId = categoryId
-        
-        contentEdgeInsets = UIEdgeInsets(top: 8, left: 14, bottom: 8, right: 14)
-        
-        backgroundColor = K.Color.whiteQuint
-        setTitleColor(K.Color.greenQuint, for: .normal)
-        titleLabel?.font = UIFont.systemFont(ofSize: 13)
-        layer.cornerRadius = 10
     }
     
     func setText(_ title: String?) {

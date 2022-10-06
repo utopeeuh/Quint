@@ -1,5 +1,5 @@
 //
-//  ProductListView.swift
+//  ProductListCollectionView.swift
 //  DynamicCell
 //
 //  Created by Mohannad on 29.03.2021.
@@ -8,7 +8,7 @@
 import UIKit
 import Fakery
 
-class ProductListView: UIView {
+class ProductListCollectionView: UIView {
 
     var feedCollection: UICollectionView!
     
@@ -19,8 +19,8 @@ class ProductListView: UIView {
     override init(frame: CGRect){
         super.init(frame: frame)
      
-        buildHeaders()
-        configure()
+//        buildHeaders()
+        configureUI()
     }
     
     required init?(coder: NSCoder) {
@@ -28,7 +28,7 @@ class ProductListView: UIView {
     }
 
     
-    func configure(){
+    func configureUI(){
         
         let layout = PinterestLayout()
         layout.delegate = self
@@ -75,7 +75,7 @@ class ProductListView: UIView {
     }
 }
 
-extension ProductListView : UICollectionViewDataSource , UICollectionViewDelegate  {
+extension ProductListCollectionView : UICollectionViewDataSource , UICollectionViewDelegate  {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return photos.count
@@ -103,7 +103,7 @@ extension ProductListView : UICollectionViewDataSource , UICollectionViewDelegat
 
 }
 
-extension ProductListView : PinterestLayoutDelegate {
+extension ProductListCollectionView : PinterestLayoutDelegate {
    
     func collectionView(_ collectionView: UICollectionView, heightForPhotoAtIndexPath indexPath: IndexPath, cellWidth: CGFloat) -> CGFloat {
         

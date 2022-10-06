@@ -17,7 +17,7 @@ extension UICollectionView {
         else {
             let indicator = UIActivityIndicatorView()
             indicator.style = UIActivityIndicatorView.Style.large
-            indicator.color = K.Color.red
+            indicator.color = K.Color.redQuint
             indicator.hidesWhenStopped = true
             backgroundView = indicator
             indicator.startAnimating()

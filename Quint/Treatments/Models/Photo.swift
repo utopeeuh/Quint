@@ -13,4 +13,12 @@ class Photo : Codable {
     var height : Int
     var url : String
     var download_url : String
+    
+    init(_ id: String, _ size: Int, _ url: String, _ download_url: String) {
+        self.id = id
+        self.height = size
+        self.width = size
+        self.url = url
+        self.download_url = download_url
+    }
 }

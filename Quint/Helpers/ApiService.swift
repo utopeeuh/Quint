@@ -31,7 +31,7 @@ class  ApiService : NSObject  {
         let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
             
             guard let data = data , error == nil else {
-                print("error while fetching feeds \(error)")
+                print("error while fetching feeds \(String(describing: error))")
                 completion(nil)
                 return
             }

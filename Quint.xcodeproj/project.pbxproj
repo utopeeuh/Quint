@@ -15,7 +15,26 @@
 		95EB50EF28EA821600412176 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 95EB50EE28EA821600412176 /* Assets.xcassets */; };
 		95EB50F228EA821600412176 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 95EB50F028EA821600412176 /* LaunchScreen.storyboard */; };
 		95EB50FA28EA82D700412176 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 95EB50F928EA82D700412176 /* Podfile */; };
-		A04B012E28ED9EC6005DDB2D /* QuizViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04B012D28ED9EC6005DDB2D /* QuizViewController.swift */; };
+		A04B012E28ED9EC6005DDB2D /* QuizSkinTypeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04B012D28ED9EC6005DDB2D /* QuizSkinTypeVC.swift */; };
+		A05C6C8728EE9AFA001BC1AD /* ClashGrotesk-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = A05C6C8128EE9AFA001BC1AD /* ClashGrotesk-Light.otf */; };
+		A05C6C8828EE9AFA001BC1AD /* ClashGrotesk-Extralight.otf in Resources */ = {isa = PBXBuildFile; fileRef = A05C6C8228EE9AFA001BC1AD /* ClashGrotesk-Extralight.otf */; };
+		A05C6C8928EE9AFA001BC1AD /* ClashGrotesk-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = A05C6C8328EE9AFA001BC1AD /* ClashGrotesk-Medium.otf */; };
+		A05C6C8A28EE9AFA001BC1AD /* ClashGrotesk-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = A05C6C8428EE9AFA001BC1AD /* ClashGrotesk-Bold.otf */; };
+		A05C6C8B28EE9AFA001BC1AD /* ClashGrotesk-Semibold.otf in Resources */ = {isa = PBXBuildFile; fileRef = A05C6C8528EE9AFA001BC1AD /* ClashGrotesk-Semibold.otf */; };
+		A05C6C8C28EE9AFA001BC1AD /* ClashGrotesk-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = A05C6C8628EE9AFA001BC1AD /* ClashGrotesk-Regular.otf */; };
+		A05C6C9628EE9B0A001BC1AD /* Inter-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A05C6C8D28EE9B0A001BC1AD /* Inter-ExtraLight.ttf */; };
+		A05C6C9728EE9B0A001BC1AD /* Inter-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A05C6C8E28EE9B0A001BC1AD /* Inter-Light.ttf */; };
+		A05C6C9828EE9B0A001BC1AD /* Inter-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A05C6C8F28EE9B0A001BC1AD /* Inter-Regular.ttf */; };
+		A05C6C9928EE9B0A001BC1AD /* Inter-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A05C6C9028EE9B0A001BC1AD /* Inter-Black.ttf */; };
+		A05C6C9A28EE9B0A001BC1AD /* Inter-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A05C6C9128EE9B0A001BC1AD /* Inter-Medium.ttf */; };
+		A05C6C9B28EE9B0A001BC1AD /* Inter-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A05C6C9228EE9B0A001BC1AD /* Inter-Bold.ttf */; };
+		A05C6C9C28EE9B0A001BC1AD /* Inter-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A05C6C9328EE9B0A001BC1AD /* Inter-SemiBold.ttf */; };
+		A05C6C9D28EE9B0A001BC1AD /* Inter-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A05C6C9428EE9B0A001BC1AD /* Inter-Thin.ttf */; };
+		A05C6C9E28EE9B0A001BC1AD /* Inter-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A05C6C9528EE9B0A001BC1AD /* Inter-ExtraBold.ttf */; };
+		A05C6CA028EEB1B8001BC1AD /* UIFont+CustomFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = A05C6C9F28EEB1B8001BC1AD /* UIFont+CustomFont.swift */; };
+		A05C6CA228EF1843001BC1AD /* QuizSkinTypeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A05C6CA128EF1843001BC1AD /* QuizSkinTypeCell.swift */; };
+		A05C6CA528EF37EA001BC1AD /* QuizSkinCondVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A05C6CA428EF37EA001BC1AD /* QuizSkinCondVC.swift */; };
+		A05C6CA728EF3836001BC1AD /* QuizSkinCondCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A05C6CA628EF3836001BC1AD /* QuizSkinCondCell.swift */; };
 		A0B4D2F028ED2B9600987F84 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B4D2EF28ED2B9600987F84 /* Constants.swift */; };
 		A0B4D2F228ED2D5700987F84 /* UIViewController+DismissKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B4D2F128ED2D5700987F84 /* UIViewController+DismissKeyboard.swift */; };
 		A0B4D2F428ED41FF00987F84 /* UIImageView+DropShadow.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B4D2F328ED41FF00987F84 /* UIImageView+DropShadow.swift */; };
@@ -37,7 +56,26 @@
 		95EB50F328EA821600412176 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		95EB50F928EA82D700412176 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		A016580228EBFC9E0048CBCC /* Quint.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Quint.entitlements; sourceTree = "<group>"; };
-		A04B012D28ED9EC6005DDB2D /* QuizViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizViewController.swift; sourceTree = "<group>"; };
+		A04B012D28ED9EC6005DDB2D /* QuizSkinTypeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizSkinTypeVC.swift; sourceTree = "<group>"; };
+		A05C6C8128EE9AFA001BC1AD /* ClashGrotesk-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "ClashGrotesk-Light.otf"; path = "../../../../../Downloads/ClashGrotesk_Complete/Fonts/OTF/ClashGrotesk-Light.otf"; sourceTree = "<group>"; };
+		A05C6C8228EE9AFA001BC1AD /* ClashGrotesk-Extralight.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "ClashGrotesk-Extralight.otf"; path = "../../../../../Downloads/ClashGrotesk_Complete/Fonts/OTF/ClashGrotesk-Extralight.otf"; sourceTree = "<group>"; };
+		A05C6C8328EE9AFA001BC1AD /* ClashGrotesk-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "ClashGrotesk-Medium.otf"; path = "../../../../../Downloads/ClashGrotesk_Complete/Fonts/OTF/ClashGrotesk-Medium.otf"; sourceTree = "<group>"; };
+		A05C6C8428EE9AFA001BC1AD /* ClashGrotesk-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "ClashGrotesk-Bold.otf"; path = "../../../../../Downloads/ClashGrotesk_Complete/Fonts/OTF/ClashGrotesk-Bold.otf"; sourceTree = "<group>"; };
+		A05C6C8528EE9AFA001BC1AD /* ClashGrotesk-Semibold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "ClashGrotesk-Semibold.otf"; path = "../../../../../Downloads/ClashGrotesk_Complete/Fonts/OTF/ClashGrotesk-Semibold.otf"; sourceTree = "<group>"; };
+		A05C6C8628EE9AFA001BC1AD /* ClashGrotesk-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "ClashGrotesk-Regular.otf"; path = "../../../../../Downloads/ClashGrotesk_Complete/Fonts/OTF/ClashGrotesk-Regular.otf"; sourceTree = "<group>"; };
+		A05C6C8D28EE9B0A001BC1AD /* Inter-ExtraLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Inter-ExtraLight.ttf"; path = "../../../../../Downloads/Inter/static/Inter-ExtraLight.ttf"; sourceTree = "<group>"; };
+		A05C6C8E28EE9B0A001BC1AD /* Inter-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Inter-Light.ttf"; path = "../../../../../Downloads/Inter/static/Inter-Light.ttf"; sourceTree = "<group>"; };
+		A05C6C8F28EE9B0A001BC1AD /* Inter-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Inter-Regular.ttf"; path = "../../../../../Downloads/Inter/static/Inter-Regular.ttf"; sourceTree = "<group>"; };
+		A05C6C9028EE9B0A001BC1AD /* Inter-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Inter-Black.ttf"; path = "../../../../../Downloads/Inter/static/Inter-Black.ttf"; sourceTree = "<group>"; };
+		A05C6C9128EE9B0A001BC1AD /* Inter-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Inter-Medium.ttf"; path = "../../../../../Downloads/Inter/static/Inter-Medium.ttf"; sourceTree = "<group>"; };
+		A05C6C9228EE9B0A001BC1AD /* Inter-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Inter-Bold.ttf"; path = "../../../../../Downloads/Inter/static/Inter-Bold.ttf"; sourceTree = "<group>"; };
+		A05C6C9328EE9B0A001BC1AD /* Inter-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Inter-SemiBold.ttf"; path = "../../../../../Downloads/Inter/static/Inter-SemiBold.ttf"; sourceTree = "<group>"; };
+		A05C6C9428EE9B0A001BC1AD /* Inter-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Inter-Thin.ttf"; path = "../../../../../Downloads/Inter/static/Inter-Thin.ttf"; sourceTree = "<group>"; };
+		A05C6C9528EE9B0A001BC1AD /* Inter-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Inter-ExtraBold.ttf"; path = "../../../../../Downloads/Inter/static/Inter-ExtraBold.ttf"; sourceTree = "<group>"; };
+		A05C6C9F28EEB1B8001BC1AD /* UIFont+CustomFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+CustomFont.swift"; sourceTree = "<group>"; };
+		A05C6CA128EF1843001BC1AD /* QuizSkinTypeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizSkinTypeCell.swift; sourceTree = "<group>"; };
+		A05C6CA428EF37EA001BC1AD /* QuizSkinCondVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizSkinCondVC.swift; sourceTree = "<group>"; };
+		A05C6CA628EF3836001BC1AD /* QuizSkinCondCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizSkinCondCell.swift; sourceTree = "<group>"; };
 		A0B4D2EF28ED2B9600987F84 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		A0B4D2F128ED2D5700987F84 /* UIViewController+DismissKeyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+DismissKeyboard.swift"; sourceTree = "<group>"; };
 		A0B4D2F328ED41FF00987F84 /* UIImageView+DropShadow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+DropShadow.swift"; sourceTree = "<group>"; };
@@ -91,13 +129,14 @@
 				95EB50E228EA821400412176 /* AppDelegate.swift */,
 				95EB50E428EA821400412176 /* SceneDelegate.swift */,
 				A02BCFA428EC850F0099AB42 /* Controller */,
+				A016580128EBD3DF0048CBCC /* Helper */,
+				A05C6C7E28EE9854001BC1AD /* Font */,
 				95EB50E828EA821400412176 /* Main.storyboard */,
 				95EB50EE28EA821600412176 /* Assets.xcassets */,
 				95EB50F028EA821600412176 /* LaunchScreen.storyboard */,
 				95EB50F328EA821600412176 /* Info.plist */,
 				95EB50EB28EA821400412176 /* Quint.xcdatamodeld */,
 				95EB50F928EA82D700412176 /* Podfile */,
-				A016580128EBD3DF0048CBCC /* Helper */,
 			);
 			path = Quint;
 			sourceTree = "<group>";
@@ -109,6 +148,7 @@
 				A0B4D2F128ED2D5700987F84 /* UIViewController+DismissKeyboard.swift */,
 				A0B4D2F328ED41FF00987F84 /* UIImageView+DropShadow.swift */,
 				A0B4D2F528ED5BA800987F84 /* CAGradientLayer+SetGradient.swift */,
+				A05C6C9F28EEB1B8001BC1AD /* UIFont+CustomFont.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -116,7 +156,9 @@
 		A02BCFA428EC850F0099AB42 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				A04B012D28ED9EC6005DDB2D /* QuizViewController.swift */,
+				A04B012D28ED9EC6005DDB2D /* QuizSkinTypeVC.swift */,
+				A05C6CA428EF37EA001BC1AD /* QuizSkinCondVC.swift */,
+				A05C6CA328EF377E001BC1AD /* TableViewCell */,
 				A02BCFA528EC852B0099AB42 /* Authentication */,
 			);
 			path = Controller;
@@ -128,6 +170,37 @@
 				95EB50E628EA821400412176 /* LoginViewController.swift */,
 			);
 			path = Authentication;
+			sourceTree = "<group>";
+		};
+		A05C6C7E28EE9854001BC1AD /* Font */ = {
+			isa = PBXGroup;
+			children = (
+				A05C6C9028EE9B0A001BC1AD /* Inter-Black.ttf */,
+				A05C6C9228EE9B0A001BC1AD /* Inter-Bold.ttf */,
+				A05C6C9528EE9B0A001BC1AD /* Inter-ExtraBold.ttf */,
+				A05C6C8D28EE9B0A001BC1AD /* Inter-ExtraLight.ttf */,
+				A05C6C8E28EE9B0A001BC1AD /* Inter-Light.ttf */,
+				A05C6C9128EE9B0A001BC1AD /* Inter-Medium.ttf */,
+				A05C6C8F28EE9B0A001BC1AD /* Inter-Regular.ttf */,
+				A05C6C9328EE9B0A001BC1AD /* Inter-SemiBold.ttf */,
+				A05C6C9428EE9B0A001BC1AD /* Inter-Thin.ttf */,
+				A05C6C8428EE9AFA001BC1AD /* ClashGrotesk-Bold.otf */,
+				A05C6C8228EE9AFA001BC1AD /* ClashGrotesk-Extralight.otf */,
+				A05C6C8128EE9AFA001BC1AD /* ClashGrotesk-Light.otf */,
+				A05C6C8328EE9AFA001BC1AD /* ClashGrotesk-Medium.otf */,
+				A05C6C8628EE9AFA001BC1AD /* ClashGrotesk-Regular.otf */,
+				A05C6C8528EE9AFA001BC1AD /* ClashGrotesk-Semibold.otf */,
+			);
+			path = Font;
+			sourceTree = "<group>";
+		};
+		A05C6CA328EF377E001BC1AD /* TableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				A05C6CA128EF1843001BC1AD /* QuizSkinTypeCell.swift */,
+				A05C6CA628EF3836001BC1AD /* QuizSkinCondCell.swift */,
+			);
+			path = TableViewCell;
 			sourceTree = "<group>";
 		};
 		DB8EE3D5BA362498C5AC9D3D /* Frameworks */ = {
@@ -197,10 +270,25 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A05C6C9C28EE9B0A001BC1AD /* Inter-SemiBold.ttf in Resources */,
+				A05C6C8C28EE9AFA001BC1AD /* ClashGrotesk-Regular.otf in Resources */,
+				A05C6C9D28EE9B0A001BC1AD /* Inter-Thin.ttf in Resources */,
 				95EB50F228EA821600412176 /* LaunchScreen.storyboard in Resources */,
+				A05C6C8828EE9AFA001BC1AD /* ClashGrotesk-Extralight.otf in Resources */,
+				A05C6C8728EE9AFA001BC1AD /* ClashGrotesk-Light.otf in Resources */,
 				95EB50EF28EA821600412176 /* Assets.xcassets in Resources */,
+				A05C6C9E28EE9B0A001BC1AD /* Inter-ExtraBold.ttf in Resources */,
+				A05C6C8A28EE9AFA001BC1AD /* ClashGrotesk-Bold.otf in Resources */,
 				95EB50FA28EA82D700412176 /* Podfile in Resources */,
+				A05C6C8928EE9AFA001BC1AD /* ClashGrotesk-Medium.otf in Resources */,
+				A05C6C9A28EE9B0A001BC1AD /* Inter-Medium.ttf in Resources */,
+				A05C6C9828EE9B0A001BC1AD /* Inter-Regular.ttf in Resources */,
+				A05C6C9B28EE9B0A001BC1AD /* Inter-Bold.ttf in Resources */,
+				A05C6C9628EE9B0A001BC1AD /* Inter-ExtraLight.ttf in Resources */,
 				95EB50EA28EA821400412176 /* Main.storyboard in Resources */,
+				A05C6C9728EE9B0A001BC1AD /* Inter-Light.ttf in Resources */,
+				A05C6C8B28EE9AFA001BC1AD /* ClashGrotesk-Semibold.otf in Resources */,
+				A05C6C9928EE9B0A001BC1AD /* Inter-Black.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -236,14 +324,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A05C6CA728EF3836001BC1AD /* QuizSkinCondCell.swift in Sources */,
 				95EB50E728EA821400412176 /* LoginViewController.swift in Sources */,
 				A0B4D2F428ED41FF00987F84 /* UIImageView+DropShadow.swift in Sources */,
-				A04B012E28ED9EC6005DDB2D /* QuizViewController.swift in Sources */,
+				A05C6CA228EF1843001BC1AD /* QuizSkinTypeCell.swift in Sources */,
+				A04B012E28ED9EC6005DDB2D /* QuizSkinTypeVC.swift in Sources */,
 				95EB50E328EA821400412176 /* AppDelegate.swift in Sources */,
 				95EB50E528EA821400412176 /* SceneDelegate.swift in Sources */,
 				95EB50ED28EA821400412176 /* Quint.xcdatamodeld in Sources */,
+				A05C6CA028EEB1B8001BC1AD /* UIFont+CustomFont.swift in Sources */,
 				A0B4D2F228ED2D5700987F84 /* UIViewController+DismissKeyboard.swift in Sources */,
 				A0B4D2F028ED2B9600987F84 /* Constants.swift in Sources */,
+				A05C6CA528EF37EA001BC1AD /* QuizSkinCondVC.swift in Sources */,
 				A0B4D2F628ED5BA800987F84 /* CAGradientLayer+SetGradient.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

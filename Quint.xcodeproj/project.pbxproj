@@ -7,9 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		725B24D328EDC35200CAA219 /* RoutineTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 725B24D228EDC35200CAA219 /* RoutineTableViewCell.swift */; };
 		72BDD7A928EBCE300004A9A1 /* SkincareGuideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72BDD7A828EBCE300004A9A1 /* SkincareGuideViewController.swift */; };
-		72C1646B28ED369A001B8195 /* TodayRoutineViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72C1646A28ED369A001B8195 /* TodayRoutineViewModel.swift */; };
 		72F6195A28EBD9D400A6BC41 /* SkincareGuideTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72F6195928EBD9D400A6BC41 /* SkincareGuideTableViewCell.swift */; };
 		72F6195C28EBEA8A00A6BC41 /* RoutineHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72F6195B28EBEA8A00A6BC41 /* RoutineHomeViewController.swift */; };
 		95EB50E328EA821400412176 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95EB50E228EA821400412176 /* AppDelegate.swift */; };
@@ -26,9 +24,7 @@
 /* Begin PBXFileReference section */
 		1DE7348A28BE8A5E92A105D1 /* Pods-Quint.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Quint.release.xcconfig"; path = "Target Support Files/Pods-Quint/Pods-Quint.release.xcconfig"; sourceTree = "<group>"; };
 		6A4222B49AA562D57AC4B33E /* libPods-Quint.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Quint.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		725B24D228EDC35200CAA219 /* RoutineTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutineTableViewCell.swift; sourceTree = "<group>"; };
 		72BDD7A828EBCE300004A9A1 /* SkincareGuideViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkincareGuideViewController.swift; sourceTree = "<group>"; };
-		72C1646A28ED369A001B8195 /* TodayRoutineViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayRoutineViewModel.swift; sourceTree = "<group>"; };
 		72F6195928EBD9D400A6BC41 /* SkincareGuideTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkincareGuideTableViewCell.swift; sourceTree = "<group>"; };
 		72F6195B28EBEA8A00A6BC41 /* RoutineHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutineHomeViewController.swift; sourceTree = "<group>"; };
 		72F6195F28EBFC9600A6BC41 /* Quint.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Quint.entitlements; sourceTree = "<group>"; };
@@ -77,7 +73,6 @@
 		72C1646928ED35F2001B8195 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				72C1646A28ED369A001B8195 /* TodayRoutineViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -103,7 +98,6 @@
 			isa = PBXGroup;
 			children = (
 				72F6195928EBD9D400A6BC41 /* SkincareGuideTableViewCell.swift */,
-				725B24D228EDC35200CAA219 /* RoutineTableViewCell.swift */,
 			);
 			path = Routine;
 			sourceTree = "<group>";
@@ -256,10 +250,8 @@
 				95EB50E328EA821400412176 /* AppDelegate.swift in Sources */,
 				72BDD7A928EBCE300004A9A1 /* SkincareGuideViewController.swift in Sources */,
 				72F6195C28EBEA8A00A6BC41 /* RoutineHomeViewController.swift in Sources */,
-				72C1646B28ED369A001B8195 /* TodayRoutineViewModel.swift in Sources */,
 				95EB50E528EA821400412176 /* SceneDelegate.swift in Sources */,
 				72F6195A28EBD9D400A6BC41 /* SkincareGuideTableViewCell.swift in Sources */,
-				725B24D328EDC35200CAA219 /* RoutineTableViewCell.swift in Sources */,
 				95EB50ED28EA821400412176 /* Quint.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -154,34 +154,6 @@ class RoutineHomeViewController: UIViewController, CLLocationManagerDelegate {
         return label
     }()
     
-    private var routineViewModel = TodayRoutineViewModel()
-    private var bag = DisposeBag()
-    
-    private var routineTableView: UITableView = {
-        let table = UITableView(frame: .zero, style: .insetGrouped)
-        table.translatesAutoresizingMaskIntoConstraints = false
-        table.register(RoutineTableViewCell.self, forCellReuseIdentifier: "RoutineTableViewCell")
-        return table
-    }()
-    
-  
-    func bindTableData() {
-        let dataSource = RxTableViewSectionedReloadDataSource<SectionModel<String, Routine>> { _, routineTableView, indexPath, item in
-            let cell = routineTableView.dequeueReusableCell(withIdentifier: "RoutineTableViewCell", for: indexPath) as! RoutineTableViewCell
-            cell.textLabel?.text = item.title
-            cell.imageView?.image = UIImage(named: item.imageName)
-            return cell
-        } titleForHeaderInSection: { dataSource, sectionIndex in
-            return dataSource[sectionIndex].model
-        }
-        
-        self.routineViewModel.items.bind(to: self.routineTableView.rx.items(dataSource: dataSource)).disposed(by: bag)
-        
-        
-        //Fetch items
-        routineViewModel.fetchItems()
-    }
-    
     private var productGuide: UILabel = {
         let label = UILabel()
         label.text = "Product usage guide"
@@ -189,6 +161,12 @@ class RoutineHomeViewController: UIViewController, CLLocationManagerDelegate {
         label.textColor = .black
         return label
     }()
+    
+    private var morningRoutine = RoutineUIView()
+    
+    private var nightRoutine = RoutineUIView()
+    
+    private var logRoutine = RoutineUIView()
     
     func configureComponents() {
         vStackViewUV.addArrangedSubview(UVLevelLabel)
@@ -204,9 +182,15 @@ class RoutineHomeViewController: UIViewController, CLLocationManagerDelegate {
         mainStackView.addArrangedSubview(hStackViewUV)
         mainStackView.addArrangedSubview(hStackReminder)
         mainStackView.addArrangedSubview(todayRoutine)
-        mainStackView.addArrangedSubview(routineTableView)
-//        mainStackView.addArrangedSubview(productGuide)
         
+        morningRoutine.leftBtn.setImage(UIImage(systemName: "circle"), for: .normal)
+        morningRoutine.imageRoutine.image = UIImage(named: "iconMorning")
+        morningRoutine.chevRight.image = UIImage(systemName: "chevron.right")
+        morningRoutine.titleRoutine.text = "Morning Routine"
+        
+        mainStackView.addArrangedSubview(morningRoutine)
+        mainStackView.addArrangedSubview(nightRoutine)
+        mainStackView.addArrangedSubview(logRoutine)
     }
     
     func configureLayout() {
@@ -250,17 +234,22 @@ class RoutineHomeViewController: UIViewController, CLLocationManagerDelegate {
             make.top.equalTo(hStackReminder.snp.bottom).offset(25)
         }
         
-        routineTableView.snp.makeConstraints { make in
-            make.top.equalTo(todayRoutine.snp.bottom)
+        morningRoutine.snp.makeConstraints { make in
+            make.height.equalTo(45)
         }
         
-        mainStackView.snp.makeConstraints { make in
-            make.top.right.bottom.left.equalToSuperview()
+        nightRoutine.snp.makeConstraints { make in
+            make.height.equalTo(45)
         }
         
-//        productGuide.snp.makeConstraints { make in
-//            make.top.equalTo(routineTableView.snp.bottom).offset(-500)
+        logRoutine.snp.makeConstraints { make in
+            make.height.equalTo(45)
+        }
+        
+//        mainStackView.snp.makeConstraints { make in
+//            make.top.right.bottom.left.equalToSuperview()
 //        }
+        
     }
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]){
@@ -282,14 +271,12 @@ class RoutineHomeViewController: UIViewController, CLLocationManagerDelegate {
             make.top.equalTo(self.topLayoutGuide.snp.top)
             make.bottom.equalTo(self.topLayoutGuide.snp.bottom)
         }
-        bindTableData()
         configureComponents()
         configureLayout()
         
     }
 
 }
-
 
 extension UIImage {
     func scalePreservingAspectRatio(targetSize: CGSize) -> UIImage {
@@ -319,4 +306,84 @@ extension UIImage {
         
         return scaledImage
     }
+}
+
+class RoutineUIView: UIView {
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        self.backgroundColor = .white
+        self.layer.cornerRadius = 8.0
+        setupView()
+        setupConstraints()
+    }
+
+    required init?(coder: NSCoder) {
+        super.init(coder: coder)
+
+        setupView()
+        setupConstraints()
+    }
+    
+    private lazy var hStackViewRoutine: UIStackView = {
+        let stackView = UIStackView()
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+        stackView.axis = .horizontal
+        stackView.distribution = .fill
+        stackView.alignment = .leading
+        return stackView
+    }()
+    
+    var leftBtn: UIButton = {
+        let button = UIButton()
+//        button.setImage(UIImage(systemName: "circle"), for: .normal)
+        return button
+    }()
+    
+    var chevRight: UIImageView = {
+        let image = UIImageView()
+//        image.image = UIImage(systemName: "chevron.right")
+        return image
+    }()
+    
+    var imageRoutine: UIImageView = {
+        let image = UIImageView()
+//        image.image = UIImage(named: "iconMorning")
+        return image
+    }()
+    
+    var titleRoutine: UILabel = {
+        let label = UILabel()
+//        label.text = "Morning Routine"
+        return label
+    }()
+    
+    func setupView() {
+        hStackViewRoutine.addArrangedSubview(leftBtn)
+        hStackViewRoutine.addArrangedSubview(imageRoutine)
+        hStackViewRoutine.addArrangedSubview(titleRoutine)
+        hStackViewRoutine.addArrangedSubview(chevRight)
+        addSubview(hStackViewRoutine)
+    }
+    
+    func setupConstraints() {
+        leftBtn.snp.makeConstraints { make in
+            make.left.equalTo(self.safeAreaInsets).offset(10)
+            make.top.equalTo(self.safeAreaInsets).offset(12.5)
+        }
+        
+        imageRoutine.snp.makeConstraints { make in
+            make.left.equalTo(leftBtn.snp.right).offset(10)
+            make.top.equalTo(self.safeAreaInsets).offset(7.5)
+        }
+        
+        titleRoutine.snp.makeConstraints { make in
+            make.left.equalTo(imageRoutine.snp.right).offset(10)
+        }
+        
+        chevRight.snp.makeConstraints { make in
+            make.left.equalTo(titleRoutine.snp.right).offset(120)
+        }
+    }
+    
 }

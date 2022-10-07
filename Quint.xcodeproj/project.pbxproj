@@ -9,6 +9,14 @@
 /* Begin PBXBuildFile section */
 		951034BE28EFC13D0011AE39 /* HeaderLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951034BD28EFC13D0011AE39 /* HeaderLabel.swift */; };
 		951034C028EFEDA90011AE39 /* IngredientButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951034BF28EFEDA90011AE39 /* IngredientButton.swift */; };
+		951034C828EFF51F0011AE39 /* UIViewController+DismissKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951034C328EFF51F0011AE39 /* UIViewController+DismissKeyboard.swift */; };
+		951034CA28EFF51F0011AE39 /* UIFont+CustomFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951034C528EFF51F0011AE39 /* UIFont+CustomFont.swift */; };
+		951034CB28EFF51F0011AE39 /* UIImageView+DropShadow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951034C628EFF51F0011AE39 /* UIImageView+DropShadow.swift */; };
+		951034D428EFF54C0011AE39 /* QuizSkinCondVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951034CD28EFF54C0011AE39 /* QuizSkinCondVC.swift */; };
+		951034D528EFF54C0011AE39 /* QuizSkinTypeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951034CF28EFF54C0011AE39 /* QuizSkinTypeCell.swift */; };
+		951034D628EFF54C0011AE39 /* QuizSkinCondCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951034D028EFF54C0011AE39 /* QuizSkinCondCell.swift */; };
+		951034D728EFF54C0011AE39 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951034D228EFF54C0011AE39 /* LoginViewController.swift */; };
+		951034D828EFF54C0011AE39 /* QuizSkinTypeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951034D328EFF54C0011AE39 /* QuizSkinTypeVC.swift */; };
 		95233BDC28EF3B3000A4470E /* ProductListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95233BDB28EF3B3000A4470E /* ProductListView.swift */; };
 		95233BDE28EF3F3E00A4470E /* UIScrollView+RemoveSubviews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95233BDD28EF3F3E00A4470E /* UIScrollView+RemoveSubviews.swift */; };
 		95233BE128EF481F00A4470E /* IngredientListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95233BE028EF481F00A4470E /* IngredientListView.swift */; };
@@ -32,7 +40,6 @@
 		95EB50EF28EA821600412176 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 95EB50EE28EA821600412176 /* Assets.xcassets */; };
 		95EB50F228EA821600412176 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 95EB50F028EA821600412176 /* LaunchScreen.storyboard */; };
 		95EB50FA28EA82D700412176 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 95EB50F928EA82D700412176 /* Podfile */; };
-		A016580028EBD3D80048CBCC /* DismissKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = A01657FF28EBD3D80048CBCC /* DismissKeyboard.swift */; };
 		C9131C6A5795F6F5C360774C /* libPods-Quint.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A4222B49AA562D57AC4B33E /* libPods-Quint.a */; };
 /* End PBXBuildFile section */
 
@@ -41,6 +48,14 @@
 		6A4222B49AA562D57AC4B33E /* libPods-Quint.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Quint.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		951034BD28EFC13D0011AE39 /* HeaderLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderLabel.swift; sourceTree = "<group>"; };
 		951034BF28EFEDA90011AE39 /* IngredientButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientButton.swift; sourceTree = "<group>"; };
+		951034C328EFF51F0011AE39 /* UIViewController+DismissKeyboard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+DismissKeyboard.swift"; sourceTree = "<group>"; };
+		951034C528EFF51F0011AE39 /* UIFont+CustomFont.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIFont+CustomFont.swift"; sourceTree = "<group>"; };
+		951034C628EFF51F0011AE39 /* UIImageView+DropShadow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImageView+DropShadow.swift"; sourceTree = "<group>"; };
+		951034CD28EFF54C0011AE39 /* QuizSkinCondVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuizSkinCondVC.swift; sourceTree = "<group>"; };
+		951034CF28EFF54C0011AE39 /* QuizSkinTypeCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuizSkinTypeCell.swift; sourceTree = "<group>"; };
+		951034D028EFF54C0011AE39 /* QuizSkinCondCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuizSkinCondCell.swift; sourceTree = "<group>"; };
+		951034D228EFF54C0011AE39 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		951034D328EFF54C0011AE39 /* QuizSkinTypeVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuizSkinTypeVC.swift; sourceTree = "<group>"; };
 		95233BDB28EF3B3000A4470E /* ProductListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductListView.swift; sourceTree = "<group>"; };
 		95233BDD28EF3F3E00A4470E /* UIScrollView+RemoveSubviews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIScrollView+RemoveSubviews.swift"; sourceTree = "<group>"; };
 		95233BE028EF481F00A4470E /* IngredientListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientListView.swift; sourceTree = "<group>"; };
@@ -66,7 +81,6 @@
 		95EB50F128EA821600412176 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		95EB50F328EA821600412176 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		95EB50F928EA82D700412176 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		A01657FF28EBD3D80048CBCC /* DismissKeyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DismissKeyboard.swift; sourceTree = "<group>"; };
 		EC353203A173754AD46E48CF /* Pods-Quint.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Quint.debug.xcconfig"; path = "Target Support Files/Pods-Quint/Pods-Quint.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -109,6 +123,34 @@
 			path = ViewControllers;
 			sourceTree = "<group>";
 		};
+		951034CC28EFF54C0011AE39 /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				951034CD28EFF54C0011AE39 /* QuizSkinCondVC.swift */,
+				951034CE28EFF54C0011AE39 /* TableViewCell */,
+				951034D128EFF54C0011AE39 /* Authentication */,
+				951034D328EFF54C0011AE39 /* QuizSkinTypeVC.swift */,
+			);
+			path = Onboarding;
+			sourceTree = "<group>";
+		};
+		951034CE28EFF54C0011AE39 /* TableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				951034CF28EFF54C0011AE39 /* QuizSkinTypeCell.swift */,
+				951034D028EFF54C0011AE39 /* QuizSkinCondCell.swift */,
+			);
+			path = TableViewCell;
+			sourceTree = "<group>";
+		};
+		951034D128EFF54C0011AE39 /* Authentication */ = {
+			isa = PBXGroup;
+			children = (
+				951034D228EFF54C0011AE39 /* LoginViewController.swift */,
+			);
+			path = Authentication;
+			sourceTree = "<group>";
+		};
 		9538751A28EDE292001979A8 /* Components */ = {
 			isa = PBXGroup;
 			children = (
@@ -139,10 +181,13 @@
 				9538751C28EDE2A1001979A8 /* ApiService.swift */,
 				959C2BF328ED341E007B1251 /* Constants.swift */,
 				959C2BF428ED341E007B1251 /* CAGradientLayer+SetGradient.swift */,
+				951034C628EFF51F0011AE39 /* UIImageView+DropShadow.swift */,
+				951034C528EFF51F0011AE39 /* UIFont+CustomFont.swift */,
 				9538751B28EDE2A1001979A8 /* UICollectionView+Loading.swift */,
 				959C2C0128ED44A3007B1251 /* UIViewController+ConfigureUI.swift */,
 				9538752028EDE2A1001979A8 /* PinterestLayout.swift */,
 				95233BDD28EF3F3E00A4470E /* UIScrollView+RemoveSubviews.swift */,
+				951034C328EFF51F0011AE39 /* UIViewController+DismissKeyboard.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -171,6 +216,7 @@
 				95EB50E228EA821400412176 /* AppDelegate.swift */,
 				95EB50E428EA821400412176 /* SceneDelegate.swift */,
 				959C2BF228ED341E007B1251 /* Helpers */,
+				951034CC28EFF54C0011AE39 /* Onboarding */,
 				95078B1728EC7F8500093069 /* Treatments */,
 				95EB50E828EA821400412176 /* Main.storyboard */,
 				95EB50EE28EA821600412176 /* Assets.xcassets */,
@@ -178,17 +224,8 @@
 				95EB50F328EA821600412176 /* Info.plist */,
 				95EB50EB28EA821400412176 /* Quint.xcdatamodeld */,
 				95EB50F928EA82D700412176 /* Podfile */,
-				A016580128EBD3DF0048CBCC /* Helper */,
 			);
 			path = Quint;
-			sourceTree = "<group>";
-		};
-		A016580128EBD3DF0048CBCC /* Helper */ = {
-			isa = PBXGroup;
-			children = (
-				A01657FF28EBD3D80048CBCC /* DismissKeyboard.swift */,
-			);
-			path = Helper;
 			sourceTree = "<group>";
 		};
 		DB8EE3D5BA362498C5AC9D3D /* Frameworks */ = {
@@ -320,22 +357,29 @@
 				9538752128EDE2A1001979A8 /* UICollectionView+Loading.swift in Sources */,
 				95EB50E728EA821400412176 /* TreatmentsVC.swift in Sources */,
 				9538752328EDE2A1001979A8 /* ProductListCollectionView.swift in Sources */,
+				951034CA28EFF51F0011AE39 /* UIFont+CustomFont.swift in Sources */,
 				959C2C0228ED44A3007B1251 /* UIViewController+ConfigureUI.swift in Sources */,
 				95EB50E328EA821400412176 /* AppDelegate.swift in Sources */,
 				951034BE28EFC13D0011AE39 /* HeaderLabel.swift in Sources */,
+				951034D628EFF54C0011AE39 /* QuizSkinCondCell.swift in Sources */,
 				9538752228EDE2A1001979A8 /* ApiService.swift in Sources */,
 				95233BDC28EF3B3000A4470E /* ProductListView.swift in Sources */,
 				95EB50E528EA821400412176 /* SceneDelegate.swift in Sources */,
 				95A4311A28EE8F7F007A2108 /* CategoryButton.swift in Sources */,
+				951034CB28EFF51F0011AE39 /* UIImageView+DropShadow.swift in Sources */,
 				95EB50ED28EA821400412176 /* Quint.xcdatamodeld in Sources */,
+				951034D828EFF54C0011AE39 /* QuizSkinTypeVC.swift in Sources */,
+				951034D728EFF54C0011AE39 /* LoginViewController.swift in Sources */,
 				9538752528EDE2A1001979A8 /* ProductListCell.swift in Sources */,
-				A016580028EBD3D80048CBCC /* DismissKeyboard.swift in Sources */,
 				959C2BF628ED341E007B1251 /* CAGradientLayer+SetGradient.swift in Sources */,
+				951034D428EFF54C0011AE39 /* QuizSkinCondVC.swift in Sources */,
 				959C2BF528ED341E007B1251 /* Constants.swift in Sources */,
+				951034D528EFF54C0011AE39 /* QuizSkinTypeCell.swift in Sources */,
 				95233BDE28EF3F3E00A4470E /* UIScrollView+RemoveSubviews.swift in Sources */,
 				951034C028EFEDA90011AE39 /* IngredientButton.swift in Sources */,
 				95233BE528EF4B5D00A4470E /* HorizontalScrollButtons.swift in Sources */,
 				95233BE128EF481F00A4470E /* IngredientListView.swift in Sources */,
+				951034C828EFF51F0011AE39 /* UIViewController+DismissKeyboard.swift in Sources */,
 				95233BE928EF55AB00A4470E /* SmallCategoryButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

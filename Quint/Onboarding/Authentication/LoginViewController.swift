@@ -99,10 +99,12 @@ class LoginViewController: UIViewController {
         
         startBtn.addTarget(self, action: #selector(didTapGetStart), for: .touchUpInside)
         
+        view.backgroundColor = K.Color.bgQuint
+        
         configureUI()
     }
     
-    func configureUI() {
+    override func configureLayout() {
 
         view.backgroundColor = UIColor(red: 244/255, green: 244/255, blue: 244/255, alpha: 1)
         

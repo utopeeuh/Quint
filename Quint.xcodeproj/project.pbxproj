@@ -20,6 +20,22 @@
 		951034E228EFF8820011AE39 /* SkincareGuideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951034DD28EFF8820011AE39 /* SkincareGuideViewController.swift */; };
 		951034E328EFF8820011AE39 /* RoutineHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951034DE28EFF8820011AE39 /* RoutineHomeViewController.swift */; };
 		951034E428EFF8820011AE39 /* SkincareGuideTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951034E128EFF8820011AE39 /* SkincareGuideTableViewCell.swift */; };
+		9510351728EFFFDB0011AE39 /* Inter-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9510350728EFFFDB0011AE39 /* Inter-Medium.ttf */; };
+		9510351828EFFFDB0011AE39 /* ClashGrotesk-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9510350828EFFFDB0011AE39 /* ClashGrotesk-Bold.otf */; };
+		9510351928EFFFDB0011AE39 /* ClashGrotesk-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9510350928EFFFDB0011AE39 /* ClashGrotesk-Regular.otf */; };
+		9510351A28EFFFDB0011AE39 /* Inter-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9510350A28EFFFDB0011AE39 /* Inter-Light.ttf */; };
+		9510351B28EFFFDB0011AE39 /* ClashGrotesk-Semibold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9510350B28EFFFDB0011AE39 /* ClashGrotesk-Semibold.otf */; };
+		9510351C28EFFFDB0011AE39 /* Inter-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9510350C28EFFFDB0011AE39 /* Inter-Thin.ttf */; };
+		9510351D28EFFFDB0011AE39 /* Inter-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9510350D28EFFFDB0011AE39 /* Inter-Bold.ttf */; };
+		9510351E28EFFFDB0011AE39 /* ClashGrotesk-Extralight.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9510350E28EFFFDB0011AE39 /* ClashGrotesk-Extralight.otf */; };
+		9510351F28EFFFDB0011AE39 /* ClashGrotesk-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9510350F28EFFFDB0011AE39 /* ClashGrotesk-Light.otf */; };
+		9510352028EFFFDB0011AE39 /* Inter-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9510351028EFFFDB0011AE39 /* Inter-Regular.ttf */; };
+		9510352128EFFFDB0011AE39 /* ClashGrotesk-Variable.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9510351128EFFFDB0011AE39 /* ClashGrotesk-Variable.ttf */; };
+		9510352228EFFFDB0011AE39 /* Inter-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9510351228EFFFDB0011AE39 /* Inter-ExtraBold.ttf */; };
+		9510352328EFFFDB0011AE39 /* Inter-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9510351328EFFFDB0011AE39 /* Inter-ExtraLight.ttf */; };
+		9510352428EFFFDB0011AE39 /* Inter-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9510351428EFFFDB0011AE39 /* Inter-Black.ttf */; };
+		9510352528EFFFDB0011AE39 /* Inter-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9510351528EFFFDB0011AE39 /* Inter-SemiBold.ttf */; };
+		9510352628EFFFDB0011AE39 /* ClashGrotesk-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9510351628EFFFDB0011AE39 /* ClashGrotesk-Medium.otf */; };
 		95233BDC28EF3B3000A4470E /* ProductListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95233BDB28EF3B3000A4470E /* ProductListView.swift */; };
 		95233BDE28EF3F3E00A4470E /* UIScrollView+RemoveSubviews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95233BDD28EF3F3E00A4470E /* UIScrollView+RemoveSubviews.swift */; };
 		95233BE128EF481F00A4470E /* IngredientListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95233BE028EF481F00A4470E /* IngredientListView.swift */; };
@@ -63,6 +79,22 @@
 		951034DD28EFF8820011AE39 /* SkincareGuideViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SkincareGuideViewController.swift; sourceTree = "<group>"; };
 		951034DE28EFF8820011AE39 /* RoutineHomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoutineHomeViewController.swift; sourceTree = "<group>"; };
 		951034E128EFF8820011AE39 /* SkincareGuideTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SkincareGuideTableViewCell.swift; sourceTree = "<group>"; };
+		9510350728EFFFDB0011AE39 /* Inter-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-Medium.ttf"; sourceTree = "<group>"; };
+		9510350828EFFFDB0011AE39 /* ClashGrotesk-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ClashGrotesk-Bold.otf"; sourceTree = "<group>"; };
+		9510350928EFFFDB0011AE39 /* ClashGrotesk-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ClashGrotesk-Regular.otf"; sourceTree = "<group>"; };
+		9510350A28EFFFDB0011AE39 /* Inter-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-Light.ttf"; sourceTree = "<group>"; };
+		9510350B28EFFFDB0011AE39 /* ClashGrotesk-Semibold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ClashGrotesk-Semibold.otf"; sourceTree = "<group>"; };
+		9510350C28EFFFDB0011AE39 /* Inter-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-Thin.ttf"; sourceTree = "<group>"; };
+		9510350D28EFFFDB0011AE39 /* Inter-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-Bold.ttf"; sourceTree = "<group>"; };
+		9510350E28EFFFDB0011AE39 /* ClashGrotesk-Extralight.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ClashGrotesk-Extralight.otf"; sourceTree = "<group>"; };
+		9510350F28EFFFDB0011AE39 /* ClashGrotesk-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ClashGrotesk-Light.otf"; sourceTree = "<group>"; };
+		9510351028EFFFDB0011AE39 /* Inter-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-Regular.ttf"; sourceTree = "<group>"; };
+		9510351128EFFFDB0011AE39 /* ClashGrotesk-Variable.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ClashGrotesk-Variable.ttf"; sourceTree = "<group>"; };
+		9510351228EFFFDB0011AE39 /* Inter-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-ExtraBold.ttf"; sourceTree = "<group>"; };
+		9510351328EFFFDB0011AE39 /* Inter-ExtraLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-ExtraLight.ttf"; sourceTree = "<group>"; };
+		9510351428EFFFDB0011AE39 /* Inter-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-Black.ttf"; sourceTree = "<group>"; };
+		9510351528EFFFDB0011AE39 /* Inter-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-SemiBold.ttf"; sourceTree = "<group>"; };
+		9510351628EFFFDB0011AE39 /* ClashGrotesk-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ClashGrotesk-Medium.otf"; sourceTree = "<group>"; };
 		95233BDB28EF3B3000A4470E /* ProductListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductListView.swift; sourceTree = "<group>"; };
 		95233BDD28EF3F3E00A4470E /* UIScrollView+RemoveSubviews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIScrollView+RemoveSubviews.swift"; sourceTree = "<group>"; };
 		95233BE028EF481F00A4470E /* IngredientListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientListView.swift; sourceTree = "<group>"; };
@@ -200,6 +232,29 @@
 			path = Routine;
 			sourceTree = "<group>";
 		};
+		9510350628EFFFDB0011AE39 /* Font */ = {
+			isa = PBXGroup;
+			children = (
+				9510350728EFFFDB0011AE39 /* Inter-Medium.ttf */,
+				9510350828EFFFDB0011AE39 /* ClashGrotesk-Bold.otf */,
+				9510350928EFFFDB0011AE39 /* ClashGrotesk-Regular.otf */,
+				9510350A28EFFFDB0011AE39 /* Inter-Light.ttf */,
+				9510350B28EFFFDB0011AE39 /* ClashGrotesk-Semibold.otf */,
+				9510350C28EFFFDB0011AE39 /* Inter-Thin.ttf */,
+				9510350D28EFFFDB0011AE39 /* Inter-Bold.ttf */,
+				9510350E28EFFFDB0011AE39 /* ClashGrotesk-Extralight.otf */,
+				9510350F28EFFFDB0011AE39 /* ClashGrotesk-Light.otf */,
+				9510351028EFFFDB0011AE39 /* Inter-Regular.ttf */,
+				9510351128EFFFDB0011AE39 /* ClashGrotesk-Variable.ttf */,
+				9510351228EFFFDB0011AE39 /* Inter-ExtraBold.ttf */,
+				9510351328EFFFDB0011AE39 /* Inter-ExtraLight.ttf */,
+				9510351428EFFFDB0011AE39 /* Inter-Black.ttf */,
+				9510351528EFFFDB0011AE39 /* Inter-SemiBold.ttf */,
+				9510351628EFFFDB0011AE39 /* ClashGrotesk-Medium.otf */,
+			);
+			path = Font;
+			sourceTree = "<group>";
+		};
 		9538751A28EDE292001979A8 /* Components */ = {
 			isa = PBXGroup;
 			children = (
@@ -269,6 +324,7 @@
 				951034DA28EFF8820011AE39 /* Routines */,
 				951034CC28EFF54C0011AE39 /* Onboarding */,
 				95078B1728EC7F8500093069 /* Treatments */,
+				9510350628EFFFDB0011AE39 /* Font */,
 				95EB50E828EA821400412176 /* Main.storyboard */,
 				95EB50EE28EA821600412176 /* Assets.xcassets */,
 				95EB50F028EA821600412176 /* LaunchScreen.storyboard */,
@@ -348,9 +404,25 @@
 			buildActionMask = 2147483647;
 			files = (
 				95EB50F228EA821600412176 /* LaunchScreen.storyboard in Resources */,
+				9510352428EFFFDB0011AE39 /* Inter-Black.ttf in Resources */,
+				9510352628EFFFDB0011AE39 /* ClashGrotesk-Medium.otf in Resources */,
+				9510351E28EFFFDB0011AE39 /* ClashGrotesk-Extralight.otf in Resources */,
 				95EB50EF28EA821600412176 /* Assets.xcassets in Resources */,
+				9510352328EFFFDB0011AE39 /* Inter-ExtraLight.ttf in Resources */,
+				9510352228EFFFDB0011AE39 /* Inter-ExtraBold.ttf in Resources */,
+				9510351D28EFFFDB0011AE39 /* Inter-Bold.ttf in Resources */,
+				9510351A28EFFFDB0011AE39 /* Inter-Light.ttf in Resources */,
+				9510351828EFFFDB0011AE39 /* ClashGrotesk-Bold.otf in Resources */,
+				9510352028EFFFDB0011AE39 /* Inter-Regular.ttf in Resources */,
 				95EB50FA28EA82D700412176 /* Podfile in Resources */,
+				9510352528EFFFDB0011AE39 /* Inter-SemiBold.ttf in Resources */,
+				9510351928EFFFDB0011AE39 /* ClashGrotesk-Regular.otf in Resources */,
+				9510351728EFFFDB0011AE39 /* Inter-Medium.ttf in Resources */,
 				95EB50EA28EA821400412176 /* Main.storyboard in Resources */,
+				9510351F28EFFFDB0011AE39 /* ClashGrotesk-Light.otf in Resources */,
+				9510352128EFFFDB0011AE39 /* ClashGrotesk-Variable.ttf in Resources */,
+				9510351C28EFFFDB0011AE39 /* Inter-Thin.ttf in Resources */,
+				9510351B28EFFFDB0011AE39 /* ClashGrotesk-Semibold.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

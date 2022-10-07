@@ -11,4 +11,5 @@ target 'Quint' do
   pod 'IGListKit', '~> 4.0.0'
   pod 'Fakery'
   pod 'SMIconLabel'
+  pod 'RxDataSources', '~> 5.0'
 end

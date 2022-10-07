@@ -36,6 +36,7 @@ class RoutineHomeViewController: UIViewController, CLLocationManagerDelegate {
             targetSize: targetSize
         )
         imageView.image = scaledImage
+        imageView.isHidden = true
         return imageView
     }()
 
@@ -46,10 +47,7 @@ class RoutineHomeViewController: UIViewController, CLLocationManagerDelegate {
         label.textAlignment = .center
         label.textColor = UIColor(red: 242/255, green: 53/255, blue: 53/255, alpha: 1)
         label.numberOfLines = 0
-//        label.layer.borderColor = CGColor(red: 242/255, green: 53/255, blue: 53/255, alpha: 1)
-//        label.layer.cornerRadius = 13
-//        label.layer.borderWidth = 1.0
-//        label.isHidden = true
+        label.isHidden = true
         return label
     }()
 
@@ -64,7 +62,7 @@ class RoutineHomeViewController: UIViewController, CLLocationManagerDelegate {
 
     private var UVLevelParameter: UILabel = {
         let label = UILabel()
-        label.text = "Moderate"
+        label.text = ""
         label.textColor = UIColor(red: 7/255, green: 8/255, blue: 7/255, alpha: 1)
         label.font = UIFont.boldSystemFont(ofSize: 16)
         return label
@@ -72,10 +70,9 @@ class RoutineHomeViewController: UIViewController, CLLocationManagerDelegate {
 
     private var UVLevelPoint: UILabel = {
         let label = UILabel()
-        label.text = "3"
+        label.text = ""
         label.textColor = .white
         label.textAlignment = .center
-        label.layer.backgroundColor = CGColor(red: 255/255, green: 211/255, blue: 99/255, alpha: 1)
         label.layer.cornerRadius = 20
         return label
     }()
@@ -90,10 +87,12 @@ class RoutineHomeViewController: UIViewController, CLLocationManagerDelegate {
         Task {
             do {
                 let weather = try await service.weather(for: location)
+                print("UV INDEX: " + String(describing: weather.currentWeather.uvIndex))
                 UVLevelParameter.text = String(describing: weather.currentWeather.uvIndex.category)
                 UVLevelPoint.text = String(describing: weather.currentWeather.uvIndex.value)
                 if weather.currentWeather.uvIndex.value >= 3{
                     UVLevelSuggestion.isHidden = false
+                    UVLevelSuggestionIcon.isHidden = false
                 }
                 
                 if weather.currentWeather.uvIndex.value <= 1 {

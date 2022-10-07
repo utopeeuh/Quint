@@ -3,6 +3,10 @@ PODS:
     - Charts/Core (= 4.1.0)
   - Charts/Core (4.1.0):
     - SwiftAlgorithms (~> 1.0)
+  - Fakery (5.1.0)
+  - IGListDiffKit (4.0.0)
+  - IGListKit (4.0.0):
+    - IGListDiffKit (= 4.0.0)
   - Kingfisher (7.4.0)
   - RxCocoa (6.5.0):
     - RxRelay (= 6.5.0)
@@ -10,39 +14,51 @@ PODS:
   - RxRelay (6.5.0):
     - RxSwift (= 6.5.0)
   - RxSwift (6.5.0)
+  - SMIconLabel (0.5.0)
   - SnapKit (5.6.0)
   - SwiftAlgorithms (1.0.0)
   - SwiftLint (0.49.1)
 
 DEPENDENCIES:
   - Charts
+  - Fakery
+  - IGListKit (~> 4.0.0)
   - Kingfisher (~> 7.0)
   - RxCocoa (= 6.5.0)
   - RxSwift (= 6.5.0)
+  - SMIconLabel
   - SnapKit (~> 5.6)
   - SwiftLint
 
 SPEC REPOS:
   trunk:
     - Charts
+    - Fakery
+    - IGListDiffKit
+    - IGListKit
     - Kingfisher
     - RxCocoa
     - RxRelay
     - RxSwift
+    - SMIconLabel
     - SnapKit
     - SwiftAlgorithms
     - SwiftLint
 
 SPEC CHECKSUMS:
   Charts: 354f86803d11d9c35de280587fef50d1af063978
+  Fakery: a90caff00ca5cacde6c161c3eafc72314a03d34d
+  IGListDiffKit: 665d6cf43ce726e676013db9c7d6c4294259b6b2
+  IGListKit: fd5a5d21935298f5849fa49d426843cff97b77c7
   Kingfisher: 596b207973051aae5e4c54a1c1cb39837ea10d36
   RxCocoa: 94f817b71c07517321eb4f9ad299112ca8af743b
   RxRelay: 1de1523e604c72b6c68feadedd1af3b1b4d0ecbd
   RxSwift: 5710a9e6b17f3c3d6e40d6e559b9fa1e813b2ef8
+  SMIconLabel: 979cdbe5b1cda89bff21eeb3c8f4cbc2aad8e3b1
   SnapKit: e01d52ebb8ddbc333eefe2132acf85c8227d9c25
   SwiftAlgorithms: 38dda4731d19027fdeee1125f973111bf3386b53
   SwiftLint: 32ee33ded0636d0905ef6911b2b67bbaeeedafa5
 
-PODFILE CHECKSUM: 716425976fba60b3e034b0f3e5963fb2a6a64cec
+PODFILE CHECKSUM: d36891144e1fc68976b0a1ff581567c03c293f70
 
 COCOAPODS: 1.11.3

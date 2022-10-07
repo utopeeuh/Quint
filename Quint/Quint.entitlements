@@ -12,7 +12,8 @@
 	<array/>
 	<key>com.apple.developer.icloud-services</key>
 	<array>
-		<string>CloudKit</string>
+		<string>WeatherKit</string>
+		<string>WeatherKit</string>
 	</array>
 	<key>com.apple.developer.weatherkit</key>
 	<true/>

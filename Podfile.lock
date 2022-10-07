@@ -3,12 +3,12 @@ PODS:
     - Charts/Core (= 4.1.0)
   - Charts/Core (4.1.0):
     - SwiftAlgorithms (~> 1.0)
+  - Differentiator (5.0.0)
   - Fakery (5.1.0)
   - IGListDiffKit (4.0.0)
   - IGListKit (4.0.0):
     - IGListDiffKit (= 4.0.0)
   - Kingfisher (7.4.0)
-  - Differentiator (5.0.0)
   - RxCocoa (6.5.0):
     - RxRelay (= 6.5.0)
     - RxSwift (= 6.5.0)
@@ -39,10 +39,10 @@ DEPENDENCIES:
 SPEC REPOS:
   trunk:
     - Charts
+    - Differentiator
     - Fakery
     - IGListDiffKit
     - IGListKit
-    - Differentiator
     - Kingfisher
     - RxCocoa
     - RxDataSources
@@ -55,11 +55,11 @@ SPEC REPOS:
 
 SPEC CHECKSUMS:
   Charts: 354f86803d11d9c35de280587fef50d1af063978
+  Differentiator: e8497ceab83c1b10ca233716d547b9af21b9344d
   Fakery: a90caff00ca5cacde6c161c3eafc72314a03d34d
   IGListDiffKit: 665d6cf43ce726e676013db9c7d6c4294259b6b2
   IGListKit: fd5a5d21935298f5849fa49d426843cff97b77c7
   Kingfisher: 596b207973051aae5e4c54a1c1cb39837ea10d36
-  Differentiator: e8497ceab83c1b10ca233716d547b9af21b9344d
   RxCocoa: 94f817b71c07517321eb4f9ad299112ca8af743b
   RxDataSources: aa47cc1ed6c500fa0dfecac5c979b723542d79cf
   RxRelay: 1de1523e604c72b6c68feadedd1af3b1b4d0ecbd
@@ -69,6 +69,6 @@ SPEC CHECKSUMS:
   SwiftAlgorithms: 38dda4731d19027fdeee1125f973111bf3386b53
   SwiftLint: 32ee33ded0636d0905ef6911b2b67bbaeeedafa5
 
-PODFILE CHECKSUM: d36891144e1fc68976b0a1ff581567c03c293f70
+PODFILE CHECKSUM: c2738da2d3536ef7440337cfe1ba39d896ca2316
 
 COCOAPODS: 1.11.3

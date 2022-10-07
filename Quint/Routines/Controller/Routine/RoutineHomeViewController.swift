@@ -255,7 +255,7 @@ class RoutineHomeViewController: UIViewController, CLLocationManagerDelegate {
         }
         
         UVLevelSuggestionIcon.snp.makeConstraints { make in
-            make.top.equalToSuperview().offset(25)
+            make.top.equalToSuperview().offset(23)
             make.width.equalTo(11)
             make.height.equalTo(9.5)
         }
@@ -263,7 +263,7 @@ class RoutineHomeViewController: UIViewController, CLLocationManagerDelegate {
         UVLevelSuggestion.snp.makeConstraints { make in
             make.height.equalTo(26)
             make.width.equalTo(135)
-            make.top.equalToSuperview().offset(17)
+            make.top.equalToSuperview().offset(15)
             make.right.equalTo(view.safeAreaInsets).offset(-16)
         }
         

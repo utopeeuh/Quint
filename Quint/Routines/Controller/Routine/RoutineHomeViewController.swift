@@ -215,7 +215,7 @@ class RoutineHomeViewController: UIViewController, CLLocationManagerDelegate {
         
         logRoutine.leftBtn.setImage(UIImage(systemName: "lock"), for: .normal)
         logRoutine.imageRoutine.image = UIImage(named: "iconLog")
-        logRoutine.titleRoutine.text = "Daily log"
+        logRoutine.titleRoutine.text = "Daily skin condition log"
 
         
         mainStackView.addArrangedSubview(morningRoutine)
@@ -447,7 +447,7 @@ class RoutineUIView: UIView {
         
         titleRoutine.snp.makeConstraints { make in
             make.left.equalTo(imageRoutine.snp.right).offset(10)
-            make.width.equalTo(120)
+            make.right.equalTo(chevRight.snp.left)
         }
         
         chevRight.snp.makeConstraints { make in

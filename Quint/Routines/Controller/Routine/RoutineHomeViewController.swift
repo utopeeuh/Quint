@@ -30,12 +30,13 @@ class RoutineHomeViewController: UIViewController, CLLocationManagerDelegate {
     private let UVLevelSuggestion: UILabel = {
         let label = UILabel()
         label.text = "Apply Sunscreen"
+        label.font = label.font.withSize(12)
         label.textAlignment = .center
-        label.textColor = .red
-        label.layer.borderColor = UIColor.red.cgColor
-        label.layer.cornerRadius = 8
+        label.textColor = UIColor(red: 242/255, green: 53/255, blue: 53/255, alpha: 1)
+        label.layer.borderColor = CGColor(red: 242/255, green: 53/255, blue: 53/255, alpha: 1)
+        label.layer.cornerRadius = 13
         label.layer.borderWidth = 1.0
-//        label.isHidden = true
+        label.isHidden = true
         return label
     }()
 
@@ -43,25 +44,25 @@ class RoutineHomeViewController: UIViewController, CLLocationManagerDelegate {
     private let UVLevelLabel: UILabel = {
         let label = UILabel()
         label.text = "UV LEVEL"
-        label.textColor = .black
+        label.font = label.font.withSize(12)
+        label.textColor = UIColor(red: 35/255, green: 36/255, blue: 35/255, alpha: 1)
         return label
     }()
 
     private var UVLevelParameter: UILabel = {
         let label = UILabel()
-        label.text = "MODERATE"
-        label.textColor = .black
+        label.text = ""
+        label.textColor = UIColor(red: 7/255, green: 8/255, blue: 7/255, alpha: 1)
+        label.font = UIFont.boldSystemFont(ofSize: 16)
         return label
     }()
 
     private var UVLevelPoint: UILabel = {
         let label = UILabel()
-        label.text = "4"
-        label.textColor = .black
+        label.text = ""
+        label.textColor = .white
         label.textAlignment = .center
-        label.layer.borderColor = UIColor.red.cgColor
         label.layer.cornerRadius = 20
-        label.layer.borderWidth = 1.0
         return label
     }()
 
@@ -80,6 +81,21 @@ class RoutineHomeViewController: UIViewController, CLLocationManagerDelegate {
                 if weather.currentWeather.uvIndex.value >= 3{
                     UVLevelSuggestion.isHidden = false
                 }
+                
+                if weather.currentWeather.uvIndex.value <= 1 {
+                    UVLevelPoint.layer.backgroundColor = CGColor(red: 53/255, green: 84/255, blue: 73/255, alpha: 1)
+                }else if weather.currentWeather.uvIndex.value > 1 && weather.currentWeather.uvIndex.value <= 3 {
+                    UVLevelPoint.layer.backgroundColor = CGColor(red: 255/255, green: 211/255, blue: 99/255, alpha: 1)
+                    UVLevelPoint.textColor = UIColor(red: 35/255, green: 36/255, blue: 35/255, alpha: 1)
+                }else if weather.currentWeather.uvIndex.value > 3 && weather.currentWeather.uvIndex.value <= 6 {
+                    UVLevelPoint.layer.backgroundColor = CGColor(red: 255/255, green: 150/255, blue: 73/255, alpha: 1)
+                }else if weather.currentWeather.uvIndex.value > 6 && weather.currentWeather.uvIndex.value <= 8 {
+                    UVLevelPoint.layer.backgroundColor = CGColor(red: 255/255, green: 99/255, blue: 99/255, alpha: 1)
+                }else if weather.currentWeather.uvIndex.value > 8 && weather.currentWeather.uvIndex.value <= 11 {
+                    UVLevelPoint.layer.backgroundColor = CGColor(red: 168/255, green: 99/255, blue: 255/255, alpha: 1)
+                }
+                
+                
             } catch {
                 print(String(describing: error))
             }
@@ -115,8 +131,8 @@ class RoutineHomeViewController: UIViewController, CLLocationManagerDelegate {
     
     private let reminderIconView: UIImageView = {
         let imageView = UIImageView()
-        let targetSize = CGSize(width: 30, height: 30)
-        var image = UIImage(systemName: "exclamationmark.circle.fill")?.withTintColor(.red)
+        let targetSize = CGSize(width: 20, height: 20)
+        var image = UIImage(systemName: "exclamationmark.circle.fill")?.withTintColor(UIColor(red: 35/255, green: 36/255, blue: 35/255, alpha: 1))
         let scaledImage = image?.scalePreservingAspectRatio(
             targetSize: targetSize
         )
@@ -128,7 +144,8 @@ class RoutineHomeViewController: UIViewController, CLLocationManagerDelegate {
         let label = UILabel()
         label.text = "Unlock today skin condition log by finishing at least one routine"
         label.numberOfLines = 0
-        label.textColor = .black
+        label.textColor = UIColor(red: 35/255, green: 36/255, blue: 35/255, alpha: 1)
+        label.font = label.font.withSize(14)
         return label
     }()
     
@@ -221,26 +238,33 @@ class RoutineHomeViewController: UIViewController, CLLocationManagerDelegate {
         }
         
         UVLevelSuggestion.snp.makeConstraints { make in
-            make.height.equalTo(25)
-            make.width.equalTo(140)
-            make.top.equalToSuperview().offset(7.5)
+            make.height.equalTo(26)
+            make.width.equalTo(114)
+            make.top.equalToSuperview().offset(9)
         }
         
         UVLevelLabel.snp.makeConstraints { make in
-            make.leftMargin.equalTo(30)
+            make.leftMargin.equalTo(15)
+            make.top.equalTo(view.safeAreaInsets).offset(3.5)
         }
         
         UVLevelParameter.snp.makeConstraints { make in
-            make.leftMargin.equalTo(30)
+            make.leftMargin.equalTo(15)
+        }
+        
+        hStackReminder.snp.makeConstraints { make in
+            make.height.equalTo(66)
         }
         
         reminderIconView.snp.makeConstraints { make in
-            make.top.equalTo(view.safeAreaInsets).offset(5)
-            make.left.equalTo(view.safeAreaInsets).offset(5)
+            make.top.equalTo(view.safeAreaInsets).offset(23.5)
+            make.left.equalTo(view.safeAreaInsets).offset(16)
         }
         
         reminderRoutine.snp.makeConstraints { make in
-            make.top.equalTo(view.safeAreaInsets)
+            make.top.equalTo(view.safeAreaInsets).offset(17.5)
+            make.left.equalTo(reminderIconView.snp.right).offset(12)
+            make.right.equalTo(30)
         }
         
         todayRoutine.snp.makeConstraints { make in
@@ -381,6 +405,7 @@ class RoutineUIView: UIView {
     
     var titleRoutine: UILabel = {
         let label = UILabel()
+        label.textColor = .black
         return label
     }()
     

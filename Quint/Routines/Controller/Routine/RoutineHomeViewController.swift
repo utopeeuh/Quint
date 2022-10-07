@@ -156,8 +156,7 @@ class RoutineHomeViewController: UIViewController, CLLocationManagerDelegate {
         stackView.distribution = .fill
         stackView.alignment = .leading
         stackView.spacing = 10
-        stackView.layer.borderColor = CGColor(red: 123/255, green: 123/255, blue: 123/255, alpha: 1)
-        stackView.layer.borderWidth = 1.0
+        stackView.layer.backgroundColor = CGColor(red: 235/255, green: 235/255, blue: 235/255, alpha: 1)
         stackView.layer.cornerRadius = 8.0
         return stackView
     }()
@@ -166,6 +165,7 @@ class RoutineHomeViewController: UIViewController, CLLocationManagerDelegate {
         let label = UILabel()
         label.text = "Today's routines"
         label.numberOfLines = 0
+        label.font = label.font.withSize(20)
         label.textColor = .black
         return label
     }()
@@ -174,6 +174,7 @@ class RoutineHomeViewController: UIViewController, CLLocationManagerDelegate {
         let label = UILabel()
         label.text = "Product usage guide"
         label.numberOfLines = 0
+        label.font = label.font.withSize(20)
         label.textColor = .black
         return label
     }()
@@ -203,18 +204,19 @@ class RoutineHomeViewController: UIViewController, CLLocationManagerDelegate {
         morningRoutine.leftBtn.setImage(UIImage(systemName: "circle"), for: .normal)
         morningRoutine.imageRoutine.image = UIImage(named: "iconMorning")
         morningRoutine.chevRight.image = UIImage(systemName: "chevron.right")
-        morningRoutine.titleRoutine.text = "Morning Routine"
+        morningRoutine.titleRoutine.text = "Morning routine"
         morningRoutine.btnId = 1
         
         nightRoutine.leftBtn.setImage(UIImage(systemName: "circle"), for: .normal)
         nightRoutine.imageRoutine.image = UIImage(named: "iconNight")
         nightRoutine.chevRight.image = UIImage(systemName: "chevron.right")
-        nightRoutine.titleRoutine.text = "Night Routine     "
+        nightRoutine.titleRoutine.text = "Night routine     "
         nightRoutine.btnId = 2
         
         logRoutine.leftBtn.setImage(UIImage(systemName: "lock"), for: .normal)
         logRoutine.imageRoutine.image = UIImage(named: "iconLog")
-        logRoutine.titleRoutine.text = "Morning Routine"
+        logRoutine.titleRoutine.text = "Daily log"
+
         
         mainStackView.addArrangedSubview(morningRoutine)
         mainStackView.addArrangedSubview(nightRoutine)
@@ -264,7 +266,7 @@ class RoutineHomeViewController: UIViewController, CLLocationManagerDelegate {
         reminderRoutine.snp.makeConstraints { make in
             make.top.equalTo(view.safeAreaInsets).offset(17.5)
             make.left.equalTo(reminderIconView.snp.right).offset(12)
-            make.right.equalTo(30)
+            make.right.equalTo(view.safeAreaLayoutGuide).offset(-100)
         }
         
         todayRoutine.snp.makeConstraints { make in
@@ -377,24 +379,36 @@ class RoutineUIView: UIView {
     
     var leftBtn: UIButton = {
         let button = UIButton()
+        button.tintColor = UIColor(red: 202/255, green: 202/255, blue: 202/255, alpha: 1)
         return button
     }()
     
     @objc func pressed(){
         self.alpha = 0.6
-        self.backgroundColor = .systemGray3
+        self.backgroundColor = UIColor(red: 235/255, green: 235/255, blue: 235/255, alpha: 1)
         self.isUserInteractionEnabled = false
         leftBtn.setImage(UIImage(systemName: "checkmark.circle.fill"), for: .normal)
+        
+        leftBtn.tintColor = UIColor(red: 35/255, green: 36/255, blue: 35/255, alpha: 1)
         if btnId == 1 {
             imageRoutine.image = UIImage(named: "iconMorningDisabled")
+            titleRoutine.attributedText = NSAttributedString(
+                string: "Morning routine",
+                attributes: [.strikethroughStyle: NSUnderlineStyle.single.rawValue]
+            )
         } else if btnId == 2 {
             imageRoutine.image = UIImage(named: "iconNightDisabled")
+            titleRoutine.attributedText = NSAttributedString(
+                string: "Night routine",
+                attributes: [.strikethroughStyle: NSUnderlineStyle.single.rawValue]
+            )
         }
     }
 
     
     var chevRight: UIImageView = {
         let image = UIImageView()
+        image.tintColor = UIColor(red: 125/255, green: 125/255, blue: 125/255, alpha: 1)
         return image
     }()
     
@@ -405,7 +419,9 @@ class RoutineUIView: UIView {
     
     var titleRoutine: UILabel = {
         let label = UILabel()
-        label.textColor = .black
+        label.textColor = UIColor(red: 7/255, green: 8/255, blue: 7/255, alpha: 1)
+        label.font = label.font.withSize(16)
+        label.numberOfLines = 2
         return label
     }()
     
@@ -431,10 +447,11 @@ class RoutineUIView: UIView {
         
         titleRoutine.snp.makeConstraints { make in
             make.left.equalTo(imageRoutine.snp.right).offset(10)
+            make.width.equalTo(120)
         }
         
         chevRight.snp.makeConstraints { make in
-            make.left.equalTo(titleRoutine.snp.right).offset(120)
+            make.left.equalTo(titleRoutine.snp.right).offset(125)
             make.right.equalTo(self.safeAreaLayoutGuide).offset(-10)
         }
     }

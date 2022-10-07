@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		951034BE28EFC13D0011AE39 /* HeaderLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951034BD28EFC13D0011AE39 /* HeaderLabel.swift */; };
+		951034C028EFEDA90011AE39 /* IngredientButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951034BF28EFEDA90011AE39 /* IngredientButton.swift */; };
 		95233BDC28EF3B3000A4470E /* ProductListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95233BDB28EF3B3000A4470E /* ProductListView.swift */; };
 		95233BDE28EF3F3E00A4470E /* UIScrollView+RemoveSubviews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95233BDD28EF3F3E00A4470E /* UIScrollView+RemoveSubviews.swift */; };
 		95233BE128EF481F00A4470E /* IngredientListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95233BE028EF481F00A4470E /* IngredientListView.swift */; };
@@ -37,6 +39,8 @@
 /* Begin PBXFileReference section */
 		1DE7348A28BE8A5E92A105D1 /* Pods-Quint.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Quint.release.xcconfig"; path = "Target Support Files/Pods-Quint/Pods-Quint.release.xcconfig"; sourceTree = "<group>"; };
 		6A4222B49AA562D57AC4B33E /* libPods-Quint.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Quint.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		951034BD28EFC13D0011AE39 /* HeaderLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderLabel.swift; sourceTree = "<group>"; };
+		951034BF28EFEDA90011AE39 /* IngredientButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientButton.swift; sourceTree = "<group>"; };
 		95233BDB28EF3B3000A4470E /* ProductListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductListView.swift; sourceTree = "<group>"; };
 		95233BDD28EF3F3E00A4470E /* UIScrollView+RemoveSubviews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIScrollView+RemoveSubviews.swift"; sourceTree = "<group>"; };
 		95233BE028EF481F00A4470E /* IngredientListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientListView.swift; sourceTree = "<group>"; };
@@ -91,20 +95,18 @@
 			isa = PBXGroup;
 			children = (
 				9538752728EDE53C001979A8 /* Models */,
+				951034BC28EFB9720011AE39 /* ViewControllers */,
 				9538751A28EDE292001979A8 /* Components */,
-				95EB50E628EA821400412176 /* TreatmentsVC.swift */,
 			);
 			path = Treatments;
 			sourceTree = "<group>";
 		};
-		95233BDF28EF47EC00A4470E /* UIViews */ = {
+		951034BC28EFB9720011AE39 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				9538751D28EDE2A1001979A8 /* ProductListCollectionView.swift */,
-				95233BDB28EF3B3000A4470E /* ProductListView.swift */,
-				95233BE028EF481F00A4470E /* IngredientListView.swift */,
+				95EB50E628EA821400412176 /* TreatmentsVC.swift */,
 			);
-			path = UIViews;
+			path = ViewControllers;
 			sourceTree = "<group>";
 		};
 		9538751A28EDE292001979A8 /* Components */ = {
@@ -114,7 +116,11 @@
 				95A4311928EE8F7F007A2108 /* CategoryButton.swift */,
 				95233BE828EF55AB00A4470E /* SmallCategoryButton.swift */,
 				95233BE428EF4B5D00A4470E /* HorizontalScrollButtons.swift */,
-				95233BDF28EF47EC00A4470E /* UIViews */,
+				9538751D28EDE2A1001979A8 /* ProductListCollectionView.swift */,
+				95233BDB28EF3B3000A4470E /* ProductListView.swift */,
+				95233BE028EF481F00A4470E /* IngredientListView.swift */,
+				951034BD28EFC13D0011AE39 /* HeaderLabel.swift */,
+				951034BF28EFEDA90011AE39 /* IngredientButton.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -316,6 +322,7 @@
 				9538752328EDE2A1001979A8 /* ProductListCollectionView.swift in Sources */,
 				959C2C0228ED44A3007B1251 /* UIViewController+ConfigureUI.swift in Sources */,
 				95EB50E328EA821400412176 /* AppDelegate.swift in Sources */,
+				951034BE28EFC13D0011AE39 /* HeaderLabel.swift in Sources */,
 				9538752228EDE2A1001979A8 /* ApiService.swift in Sources */,
 				95233BDC28EF3B3000A4470E /* ProductListView.swift in Sources */,
 				95EB50E528EA821400412176 /* SceneDelegate.swift in Sources */,
@@ -326,6 +333,7 @@
 				959C2BF628ED341E007B1251 /* CAGradientLayer+SetGradient.swift in Sources */,
 				959C2BF528ED341E007B1251 /* Constants.swift in Sources */,
 				95233BDE28EF3F3E00A4470E /* UIScrollView+RemoveSubviews.swift in Sources */,
+				951034C028EFEDA90011AE39 /* IngredientButton.swift in Sources */,
 				95233BE528EF4B5D00A4470E /* HorizontalScrollButtons.swift in Sources */,
 				95233BE128EF481F00A4470E /* IngredientListView.swift in Sources */,
 				95233BE928EF55AB00A4470E /* SmallCategoryButton.swift in Sources */,

@@ -15,7 +15,7 @@ class ProductListView: UIView{
     let productCollection = ProductListCollectionView()
     private var scrollView = HorizontalScrollButtons()
     private var categories = K.Category.product
-    private var topLabel = UILabel()
+    private var topLabel = HeaderLabel()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -33,9 +33,6 @@ class ProductListView: UIView{
     }
     
     func configureComponents(){
-        topLabel.text = "Recommended products"
-        topLabel.font = UIFont.systemFont(ofSize: 20, weight: .medium)
-        
         // Generate buttons for top scroll
         var catButtons: [SmallCategoryButton] = []
         for i in 0..<categories.count {
@@ -45,6 +42,7 @@ class ProductListView: UIView{
             catButtons.append(button)
         }
         scrollView.setButtons(catButtons)
+        selectTopCategory(catButtons[0])
     }
     
     func configureLayout(){
@@ -60,13 +58,13 @@ class ProductListView: UIView{
         
         scrollView.snp.makeConstraints { make in
             make.top.equalTo(topLabel.snp.bottom).offset(16)
-            make.height.equalTo(60)
+            make.height.equalTo(40)
             make.left.equalToSuperview()
             make.right.equalToSuperview()
         }
         
         productCollection.snp.makeConstraints { make in
-            make.top.equalTo(scrollView.snp.bottom).offset(K.Offset.sm)
+            make.top.equalTo(scrollView.snp.bottom).offset(36)
             make.centerX.bottom.equalToSuperview()
             make.width.equalToSuperview().offset(-20)
         }

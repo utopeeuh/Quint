@@ -29,7 +29,7 @@ class QuizSkinTypeVC: UIViewController {
         progressView.trackTintColor = UIColor(red: 230/255, green: 230/255, blue: 230/255, alpha: 1)
         progressView.progressTintColor = UIColor(red: 53/255, green: 84/255, blue: 73/255, alpha: 1)
         progressView.setProgress(0.15, animated: true)
-        progressView.layer.cornerRadius = 5
+        progressView.layer.cornerRadius = 4
         progressView.clipsToBounds = true
         
         return progressView
@@ -50,7 +50,7 @@ class QuizSkinTypeVC: UIViewController {
     private let skinTypetableView: UITableView = {
         
         let tableView = UITableView()
-        tableView.backgroundColor = UIColor(red: 16/255, green: 24/255, blue: 40/255, alpha: 0.05)
+        tableView.backgroundColor = K.Color.bgQuint
         return tableView
         
     }()
@@ -94,9 +94,15 @@ class QuizSkinTypeVC: UIViewController {
 
         view.backgroundColor = UIColor(red: 244/255, green: 244/255, blue: 244/255, alpha: 1)
         
+        view.addSubview(backBtn)
+        backBtn.snp.makeConstraints { make in
+            make.width.height.equalTo(24)
+        }
+        
         view.addSubview(progressBar)
         progressBar.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
+            make.right.equalTo(backBtn).offset(20)
             make.width.equalTo(300)
             make.height.equalTo(7)
             make.top.equalToSuperview().offset(65)
@@ -114,7 +120,7 @@ class QuizSkinTypeVC: UIViewController {
             make.centerX.equalToSuperview()
             make.top.equalTo(skinTypeLbl.snp.bottom).offset(32)
             make.width.equalTo(350)
-            make.height.equalTo(244)
+            make.height.equalTo(500)
         }
         
         view.addSubview(nextBtn)
@@ -138,7 +144,6 @@ class QuizSkinTypeVC: UIViewController {
         navigationController?.pushViewController(controller, animated: true)
     }
 
-    
 }
 
 extension QuizSkinTypeVC: UITableViewDelegate, UITableViewDataSource {
@@ -158,36 +163,66 @@ extension QuizSkinTypeVC: UITableViewDelegate, UITableViewDataSource {
                 return UITableViewCell()
             }
         cell.textLabel?.text = "This skin is neither too dry nor too oily. It has\nregular texture, no imperfections and a clean, soft\nappearance, and does not need special care."
+        cell.backgroundColor = .clear
+        cell.textLabel?.numberOfLines = 3
+        cell.textLabel?.font = .interMedium(size: 14)
         return cell
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 60
+        return 63
     }
     
-    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        if section == 0 {
-            return "Normal skin"
-        } else if section == 1 {
-            return "Dry skin"
-        } else if section == 2 {
-            return "Oily skin"
-        } else {
-            return "Combination skin"
-        }
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 66
     }
+    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        
+        let headerView = UIView.init(frame: CGRect.init(x: 0, y: 0, width: tableView.frame.width, height: 66))
+        headerView.backgroundColor = K.Color.bgQuint
+        
+        let view = UIView()
+        view.frame = CGRect.init(x: 0, y: 0, width: tableView.frame.width, height: 52)
+        view.backgroundColor = .white
+        view.layer.borderWidth = 1.5
+        view.layer.borderColor = CGColor(red: 53/255, green: 84/255, blue: 73/255, alpha: 1)
+        view.layer.cornerRadius = 8
+        
+        let label = UILabel()
+        label.frame = CGRect.init(x: 10, y: 0, width: headerView.frame.width-10, height: headerView.frame.height-16)
+        label.tintColor = UIColor(red: 53/255, green: 84/255, blue: 73/255, alpha: 1)
+        label.font = .interMedium(size: 16)
+        
+        let borderView = UIView()
+        borderView.frame = CGRect.init(x: 0, y: 52, width: tableView.frame.height, height: 14)
+        borderView.backgroundColor = K.Color.bgQuint
+        
+        if section == 0 {
+            label.text = "Normal skin"
+        } else if section == 1 {
+            label.text = "Dry skin"
+        } else if section == 2 {
+            label.text = "Oily skin"
+        } else {
+            label.text = "Combination skin"
+        }
 
-    func tableView(_ tableView: UITableView, titleForFooterInSection section: Int) -> String? {
-        return "Spacer"
-//        if section == 0 {
-//            return "This skin is neither too dry nor too oily. It has\nregular texture, no imperfections and a clean, soft\nappearance, and does not need special care."
-//        } else if section == 1 {
-//            return "Feeling of tightness and roughness. It may also\nacquire an ashy gray color, with occurrence of\ndesquamation, itching, redness and small cracks."
-//        } else if section == 2 {
-//            return "Oily skin has a porous, humid and bright\nappearance. It is caused by excessive fat\nproduction by sebaceous glands."
-//        } else {
-//            return "Characteristics of both dry and oily skin.\nThe area with more oil is usually the T- zone (forehead,\nnose, and chin), while the cheeks is normal or dry."
-//        }
+        headerView.addSubview(view)
+        headerView.addSubview(label)
+        headerView.addSubview(borderView)
+        
+        return headerView
+    }
+    
+    func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+         let footerView = UIView()
+         footerView.backgroundColor = view.backgroundColor
+         return footerView
+    }
+    
+    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        return 10
     }
     
 }

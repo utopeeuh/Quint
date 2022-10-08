@@ -419,7 +419,7 @@ extension UIImage {
 class DailySkincareTips: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
-        self.backgroundColor = K.Color.greenQuint
+        self.backgroundColor = UIColor(patternImage: UIImage(named: "backgroundTips")!)
         self.layer.cornerRadius = 8.0
         setupView()
         setupConstraints()

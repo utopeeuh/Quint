@@ -68,7 +68,6 @@ class IngredientListView: UIView {
         selectTopCategory(topCatButtons[0])
         
         var ingredientButtons: [IngredientButton] = []
-        
         for i in 0..<K.Dummy.ingredient.count {
             let newBtn = IngredientButton(categoryId: i+1)
             newBtn.setText(K.Dummy.ingredient[i+1])
@@ -77,7 +76,14 @@ class IngredientListView: UIView {
         }
         ingredientScrollList.setButtons(ingredientButtons)
         
-//        largeCategoryScroll.setButtons(topCatButtons)
+        var largeCatButtons: [LargeCategoryCard] = []
+        for i in 0..<K.Category.ingredient.count {
+            let newBtn = LargeCategoryCard(categoryId: i+1)
+            newBtn.setText(K.Category.ingredient[i+1])
+            newBtn.addTarget(self, action: #selector(goToIngredientDetail), for: .touchUpInside)
+            largeCatButtons.append(newBtn)
+        }
+        largeCategoryScroll.setButtons(largeCatButtons)
         
         categoryLabel.text = "Ingredient categories"
     }
@@ -88,7 +94,7 @@ class IngredientListView: UIView {
         addSubview(topScrollCategories)
         addSubview(ingredientScrollList)
         addSubview(categoryLabel)
-//        addSubview(largeCategoryScroll)
+        addSubview(largeCategoryScroll)
         
         searchBar.snp.makeConstraints { make in
             make.top.equalToSuperview().offset(-8)
@@ -122,11 +128,11 @@ class IngredientListView: UIView {
             make.height.equalTo(headerStack)
         }
 
-//        largeCategoryScroll.snp.makeConstraints { make in
-//            make.top.equalTo(categoryLabel.snp.bottom).offset(18)
-//            make.width.equalToSuperview()
-//            make.height.equalTo(60)
-//        }
+        largeCategoryScroll.snp.makeConstraints { make in
+            make.top.equalTo(categoryLabel.snp.bottom).offset(18)
+            make.width.equalToSuperview()
+            make.height.equalTo(164)
+        }
     }
     
     @objc func selectTopCategory(_ sender: SmallCategoryButton) {

@@ -36,6 +36,7 @@
 		9510352428EFFFDB0011AE39 /* Inter-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9510351428EFFFDB0011AE39 /* Inter-Black.ttf */; };
 		9510352528EFFFDB0011AE39 /* Inter-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9510351528EFFFDB0011AE39 /* Inter-SemiBold.ttf */; };
 		9510352628EFFFDB0011AE39 /* ClashGrotesk-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9510351628EFFFDB0011AE39 /* ClashGrotesk-Medium.otf */; };
+		9510352B28F007DB0011AE39 /* LargeCategoryCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9510352A28F007DB0011AE39 /* LargeCategoryCard.swift */; };
 		95233BDC28EF3B3000A4470E /* ProductListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95233BDB28EF3B3000A4470E /* ProductListView.swift */; };
 		95233BDE28EF3F3E00A4470E /* UIScrollView+RemoveSubviews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95233BDD28EF3F3E00A4470E /* UIScrollView+RemoveSubviews.swift */; };
 		95233BE128EF481F00A4470E /* IngredientListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95233BE028EF481F00A4470E /* IngredientListView.swift */; };
@@ -59,6 +60,7 @@
 		95EB50EF28EA821600412176 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 95EB50EE28EA821600412176 /* Assets.xcassets */; };
 		95EB50F228EA821600412176 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 95EB50F028EA821600412176 /* LaunchScreen.storyboard */; };
 		95EB50FA28EA82D700412176 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 95EB50F928EA82D700412176 /* Podfile */; };
+		95FC28BC28F1592F00994750 /* UILabel+RequiredHeight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95FC28BB28F1592F00994750 /* UILabel+RequiredHeight.swift */; };
 		C9131C6A5795F6F5C360774C /* libPods-Quint.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A4222B49AA562D57AC4B33E /* libPods-Quint.a */; };
 /* End PBXBuildFile section */
 
@@ -95,6 +97,7 @@
 		9510351428EFFFDB0011AE39 /* Inter-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-Black.ttf"; sourceTree = "<group>"; };
 		9510351528EFFFDB0011AE39 /* Inter-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-SemiBold.ttf"; sourceTree = "<group>"; };
 		9510351628EFFFDB0011AE39 /* ClashGrotesk-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ClashGrotesk-Medium.otf"; sourceTree = "<group>"; };
+		9510352A28F007DB0011AE39 /* LargeCategoryCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LargeCategoryCard.swift; sourceTree = "<group>"; };
 		95233BDB28EF3B3000A4470E /* ProductListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductListView.swift; sourceTree = "<group>"; };
 		95233BDD28EF3F3E00A4470E /* UIScrollView+RemoveSubviews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIScrollView+RemoveSubviews.swift"; sourceTree = "<group>"; };
 		95233BE028EF481F00A4470E /* IngredientListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientListView.swift; sourceTree = "<group>"; };
@@ -120,6 +123,7 @@
 		95EB50F128EA821600412176 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		95EB50F328EA821600412176 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		95EB50F928EA82D700412176 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		95FC28BB28F1592F00994750 /* UILabel+RequiredHeight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+RequiredHeight.swift"; sourceTree = "<group>"; };
 		EC353203A173754AD46E48CF /* Pods-Quint.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Quint.debug.xcconfig"; path = "Target Support Files/Pods-Quint/Pods-Quint.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -261,12 +265,13 @@
 				9538751F28EDE2A1001979A8 /* ProductListCell.swift */,
 				95A4311928EE8F7F007A2108 /* CategoryButton.swift */,
 				95233BE828EF55AB00A4470E /* SmallCategoryButton.swift */,
+				9510352A28F007DB0011AE39 /* LargeCategoryCard.swift */,
+				951034BF28EFEDA90011AE39 /* IngredientButton.swift */,
 				95233BE428EF4B5D00A4470E /* HorizontalScrollButtons.swift */,
 				9538751D28EDE2A1001979A8 /* ProductListCollectionView.swift */,
 				95233BDB28EF3B3000A4470E /* ProductListView.swift */,
 				95233BE028EF481F00A4470E /* IngredientListView.swift */,
 				951034BD28EFC13D0011AE39 /* HeaderLabel.swift */,
-				951034BF28EFEDA90011AE39 /* IngredientButton.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -292,6 +297,7 @@
 				9538752028EDE2A1001979A8 /* PinterestLayout.swift */,
 				95233BDD28EF3F3E00A4470E /* UIScrollView+RemoveSubviews.swift */,
 				951034C328EFF51F0011AE39 /* UIViewController+DismissKeyboard.swift */,
+				95FC28BB28F1592F00994750 /* UILabel+RequiredHeight.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -487,9 +493,11 @@
 				951034BE28EFC13D0011AE39 /* HeaderLabel.swift in Sources */,
 				951034D628EFF54C0011AE39 /* QuizSkinCondCell.swift in Sources */,
 				9538752228EDE2A1001979A8 /* ApiService.swift in Sources */,
+				95FC28BC28F1592F00994750 /* UILabel+RequiredHeight.swift in Sources */,
 				95233BDC28EF3B3000A4470E /* ProductListView.swift in Sources */,
 				95EB50E528EA821400412176 /* SceneDelegate.swift in Sources */,
 				95A4311A28EE8F7F007A2108 /* CategoryButton.swift in Sources */,
+				9510352B28F007DB0011AE39 /* LargeCategoryCard.swift in Sources */,
 				951034CB28EFF51F0011AE39 /* UIImageView+DropShadow.swift in Sources */,
 				95EB50ED28EA821400412176 /* Quint.xcdatamodeld in Sources */,
 				951034D828EFF54C0011AE39 /* QuizSkinTypeVC.swift in Sources */,
@@ -655,7 +663,7 @@
 				CODE_SIGN_ENTITLEMENTS = Quint/Quint.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = J3D4SXSPFL;
+				DEVELOPMENT_TEAM = M3J6YQYJKM;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Quint/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -686,7 +694,7 @@
 				CODE_SIGN_ENTITLEMENTS = Quint/Quint.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = J3D4SXSPFL;
+				DEVELOPMENT_TEAM = M3J6YQYJKM;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Quint/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;

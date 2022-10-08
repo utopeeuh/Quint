@@ -14,7 +14,7 @@ class IngredientButton: CategoryButton {
         self.categoryId = categoryId
         width = 158
         height = 88
-        frame = CGRect(x: 0, y: 0, width: 158, height: 88)
+        frame = CGRect(x: 0, y: 0, width: width, height: height)
 //        contentEdgeInsets = UIEdgeInsets(top: 18, left: 24, bottom: 18, right: 24)
         layer.cornerRadius = 10
         backgroundColor = K.Color.whiteQuint

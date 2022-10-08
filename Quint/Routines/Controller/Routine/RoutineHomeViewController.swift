@@ -12,7 +12,7 @@ import RxSwift
 import RxDataSources
 
 @available(iOS 16.0, *)
-class RoutineHomeViewController: UIViewController, CLLocationManagerDelegate {
+class RoutineHomeViewController: UIViewController, CLLocationManagerDelegate{
     
     let locationManager = CLLocationManager()
     let service = WeatherService()
@@ -162,7 +162,7 @@ class RoutineHomeViewController: UIViewController, CLLocationManagerDelegate {
         return label
     }()
     
-    private lazy var hStackReminder: UIStackView = {
+    lazy var hStackReminder: UIStackView = {
         let stackView = UIStackView()
         stackView.translatesAutoresizingMaskIntoConstraints = false
         stackView.axis = .horizontal
@@ -171,6 +171,7 @@ class RoutineHomeViewController: UIViewController, CLLocationManagerDelegate {
         stackView.spacing = 10
         stackView.layer.backgroundColor = CGColor(red: 235/255, green: 235/255, blue: 235/255, alpha: 1)
         stackView.layer.cornerRadius = 8.0
+        stackView.isHidden = false
         return stackView
     }()
     
@@ -198,8 +199,12 @@ class RoutineHomeViewController: UIViewController, CLLocationManagerDelegate {
     
     var logRoutine = RoutineUIView()
     
+    private var scrollView = HorizontalScrollButtons()
+    private var categories = K.Category.productGuide
+    private var categoriesImage = K.Category.productGuideImageName
     
     override func configureComponents() {
+        
         vStackViewUV.addArrangedSubview(UVLevelLabel)
         vStackViewUV.addArrangedSubview(UVLevelParameter)
         
@@ -229,14 +234,30 @@ class RoutineHomeViewController: UIViewController, CLLocationManagerDelegate {
         nightRoutine.btnId = 2
         
         logRoutine.leftBtn.setImage(UIImage(systemName: "lock"), for: .normal)
+        logRoutine.leftBtn.isEnabled = false
         logRoutine.imageRoutine.image = UIImage(named: "iconLog")
         logRoutine.titleRoutine.text = "Daily skin condition log"
-
+        logRoutine.btnId = 3
         
         mainStackView.addArrangedSubview(morningRoutine)
         mainStackView.addArrangedSubview(nightRoutine)
         mainStackView.addArrangedSubview(logRoutine)
         mainStackView.addArrangedSubview(productGuide)
+        
+        // Generate buttons for top scroll
+        var catButtons: [SmallCategoryButton] = []
+        for i in 0..<categories.count {
+            let button = SmallCategoryButton(categoryId: i+1)
+            button.addTarget(self, action: #selector(selectTopCategory), for: .touchUpInside)
+            button.setText(categories[i+1])
+            button.setImageCategory(categoriesImage[i+1])
+            catButtons.append(button)
+        }
+        scrollView.setButtons(catButtons)
+        selectTopCategory(catButtons[0])
+        
+        mainStackView.addArrangedSubview(scrollView)
+        
         
     }
     
@@ -306,11 +327,27 @@ class RoutineHomeViewController: UIViewController, CLLocationManagerDelegate {
         logRoutine.snp.makeConstraints { make in
             make.height.equalTo(45)
         }
+        
+        scrollView.snp.makeConstraints { make in
+            make.top.equalTo(productGuide.snp.bottom).offset(16)
+            make.height.equalTo(120)
+            make.left.equalToSuperview()
+            make.right.equalToSuperview()
+        }
             
 //        mainStackView.snp.makeConstraints { make in
 //            make.top.right.bottom.left.equalToSuperview()
 //        }
         
+    }
+    
+    @objc func selectTopCategory(_ sender: SmallCategoryButton) {
+        for view in scrollView.subviews as [UIView] {
+            if let btn = view as? SmallCategoryButton {
+                btn.deselect()
+            }
+        }
+        sender.selectGuide()
     }
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]){
@@ -410,7 +447,6 @@ class RoutineUIView: UIView {
         self.backgroundColor = UIColor(red: 235/255, green: 235/255, blue: 235/255, alpha: 1)
         self.isUserInteractionEnabled = false
         leftBtn.setImage(UIImage(systemName: "checkmark.circle.fill"), for: .normal)
-        
         leftBtn.tintColor = UIColor(red: 35/255, green: 36/255, blue: 35/255, alpha: 1)
         if btnId == 1 {
             imageRoutine.image = UIImage(named: "iconMorningDisabled")

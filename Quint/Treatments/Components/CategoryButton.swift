@@ -11,6 +11,7 @@ class CategoryButton: UIButton {
     var categoryId: Int!
     var width: Int!
     var height: Int!
+    var heightProductGuide: Int!
     
     required init(categoryId: Int) {
         super.init(frame: .zero)
@@ -20,6 +21,10 @@ class CategoryButton: UIButton {
     func setText(_ title: String?) {
         setTitle(title, for: .normal)
         sizeToFit()
+    }
+    
+    func setImageCategory(_ imageCategoryName: String?) {
+        setImage(UIImage(named: "imageCategoryName"), for: .normal)
     }
 
     required init?(coder aDecoder: NSCoder) {

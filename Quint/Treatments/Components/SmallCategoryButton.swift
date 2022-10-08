@@ -16,6 +16,7 @@ class SmallCategoryButton: CategoryButton{
         self.categoryId = categoryId
         width = 130
         height = 40
+        heightProductGuide = 140
         
         contentEdgeInsets = UIEdgeInsets(top: 8, left: 14, bottom: 8, right: 14)
         
@@ -31,6 +32,11 @@ class SmallCategoryButton: CategoryButton{
     
     func deselect(){
         backgroundColor = K.Color.whiteQuint
+        setTitleColor(K.Color.greenQuint, for: .normal)
+    }
+    
+    func selectGuide(){
+        backgroundColor = .systemGray6
         setTitleColor(K.Color.greenQuint, for: .normal)
     }
     

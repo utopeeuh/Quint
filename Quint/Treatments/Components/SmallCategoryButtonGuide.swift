@@ -17,7 +17,7 @@ class SmallCategoryButtonGuide: CategoryButton{
         width = 120
         height = 144
         
-        contentEdgeInsets = UIEdgeInsets(top: 8, left: 14, bottom: 8, right: 14)
+        contentEdgeInsets = UIEdgeInsets(top: 8, left: 8, bottom: 8, right: 8)
         
         backgroundColor = K.Color.whiteQuint
         setTitleColor(K.Color.greenQuint, for: .normal)

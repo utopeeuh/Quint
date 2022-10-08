@@ -18,7 +18,6 @@ class SmallCategoryButton: CategoryButton{
         height = 40
         
         contentEdgeInsets = UIEdgeInsets(top: 8, left: 14, bottom: 8, right: 14)
-        
         backgroundColor = K.Color.whiteQuint
         setTitleColor(K.Color.greenQuint, for: .normal)
         titleLabel?.font = UIFont.systemFont(ofSize: 13)

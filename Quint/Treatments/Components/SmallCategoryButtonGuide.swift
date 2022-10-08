@@ -1,21 +1,21 @@
 //
-//  SmallCategoryButton.swift
+//  SmallCategoryButtonGuide.swift
 //  Quint
 //
-//  Created by Tb. Daffa Amadeo Zhafrana on 07/10/22.
+//  Created by Stefanus Hermawan Sebastian on 08/10/22.
 //
 
 import Foundation
 import UIKit
 
-class SmallCategoryButton: CategoryButton{
+class SmallCategoryButtonGuide: CategoryButton{
     
     required init(categoryId: Int) {
         super.init(categoryId: .zero)
         
         self.categoryId = categoryId
-        width = 130
-        height = 40
+        width = 120
+        height = 144
         
         contentEdgeInsets = UIEdgeInsets(top: 8, left: 14, bottom: 8, right: 14)
         

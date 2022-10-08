@@ -202,7 +202,7 @@ class RoutineHomeViewController: UIViewController, CLLocationManagerDelegate{
     private var scrollView = HorizontalScrollButtons()
     private var categories = K.Category.productGuide
     private var categoriesImage = K.Category.productGuideImageName
-    
+
     override func configureComponents() {
         
         vStackViewUV.addArrangedSubview(UVLevelLabel)
@@ -245,12 +245,13 @@ class RoutineHomeViewController: UIViewController, CLLocationManagerDelegate{
         mainStackView.addArrangedSubview(productGuide)
         
         // Generate buttons for top scroll
-        var catButtons: [SmallCategoryButton] = []
+        var catButtons: [SmallCategoryButtonGuide] = []
         for i in 0..<categories.count {
-            let button = SmallCategoryButton(categoryId: i+1)
+            let button = SmallCategoryButtonGuide(categoryId: i+1)
             button.addTarget(self, action: #selector(selectTopCategory), for: .touchUpInside)
             button.setText(categories[i+1])
             button.setImageCategory(categoriesImage[i+1])
+            button.centerVertically()
             catButtons.append(button)
         }
         scrollView.setButtons(catButtons)
@@ -330,7 +331,8 @@ class RoutineHomeViewController: UIViewController, CLLocationManagerDelegate{
         
         scrollView.snp.makeConstraints { make in
             make.top.equalTo(productGuide.snp.bottom).offset(16)
-            make.height.equalTo(120)
+            make.height.equalTo(144)
+            make.width.equalTo(120)
             make.left.equalToSuperview()
             make.right.equalToSuperview()
         }
@@ -341,9 +343,9 @@ class RoutineHomeViewController: UIViewController, CLLocationManagerDelegate{
         
     }
     
-    @objc func selectTopCategory(_ sender: SmallCategoryButton) {
+    @objc func selectTopCategory(_ sender: SmallCategoryButtonGuide) {
         for view in scrollView.subviews as [UIView] {
-            if let btn = view as? SmallCategoryButton {
+            if let btn = view as? SmallCategoryButtonGuide {
                 btn.deselect()
             }
         }

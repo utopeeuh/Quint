@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7242F9CC28F12C5A009EB962 /* SmallCategoryButtonGuide.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7242F9CB28F12C5A009EB962 /* SmallCategoryButtonGuide.swift */; };
 		951034BE28EFC13D0011AE39 /* HeaderLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951034BD28EFC13D0011AE39 /* HeaderLabel.swift */; };
 		951034C028EFEDA90011AE39 /* IngredientButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951034BF28EFEDA90011AE39 /* IngredientButton.swift */; };
 		951034C828EFF51F0011AE39 /* UIViewController+DismissKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951034C328EFF51F0011AE39 /* UIViewController+DismissKeyboard.swift */; };
@@ -65,6 +66,7 @@
 /* Begin PBXFileReference section */
 		1DE7348A28BE8A5E92A105D1 /* Pods-Quint.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Quint.release.xcconfig"; path = "Target Support Files/Pods-Quint/Pods-Quint.release.xcconfig"; sourceTree = "<group>"; };
 		6A4222B49AA562D57AC4B33E /* libPods-Quint.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Quint.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		7242F9CB28F12C5A009EB962 /* SmallCategoryButtonGuide.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmallCategoryButtonGuide.swift; sourceTree = "<group>"; };
 		7259524328F0249300783907 /* QuintDebug.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = QuintDebug.entitlements; sourceTree = "<group>"; };
 		951034BD28EFC13D0011AE39 /* HeaderLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderLabel.swift; sourceTree = "<group>"; };
 		951034BF28EFEDA90011AE39 /* IngredientButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientButton.swift; sourceTree = "<group>"; };
@@ -262,6 +264,7 @@
 				9538751F28EDE2A1001979A8 /* ProductListCell.swift */,
 				95A4311928EE8F7F007A2108 /* CategoryButton.swift */,
 				95233BE828EF55AB00A4470E /* SmallCategoryButton.swift */,
+				7242F9CB28F12C5A009EB962 /* SmallCategoryButtonGuide.swift */,
 				95233BE428EF4B5D00A4470E /* HorizontalScrollButtons.swift */,
 				9538751D28EDE2A1001979A8 /* ProductListCollectionView.swift */,
 				95233BDB28EF3B3000A4470E /* ProductListView.swift */,
@@ -480,6 +483,7 @@
 				9538752B28EDE53C001979A8 /* Photo.swift in Sources */,
 				9538752628EDE2A1001979A8 /* PinterestLayout.swift in Sources */,
 				9538752128EDE2A1001979A8 /* UICollectionView+Loading.swift in Sources */,
+				7242F9CC28F12C5A009EB962 /* SmallCategoryButtonGuide.swift in Sources */,
 				95EB50E728EA821400412176 /* TreatmentsVC.swift in Sources */,
 				9538752328EDE2A1001979A8 /* ProductListCollectionView.swift in Sources */,
 				951034CA28EFF51F0011AE39 /* UIFont+CustomFont.swift in Sources */,

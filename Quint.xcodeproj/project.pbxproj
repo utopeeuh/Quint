@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		7242F9CC28F12C5A009EB962 /* SmallCategoryButtonGuide.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7242F9CB28F12C5A009EB962 /* SmallCategoryButtonGuide.swift */; };
+		72BF72C128F3C0540036C456 /* MorningRoutinesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72BF72C028F3C0540036C456 /* MorningRoutinesViewController.swift */; };
 		951034BE28EFC13D0011AE39 /* HeaderLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951034BD28EFC13D0011AE39 /* HeaderLabel.swift */; };
 		951034C028EFEDA90011AE39 /* IngredientButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951034BF28EFEDA90011AE39 /* IngredientButton.swift */; };
 		951034C828EFF51F0011AE39 /* UIViewController+DismissKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951034C328EFF51F0011AE39 /* UIViewController+DismissKeyboard.swift */; };
@@ -68,6 +69,7 @@
 		6A4222B49AA562D57AC4B33E /* libPods-Quint.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Quint.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7242F9CB28F12C5A009EB962 /* SmallCategoryButtonGuide.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmallCategoryButtonGuide.swift; sourceTree = "<group>"; };
 		7259524328F0249300783907 /* QuintDebug.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = QuintDebug.entitlements; sourceTree = "<group>"; };
+		72BF72C028F3C0540036C456 /* MorningRoutinesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MorningRoutinesViewController.swift; sourceTree = "<group>"; };
 		951034BD28EFC13D0011AE39 /* HeaderLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderLabel.swift; sourceTree = "<group>"; };
 		951034BF28EFEDA90011AE39 /* IngredientButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientButton.swift; sourceTree = "<group>"; };
 		951034C328EFF51F0011AE39 /* UIViewController+DismissKeyboard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+DismissKeyboard.swift"; sourceTree = "<group>"; };
@@ -215,6 +217,7 @@
 			children = (
 				951034DD28EFF8820011AE39 /* SkincareGuideViewController.swift */,
 				951034DE28EFF8820011AE39 /* RoutineHomeViewController.swift */,
+				72BF72C028F3C0540036C456 /* MorningRoutinesViewController.swift */,
 			);
 			path = Routine;
 			sourceTree = "<group>";
@@ -482,6 +485,7 @@
 			files = (
 				9538752B28EDE53C001979A8 /* Photo.swift in Sources */,
 				9538752628EDE2A1001979A8 /* PinterestLayout.swift in Sources */,
+				72BF72C128F3C0540036C456 /* MorningRoutinesViewController.swift in Sources */,
 				9538752128EDE2A1001979A8 /* UICollectionView+Loading.swift in Sources */,
 				7242F9CC28F12C5A009EB962 /* SmallCategoryButtonGuide.swift in Sources */,
 				95EB50E728EA821400412176 /* TreatmentsVC.swift in Sources */,

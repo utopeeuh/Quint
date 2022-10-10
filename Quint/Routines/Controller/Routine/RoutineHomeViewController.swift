@@ -228,6 +228,8 @@ class RoutineHomeViewController: UIViewController, CLLocationManagerDelegate{
         morningRoutine.chevRight.image = UIImage(systemName: "chevron.right")
         morningRoutine.titleRoutine.text = "Morning routine"
         morningRoutine.btnId = 1
+        let morningGesture = UITapGestureRecognizer(target: self, action: #selector(goToMorningRoutine))
+        morningRoutine.addGestureRecognizer(morningGesture)
         
         nightRoutine.leftBtn.setImage(UIImage(systemName: "circle"), for: .normal)
         nightRoutine.imageRoutine.image = UIImage(named: "iconNight")
@@ -257,11 +259,15 @@ class RoutineHomeViewController: UIViewController, CLLocationManagerDelegate{
             catButtons.append(button)
         }
         scrollView.setButtons(catButtons)
-        selectTopCategory(catButtons[0])
         
         mainStackView.addArrangedSubview(scrollView)
         mainStackView.addArrangedSubview(dailyTips)
         
+    }
+    
+    @objc func goToMorningRoutine(sender: UITapGestureRecognizer) {
+        let controller = MorningRoutinesViewController()
+        navigationController?.pushViewController(controller, animated: true)
     }
     
     override func configureLayout() {
@@ -350,13 +356,9 @@ class RoutineHomeViewController: UIViewController, CLLocationManagerDelegate{
         
     }
     
-    @objc func selectTopCategory(_ sender: SmallCategoryButtonGuide) {
-        for view in scrollView.subviews as [UIView] {
-            if let btn = view as? SmallCategoryButtonGuide {
-                btn.deselect()
-            }
-        }
-        sender.selectGuide()
+    @objc func selectTopCategory() {
+        let controller = SkincareGuideViewController()
+        navigationController?.pushViewController(controller, animated: true)
     }
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]){

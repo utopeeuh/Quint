@@ -14,6 +14,7 @@ class SkincareGuideViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "Cleanser guide"
+        view.backgroundColor = .red
     }
     
 

@@ -111,7 +111,8 @@ class LoginViewController: UIViewController {
         view.addSubview(logoImage)
         logoImage.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
-            make.width.height.equalTo(140)
+            make.width.equalTo(92)
+            make.height.equalTo(118)
             make.top.equalToSuperview().offset(171)
         }
         
@@ -119,7 +120,7 @@ class LoginViewController: UIViewController {
         taglineLabel.snp.makeConstraints { make in
             make.height.equalTo(72)
             make.width.equalTo(350)
-            make.top.equalTo(logoImage.snp.bottom).offset(48)
+            make.top.equalTo(logoImage.snp.bottom).offset(60)
             make.centerX.equalToSuperview()
         }
         

@@ -67,6 +67,10 @@ class QuizSkinCondVC: UIViewController {
         button.backgroundColor = UIColor(red: 230/255, green: 230/255, blue: 230/255, alpha: 1)
         button.setTitleColor(UIColor(red: 125/255, green: 125/255, blue: 125/255, alpha: 1), for: .normal)
         
+        button.layer.shadowOffset = CGSize(width: 0, height: 2)
+        button.layer.shadowColor = UIColor(red: 16/255, green: 24/255, blue: 40/255, alpha: 0.05).cgColor
+        button.layer.shadowOpacity = 5.0
+        
 //        button.isEnabled = false
         
         return button
@@ -199,8 +203,8 @@ extension QuizSkinCondVC: UITableViewDelegate, UITableViewDataSource {
         
         let label = UILabel()
         label.frame = CGRect.init(x: 10, y: 0, width: headerView.frame.width-10, height: headerView.frame.height-16)
-        label.tintColor = UIColor(red: 53/255, green: 84/255, blue: 73/255, alpha: 1)
-        label.font = .interMedium(size: 16)
+        label.textColor = UIColor(red: 53/255, green: 84/255, blue: 73/255, alpha: 1)
+        label.font = .interSemiBold(size: 16)
         
         let borderView = UIView()
         borderView.frame = CGRect.init(x: 0, y: 52, width: tableView.frame.height, height: 14)

@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "logo Image.png",
+      "filename" : "quint_logo.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "logo Image@2x.png",
+      "filename" : "quint_logo@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "logo Image@3x.png",
+      "filename" : "quint_logo@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

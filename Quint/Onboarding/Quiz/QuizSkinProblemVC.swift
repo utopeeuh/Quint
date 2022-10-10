@@ -10,11 +10,9 @@ import UIKit
 import SnapKit
 import TTGTags
 
-class QuizSkinProblemVC: UIViewController, TTGTextTagCollectionViewDelegate {
+class QuizSkinProblemVC: UIViewController {
 
-    var dataSource: [[String]] = []
-    
-    let cellLeftRightPadding: CGFloat = 32.0
+    private var selections = [String]()
     
     private let backBtn: UIButton = {
 
@@ -57,12 +55,19 @@ class QuizSkinProblemVC: UIViewController, TTGTextTagCollectionViewDelegate {
         let tagContent = TTGTextTagStringContent()
         tagContent.textFont = .interRegular(size: 16)!
         tagContent.textColor = .black
+//        tagContent.textFont = .interSemiBold(size: 16)!
+//        tagContent.textColor = UIColor(red: 53/255, green: 84/255, blue: 73/255, alpha: 1)
         
         let tagStyle = TTGTextTagStyle()
-        tagStyle.backgroundColor = .white
+        tagStyle.backgroundColor = UIColor(red: 254/255, green: 254/255, blue: 254/255, alpha: 1)
         tagStyle.cornerRadius = 8
         tagStyle.textAlignment = .center
         tagStyle.extraSpace = CGSize(width: 34, height: 20)
+        tagStyle.shadowOffset = CGSize(width: 0, height: 2)
+        tagStyle.shadowColor = UIColor(red: 16/255, green: 24/255, blue: 40/255, alpha: 0.05)
+        tagStyle.shadowOpacity = 5.0
+//        tagStyle.borderWidth = 1.5
+//        tagStyle.borderColor = UIColor(red: 53/255, green: 84/255, blue: 73/255, alpha: 1)
         
         for i in 0..<K.Category.skinProblem.count {
             tagContent.text = K.Category.skinProblem[i+1]!
@@ -86,6 +91,10 @@ class QuizSkinProblemVC: UIViewController, TTGTextTagCollectionViewDelegate {
         button.backgroundColor = UIColor(red: 230/255, green: 230/255, blue: 230/255, alpha: 1)
         button.setTitleColor(UIColor(red: 125/255, green: 125/255, blue: 125/255, alpha: 1), for: .normal)
 
+        button.layer.shadowOffset = CGSize(width: 0, height: 2)
+        button.layer.shadowColor = UIColor(red: 16/255, green: 24/255, blue: 40/255, alpha: 0.05).cgColor
+        button.layer.shadowOpacity = 5.0
+        
 //        button.isEnabled = false
 
         return button
@@ -166,3 +175,29 @@ class QuizSkinProblemVC: UIViewController, TTGTextTagCollectionViewDelegate {
 
 }
 
+extension QuizSkinProblemVC: TTGTextTagCollectionViewDelegate {
+    
+    func textTagCollectionView(_ textTagCollectionView: TTGTextTagCollectionView!, didTap tag: TTGTextTag!, at index: UInt) {
+        
+        let tagContent = TTGTextTagStringContent()
+        tagContent.textFont = .interSemiBold(size: 16)!
+        tagContent.textColor = UIColor(red: 53/255, green: 84/255, blue: 73/255, alpha: 1)
+        
+        let tagStyle = TTGTextTagStyle()
+        tagStyle.backgroundColor = .white
+        tagStyle.cornerRadius = 8
+        tagStyle.textAlignment = .center
+        tagStyle.extraSpace = CGSize(width: 34, height: 20)
+        tagStyle.borderWidth = 1.5
+        tagStyle.borderColor = UIColor(red: 53/255, green: 84/255, blue: 73/255, alpha: 1)
+        
+        for i in 0..<K.Category.skinProblem.count {
+            tagContent.text = K.Category.skinProblem[i+1]!
+            
+            let textTag = TTGTextTag(content: tagContent, style: tagStyle)
+            skinProblemColView.addTag(textTag)
+        }
+        
+    }
+    
+}

@@ -12,10 +12,10 @@ extension UIImageView {
     func dropShadow() {
         
         self.layer.masksToBounds = false
-        self.layer.shadowColor = UIColor.black.cgColor
-        self.layer.shadowOpacity = 5.0
-        self.layer.shadowOffset = CGSize(width: 2.0, height: 3.0)
-        self.layer.shadowRadius = 5.0
+        self.layer.shadowColor = UIColor(red: 0/255, green: 0/255, blue: 0/255, alpha: 0.22).cgColor
+        self.layer.shadowOpacity = 25
+        self.layer.shadowOffset = CGSize(width: 10, height: 20)
+        self.layer.shadowRadius = 15
         
     }
     

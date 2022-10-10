@@ -66,6 +66,10 @@ class QuizSkinTypeVC: UIViewController {
         button.backgroundColor = UIColor(red: 230/255, green: 230/255, blue: 230/255, alpha: 1)
         button.setTitleColor(UIColor(red: 125/255, green: 125/255, blue: 125/255, alpha: 1), for: .normal)
         
+        button.layer.shadowOffset = CGSize(width: 0, height: 2)
+        button.layer.shadowColor = UIColor(red: 16/255, green: 24/255, blue: 40/255, alpha: 0.05).cgColor
+        button.layer.shadowOpacity = 5.0
+        
 //        button.isEnabled = false
         
         return button

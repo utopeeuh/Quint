@@ -59,6 +59,12 @@
 		95EB50EF28EA821600412176 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 95EB50EE28EA821600412176 /* Assets.xcassets */; };
 		95EB50F228EA821600412176 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 95EB50F028EA821600412176 /* LaunchScreen.storyboard */; };
 		95EB50FA28EA82D700412176 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 95EB50F928EA82D700412176 /* Podfile */; };
+		A00ECCC528F177260050F91C /* QuizSkinProblemVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00ECCC428F177260050F91C /* QuizSkinProblemVC.swift */; };
+		A00ECCC728F1775D0050F91C /* QuizSkinLogVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00ECCC628F1775D0050F91C /* QuizSkinLogVC.swift */; };
+		A00ECCC928F177740050F91C /* QuizNotifVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00ECCC828F177740050F91C /* QuizNotifVC.swift */; };
+		A00ECCCB28F177890050F91C /* QuizSkinInsightVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00ECCCA28F177890050F91C /* QuizSkinInsightVC.swift */; };
+		A01C5E4128F2EB5600CD6B19 /* PhotoConfirmationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A01C5E4028F2EB5600CD6B19 /* PhotoConfirmationVC.swift */; };
+		A01CB84928F3EFCE00E8D5F8 /* TTGTags in Frameworks */ = {isa = PBXBuildFile; productRef = A01CB84828F3EFCE00E8D5F8 /* TTGTags */; };
 		C9131C6A5795F6F5C360774C /* libPods-Quint.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A4222B49AA562D57AC4B33E /* libPods-Quint.a */; };
 /* End PBXBuildFile section */
 
@@ -120,6 +126,11 @@
 		95EB50F128EA821600412176 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		95EB50F328EA821600412176 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		95EB50F928EA82D700412176 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		A00ECCC428F177260050F91C /* QuizSkinProblemVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizSkinProblemVC.swift; sourceTree = "<group>"; };
+		A00ECCC628F1775D0050F91C /* QuizSkinLogVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizSkinLogVC.swift; sourceTree = "<group>"; };
+		A00ECCC828F177740050F91C /* QuizNotifVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizNotifVC.swift; sourceTree = "<group>"; };
+		A00ECCCA28F177890050F91C /* QuizSkinInsightVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizSkinInsightVC.swift; sourceTree = "<group>"; };
+		A01C5E4028F2EB5600CD6B19 /* PhotoConfirmationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoConfirmationVC.swift; sourceTree = "<group>"; };
 		EC353203A173754AD46E48CF /* Pods-Quint.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Quint.debug.xcconfig"; path = "Target Support Files/Pods-Quint/Pods-Quint.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -129,6 +140,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C9131C6A5795F6F5C360774C /* libPods-Quint.a in Frameworks */,
+				A01CB84928F3EFCE00E8D5F8 /* TTGTags in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -165,10 +177,9 @@
 		951034CC28EFF54C0011AE39 /* Onboarding */ = {
 			isa = PBXGroup;
 			children = (
-				951034CD28EFF54C0011AE39 /* QuizSkinCondVC.swift */,
-				951034CE28EFF54C0011AE39 /* TableViewCell */,
 				951034D128EFF54C0011AE39 /* Authentication */,
-				951034D328EFF54C0011AE39 /* QuizSkinTypeVC.swift */,
+				A00ECCC328F1770B0050F91C /* Quiz */,
+				951034CE28EFF54C0011AE39 /* TableViewCell */,
 			);
 			path = Onboarding;
 			sourceTree = "<group>";
@@ -335,6 +346,20 @@
 			path = Quint;
 			sourceTree = "<group>";
 		};
+		A00ECCC328F1770B0050F91C /* Quiz */ = {
+			isa = PBXGroup;
+			children = (
+				951034D328EFF54C0011AE39 /* QuizSkinTypeVC.swift */,
+				951034CD28EFF54C0011AE39 /* QuizSkinCondVC.swift */,
+				A00ECCC428F177260050F91C /* QuizSkinProblemVC.swift */,
+				A00ECCC628F1775D0050F91C /* QuizSkinLogVC.swift */,
+				A01C5E4028F2EB5600CD6B19 /* PhotoConfirmationVC.swift */,
+				A00ECCC828F177740050F91C /* QuizNotifVC.swift */,
+				A00ECCCA28F177890050F91C /* QuizSkinInsightVC.swift */,
+			);
+			path = Quiz;
+			sourceTree = "<group>";
+		};
 		DB8EE3D5BA362498C5AC9D3D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -354,13 +379,16 @@
 				95EB50DB28EA821400412176 /* Sources */,
 				95EB50DC28EA821400412176 /* Frameworks */,
 				95EB50DD28EA821400412176 /* Resources */,
-				C1CFCFC7D9323B0716C3D010 /* [CP] Copy Pods Resources */,
+				3147208A396AE29EFA75A296 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = Quint;
+			packageProductDependencies = (
+				A01CB84828F3EFCE00E8D5F8 /* TTGTags */,
+			);
 			productName = Quint;
 			productReference = 95EB50DF28EA821400412176 /* Quint.app */;
 			productType = "com.apple.product-type.application";
@@ -389,6 +417,9 @@
 				Base,
 			);
 			mainGroup = 95EB50D628EA821400412176;
+			packageReferences = (
+				A01CB84728F3EFCE00E8D5F8 /* XCRemoteSwiftPackageReference "TTGTagCollectionView" */,
+			);
 			productRefGroup = 95EB50E028EA821400412176 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -429,6 +460,23 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		3147208A396AE29EFA75A296 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Quint/Pods-Quint-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Quint/Pods-Quint-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Quint/Pods-Quint-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		B46B201D501C264AA824B831 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -451,23 +499,6 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		C1CFCFC7D9323B0716C3D010 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Quint/Pods-Quint-resources-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Quint/Pods-Quint-resources-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Quint/Pods-Quint-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -482,8 +513,12 @@
 				9538752328EDE2A1001979A8 /* ProductListCollectionView.swift in Sources */,
 				951034CA28EFF51F0011AE39 /* UIFont+CustomFont.swift in Sources */,
 				959C2C0228ED44A3007B1251 /* UIViewController+ConfigureUI.swift in Sources */,
+				A01C5E4128F2EB5600CD6B19 /* PhotoConfirmationVC.swift in Sources */,
+				A00ECCCB28F177890050F91C /* QuizSkinInsightVC.swift in Sources */,
 				95EB50E328EA821400412176 /* AppDelegate.swift in Sources */,
 				951034E328EFF8820011AE39 /* RoutineHomeViewController.swift in Sources */,
+				A00ECCC528F177260050F91C /* QuizSkinProblemVC.swift in Sources */,
+				A00ECCC928F177740050F91C /* QuizNotifVC.swift in Sources */,
 				951034BE28EFC13D0011AE39 /* HeaderLabel.swift in Sources */,
 				951034D628EFF54C0011AE39 /* QuizSkinCondCell.swift in Sources */,
 				9538752228EDE2A1001979A8 /* ApiService.swift in Sources */,
@@ -503,6 +538,7 @@
 				951034D528EFF54C0011AE39 /* QuizSkinTypeCell.swift in Sources */,
 				95233BDE28EF3F3E00A4470E /* UIScrollView+RemoveSubviews.swift in Sources */,
 				951034C028EFEDA90011AE39 /* IngredientButton.swift in Sources */,
+				A00ECCC728F1775D0050F91C /* QuizSkinLogVC.swift in Sources */,
 				95233BE528EF4B5D00A4470E /* HorizontalScrollButtons.swift in Sources */,
 				95233BE128EF481F00A4470E /* IngredientListView.swift in Sources */,
 				951034C828EFF51F0011AE39 /* UIViewController+DismissKeyboard.swift in Sources */,
@@ -730,6 +766,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		A01CB84728F3EFCE00E8D5F8 /* XCRemoteSwiftPackageReference "TTGTagCollectionView" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "git@github.com:zekunyan/TTGTagCollectionView.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		A01CB84828F3EFCE00E8D5F8 /* TTGTags */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A01CB84728F3EFCE00E8D5F8 /* XCRemoteSwiftPackageReference "TTGTagCollectionView" */;
+			productName = TTGTags;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		95EB50EB28EA821400412176 /* Quint.xcdatamodeld */ = {

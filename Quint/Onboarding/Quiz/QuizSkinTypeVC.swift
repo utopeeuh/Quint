@@ -1,18 +1,18 @@
 //
-//  QuizSkinCondVC.swift
+//  QuizSkinTypeVC.swift
 //  Quint
 //
-//  Created by Vendly on 06/10/22.
+//  Created by Vendly on 05/10/22.
 //
 
 import UIKit
 import SnapKit
 
-protocol QuizSkinCondProtocol {
+protocol QuizSkinTypeProtocol {
     func checkQuizStatus()
 }
 
-class QuizSkinCondVC: UIViewController {
+class QuizSkinTypeVC: UIViewController {
     
     private let backBtn: UIButton = {
         
@@ -28,8 +28,8 @@ class QuizSkinCondVC: UIViewController {
         let progressView = UIProgressView(progressViewStyle: .bar)
         progressView.trackTintColor = UIColor(red: 230/255, green: 230/255, blue: 230/255, alpha: 1)
         progressView.progressTintColor = UIColor(red: 53/255, green: 84/255, blue: 73/255, alpha: 1)
-        progressView.setProgress(0.15, animated: true)
-        progressView.layer.cornerRadius = 5
+        progressView.setProgress(0.16, animated: true)
+        progressView.layer.cornerRadius = 4
         progressView.clipsToBounds = true
         
         return progressView
@@ -39,9 +39,8 @@ class QuizSkinCondVC: UIViewController {
     private let skinTypeLbl: UILabel = {
         
         let label = UILabel()
-        label.numberOfLines = 2
         label.textColor = UIColor(red: 7/255, green: 8/255, blue: 7/255, alpha: 1)
-        label.text = "Do you have a sensitive skin condition?"
+        label.text = "What is your skin type?"
         label.font = .clashGroteskMedium(size: 30)
         label.textAlignment = .left
         return label
@@ -51,7 +50,7 @@ class QuizSkinCondVC: UIViewController {
     private let skinTypetableView: UITableView = {
         
         let tableView = UITableView()
-        tableView.backgroundColor = UIColor(red: 16/255, green: 24/255, blue: 40/255, alpha: 0.05)
+        tableView.backgroundColor = K.Color.bgQuint
         return tableView
         
     }()
@@ -81,10 +80,13 @@ class QuizSkinCondVC: UIViewController {
         backBtn.addTarget(self, action: #selector(didTapBack), for: .touchUpInside)
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(customView: backBtn)
         
+        nextBtn.addTarget(self, action: #selector(didTapNext), for: .touchUpInside)
+        
         skinTypetableView.delegate = self
         skinTypetableView.dataSource = self
+        skinTypetableView.separatorColor = .clear
         
-        skinTypetableView.register(QuizSkinCondCell.self, forCellReuseIdentifier: QuizSkinCondCell.id)
+        skinTypetableView.register(QuizSkinTypeCell.self, forCellReuseIdentifier: QuizSkinTypeCell.id)
         
         view.backgroundColor = K.Color.bgQuint
         
@@ -92,10 +94,16 @@ class QuizSkinCondVC: UIViewController {
     }
     
     override func configureLayout() {
-
+        
+        view.addSubview(backBtn)
+        backBtn.snp.makeConstraints { make in
+            make.width.height.equalTo(24)
+        }
+        
         view.addSubview(progressBar)
         progressBar.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
+            make.right.equalTo(backBtn).offset(20)
             make.width.equalTo(300)
             make.height.equalTo(7)
             make.top.equalToSuperview().offset(65)
@@ -113,7 +121,7 @@ class QuizSkinCondVC: UIViewController {
             make.centerX.equalToSuperview()
             make.top.equalTo(skinTypeLbl.snp.bottom).offset(32)
             make.width.equalTo(350)
-            make.height.equalTo(244)
+            make.height.equalTo(500)
         }
         
         view.addSubview(nextBtn)
@@ -132,12 +140,25 @@ class QuizSkinCondVC: UIViewController {
         self.navigationController?.popViewController(animated: true)
     }
     
+    @objc func buttonViewOnClick(_ sender: UISwitch) {
+        
+    }
+    
+    @objc func didTapNext() {
+        let controller = QuizSkinCondVC()
+        navigationController?.pushViewController(controller, animated: true)
+    }
+    
+    @objc func skinTypeOnClick(_ sender: UITapGestureRecognizer){
+        print("Tapped!")
+    }
+
 }
 
-extension QuizSkinCondVC: UITableViewDelegate, UITableViewDataSource {
+extension QuizSkinTypeVC: UITableViewDelegate, UITableViewDataSource {
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 2
+        return 4
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -146,42 +167,87 @@ extension QuizSkinCondVC: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(
-            withIdentifier: QuizSkinCondCell.id,
-            for: indexPath) as? QuizSkinCondCell else {
+            withIdentifier: QuizSkinTypeCell.id,
+            for: indexPath) as? QuizSkinTypeCell else {
                 return UITableViewCell()
             }
-        cell.textLabel?.text = "Sensitive skin is more prone to\nreact to stimuli to which normal skin has no reaction. It is a fragile\nskin, usually accompanied by feelings of\ndiscomfort, such as heat, tightness, redness or\nitching."
+        cell.textLabel?.text = "This skin is neither too dry nor too oily. It has regular texture, no imperfections and a clean, soft appearance, and does not need special care."
+        cell.backgroundColor = .clear
+        cell.textLabel?.numberOfLines = 3
+        cell.textLabel?.font = .interRegular(size: 14)
         return cell
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 60
+        return 63
     }
     
-    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        if section == 0 {
-            return "Yes"
-        } else {
-            return "No"
-        }
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 66
     }
-
-    func tableView(_ tableView: UITableView, titleForFooterInSection section: Int) -> String? {
-        return "Spacer"
-//        if section == 0 {
-//            return "This skin is neither too dry nor too oily. It has\nregular texture, no imperfections and a clean, soft\nappearance, and does not need special care."
-//        } else if section == 1 {
-//            return "Feeling of tightness and roughness. It may also\nacquire an ashy gray color, with occurrence of\ndesquamation, itching, redness and small cracks."
-//        } else if section == 2 {
-//            return "Oily skin has a porous, humid and bright\nappearance. It is caused by excessive fat\nproduction by sebaceous glands."
+    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        
+        let gesture = UITapGestureRecognizer(target: self, action: #selector(skinTypeOnClick))
+        
+        let headerView = UIView.init(frame: CGRect.init(x: 0, y: 0, width: tableView.frame.width, height: 66))
+        headerView.backgroundColor = K.Color.bgQuint
+        
+        let view = UIView()
+        view.frame = CGRect.init(x: 0, y: 0, width: tableView.frame.width, height: 52)
+        view.backgroundColor = .white
+//        view.layer.borderWidth = 1.5
+//        view.layer.borderColor = CGColor(red: 53/255, green: 84/255, blue: 73/255, alpha: 1)
+        view.layer.cornerRadius = 8
+        view.addGestureRecognizer(gesture)
+        
+        let label = UILabel()
+        label.frame = CGRect.init(x: 10, y: 0, width: headerView.frame.width - 10, height: headerView.frame.height - 16)
+        
+//        if gesture.state == .began {
+            view.layer.borderWidth = 1.5
+            view.layer.borderColor = CGColor(red: 53/255, green: 84/255, blue: 73/255, alpha: 1)
+            label.textColor = UIColor(red: 53/255, green: 84/255, blue: 73/255, alpha: 1)
+            label.font = .interSemiBold(size: 16)
 //        } else {
-//            return "Characteristics of both dry and oily skin.\nThe area with more oil is usually the T- zone (forehead,\nnose, and chin), while the cheeks is normal or dry."
+//            label.textColor = UIColor(red: 7/255, green: 8/255, blue: 7/255, alpha: 1)
+//            label.font = .interMedium(size: 16)
 //        }
+        
+        let borderView = UIView()
+        borderView.frame = CGRect.init(x: 0, y: 52, width: tableView.frame.height, height: 14)
+        borderView.backgroundColor = K.Color.bgQuint
+        
+        if section == 0 {
+            label.text = "Normal skin"
+        } else if section == 1 {
+            label.text = "Dry skin"
+        } else if section == 2 {
+            label.text = "Oily skin"
+        } else {
+            label.text = "Combination skin"
+        }
+
+        headerView.addSubview(view)
+        headerView.addSubview(label)
+        headerView.addSubview(borderView)
+        
+        return headerView
+    }
+    
+    func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+         let footerView = UIView()
+         footerView.backgroundColor = view.backgroundColor
+         return footerView
+    }
+    
+    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        return 10
     }
     
 }
 
-extension QuizSkinCondVC: QuizSkinCondProtocol {
+extension QuizSkinTypeVC: QuizSkinTypeProtocol {
 
     func checkQuizStatus() {
 //        if viewModel.quizIsTouched {

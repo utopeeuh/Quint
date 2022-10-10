@@ -9,24 +9,7 @@ import UIKit
 
 class QuizSkinTypeCell: UITableViewCell {
     
-    static let id = "customTableViewCell"
-    
-    private let cellView: UIView = {
-        
-        let view = UIView()
-        view.backgroundColor = .white
-        return view
-        
-    }()
-    
-    private let skinTypeLbl: UILabel = {
-        
-        let label = UILabel()
-        label.numberOfLines = 3
-        label.backgroundColor = .clear
-        return label
-        
-    }()
+    static let id = "quizSkinTypeCell"
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -63,6 +46,7 @@ class QuizSkinTypeCell: UITableViewCell {
         leftBorder?.backgroundColor = CGColor(red: 53/255, green: 84/255, blue: 73/255, alpha: 1)
         
         layer.addSublayer(leftBorder!)
+        
     }
     
 }

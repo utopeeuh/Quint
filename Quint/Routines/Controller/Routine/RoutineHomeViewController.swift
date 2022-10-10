@@ -6,7 +6,7 @@
 //
 import CoreLocation
 import UIKit
-//import WeatherKit
+import WeatherKit
 import RxCocoa
 import RxSwift
 import RxDataSources
@@ -15,7 +15,7 @@ import RxDataSources
 class RoutineHomeViewController: UIViewController, CLLocationManagerDelegate{
     
     let locationManager = CLLocationManager()
-//    let service = WeatherService()
+    let service = WeatherService()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,7 +24,7 @@ class RoutineHomeViewController: UIViewController, CLLocationManagerDelegate{
     }
     
     override func viewWillAppear(_ animated: Bool) {
-//        getUserLocation()
+        getUserLocation()
     }
     
     
@@ -86,32 +86,32 @@ class RoutineHomeViewController: UIViewController, CLLocationManagerDelegate{
     func getWeather(location: CLLocation){
         Task {
             do {
-//                let weather = try await service.weather(for: location)
-//                print("UV INDEX: " + String(describing: weather.currentWeather.uvIndex))
-//                UVLevelParameter.text = String(describing: weather.currentWeather.uvIndex.category)
-//                UVLevelPoint.text = String(describing: weather.currentWeather.uvIndex.value)
-//                if weather.currentWeather.uvIndex.value >= 3{
-//                    UVLevelSuggestion.isHidden = false
-//                    UVLevelSuggestionIcon.isHidden = false
+                let weather = try await service.weather(for: location)
+                print("UV INDEX: " + String(describing: weather.currentWeather.uvIndex))
+                UVLevelParameter.text = String(describing: weather.currentWeather.uvIndex.category)
+                UVLevelPoint.text = String(describing: weather.currentWeather.uvIndex.value)
+                if weather.currentWeather.uvIndex.value >= 3{
+                    UVLevelSuggestion.isHidden = false
+                    UVLevelSuggestionIcon.isHidden = false
                 }
                 
-//                if weather.currentWeather.uvIndex.value <= 1 {
-//                    UVLevelPoint.layer.backgroundColor = CGColor(red: 53/255, green: 84/255, blue: 73/255, alpha: 1)
-//                }else if weather.currentWeather.uvIndex.value > 1 && weather.currentWeather.uvIndex.value <= 3 {
-//                    UVLevelPoint.layer.backgroundColor = CGColor(red: 255/255, green: 211/255, blue: 99/255, alpha: 1)
-//                    UVLevelPoint.textColor = UIColor(red: 35/255, green: 36/255, blue: 35/255, alpha: 1)
-//                }else if weather.currentWeather.uvIndex.value > 3 && weather.currentWeather.uvIndex.value <= 6 {
-//                    UVLevelPoint.layer.backgroundColor = CGColor(red: 255/255, green: 150/255, blue: 73/255, alpha: 1)
-//                }else if weather.currentWeather.uvIndex.value > 6 && weather.currentWeather.uvIndex.value <= 8 {
-//                    UVLevelPoint.layer.backgroundColor = CGColor(red: 255/255, green: 99/255, blue: 99/255, alpha: 1)
-//                }else if weather.currentWeather.uvIndex.value > 8 && weather.currentWeather.uvIndex.value <= 11 {
-//                    UVLevelPoint.layer.backgroundColor = CGColor(red: 168/255, green: 99/255, blue: 255/255, alpha: 1)
-//                }
+                if weather.currentWeather.uvIndex.value <= 1 {
+                    UVLevelPoint.layer.backgroundColor = CGColor(red: 53/255, green: 84/255, blue: 73/255, alpha: 1)
+                }else if weather.currentWeather.uvIndex.value > 1 && weather.currentWeather.uvIndex.value <= 3 {
+                    UVLevelPoint.layer.backgroundColor = CGColor(red: 255/255, green: 211/255, blue: 99/255, alpha: 1)
+                    UVLevelPoint.textColor = UIColor(red: 35/255, green: 36/255, blue: 35/255, alpha: 1)
+                }else if weather.currentWeather.uvIndex.value > 3 && weather.currentWeather.uvIndex.value <= 6 {
+                    UVLevelPoint.layer.backgroundColor = CGColor(red: 255/255, green: 150/255, blue: 73/255, alpha: 1)
+                }else if weather.currentWeather.uvIndex.value > 6 && weather.currentWeather.uvIndex.value <= 8 {
+                    UVLevelPoint.layer.backgroundColor = CGColor(red: 255/255, green: 99/255, blue: 99/255, alpha: 1)
+                }else if weather.currentWeather.uvIndex.value > 8 && weather.currentWeather.uvIndex.value <= 11 {
+                    UVLevelPoint.layer.backgroundColor = CGColor(red: 168/255, green: 99/255, blue: 255/255, alpha: 1)
+                }
                 
                 
-//            } catch {
-//                print(String(describing: error))
-//            }
+            } catch {
+                print(String(describing: error))
+            }
         }
     }
     

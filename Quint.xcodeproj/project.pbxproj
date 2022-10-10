@@ -11,6 +11,7 @@
 		72BF72C128F3C0540036C456 /* MorningRoutinesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72BF72C028F3C0540036C456 /* MorningRoutinesViewController.swift */; };
 		72BF72C528F41D490036C456 /* RoutineSteps.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72BF72C428F41D490036C456 /* RoutineSteps.swift */; };
 		72BF72C728F41FB90036C456 /* RoutineStepsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72BF72C628F41FB90036C456 /* RoutineStepsTableViewCell.swift */; };
+		72BF72C928F4514E0036C456 /* PopupRoutine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72BF72C828F4514E0036C456 /* PopupRoutine.swift */; };
 		951034BE28EFC13D0011AE39 /* HeaderLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951034BD28EFC13D0011AE39 /* HeaderLabel.swift */; };
 		951034C028EFEDA90011AE39 /* IngredientButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951034BF28EFEDA90011AE39 /* IngredientButton.swift */; };
 		951034C828EFF51F0011AE39 /* UIViewController+DismissKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951034C328EFF51F0011AE39 /* UIViewController+DismissKeyboard.swift */; };
@@ -75,6 +76,7 @@
 		72BF72C028F3C0540036C456 /* MorningRoutinesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MorningRoutinesViewController.swift; sourceTree = "<group>"; };
 		72BF72C428F41D490036C456 /* RoutineSteps.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutineSteps.swift; sourceTree = "<group>"; };
 		72BF72C628F41FB90036C456 /* RoutineStepsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutineStepsTableViewCell.swift; sourceTree = "<group>"; };
+		72BF72C828F4514E0036C456 /* PopupRoutine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupRoutine.swift; sourceTree = "<group>"; };
 		951034BD28EFC13D0011AE39 /* HeaderLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderLabel.swift; sourceTree = "<group>"; };
 		951034BF28EFEDA90011AE39 /* IngredientButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientButton.swift; sourceTree = "<group>"; };
 		951034C328EFF51F0011AE39 /* UIViewController+DismissKeyboard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+DismissKeyboard.swift"; sourceTree = "<group>"; };
@@ -167,6 +169,7 @@
 			isa = PBXGroup;
 			children = (
 				72BF72C428F41D490036C456 /* RoutineSteps.swift */,
+				72BF72C828F4514E0036C456 /* PopupRoutine.swift */,
 			);
 			path = Routine;
 			sourceTree = "<group>";
@@ -513,6 +516,7 @@
 				72BF72C528F41D490036C456 /* RoutineSteps.swift in Sources */,
 				72BF72C728F41FB90036C456 /* RoutineStepsTableViewCell.swift in Sources */,
 				72BF72C128F3C0540036C456 /* MorningRoutinesViewController.swift in Sources */,
+				72BF72C928F4514E0036C456 /* PopupRoutine.swift in Sources */,
 				95A1E05C28F3F64300386972 /* UIImage+ScaleImage.swift in Sources */,
 				9538752128EDE2A1001979A8 /* UICollectionView+Loading.swift in Sources */,
 				7242F9CC28F12C5A009EB962 /* SmallCategoryButtonGuide.swift in Sources */,

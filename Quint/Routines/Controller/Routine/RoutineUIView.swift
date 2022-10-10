@@ -8,6 +8,7 @@
 import Foundation
 import SnapKit
 
+@available(iOS 16.0, *)
 class RoutineUIView: UIView {
     
     var btnId: Int!
@@ -73,6 +74,11 @@ class RoutineUIView: UIView {
         }
         
         rearrangeStack()
+        
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1) {
+            let pop = PopupRoutine()
+            self.addSubview(pop)
+        }
     }
     
     //MARK: - Reposition

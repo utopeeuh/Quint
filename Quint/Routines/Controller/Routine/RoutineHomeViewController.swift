@@ -270,21 +270,21 @@ class RoutineHomeViewController: UIViewController, CLLocationManagerDelegate{
         mainStackView.addArrangedSubview(morningRoutine)
         mainStackView.addArrangedSubview(nightRoutine)
         mainStackView.addArrangedSubview(logRoutine)
-        mainStackView.addArrangedSubview(productGuide)
+//        mainStackView.addArrangedSubview(productGuide)
         
         // Generate buttons for top scroll
-        var catButtons: [SmallCategoryButtonGuide] = []
-        for i in 0..<categories.count {
-            let button = SmallCategoryButtonGuide(categoryId: i+1)
-            button.addTarget(self, action: #selector(selectTopCategory), for: .touchUpInside)
-            button.setText(categories[i+1])
-            button.setImageCategory(categoriesImage[i+1])
-            button.centerVertically()
-            catButtons.append(button)
-        }
-        scrollView.setButtons(catButtons)
+//        var catButtons: [SmallCategoryButtonGuide] = []
+//        for i in 0..<categories.count {
+//            let button = SmallCategoryButtonGuide(categoryId: i+1)
+//            button.addTarget(self, action: #selector(selectTopCategory), for: .touchUpInside)
+//            button.setText(categories[i+1])
+//            button.setImageCategory(categoriesImage[i+1])
+//            button.centerVertically()
+//            catButtons.append(button)
+//        }
+//        scrollView.setButtons(catButtons)
         
-        mainStackView.addArrangedSubview(scrollView)
+//        mainStackView.addArrangedSubview(scrollView)
         mainStackView.addArrangedSubview(dailyTips)
         
     }
@@ -361,13 +361,13 @@ class RoutineHomeViewController: UIViewController, CLLocationManagerDelegate{
             make.height.equalTo(45)
         }
         
-        scrollView.snp.makeConstraints { make in
-            make.top.equalTo(productGuide.snp.bottom).offset(16)
-            make.height.equalTo(144)
-            make.width.equalTo(120)
-            make.left.equalToSuperview()
-            make.right.equalToSuperview()
-        }
+//        scrollView.snp.makeConstraints { make in
+//            make.top.equalTo(productGuide.snp.bottom).offset(16)
+//            make.height.equalTo(144)
+//            make.width.equalTo(120)
+//            make.left.equalToSuperview()
+//            make.right.equalToSuperview()
+//        }
         
         dailyTips.snp.makeConstraints { make in
             make.height.equalTo(180)

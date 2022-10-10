@@ -6,9 +6,12 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
+import RxDataSources
 
 @available(iOS 16.0, *)
-class MorningRoutinesViewController: UIViewController {
+class MorningRoutinesViewController: UIViewController, UIScrollViewDelegate, UITableViewDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -16,6 +19,33 @@ class MorningRoutinesViewController: UIViewController {
         navBar()
         ConfigureUI()
     }
+    
+    private let tableView: UITableView = {
+        let tv = UITableView(frame: CGRect(x: 0, y: 0, width: 0, height: 0), style: .insetGrouped)
+        tv.translatesAutoresizingMaskIntoConstraints = false
+        tv.register(RoutineStepsTableViewCell.self, forCellReuseIdentifier: "RoutineStepsTableViewCell")
+        tv.sectionHeaderHeight = 12
+        tv.sectionFooterHeight = 0
+        return tv
+    }()
+    
+    func bindTableData() {
+        tableView.rx.setDelegate(self).disposed(by: bag)
+        let dataSource = RxTableViewSectionedReloadDataSource<SectionModel<String, Product>> { _, tableView, indexPath, item in
+            let cell = tableView.dequeueReusableCell(withIdentifier: "RoutineStepsTableViewCell", for: indexPath) as! RoutineStepsTableViewCell
+            cell.textLabel?.text = item.title
+            return cell
+        } titleForHeaderInSection: { dataSource, sectionIndex in
+            return dataSource[sectionIndex].model
+        }
+        
+        self.viewModel.items.bind(to: self.tableView.rx.items(dataSource: dataSource)).disposed(by: bag)
+        //Fetch items
+        viewModel.fetchItems()
+    }
+    
+    private var viewModel = RoutineSteps()
+    private var bag = DisposeBag()
     
     private lazy var mainStackView: UIStackView = {
         let stackView = UIStackView()
@@ -108,8 +138,11 @@ class MorningRoutinesViewController: UIViewController {
         hStackViewHeader.addArrangedSubview(editBtn)
         mainStackView.addArrangedSubview(hStackViewHeader)
         
+        mainStackView.addArrangedSubview(tableView)
         mainStackView.addArrangedSubview(addBtn)
         mainStackView.addArrangedSubview(finishBtn)
+        
+        
     }
     
     override func configureLayout() {
@@ -148,13 +181,25 @@ class MorningRoutinesViewController: UIViewController {
             make.height.equalTo(45)
             make.left.equalTo(view.safeAreaLayoutGuide).offset(20)
             make.right.equalTo(view.safeAreaLayoutGuide).offset(-20)
+            make.top.equalTo(tableView.snp.bottom).offset(20)
+            make.bottom.equalTo(finishBtn.snp.top).offset(-55)
         }
         
         finishBtn.snp.makeConstraints { make in
             make.height.equalTo(45)
             make.left.equalTo(view.safeAreaLayoutGuide).offset(20)
             make.right.equalTo(view.safeAreaLayoutGuide).offset(-20)
+            make.bottom.equalTo(view.safeAreaLayoutGuide).offset(-8)
         }
+        
+        mainStackView.snp.makeConstraints { make in
+            make.top.right.bottom.left.equalToSuperview()
+        }
+        
+        tableView.snp.makeConstraints { make in
+            make.top.equalTo(hStackViewHeader.snp.bottom)
+        }
+        
     }
     
     private let sunIcon: UIImageView = {
@@ -172,7 +217,7 @@ class MorningRoutinesViewController: UIViewController {
     }()
     
     func ConfigureUI() {
-        
+        bindTableData()
         configureComponents()
         configureLayout()
     }

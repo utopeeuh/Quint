@@ -381,8 +381,7 @@ class RoutineHomeViewController: UIViewController, CLLocationManagerDelegate{
     }
     
     @objc func selectTopCategory() {
-        let controller = SkincareGuideViewController()
-        navigationController?.pushViewController(controller, animated: true)
+        print("TES!!!!")
     }
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]){

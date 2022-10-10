@@ -23,14 +23,6 @@ class TreatmentsVC: UIViewController{
     private var moveLeft: CGAffineTransform!
     private var moveRight: CGAffineTransform!
     
-    // Ingredient only -------
-    // search bar
-    // see all button
-    // ingredient categories
-    // ingredient list
-    // ingredient category label
-    // ingredient card categories
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = K.Color.bgQuint
@@ -44,8 +36,7 @@ class TreatmentsVC: UIViewController{
     
     @objc func changeTab(sender: UISegmentedControl) {
         print("Switched tabs")
-        
-        
+    
         switch sender.selectedSegmentIndex {
         case 0:
             productListView.isHidden = false

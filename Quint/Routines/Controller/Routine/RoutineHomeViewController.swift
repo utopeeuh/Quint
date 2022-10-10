@@ -6,7 +6,7 @@
 //
 import CoreLocation
 import UIKit
-import WeatherKit
+//import WeatherKit
 import RxCocoa
 import RxSwift
 import RxDataSources
@@ -15,7 +15,7 @@ import RxDataSources
 class RoutineHomeViewController: UIViewController, CLLocationManagerDelegate{
     
     let locationManager = CLLocationManager()
-    let service = WeatherService()
+//    let service = WeatherService()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,7 +24,7 @@ class RoutineHomeViewController: UIViewController, CLLocationManagerDelegate{
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        getUserLocation()
+//        getUserLocation()
     }
     
     
@@ -86,32 +86,32 @@ class RoutineHomeViewController: UIViewController, CLLocationManagerDelegate{
     func getWeather(location: CLLocation){
         Task {
             do {
-                let weather = try await service.weather(for: location)
-                print("UV INDEX: " + String(describing: weather.currentWeather.uvIndex))
-                UVLevelParameter.text = String(describing: weather.currentWeather.uvIndex.category)
-                UVLevelPoint.text = String(describing: weather.currentWeather.uvIndex.value)
-                if weather.currentWeather.uvIndex.value >= 3{
-                    UVLevelSuggestion.isHidden = false
-                    UVLevelSuggestionIcon.isHidden = false
+//                let weather = try await service.weather(for: location)
+//                print("UV INDEX: " + String(describing: weather.currentWeather.uvIndex))
+//                UVLevelParameter.text = String(describing: weather.currentWeather.uvIndex.category)
+//                UVLevelPoint.text = String(describing: weather.currentWeather.uvIndex.value)
+//                if weather.currentWeather.uvIndex.value >= 3{
+//                    UVLevelSuggestion.isHidden = false
+//                    UVLevelSuggestionIcon.isHidden = false
                 }
                 
-                if weather.currentWeather.uvIndex.value <= 1 {
-                    UVLevelPoint.layer.backgroundColor = CGColor(red: 53/255, green: 84/255, blue: 73/255, alpha: 1)
-                }else if weather.currentWeather.uvIndex.value > 1 && weather.currentWeather.uvIndex.value <= 3 {
-                    UVLevelPoint.layer.backgroundColor = CGColor(red: 255/255, green: 211/255, blue: 99/255, alpha: 1)
-                    UVLevelPoint.textColor = UIColor(red: 35/255, green: 36/255, blue: 35/255, alpha: 1)
-                }else if weather.currentWeather.uvIndex.value > 3 && weather.currentWeather.uvIndex.value <= 6 {
-                    UVLevelPoint.layer.backgroundColor = CGColor(red: 255/255, green: 150/255, blue: 73/255, alpha: 1)
-                }else if weather.currentWeather.uvIndex.value > 6 && weather.currentWeather.uvIndex.value <= 8 {
-                    UVLevelPoint.layer.backgroundColor = CGColor(red: 255/255, green: 99/255, blue: 99/255, alpha: 1)
-                }else if weather.currentWeather.uvIndex.value > 8 && weather.currentWeather.uvIndex.value <= 11 {
-                    UVLevelPoint.layer.backgroundColor = CGColor(red: 168/255, green: 99/255, blue: 255/255, alpha: 1)
-                }
+//                if weather.currentWeather.uvIndex.value <= 1 {
+//                    UVLevelPoint.layer.backgroundColor = CGColor(red: 53/255, green: 84/255, blue: 73/255, alpha: 1)
+//                }else if weather.currentWeather.uvIndex.value > 1 && weather.currentWeather.uvIndex.value <= 3 {
+//                    UVLevelPoint.layer.backgroundColor = CGColor(red: 255/255, green: 211/255, blue: 99/255, alpha: 1)
+//                    UVLevelPoint.textColor = UIColor(red: 35/255, green: 36/255, blue: 35/255, alpha: 1)
+//                }else if weather.currentWeather.uvIndex.value > 3 && weather.currentWeather.uvIndex.value <= 6 {
+//                    UVLevelPoint.layer.backgroundColor = CGColor(red: 255/255, green: 150/255, blue: 73/255, alpha: 1)
+//                }else if weather.currentWeather.uvIndex.value > 6 && weather.currentWeather.uvIndex.value <= 8 {
+//                    UVLevelPoint.layer.backgroundColor = CGColor(red: 255/255, green: 99/255, blue: 99/255, alpha: 1)
+//                }else if weather.currentWeather.uvIndex.value > 8 && weather.currentWeather.uvIndex.value <= 11 {
+//                    UVLevelPoint.layer.backgroundColor = CGColor(red: 168/255, green: 99/255, blue: 255/255, alpha: 1)
+//                }
                 
                 
-            } catch {
-                print(String(describing: error))
-            }
+//            } catch {
+//                print(String(describing: error))
+//            }
         }
     }
     
@@ -204,6 +204,20 @@ class RoutineHomeViewController: UIViewController, CLLocationManagerDelegate{
     private var categoriesImage = K.Category.productGuideImageName
     
     var dailyTips = DailySkincareTips()
+    
+    func ConfigureUI() {
+        let navbar = UIView()
+        navbar.backgroundColor = .white
+        self.view.addSubview(navbar)
+        navbar.snp.makeConstraints { (make) -> Void in
+            make.left.equalTo(self.view)
+            make.right.equalTo(self.view)
+            make.top.equalTo(self.topLayoutGuide.snp.top)
+            make.bottom.equalTo(self.topLayoutGuide.snp.bottom)
+        }
+        configureComponents()
+        configureLayout()
+    }
 
     override func configureComponents() {
         
@@ -218,31 +232,41 @@ class RoutineHomeViewController: UIViewController, CLLocationManagerDelegate{
         
         hStackReminder.addArrangedSubview(reminderIconView)
         hStackReminder.addArrangedSubview(reminderRoutine)
-        
+
         mainStackView.addArrangedSubview(hStackViewUV)
         mainStackView.addArrangedSubview(hStackReminder)
         mainStackView.addArrangedSubview(todayRoutine)
-        
+
         morningRoutine.leftBtn.setImage(UIImage(systemName: "circle"), for: .normal)
         morningRoutine.imageRoutine.image = UIImage(named: "iconMorning")
         morningRoutine.chevRight.image = UIImage(systemName: "chevron.right")
         morningRoutine.titleRoutine.text = "Morning routine"
-        morningRoutine.btnId = 1
         let morningGesture = UITapGestureRecognizer(target: self, action: #selector(goToMorningRoutine))
         morningRoutine.addGestureRecognizer(morningGesture)
+        morningRoutine.btnId = 1
+        morningRoutine.currStack = mainStackView
+        morningRoutine.currPosition = 1
+        morningRoutine.name = "morning"
         
         nightRoutine.leftBtn.setImage(UIImage(systemName: "circle"), for: .normal)
         nightRoutine.imageRoutine.image = UIImage(named: "iconNight")
         nightRoutine.chevRight.image = UIImage(systemName: "chevron.right")
-        nightRoutine.titleRoutine.text = "Night routine     "
+        nightRoutine.titleRoutine.text = "Night routine"
         nightRoutine.btnId = 2
+        nightRoutine.currStack = mainStackView
+        nightRoutine.currPosition = 2
+        nightRoutine.name = "night"
         
         logRoutine.leftBtn.setImage(UIImage(systemName: "lock"), for: .normal)
-        logRoutine.leftBtn.isEnabled = false
+        logRoutine.leftBtn.isEnabled = true
         logRoutine.imageRoutine.image = UIImage(named: "iconLog")
         logRoutine.titleRoutine.text = "Daily skin condition log"
         logRoutine.btnId = 3
+        logRoutine.currStack = mainStackView
+        logRoutine.currPosition = 3
+        logRoutine.name = "log"
         
+        // MARK: - ROUTINE
         mainStackView.addArrangedSubview(morningRoutine)
         mainStackView.addArrangedSubview(nightRoutine)
         mainStackView.addArrangedSubview(logRoutine)
@@ -368,246 +392,5 @@ class RoutineHomeViewController: UIViewController, CLLocationManagerDelegate{
         locationManager.stopUpdatingLocation()
         getWeather(location: location)
     }
-    
-    
-    func ConfigureUI() {
-        let navbar = UIView()
-        navbar.backgroundColor = .white
-        self.view.addSubview(navbar)
-        navbar.snp.makeConstraints { (make) -> Void in
-            make.left.equalTo(self.view)
-            make.right.equalTo(self.view)
-            make.top.equalTo(self.topLayoutGuide.snp.top)
-            make.bottom.equalTo(self.topLayoutGuide.snp.bottom)
-        }
-        configureComponents()
-        configureLayout()
-        
-    }
-
-}
-
-extension UIImage {
-    func scalePreservingAspectRatio(targetSize: CGSize) -> UIImage {
-        // Determine the scale factor that preserves aspect ratio
-        let widthRatio = targetSize.width / size.width
-        let heightRatio = targetSize.height / size.height
-        
-        let scaleFactor = min(widthRatio, heightRatio)
-        
-        // Compute the new image size that preserves aspect ratio
-        let scaledImageSize = CGSize(
-            width: size.width * scaleFactor,
-            height: size.height * scaleFactor
-        )
-
-        // Draw and return the resized UIImage
-        let renderer = UIGraphicsImageRenderer(
-            size: scaledImageSize
-        )
-
-        let scaledImage = renderer.image { _ in
-            self.draw(in: CGRect(
-                origin: .zero,
-                size: scaledImageSize
-            ))
-        }
-        
-        return scaledImage
-    }
-}
-
-@available(iOS 16.0, *)
-class DailySkincareTips: UIView {
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        self.backgroundColor = UIColor(patternImage: UIImage(named: "tipsBackground")!)
-        self.layer.cornerRadius = 8.0
-        setupView()
-        setupConstraints()
-    }
-
-    required init?(coder: NSCoder) {
-        super.init(coder: coder)
-        setupView()
-        setupConstraints()
-    }
-    
-    private lazy var vStackViewTips: UIStackView = {
-        let stackView = UIStackView()
-        stackView.translatesAutoresizingMaskIntoConstraints = false
-        stackView.axis = .vertical
-        stackView.distribution = .fill
-        stackView.alignment = .center
-        stackView.spacing = 20
-        return stackView
-    }()
-    
-    private var headerTitle: UILabel = {
-        let label = UILabel()
-        label.text = "Daily skincare tips"
-        label.textColor = .white
-        label.font = UIFont.boldSystemFont(ofSize: 24)
-        label.numberOfLines = 0
-        return label
-    }()
-    
-    private var firstTips: UILabel = {
-        let label = UILabel()
-        label.text = "Hydration is a must for healthy, glowing skin. Dehydrated skin can feel dry, itchy, and dull."
-        label.textColor = .white
-        label.font = label.font.withSize(14)
-        label.numberOfLines = 0
-        return label
-    }()
-    
-    private var secondTips: UILabel = {
-        let label = UILabel()
-        label.text = "Drink liquids throughout the day, including electrolytes, to keep your hydration level."
-        label.textColor = .white
-        label.font = label.font.withSize(14)
-        label.numberOfLines = 0
-        return label
-    }()
-    
-    func setupView() {
-        vStackViewTips.addArrangedSubview(headerTitle)
-        vStackViewTips.addArrangedSubview(firstTips)
-        vStackViewTips.addArrangedSubview(secondTips)
-        addSubview(vStackViewTips)
-    }
-    
-    func setupConstraints() {
-        headerTitle.snp.makeConstraints { make in
-            make.left.equalTo(self.safeAreaInsets).offset(20)
-            make.right.equalTo(self.safeAreaInsets).offset(-20)
-            make.top.equalTo(self.safeAreaInsets).offset(20)
-        }
-        
-        firstTips.snp.makeConstraints { make in
-            make.left.equalTo(self.safeAreaInsets).offset(20)
-            make.right.equalTo(self.safeAreaInsets).offset(-20)
-            make.top.equalTo(headerTitle.snp.bottom).offset(20)
-            make.width.equalTo(300)
-        }
-        
-        secondTips.snp.makeConstraints { make in
-            make.left.equalTo(self.safeAreaInsets).offset(20)
-            make.right.equalTo(self.safeAreaInsets).offset(-20)
-            make.top.equalTo(firstTips.snp.bottom).offset(20)
-            make.width.equalTo(300)
-        }
-    }
-    
-}
-
-@available(iOS 16.0, *)
-class RoutineUIView: UIView {
-    
-    var btnId: Int?
-    
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        self.backgroundColor = .white
-        self.layer.cornerRadius = 8.0
-        self.isUserInteractionEnabled = true
-        setupView()
-        setupConstraints()
-    }
-
-    required init?(coder: NSCoder) {
-        super.init(coder: coder)
-
-        setupView()
-        setupConstraints()
-    }
-
-    private lazy var hStackViewRoutine: UIStackView = {
-        let stackView = UIStackView()
-        stackView.translatesAutoresizingMaskIntoConstraints = false
-        stackView.axis = .horizontal
-        stackView.distribution = .fill
-        stackView.alignment = .leading
-        return stackView
-    }()
-    
-    var leftBtn: UIButton = {
-        let button = UIButton()
-        button.tintColor = UIColor(red: 202/255, green: 202/255, blue: 202/255, alpha: 1)
-        return button
-    }()
-    
-    @objc func pressed(){
-        self.alpha = 0.6
-        self.backgroundColor = UIColor(red: 235/255, green: 235/255, blue: 235/255, alpha: 1)
-        self.isUserInteractionEnabled = false
-        leftBtn.setImage(UIImage(systemName: "checkmark.circle.fill"), for: .normal)
-        leftBtn.tintColor = UIColor(red: 35/255, green: 36/255, blue: 35/255, alpha: 1)
-        if btnId == 1 {
-            imageRoutine.image = UIImage(named: "iconMorningDisabled")
-            titleRoutine.attributedText = NSAttributedString(
-                string: "Morning routine",
-                attributes: [.strikethroughStyle: NSUnderlineStyle.single.rawValue]
-            )
-        } else if btnId == 2 {
-            imageRoutine.image = UIImage(named: "iconNightDisabled")
-            titleRoutine.attributedText = NSAttributedString(
-                string: "Night routine",
-                attributes: [.strikethroughStyle: NSUnderlineStyle.single.rawValue]
-            )
-        }
-    }
-
-    
-    var chevRight: UIImageView = {
-        let image = UIImageView()
-        image.tintColor = UIColor(red: 125/255, green: 125/255, blue: 125/255, alpha: 1)
-        return image
-    }()
-    
-    var imageRoutine: UIImageView = {
-        let image = UIImageView()
-        return image
-    }()
-    
-    var titleRoutine: UILabel = {
-        let label = UILabel()
-        label.textColor = UIColor(red: 7/255, green: 8/255, blue: 7/255, alpha: 1)
-        label.font = label.font.withSize(16)
-        label.numberOfLines = 2
-        return label
-    }()
-    
-    func setupView() {
-        hStackViewRoutine.addArrangedSubview(leftBtn)
-        leftBtn.addTarget(self, action: #selector(pressed), for: .touchUpInside)
-        hStackViewRoutine.addArrangedSubview(imageRoutine)
-        hStackViewRoutine.addArrangedSubview(titleRoutine)
-        hStackViewRoutine.addArrangedSubview(chevRight)
-        addSubview(hStackViewRoutine)
-    }
-    
-    func setupConstraints() {
-        leftBtn.snp.makeConstraints { make in
-            make.left.equalTo(self.safeAreaLayoutGuide).offset(10)
-            make.top.equalTo(self.safeAreaInsets).offset(12.5)
-        }
-        
-        imageRoutine.snp.makeConstraints { make in
-            make.left.equalTo(leftBtn.snp.right).offset(10)
-            make.top.equalTo(self.safeAreaInsets).offset(7.5)
-        }
-        
-        titleRoutine.snp.makeConstraints { make in
-            make.left.equalTo(imageRoutine.snp.right).offset(10)
-            make.right.equalTo(chevRight.snp.left)
-        }
-        
-        chevRight.snp.makeConstraints { make in
-            make.left.equalTo(titleRoutine.snp.right).offset(125)
-            make.right.equalTo(self.safeAreaLayoutGuide).offset(-10)
-        }
-    }
-    
 }
 

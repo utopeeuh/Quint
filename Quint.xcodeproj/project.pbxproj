@@ -52,6 +52,9 @@
 		959C2BF528ED341E007B1251 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 959C2BF328ED341E007B1251 /* Constants.swift */; };
 		959C2BF628ED341E007B1251 /* CAGradientLayer+SetGradient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 959C2BF428ED341E007B1251 /* CAGradientLayer+SetGradient.swift */; };
 		959C2C0228ED44A3007B1251 /* UIViewController+ConfigureUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 959C2C0128ED44A3007B1251 /* UIViewController+ConfigureUI.swift */; };
+		95A1E05828F3F5AE00386972 /* RoutineUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A1E05728F3F5AE00386972 /* RoutineUIView.swift */; };
+		95A1E05A28F3F61D00386972 /* DailySkincareTipsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A1E05928F3F61D00386972 /* DailySkincareTipsView.swift */; };
+		95A1E05C28F3F64300386972 /* UIImage+ScaleImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A1E05B28F3F64300386972 /* UIImage+ScaleImage.swift */; };
 		95A4311A28EE8F7F007A2108 /* CategoryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A4311928EE8F7F007A2108 /* CategoryButton.swift */; };
 		95EB50E328EA821400412176 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95EB50E228EA821400412176 /* AppDelegate.swift */; };
 		95EB50E528EA821400412176 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95EB50E428EA821400412176 /* SceneDelegate.swift */; };
@@ -114,6 +117,9 @@
 		959C2BF328ED341E007B1251 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		959C2BF428ED341E007B1251 /* CAGradientLayer+SetGradient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CAGradientLayer+SetGradient.swift"; sourceTree = "<group>"; };
 		959C2C0128ED44A3007B1251 /* UIViewController+ConfigureUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+ConfigureUI.swift"; sourceTree = "<group>"; };
+		95A1E05728F3F5AE00386972 /* RoutineUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutineUIView.swift; sourceTree = "<group>"; };
+		95A1E05928F3F61D00386972 /* DailySkincareTipsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailySkincareTipsView.swift; sourceTree = "<group>"; };
+		95A1E05B28F3F64300386972 /* UIImage+ScaleImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+ScaleImage.swift"; sourceTree = "<group>"; };
 		95A4311928EE8F7F007A2108 /* CategoryButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryButton.swift; sourceTree = "<group>"; };
 		95EB50DF28EA821400412176 /* Quint.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Quint.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		95EB50E228EA821400412176 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -218,6 +224,8 @@
 				951034DD28EFF8820011AE39 /* SkincareGuideViewController.swift */,
 				951034DE28EFF8820011AE39 /* RoutineHomeViewController.swift */,
 				72BF72C028F3C0540036C456 /* MorningRoutinesViewController.swift */,
+				95A1E05728F3F5AE00386972 /* RoutineUIView.swift */,
+				95A1E05928F3F61D00386972 /* DailySkincareTipsView.swift */,
 			);
 			path = Routine;
 			sourceTree = "<group>";
@@ -299,6 +307,7 @@
 				9538752028EDE2A1001979A8 /* PinterestLayout.swift */,
 				95233BDD28EF3F3E00A4470E /* UIScrollView+RemoveSubviews.swift */,
 				951034C328EFF51F0011AE39 /* UIViewController+DismissKeyboard.swift */,
+				95A1E05B28F3F64300386972 /* UIImage+ScaleImage.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -486,6 +495,7 @@
 				9538752B28EDE53C001979A8 /* Photo.swift in Sources */,
 				9538752628EDE2A1001979A8 /* PinterestLayout.swift in Sources */,
 				72BF72C128F3C0540036C456 /* MorningRoutinesViewController.swift in Sources */,
+				95A1E05C28F3F64300386972 /* UIImage+ScaleImage.swift in Sources */,
 				9538752128EDE2A1001979A8 /* UICollectionView+Loading.swift in Sources */,
 				7242F9CC28F12C5A009EB962 /* SmallCategoryButtonGuide.swift in Sources */,
 				95EB50E728EA821400412176 /* TreatmentsVC.swift in Sources */,
@@ -503,9 +513,11 @@
 				951034CB28EFF51F0011AE39 /* UIImageView+DropShadow.swift in Sources */,
 				95EB50ED28EA821400412176 /* Quint.xcdatamodeld in Sources */,
 				951034D828EFF54C0011AE39 /* QuizSkinTypeVC.swift in Sources */,
+				95A1E05A28F3F61D00386972 /* DailySkincareTipsView.swift in Sources */,
 				951034E228EFF8820011AE39 /* SkincareGuideViewController.swift in Sources */,
 				951034D728EFF54C0011AE39 /* LoginViewController.swift in Sources */,
 				9538752528EDE2A1001979A8 /* ProductListCell.swift in Sources */,
+				95A1E05828F3F5AE00386972 /* RoutineUIView.swift in Sources */,
 				959C2BF628ED341E007B1251 /* CAGradientLayer+SetGradient.swift in Sources */,
 				951034D428EFF54C0011AE39 /* QuizSkinCondVC.swift in Sources */,
 				959C2BF528ED341E007B1251 /* Constants.swift in Sources */,

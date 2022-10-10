@@ -9,7 +9,6 @@ import UIKit
 import SnapKit
 
 class SkincareGuideViewController: UIViewController {
-    
 
     override func viewDidLoad() {
         super.viewDidLoad()

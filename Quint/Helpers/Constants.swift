@@ -22,7 +22,7 @@ struct K{
         static let greyQuint = UIColor(red: 35/255, green: 36/255, blue: 35/255, alpha: 1)
         static let greyDarkQuint = UIColor(red: 125/255, green: 125/255, blue: 125/255, alpha: 1)
         
-        static let greenLightQuint = UIColor(red: 255/255, green: 87/255, blue: 51/255, alpha: 1)
+        static let greenLightQuint = UIColor(red: 53/255, green: 84/255, blue: 73/255, alpha: 1)
         static let yellowLightQuint = UIColor(red: 255/255, green: 211/255, blue: 99/255, alpha: 1)
         static let orangeLightQuint = UIColor(red: 255/255, green: 149/255, blue: 73/255, alpha: 1)
         static let redLightQuint = UIColor(red: 255/255, green: 99/255, blue: 99/255, alpha: 1)
@@ -44,11 +44,15 @@ struct K{
     struct Category{
         static let product = [1: "Toner", 2: "Serum", 3: "Eye Care", 4: "Acne Treatment", 5: "Face Wash", 6: "Face Scrub", 7: "Micellar Water", 8: "Moisturizer", 9: "Sunscreen"]
         
-        static let ingredient = [1: "Anti-acne", 2: "Anti-aging", 3: "Anti-bacterial", 4: "Anti-inflammatory", 5: "Brightening", 6: "Hydrating", 7: "Moisturizing", 8: "pH Balancer", 9: "Soothing", 10: "UV Protection"]
+        static let ingredient = [1: "Anti-acne", 2: "Anti-aging", 3: "Anti-bacterial", 4: "Brightening", 5: "Hydrating", 6: "Moisturizing", 7: "pH Balancer", 8: "Soothing", 9: "UV Protection"]
     }
     
     struct Dummy{
         static let ingredient = [1: "Salicylic Acid", 2: "Benzoyl peroxide", 3: "Adapalene", 4: "Lauric Acid", 5: "Sulfur", 6: "Zinc gluconate"]
+    }
+    
+    struct CategoryImage{
+        static let img = [1: UIImage(named: "AntiAcneCategory"), 2: UIImage(named: "AntiAgingCategory"), 3: UIImage(named: "AntiBacterialCategory"), 4: UIImage(named: "BrighteningCategory"), 5: UIImage(named: "HydratingCategory"), 6: UIImage(named: "MoisturizingCategory"), 7: UIImage(named: "PhBalanceCategory"), 8: UIImage(named: "SoothingCategory"), 9: UIImage(named: "UVCategory")]
     }
 }
 

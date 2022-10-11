@@ -29,8 +29,7 @@ class ProductListCell: UICollectionViewCell {
         label.numberOfLines = 0
         label.lineBreakMode = .byWordWrapping
         label.translatesAutoresizingMaskIntoConstraints = false
-//        label.font = UIFont(name: "Inter", size: 16)
-        label.font = .systemFont(ofSize: 16)
+        label.font = .interMedium(size: 16)
         label.textAlignment = .center
         label.setContentHuggingPriority(.defaultHigh, for: .vertical)
         return label
@@ -43,7 +42,7 @@ class ProductListCell: UICollectionViewCell {
         label.lineBreakMode = .byWordWrapping
         label.textAlignment = .center
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = .systemFont(ofSize: 13)
+        label.font = .interRegular(size: 13)
         label.setContentHuggingPriority(.defaultHigh, for: .vertical)
         return label
     }()
@@ -56,7 +55,7 @@ class ProductListCell: UICollectionViewCell {
         label.textAlignment = .center
         label.translatesAutoresizingMaskIntoConstraints = false
         label.text = "99%"
-        label.font = .systemFont(ofSize: 14, weight: .semibold)
+        label.font = .interSemi(size: 14)
         
         label.setContentHuggingPriority(.defaultHigh, for: .vertical)
         

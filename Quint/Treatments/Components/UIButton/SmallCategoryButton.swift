@@ -19,9 +19,9 @@ class SmallCategoryButton: CategoryButton{
         
         contentEdgeInsets = UIEdgeInsets(top: 8, left: 14, bottom: 8, right: 14)
         
-        backgroundColor = K.Color.whiteQuint
+        applyGradient(colours: [K.Color.greenQuint, K.Color.greenLightQuint], locations: [1.0, 0.0])
         setTitleColor(K.Color.greenQuint, for: .normal)
-        titleLabel?.font = UIFont.systemFont(ofSize: 13)
+        titleLabel?.font = .interMedium(size: 13)
         layer.cornerRadius = 10
     }
 
@@ -30,12 +30,18 @@ class SmallCategoryButton: CategoryButton{
     }
     
     func deselect(){
-        backgroundColor = K.Color.whiteQuint
+        self.layer.sublayers?.removeFirst()
+        applyGradient(colours: [.white, .white], locations: [1.0, 0.0])
         setTitleColor(K.Color.greenQuint, for: .normal)
+        titleLabel?.font = .interMedium(size: 13)
+        sizeToFit()
     }
     
     func select(){
-        backgroundColor = K.Color.greenQuint
+        layer.sublayers?.removeFirst()
+        applyGradient(colours: [K.Color.greenQuint, K.Color.greenLightQuint], locations: [1.0, 0.0])
         setTitleColor(K.Color.whiteQuint, for: .normal)
+        titleLabel?.font = .interSemi(size: 13)
+        sizeToFit()
     }
 }

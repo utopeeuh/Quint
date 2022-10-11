@@ -25,12 +25,12 @@ class LargeCategoryCard: CategoryButton {
         
         layer.cornerRadius = 10
         
-        categoryCard = UIView(frame: self.frame)
-        categoryCard.isUserInteractionEnabled = false
+//        categoryCard = UIView(frame: self.frame)
+//        categoryCard.isUserInteractionEnabled = false
         
-        imgView = UIImageView(image: UIImage(named: "anti_acne_category"))
+        imgView = UIImageView(image: K.CategoryImage.img[self.categoryId] as! UIImage)
         title.textColor = K.Color.greenQuint
-        title.font = UIFont.systemFont(ofSize: 16)
+        title.font = .interMedium(size: 16)
         title.frame = CGRect(x: 0, y: 0, width: 104, height: 0)
         title.numberOfLines = 0
         title.lineBreakMode = .byWordWrapping

@@ -14,7 +14,7 @@ class HeaderLabel: UILabel{
         super.init(frame: frame)
         
         text = "Recommended products"
-        font = UIFont.systemFont(ofSize: 20, weight: .medium)
+        font = .clashGroteskMedium(size: 20)
         textColor = .black
     }
     

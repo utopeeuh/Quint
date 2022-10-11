@@ -17,6 +17,10 @@ extension UIFont {
         return UIFont(name: "Inter-Medium", size: size)
     }
     
+    static func interSemi(size: CGFloat) -> UIFont? {
+        return UIFont(name: "Inter-Semibold", size: size)
+    }
+    
     static func clashGroteskMedium(size: CGFloat) -> UIFont? {
         return UIFont(name: "ClashGrotesk-Medium", size: size)
     }

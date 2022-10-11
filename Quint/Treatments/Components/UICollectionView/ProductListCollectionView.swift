@@ -19,7 +19,6 @@ class ProductListCollectionView: UIView {
     override init(frame: CGRect){
         super.init(frame: frame)
      
-//        buildHeaders()
         configureUI()
     }
     
@@ -46,7 +45,6 @@ class ProductListCollectionView: UIView {
             make.center.equalToSuperview()
             make.width.height.equalToSuperview()
         }
-    
         
         ApiService.shared.getPhotos { (res) in
             
@@ -62,16 +60,6 @@ class ProductListCollectionView: UIView {
                 }
             }
         }
-    }
-    
-    func buildHeaders(){
-        
-//        let faker = Faker(locale: "nb-NO")
-//        for i in 0...50 {
-//            let randomInt = Int(arc4random_uniform(13) + 2)
-//            let text = faker.lorem.words(amount: randomInt)
-//            headers.append(text)
-//        }
     }
 }
 
@@ -107,15 +95,12 @@ extension ProductListCollectionView : PinterestLayoutDelegate {
    
     func collectionView(_ collectionView: UICollectionView, heightForPhotoAtIndexPath indexPath: IndexPath, cellWidth: CGFloat) -> CGFloat {
         
-//        let imgHeight = calculateImageHeight(sourceImage: photos[indexPath.row] , scaledToWidth: cellWidth)
-//
-//        let textHeight = requiredHeight(text: headers[indexPath.row], cellWidth: (cellWidth - 10))
         var nameHeight: CGFloat!
         var brandHeight: CGFloat!
         
         if(indexPath.row % 2 == 0){
             nameHeight = requiredHeight(text: "Ini nama panjang cuma buat testing ya harusnya udh dynamic", cellWidth: cellWidth, isBrand: false)
-            brandHeight = requiredHeight(text: "Innisfree", cellWidth: cellWidth, isBrand: true)
+            brandHeight = requiredHeight(text: "Innisfree", cellWidth: 145, isBrand: true)
         }
         else{
             nameHeight = requiredHeight(text: "ini nama pendek aja", cellWidth: cellWidth, isBrand: false)
@@ -129,13 +114,13 @@ extension ProductListCollectionView : PinterestLayoutDelegate {
     func requiredHeight(text:String , cellWidth : CGFloat, isBrand: Bool) -> CGFloat {
         let font: UIFont!
         if(isBrand){
-            font = UIFont.systemFont(ofSize: 13)
+            font = .interRegular(size: 13)
         }
         else{
-            font = UIFont.systemFont(ofSize: 16)
+            font = .interMedium(size: 16)
         }
         
-        let label:UILabel = UILabel(frame: CGRect(x: 0, y: 0, width: cellWidth-24, height: .greatestFiniteMagnitude))
+        let label:UILabel = UILabel(frame: CGRect(x: 0, y: 0, width: cellWidth-36, height: .greatestFiniteMagnitude))
         label.numberOfLines = 0
         label.lineBreakMode = .byWordWrapping
         label.font = font

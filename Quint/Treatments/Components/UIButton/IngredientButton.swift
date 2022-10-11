@@ -15,10 +15,10 @@ class IngredientButton: CategoryButton {
         width = 158
         height = 88
         frame = CGRect(x: 0, y: 0, width: width, height: height)
-//        contentEdgeInsets = UIEdgeInsets(top: 18, left: 24, bottom: 18, right: 24)
+        contentEdgeInsets = UIEdgeInsets(top: 18, left: 24, bottom: 18, right: 24)
         layer.cornerRadius = 10
         backgroundColor = K.Color.whiteQuint
-        titleLabel?.font = UIFont.systemFont(ofSize: 18)
+        titleLabel?.font = .interMedium(size: 18)
         setTitleColor(.black, for: .normal)
         titleLabel?.lineBreakMode = NSLineBreakMode.byWordWrapping
         titleLabel?.textAlignment = .center

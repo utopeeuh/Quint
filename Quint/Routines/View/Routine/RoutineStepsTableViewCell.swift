@@ -28,7 +28,7 @@ class RoutineStepsTableViewCell: UITableViewCell {
     
     private var numLabel: UILabel = {
         let label = UILabel()
-        label.text = "1"
+        label.text = ""
         label.textColor = .white
         label.layer.cornerRadius = 14.0
         label.layer.backgroundColor = CGColor(red: 255/255, green: 161/255, blue: 92/255, alpha: 1)
@@ -60,8 +60,8 @@ class RoutineStepsTableViewCell: UITableViewCell {
     func configureLayout() {
         self.addSubview(hStackViewCell)
         numLabel.snp.makeConstraints { make in
-            make.width.height.equalTo(28)
             make.left.equalTo(self.safeAreaInsets).offset(20)
+            make.width.height.equalTo(28)
             make.top.equalTo(self.safeAreaInsets).offset(7.5)
         }
         
@@ -71,8 +71,14 @@ class RoutineStepsTableViewCell: UITableViewCell {
         }
         
         imageRight.snp.makeConstraints { make in
-            make.left.equalTo(titleLabel.snp.right).offset(225)
+            make.left.equalTo(titleLabel.snp.right)
             make.top.equalTo(self.safeAreaInsets).offset(11.5)
+            make.right.equalTo(self.safeAreaLayoutGuide).offset(-15)
+        }
+        
+        hStackViewCell.snp.makeConstraints { make in
+            make.width.equalTo(self.safeAreaLayoutGuide)
+            make.left.equalTo(self.safeAreaInsets)
         }
     }
 

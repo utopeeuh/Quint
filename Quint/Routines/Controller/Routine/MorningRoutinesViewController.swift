@@ -36,19 +36,14 @@ class MorningRoutinesViewController: UIViewController, UIScrollViewDelegate, UIT
         tableView.rx.setDelegate(self).disposed(by: bag)
         let dataSource = RxTableViewSectionedReloadDataSource<SectionModel<String, Product>> { _, tableView, indexPath, item in
             let cell = tableView.dequeueReusableCell(withIdentifier: "RoutineStepsTableViewCell", for: indexPath) as! RoutineStepsTableViewCell
-            cell.textLabel?.text = item.titleLabel
-            cell.textLabel?.snp.makeConstraints { make in
-                make.left.equalTo(70)
-                make.top.equalTo(10.8)
-            }
+            cell.product = item
             return cell
         } titleForHeaderInSection: { dataSource, sectionIndex in
             return dataSource[sectionIndex].model
         }
-        
-        
-        
+
         self.viewModel.items.bind(to: self.tableView.rx.items(dataSource: dataSource)).disposed(by: bag)
+        
         //Fetch items
         viewModel.fetchItems()
     }

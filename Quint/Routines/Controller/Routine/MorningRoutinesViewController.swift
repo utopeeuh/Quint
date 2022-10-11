@@ -9,9 +9,12 @@ import UIKit
 import RxSwift
 import RxCocoa
 import RxDataSources
+import SnapKit
 
 @available(iOS 16.0, *)
 class MorningRoutinesViewController: UIViewController, UIScrollViewDelegate, UITableViewDelegate {
+    
+    var products : [Product] = [Product] ()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,11 +36,17 @@ class MorningRoutinesViewController: UIViewController, UIScrollViewDelegate, UIT
         tableView.rx.setDelegate(self).disposed(by: bag)
         let dataSource = RxTableViewSectionedReloadDataSource<SectionModel<String, Product>> { _, tableView, indexPath, item in
             let cell = tableView.dequeueReusableCell(withIdentifier: "RoutineStepsTableViewCell", for: indexPath) as! RoutineStepsTableViewCell
-            cell.textLabel?.text = item.title
+            cell.textLabel?.text = item.titleLabel
+            cell.textLabel?.snp.makeConstraints { make in
+                make.left.equalTo(70)
+                make.top.equalTo(10.8)
+            }
             return cell
         } titleForHeaderInSection: { dataSource, sectionIndex in
             return dataSource[sectionIndex].model
         }
+        
+        
         
         self.viewModel.items.bind(to: self.tableView.rx.items(dataSource: dataSource)).disposed(by: bag)
         //Fetch items

@@ -12,7 +12,7 @@ import RxDataSources
 import SnapKit
 
 @available(iOS 16.0, *)
-class MorningRoutinesViewController: UIViewController, UIScrollViewDelegate, UITableViewDelegate {
+class MorningRoutinesViewController: UIViewController, UIScrollViewDelegate, UITableViewDelegate{
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,6 +29,8 @@ class MorningRoutinesViewController: UIViewController, UIScrollViewDelegate, UIT
         tv.sectionFooterHeight = 0
         return tv
     }()
+    
+    
     
     func bindTableData() {
         tableView.rx.setDelegate(self).disposed(by: bag)
@@ -138,6 +140,7 @@ class MorningRoutinesViewController: UIViewController, UIScrollViewDelegate, UIT
         
         hStackViewHeader.addArrangedSubview(routineSteps)
         hStackViewHeader.addArrangedSubview(editBtn)
+        editBtn.addTarget(self, action: #selector(editMenu), for: .touchUpInside)
         mainStackView.addArrangedSubview(hStackViewHeader)
         
         mainStackView.addArrangedSubview(tableView)
@@ -146,6 +149,13 @@ class MorningRoutinesViewController: UIViewController, UIScrollViewDelegate, UIT
         
         
     }
+    
+    @objc func editMenu() {
+        tableView.isEditing = !tableView.isEditing
+        let title = (tableView.isEditing) ? "Done" : "Edit steps"
+        editBtn.setTitle(title, for: .normal)
+    }
+
     
     override func configureLayout() {
         view.addSubview(mainStackView)

@@ -43,9 +43,10 @@ class MorningRoutinesViewController: UIViewController, UIScrollViewDelegate, UIT
         }
 
         self.viewModel.items.bind(to: self.tableView.rx.items(dataSource: dataSource)).disposed(by: bag)
-        
+
         //Fetch items
         viewModel.fetchItems()
+    
     }
     
     private var viewModel = RoutineSteps()

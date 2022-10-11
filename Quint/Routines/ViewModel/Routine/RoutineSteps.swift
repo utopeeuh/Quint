@@ -19,6 +19,7 @@ struct Product {
 class RoutineSteps: UIViewController {
         var items = BehaviorSubject(value: [SectionModel(model: "", items: [Product]())])
     
+    
         func fetchItems() {
             let firstSection = SectionModel(model: "", items: [Product(titleLabel: "Toner", numLabel: "1", imageRight: UIImage(systemName: "chevron.right")!)])
             let secondSection = SectionModel(model: "", items: [Product(titleLabel: "Cleanser", numLabel: "2", imageRight: UIImage(systemName: "chevron.right")!)])

@@ -56,6 +56,9 @@
 		959C2BF628ED341E007B1251 /* CAGradientLayer+SetGradient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 959C2BF428ED341E007B1251 /* CAGradientLayer+SetGradient.swift */; };
 		959C2C0228ED44A3007B1251 /* UIViewController+ConfigureUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 959C2C0128ED44A3007B1251 /* UIViewController+ConfigureUI.swift */; };
 		95A4311A28EE8F7F007A2108 /* CategoryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A4311928EE8F7F007A2108 /* CategoryButton.swift */; };
+		95A902D828F52D46007B7F5C /* IngredientCategoryDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A902D728F52D46007B7F5C /* IngredientCategoryDetailVC.swift */; };
+		95A902DA28F53F03007B7F5C /* IngredientListSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A902D928F53F03007B7F5C /* IngredientListSection.swift */; };
+		95A902DC28F54925007B7F5C /* dummyVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A902DB28F54925007B7F5C /* dummyVC.swift */; };
 		95EB50E328EA821400412176 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95EB50E228EA821400412176 /* AppDelegate.swift */; };
 		95EB50E528EA821400412176 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95EB50E428EA821400412176 /* SceneDelegate.swift */; };
 		95EB50E728EA821400412176 /* TreatmentsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95EB50E628EA821400412176 /* TreatmentsVC.swift */; };
@@ -121,6 +124,9 @@
 		959C2BF428ED341E007B1251 /* CAGradientLayer+SetGradient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CAGradientLayer+SetGradient.swift"; sourceTree = "<group>"; };
 		959C2C0128ED44A3007B1251 /* UIViewController+ConfigureUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+ConfigureUI.swift"; sourceTree = "<group>"; };
 		95A4311928EE8F7F007A2108 /* CategoryButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryButton.swift; sourceTree = "<group>"; };
+		95A902D728F52D46007B7F5C /* IngredientCategoryDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientCategoryDetailVC.swift; sourceTree = "<group>"; };
+		95A902D928F53F03007B7F5C /* IngredientListSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientListSection.swift; sourceTree = "<group>"; };
+		95A902DB28F54925007B7F5C /* dummyVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dummyVC.swift; sourceTree = "<group>"; };
 		95EB50DF28EA821400412176 /* Quint.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Quint.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		95EB50E228EA821400412176 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		95EB50E428EA821400412176 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -171,6 +177,8 @@
 			children = (
 				95EB50E628EA821400412176 /* TreatmentsVC.swift */,
 				9524229028F4326D00361166 /* AllIngredientsVC.swift */,
+				95A902D728F52D46007B7F5C /* IngredientCategoryDetailVC.swift */,
+				95A902DB28F54925007B7F5C /* dummyVC.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -323,6 +331,7 @@
 			children = (
 				95233BDB28EF3B3000A4470E /* ProductListView.swift */,
 				95233BE028EF481F00A4470E /* IngredientListView.swift */,
+				95A902D928F53F03007B7F5C /* IngredientListSection.swift */,
 			);
 			path = UIView;
 			sourceTree = "<group>";
@@ -545,9 +554,12 @@
 				951034E328EFF8820011AE39 /* RoutineHomeViewController.swift in Sources */,
 				951034BE28EFC13D0011AE39 /* HeaderLabel.swift in Sources */,
 				951034D628EFF54C0011AE39 /* QuizSkinCondCell.swift in Sources */,
+				95A902DC28F54925007B7F5C /* dummyVC.swift in Sources */,
+				95A902D828F52D46007B7F5C /* IngredientCategoryDetailVC.swift in Sources */,
 				9538752228EDE2A1001979A8 /* ApiService.swift in Sources */,
 				95FC28BC28F1592F00994750 /* UILabel+RequiredHeight.swift in Sources */,
 				95233BDC28EF3B3000A4470E /* ProductListView.swift in Sources */,
+				95A902DA28F53F03007B7F5C /* IngredientListSection.swift in Sources */,
 				9524229328F43E5F00361166 /* IngredientListCollectionView.swift in Sources */,
 				95EB50E528EA821400412176 /* SceneDelegate.swift in Sources */,
 				95A4311A28EE8F7F007A2108 /* CategoryButton.swift in Sources */,

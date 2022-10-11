@@ -19,8 +19,8 @@ struct K{
     struct Color{
         static let bgQuint = UIColor(red: 244/255, green: 244/255, blue: 244/255, alpha: 1)
         static let whiteQuint = UIColor(red: 254/255, green: 254/255, blue: 254/255, alpha: 1)
-        static let greyQuint = UIColor(red: 35/255, green: 36/255, blue: 35/255, alpha: 1)
-        static let greyDarkQuint = UIColor(red: 125/255, green: 125/255, blue: 125/255, alpha: 1)
+        static let greyDarkQuint = UIColor(red: 35/255, green: 36/255, blue: 35/255, alpha: 1)
+        static let greyQuint = UIColor(red: 125/255, green: 125/255, blue: 125/255, alpha: 1)
         
         static let greenLightQuint = UIColor(red: 53/255, green: 84/255, blue: 73/255, alpha: 1)
         static let yellowLightQuint = UIColor(red: 255/255, green: 211/255, blue: 99/255, alpha: 1)
@@ -52,7 +52,7 @@ struct K{
     }
     
     struct CategoryImage{
-        static let img = [1: UIImage(named: "AntiAcneCategory"), 2: UIImage(named: "AntiAgingCategory"), 3: UIImage(named: "AntiBacterialCategory"), 4: UIImage(named: "BrighteningCategory"), 5: UIImage(named: "HydratingCategory"), 6: UIImage(named: "MoisturizingCategory"), 7: UIImage(named: "PhBalanceCategory"), 8: UIImage(named: "SoothingCategory"), 9: UIImage(named: "UVCategory")]
+        static let ingredient = [1: UIImage(named: "AntiAcneCategory"), 2: UIImage(named: "AntiAgingCategory"), 3: UIImage(named: "AntiBacterialCategory"), 4: UIImage(named: "BrighteningCategory"), 5: UIImage(named: "HydratingCategory"), 6: UIImage(named: "MoisturizingCategory"), 7: UIImage(named: "PhBalanceCategory"), 8: UIImage(named: "SoothingCategory"), 9: UIImage(named: "UVCategory")]
     }
 }
 

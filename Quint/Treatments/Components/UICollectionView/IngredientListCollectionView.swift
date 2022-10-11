@@ -10,6 +10,7 @@ import UIKit
 class IngredientListCollectionView: UIView {
 
     var feedCollection: UICollectionView!
+    var source = K.Dummy.ingredient
     
     override init(frame: CGRect){
         super.init(frame: frame)
@@ -39,19 +40,28 @@ class IngredientListCollectionView: UIView {
             make.width.height.equalToSuperview()
         }
     }
+    
+    func setSource(_ source: [Int: String]){
+        self.source = source
+        self.feedCollection.reloadData()
+    }
+    
+    func getCount() -> Int{
+        return source.count*3
+    }
 }
 
 extension IngredientListCollectionView : UICollectionViewDataSource , UICollectionViewDelegate  {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return K.Dummy.ingredient.count*3
+        return source.count*3
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "IngredientListCell", for: indexPath) as! IngredientListCell
 
-        cell.nameLabel.text = K.Dummy.ingredient[2]!
+        cell.nameLabel.text = source[2]!
         return cell
     }
 }

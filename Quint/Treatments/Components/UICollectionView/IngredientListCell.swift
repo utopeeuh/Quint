@@ -50,8 +50,6 @@ class IngredientListCell: UICollectionViewCell {
     
     func configureLayout(){
         nameLabel.snp.makeConstraints { make in
-//            make.top.equalTo(contentView).offset(18)
-//            make.bottom.equalTo(contentView).offset(18)
             make.centerX.centerY.equalTo(contentView)
             make.width.equalTo(contentView).offset(-48)
         }

@@ -28,7 +28,7 @@ class LargeCategoryCard: CategoryButton {
 //        categoryCard = UIView(frame: self.frame)
 //        categoryCard.isUserInteractionEnabled = false
         
-        imgView = UIImageView(image: K.CategoryImage.img[self.categoryId] as! UIImage)
+        imgView = UIImageView(image: K.CategoryImage.ingredient[self.categoryId] as? UIImage)
         title.textColor = K.Color.greenQuint
         title.font = .interMedium(size: 16)
         title.frame = CGRect(x: 0, y: 0, width: 104, height: 0)

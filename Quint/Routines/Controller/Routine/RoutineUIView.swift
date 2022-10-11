@@ -84,8 +84,13 @@ class RoutineUIView: UIView {
             return
         }
         moveDown()
-        for routine in self.currStack.arrangedSubviews{
-            if let currRoutine = routine as? RoutineUIView{
+        for item in self.currStack.arrangedSubviews{
+            if let currRoutine = item as? RoutineUIView{
+                
+                if currRoutine.btnId == 3 {
+                    currRoutine.logUnlock()
+                }
+                
                 if currRoutine.btnId != self.btnId{
 //                    if(self.isPosAndIdEqual() && currRoutine.isPosAndIdEqual()){
 //                        return
@@ -101,7 +106,17 @@ class RoutineUIView: UIView {
                     }
                 }
             }
+            
+            if let reminderView = item as? ReminderUIView{
+                reminderView.isHidden = true
+            }
+            
         }
+    }
+    
+    func logUnlock() {
+        self.leftBtn.setImage(UIImage(systemName: "lock.open"), for: .normal)
+        self.isUserInteractionEnabled = true
     }
     
     func moveUp(){

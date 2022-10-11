@@ -142,39 +142,6 @@ class RoutineHomeViewController: UIViewController, CLLocationManagerDelegate{
         return stackView
     }()
     
-    private let reminderIconView: UIImageView = {
-        let imageView = UIImageView()
-        let targetSize = CGSize(width: 20, height: 20)
-        var image = UIImage(systemName: "exclamationmark.circle.fill")?.withTintColor(UIColor(red: 35/255, green: 36/255, blue: 35/255, alpha: 1))
-        let scaledImage = image?.scalePreservingAspectRatio(
-            targetSize: targetSize
-        )
-        imageView.image = scaledImage
-        return imageView
-    }()
-    
-    private var reminderRoutine: UILabel = {
-        let label = UILabel()
-        label.text = "Unlock today skin condition log by finishing at least one routine"
-        label.numberOfLines = 0
-        label.textColor = UIColor(red: 35/255, green: 36/255, blue: 35/255, alpha: 1)
-        label.font = label.font.withSize(14)
-        return label
-    }()
-    
-    lazy var hStackReminder: UIStackView = {
-        let stackView = UIStackView()
-        stackView.translatesAutoresizingMaskIntoConstraints = false
-        stackView.axis = .horizontal
-        stackView.distribution = .fill
-        stackView.alignment = .leading
-        stackView.spacing = 10
-        stackView.layer.backgroundColor = CGColor(red: 235/255, green: 235/255, blue: 235/255, alpha: 1)
-        stackView.layer.cornerRadius = 8.0
-        stackView.isHidden = false
-        return stackView
-    }()
-    
     private var todayRoutine: UILabel = {
         let label = UILabel()
         label.text = "Today's routines"
@@ -192,6 +159,8 @@ class RoutineHomeViewController: UIViewController, CLLocationManagerDelegate{
         label.textColor = .black
         return label
     }()
+    
+    var reminderStack = ReminderUIView()
     
     var morningRoutine = RoutineUIView()
     
@@ -217,6 +186,13 @@ class RoutineHomeViewController: UIViewController, CLLocationManagerDelegate{
         }
         configureComponents()
         configureLayout()
+        
+//        if morningRoutine.isUserInteractionEnabled == false || nightRoutine.isUserInteractionEnabled == false {
+//            hStackReminder.isHidden = true
+//            logRoutine.leftBtn.setImage(UIImage(systemName: "lock.open"), for: .normal)
+//            logRoutine.isUserInteractionEnabled = true
+//        }
+        
     }
 
     override func configureComponents() {
@@ -229,12 +205,9 @@ class RoutineHomeViewController: UIViewController, CLLocationManagerDelegate{
         
         hStackViewUV.addArrangedSubview(UVLevelSuggestionIcon)
         hStackViewUV.addArrangedSubview(UVLevelSuggestion)
-        
-        hStackReminder.addArrangedSubview(reminderIconView)
-        hStackReminder.addArrangedSubview(reminderRoutine)
 
         mainStackView.addArrangedSubview(hStackViewUV)
-        mainStackView.addArrangedSubview(hStackReminder)
+        mainStackView.addArrangedSubview(reminderStack)
         mainStackView.addArrangedSubview(todayRoutine)
 
         morningRoutine.leftBtn.setImage(UIImage(systemName: "circle"), for: .normal)
@@ -269,8 +242,6 @@ class RoutineHomeViewController: UIViewController, CLLocationManagerDelegate{
         logRoutine.currPosition = 3
         logRoutine.name = "log"
         logRoutine.isUserInteractionEnabled = false
-        let logGesture = UITapGestureRecognizer(target: self, action: #selector(goToMorningRoutine))
-        logRoutine.addGestureRecognizer(logGesture)
         
         // MARK: - ROUTINE
         mainStackView.addArrangedSubview(morningRoutine)
@@ -336,23 +307,13 @@ class RoutineHomeViewController: UIViewController, CLLocationManagerDelegate{
             make.leftMargin.equalTo(15)
         }
         
-        hStackReminder.snp.makeConstraints { make in
-            make.height.equalTo(66)
-        }
-        
-        reminderIconView.snp.makeConstraints { make in
-            make.top.equalTo(view.safeAreaInsets).offset(23.5)
-            make.left.equalTo(view.safeAreaInsets).offset(16)
-        }
-        
-        reminderRoutine.snp.makeConstraints { make in
-            make.top.equalTo(view.safeAreaInsets).offset(17.5)
-            make.left.equalTo(reminderIconView.snp.right).offset(12)
-            make.right.equalTo(view.safeAreaLayoutGuide).offset(-100)
-        }
-        
         todayRoutine.snp.makeConstraints { make in
-            make.top.equalTo(hStackReminder.snp.bottom).offset(25)
+            make.top.equalTo(reminderStack.snp.bottom).offset(25)
+        }
+        
+        reminderStack.snp.makeConstraints { make in
+            make.height.equalTo(66)
+            make.centerX.equalTo(view.center.x)
         }
         
         morningRoutine.snp.makeConstraints { make in
@@ -386,9 +347,9 @@ class RoutineHomeViewController: UIViewController, CLLocationManagerDelegate{
         
     }
     
-    @objc func selectTopCategory() {
-        print("TES!!!!")
-    }
+//    @objc func selectTopCategory() {
+//        print("TES!!!!")
+//    }
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]){
         guard let location = locations.first else {

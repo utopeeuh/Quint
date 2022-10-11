@@ -75,10 +75,7 @@ class RoutineUIView: UIView {
         
         rearrangeStack()
         
-        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1) {
-            let pop = PopupRoutine()
-            self.addSubview(pop)
-        }
+        
     }
     
     //MARK: - Reposition

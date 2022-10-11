@@ -247,6 +247,7 @@ class RoutineHomeViewController: UIViewController, CLLocationManagerDelegate{
         morningRoutine.currStack = mainStackView
         morningRoutine.currPosition = 1
         morningRoutine.name = "morning"
+        morningRoutine.isUserInteractionEnabled = true
         
         nightRoutine.leftBtn.setImage(UIImage(systemName: "circle"), for: .normal)
         nightRoutine.imageRoutine.image = UIImage(named: "iconNight")
@@ -256,15 +257,20 @@ class RoutineHomeViewController: UIViewController, CLLocationManagerDelegate{
         nightRoutine.currStack = mainStackView
         nightRoutine.currPosition = 2
         nightRoutine.name = "night"
+        nightRoutine.isUserInteractionEnabled = true
         
         logRoutine.leftBtn.setImage(UIImage(systemName: "lock"), for: .normal)
         logRoutine.leftBtn.isEnabled = true
         logRoutine.imageRoutine.image = UIImage(named: "iconLog")
+        logRoutine.chevRight.image = UIImage(systemName: "chevron.right")
         logRoutine.titleRoutine.text = "Daily skin condition log"
         logRoutine.btnId = 3
         logRoutine.currStack = mainStackView
         logRoutine.currPosition = 3
         logRoutine.name = "log"
+        logRoutine.isUserInteractionEnabled = false
+        let logGesture = UITapGestureRecognizer(target: self, action: #selector(goToMorningRoutine))
+        logRoutine.addGestureRecognizer(logGesture)
         
         // MARK: - ROUTINE
         mainStackView.addArrangedSubview(morningRoutine)

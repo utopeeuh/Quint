@@ -87,20 +87,19 @@ class PopupRoutine: UIView {
     }
     
     override init(frame: CGRect) {
-        let superViewRoutine = MorningRoutinesViewController()
         super.init(frame: frame)
         self.backgroundColor = .gray.withAlphaComponent(0.6)
         self.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(animateOut)))
-        superViewRoutine.view.frame = UIScreen.main.bounds
+        self.frame = UIScreen.main.bounds
         
         self.addSubview(container)
         container.snp.makeConstraints { make in
             make.centerY.equalTo(self.center.y)
-            make.centerX.equalTo(self.center.x).offset(180)
-            make.width.equalTo(284)
-            make.height.equalTo(386)
+            make.centerX.equalTo(self.center.x)
+            make.width.equalTo(250)
+            make.height.equalTo(270)
         }
-        container.addSubview(mainStackView)
+        container.self.addSubview(mainStackView)
         animateIn()
         
     }
@@ -111,6 +110,12 @@ class PopupRoutine: UIView {
     
     func ConfigureUI() {
         configureComponents()
+        imagePencil.snp.makeConstraints { make in
+            make.height.width.equalTo(78)
+        }
+        mainStackView.snp.makeConstraints { make in
+            make.top.left.height.width.equalToSuperview()
+        }
     }
     
     func configureComponents() {

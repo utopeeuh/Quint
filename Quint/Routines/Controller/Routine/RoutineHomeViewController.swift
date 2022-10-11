@@ -239,6 +239,8 @@ class RoutineHomeViewController: UIViewController, CLLocationManagerDelegate{
         logRoutine.imageRoutine.image = UIImage(named: "iconLog")
         logRoutine.chevRight.image = UIImage(systemName: "chevron.right")
         logRoutine.titleRoutine.text = "Daily skin condition log"
+        let logGesture = UITapGestureRecognizer(target: self, action: #selector(goToDailyLog))
+        logRoutine.addGestureRecognizer(logGesture)
         logRoutine.btnId = 3
         logRoutine.currStack = mainStackView
         logRoutine.currPosition = 3
@@ -266,6 +268,11 @@ class RoutineHomeViewController: UIViewController, CLLocationManagerDelegate{
 //        mainStackView.addArrangedSubview(scrollView)
         mainStackView.addArrangedSubview(dailyTips)
         
+    }
+    
+    @objc func goToDailyLog(sender: UITapGestureRecognizer) {
+        let controller = DailyLogViewController()
+        navigationController?.pushViewController(controller, animated: true)
     }
     
     @objc func goToMorningRoutine(sender: UITapGestureRecognizer) {

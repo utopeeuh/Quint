@@ -15,6 +15,7 @@
 		72BF72CB28F5186E0036C456 /* ReminderUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72BF72CA28F5186E0036C456 /* ReminderUIView.swift */; };
 		72BF72CD28F543280036C456 /* NightRoutinesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72BF72CC28F543280036C456 /* NightRoutinesViewController.swift */; };
 		72BF72CF28F547AE0036C456 /* NightRoutinesStepsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72BF72CE28F547AE0036C456 /* NightRoutinesStepsTableViewCell.swift */; };
+		72BF72D128F548DD0036C456 /* DailyLogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72BF72D028F548DD0036C456 /* DailyLogViewController.swift */; };
 		951034BE28EFC13D0011AE39 /* HeaderLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951034BD28EFC13D0011AE39 /* HeaderLabel.swift */; };
 		951034C028EFEDA90011AE39 /* IngredientButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951034BF28EFEDA90011AE39 /* IngredientButton.swift */; };
 		951034C828EFF51F0011AE39 /* UIViewController+DismissKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951034C328EFF51F0011AE39 /* UIViewController+DismissKeyboard.swift */; };
@@ -83,6 +84,7 @@
 		72BF72CA28F5186E0036C456 /* ReminderUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderUIView.swift; sourceTree = "<group>"; };
 		72BF72CC28F543280036C456 /* NightRoutinesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NightRoutinesViewController.swift; sourceTree = "<group>"; };
 		72BF72CE28F547AE0036C456 /* NightRoutinesStepsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NightRoutinesStepsTableViewCell.swift; sourceTree = "<group>"; };
+		72BF72D028F548DD0036C456 /* DailyLogViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyLogViewController.swift; sourceTree = "<group>"; };
 		951034BD28EFC13D0011AE39 /* HeaderLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderLabel.swift; sourceTree = "<group>"; };
 		951034BF28EFEDA90011AE39 /* IngredientButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientButton.swift; sourceTree = "<group>"; };
 		951034C328EFF51F0011AE39 /* UIViewController+DismissKeyboard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+DismissKeyboard.swift"; sourceTree = "<group>"; };
@@ -253,6 +255,7 @@
 				95A1E05928F3F61D00386972 /* DailySkincareTipsView.swift */,
 				72BF72CA28F5186E0036C456 /* ReminderUIView.swift */,
 				72BF72CC28F543280036C456 /* NightRoutinesViewController.swift */,
+				72BF72D028F548DD0036C456 /* DailyLogViewController.swift */,
 			);
 			path = Routine;
 			sourceTree = "<group>";
@@ -533,6 +536,7 @@
 				95EB50E728EA821400412176 /* TreatmentsVC.swift in Sources */,
 				9538752328EDE2A1001979A8 /* ProductListCollectionView.swift in Sources */,
 				951034CA28EFF51F0011AE39 /* UIFont+CustomFont.swift in Sources */,
+				72BF72D128F548DD0036C456 /* DailyLogViewController.swift in Sources */,
 				72BF72CF28F547AE0036C456 /* NightRoutinesStepsTableViewCell.swift in Sources */,
 				72BF72CB28F5186E0036C456 /* ReminderUIView.swift in Sources */,
 				959C2C0228ED44A3007B1251 /* UIViewController+ConfigureUI.swift in Sources */,

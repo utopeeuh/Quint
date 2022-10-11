@@ -7,7 +7,7 @@
 
 import UIKit
 
-class RoutineStepsTableViewCell: UITableViewCell {
+class MorningRoutineStepsTableViewCell: UITableViewCell {
     
     var product: Product? {
         didSet {
@@ -31,7 +31,7 @@ class RoutineStepsTableViewCell: UITableViewCell {
         label.text = ""
         label.textColor = .white
         label.layer.cornerRadius = 14.0
-        label.layer.backgroundColor = CGColor(red: 255/255, green: 161/255, blue: 92/255, alpha: 1)
+        label.layer.backgroundColor = CGColor(red: 242/255, green: 105/255, blue: 6/255, alpha: 1)
         label.textAlignment = .center
         return label
     }()

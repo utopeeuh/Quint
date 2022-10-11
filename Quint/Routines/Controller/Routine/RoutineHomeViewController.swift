@@ -226,6 +226,8 @@ class RoutineHomeViewController: UIViewController, CLLocationManagerDelegate{
         nightRoutine.imageRoutine.image = UIImage(named: "iconNight")
         nightRoutine.chevRight.image = UIImage(systemName: "chevron.right")
         nightRoutine.titleRoutine.text = "Night routine"
+        let nightGesture = UITapGestureRecognizer(target: self, action: #selector(goToNightRoutine))
+        nightRoutine.addGestureRecognizer(nightGesture)
         nightRoutine.btnId = 2
         nightRoutine.currStack = mainStackView
         nightRoutine.currPosition = 2
@@ -268,6 +270,11 @@ class RoutineHomeViewController: UIViewController, CLLocationManagerDelegate{
     
     @objc func goToMorningRoutine(sender: UITapGestureRecognizer) {
         let controller = MorningRoutinesViewController()
+        navigationController?.pushViewController(controller, animated: true)
+    }
+    
+    @objc func goToNightRoutine(sender: UITapGestureRecognizer) {
+        let controller = NightRoutinesViewController()
         navigationController?.pushViewController(controller, animated: true)
     }
     

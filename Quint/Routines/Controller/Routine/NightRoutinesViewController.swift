@@ -1,8 +1,8 @@
 //
-//  MorningRoutinesViewController.swift
+//  NightRoutinesViewController.swift
 //  Quint
 //
-//  Created by Stefanus Hermawan Sebastian on 10/10/22.
+//  Created by Stefanus Hermawan Sebastian on 11/10/22.
 //
 
 import UIKit
@@ -12,7 +12,7 @@ import RxDataSources
 import SnapKit
 
 @available(iOS 16.0, *)
-class MorningRoutinesViewController: UIViewController, UIScrollViewDelegate, UITableViewDelegate {
+class NightRoutinesViewController: UIViewController, UIScrollViewDelegate, UITableViewDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,7 +24,7 @@ class MorningRoutinesViewController: UIViewController, UIScrollViewDelegate, UIT
     private let tableView: UITableView = {
         let tv = UITableView(frame: CGRect(x: 0, y: 0, width: 0, height: 0), style: .insetGrouped)
         tv.translatesAutoresizingMaskIntoConstraints = false
-        tv.register(MorningRoutineStepsTableViewCell.self, forCellReuseIdentifier: "MorningRoutineStepsTableViewCell")
+        tv.register(NightRoutinesStepsTableViewCell.self, forCellReuseIdentifier: "NightRoutinesStepsTableViewCell")
         tv.sectionHeaderHeight = 12
         tv.sectionFooterHeight = 0
         return tv
@@ -33,7 +33,7 @@ class MorningRoutinesViewController: UIViewController, UIScrollViewDelegate, UIT
     func bindTableData() {
         tableView.rx.setDelegate(self).disposed(by: bag)
         let dataSource = RxTableViewSectionedReloadDataSource<SectionModel<String, Product>> { _, tableView, indexPath, item in
-            let cell = tableView.dequeueReusableCell(withIdentifier: "MorningRoutineStepsTableViewCell", for: indexPath) as! MorningRoutineStepsTableViewCell
+            let cell = tableView.dequeueReusableCell(withIdentifier: "NightRoutinesStepsTableViewCell", for: indexPath) as! NightRoutinesStepsTableViewCell
             cell.product = item
             return cell
         } titleForHeaderInSection: { dataSource, sectionIndex in
@@ -80,7 +80,7 @@ class MorningRoutinesViewController: UIViewController, UIScrollViewDelegate, UIT
     
     let navbar: UIView = {
         let nav = UIView()
-        nav.backgroundColor = UIColor(red: 242/255, green: 105/255, blue: 6/255, alpha: 1)
+        nav.backgroundColor = UIColor(red: 11/255, green: 28/255, blue: 87/255, alpha: 1)
         return nav
     }()
     
@@ -133,7 +133,7 @@ class MorningRoutinesViewController: UIViewController, UIScrollViewDelegate, UIT
     
     override func configureComponents() {
         navbar.addSubview(sunIcon)
-        navbar.addSubview(titleMorning)
+        navbar.addSubview(titleNight)
         mainStackView.addArrangedSubview(navbar)
         
         hStackViewHeader.addArrangedSubview(routineSteps)
@@ -163,7 +163,7 @@ class MorningRoutinesViewController: UIViewController, UIScrollViewDelegate, UIT
             make.centerY.equalTo(126)
         }
         
-        titleMorning.snp.makeConstraints { make in
+        titleNight.snp.makeConstraints { make in
             make.centerX.equalTo(view.center.x)
             make.top.equalTo(sunIcon.snp.bottom).offset(15)
         }
@@ -210,10 +210,10 @@ class MorningRoutinesViewController: UIViewController, UIScrollViewDelegate, UIT
         return image
     }()
     
-    private let titleMorning: UILabel = {
+    private let titleNight: UILabel = {
         let title = UILabel()
         title.textColor = .white
-        title.text = "Morning routine"
+        title.text = "Night routine"
         title.font = title.font.withSize(30)
         return title
     }()
@@ -223,6 +223,5 @@ class MorningRoutinesViewController: UIViewController, UIScrollViewDelegate, UIT
         configureComponents()
         configureLayout()
     }
-
 
 }

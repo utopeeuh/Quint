@@ -41,7 +41,6 @@ class IngredientCategoryDetailVC: UIViewController{
         catDescLabel.numberOfLines = 0
         catDescLabel.lineBreakMode = .byWordWrapping
         
-        
         bottomView.backgroundColor = K.Color.bgQuint
         bottomView.addSubview(ingredientCollection)
     }
@@ -82,12 +81,5 @@ class IngredientCategoryDetailVC: UIViewController{
             make.top.equalTo(catDescLabel.snp.bottom).offset(28)
             make.left.right.bottom.equalToSuperview()
         }
-        
-        
-        
     }
-    
-    
-    
-    
 }

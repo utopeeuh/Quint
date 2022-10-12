@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-extension UIButton{
+extension UIView{
     func applyGradient(colours: [UIColor], locations: [NSNumber]?)
     {
         let gradient: CAGradientLayer = CAGradientLayer()

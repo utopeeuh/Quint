@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 
 struct K{
-    // offset valuesnya masih ngasal nanti benerin aja
+    
     struct Offset{
         static let lg = 28
         static let md = 16

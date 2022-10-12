@@ -3,7 +3,6 @@
 //  Quint
 //
 //  Created by Tb. Daffa Amadeo Zhafrana on 03/10/22.
-//
 
 import UIKit
 import CoreData

@@ -11,7 +11,7 @@ import SnapKit
 
 class IngredientListSection: UIView{
     
-    var sectionHeader = UILabel()
+    var sectionHeader = HeaderLabel()
     var ingredientCollection = IngredientListCollectionView()
     
     override init(frame: CGRect) {
@@ -42,7 +42,6 @@ class IngredientListSection: UIView{
     
     func configureComponents(){
         backgroundColor = K.Color.bgQuint
-        sectionHeader.font = .clashGroteskMedium(size: 20)
         ingredientCollection.feedCollection.isScrollEnabled = false
     }
     

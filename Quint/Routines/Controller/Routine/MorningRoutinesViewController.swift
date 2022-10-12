@@ -25,12 +25,11 @@ class MorningRoutinesViewController: UIViewController, UIScrollViewDelegate, UIT
         let tv = UITableView(frame: CGRect(x: 0, y: 0, width: 0, height: 0), style: .insetGrouped)
         tv.translatesAutoresizingMaskIntoConstraints = false
         tv.register(MorningRoutineStepsTableViewCell.self, forCellReuseIdentifier: "MorningRoutineStepsTableViewCell")
-        tv.sectionHeaderHeight = 12
-        tv.sectionFooterHeight = 0
+        tv.sectionHeaderHeight = 6
+        tv.sectionFooterHeight = 6
+        tv.separatorColor = UIColor(red: 244/255, green: 244/255, blue: 244/255, alpha: 1)
         return tv
     }()
-    
-    
     
     func bindTableData() {
         tableView.rx.setDelegate(self).disposed(by: bag)
@@ -46,7 +45,7 @@ class MorningRoutinesViewController: UIViewController, UIScrollViewDelegate, UIT
 
         //Fetch items
         viewModel.fetchItems()
-    
+
     }
     
     private var viewModel = RoutineSteps()
@@ -134,6 +133,21 @@ class MorningRoutinesViewController: UIViewController, UIScrollViewDelegate, UIT
         return button
     }()
     
+    private let scrollView: UIScrollView = {
+        let view = UIScrollView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
+    
+    private lazy var stepsStackView: UIStackView = {
+        let stackView = UIStackView()
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+        stackView.axis = .vertical
+        stackView.alignment = .fill
+        stackView.spacing = 10
+        return stackView
+    }()
+    
     override func configureComponents() {
         navbar.addSubview(sunIcon)
         navbar.addSubview(titleMorning)
@@ -143,23 +157,34 @@ class MorningRoutinesViewController: UIViewController, UIScrollViewDelegate, UIT
         hStackViewHeader.addArrangedSubview(editBtn)
         editBtn.addTarget(self, action: #selector(editMenu), for: .touchUpInside)
         mainStackView.addArrangedSubview(hStackViewHeader)
+
         
         mainStackView.addArrangedSubview(tableView)
         mainStackView.addArrangedSubview(addBtn)
         mainStackView.addArrangedSubview(finishBtn)
-        
         
     }
     
     @objc func editMenu() {
         tableView.isEditing = !tableView.isEditing
         let title = (tableView.isEditing) ? "Done" : "Edit steps"
+        if !tableView.isEditing {
+            tableView.layoutIfNeeded()
+        }
         editBtn.setTitle(title, for: .normal)
     }
-
+    
     
     override func configureLayout() {
         view.addSubview(mainStackView)
+        
+        hStackViewHeader.snp.makeConstraints { make in
+            make.top.equalTo(navbar.snp.bottom).offset(20)
+        }
+        
+        mainStackView.snp.makeConstraints { make in
+           make.top.right.bottom.left.equalToSuperview()
+       }
         
         navbar.snp.makeConstraints { (make) -> Void in
             make.left.equalTo(self.view)

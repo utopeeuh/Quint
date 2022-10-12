@@ -128,18 +128,81 @@ class DailyLogViewController: UIViewController {
         feelBetterBtn.layer.backgroundColor = CGColor(red: 244/255, green: 244/255, blue: 244/255, alpha: 1)
     }
     
+    private let sedentaryBtn: UIButton = {
+        let button = UIButton()
+        button.setTitleColor(K.Color.greenQuint, for: .normal)
+        button.titleLabel?.font = button.titleLabel?.font.withSize(13)
+        button.setImage(UIImage(named: "sedentaryIcon"), for: .normal)
+        button.setTitle(" Sedentary", for: .normal)
+        button.layer.cornerRadius = 8.0
+        button.layer.borderColor = CGColor(red: 29/255, green: 53/255, blue: 44/255, alpha: 1)
+        button.layer.backgroundColor = CGColor(red: 1, green: 1, blue: 1, alpha: 1)
+        button.moveImageLeftTextCenter()
+        return button
+    }()
+    
+    private let activeBtn: UIButton = {
+        let button = UIButton()
+        button.setTitleColor(K.Color.greenQuint, for: .normal)
+        button.titleLabel?.font = button.titleLabel?.font.withSize(13)
+        button.setImage(UIImage(named: "activeIcon"), for: .normal)
+        button.setTitle("    Active", for: .normal)
+        button.layer.cornerRadius = 8.0
+        button.layer.borderColor = CGColor(red: 29/255, green: 53/255, blue: 44/255, alpha: 1)
+        button.layer.backgroundColor = CGColor(red: 1, green: 1, blue: 1, alpha: 1)
+        button.moveImageLeftTextCenter()
+        return button
+    }()
+    
+    private let veryActiveBtn: UIButton = {
+        let button = UIButton()
+        button.setTitleColor(K.Color.greenQuint, for: .normal)
+        button.titleLabel?.font = button.titleLabel?.font.withSize(13)
+        button.setImage(UIImage(named: "veryActiveIcon"), for: .normal)
+        button.setTitle(" Very Active", for: .normal)
+        button.layer.cornerRadius = 8.0
+        button.layer.borderColor = CGColor(red: 29/255, green: 53/255, blue: 44/255, alpha: 1)
+        button.layer.backgroundColor = CGColor(red: 1, green: 1, blue: 1, alpha: 1)
+        button.moveImageLeftTextCenter()
+        return button
+    }()
+    
+    @objc func sedentaryHandler() {
+        sedentaryBtn.layer.borderWidth = 1.0
+        activeBtn.layer.borderWidth = 0.0
+        veryActiveBtn.layer.borderWidth = 0.0
+    }
+    
+    @objc func activeHandler() {
+        sedentaryBtn.layer.borderWidth = 0.0
+        activeBtn.layer.borderWidth = 1.0
+        veryActiveBtn.layer.borderWidth = 0.0
+    }
+    
+    @objc func veryActiveHandler() {
+        sedentaryBtn.layer.borderWidth = 0.0
+        activeBtn.layer.borderWidth = 0.0
+        veryActiveBtn.layer.borderWidth = 1.0
+    }
+    
     override func configureComponents() {
         mainStackView.addArrangedSubview(moodLabel)
         mainStackView.addArrangedSubview(sleepLabel)
-        mainStackView.addArrangedSubview(activityLabel)
-        mainStackView.addArrangedSubview(feelSkinLabel)
         
+        mainStackView.addArrangedSubview(activityLabel)
+        mainStackView.addArrangedSubview(sedentaryBtn)
+        sedentaryBtn.addTarget(self, action: #selector(sedentaryHandler), for: UIControl.Event.touchUpInside)
+        mainStackView.addArrangedSubview(activeBtn)
+        activeBtn.addTarget(self, action: #selector(activeHandler), for: UIControl.Event.touchUpInside)
+        mainStackView.addArrangedSubview(veryActiveBtn)
+        veryActiveBtn.addTarget(self, action: #selector(veryActiveHandler), for: UIControl.Event.touchUpInside)
+        
+        mainStackView.addArrangedSubview(feelSkinLabel)
         hStackButtonFeelSkin.addArrangedSubview(feelBetterBtn)
         feelBetterBtn.addTarget(self, action: #selector(feelBetterHandler), for: UIControl.Event.touchUpInside)
         hStackButtonFeelSkin.addArrangedSubview(feelWorseBtn)
         feelWorseBtn.addTarget(self, action: #selector(feelWorseHandler), for: UIControl.Event.touchUpInside)
         mainStackView.addArrangedSubview(hStackButtonFeelSkin)
-        
         
         mainStackView.addArrangedSubview(createLogBtn)
     }
@@ -190,6 +253,24 @@ class DailyLogViewController: UIViewController {
             make.right.equalTo(view.safeAreaInsets)
         }
         
+        sedentaryBtn.snp.makeConstraints { make in
+            make.height.equalTo(45)
+            make.left.equalTo(view.safeAreaLayoutGuide).offset(20)
+            make.right.equalTo(view.safeAreaLayoutGuide).offset(-20)
+        }
+        
+        activeBtn.snp.makeConstraints { make in
+            make.height.equalTo(45)
+            make.left.equalTo(view.safeAreaLayoutGuide).offset(20)
+            make.right.equalTo(view.safeAreaLayoutGuide).offset(-20)
+        }
+        
+        veryActiveBtn.snp.makeConstraints { make in
+            make.height.equalTo(45)
+            make.left.equalTo(view.safeAreaLayoutGuide).offset(20)
+            make.right.equalTo(view.safeAreaLayoutGuide).offset(-20)
+        }
+        
     }
     
     func navBar() {
@@ -213,6 +294,6 @@ class DailyLogViewController: UIViewController {
         navigationController?.popViewController(animated: true)
     }
 
-
-
 }
+
+

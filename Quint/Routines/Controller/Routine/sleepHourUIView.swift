@@ -56,9 +56,11 @@ class sleepHourUIView: UIView {
         return button
     }()
     
+    var countNum: Int = 8
+    
+    
     private var numLabel: UILabel = {
         let label = UILabel()
-        label.text = "8"
         label.font = label.font.withSize(48)
         label.textColor = K.Color.greenQuint
         return label
@@ -72,16 +74,73 @@ class sleepHourUIView: UIView {
         return label
     }()
     
+    @objc func minHandler() {
+        plusBtn.isEnabled = true
+        if countNum > 1 {
+            countNum = countNum - 1
+            numLabel.text = String(countNum)
+            if countNum == 1 {
+                minBtn.isEnabled = false
+           }
+        }
+        
+        if countNum == 10 {
+            numLabel.text = "\(countNum)+"
+            
+            numLabel.snp.makeConstraints { make in
+                make.left.equalTo(minBtn.snp.right).offset(70)
+                make.top.equalTo(self.safeAreaInsets).offset(-25)
+            }
+            
+            
+            
+        }
+
+    }
+    
+    @objc func plusHandler() {
+        minBtn.isEnabled = true
+        if countNum < 10 {
+            countNum = countNum + 1
+            numLabel.text = String(countNum)
+            if countNum == 10 {
+                plusBtn.isEnabled = false
+            }
+        }
+        
+        if countNum == 10 {
+            numLabel.text = "\(countNum)+"
+            
+            numLabel.snp.makeConstraints { make in
+                make.left.equalTo(minBtn.snp.right).offset(70)
+                make.top.equalTo(self.safeAreaInsets).offset(-25)
+            }
+        }
+    }
+    
     func configureComponents() {
         hStackSleepHour.addArrangedSubview(minBtn)
+        minBtn.addTarget(self, action: #selector(minHandler), for: .touchUpInside)
         
         vStackViewSleepHour.addArrangedSubview(numLabel)
+        numLabel.text = String(countNum)
+        if countNum == 1 {
+            minBtn.isEnabled = false
+        }
+        
+        if countNum >= 10 {
+            numLabel.text = "\(countNum)+"
+            plusBtn.isEnabled = false
+        }
+        
         vStackViewSleepHour.addArrangedSubview(hoursLabel)
         
         hStackSleepHour.addArrangedSubview(vStackViewSleepHour)
         
         hStackSleepHour.addArrangedSubview(plusBtn)
+        plusBtn.addTarget(self, action: #selector(plusHandler), for: .touchUpInside)
     }
+    
     
     func configureLayout() {
         self.addSubview(hStackSleepHour)

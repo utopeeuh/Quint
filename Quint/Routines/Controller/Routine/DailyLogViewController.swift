@@ -187,8 +187,34 @@ class DailyLogViewController: UIViewController {
     
     var sleepHours = sleepHourUIView()
     
+    var sliderMood = moodSliderUIView()
+    
+    let step: Float = 20
+    
+    @objc func sliderValueDidChange(_ sender:UISlider!){
+           
+        // Use this code below only if you want UISlider to snap to values step by step
+        let roundedStepValue = round(sender.value / step) * step
+        sender.value = roundedStepValue
+        
+        if roundedStepValue == 0.0 {
+            sliderMood.moodDetail.text = "Stressed"
+        }else if roundedStepValue == 20.0 {
+            sliderMood.moodDetail.text = "Sad"
+        }else if roundedStepValue == 40.0 {
+            sliderMood.moodDetail.text = "Nothing special"
+        }else if roundedStepValue == 60.0 {
+            sliderMood.moodDetail.text = "Happy"
+        }else if roundedStepValue == 80.0 {
+            sliderMood.moodDetail.text = "Joyful"
+        }
+   }
+    
     override func configureComponents() {
         mainStackView.addArrangedSubview(moodLabel)
+        mainStackView.addArrangedSubview(sliderMood)
+        sliderMood.moodSlider.addTarget(self, action: #selector(self.sliderValueDidChange(_:)), for: .valueChanged)
+        
         mainStackView.addArrangedSubview(sleepLabel)
         mainStackView.addArrangedSubview(sleepHours)
         
@@ -275,7 +301,13 @@ class DailyLogViewController: UIViewController {
         }
         
         sleepHours.snp.makeConstraints { make in
-            make.height.equalTo(120)
+            make.height.equalTo(100)
+            make.left.equalTo(view.safeAreaLayoutGuide).offset(20)
+            make.right.equalTo(view.safeAreaLayoutGuide).offset(-20)
+        }
+        
+        sliderMood.snp.makeConstraints { make in
+            make.height.equalTo(100)
             make.left.equalTo(view.safeAreaLayoutGuide).offset(20)
             make.right.equalTo(view.safeAreaLayoutGuide).offset(-20)
         }

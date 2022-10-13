@@ -142,7 +142,7 @@ class sleepHourUIView: UIView {
         
         minBtn.snp.makeConstraints { make in
             make.left.equalTo(self.safeAreaInsets).offset(25)
-            make.top.equalTo(self.safeAreaInsets).offset(40)
+            make.top.equalTo(self.safeAreaInsets).offset(30)
         }
         
         numLabel.snp.makeConstraints { make in
@@ -151,7 +151,7 @@ class sleepHourUIView: UIView {
         
         plusBtn.snp.makeConstraints { make in
             make.right.equalTo(self.safeAreaInsets).offset(-25)
-            make.top.equalTo(self.safeAreaInsets).offset(40)
+            make.top.equalTo(self.safeAreaInsets).offset(30)
         }
         
         

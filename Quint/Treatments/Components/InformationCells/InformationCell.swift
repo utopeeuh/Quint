@@ -53,6 +53,10 @@ class InformationCell: UIView{
         iconImageView.image = image
     }
     
+    func getHeight()->CGFloat{
+        return descLabel.requiredHeight + 36
+    }
+    
     func configureLayout(){
         addSubview(iconImageView)
         addSubview(descLabel)

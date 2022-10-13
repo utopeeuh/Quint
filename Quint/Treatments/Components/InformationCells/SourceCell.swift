@@ -12,7 +12,7 @@ import SnapKit
 class SourceCell: UIView{
     
     
-    private var linkLabel = UILabel()
+    var linkLabel = UILabel()
     
     required init(_ url: String) {
         super.init(frame: .zero)
@@ -52,7 +52,7 @@ class SourceCell: UIView{
         guard let url = URL(string: linkLabel.text!) else {
           return //be safe
         }
-
+        print("Tapped link")
         if #available(iOS 10.0, *) {
             UIApplication.shared.open(url, options: [:], completionHandler: nil)
         } else {

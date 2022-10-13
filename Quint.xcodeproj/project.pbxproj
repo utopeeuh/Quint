@@ -52,6 +52,11 @@
 		9538752528EDE2A1001979A8 /* ProductListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9538751F28EDE2A1001979A8 /* ProductListCell.swift */; };
 		9538752628EDE2A1001979A8 /* PinterestLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9538752028EDE2A1001979A8 /* PinterestLayout.swift */; };
 		9538752B28EDE53C001979A8 /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9538752928EDE53C001979A8 /* Photo.swift */; };
+		9543DA6F28F7BBBA00E37A28 /* PrecautionSegmentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9543DA6E28F7BBBA00E37A28 /* PrecautionSegmentView.swift */; };
+		9543DA7128F826AA00E37A28 /* ProductDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9543DA7028F826AA00E37A28 /* ProductDetailVC.swift */; };
+		9543DA7328F834AE00E37A28 /* ProductDetailTopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9543DA7228F834AE00E37A28 /* ProductDetailTopView.swift */; };
+		9543DA7628F8361B00E37A28 /* RatingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9543DA7528F8361B00E37A28 /* RatingCell.swift */; };
+		9543DA7828F85A7A00E37A28 /* ProductCategoryLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9543DA7728F85A7A00E37A28 /* ProductCategoryLabel.swift */; };
 		9572F0B028F68EC00035BCA3 /* InformationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9572F0AF28F68EC00035BCA3 /* InformationCell.swift */; };
 		9572F0B328F694C70035BCA3 /* AllergenCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9572F0B228F694C70035BCA3 /* AllergenCell.swift */; };
 		9572F0B528F694E00035BCA3 /* UsageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9572F0B428F694E00035BCA3 /* UsageCell.swift */; };
@@ -127,6 +132,11 @@
 		9538751F28EDE2A1001979A8 /* ProductListCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductListCell.swift; sourceTree = "<group>"; };
 		9538752028EDE2A1001979A8 /* PinterestLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PinterestLayout.swift; sourceTree = "<group>"; };
 		9538752928EDE53C001979A8 /* Photo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
+		9543DA6E28F7BBBA00E37A28 /* PrecautionSegmentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrecautionSegmentView.swift; sourceTree = "<group>"; };
+		9543DA7028F826AA00E37A28 /* ProductDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailVC.swift; sourceTree = "<group>"; };
+		9543DA7228F834AE00E37A28 /* ProductDetailTopView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailTopView.swift; sourceTree = "<group>"; };
+		9543DA7528F8361B00E37A28 /* RatingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingCell.swift; sourceTree = "<group>"; };
+		9543DA7728F85A7A00E37A28 /* ProductCategoryLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCategoryLabel.swift; sourceTree = "<group>"; };
 		9572F0AF28F68EC00035BCA3 /* InformationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationCell.swift; sourceTree = "<group>"; };
 		9572F0B228F694C70035BCA3 /* AllergenCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllergenCell.swift; sourceTree = "<group>"; };
 		9572F0B428F694E00035BCA3 /* UsageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsageCell.swift; sourceTree = "<group>"; };
@@ -193,6 +203,7 @@
 				95EB50E628EA821400412176 /* TreatmentsVC.swift */,
 				9524229028F4326D00361166 /* AllIngredientsVC.swift */,
 				95A902D728F52D46007B7F5C /* IngredientCategoryDetailVC.swift */,
+				9543DA7028F826AA00E37A28 /* ProductDetailVC.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -297,8 +308,8 @@
 				9572F0B128F694B50035BCA3 /* InformationCells */,
 				95A1E05228F3BA0F00386972 /* UIButton */,
 				95A1E05528F3BA9200386972 /* UICollectionView */,
-				95A1E05628F3BAA100386972 /* UILabel */,
 				95A1E05428F3BA6800386972 /* UIScrollView */,
+				9543DA7428F835FA00E37A28 /* Misc */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -309,6 +320,16 @@
 				9538752928EDE53C001979A8 /* Photo.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		9543DA7428F835FA00E37A28 /* Misc */ = {
+			isa = PBXGroup;
+			children = (
+				951034BD28EFC13D0011AE39 /* HeaderLabel.swift */,
+				9543DA7528F8361B00E37A28 /* RatingCell.swift */,
+				9543DA7728F85A7A00E37A28 /* ProductCategoryLabel.swift */,
+			);
+			path = Misc;
 			sourceTree = "<group>";
 		};
 		9572F0B128F694B50035BCA3 /* InformationCells */ = {
@@ -358,9 +379,11 @@
 			isa = PBXGroup;
 			children = (
 				95A902DB28F54925007B7F5C /* IngredientSegmentView.swift */,
+				9543DA6E28F7BBBA00E37A28 /* PrecautionSegmentView.swift */,
 				95233BDB28EF3B3000A4470E /* ProductListView.swift */,
 				95233BE028EF481F00A4470E /* IngredientListView.swift */,
 				95A902D928F53F03007B7F5C /* IngredientListSection.swift */,
+				9543DA7228F834AE00E37A28 /* ProductDetailTopView.swift */,
 			);
 			path = UIView;
 			sourceTree = "<group>";
@@ -382,14 +405,6 @@
 				9524229428F43F7900361166 /* IngredientListCell.swift */,
 			);
 			path = UICollectionView;
-			sourceTree = "<group>";
-		};
-		95A1E05628F3BAA100386972 /* UILabel */ = {
-			isa = PBXGroup;
-			children = (
-				951034BD28EFC13D0011AE39 /* HeaderLabel.swift */,
-			);
-			path = UILabel;
 			sourceTree = "<group>";
 		};
 		95EB50D628EA821400412176 = {
@@ -578,6 +593,7 @@
 				9538752328EDE2A1001979A8 /* ProductListCollectionView.swift in Sources */,
 				951034CA28EFF51F0011AE39 /* UIFont+CustomFont.swift in Sources */,
 				959C2C0228ED44A3007B1251 /* UIViewController+ConfigureUI.swift in Sources */,
+				9543DA7328F834AE00E37A28 /* ProductDetailTopView.swift in Sources */,
 				9524229128F4326D00361166 /* AllIngredientsVC.swift in Sources */,
 				95EB50E328EA821400412176 /* AppDelegate.swift in Sources */,
 				951034E328EFF8820011AE39 /* RoutineHomeViewController.swift in Sources */,
@@ -593,6 +609,7 @@
 				95A902DA28F53F03007B7F5C /* IngredientListSection.swift in Sources */,
 				9524229328F43E5F00361166 /* IngredientListCollectionView.swift in Sources */,
 				95EB50E528EA821400412176 /* SceneDelegate.swift in Sources */,
+				9543DA7628F8361B00E37A28 /* RatingCell.swift in Sources */,
 				9572F0B728F694F10035BCA3 /* SafetyCell.swift in Sources */,
 				95A4311A28EE8F7F007A2108 /* CategoryButton.swift in Sources */,
 				9572F0B328F694C70035BCA3 /* AllergenCell.swift in Sources */,
@@ -601,6 +618,7 @@
 				9510352B28F007DB0011AE39 /* LargeCategoryCard.swift in Sources */,
 				9572F0BD28F6AF5A0035BCA3 /* SourceCell.swift in Sources */,
 				951034CB28EFF51F0011AE39 /* UIImageView+DropShadow.swift in Sources */,
+				9543DA7828F85A7A00E37A28 /* ProductCategoryLabel.swift in Sources */,
 				95EB50ED28EA821400412176 /* Quint.xcdatamodeld in Sources */,
 				951034D828EFF54C0011AE39 /* QuizSkinTypeVC.swift in Sources */,
 				9572F0BB28F698F90035BCA3 /* DummyVC.swift in Sources */,
@@ -612,11 +630,13 @@
 				951034D428EFF54C0011AE39 /* QuizSkinCondVC.swift in Sources */,
 				959C2BF528ED341E007B1251 /* Constants.swift in Sources */,
 				951034E428EFF8820011AE39 /* SkincareGuideTableViewCell.swift in Sources */,
+				9543DA7128F826AA00E37A28 /* ProductDetailVC.swift in Sources */,
 				951034D528EFF54C0011AE39 /* QuizSkinTypeCell.swift in Sources */,
 				95233BDE28EF3F3E00A4470E /* UIScrollView+RemoveSubviews.swift in Sources */,
 				951034C028EFEDA90011AE39 /* IngredientButton.swift in Sources */,
 				95233BE528EF4B5D00A4470E /* HorizontalScrollButtons.swift in Sources */,
 				95233BE128EF481F00A4470E /* IngredientListView.swift in Sources */,
+				9543DA6F28F7BBBA00E37A28 /* PrecautionSegmentView.swift in Sources */,
 				951034C828EFF51F0011AE39 /* UIViewController+DismissKeyboard.swift in Sources */,
 				95233BE928EF55AB00A4470E /* SmallCategoryButton.swift in Sources */,
 			);

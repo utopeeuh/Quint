@@ -37,7 +37,6 @@ class TreatmentsVC: UIViewController{
     @objc func changeTab(sender: UISegmentedControl) {
         print("Switched tabs")
         
-        
         switch sender.selectedSegmentIndex {
         case 0:
             productListView.isHidden = false

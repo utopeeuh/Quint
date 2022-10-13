@@ -1,5 +1,5 @@
 //
-//  dummyVC.swift
+//  IngredientSegmentView.swift
 //  Quint
 //
 //  Created by Tb. Daffa Amadeo Zhafrana on 11/10/22.
@@ -34,8 +34,6 @@ class IngredientSegmentView: UIView{
     
     func configureComponents() {
         
-        mainScrollView.showsVerticalScrollIndicator = false
-        
         goodIngCollection.setSource(K.Dummy.ingredient)
         goodIngCollection.setHeader("Good for you")
         
@@ -47,16 +45,9 @@ class IngredientSegmentView: UIView{
         ingredientList.text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam, purus sit amet luctus venenatis, lectus magna fringilla urna, porttitor rhoncus dolor purus non enim praesent elementum facilisis leo, vel fringilla est"
         ingredientList.font = .interRegular(size: 16)
         ingredientList.textColor = K.Color.greyQuint
-        ingredientList.frame = CGRect(x: 0, y: 0, width: frame.width-40, height: ingredientList.requiredHeight)
+        ingredientList.frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width-40, height: 0)
         ingredientList.numberOfLines = 0
         ingredientList.lineBreakMode = .byWordWrapping
-        
-        mainScrollView.addSubview(goodIngCollection)
-        mainScrollView.addSubview(notableIngCollection)
-        mainScrollView.addSubview(otherIngredientLabel)
-        mainScrollView.addSubview(ingredientList)
-        
-        mainScrollView.contentSize.height = getTotalHeight()
     }
     
     func getTotalHeight() -> CGFloat{
@@ -65,37 +56,35 @@ class IngredientSegmentView: UIView{
     
     func configureLayout() {
         
-        addSubview(mainScrollView)
+       addSubview(goodIngCollection)
+       addSubview(notableIngCollection)
+       addSubview(otherIngredientLabel)
+       addSubview(ingredientList)
         
         goodIngCollection.snp.makeConstraints { make in
-            make.top.width.equalTo(mainScrollView)
+            make.top.width.equalToSuperview()
             make.height.equalTo(goodIngCollection.getHeight())
         }
         
         notableIngCollection.snp.makeConstraints { make in
-            make.top.equalTo(goodIngCollection.snp.bottom)
-            make.width.equalTo(mainScrollView)
+            make.top.equalTo(goodIngCollection.snp.bottom).offset(24)
+            make.width.equalToSuperview()
             make.height.equalTo(notableIngCollection.getHeight())
         }
         
         otherIngredientLabel.snp.makeConstraints { make in
             make.top.equalTo(notableIngCollection.snp.bottom).offset(24)
-            make.width.equalTo(mainScrollView).offset(-40)
-            make.centerX.equalTo(mainScrollView)
-            print(otherIngredientLabel.requiredHeight)
+            make.width.equalToSuperview().offset(-40)
+            make.centerX.equalToSuperview()
             make.height.equalTo(otherIngredientLabel.requiredHeight)
         }
         
         ingredientList.snp.makeConstraints { make in
             make.top.equalTo(otherIngredientLabel.snp.bottom)
             .offset(12)
-            make.width.equalTo(mainScrollView).offset(-40)
-            make.centerX.equalTo(mainScrollView)
+            make.width.equalToSuperview().offset(-40)
+            make.centerX.equalToSuperview()
             make.height.equalTo(ingredientList.requiredHeight)
-        }
-        
-        mainScrollView.snp.makeConstraints { make in
-            make.height.width.equalToSuperview()
         }
     }
     

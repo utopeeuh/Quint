@@ -51,7 +51,7 @@ class IngredientListSection: UIView{
         addSubview(ingredientCollection)
         
         sectionHeader.snp.makeConstraints { make in
-            make.top.equalToSuperview().offset(24)
+            make.top.equalToSuperview()
             make.width.equalToSuperview().offset(-40)
             make.centerX.equalToSuperview()
         }

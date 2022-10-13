@@ -199,14 +199,19 @@ class DailyLogViewController: UIViewController {
         
         if roundedStepValue == 0.0 {
             sliderMood.moodDetail.text = "Stressed"
+            sliderMood.moodSlider.setThumbImage(UIImage(named: "stressedEmoji"), for: .normal)
         }else if roundedStepValue == 20.0 {
             sliderMood.moodDetail.text = "Sad"
+            sliderMood.moodSlider.setThumbImage(UIImage(named: "sadEmoji"), for: .normal)
         }else if roundedStepValue == 40.0 {
             sliderMood.moodDetail.text = "Nothing special"
+            sliderMood.moodSlider.setThumbImage(UIImage(named: "neutralEmoji"), for: .normal)
         }else if roundedStepValue == 60.0 {
             sliderMood.moodDetail.text = "Happy"
+            sliderMood.moodSlider.setThumbImage(UIImage(named: "happyEmoji"), for: .normal)
         }else if roundedStepValue == 80.0 {
             sliderMood.moodDetail.text = "Joyful"
+            sliderMood.moodSlider.setThumbImage(UIImage(named: "joyfulEmoji"), for: .normal)
         }
    }
     

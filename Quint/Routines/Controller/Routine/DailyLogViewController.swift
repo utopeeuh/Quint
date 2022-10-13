@@ -185,9 +185,12 @@ class DailyLogViewController: UIViewController {
         veryActiveBtn.layer.borderWidth = 1.0
     }
     
+    var sleepHours = sleepHourUIView()
+    
     override func configureComponents() {
         mainStackView.addArrangedSubview(moodLabel)
         mainStackView.addArrangedSubview(sleepLabel)
+        mainStackView.addArrangedSubview(sleepHours)
         
         mainStackView.addArrangedSubview(activityLabel)
         mainStackView.addArrangedSubview(sedentaryBtn)
@@ -267,6 +270,12 @@ class DailyLogViewController: UIViewController {
         
         veryActiveBtn.snp.makeConstraints { make in
             make.height.equalTo(45)
+            make.left.equalTo(view.safeAreaLayoutGuide).offset(20)
+            make.right.equalTo(view.safeAreaLayoutGuide).offset(-20)
+        }
+        
+        sleepHours.snp.makeConstraints { make in
+            make.height.equalTo(120)
             make.left.equalTo(view.safeAreaLayoutGuide).offset(20)
             make.right.equalTo(view.safeAreaLayoutGuide).offset(-20)
         }

@@ -17,6 +17,7 @@
 		72BF72CF28F547AE0036C456 /* NightRoutinesStepsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72BF72CE28F547AE0036C456 /* NightRoutinesStepsTableViewCell.swift */; };
 		72BF72D128F548DD0036C456 /* DailyLogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72BF72D028F548DD0036C456 /* DailyLogViewController.swift */; };
 		72BF72D528F6A93C0036C456 /* UIButton+MoveImageTextLeft.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72BF72D428F6A93C0036C456 /* UIButton+MoveImageTextLeft.swift */; };
+		72BF72D728F7B3FD0036C456 /* sleepHourUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72BF72D628F7B3FD0036C456 /* sleepHourUIView.swift */; };
 		951034BE28EFC13D0011AE39 /* HeaderLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951034BD28EFC13D0011AE39 /* HeaderLabel.swift */; };
 		951034C028EFEDA90011AE39 /* IngredientButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951034BF28EFEDA90011AE39 /* IngredientButton.swift */; };
 		951034C828EFF51F0011AE39 /* UIViewController+DismissKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951034C328EFF51F0011AE39 /* UIViewController+DismissKeyboard.swift */; };
@@ -87,6 +88,7 @@
 		72BF72CE28F547AE0036C456 /* NightRoutinesStepsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NightRoutinesStepsTableViewCell.swift; sourceTree = "<group>"; };
 		72BF72D028F548DD0036C456 /* DailyLogViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyLogViewController.swift; sourceTree = "<group>"; };
 		72BF72D428F6A93C0036C456 /* UIButton+MoveImageTextLeft.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+MoveImageTextLeft.swift"; sourceTree = "<group>"; };
+		72BF72D628F7B3FD0036C456 /* sleepHourUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = sleepHourUIView.swift; sourceTree = "<group>"; };
 		951034BD28EFC13D0011AE39 /* HeaderLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderLabel.swift; sourceTree = "<group>"; };
 		951034BF28EFEDA90011AE39 /* IngredientButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientButton.swift; sourceTree = "<group>"; };
 		951034C328EFF51F0011AE39 /* UIViewController+DismissKeyboard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+DismissKeyboard.swift"; sourceTree = "<group>"; };
@@ -258,6 +260,7 @@
 				72BF72CA28F5186E0036C456 /* ReminderUIView.swift */,
 				72BF72CC28F543280036C456 /* NightRoutinesViewController.swift */,
 				72BF72D028F548DD0036C456 /* DailyLogViewController.swift */,
+				72BF72D628F7B3FD0036C456 /* sleepHourUIView.swift */,
 			);
 			path = Routine;
 			sourceTree = "<group>";
@@ -530,6 +533,7 @@
 				9538752628EDE2A1001979A8 /* PinterestLayout.swift in Sources */,
 				72BF72CD28F543280036C456 /* NightRoutinesViewController.swift in Sources */,
 				72BF72C528F41D490036C456 /* RoutineSteps.swift in Sources */,
+				72BF72D728F7B3FD0036C456 /* sleepHourUIView.swift in Sources */,
 				72BF72C728F41FB90036C456 /* MorningRoutineStepsTableViewCell.swift in Sources */,
 				72BF72C128F3C0540036C456 /* MorningRoutinesViewController.swift in Sources */,
 				72BF72C928F4514E0036C456 /* PopupRoutine.swift in Sources */,

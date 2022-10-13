@@ -15,7 +15,7 @@ class sleepHourUIView: UIView {
         stackView.axis = .horizontal
         stackView.distribution = .fill
         stackView.alignment = .leading
-        stackView.spacing = 20
+        stackView.spacing = 85
         return stackView
     }()
     
@@ -78,22 +78,18 @@ class sleepHourUIView: UIView {
         plusBtn.isEnabled = true
         if countNum > 1 {
             countNum = countNum - 1
-            numLabel.text = String(countNum)
             if countNum == 1 {
                 minBtn.isEnabled = false
            }
         }
         
+        
         if countNum == 10 {
             numLabel.text = "\(countNum)+"
-            
-            numLabel.snp.makeConstraints { make in
-                make.left.equalTo(minBtn.snp.right).offset(70)
-                make.top.equalTo(self.safeAreaInsets).offset(-25)
-            }
-            
-            
-            
+            hStackSleepHour.spacing = 71
+        }else {
+            numLabel.text = "\(countNum)"
+            hStackSleepHour.spacing = 85
         }
 
     }
@@ -102,7 +98,6 @@ class sleepHourUIView: UIView {
         minBtn.isEnabled = true
         if countNum < 10 {
             countNum = countNum + 1
-            numLabel.text = String(countNum)
             if countNum == 10 {
                 plusBtn.isEnabled = false
             }
@@ -110,12 +105,12 @@ class sleepHourUIView: UIView {
         
         if countNum == 10 {
             numLabel.text = "\(countNum)+"
-            
-            numLabel.snp.makeConstraints { make in
-                make.left.equalTo(minBtn.snp.right).offset(70)
-                make.top.equalTo(self.safeAreaInsets).offset(-25)
-            }
+            hStackSleepHour.spacing = 71
+        }else {
+            numLabel.text = "\(countNum)"
+            hStackSleepHour.spacing = 85
         }
+        
     }
     
     func configureComponents() {
@@ -151,13 +146,12 @@ class sleepHourUIView: UIView {
         }
         
         numLabel.snp.makeConstraints { make in
-            make.left.equalTo(minBtn.snp.right).offset(95)
             make.top.equalTo(self.safeAreaInsets).offset(-25)
         }
         
-        
         plusBtn.snp.makeConstraints { make in
             make.right.equalTo(self.safeAreaInsets).offset(-25)
+            make.top.equalTo(self.safeAreaInsets).offset(40)
         }
         
         

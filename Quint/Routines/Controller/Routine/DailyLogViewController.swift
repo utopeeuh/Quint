@@ -197,6 +197,8 @@ class DailyLogViewController: UIViewController {
         let roundedStepValue = round(sender.value / step) * step
         sender.value = roundedStepValue
         
+        print("\(Int(roundedStepValue))")
+        
         if roundedStepValue == 0.0 {
             sliderMood.moodDetail.text = "Stressed"
             sliderMood.moodSlider.setThumbImage(UIImage(named: "stressedEmoji"), for: .normal)

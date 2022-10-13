@@ -26,7 +26,6 @@ class moodSliderUIView: UIView {
         mySlider.isContinuous = true
         mySlider.tintColor = K.Color.greenQuint
         mySlider.setThumbImage(UIImage(named: "neutralEmoji"), for: .normal)
-        mySlider.backgroundColor = .white
         return mySlider
     }()
     

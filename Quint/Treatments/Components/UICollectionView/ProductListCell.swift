@@ -60,7 +60,7 @@ class ProductListCell: UICollectionViewCell {
         label.setContentHuggingPriority(.defaultHigh, for: .vertical)
         
         // add icon
-        label.icon = UIImage(named: "icon_thumbs_up_on")  // Set icon image
+        label.icon = UIImage(named: "ThumbsUpFilledIcon")  // Set icon image
         label.iconPadding = 4                  // Set padding between icon and label
         label.iconPosition = (.left, .top)   // Icon position
         

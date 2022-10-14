@@ -20,7 +20,8 @@ class ProductDetailTopView: UIView{
     private var nameLabel = UILabel()
     private var brandLabel = UILabel()
     
-    private var ratingView: ProductCategoryLabel!
+    private var ratingView = RatingView()
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         configureUI()
@@ -70,7 +71,7 @@ class ProductDetailTopView: UIView{
         textStack.addArrangedSubview(brandLabel)
         
         // rating
-        ratingView = ProductCategoryLabel("RATING")
+        
     }
     
     func getTextStackHeight() -> CGFloat{
@@ -120,8 +121,8 @@ class ProductDetailTopView: UIView{
         }
         
         ratingView.snp.makeConstraints { make in
-            make.width.equalTo(ratingView.width)
-            make.height.equalTo(ratingView.height)
+            make.width.equalTo(ratingView.snp.width)
+            make.height.equalTo(ratingView.snp.height)
             make.right.equalToSuperview().offset(-20)
             make.bottom.equalTo(textStack.snp.bottom)
         }

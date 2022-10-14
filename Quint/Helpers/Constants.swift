@@ -54,6 +54,12 @@ struct K{
     struct CategoryImage{
         static let ingredient = [1: UIImage(named: "AntiAcneCategory"), 2: UIImage(named: "AntiAgingCategory"), 3: UIImage(named: "AntiBacterialCategory"), 4: UIImage(named: "BrighteningCategory"), 5: UIImage(named: "HydratingCategory"), 6: UIImage(named: "MoisturizingCategory"), 7: UIImage(named: "PhBalanceCategory"), 8: UIImage(named: "SoothingCategory"), 9: UIImage(named: "UVCategory")]
     }
+    
+    struct Rated{
+        static let none = 0
+        static let up = 1
+        static let down = 2
+    }
 }
 
 

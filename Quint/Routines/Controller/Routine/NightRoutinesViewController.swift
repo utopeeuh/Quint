@@ -29,22 +29,22 @@ class NightRoutinesViewController: UIViewController, UIScrollViewDelegate, UITab
         tv.sectionFooterHeight = 0
         return tv
     }()
-    
-    func bindTableData() {
-        tableView.rx.setDelegate(self).disposed(by: bag)
-        let dataSource = RxTableViewSectionedReloadDataSource<SectionModel<String, Product>> { _, tableView, indexPath, item in
-            let cell = tableView.dequeueReusableCell(withIdentifier: "NightRoutinesStepsTableViewCell", for: indexPath) as! NightRoutinesStepsTableViewCell
-            cell.product = item
-            return cell
-        } titleForHeaderInSection: { dataSource, sectionIndex in
-            return dataSource[sectionIndex].model
-        }
-
-        self.viewModel.items.bind(to: self.tableView.rx.items(dataSource: dataSource)).disposed(by: bag)
-        
-        //Fetch items
-        viewModel.fetchItems()
-    }
+ 
+//    func bindTableData() {
+//        tableView.rx.setDelegate(self).disposed(by: bag)
+//        let dataSource = RxTableViewSectionedReloadDataSource<SectionModel<String, Product>> { _, tableView, indexPath, item in
+//            let cell = tableView.dequeueReusableCell(withIdentifier: "NightRoutinesStepsTableViewCell", for: indexPath) as! NightRoutinesStepsTableViewCell
+//            cell.product = item
+//            return cell
+//        } titleForHeaderInSection: { dataSource, sectionIndex in
+//            return dataSource[sectionIndex].model
+//        }
+//
+//        self.viewModel.items.bind(to: self.tableView.rx.items(dataSource: dataSource)).disposed(by: bag)
+//
+//        //Fetch items
+//        viewModel.fetchItems()
+//    }
     
     private var viewModel = RoutineSteps()
     private var bag = DisposeBag()
@@ -219,7 +219,7 @@ class NightRoutinesViewController: UIViewController, UIScrollViewDelegate, UITab
     }()
     
     func ConfigureUI() {
-        bindTableData()
+//        bindTableData()
         configureComponents()
         configureLayout()
     }

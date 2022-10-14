@@ -19,6 +19,7 @@ struct K{
     struct Color{
         static let bgQuint = UIColor(red: 244/255, green: 244/255, blue: 244/255, alpha: 1)
         static let whiteQuint = UIColor(red: 254/255, green: 254/255, blue: 254/255, alpha: 1)
+        static let blackQuint = UIColor(red: 7/255, green: 8/255, blue: 7/255, alpha: 1)
         static let greyQuint = UIColor(red: 35/255, green: 36/255, blue: 35/255, alpha: 1)
         static let greyDarkQuint = UIColor(red: 125/255, green: 125/255, blue: 125/255, alpha: 1)
         
@@ -33,6 +34,11 @@ struct K{
         static let orangeQuint = UIColor(red: 243/255, green: 106/255, blue: 7/255, alpha: 1)
         static let redQuint = UIColor(red: 199/255, green: 59/255, blue: 59/255, alpha: 1)
         static let purpleQuint = UIColor(red: 121/255, green: 31/255, blue: 238/255, alpha: 1)
+        
+        static let shadowQuint = UIColor(red: 16/255, green: 24/255, blue: 40/255, alpha: 0.05)
+        static let greenButtonQuint = UIColor(red: 53/255, green: 84/255, blue: 73/255, alpha: 1)
+        static let disableBgBtnQuint = UIColor(red: 230/255, green: 230/255, blue: 230/255, alpha: 1)
+        static let disableTextBtnQuint = UIColor(red: 125/255, green: 125/255, blue: 125/255, alpha: 1)
     }
     
     struct identifiers {

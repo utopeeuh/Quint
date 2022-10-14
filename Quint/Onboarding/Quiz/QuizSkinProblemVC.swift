@@ -27,7 +27,7 @@ class QuizSkinProblemVC: UIViewController {
 
         let progressView = UIProgressView(progressViewStyle: .bar)
         progressView.trackTintColor = UIColor(red: 230/255, green: 230/255, blue: 230/255, alpha: 1)
-        progressView.progressTintColor = UIColor(red: 53/255, green: 84/255, blue: 73/255, alpha: 1)
+        progressView.progressTintColor = K.Color.greenButtonQuint
         progressView.setProgress(0.48, animated: true)
         progressView.layer.cornerRadius = 4
         progressView.clipsToBounds = true
@@ -40,7 +40,7 @@ class QuizSkinProblemVC: UIViewController {
 
         let label = UILabel()
         label.numberOfLines = 2
-        label.textColor = UIColor(red: 7/255, green: 8/255, blue: 7/255, alpha: 1)
+        label.textColor = K.Color.blackQuint
         label.text = "What is your skin\nproblems?"
         label.font = .clashGroteskMedium(size: 30)
         label.textAlignment = .left
@@ -52,28 +52,42 @@ class QuizSkinProblemVC: UIViewController {
         
         let colView = TTGTextTagCollectionView()
         
-        let tagContent = TTGTextTagStringContent()
-        tagContent.textFont = .interRegular(size: 16)!
-        tagContent.textColor = .black
-//        tagContent.textFont = .interSemiBold(size: 16)!
-//        tagContent.textColor = UIColor(red: 53/255, green: 84/255, blue: 73/255, alpha: 1)
+        let content = TTGTextTagStringContent()
+        content.textFont = .interRegular(size: 16)!
+        content.textColor = K.Color.blackQuint
         
-        let tagStyle = TTGTextTagStyle()
-        tagStyle.backgroundColor = UIColor(red: 254/255, green: 254/255, blue: 254/255, alpha: 1)
-        tagStyle.cornerRadius = 8
-        tagStyle.textAlignment = .center
-        tagStyle.extraSpace = CGSize(width: 34, height: 20)
-        tagStyle.shadowOffset = CGSize(width: 0, height: 2)
-        tagStyle.shadowColor = UIColor(red: 16/255, green: 24/255, blue: 40/255, alpha: 0.05)
-        tagStyle.shadowOpacity = 5.0
-//        tagStyle.borderWidth = 1.5
-//        tagStyle.borderColor = UIColor(red: 53/255, green: 84/255, blue: 73/255, alpha: 1)
+        let style = TTGTextTagStyle()
+        style.backgroundColor = K.Color.whiteQuint
+        style.cornerRadius = 8
+        style.textAlignment = .center
+        style.extraSpace = CGSize(width: 34, height: 20)
+        style.shadowOffset = CGSize(width: 0, height: 2)
+        style.shadowColor = K.Color.shadowQuint
+        style.shadowOpacity = 5.0
+        
+        let selectedContent = TTGTextTagStringContent()
+        selectedContent.textFont = .interSemiBold(size: 16)!
+        selectedContent.textColor = K.Color.greenButtonQuint
+        
+        let selectedStyle = TTGTextTagStyle()
+        selectedStyle.backgroundColor = K.Color.whiteQuint
+        selectedStyle.cornerRadius = 8
+        selectedStyle.textAlignment = .center
+        selectedStyle.extraSpace = CGSize(width: 34, height: 20)
+        selectedStyle.shadowOffset = CGSize(width: 0, height: 2)
+        selectedStyle.shadowColor = K.Color.shadowQuint
+        selectedStyle.shadowOpacity = 5.0
+        selectedStyle.borderWidth = 1.5
+        selectedStyle.borderColor = K.Color.greenButtonQuint
         
         for i in 0..<K.Category.skinProblem.count {
-            tagContent.text = K.Category.skinProblem[i+1]!
             
-            let textTag = TTGTextTag(content: tagContent, style: tagStyle)
+            content.text = K.Category.skinProblem[i+1]!
+            selectedContent.text = K.Category.skinProblem[i+1]!
+            
+            let textTag = TTGTextTag(content: content, style: style, selectedContent: selectedContent, selectedStyle: selectedStyle)
             colView.addTag(textTag)
+            
         }
         
         return colView
@@ -95,7 +109,7 @@ class QuizSkinProblemVC: UIViewController {
         button.layer.shadowColor = UIColor(red: 16/255, green: 24/255, blue: 40/255, alpha: 0.05).cgColor
         button.layer.shadowOpacity = 5.0
         
-//        button.isEnabled = false
+        button.isEnabled = false
 
         return button
 
@@ -179,24 +193,25 @@ extension QuizSkinProblemVC: TTGTextTagCollectionViewDelegate {
     
     func textTagCollectionView(_ textTagCollectionView: TTGTextTagCollectionView!, didTap tag: TTGTextTag!, at index: UInt) {
         
-        let tagContent = TTGTextTagStringContent()
-        tagContent.textFont = .interSemiBold(size: 16)!
-        tagContent.textColor = UIColor(red: 53/255, green: 84/255, blue: 73/255, alpha: 1)
-        
-        let tagStyle = TTGTextTagStyle()
-        tagStyle.backgroundColor = .white
-        tagStyle.cornerRadius = 8
-        tagStyle.textAlignment = .center
-        tagStyle.extraSpace = CGSize(width: 34, height: 20)
-        tagStyle.borderWidth = 1.5
-        tagStyle.borderColor = UIColor(red: 53/255, green: 84/255, blue: 73/255, alpha: 1)
-        
         for i in 0..<K.Category.skinProblem.count {
-            tagContent.text = K.Category.skinProblem[i+1]!
+
+            let currTag = textTagCollectionView.getTagAt(UInt(i))
             
-            let textTag = TTGTextTag(content: tagContent, style: tagStyle)
-            skinProblemColView.addTag(textTag)
+            if currTag?.selected  == true {
+                nextBtn.backgroundColor = K.Color.greenButtonQuint
+                nextBtn.setTitleColor(K.Color.whiteQuint, for: .normal)
+                nextBtn.isEnabled = true
+                return
+            } else {
+                nextBtn.backgroundColor = UIColor(red: 230/255, green: 230/255, blue: 230/255, alpha: 1)
+                nextBtn.setTitleColor(UIColor(red: 125/255, green: 125/255, blue: 125/255, alpha: 1), for: .normal)
+                nextBtn.isEnabled = false
+                return
+            }
+
         }
+        
+        nextBtn.isEnabled = false
         
     }
     

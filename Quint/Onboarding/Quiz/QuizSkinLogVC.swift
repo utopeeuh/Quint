@@ -8,7 +8,7 @@
 import UIKit
 import SnapKit
 
-class QuizSkinLogVC: UIViewController {
+class QuizSkinLogVC: PhotoLogVC {
     
     private let backBtn: UIButton = {
         
@@ -177,21 +177,6 @@ class QuizSkinLogVC: UIViewController {
     
     // MARK: - Selectors
     
-    @objc func didTapBack() -> Void {
-        self.navigationController?.popViewController(animated: true)
-    }
-    
-    @objc func didTapPhoto() {
-        
-        let picker = UIImagePickerController()
-        picker.sourceType = .camera
-        picker.delegate = self
-        present(picker, animated: true)
-        
-        let controller = PhotoConfirmationVC()
-        navigationController?.pushViewController(controller, animated: true)
-    }
-    
     @objc func didTapNext() {
         let controller = QuizNotifVC()
         navigationController?.pushViewController(controller, animated: true)
@@ -199,22 +184,3 @@ class QuizSkinLogVC: UIViewController {
     
 }
 
-extension QuizSkinLogVC: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
-    
-    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
-        picker.dismiss(animated: true, completion: nil)
-    }
-    
-    func imagePickerController(_ picker: UIImagePickerController,
-                               didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-        
-        picker.dismiss(animated: true, completion: nil)
-        
-//        guard let image = info[UIImagePickerController.InfoKey.originalImage] as?
-//                UIImage else {
-//            return
-//        }
-        
-    }
-    
-}

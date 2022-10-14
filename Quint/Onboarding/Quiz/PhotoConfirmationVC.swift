@@ -8,7 +8,9 @@
 import UIKit
 import SnapKit
 
-class PhotoConfirmationVC: UIViewController {
+class PhotoConfirmationVC: PhotoLogVC {
+    
+    var chosenImage: UIImage?
     
     private let backBtn: UIButton = {
         
@@ -100,6 +102,10 @@ class PhotoConfirmationVC: UIViewController {
         configureUI()
     }
     
+    override func configureComponents() {
+        photoFrameImg.image = chosenImage
+    }
+    
     override func configureLayout() {
         
         view.addSubview(backBtn)
@@ -140,19 +146,9 @@ class PhotoConfirmationVC: UIViewController {
     
     // MARK: - Selectors
     
-    @objc func didTapBack() -> Void {
-        self.navigationController?.popViewController(animated: true)
-    }
-    
-    @objc func didTapPhoto() {
-        
-        let picker = UIImagePickerController()
-        picker.sourceType = .camera
-        picker.delegate = self
-        present(picker, animated: true)
-        
-        let controller = QuizNotifVC()
-        navigationController?.pushViewController(controller, animated: true)
+    override func didTapPhoto() {
+        self.dismiss(animated: true)
+        super.didTapPhoto()
     }
     
     @objc func didTapConfirm() {
@@ -162,24 +158,3 @@ class PhotoConfirmationVC: UIViewController {
     
 }
 
-extension PhotoConfirmationVC: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
-    
-    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
-        picker.dismiss(animated: true, completion: nil)
-    }
-    
-    func imagePickerController(_ picker: UIImagePickerController,
-                               didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-        
-        picker.dismiss(animated: true, completion: nil)
-        
-        guard let image = info[UIImagePickerController.InfoKey.originalImage] as?
-                UIImage else {
-            return
-        }
-        
-        photoFrameImg.image = image
-        
-    }
-    
-}

@@ -154,16 +154,36 @@ class QuizNotifVC: UIViewController {
         
         let controller = QuizSkinInsightVC()
         
-        let center = UNUserNotificationCenter.current()
-        center.requestAuthorization(options: [.alert, .sound, .badge]) { granted, error in
+        let group = DispatchGroup()
+        group.enter()
+        
+        var isNotificationsEnabled = false
+        
+        DispatchQueue.main.async {
+            let center = UNUserNotificationCenter.current()
+            
+            center.requestAuthorization(options: [.alert, .sound, .badge]) { granted, error in
 
-            if error != nil {
-                print("notification disabled!")
+                if error != nil {
+                    print("notification disabled!")
+                }
+                
+                if granted {
+                    isNotificationsEnabled = true
+                    
+                } else {
+                    isNotificationsEnabled = false
+                }
+                
+                group.leave()
+
             }
-
+            
         }
         
-        navigationController?.pushViewController(controller, animated: true)
+        group.notify(queue: .main) {
+            self.navigationController?.pushViewController(controller, animated: true)
+        }
         
     }
     

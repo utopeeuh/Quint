@@ -60,6 +60,12 @@ struct K{
     struct Dummy{
         static let ingredient = [1: "Salicylic Acid", 2: "Benzoyl peroxide", 3: "Adapalene", 4: "Lauric Acid", 5: "Sulfur", 6: "Zinc gluconate"]
     }
+
+    struct Box {
+        var title: String?
+        var desc: String?
+    }
+    
 }
 
 

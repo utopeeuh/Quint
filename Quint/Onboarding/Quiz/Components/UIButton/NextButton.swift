@@ -12,6 +12,16 @@ class NextButton: UIButton {
     required init() {
         super.init(frame: .zero)
         
+        titleLabel?.font = .clashGroteskMedium(size: 18)
+        
+        layer.cornerRadius = 8
+        backgroundColor = K.Color.disableBgBtnQuint
+        setTitleColor(K.Color.disableTextBtnQuint, for: .normal)
+        
+        layer.shadowOffset = CGSize(width: 0, height: 2)
+        layer.shadowColor = K.Color.shadowQuint.cgColor
+        layer.shadowOpacity = 5.0
+//        buttonDisabled()
     }
 
     func setText(_ title: String?) {

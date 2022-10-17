@@ -7,7 +7,6 @@
 
 import UIKit
 import SnapKit
-import SwiftUI
 
 class CustomBoxView: UIView {
     
@@ -15,23 +14,14 @@ class CustomBoxView: UIView {
     private let contentBox = UIView()
     public var labelContainer = UILabel()
     public var labelContent = UILabel()
+    private var leftBorder = UIView()
     
-    private var leftBorder: CALayer?
-    private let borderWidth: CGFloat = 1.5
-    
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-
-        if leftBorder == nil {
-            addLeftBorder()
-        }
-
-        // Update the frames based on the current bounds
-        leftBorder?.frame = CGRect(x: 0,
-                               y: 0,
-                               width: borderWidth,
-                               height: contentBox.frame.height)
-
+    required init(title: String, desc: String) {
+        super.init(frame: .zero)
+        
+        labelContainer.text = title
+        labelContent.text = desc
+        
         configureUI()
     }
     
@@ -46,25 +36,25 @@ class CustomBoxView: UIView {
     
     func configureComponents() {
         
+        leftBorder.backgroundColor = K.Color.greenButtonQuint
+        
         containerBox.backgroundColor = K.Color.whiteQuint
         containerBox.layer.cornerRadius = 8
         containerBox.layer.borderWidth = 1.5
         containerBox.layer.borderColor = K.Color.greenButtonQuint.cgColor
         
-//        labelContainer.text = "Normal Skin"
         labelContainer.textColor = K.Color.greenButtonQuint
         labelContainer.font = .interSemiBold(size: 16)
         
-        contentBox.frame = CGRect(x: 0, y: 0, width: 0, height: labelContent.requiredHeight)
-        contentBox.backgroundColor = K.Color.bgQuint
-        
-        labelContent.text = "This skin is neither too dry nor too oily. It has regular texture, no imperfections and a clean, soft appearance, and does not need special care."
         labelContent.numberOfLines = 0
         labelContent.textColor = K.Color.blackQuint
         labelContent.font = .interRegular(size: 14)
         labelContent.frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width-51.5, height: 0)
         labelContent.lineBreakMode = .byWordWrapping
         labelContent.sizeToFit()
+        
+        contentBox.frame = CGRect(x: 0, y: 0, width: 0, height: labelContent.requiredHeight)
+        contentBox.backgroundColor = K.Color.bgQuint
         
     }
     
@@ -74,6 +64,7 @@ class CustomBoxView: UIView {
         addSubview(labelContainer)
         addSubview(contentBox)
         addSubview(labelContent)
+        addSubview(leftBorder)
         
         containerBox.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
@@ -91,7 +82,7 @@ class CustomBoxView: UIView {
         contentBox.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
             make.top.equalTo(containerBox.snp.bottom).offset(14)
-            make.height.equalTo(63)
+            make.height.equalTo(labelContent.requiredHeight)
             make.width.equalTo(containerBox)
         }
         
@@ -102,33 +93,13 @@ class CustomBoxView: UIView {
             make.width.equalToSuperview().offset(-51.5)
         }
         
-    }
-    
-    private func addLeftBorder() {
-
-        leftBorder = CALayer()
-
-        leftBorder?.backgroundColor = K.Color.greenButtonQuint.cgColor
-
-        self.contentBox.layer.addSublayer(leftBorder!)
+        leftBorder.snp.makeConstraints { make in
+            make.top.equalTo(containerBox.snp.bottom).offset(14)
+            make.left.equalTo(containerBox)
+            make.width.equalTo(1.5)
+            make.height.equalTo(labelContent)
+        }
         
     }
     
-    
-}
-
-struct CustomBoxViewPreview: PreviewProvider {
-    static var previews: some View {
-        ViewPreview {
-            CustomBoxView()
-        }
-        .previewDevice(PreviewDevice(rawValue: "iPhone 14"))
-        .previewDisplayName("iPhone 14")
-        
-        ViewPreview {
-            CustomBoxView()
-        }
-        .previewDevice(PreviewDevice(rawValue: "iPhone 8"))
-        .previewDisplayName("iPhone 8")
-    }
 }

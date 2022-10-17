@@ -13,10 +13,8 @@
 		951034CA28EFF51F0011AE39 /* UIFont+CustomFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951034C528EFF51F0011AE39 /* UIFont+CustomFont.swift */; };
 		951034CB28EFF51F0011AE39 /* UIImageView+DropShadow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951034C628EFF51F0011AE39 /* UIImageView+DropShadow.swift */; };
 		951034D428EFF54C0011AE39 /* QuizSkinCondVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951034CD28EFF54C0011AE39 /* QuizSkinCondVC.swift */; };
-		951034D528EFF54C0011AE39 /* QuizSkinTypeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951034CF28EFF54C0011AE39 /* QuizSkinTypeCell.swift */; };
-		951034D628EFF54C0011AE39 /* QuizSkinCondCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951034D028EFF54C0011AE39 /* QuizSkinCondCell.swift */; };
 		951034D728EFF54C0011AE39 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951034D228EFF54C0011AE39 /* LoginVC.swift */; };
-		951034D828EFF54C0011AE39 /* QuizSkinTypeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951034D328EFF54C0011AE39 /* QuizSkinTypeVC.swift */; };
+		951034D828EFF54C0011AE39 /* OnboardingQuizVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951034D328EFF54C0011AE39 /* OnboardingQuizVC.swift */; };
 		951034E228EFF8820011AE39 /* SkincareGuideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951034DD28EFF8820011AE39 /* SkincareGuideViewController.swift */; };
 		951034E328EFF8820011AE39 /* RoutineHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951034DE28EFF8820011AE39 /* RoutineHomeViewController.swift */; };
 		951034E428EFF8820011AE39 /* SkincareGuideTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951034E128EFF8820011AE39 /* SkincareGuideTableViewCell.swift */; };
@@ -73,14 +71,16 @@
 		A03857C528F80B4100A4B566 /* NextButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A03857C428F80B4100A4B566 /* NextButton.swift */; };
 		A03857C728F80B7100A4B566 /* SkipButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A03857C628F80B7100A4B566 /* SkipButton.swift */; };
 		A03857C928F80B9900A4B566 /* OnboardingButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A03857C828F80B9900A4B566 /* OnboardingButton.swift */; };
-		A03857CE28F81E7200A4B566 /* OnboardingQuizView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A03857CD28F81E7200A4B566 /* OnboardingQuizView.swift */; };
+		A03857CE28F81E7200A4B566 /* SkinTypeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A03857CD28F81E7200A4B566 /* SkinTypeView.swift */; };
 		A03857D028F8353400A4B566 /* BackButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A03857CF28F8353400A4B566 /* BackButton.swift */; };
 		A03857D328F83E8800A4B566 /* SkinProblemCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A03857D228F83E8800A4B566 /* SkinProblemCollectionView.swift */; };
-		A03857D528F84BFE00A4B566 /* QuizNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = A03857D428F84BFE00A4B566 /* QuizNavigationBar.swift */; };
 		A03857D728F84C5C00A4B566 /* ViewControllerPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = A03857D628F84C5C00A4B566 /* ViewControllerPreview.swift */; };
-		A0CA9D0628F8624F003234ED /* ProgressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0CA9D0528F8624F003234ED /* ProgressViewController.swift */; };
 		A0E7EB1428F8545500F56802 /* ViewPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0E7EB1328F8545500F56802 /* ViewPreview.swift */; };
-		A0F221BA28F6EFF700E2E9D4 /* QuizView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0F221B928F6EFF700E2E9D4 /* QuizView.swift */; };
+		A0F560E928FAA4E10091DF7B /* SkinConditionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0F560E828FAA4E10091DF7B /* SkinConditionView.swift */; };
+		A0F560EB28FAA8FC0091DF7B /* SkinProblemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0F560EA28FAA8FC0091DF7B /* SkinProblemView.swift */; };
+		A0F560ED28FAA9050091DF7B /* SkinLogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0F560EC28FAA9050091DF7B /* SkinLogView.swift */; };
+		A0F560EF28FAA91E0091DF7B /* SkinNotifView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0F560EE28FAA91E0091DF7B /* SkinNotifView.swift */; };
+		A0F560F128FAA92A0091DF7B /* SkinInsightView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0F560F028FAA92A0091DF7B /* SkinInsightView.swift */; };
 		A0FF96E328F5122200D4B699 /* QuizGesture.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0FF96E228F5122200D4B699 /* QuizGesture.swift */; };
 		C9131C6A5795F6F5C360774C /* libPods-Quint.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A4222B49AA562D57AC4B33E /* libPods-Quint.a */; };
 /* End PBXBuildFile section */
@@ -94,10 +94,8 @@
 		951034C528EFF51F0011AE39 /* UIFont+CustomFont.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIFont+CustomFont.swift"; sourceTree = "<group>"; };
 		951034C628EFF51F0011AE39 /* UIImageView+DropShadow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImageView+DropShadow.swift"; sourceTree = "<group>"; };
 		951034CD28EFF54C0011AE39 /* QuizSkinCondVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuizSkinCondVC.swift; sourceTree = "<group>"; };
-		951034CF28EFF54C0011AE39 /* QuizSkinTypeCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuizSkinTypeCell.swift; sourceTree = "<group>"; };
-		951034D028EFF54C0011AE39 /* QuizSkinCondCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuizSkinCondCell.swift; sourceTree = "<group>"; };
 		951034D228EFF54C0011AE39 /* LoginVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
-		951034D328EFF54C0011AE39 /* QuizSkinTypeVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuizSkinTypeVC.swift; sourceTree = "<group>"; };
+		951034D328EFF54C0011AE39 /* OnboardingQuizVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingQuizVC.swift; sourceTree = "<group>"; };
 		951034D928EFF8740011AE39 /* Quint.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Quint.entitlements; sourceTree = "<group>"; };
 		951034DD28EFF8820011AE39 /* SkincareGuideViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SkincareGuideViewController.swift; sourceTree = "<group>"; };
 		951034DE28EFF8820011AE39 /* RoutineHomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoutineHomeViewController.swift; sourceTree = "<group>"; };
@@ -156,14 +154,16 @@
 		A03857C428F80B4100A4B566 /* NextButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NextButton.swift; sourceTree = "<group>"; };
 		A03857C628F80B7100A4B566 /* SkipButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkipButton.swift; sourceTree = "<group>"; };
 		A03857C828F80B9900A4B566 /* OnboardingButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingButton.swift; sourceTree = "<group>"; };
-		A03857CD28F81E7200A4B566 /* OnboardingQuizView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingQuizView.swift; sourceTree = "<group>"; };
+		A03857CD28F81E7200A4B566 /* SkinTypeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkinTypeView.swift; sourceTree = "<group>"; };
 		A03857CF28F8353400A4B566 /* BackButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackButton.swift; sourceTree = "<group>"; };
 		A03857D228F83E8800A4B566 /* SkinProblemCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkinProblemCollectionView.swift; sourceTree = "<group>"; };
-		A03857D428F84BFE00A4B566 /* QuizNavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizNavigationBar.swift; sourceTree = "<group>"; };
 		A03857D628F84C5C00A4B566 /* ViewControllerPreview.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllerPreview.swift; sourceTree = "<group>"; };
-		A0CA9D0528F8624F003234ED /* ProgressViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressViewController.swift; sourceTree = "<group>"; };
 		A0E7EB1328F8545500F56802 /* ViewPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewPreview.swift; sourceTree = "<group>"; };
-		A0F221B928F6EFF700E2E9D4 /* QuizView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizView.swift; sourceTree = "<group>"; };
+		A0F560E828FAA4E10091DF7B /* SkinConditionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkinConditionView.swift; sourceTree = "<group>"; };
+		A0F560EA28FAA8FC0091DF7B /* SkinProblemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkinProblemView.swift; sourceTree = "<group>"; };
+		A0F560EC28FAA9050091DF7B /* SkinLogView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkinLogView.swift; sourceTree = "<group>"; };
+		A0F560EE28FAA91E0091DF7B /* SkinNotifView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkinNotifView.swift; sourceTree = "<group>"; };
+		A0F560F028FAA92A0091DF7B /* SkinInsightView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkinInsightView.swift; sourceTree = "<group>"; };
 		A0FF96E228F5122200D4B699 /* QuizGesture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizGesture.swift; sourceTree = "<group>"; };
 		EC353203A173754AD46E48CF /* Pods-Quint.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Quint.debug.xcconfig"; path = "Target Support Files/Pods-Quint/Pods-Quint.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -213,18 +213,8 @@
 			children = (
 				951034D128EFF54C0011AE39 /* Authentication */,
 				A00ECCC328F1770B0050F91C /* Quiz */,
-				951034CE28EFF54C0011AE39 /* TableViewCell */,
 			);
 			path = Onboarding;
-			sourceTree = "<group>";
-		};
-		951034CE28EFF54C0011AE39 /* TableViewCell */ = {
-			isa = PBXGroup;
-			children = (
-				951034CF28EFF54C0011AE39 /* QuizSkinTypeCell.swift */,
-				951034D028EFF54C0011AE39 /* QuizSkinCondCell.swift */,
-			);
-			path = TableViewCell;
 			sourceTree = "<group>";
 		};
 		951034D128EFF54C0011AE39 /* Authentication */ = {
@@ -387,15 +377,13 @@
 			isa = PBXGroup;
 			children = (
 				A03857B228F7C5F500A4B566 /* Components */,
-				951034D328EFF54C0011AE39 /* QuizSkinTypeVC.swift */,
+				951034D328EFF54C0011AE39 /* OnboardingQuizVC.swift */,
 				951034CD28EFF54C0011AE39 /* QuizSkinCondVC.swift */,
 				A00ECCC428F177260050F91C /* QuizSkinProblemVC.swift */,
 				A00ECCC628F1775D0050F91C /* QuizSkinLogVC.swift */,
 				A01C5E4028F2EB5600CD6B19 /* PhotoConfirmationVC.swift */,
 				A00ECCC828F177740050F91C /* QuizNotifVC.swift */,
 				A00ECCCA28F177890050F91C /* QuizSkinInsightVC.swift */,
-				A0F221B928F6EFF700E2E9D4 /* QuizView.swift */,
-				A03857D428F84BFE00A4B566 /* QuizNavigationBar.swift */,
 			);
 			path = Quiz;
 			sourceTree = "<group>";
@@ -416,8 +404,12 @@
 			isa = PBXGroup;
 			children = (
 				A03857BE28F8061E00A4B566 /* CustomBoxView.swift */,
-				A03857CD28F81E7200A4B566 /* OnboardingQuizView.swift */,
-				A0CA9D0528F8624F003234ED /* ProgressViewController.swift */,
+				A03857CD28F81E7200A4B566 /* SkinTypeView.swift */,
+				A0F560E828FAA4E10091DF7B /* SkinConditionView.swift */,
+				A0F560EA28FAA8FC0091DF7B /* SkinProblemView.swift */,
+				A0F560EC28FAA9050091DF7B /* SkinLogView.swift */,
+				A0F560EE28FAA91E0091DF7B /* SkinNotifView.swift */,
+				A0F560F028FAA92A0091DF7B /* SkinInsightView.swift */,
 			);
 			path = UIView;
 			sourceTree = "<group>";
@@ -603,14 +595,14 @@
 				95EB50E728EA821400412176 /* TreatmentsVC.swift in Sources */,
 				9538752328EDE2A1001979A8 /* ProductListCollectionView.swift in Sources */,
 				951034CA28EFF51F0011AE39 /* UIFont+CustomFont.swift in Sources */,
-				A03857CE28F81E7200A4B566 /* OnboardingQuizView.swift in Sources */,
+				A03857CE28F81E7200A4B566 /* SkinTypeView.swift in Sources */,
 				A03857B528F7C7E100A4B566 /* UIView+ApplyGradient.swift in Sources */,
 				959C2C0228ED44A3007B1251 /* UIViewController+ConfigureUI.swift in Sources */,
-				A03857D528F84BFE00A4B566 /* QuizNavigationBar.swift in Sources */,
 				A01C5E4128F2EB5600CD6B19 /* PhotoConfirmationVC.swift in Sources */,
 				A0E7EB1428F8545500F56802 /* ViewPreview.swift in Sources */,
 				A00ECCCB28F177890050F91C /* QuizSkinInsightVC.swift in Sources */,
 				95EB50E328EA821400412176 /* AppDelegate.swift in Sources */,
+				A0F560E928FAA4E10091DF7B /* SkinConditionView.swift in Sources */,
 				A01577DE28F5AAAE00F768E8 /* PhotoLogVC.swift in Sources */,
 				A0FF96E328F5122200D4B699 /* QuizGesture.swift in Sources */,
 				A03857C528F80B4100A4B566 /* NextButton.swift in Sources */,
@@ -621,30 +613,30 @@
 				A03857B628F7C7E100A4B566 /* UILabel+RequiredHeight.swift in Sources */,
 				A00ECCC528F177260050F91C /* QuizSkinProblemVC.swift in Sources */,
 				A00ECCC928F177740050F91C /* QuizNotifVC.swift in Sources */,
-				A0CA9D0628F8624F003234ED /* ProgressViewController.swift in Sources */,
 				951034BE28EFC13D0011AE39 /* HeaderLabel.swift in Sources */,
 				A03857D028F8353400A4B566 /* BackButton.swift in Sources */,
-				951034D628EFF54C0011AE39 /* QuizSkinCondCell.swift in Sources */,
 				9538752228EDE2A1001979A8 /* ApiService.swift in Sources */,
 				A03857D728F84C5C00A4B566 /* ViewControllerPreview.swift in Sources */,
+				A0F560EF28FAA91E0091DF7B /* SkinNotifView.swift in Sources */,
 				95233BDC28EF3B3000A4470E /* ProductListView.swift in Sources */,
 				A03857BF28F8061E00A4B566 /* CustomBoxView.swift in Sources */,
 				95EB50E528EA821400412176 /* SceneDelegate.swift in Sources */,
 				95A4311A28EE8F7F007A2108 /* CategoryButton.swift in Sources */,
 				951034CB28EFF51F0011AE39 /* UIImageView+DropShadow.swift in Sources */,
 				95EB50ED28EA821400412176 /* Quint.xcdatamodeld in Sources */,
-				951034D828EFF54C0011AE39 /* QuizSkinTypeVC.swift in Sources */,
+				951034D828EFF54C0011AE39 /* OnboardingQuizVC.swift in Sources */,
 				951034E228EFF8820011AE39 /* SkincareGuideViewController.swift in Sources */,
+				A0F560F128FAA92A0091DF7B /* SkinInsightView.swift in Sources */,
 				951034D728EFF54C0011AE39 /* LoginVC.swift in Sources */,
+				A0F560ED28FAA9050091DF7B /* SkinLogView.swift in Sources */,
 				9538752528EDE2A1001979A8 /* ProductListCell.swift in Sources */,
 				959C2BF628ED341E007B1251 /* CAGradientLayer+SetGradient.swift in Sources */,
 				951034D428EFF54C0011AE39 /* QuizSkinCondVC.swift in Sources */,
+				A0F560EB28FAA8FC0091DF7B /* SkinProblemView.swift in Sources */,
 				959C2BF528ED341E007B1251 /* Constants.swift in Sources */,
 				951034E428EFF8820011AE39 /* SkincareGuideTableViewCell.swift in Sources */,
-				951034D528EFF54C0011AE39 /* QuizSkinTypeCell.swift in Sources */,
 				95233BDE28EF3F3E00A4470E /* UIScrollView+RemoveSubviews.swift in Sources */,
 				951034C028EFEDA90011AE39 /* IngredientButton.swift in Sources */,
-				A0F221BA28F6EFF700E2E9D4 /* QuizView.swift in Sources */,
 				A00ECCC728F1775D0050F91C /* QuizSkinLogVC.swift in Sources */,
 				95233BE528EF4B5D00A4470E /* HorizontalScrollButtons.swift in Sources */,
 				95233BE128EF481F00A4470E /* IngredientListView.swift in Sources */,

@@ -139,7 +139,7 @@ class LoginVC: UIViewController {
     }
 
     @objc func didTapGetStart() {
-        let controller = QuizSkinTypeVC()
+        let controller = OnboardingQuizVC()
         navigationController?.pushViewController(controller, animated: true)
     }
     

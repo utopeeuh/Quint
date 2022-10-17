@@ -60,20 +60,20 @@ class MorningRoutineStepsTableViewCell: UITableViewCell {
     func configureLayout() {
         self.addSubview(hStackViewCell)
         numLabel.snp.makeConstraints { make in
-            make.left.equalTo(self.safeAreaInsets).offset(20)
+            make.left.equalTo(self.safeAreaInsets).offset(50)
             make.width.height.equalTo(28)
-            make.top.equalTo(self.safeAreaInsets).offset(7.5)
+            make.top.equalTo(self.safeAreaInsets).offset(11)
         }
         
         titleLabel.snp.makeConstraints { make in
             make.left.equalTo(numLabel.snp.right).offset(20)
-            make.top.equalTo(self.safeAreaInsets).offset(10.8)
+            make.top.equalTo(self.safeAreaInsets).offset(15)
         }
         
         imageRight.snp.makeConstraints { make in
             make.left.equalTo(titleLabel.snp.right)
-            make.top.equalTo(self.safeAreaInsets).offset(11.5)
-            make.right.equalTo(self.safeAreaLayoutGuide).offset(-15)
+            make.top.equalTo(self.safeAreaInsets).offset(14.5)
+            make.right.equalTo(self.safeAreaLayoutGuide).offset(-50)
         }
         
         hStackViewCell.snp.makeConstraints { make in

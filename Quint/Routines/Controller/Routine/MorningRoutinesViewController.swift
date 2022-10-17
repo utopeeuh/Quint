@@ -22,6 +22,10 @@ class MorningRoutinesViewController: UIViewController, UIScrollViewDelegate, UIT
     
     var products: [Product] = [Product]()
     
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return products.count
     }
@@ -51,30 +55,13 @@ class MorningRoutinesViewController: UIViewController, UIScrollViewDelegate, UIT
     }
     
     private let tableView: UITableView = {
-        let tv = UITableView(frame: CGRect(x: 0, y: 0, width: 100, height: 100), style: .plain)
+        let tv = UITableView(frame: CGRect(x: 0, y: 0, width: 0, height: 0), style: .plain)
         tv.translatesAutoresizingMaskIntoConstraints = false
         tv.register(MorningRoutineStepsTableViewCell.self, forCellReuseIdentifier: "MorningRoutineStepsTableViewCell")
-        
-//        tv.sectionHeaderHeight = 6
-//        tv.sectionFooterHeight = 6
-//        tv.separatorColor = UIColor(red: 244/255, green: 244/255, blue: 244/255, alpha: 1)
         return tv
     }()
     
     func bindTableData() {
-//        tableView.rx.setDelegate(self).disposed(by: bag)
-//        let dataSource = RxTableViewSectionedReloadDataSource<SectionModel<String, Product>> { _, tableView, indexPath, item in
-//            let cell = tableView.dequeueReusableCell(withIdentifier: "MorningRoutineStepsTableViewCell", for: indexPath) as! MorningRoutineStepsTableViewCell
-//            cell.product = item
-//            return cell
-//        } titleForHeaderInSection: { dataSource, sectionIndex in
-//            return dataSource[sectionIndex].model
-//        }
-//
-//        self.viewModel.items.bind(to: self.tableView.rx.items(dataSource: dataSource)).disposed(by: bag)
-//
-//        //Fetch items
-//        viewModel.fetchItems()
      
         products.append(Product(titleLabel: "Toner", numLabel: "1", imageRight: UIImage(systemName: "chevron.right")!))
         products.append(Product(titleLabel: "Cleanser", numLabel: "2", imageRight: UIImage(systemName: "chevron.right")!))
@@ -86,8 +73,6 @@ class MorningRoutinesViewController: UIViewController, UIScrollViewDelegate, UIT
         products.append(Product(titleLabel: "Exfoliator", numLabel: "8", imageRight: UIImage(systemName: "chevron.right")!))
     }
 
-//    private var viewModel = RoutineSteps()
-//    private var bag = DisposeBag()
     
     private lazy var mainStackView: UIStackView = {
         let stackView = UIStackView()
@@ -100,9 +85,9 @@ class MorningRoutinesViewController: UIViewController, UIScrollViewDelegate, UIT
     
     func navBar() {
         let button = UIButton(type: .custom)
-            //Set the image
+        //Set the image
         button.setImage(UIImage(systemName: "chevron.backward"), for: .normal)
-            //Set the title
+        //Set the title
         button.setTitle(" ", for: .normal)
         //Add target
         button.addTarget(self, action: #selector(goToHomeRoutine), for: .touchUpInside)
@@ -210,6 +195,19 @@ class MorningRoutinesViewController: UIViewController, UIScrollViewDelegate, UIT
         editBtn.setTitle(title, for: .normal)
     }
     
+    func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
+        let movedObject = self.products[sourceIndexPath.row]
+        products.remove(at: sourceIndexPath.row)
+        products.insert(movedObject, at: destinationIndexPath.row)
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            products.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: .fade)
+        }
+    }
+    
     
     override func configureLayout() {
         view.addSubview(mainStackView)
@@ -271,7 +269,7 @@ class MorningRoutinesViewController: UIViewController, UIScrollViewDelegate, UIT
         }
         
         tableView.snp.makeConstraints { make in
-            make.top.equalTo(hStackViewHeader.snp.bottom)
+            make.top.equalTo(hStackViewHeader.snp.bottom).offset(15)
         }
         
     }

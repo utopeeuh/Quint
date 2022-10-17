@@ -76,6 +76,14 @@
 		A03857D328F83E8800A4B566 /* SkinProblemCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A03857D228F83E8800A4B566 /* SkinProblemCollectionView.swift */; };
 		A03857D728F84C5C00A4B566 /* ViewControllerPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = A03857D628F84C5C00A4B566 /* ViewControllerPreview.swift */; };
 		A0E7EB1428F8545500F56802 /* ViewPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0E7EB1328F8545500F56802 /* ViewPreview.swift */; };
+		A0EF1F0128FCFFA60065AB9A /* InsightResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0EF1F0028FCFFA60065AB9A /* InsightResult.swift */; };
+		A0EF1F0328FCFFC70065AB9A /* InsightSteps.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0EF1F0228FCFFC70065AB9A /* InsightSteps.swift */; };
+		A0EF1F0528FD00D80065AB9A /* OnboardingResultVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0EF1F0428FD00D80065AB9A /* OnboardingResultVC.swift */; };
+		A0EF1F0928FD08080065AB9A /* ResultTypeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0EF1F0828FD08080065AB9A /* ResultTypeView.swift */; };
+		A0EF1F0B28FD08100065AB9A /* ResultProblemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0EF1F0A28FD08100065AB9A /* ResultProblemView.swift */; };
+		A0EF1F0E28FD0A300065AB9A /* TitleLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0EF1F0D28FD0A300065AB9A /* TitleLabel.swift */; };
+		A0EF1F1028FD0B4C0065AB9A /* ResultLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0EF1F0F28FD0B4C0065AB9A /* ResultLabel.swift */; };
+		A0EF1F1228FD0BAA0065AB9A /* DescriptionLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0EF1F1128FD0BAA0065AB9A /* DescriptionLabel.swift */; };
 		A0F560E928FAA4E10091DF7B /* SkinConditionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0F560E828FAA4E10091DF7B /* SkinConditionView.swift */; };
 		A0F560EB28FAA8FC0091DF7B /* SkinProblemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0F560EA28FAA8FC0091DF7B /* SkinProblemView.swift */; };
 		A0F560ED28FAA9050091DF7B /* SkinLogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0F560EC28FAA9050091DF7B /* SkinLogView.swift */; };
@@ -159,6 +167,14 @@
 		A03857D228F83E8800A4B566 /* SkinProblemCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkinProblemCollectionView.swift; sourceTree = "<group>"; };
 		A03857D628F84C5C00A4B566 /* ViewControllerPreview.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllerPreview.swift; sourceTree = "<group>"; };
 		A0E7EB1328F8545500F56802 /* ViewPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewPreview.swift; sourceTree = "<group>"; };
+		A0EF1F0028FCFFA60065AB9A /* InsightResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsightResult.swift; sourceTree = "<group>"; };
+		A0EF1F0228FCFFC70065AB9A /* InsightSteps.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsightSteps.swift; sourceTree = "<group>"; };
+		A0EF1F0428FD00D80065AB9A /* OnboardingResultVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingResultVC.swift; sourceTree = "<group>"; };
+		A0EF1F0828FD08080065AB9A /* ResultTypeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultTypeView.swift; sourceTree = "<group>"; };
+		A0EF1F0A28FD08100065AB9A /* ResultProblemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultProblemView.swift; sourceTree = "<group>"; };
+		A0EF1F0D28FD0A300065AB9A /* TitleLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleLabel.swift; sourceTree = "<group>"; };
+		A0EF1F0F28FD0B4C0065AB9A /* ResultLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultLabel.swift; sourceTree = "<group>"; };
+		A0EF1F1128FD0BAA0065AB9A /* DescriptionLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DescriptionLabel.swift; sourceTree = "<group>"; };
 		A0F560E828FAA4E10091DF7B /* SkinConditionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkinConditionView.swift; sourceTree = "<group>"; };
 		A0F560EA28FAA8FC0091DF7B /* SkinProblemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkinProblemView.swift; sourceTree = "<group>"; };
 		A0F560EC28FAA9050091DF7B /* SkinLogView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkinLogView.swift; sourceTree = "<group>"; };
@@ -211,6 +227,7 @@
 		951034CC28EFF54C0011AE39 /* Onboarding */ = {
 			isa = PBXGroup;
 			children = (
+				A0EF1EFF28FCFE280065AB9A /* Insights */,
 				951034D128EFF54C0011AE39 /* Authentication */,
 				A00ECCC328F1770B0050F91C /* Quiz */,
 			);
@@ -384,6 +401,7 @@
 				A01C5E4028F2EB5600CD6B19 /* PhotoConfirmationVC.swift */,
 				A00ECCC828F177740050F91C /* QuizNotifVC.swift */,
 				A00ECCCA28F177890050F91C /* QuizSkinInsightVC.swift */,
+				A0EF1F0428FD00D80065AB9A /* OnboardingResultVC.swift */,
 			);
 			path = Quiz;
 			sourceTree = "<group>";
@@ -441,6 +459,44 @@
 				A0E7EB1328F8545500F56802 /* ViewPreview.swift */,
 			);
 			path = "Preview SwiftUI";
+			sourceTree = "<group>";
+		};
+		A0EF1EFF28FCFE280065AB9A /* Insights */ = {
+			isa = PBXGroup;
+			children = (
+				A0EF1F0628FD071B0065AB9A /* Components */,
+				A0EF1F0028FCFFA60065AB9A /* InsightResult.swift */,
+				A0EF1F0228FCFFC70065AB9A /* InsightSteps.swift */,
+			);
+			path = Insights;
+			sourceTree = "<group>";
+		};
+		A0EF1F0628FD071B0065AB9A /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				A0EF1F0C28FD0A220065AB9A /* UILabel */,
+				A0EF1F0728FD07ED0065AB9A /* UIView */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		A0EF1F0728FD07ED0065AB9A /* UIView */ = {
+			isa = PBXGroup;
+			children = (
+				A0EF1F0828FD08080065AB9A /* ResultTypeView.swift */,
+				A0EF1F0A28FD08100065AB9A /* ResultProblemView.swift */,
+			);
+			path = UIView;
+			sourceTree = "<group>";
+		};
+		A0EF1F0C28FD0A220065AB9A /* UILabel */ = {
+			isa = PBXGroup;
+			children = (
+				A0EF1F0D28FD0A300065AB9A /* TitleLabel.swift */,
+				A0EF1F0F28FD0B4C0065AB9A /* ResultLabel.swift */,
+				A0EF1F1128FD0BAA0065AB9A /* DescriptionLabel.swift */,
+			);
+			path = UILabel;
 			sourceTree = "<group>";
 		};
 		DB8EE3D5BA362498C5AC9D3D /* Frameworks */ = {
@@ -607,29 +663,36 @@
 				A0FF96E328F5122200D4B699 /* QuizGesture.swift in Sources */,
 				A03857C528F80B4100A4B566 /* NextButton.swift in Sources */,
 				951034E328EFF8820011AE39 /* RoutineHomeViewController.swift in Sources */,
+				A0EF1F0328FCFFC70065AB9A /* InsightSteps.swift in Sources */,
 				A03857D328F83E8800A4B566 /* SkinProblemCollectionView.swift in Sources */,
 				A03857C328F80B3400A4B566 /* SignInAppleButton.swift in Sources */,
 				A03857C928F80B9900A4B566 /* OnboardingButton.swift in Sources */,
+				A0EF1F1028FD0B4C0065AB9A /* ResultLabel.swift in Sources */,
 				A03857B628F7C7E100A4B566 /* UILabel+RequiredHeight.swift in Sources */,
 				A00ECCC528F177260050F91C /* QuizSkinProblemVC.swift in Sources */,
 				A00ECCC928F177740050F91C /* QuizNotifVC.swift in Sources */,
+				A0EF1F0528FD00D80065AB9A /* OnboardingResultVC.swift in Sources */,
 				951034BE28EFC13D0011AE39 /* HeaderLabel.swift in Sources */,
+				A0EF1F0928FD08080065AB9A /* ResultTypeView.swift in Sources */,
 				A03857D028F8353400A4B566 /* BackButton.swift in Sources */,
 				9538752228EDE2A1001979A8 /* ApiService.swift in Sources */,
 				A03857D728F84C5C00A4B566 /* ViewControllerPreview.swift in Sources */,
 				A0F560EF28FAA91E0091DF7B /* SkinNotifView.swift in Sources */,
 				95233BDC28EF3B3000A4470E /* ProductListView.swift in Sources */,
+				A0EF1F0E28FD0A300065AB9A /* TitleLabel.swift in Sources */,
 				A03857BF28F8061E00A4B566 /* CustomBoxView.swift in Sources */,
 				95EB50E528EA821400412176 /* SceneDelegate.swift in Sources */,
 				95A4311A28EE8F7F007A2108 /* CategoryButton.swift in Sources */,
 				951034CB28EFF51F0011AE39 /* UIImageView+DropShadow.swift in Sources */,
 				95EB50ED28EA821400412176 /* Quint.xcdatamodeld in Sources */,
 				951034D828EFF54C0011AE39 /* OnboardingQuizVC.swift in Sources */,
+				A0EF1F0B28FD08100065AB9A /* ResultProblemView.swift in Sources */,
 				951034E228EFF8820011AE39 /* SkincareGuideViewController.swift in Sources */,
 				A0F560F128FAA92A0091DF7B /* SkinInsightView.swift in Sources */,
 				951034D728EFF54C0011AE39 /* LoginVC.swift in Sources */,
 				A0F560ED28FAA9050091DF7B /* SkinLogView.swift in Sources */,
 				9538752528EDE2A1001979A8 /* ProductListCell.swift in Sources */,
+				A0EF1F1228FD0BAA0065AB9A /* DescriptionLabel.swift in Sources */,
 				959C2BF628ED341E007B1251 /* CAGradientLayer+SetGradient.swift in Sources */,
 				951034D428EFF54C0011AE39 /* QuizSkinCondVC.swift in Sources */,
 				A0F560EB28FAA8FC0091DF7B /* SkinProblemView.swift in Sources */,
@@ -640,6 +703,7 @@
 				A00ECCC728F1775D0050F91C /* QuizSkinLogVC.swift in Sources */,
 				95233BE528EF4B5D00A4470E /* HorizontalScrollButtons.swift in Sources */,
 				95233BE128EF481F00A4470E /* IngredientListView.swift in Sources */,
+				A0EF1F0128FCFFA60065AB9A /* InsightResult.swift in Sources */,
 				951034C828EFF51F0011AE39 /* UIViewController+DismissKeyboard.swift in Sources */,
 				A03857C728F80B7100A4B566 /* SkipButton.swift in Sources */,
 				95233BE928EF55AB00A4470E /* SmallCategoryButton.swift in Sources */,

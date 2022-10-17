@@ -22,7 +22,7 @@ class AddNewStepUIViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor =  UIColor(red: 254/255, green: 254/255, blue: 254/255, alpha: 1)
-        self.title = "Daily skin log"
+        self.title = "Add new step"
         navBar()
         ConfigureUI()
     }
@@ -102,53 +102,54 @@ class AddNewStepUIViewController: UIViewController {
         view.addSubview(mainStackView)
         
         mainStackView.snp.makeConstraints { make in
-            make.top.left.right.equalTo(view.safeAreaLayoutGuide)
+            make.left.right.equalTo(view.safeAreaLayoutGuide)
+            make.top.equalTo(view.safeAreaLayoutGuide).offset(20)
         }
         
         micellar.snp.makeConstraints { make in
-            make.height.equalTo(15)
+            make.height.equalTo(20)
             make.left.equalTo(view.safeAreaLayoutGuide).offset(20)
             make.right.equalTo(view.safeAreaLayoutGuide).offset(-20)
         }
         
         eyeCream.snp.makeConstraints { make in
-            make.height.equalTo(15)
+            make.height.equalTo(20)
             make.left.equalTo(view.safeAreaLayoutGuide).offset(20)
             make.right.equalTo(view.safeAreaLayoutGuide).offset(-20)
         }
         
         toner.snp.makeConstraints { make in
-            make.height.equalTo(15)
+            make.height.equalTo(25)
             make.left.equalTo(view.safeAreaLayoutGuide).offset(20)
             make.right.equalTo(view.safeAreaLayoutGuide).offset(-20)
         }
         
         serum.snp.makeConstraints { make in
-            make.height.equalTo(15)
+            make.height.equalTo(25)
             make.left.equalTo(view.safeAreaLayoutGuide).offset(20)
             make.right.equalTo(view.safeAreaLayoutGuide).offset(-20)
         }
         
         cleanser.snp.makeConstraints { make in
-            make.height.equalTo(15)
+            make.height.equalTo(25)
             make.left.equalTo(view.safeAreaLayoutGuide).offset(20)
             make.right.equalTo(view.safeAreaLayoutGuide).offset(-20)
         }
         
         moisturizer.snp.makeConstraints { make in
-            make.height.equalTo(15)
+            make.height.equalTo(25)
             make.left.equalTo(view.safeAreaLayoutGuide).offset(20)
             make.right.equalTo(view.safeAreaLayoutGuide).offset(-20)
         }
         
         acneCare.snp.makeConstraints { make in
-            make.height.equalTo(15)
+            make.height.equalTo(25)
             make.left.equalTo(view.safeAreaLayoutGuide).offset(20)
             make.right.equalTo(view.safeAreaLayoutGuide).offset(-20)
         }
         
         exfoliator.snp.makeConstraints { make in
-            make.height.equalTo(15)
+            make.height.equalTo(25)
             make.left.equalTo(view.safeAreaLayoutGuide).offset(20)
             make.right.equalTo(view.safeAreaLayoutGuide).offset(-20)
         }

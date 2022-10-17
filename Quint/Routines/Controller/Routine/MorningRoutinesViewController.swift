@@ -190,8 +190,15 @@ class MorningRoutinesViewController: UIViewController, UIScrollViewDelegate, UIT
         tableView.dataSource = self
         mainStackView.addArrangedSubview(tableView)
         mainStackView.addArrangedSubview(addBtn)
+        addBtn.addTarget(self, action: #selector(goToAddNewPage), for: .touchUpInside)
         mainStackView.addArrangedSubview(finishBtn)
         tableView.reloadData()
+    }
+    
+    @objc func goToAddNewPage() {
+        let controller = AddNewStepUIViewController()
+        controller.modalPresentationStyle = .overCurrentContext
+        self.present(controller, animated: false)
     }
     
     @objc func editMenu() {

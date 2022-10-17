@@ -1,4 +1,4 @@
-module SMIconLabel {
+framework module SMIconLabel {
   umbrella header "SMIconLabel-umbrella.h"
 
   export *

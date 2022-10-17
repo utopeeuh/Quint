@@ -7,7 +7,7 @@
 
 import UIKit
 
-class SkinConditionView: UIView {
+class SkinConditionView: OnboardingParentView {
     
     private let skinConditionLabel = UILabel()
     var stackView = UIStackView()
@@ -58,6 +58,8 @@ class SkinConditionView: UIView {
         stackView.distribution = .equalSpacing
         stackView.layoutSubviews()
         
+        nextButton.setText("Next")
+        nextButton.addTarget(self, action: #selector(nextOnClick), for: .touchUpInside)
     }
     
     func configureLayout() {
@@ -68,7 +70,7 @@ class SkinConditionView: UIView {
         
         skinConditionLabel.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
-            make.top.equalToSuperview().offset(70)
+            make.top.equalToSuperview()
             make.width.equalToSuperview().offset(-40)
         }
        
@@ -83,10 +85,9 @@ class SkinConditionView: UIView {
         nextButton.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
             make.height.equalTo(50)
-            make.bottom.equalToSuperview().offset(-62)
+            make.bottom.equalToSuperview()
             make.width.equalToSuperview().offset(-40)
         }
         
     }
-    
 }

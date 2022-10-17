@@ -23,6 +23,7 @@ PODS:
   - SnapKit (5.6.0)
   - SwiftAlgorithms (1.0.0)
   - SwiftLint (0.49.1)
+  - TTGTagCollectionView (2.3.0)
 
 DEPENDENCIES:
   - Charts
@@ -35,6 +36,7 @@ DEPENDENCIES:
   - SMIconLabel
   - SnapKit (~> 5.6)
   - SwiftLint
+  - TTGTagCollectionView
 
 SPEC REPOS:
   trunk:
@@ -52,6 +54,7 @@ SPEC REPOS:
     - SnapKit
     - SwiftAlgorithms
     - SwiftLint
+    - TTGTagCollectionView
 
 SPEC CHECKSUMS:
   Charts: 354f86803d11d9c35de280587fef50d1af063978
@@ -68,7 +71,8 @@ SPEC CHECKSUMS:
   SnapKit: e01d52ebb8ddbc333eefe2132acf85c8227d9c25
   SwiftAlgorithms: 38dda4731d19027fdeee1125f973111bf3386b53
   SwiftLint: 32ee33ded0636d0905ef6911b2b67bbaeeedafa5
+  TTGTagCollectionView: 4104f93281097eae5adbf4444811e32f5e52dc95
 
-PODFILE CHECKSUM: 0143bda63e2e81818b9c6655280f7bc4d4a3dabb
+PODFILE CHECKSUM: 3a1fb3feb96f98abaaf92fe3e2342496888c0580
 
 COCOAPODS: 1.11.3

@@ -12,4 +12,6 @@ target 'Quint' do
   pod 'Fakery'
   pod 'SMIconLabel'
   pod 'RxDataSources', '~> 5.0'
+  use_frameworks!
+  pod "TTGTagCollectionView"
 end

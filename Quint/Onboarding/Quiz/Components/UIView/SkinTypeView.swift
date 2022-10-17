@@ -7,10 +7,8 @@
 
 import UIKit
 
-class SkinTypeView: UIView {
+class SkinTypeView: OnboardingParentView {
     
-//    public let backButton = BackButton()
-//    private let progressBar = UIProgressView()
     private let skinTypeLabel = UILabel()
     var stackView = UIStackView()
     var boxes: [K.Box] = []
@@ -19,7 +17,6 @@ class SkinTypeView: UIView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-
         configureUI()
     }
         
@@ -33,14 +30,7 @@ class SkinTypeView: UIView {
     }
 
     func configureComponents() {
-
-//        progressBar.trackTintColor = UIColor(red: 230/255, green: 230/255, blue: 230/255, alpha: 1)
-//        progressBar.progressTintColor = UIColor(red: 53/255, green: 84/255, blue: 73/255, alpha: 1)
-//        progressBar.setProgress(0.16, animated: true)
-//        progressBar.layer.cornerRadius = 4
-//        progressBar.clipsToBounds = true
         
-        skinTypeLabel.textColor = UIColor(red: 7/255, green: 8/255, blue: 7/255, alpha: 1)
         skinTypeLabel.text = "What is your skin type?"
         skinTypeLabel.font = .clashGroteskMedium(size: 30)
         skinTypeLabel.textAlignment = .left
@@ -67,15 +57,19 @@ class SkinTypeView: UIView {
         
         for b in boxes {
             let skinTypeBox = CustomBoxView(title: b.title!, desc: b.desc!)
-            stackView.addArrangedSubview(skinTypeBox)
             textHeight = skinTypeBox.labelContent.requiredHeight
+            stackView.addArrangedSubview(skinTypeBox)
         }
+        
+        print(textHeight)
+        
         stackView.axis = .vertical
         stackView.spacing = 12
         stackView.distribution = .equalSpacing
         stackView.layoutSubviews()
         
         nextButton.setText("Next")
+        nextButton.addTarget(self, action: #selector(nextOnClick), for: .touchUpInside)
         
     }
         
@@ -87,21 +81,8 @@ class SkinTypeView: UIView {
         addSubview(stackView)
         addSubview(nextButton)
         
-//        backButton.snp.makeConstraints { make in
-//            make.width.height.equalTo(24)
-//        }
-//
-//        progressBar.snp.makeConstraints { make in
-//            make.centerX.equalToSuperview()
-//            make.right.equalTo(backButton).offset(20)
-//            make.width.equalTo(300)
-//            make.height.equalTo(7)
-//            make.top.equalToSuperview().offset(65)
-//        }
-        
         skinTypeLabel.snp.makeConstraints { make in
-            make.centerX.equalToSuperview()
-            make.top.equalToSuperview().offset(70)
+            make.centerX.top.equalToSuperview()
             make.width.equalToSuperview().offset(-40)
         }
        
@@ -110,13 +91,12 @@ class SkinTypeView: UIView {
             make.top.equalTo(skinTypeLabel.snp.bottom).offset(32)
             make.width.equalToSuperview()
             make.height.equalTo((51 + Int(textHeight)) * boxes.count)
-            
         }
         
         nextButton.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
             make.height.equalTo(50)
-            make.bottom.equalToSuperview().offset(-62)
+            make.bottom.equalToSuperview()
             make.width.equalToSuperview().offset(-40)
         }
         

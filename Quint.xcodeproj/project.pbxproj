@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		641C9CF8A5120DAEE24305A9 /* Pods_Quint.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 89131110945F6BB59BA03758 /* Pods_Quint.framework */; };
 		951034BE28EFC13D0011AE39 /* HeaderLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951034BD28EFC13D0011AE39 /* HeaderLabel.swift */; };
 		951034C028EFEDA90011AE39 /* IngredientButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951034BF28EFEDA90011AE39 /* IngredientButton.swift */; };
 		951034C828EFF51F0011AE39 /* UIViewController+DismissKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951034C328EFF51F0011AE39 /* UIViewController+DismissKeyboard.swift */; };
@@ -45,6 +46,7 @@
 		9538752528EDE2A1001979A8 /* ProductListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9538751F28EDE2A1001979A8 /* ProductListCell.swift */; };
 		9538752628EDE2A1001979A8 /* PinterestLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9538752028EDE2A1001979A8 /* PinterestLayout.swift */; };
 		9538752B28EDE53C001979A8 /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9538752928EDE53C001979A8 /* Photo.swift */; };
+		9588035028FD22A600E31E39 /* OnboardingParentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9588034F28FD22A600E31E39 /* OnboardingParentView.swift */; };
 		959C2BF528ED341E007B1251 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 959C2BF328ED341E007B1251 /* Constants.swift */; };
 		959C2BF628ED341E007B1251 /* CAGradientLayer+SetGradient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 959C2BF428ED341E007B1251 /* CAGradientLayer+SetGradient.swift */; };
 		959C2C0228ED44A3007B1251 /* UIViewController+ConfigureUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 959C2C0128ED44A3007B1251 /* UIViewController+ConfigureUI.swift */; };
@@ -63,7 +65,6 @@
 		A00ECCCB28F177890050F91C /* QuizSkinInsightVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00ECCCA28F177890050F91C /* QuizSkinInsightVC.swift */; };
 		A01577DE28F5AAAE00F768E8 /* PhotoLogVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A01577DD28F5AAAE00F768E8 /* PhotoLogVC.swift */; };
 		A01C5E4128F2EB5600CD6B19 /* PhotoConfirmationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A01C5E4028F2EB5600CD6B19 /* PhotoConfirmationVC.swift */; };
-		A01CB84928F3EFCE00E8D5F8 /* TTGTags in Frameworks */ = {isa = PBXBuildFile; productRef = A01CB84828F3EFCE00E8D5F8 /* TTGTags */; };
 		A03857B528F7C7E100A4B566 /* UIView+ApplyGradient.swift in Sources */ = {isa = PBXBuildFile; fileRef = A03857B328F7C7E100A4B566 /* UIView+ApplyGradient.swift */; };
 		A03857B628F7C7E100A4B566 /* UILabel+RequiredHeight.swift in Sources */ = {isa = PBXBuildFile; fileRef = A03857B428F7C7E100A4B566 /* UILabel+RequiredHeight.swift */; };
 		A03857BF28F8061E00A4B566 /* CustomBoxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A03857BE28F8061E00A4B566 /* CustomBoxView.swift */; };
@@ -82,12 +83,11 @@
 		A0F560EF28FAA91E0091DF7B /* SkinNotifView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0F560EE28FAA91E0091DF7B /* SkinNotifView.swift */; };
 		A0F560F128FAA92A0091DF7B /* SkinInsightView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0F560F028FAA92A0091DF7B /* SkinInsightView.swift */; };
 		A0FF96E328F5122200D4B699 /* QuizGesture.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0FF96E228F5122200D4B699 /* QuizGesture.swift */; };
-		C9131C6A5795F6F5C360774C /* libPods-Quint.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A4222B49AA562D57AC4B33E /* libPods-Quint.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		1DE7348A28BE8A5E92A105D1 /* Pods-Quint.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Quint.release.xcconfig"; path = "Target Support Files/Pods-Quint/Pods-Quint.release.xcconfig"; sourceTree = "<group>"; };
-		6A4222B49AA562D57AC4B33E /* libPods-Quint.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Quint.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		89131110945F6BB59BA03758 /* Pods_Quint.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Quint.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		951034BD28EFC13D0011AE39 /* HeaderLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderLabel.swift; sourceTree = "<group>"; };
 		951034BF28EFEDA90011AE39 /* IngredientButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientButton.swift; sourceTree = "<group>"; };
 		951034C328EFF51F0011AE39 /* UIViewController+DismissKeyboard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+DismissKeyboard.swift"; sourceTree = "<group>"; };
@@ -127,6 +127,7 @@
 		9538751F28EDE2A1001979A8 /* ProductListCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductListCell.swift; sourceTree = "<group>"; };
 		9538752028EDE2A1001979A8 /* PinterestLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PinterestLayout.swift; sourceTree = "<group>"; };
 		9538752928EDE53C001979A8 /* Photo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
+		9588034F28FD22A600E31E39 /* OnboardingParentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingParentView.swift; sourceTree = "<group>"; };
 		959C2BF328ED341E007B1251 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		959C2BF428ED341E007B1251 /* CAGradientLayer+SetGradient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CAGradientLayer+SetGradient.swift"; sourceTree = "<group>"; };
 		959C2C0128ED44A3007B1251 /* UIViewController+ConfigureUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+ConfigureUI.swift"; sourceTree = "<group>"; };
@@ -173,8 +174,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C9131C6A5795F6F5C360774C /* libPods-Quint.a in Frameworks */,
-				A01CB84928F3EFCE00E8D5F8 /* TTGTags in Frameworks */,
+				641C9CF8A5120DAEE24305A9 /* Pods_Quint.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -314,6 +314,19 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		9588034E28FD0BA100E31E39 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				951034CD28EFF54C0011AE39 /* QuizSkinCondVC.swift */,
+				A00ECCC428F177260050F91C /* QuizSkinProblemVC.swift */,
+				A00ECCC628F1775D0050F91C /* QuizSkinLogVC.swift */,
+				A01C5E4028F2EB5600CD6B19 /* PhotoConfirmationVC.swift */,
+				A00ECCC828F177740050F91C /* QuizNotifVC.swift */,
+				A00ECCCA28F177890050F91C /* QuizSkinInsightVC.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
 		959C2BF228ED341E007B1251 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
@@ -376,14 +389,9 @@
 		A00ECCC328F1770B0050F91C /* Quiz */ = {
 			isa = PBXGroup;
 			children = (
-				A03857B228F7C5F500A4B566 /* Components */,
 				951034D328EFF54C0011AE39 /* OnboardingQuizVC.swift */,
-				951034CD28EFF54C0011AE39 /* QuizSkinCondVC.swift */,
-				A00ECCC428F177260050F91C /* QuizSkinProblemVC.swift */,
-				A00ECCC628F1775D0050F91C /* QuizSkinLogVC.swift */,
-				A01C5E4028F2EB5600CD6B19 /* PhotoConfirmationVC.swift */,
-				A00ECCC828F177740050F91C /* QuizNotifVC.swift */,
-				A00ECCCA28F177890050F91C /* QuizSkinInsightVC.swift */,
+				A03857B228F7C5F500A4B566 /* Components */,
+				9588034E28FD0BA100E31E39 /* ViewController */,
 			);
 			path = Quiz;
 			sourceTree = "<group>";
@@ -410,6 +418,7 @@
 				A0F560EC28FAA9050091DF7B /* SkinLogView.swift */,
 				A0F560EE28FAA91E0091DF7B /* SkinNotifView.swift */,
 				A0F560F028FAA92A0091DF7B /* SkinInsightView.swift */,
+				9588034F28FD22A600E31E39 /* OnboardingParentView.swift */,
 			);
 			path = UIView;
 			sourceTree = "<group>";
@@ -446,7 +455,7 @@
 		DB8EE3D5BA362498C5AC9D3D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				6A4222B49AA562D57AC4B33E /* libPods-Quint.a */,
+				89131110945F6BB59BA03758 /* Pods_Quint.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -462,16 +471,13 @@
 				95EB50DB28EA821400412176 /* Sources */,
 				95EB50DC28EA821400412176 /* Frameworks */,
 				95EB50DD28EA821400412176 /* Resources */,
-				3147208A396AE29EFA75A296 /* [CP] Copy Pods Resources */,
+				3AD4C3055625146B6F8DB664 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = Quint;
-			packageProductDependencies = (
-				A01CB84828F3EFCE00E8D5F8 /* TTGTags */,
-			);
 			productName = Quint;
 			productReference = 95EB50DF28EA821400412176 /* Quint.app */;
 			productType = "com.apple.product-type.application";
@@ -500,9 +506,6 @@
 				Base,
 			);
 			mainGroup = 95EB50D628EA821400412176;
-			packageReferences = (
-				A01CB84728F3EFCE00E8D5F8 /* XCRemoteSwiftPackageReference "TTGTagCollectionView" */,
-			);
 			productRefGroup = 95EB50E028EA821400412176 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -543,21 +546,21 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		3147208A396AE29EFA75A296 /* [CP] Copy Pods Resources */ = {
+		3AD4C3055625146B6F8DB664 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Quint/Pods-Quint-resources-${CONFIGURATION}-input-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-Quint/Pods-Quint-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
-			name = "[CP] Copy Pods Resources";
+			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Quint/Pods-Quint-resources-${CONFIGURATION}-output-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-Quint/Pods-Quint-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Quint/Pods-Quint-resources.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Quint/Pods-Quint-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		B46B201D501C264AA824B831 /* [CP] Check Pods Manifest.lock */ = {
@@ -639,6 +642,7 @@
 				951034C028EFEDA90011AE39 /* IngredientButton.swift in Sources */,
 				A00ECCC728F1775D0050F91C /* QuizSkinLogVC.swift in Sources */,
 				95233BE528EF4B5D00A4470E /* HorizontalScrollButtons.swift in Sources */,
+				9588035028FD22A600E31E39 /* OnboardingParentView.swift in Sources */,
 				95233BE128EF481F00A4470E /* IngredientListView.swift in Sources */,
 				951034C828EFF51F0011AE39 /* UIViewController+DismissKeyboard.swift in Sources */,
 				A03857C728F80B7100A4B566 /* SkipButton.swift in Sources */,
@@ -791,7 +795,7 @@
 				CODE_SIGN_ENTITLEMENTS = Quint/Quint.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = J3D4SXSPFL;
+				DEVELOPMENT_TEAM = M3J6YQYJKM;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Quint/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -805,7 +809,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.vendly.macro;
+				PRODUCT_BUNDLE_IDENTIFIER = com.daffa.macro;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -822,7 +826,7 @@
 				CODE_SIGN_ENTITLEMENTS = Quint/Quint.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = J3D4SXSPFL;
+				DEVELOPMENT_TEAM = M3J6YQYJKM;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Quint/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -836,7 +840,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.vendly.macro;
+				PRODUCT_BUNDLE_IDENTIFIER = com.daffa.macro;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -866,25 +870,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCRemoteSwiftPackageReference section */
-		A01CB84728F3EFCE00E8D5F8 /* XCRemoteSwiftPackageReference "TTGTagCollectionView" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "git@github.com:zekunyan/TTGTagCollectionView.git";
-			requirement = {
-				branch = master;
-				kind = branch;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		A01CB84828F3EFCE00E8D5F8 /* TTGTags */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = A01CB84728F3EFCE00E8D5F8 /* XCRemoteSwiftPackageReference "TTGTagCollectionView" */;
-			productName = TTGTags;
-		};
-/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		95EB50EB28EA821400412176 /* Quint.xcdatamodeld */ = {

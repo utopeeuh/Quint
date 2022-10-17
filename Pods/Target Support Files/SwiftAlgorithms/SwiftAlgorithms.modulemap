@@ -1,4 +1,4 @@
-module Algorithms {
+framework module Algorithms {
   umbrella header "SwiftAlgorithms-umbrella.h"
 
   export *

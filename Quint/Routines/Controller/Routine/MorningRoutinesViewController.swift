@@ -23,17 +23,22 @@ class MorningRoutinesViewController: UIViewController, UIScrollViewDelegate, UIT
     var products: [Product] = [Product]()
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
+        return products.count
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return products.count
+        return 1
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "MorningRoutineStepsTableViewCell", for: indexPath) as! MorningRoutineStepsTableViewCell
-        let currentLastItem = products[indexPath.row]
+        let currentLastItem = products[indexPath.section]
         cell.product = currentLastItem
+        
+        cell.backgroundColor = UIColor.white
+        cell.layer.borderColor = UIColor.white.cgColor
+        cell.layer.borderWidth = 1
+        cell.layer.cornerRadius = 8
         return cell
     }
     
@@ -55,7 +60,7 @@ class MorningRoutinesViewController: UIViewController, UIScrollViewDelegate, UIT
     }
     
     private let tableView: UITableView = {
-        let tv = UITableView(frame: CGRect(x: 0, y: 0, width: 0, height: 0), style: .plain)
+        let tv = UITableView(frame: CGRect(x: 0, y: 0, width: 0, height: 0), style: .insetGrouped)
         tv.translatesAutoresizingMaskIntoConstraints = false
         tv.register(MorningRoutineStepsTableViewCell.self, forCellReuseIdentifier: "MorningRoutineStepsTableViewCell")
         return tv
@@ -208,6 +213,16 @@ class MorningRoutinesViewController: UIViewController, UIScrollViewDelegate, UIT
         }
     }
     
+    let cellSpacingHeight: CGFloat = 0
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return cellSpacingHeight
+    }
+
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+         let headerView = UIView()
+        headerView.backgroundColor = UIColor.clear
+         return headerView
+     }
     
     override func configureLayout() {
         view.addSubview(mainStackView)

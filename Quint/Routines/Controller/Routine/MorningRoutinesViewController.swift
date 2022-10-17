@@ -198,7 +198,24 @@ class MorningRoutinesViewController: UIViewController, UIScrollViewDelegate, UIT
         tableView.isEditing = !tableView.isEditing
         let title = (tableView.isEditing) ? "Done" : "Edit steps"
         editBtn.setTitle(title, for: .normal)
+        
+        if tableView.isEditing == true {
+            finishBtn.isEnabled = false
+            finishBtn.layer.backgroundColor = CGColor(red: 230/255, green: 230/255, blue: 230/255, alpha: 1)
+            finishBtn.setTitleColor(UIColor(red: 125/255, green: 125/255, blue: 125/255, alpha: 125/255), for: .normal)
+        }else {
+            finishBtn.isEnabled = true
+            finishBtn.layer.backgroundColor = UIColor.black.cgColor
+            finishBtn.setTitleColor(.white, for: .normal)
+        }
+        
     }
+    
+    // method to run when table view cell is tapped
+       func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+           // note that indexPath.section is used rather than indexPath.row
+           print("You tapped cell number \(indexPath.section).")
+       }
     
     func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
         let movedObject = self.products[sourceIndexPath.row]

@@ -67,7 +67,7 @@ class MorningRoutineStepsTableViewCell: UITableViewCell {
         
         titleLabel.snp.makeConstraints { make in
             make.left.equalTo(numLabel.snp.right).offset(20)
-            make.top.equalTo(self.safeAreaInsets).offset(15)
+            make.top.equalTo(self.safeAreaInsets).offset(14.65)
         }
         
         imageRight.snp.makeConstraints { make in
@@ -79,6 +79,20 @@ class MorningRoutineStepsTableViewCell: UITableViewCell {
         hStackViewCell.snp.makeConstraints { make in
             make.width.equalTo(self.safeAreaLayoutGuide)
             make.left.equalTo(self.safeAreaInsets)
+        }
+    }
+    
+    func changeCons() {
+        numLabel.snp.makeConstraints { make in
+            make.left.equalTo(self.safeAreaInsets).offset(20)
+            make.width.height.equalTo(28)
+            make.top.equalTo(self.safeAreaInsets).offset(11)
+        }
+        
+        imageRight.snp.makeConstraints { make in
+            make.left.equalTo(titleLabel.snp.right)
+            make.top.equalTo(self.safeAreaInsets).offset(14.5)
+            make.right.equalTo(self.safeAreaLayoutGuide).offset(-15)
         }
     }
 

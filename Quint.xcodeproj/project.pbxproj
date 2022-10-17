@@ -65,6 +65,7 @@
 		9572F0B928F694F90035BCA3 /* SensitivityCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9572F0B828F694F90035BCA3 /* SensitivityCell.swift */; };
 		9572F0BB28F698F90035BCA3 /* DummyVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9572F0BA28F698F90035BCA3 /* DummyVC.swift */; };
 		9572F0BD28F6AF5A0035BCA3 /* SourceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9572F0BC28F6AF5A0035BCA3 /* SourceCell.swift */; };
+		9588035628FD6DEF00E31E39 /* UILabel+NumberOfLines.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9588035528FD6DEF00E31E39 /* UILabel+NumberOfLines.swift */; };
 		959C2BF528ED341E007B1251 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 959C2BF328ED341E007B1251 /* Constants.swift */; };
 		959C2BF628ED341E007B1251 /* CAGradientLayer+SetGradient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 959C2BF428ED341E007B1251 /* CAGradientLayer+SetGradient.swift */; };
 		959C2C0228ED44A3007B1251 /* UIViewController+ConfigureUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 959C2C0128ED44A3007B1251 /* UIViewController+ConfigureUI.swift */; };
@@ -146,6 +147,7 @@
 		9572F0B828F694F90035BCA3 /* SensitivityCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SensitivityCell.swift; sourceTree = "<group>"; };
 		9572F0BA28F698F90035BCA3 /* DummyVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DummyVC.swift; sourceTree = "<group>"; };
 		9572F0BC28F6AF5A0035BCA3 /* SourceCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SourceCell.swift; sourceTree = "<group>"; };
+		9588035528FD6DEF00E31E39 /* UILabel+NumberOfLines.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+NumberOfLines.swift"; sourceTree = "<group>"; };
 		959C2BF328ED341E007B1251 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		959C2BF428ED341E007B1251 /* CAGradientLayer+SetGradient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CAGradientLayer+SetGradient.swift"; sourceTree = "<group>"; };
 		959C2C0128ED44A3007B1251 /* UIViewController+ConfigureUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+ConfigureUI.swift"; sourceTree = "<group>"; };
@@ -363,6 +365,7 @@
 				951034C328EFF51F0011AE39 /* UIViewController+DismissKeyboard.swift */,
 				95FC28BB28F1592F00994750 /* UILabel+RequiredHeight.swift */,
 				9524228E28F42E1800361166 /* UIView+ApplyGradient.swift */,
+				9588035528FD6DEF00E31E39 /* UILabel+NumberOfLines.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -604,6 +607,7 @@
 				951034BE28EFC13D0011AE39 /* HeaderLabel.swift in Sources */,
 				9572F0B528F694E00035BCA3 /* UsageCell.swift in Sources */,
 				951034D628EFF54C0011AE39 /* QuizSkinCondCell.swift in Sources */,
+				9588035628FD6DEF00E31E39 /* UILabel+NumberOfLines.swift in Sources */,
 				9572F0B928F694F90035BCA3 /* SensitivityCell.swift in Sources */,
 				95A902DC28F54925007B7F5C /* IngredientSegmentView.swift in Sources */,
 				95A902D828F52D46007B7F5C /* IngredientCategoryDetailVC.swift in Sources */,

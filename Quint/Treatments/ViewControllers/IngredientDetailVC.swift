@@ -72,7 +72,7 @@ class IngredientDetailVC: UIViewController{
         
         scrollHeight = nameLbl.requiredHeight + descTruncHeight + seeMoreBtn.requiredHeight + lowerSection.getTotalHeight() + 151
         
-        mainScroll.showsVerticalScrollIndicator = true
+        mainScroll.showsVerticalScrollIndicator = false
         mainScroll.contentSize = CGSize(width: view.frame.width, height: scrollHeight)
         
         mainScroll.addSubview(nameLbl)

@@ -62,7 +62,7 @@ class PrecautionSegmentView: UIView{
         // Add offsets and height
         addToHeight(allergenStackH)
         addToHeight(usageCell.getHeight())
-        addToHeight(sourceCell.linkLabel.requiredHeight)
+        addToHeight(sourceCell.linkLabel.requiredHeight+28)
         addToHeight(safetyCell.getHeight())
         addToHeight((allergenLabel.font.pointSize+1)*4)
         addToHeight(48*3)

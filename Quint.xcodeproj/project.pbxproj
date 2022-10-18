@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		950B32E128F912440095EFB5 /* RatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 950B32E028F912440095EFB5 /* RatingView.swift */; };
+		950D428B28FDC9B400657816 /* IngDetailLowerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 950D428A28FDC9B400657816 /* IngDetailLowerView.swift */; };
 		951034BE28EFC13D0011AE39 /* HeaderLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951034BD28EFC13D0011AE39 /* HeaderLabel.swift */; };
 		951034C028EFEDA90011AE39 /* IngredientButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951034BF28EFEDA90011AE39 /* IngredientButton.swift */; };
 		951034C828EFF51F0011AE39 /* UIViewController+DismissKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951034C328EFF51F0011AE39 /* UIViewController+DismissKeyboard.swift */; };
@@ -63,7 +64,7 @@
 		9572F0B528F694E00035BCA3 /* UsageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9572F0B428F694E00035BCA3 /* UsageCell.swift */; };
 		9572F0B728F694F10035BCA3 /* SafetyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9572F0B628F694F10035BCA3 /* SafetyCell.swift */; };
 		9572F0B928F694F90035BCA3 /* SensitivityCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9572F0B828F694F90035BCA3 /* SensitivityCell.swift */; };
-		9572F0BB28F698F90035BCA3 /* DummyVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9572F0BA28F698F90035BCA3 /* DummyVC.swift */; };
+		9572F0BB28F698F90035BCA3 /* IngredientDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9572F0BA28F698F90035BCA3 /* IngredientDetailVC.swift */; };
 		9572F0BD28F6AF5A0035BCA3 /* SourceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9572F0BC28F6AF5A0035BCA3 /* SourceCell.swift */; };
 		9588035628FD6DEF00E31E39 /* UILabel+NumberOfLines.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9588035528FD6DEF00E31E39 /* UILabel+NumberOfLines.swift */; };
 		959C2BF528ED341E007B1251 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 959C2BF328ED341E007B1251 /* Constants.swift */; };
@@ -73,6 +74,9 @@
 		95A902D828F52D46007B7F5C /* IngredientCategoryDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A902D728F52D46007B7F5C /* IngredientCategoryDetailVC.swift */; };
 		95A902DA28F53F03007B7F5C /* IngredientListSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A902D928F53F03007B7F5C /* IngredientListSection.swift */; };
 		95A902DC28F54925007B7F5C /* IngredientSegmentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A902DB28F54925007B7F5C /* IngredientSegmentView.swift */; };
+		95CC136328FE4A1400D3396A /* QuickFactCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CC136228FE4A1400D3396A /* QuickFactCell.swift */; };
+		95CC136528FE4BDC00D3396A /* UITextView+RequiredHeight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CC136428FE4BDC00D3396A /* UITextView+RequiredHeight.swift */; };
+		95CC136728FE67C000D3396A /* AttributedString+Styles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CC136628FE67C000D3396A /* AttributedString+Styles.swift */; };
 		95EB50E328EA821400412176 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95EB50E228EA821400412176 /* AppDelegate.swift */; };
 		95EB50E528EA821400412176 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95EB50E428EA821400412176 /* SceneDelegate.swift */; };
 		95EB50E728EA821400412176 /* TreatmentsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95EB50E628EA821400412176 /* TreatmentsVC.swift */; };
@@ -89,6 +93,7 @@
 		1DE7348A28BE8A5E92A105D1 /* Pods-Quint.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Quint.release.xcconfig"; path = "Target Support Files/Pods-Quint/Pods-Quint.release.xcconfig"; sourceTree = "<group>"; };
 		6A4222B49AA562D57AC4B33E /* libPods-Quint.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Quint.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		950B32E028F912440095EFB5 /* RatingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingView.swift; sourceTree = "<group>"; };
+		950D428A28FDC9B400657816 /* IngDetailLowerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngDetailLowerView.swift; sourceTree = "<group>"; };
 		951034BD28EFC13D0011AE39 /* HeaderLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderLabel.swift; sourceTree = "<group>"; };
 		951034BF28EFEDA90011AE39 /* IngredientButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientButton.swift; sourceTree = "<group>"; };
 		951034C328EFF51F0011AE39 /* UIViewController+DismissKeyboard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+DismissKeyboard.swift"; sourceTree = "<group>"; };
@@ -145,7 +150,7 @@
 		9572F0B428F694E00035BCA3 /* UsageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsageCell.swift; sourceTree = "<group>"; };
 		9572F0B628F694F10035BCA3 /* SafetyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafetyCell.swift; sourceTree = "<group>"; };
 		9572F0B828F694F90035BCA3 /* SensitivityCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SensitivityCell.swift; sourceTree = "<group>"; };
-		9572F0BA28F698F90035BCA3 /* DummyVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DummyVC.swift; sourceTree = "<group>"; };
+		9572F0BA28F698F90035BCA3 /* IngredientDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientDetailVC.swift; sourceTree = "<group>"; };
 		9572F0BC28F6AF5A0035BCA3 /* SourceCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SourceCell.swift; sourceTree = "<group>"; };
 		9588035528FD6DEF00E31E39 /* UILabel+NumberOfLines.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+NumberOfLines.swift"; sourceTree = "<group>"; };
 		959C2BF328ED341E007B1251 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -155,6 +160,9 @@
 		95A902D728F52D46007B7F5C /* IngredientCategoryDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientCategoryDetailVC.swift; sourceTree = "<group>"; };
 		95A902D928F53F03007B7F5C /* IngredientListSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientListSection.swift; sourceTree = "<group>"; };
 		95A902DB28F54925007B7F5C /* IngredientSegmentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientSegmentView.swift; sourceTree = "<group>"; };
+		95CC136228FE4A1400D3396A /* QuickFactCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickFactCell.swift; sourceTree = "<group>"; };
+		95CC136428FE4BDC00D3396A /* UITextView+RequiredHeight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextView+RequiredHeight.swift"; sourceTree = "<group>"; };
+		95CC136628FE67C000D3396A /* AttributedString+Styles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AttributedString+Styles.swift"; sourceTree = "<group>"; };
 		95EB50DF28EA821400412176 /* Quint.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Quint.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		95EB50E228EA821400412176 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		95EB50E428EA821400412176 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -203,7 +211,7 @@
 		951034BC28EFB9720011AE39 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				9572F0BA28F698F90035BCA3 /* DummyVC.swift */,
+				9572F0BA28F698F90035BCA3 /* IngredientDetailVC.swift */,
 				95EB50E628EA821400412176 /* TreatmentsVC.swift */,
 				9524229028F4326D00361166 /* AllIngredientsVC.swift */,
 				95A902D728F52D46007B7F5C /* IngredientCategoryDetailVC.swift */,
@@ -333,6 +341,7 @@
 				9543DA7528F8361B00E37A28 /* RatingCell.swift */,
 				9543DA7728F85A7A00E37A28 /* ProductCategoryLabel.swift */,
 				950B32E028F912440095EFB5 /* RatingView.swift */,
+				95CC136228FE4A1400D3396A /* QuickFactCell.swift */,
 			);
 			path = Misc;
 			sourceTree = "<group>";
@@ -354,6 +363,7 @@
 			isa = PBXGroup;
 			children = (
 				9538751C28EDE2A1001979A8 /* ApiService.swift */,
+				95CC136428FE4BDC00D3396A /* UITextView+RequiredHeight.swift */,
 				959C2BF328ED341E007B1251 /* Constants.swift */,
 				959C2BF428ED341E007B1251 /* CAGradientLayer+SetGradient.swift */,
 				951034C628EFF51F0011AE39 /* UIImageView+DropShadow.swift */,
@@ -366,6 +376,7 @@
 				95FC28BB28F1592F00994750 /* UILabel+RequiredHeight.swift */,
 				9524228E28F42E1800361166 /* UIView+ApplyGradient.swift */,
 				9588035528FD6DEF00E31E39 /* UILabel+NumberOfLines.swift */,
+				95CC136628FE67C000D3396A /* AttributedString+Styles.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -384,6 +395,7 @@
 		95A1E05328F3BA3600386972 /* UIView */ = {
 			isa = PBXGroup;
 			children = (
+				950D428A28FDC9B400657816 /* IngDetailLowerView.swift */,
 				95A902DB28F54925007B7F5C /* IngredientSegmentView.swift */,
 				9543DA6E28F7BBBA00E37A28 /* PrecautionSegmentView.swift */,
 				95233BDB28EF3B3000A4470E /* ProductListView.swift */,
@@ -608,9 +620,11 @@
 				9572F0B528F694E00035BCA3 /* UsageCell.swift in Sources */,
 				951034D628EFF54C0011AE39 /* QuizSkinCondCell.swift in Sources */,
 				9588035628FD6DEF00E31E39 /* UILabel+NumberOfLines.swift in Sources */,
+				95CC136728FE67C000D3396A /* AttributedString+Styles.swift in Sources */,
 				9572F0B928F694F90035BCA3 /* SensitivityCell.swift in Sources */,
 				95A902DC28F54925007B7F5C /* IngredientSegmentView.swift in Sources */,
 				95A902D828F52D46007B7F5C /* IngredientCategoryDetailVC.swift in Sources */,
+				95CC136328FE4A1400D3396A /* QuickFactCell.swift in Sources */,
 				9538752228EDE2A1001979A8 /* ApiService.swift in Sources */,
 				95FC28BC28F1592F00994750 /* UILabel+RequiredHeight.swift in Sources */,
 				95233BDC28EF3B3000A4470E /* ProductListView.swift in Sources */,
@@ -620,16 +634,18 @@
 				9543DA7628F8361B00E37A28 /* RatingCell.swift in Sources */,
 				9572F0B728F694F10035BCA3 /* SafetyCell.swift in Sources */,
 				95A4311A28EE8F7F007A2108 /* CategoryButton.swift in Sources */,
+				95CC136528FE4BDC00D3396A /* UITextView+RequiredHeight.swift in Sources */,
 				9572F0B328F694C70035BCA3 /* AllergenCell.swift in Sources */,
 				9524229528F43F7900361166 /* IngredientListCell.swift in Sources */,
 				9524228F28F42E1800361166 /* UIView+ApplyGradient.swift in Sources */,
 				9510352B28F007DB0011AE39 /* LargeCategoryCard.swift in Sources */,
+				950D428B28FDC9B400657816 /* IngDetailLowerView.swift in Sources */,
 				9572F0BD28F6AF5A0035BCA3 /* SourceCell.swift in Sources */,
 				951034CB28EFF51F0011AE39 /* UIImageView+DropShadow.swift in Sources */,
 				9543DA7828F85A7A00E37A28 /* ProductCategoryLabel.swift in Sources */,
 				95EB50ED28EA821400412176 /* Quint.xcdatamodeld in Sources */,
 				951034D828EFF54C0011AE39 /* QuizSkinTypeVC.swift in Sources */,
-				9572F0BB28F698F90035BCA3 /* DummyVC.swift in Sources */,
+				9572F0BB28F698F90035BCA3 /* IngredientDetailVC.swift in Sources */,
 				951034E228EFF8820011AE39 /* SkincareGuideViewController.swift in Sources */,
 				951034D728EFF54C0011AE39 /* LoginViewController.swift in Sources */,
 				9538752528EDE2A1001979A8 /* ProductListCell.swift in Sources */,

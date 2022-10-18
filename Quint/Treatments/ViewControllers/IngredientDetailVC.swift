@@ -10,7 +10,7 @@ import UIKit
 import SMIconLabel
 import SnapKit
 
-class DummyVC: UIViewController{
+class IngredientDetailVC: UIViewController{
     
     var ingredientId: Int!
     private var nameLbl = UILabel()
@@ -18,6 +18,10 @@ class DummyVC: UIViewController{
     private var seeMoreBtn = SMIconLabel()
     private var detailSection = UIView()
     private var descBlanket = UIView()
+    private var lowerSection: IngDetailLowerView!
+    
+    private var mainScroll = UIScrollView()
+    private var scrollHeight: CGFloat!
     
     private var descTruncHeight: CGFloat = 0
     
@@ -27,6 +31,8 @@ class DummyVC: UIViewController{
     }
     
     override func configureComponents() {
+        navigationController?.hidesBarsOnSwipe = true
+        
         view.backgroundColor = K.Color.bgQuint
         
         nameLbl.frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width-40, height: 0)
@@ -57,22 +63,37 @@ class DummyVC: UIViewController{
         
         descBlanket.backgroundColor = K.Color.bgQuint
         
+        lowerSection = IngDetailLowerView(id: 5)
+        lowerSection.backgroundColor = K.Color.bgQuint
+        
         detailSection.backgroundColor = K.Color.bgQuint
         detailSection.addSubview(seeMoreBtn)
+        detailSection.addSubview(lowerSection)
+        
+        scrollHeight = nameLbl.requiredHeight + descTruncHeight + seeMoreBtn.requiredHeight + lowerSection.getTotalHeight() + 151
+        
+        mainScroll.showsVerticalScrollIndicator = true
+        mainScroll.contentSize = CGSize(width: view.frame.width, height: scrollHeight)
+        
+        mainScroll.addSubview(nameLbl)
+        mainScroll.addSubview(descLbl)
+        mainScroll.addSubview(descBlanket)
+        mainScroll.addSubview(detailSection)
         
         collapseDesc()
     }
     
     override func configureLayout() {
-        view.addSubview(nameLbl)
-        view.addSubview(descLbl)
-        view.addSubview(descBlanket)
-        view.addSubview(detailSection)
+        view.addSubview(mainScroll)
+        
+        mainScroll.snp.makeConstraints { make in
+            make.width.equalToSuperview()
+            make.height.equalTo(UIScreen.main.bounds.height)
+        }
         
         nameLbl.snp.makeConstraints { make in
-            make.top.equalTo(view.safeAreaLayoutGuide)
             make.width.equalToSuperview().offset(-40)
-            make.centerX.equalToSuperview()
+            make.top.centerX.equalToSuperview()
             make.height.equalTo(nameLbl.requiredHeight)
         }
         
@@ -89,17 +110,25 @@ class DummyVC: UIViewController{
             make.height.equalTo(descLbl.requiredHeight-descTruncHeight)
         }
         
-        detailSection.snp.makeConstraints { make in
-            make.top.equalTo(descLbl.snp.top).offset(descTruncHeight)
-            make.width.centerX.equalToSuperview()
-            make.bottom.equalToSuperview()
-        }
-        
         seeMoreBtn.snp.makeConstraints { make in
             make.top.equalToSuperview().offset(8)
             make.width.equalTo(86)
             make.left.equalToSuperview().offset(20)
             make.height.equalTo(seeMoreBtn.requiredHeight)
+        }
+        
+        lowerSection.snp.makeConstraints { make in
+            make.top.equalTo(seeMoreBtn.snp.bottom).offset(48)
+            make.bottom.equalToSuperview()
+            make.width.equalToSuperview().offset(-40)
+            make.centerX.equalToSuperview()
+        }
+        
+        detailSection.snp.makeConstraints { make in
+            make.top.equalTo(descLbl.snp.top).offset(descTruncHeight)
+            make.width.equalToSuperview()
+            make.height.equalTo(seeMoreBtn.requiredHeight+48+lowerSection.getTotalHeight()+83)
+            make.bottom.equalToSuperview()
         }
     }
     
@@ -129,6 +158,9 @@ class DummyVC: UIViewController{
         seeMoreBtn.text = "See less"
         seeMoreBtn.icon = UIImage(named: "ArrowUp")
         seeMoreBtn.sizeToFit()
+        
+        print()
+        mainScroll.contentSize.height += descLbl.requiredHeight-descTruncHeight
     }
     
     func collapseDesc(){
@@ -148,5 +180,7 @@ class DummyVC: UIViewController{
         seeMoreBtn.text = "See more"
         seeMoreBtn.icon = UIImage(named: "ArrowDown")
         seeMoreBtn.sizeToFit()
+        mainScroll.contentSize.height = scrollHeight
+        print(scrollHeight)
     }
 }

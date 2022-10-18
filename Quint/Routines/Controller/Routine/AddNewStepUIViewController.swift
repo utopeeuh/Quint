@@ -20,11 +20,8 @@ class AddNewStepUIViewController: UIViewController {
     }()
     
     private var crossButton: UIButton = {
-        let button = UIButton(type: .custom)
-            //Set the image
+        let button = UIButton()
         button.setImage(UIImage(systemName: "xmark"), for: .normal)
-        //Add target
-        button.addTarget(self, action: #selector(goToDetailRoutine), for: .touchUpInside)
         button.tintColor = UIColor(red: 7/255, green: 8/255, blue: 7/255, alpha: 1)
         return button
     }()
@@ -49,9 +46,8 @@ class AddNewStepUIViewController: UIViewController {
     }
     
     
-    @objc func goToDetailRoutine() {
-        let controller = MorningRoutinesViewController()
-        navigationController?.popViewController(animated: true)
+    @objc func goToMorningRoutine() {
+        animateDismissView()
     }
     
     func ConfigureUI() {
@@ -91,7 +87,8 @@ class AddNewStepUIViewController: UIViewController {
         mainStackView.addArrangedSubview(toner)
         toner.titleLabel.text = "Toner"
         
-       
+        //Add target
+        crossButton.addTarget(self, action: #selector(goToMorningRoutine), for: .touchUpInside)
  
     }
     

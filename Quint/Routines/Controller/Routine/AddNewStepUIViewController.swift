@@ -30,9 +30,31 @@ class AddNewStepUIViewController: UIViewController {
         let stackView = UIStackView()
         stackView.translatesAutoresizingMaskIntoConstraints = false
         stackView.axis = .horizontal
-        stackView.distribution = .fill
         stackView.alignment = .leading
         return stackView
+    }()
+    
+    private lazy var vStackViewTitle: UIStackView = {
+        let stackView = UIStackView()
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+        stackView.axis = .vertical
+        stackView.alignment = .center
+        stackView.spacing = 15
+        return stackView
+    }()
+    
+    private var titleLabel: UILabel = {
+        let label = UILabel()
+        label.text = "Add new step"
+        label.textColor = .black
+        label.font = label.font.withSize(16)
+        return label
+    }()
+    
+    private var imageHeader: UIImageView = {
+        let image = UIImageView()
+        image.image = UIImage(named: "handle")
+        return image
     }()
 
     override func viewDidLoad() {
@@ -74,9 +96,21 @@ class AddNewStepUIViewController: UIViewController {
     var acneCare = newStepUIView()
     var exfoliator = newStepUIView()
     
+    let lineView: UIView = {
+        let view = UIView()
+        view.backgroundColor = UIColor(red: 230/255, green: 230/255, blue: 230/255, alpha: 1)
+        return view
+    }()
+    
     override func configureComponents() {
+        
+        vStackViewTitle.addArrangedSubview(imageHeader)
+        vStackViewTitle.addArrangedSubview(titleLabel)
+        
         hStackViewHeader.addArrangedSubview(crossButton)
-        mainStackView.addArrangedSubview(hStackViewHeader)
+        hStackViewHeader.addArrangedSubview(vStackViewTitle)
+        containerView.addSubview(hStackViewHeader)
+        mainStackView.addArrangedSubview(lineView)
         
         mainStackView.addArrangedSubview(micellar)
         micellar.titleLabel.text = "Micellar water"
@@ -98,7 +132,7 @@ class AddNewStepUIViewController: UIViewController {
         mainStackView.snp.makeConstraints { make in
             make.left.equalTo(view.safeAreaInsets).offset(20)
             make.right.equalTo(view.safeAreaInsets).offset(-20)
-            make.top.equalTo(view.safeAreaInsets).offset(20)
+            make.top.equalTo(hStackViewHeader.snp.bottom)
             make.bottom.equalTo(view.safeAreaInsets).offset(-20)
         }
         
@@ -130,12 +164,30 @@ class AddNewStepUIViewController: UIViewController {
         }
         
         hStackViewHeader.snp.makeConstraints { make in
-            make.height.equalTo(-40)
+            make.top.equalTo(view.safeAreaInsets).offset(20)
+            make.height.equalTo(50)
         }
         
         crossButton.snp.makeConstraints { make in
             make.width.height.equalTo(20)
+            make.top.equalTo(view.safeAreaInsets).offset(15)
+            make.left.equalTo(view.safeAreaInsets).offset(20)
         }
+        
+        imageHeader.snp.makeConstraints { make in
+            make.height.equalTo(4)
+            make.width.equalTo(40)
+            make.top.equalToSuperview().offset(-20)
+            make.left.equalTo(crossButton.snp.left).offset(view.frame.width / 2 - 35)
+        }
+        
+        lineView.snp.makeConstraints { make in
+            make.height.equalTo(1)
+            make.left.equalTo(view.safeAreaLayoutGuide)
+            make.right.equalTo(view.safeAreaLayoutGuide)
+        }
+        
+        
     }
     
     func setupConstraints() {
@@ -195,11 +247,11 @@ class AddNewStepUIViewController: UIViewController {
     }()
     
     // Constants
-    let defaultHeight: CGFloat = 300
-    let dismissibleHeight: CGFloat = 200
+    let defaultHeight: CGFloat = 400
+    let dismissibleHeight: CGFloat = 300
     let maximumContainerHeight: CGFloat = UIScreen.main.bounds.height - 64
     // keep current new height, initial is default height
-    var currentContainerHeight: CGFloat = 300
+    var currentContainerHeight: CGFloat = 400
     // Dynamic container constraint
     var containerViewHeightConstraint: NSLayoutConstraint?
     var containerViewBottomConstraint: NSLayoutConstraint?

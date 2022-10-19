@@ -88,10 +88,10 @@ class DailyLogViewController: UIViewController {
         button.setTitleColor(K.Color.greenQuint, for: .normal)
         button.titleLabel?.font = .interMedium(size: 16)
         button.setImage(UIImage(systemName: "hand.thumbsup.fill")?.withTintColor(K.Color.greenQuint, renderingMode: .alwaysOriginal), for: .normal)
-        button.applyGradient(colours: [K.Color.whiteQuint, K.Color.whiteQuint], locations: [0,1], radius: 8)
         button.setTitle(" Better", for: .normal)
         button.layer.cornerRadius = 8.0
         button.layer.borderColor = CGColor(red: 29/255, green: 53/255, blue: 44/255, alpha: 1)
+        button.applyGradient(colours: [UIColor.clear, UIColor.clear], locations: [0, 1], radius: 8)
         button.layer.borderWidth = 1.0
         return button
     }()
@@ -102,9 +102,9 @@ class DailyLogViewController: UIViewController {
         button.titleLabel?.font = .interMedium(size: 16)
         button.setImage(UIImage(systemName: "hand.thumbsdown.fill")?.withTintColor(K.Color.greenQuint, renderingMode: .alwaysOriginal), for: .normal)
         button.setTitle(" Worsen", for: .normal)
-        button.applyGradient(colours: [K.Color.whiteQuint, K.Color.whiteQuint], locations: [0,1], radius: 8)
         button.layer.cornerRadius = 8.0
         button.layer.borderColor = CGColor(red: 29/255, green: 53/255, blue: 44/255, alpha: 1)
+        button.applyGradient(colours: [UIColor.clear, UIColor.clear], locations: [0, 1], radius: 8)
         button.layer.borderWidth = 1.0
         return button
     }()
@@ -121,11 +121,8 @@ class DailyLogViewController: UIViewController {
     
     func selectFeel(_ btn: UIButton){
         btn.setTitleColor(.white, for: .normal)
-        guard let sublayers = btn.layer.sublayers else {
-            print("The view does not have any sublayers.")
-            return
-        }
-        btn.backgroundColor = K.Color.greenQuint
+        
+        btn.backgroundColor = UIColor(patternImage: UIImage(named: "ButtonGreenBackground")!)
             
         if(btn == feelBetterBtn){
             btn.setImage(UIImage(systemName: "hand.thumbsup.fill")?.withTintColor(K.Color.whiteQuint, renderingMode: .alwaysOriginal), for: .normal)
@@ -137,12 +134,9 @@ class DailyLogViewController: UIViewController {
     
     func deselectFeel(_ btn: UIButton){
         btn.setTitleColor(K.Color.greenQuint, for: .normal)
-        guard let sublayers = btn.layer.sublayers else {
-            print("The view does not have any sublayers.")
-            return
-        }
         
         btn.backgroundColor = UIColor.clear
+        
         
         if(btn == feelBetterBtn){
             btn.setImage(UIImage(systemName: "hand.thumbsup.fill")?.withTintColor(K.Color.greenQuint, renderingMode: .alwaysOriginal), for: .normal)
@@ -264,6 +258,9 @@ class DailyLogViewController: UIViewController {
         hStackButtonFeelSkin.addArrangedSubview(feelWorseBtn)
         feelWorseBtn.addTarget(self, action: #selector(feelWorseHandler), for: UIControl.Event.touchUpInside)
         mainStackView.addArrangedSubview(hStackButtonFeelSkin)
+        
+        feelBetterBtn.frame = CGRect(x: 0, y: 0, width: 150, height: 45)
+        feelWorseBtn.frame = CGRect(x: 0, y: 0, width: 150, height: 45)
         
         mainStackView.addArrangedSubview(createLogBtn)
         createLogBtn.frame = CGRect(x: 0, y: 0, width: 352, height: 45)

@@ -29,7 +29,7 @@ class OnboardingQuizVC: UIViewController, PhotoConfirmationVCDelegate {
         picker.sourceType = .camera
         picker.cameraDevice = .front
         picker.delegate = self
-        picker.modalPresentationStyle = .fullScreen
+        picker.cameraFlashMode = .off
         present(picker, animated: true)
         moveToCurrIndex()
     }
@@ -40,6 +40,7 @@ class OnboardingQuizVC: UIViewController, PhotoConfirmationVCDelegate {
         let vc = photoConfirmationVC
         vc.chosenImage = image
         vc.delegate = self
+        vc.modalPresentationStyle = .fullScreen
         present(vc, animated: true)
         moveToCurrIndex()
         
@@ -71,6 +72,10 @@ class OnboardingQuizVC: UIViewController, PhotoConfirmationVCDelegate {
         view.backgroundColor = K.Color.bgQuint
         
         configureUI()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        moveToCurrIndex()
     }
     
     override func configureComponents() {
@@ -112,7 +117,6 @@ class OnboardingQuizVC: UIViewController, PhotoConfirmationVCDelegate {
         childContents.forEach {
             scrollView.addSubview($0)
         }
-        
         
         var prev: UIView?
         for i in 0..<childContents.count {
@@ -179,54 +183,45 @@ class OnboardingQuizVC: UIViewController, PhotoConfirmationVCDelegate {
         scrollView.setContentOffset(CGPoint(x: UIScreen.main.bounds.width * CGFloat(currIndex), y: 0), animated: true)
     }
         
-//    func allowNotif() {
-//
-//        let controller = OnboardingQuizVC()
-//
-//        let group = DispatchGroup()
-//        group.enter()
-//
-//        var isNotificationsEnabled = false
-//
-//        DispatchQueue.main.async {
-//           let center = UNUserNotificationCenter.current()
-//
-//           center.requestAuthorization(options: [.alert, .sound, .badge]) { granted, error in
-//
-//               if error != nil {
-//                   print("notification disabled!")
-//               }
-//
-//               if granted {
-//                   isNotificationsEnabled = true
-//
-//               } else {
-//                   isNotificationsEnabled = false
-//               }
-//
-//               group.leave()
-//
-//           }
-//
-//        }
-//
-//        group.notify(queue: .main) {
-//
-//            if let v = self.view as? OnboardingParentView {
-//                v.setVC(self)
-////                v.snp.makeConstraints { make in
-////                    make.width.equalToSuperview()
-////                    make.top.equalTo(scrollView)
-////                    make.bottom.equalTo(self.view.safeAreaLayoutGuide)
-////                }
-//                self.moveRight(v, self.multiplier)
-//                self.multiplier += 1
-//            }
-//
-//        }
-//
-//
-//    }
+    func allowNotif() {
+
+        let controller = OnboardingQuizVC()
+
+        let group = DispatchGroup()
+        group.enter()
+
+        var isNotificationsEnabled = false
+
+        DispatchQueue.main.async {
+           let center = UNUserNotificationCenter.current()
+
+           center.requestAuthorization(options: [.alert, .sound, .badge]) { granted, error in
+
+               if error != nil {
+                   print("notification disabled!")
+               }
+
+               if granted {
+                   isNotificationsEnabled = true
+
+               } else {
+                   isNotificationsEnabled = false
+               }
+
+               group.leave()
+
+           }
+
+        }
+
+        group.notify(queue: .main) {
+
+            
+
+        }
+
+
+    }
     
 }
 
@@ -241,8 +236,8 @@ extension OnboardingQuizVC : UIImagePickerControllerDelegate, UINavigationContro
                                 didFinishPickingMediaWithInfo info:[UIImagePickerController.InfoKey :Any]) {
         
         let image = info[.originalImage] as? UIImage
-        
-        picker.dismiss(animated: true, completion: nil)
+    
+        picker.dismiss(animated: false, completion: nil)
         didConfirmPhoto(image)
     }
     

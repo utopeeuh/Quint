@@ -86,6 +86,7 @@ class PhotoConfirmationVC: UIViewController {
         
         button.layer.cornerRadius = 8
         button.backgroundColor = UIColor(red: 29/255, green: 53/255, blue: 44/255, alpha: 1)
+//        button.applyGradient(colours: [K.Color.greenQuint, K.Color.greenLightQuint], locations: [1,0])
         button.setTitleColor(UIColor(red: 254/255, green: 254/255, blue: 254/255, alpha: 1), for: .normal)
         
         button.layer.shadowOffset = CGSize(width: 0, height: 2)
@@ -107,7 +108,6 @@ class PhotoConfirmationVC: UIViewController {
         
         backBtn.addTarget(self, action: #selector(didTapBack), for: .touchUpInside)
         
-        
         view.backgroundColor = K.Color.bgQuint
         
         configureUI()
@@ -115,6 +115,8 @@ class PhotoConfirmationVC: UIViewController {
     
     override func configureComponents() {
         photoFrameImg.image = chosenImage
+        
+        backBtn.frame = CGRect(x: 0, y: 0, width: 24, height: 24)
     }
     
     override func configureLayout() {
@@ -124,15 +126,16 @@ class PhotoConfirmationVC: UIViewController {
                                     photoFrameImg,
                                     cancelBtn,
                                     photoConfirmBtn)
-        
-        backBtn.snp.makeConstraints { make in
-            make.width.height.equalTo(24)
-        }
 
         photoConfirmLbl.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
-            make.right.equalTo(backBtn).offset(44)
             make.top.equalToSuperview().offset(65)
+        }
+        
+        backBtn.snp.makeConstraints { make in
+            make.width.height.equalTo(24)
+            make.left.equalTo(view.safeAreaLayoutGuide).offset(20)
+            make.centerY.equalTo(photoConfirmLbl)
         }
         
         photoFrameImg.snp.makeConstraints { make in
@@ -147,7 +150,7 @@ class PhotoConfirmationVC: UIViewController {
             make.height.equalTo(50)
             make.left.equalToSuperview().offset(20)
         }
-        
+
         photoConfirmBtn.snp.makeConstraints { make in
             make.top.equalTo(photoFrameImg.snp.bottom).offset(44)
             make.width.height.equalTo(cancelBtn)

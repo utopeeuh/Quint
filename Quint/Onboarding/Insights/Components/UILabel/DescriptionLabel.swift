@@ -12,6 +12,7 @@ class DescriptionLabel: UILabel {
     override init(frame: CGRect) {
         super.init(frame: frame)
         font = .interRegular(size: 14)
+        textColor = K.Color.whiteQuint
     }
     
     required init?(coder: NSCoder) {

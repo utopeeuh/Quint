@@ -6,14 +6,17 @@
 //
 
 import UIKit
+import SnapKit
 
 class SkinTypeView: OnboardingParentView {
     
     private let skinTypeLabel = UILabel()
     var stackView = UIStackView()
     var boxes: [K.Box] = []
+    var customBox: CustomBoxView!
     public let nextButton = NextButton()
     var textHeight: CGFloat = 0
+    var tapGesture = UITapGestureRecognizer()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -58,10 +61,14 @@ class SkinTypeView: OnboardingParentView {
         for b in boxes {
             let skinTypeBox = CustomBoxView(title: b.title!, desc: b.desc!)
             textHeight = skinTypeBox.labelContent.requiredHeight
+            
+            tapGesture = UITapGestureRecognizer(target: self, action: #selector(singleTap))
+            tapGesture.numberOfTapsRequired = 1
+            
             stackView.addArrangedSubview(skinTypeBox)
         }
         
-        print(textHeight)
+//        print(textHeight)
         
         stackView.axis = .vertical
         stackView.spacing = 12
@@ -75,8 +82,6 @@ class SkinTypeView: OnboardingParentView {
         
     func configureLayout() {
         
-//        addSubview(backButton)
-//        addSubview(progressBar)
         addSubview(skinTypeLabel)
         addSubview(stackView)
         addSubview(nextButton)
@@ -96,10 +101,21 @@ class SkinTypeView: OnboardingParentView {
         nextButton.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
             make.height.equalTo(50)
-            make.bottom.equalToSuperview()
+            make.bottom.equalToSuperview().offset(-40)
             make.width.equalToSuperview().offset(-40)
         }
         
     }
     
+    @objc func singleTap() {
+
+        customBox.containerBox.backgroundColor = K.Color.whiteQuint
+        customBox.containerBox.layer.cornerRadius = 8
+
+        customBox.labelContainer.textColor = K.Color.blackQuint
+        customBox.labelContainer.font = .interMedium(size: 16)
+        
+    }
+    
 }
+

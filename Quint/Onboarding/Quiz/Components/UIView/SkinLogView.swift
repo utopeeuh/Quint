@@ -6,14 +6,15 @@
 //
 
 import UIKit
+import SnapKit
 
-class SkinLogView: UIView {
+class SkinLogView: OnboardingParentView {
     
-    private let skinLogLabel = UILabel()
-    private let skinLogCaptionLabel = UILabel()
-    private let skinLogLogo = UIImageView()
-    private let takePhotoButton = OnboardingButton()
-    private let skipButton = SkipButton()
+    let skinLogLabel = UILabel()
+    let skinLogCaptionLabel = UILabel()
+    let skinLogLogo = UIImageView()
+    let takePhotoButton = OnboardingButton()
+    let skipButton = SkipButton()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -48,6 +49,8 @@ class SkinLogView: UIView {
         
         takePhotoButton.setText("Take photo")
         
+        skipButton.addTarget(self, action: #selector(nextOnClick), for: .touchUpInside)
+        
     }
     
     func configureLayout() {
@@ -60,7 +63,6 @@ class SkinLogView: UIView {
         
         skinLogLabel.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
-            make.top.equalToSuperview().offset(147)
             make.width.equalToSuperview().offset(-40)
         }
         
@@ -78,18 +80,17 @@ class SkinLogView: UIView {
         takePhotoButton.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
             make.height.equalTo(50)
-            make.bottom.equalToSuperview().offset(-124)
+            make.bottom.equalToSuperview().offset(-102)
             make.width.equalToSuperview().offset(-40)
         }
         
         skipButton.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
             make.height.equalTo(50)
-            make.bottom.equalToSuperview().offset(-62)
+            make.bottom.equalToSuperview().offset(-40)
             make.width.equalToSuperview().offset(-40)
         }
 
-        
     }
     
 }

@@ -8,21 +8,60 @@
 import UIKit
 import SnapKit
 
-class OnboardingQuizVC: UIViewController {
+class OnboardingQuizVC: UIViewController, PhotoConfirmationVCDelegate {
+    
+    func didTapConfirmButton() {
+        
+        nextOnClick()
+        photoConfirmationVC.dismiss(animated: true)
+        
+    }
+    
+    func didTapCancelButton() {
+        
+        photoConfirmationVC.dismiss(animated: true)
+        self.didTapPhoto()
+        
+    }
+    
+    @objc func didTapPhoto() {
+        
+        let picker = UIImagePickerController()
+        picker.sourceType = .camera
+        picker.cameraDevice = .front
+        picker.delegate = self
+        picker.modalPresentationStyle = .fullScreen
+        present(picker, animated: true)
+        
+    }
+    
+    // from uiimagepicker delegate
+    func didConfirmPhoto(_ image: UIImage?) {
+        
+        let vc = photoConfirmationVC
+        vc.chosenImage = image
+        vc.delegate = self
+        present(vc, animated: true)
+        
+    }
 
-    private var backBtn = BackButton()
+    private var photoConfirmationVC = PhotoConfirmationVC()
+    private var backButton = BackButton()
     private var progressBar = UIProgressView()
-    
     private var scrollView = UIScrollView()
-    private var skinTypeView = SkinTypeView()
-    private var skinConditionView = SkinConditionView()
-    private var skinProblemView = SkinProblemView()
-    private var skinLogView = SkinLogView()
-    private var skinNotifView = SkinNotifView()
-    private var skinInsightView = SkinInsightView()
     
-    var currIndex = 0
+    // page indexing as follows
+    private var childContents: [UIView] = [
+        SkinTypeView(),
+        SkinConditionView(),
+        SkinProblemView(),
+        SkinLogView(),
+        SkinNotifView(),
+        SkinInsightView()
+    ]
     
+    private var currIndex = 0
+    private var multiplier: CGFloat = 0
     
     //    MARK: - Lifecycle
     
@@ -38,101 +77,174 @@ class OnboardingQuizVC: UIViewController {
         
         self.navigationController?.setNavigationBarHidden(true, animated: false)
         
-        backBtn.addTarget(self, action: #selector(backOnClick), for: .touchUpInside)
+        backButton.addTarget(self, action: #selector(backOnClick), for: .touchUpInside)
+        
+        for child in childContents
+        {
+            if let view = child as? SkinLogView
+            {
+                view.takePhotoButton.addTarget(self, action: #selector(didTapPhoto), for: .touchUpInside)
+            }
+        }
         
         scrollView.backgroundColor = K.Color.bgQuint
         scrollView.isScrollEnabled = true
         scrollView.showsVerticalScrollIndicator = false
         scrollView.showsHorizontalScrollIndicator = false
         scrollView.contentSize = CGSize(width: UIScreen.main.bounds.width*2, height: UIScreen.main.bounds.height)
+        scrollView.isScrollEnabled = false
+        
+        progressBar.setProgress(1/6, animated: true)
+        progressBar.trackTintColor = UIColor(red: 230/255, green: 230/255, blue: 230/255, alpha: 1)
+        progressBar.progressTintColor = K.Color.greenButtonQuint
+        progressBar.layer.cornerRadius = 4
+        progressBar.clipsToBounds = true
     }
     
     override func configureLayout() {
     
-        view.addSubview(backBtn)
-        view.addSubview(scrollView)
-        scrollView.addSubview(skinTypeView)
-        scrollView.addSubview(skinConditionView)
-//        contentView.addSubview(skinProblemView)
-//        contentView.addSubview(skinLogView)
-//        contentView.addSubview(skinNotifView)
-//        contentView.addSubview(skinInsightView)
+        view.multipleSubviews(view:
+                                backButton,
+                                progressBar,
+                                scrollView)
+//        view.addSubview(backButton)
+//        view.addSubview(progressBar)
+//        view.addSubview(scrollView)
         
-        var multiplier: CGFloat = 0
-        for view in scrollView.subviews{
-            if let v = view as? OnboardingParentView{
-                v.setVC(self)
-                v.snp.makeConstraints { make in
-                    make.width.equalToSuperview()
-                    make.top.equalTo(scrollView)
-                    make.bottom.equalTo(self.view.safeAreaLayoutGuide)
-                }
-                moveRight(v, multiplier)
-                multiplier += 1
-            }
+        // layouting child view content
+        childContents.forEach {
+            scrollView.addSubview($0)
         }
         
-        backBtn.snp.makeConstraints { make in
+        
+        var prev: UIView?
+        for i in 0..<childContents.count {
+            guard let v = childContents[i] as? OnboardingParentView
+            else { return }
+            
+            v.setVC(self)
+            v.snp.makeConstraints { make in
+                
+                make.width.equalToSuperview()
+                make.top.equalTo(scrollView)
+                make.bottom.equalTo(self.view.safeAreaLayoutGuide)
+                
+                let isFirstPage = i == 0
+                let isLastPage  = i == childContents.count - 1
+                
+                if isFirstPage      { make.leading.equalToSuperview() }
+                else if isLastPage  { make.trailing.equalToSuperview() }
+                else                { make.leading.equalTo(prev!.snp.trailing) }
+                
+                prev = v
+            }
+            multiplier += 1
+        }
+        
+        backButton.snp.makeConstraints { make in
             make.top.equalTo(view.safeAreaLayoutGuide)
             make.left.equalToSuperview().offset(20)
         }
         
+        progressBar.snp.makeConstraints { make in
+            make.height.equalTo(7)
+            make.top.equalTo(backButton).offset(7)
+            make.left.equalTo(backButton.snp.right).offset(20)
+            make.right.equalToSuperview().offset(-20)
+        }
+        
         scrollView.snp.makeConstraints { make in
-            make.top.equalTo(backBtn.snp.bottom).offset(46)
+            make.top.equalTo(backButton.snp.bottom).offset(46)
             make.bottom.equalTo(view)
             make.width.equalTo(UIScreen.main.bounds.width)
         }
         
-//        skinTypeView.setVC(self)
-//        skinTypeView.snp.makeConstraints { make in
-//            make.width.equalToSuperview()
-//            make.top.equalTo(scrollView)
-//            make.bottom.equalTo(view.safeAreaLayoutGuide)
-//        }
-//
-//        skinConditionView.transform = moveRight
-//        skinConditionView.setVC(self)
-//        skinConditionView.snp.makeConstraints { make in
-//            make.width.equalToSuperview()
-//            make.top.equalTo(scrollView)
-//            make.bottom.equalTo(view.safeAreaLayoutGuide)
-//        }
-
-//        skinProblemView.snp.makeConstraints { make in
-
-//        }
-//
-//        skinLogView.snp.makeConstraints { make in
-//        }
-//
-//        skinNotifView.snp.makeConstraints { make in
-
-//        }
-//
-//        skinInsightView.snp.makeConstraints { make in
-
-//        }
-
-    }
-    
-    func moveRight(_ view: UIView, _ multiplier: CGFloat){
-        view.transform = CGAffineTransform(translationX: (self.view.bounds.width * multiplier), y: 0.0)
     }
     
     func nextOnClick(){
-        currIndex = currIndex+1
-        scrollView.setContentOffset(CGPoint(x: UIScreen.main.bounds.width*CGFloat(currIndex), y: 0), animated: true)
+        currIndex += 1
+        scrollView.setContentOffset(CGPoint(x: UIScreen.main.bounds.width * CGFloat(currIndex), y: 0), animated: true)
+        progressBar.setProgress((1/6) * Float(currIndex+1), animated: true)
     }
     
     @objc func backOnClick(){
-        if currIndex == 0{
+        if currIndex == 0 {
             self.navigationController?.popViewController(animated: true)
         }
         else{
-            currIndex = currIndex-1
-            scrollView.setContentOffset(CGPoint(x: UIScreen.main.bounds.width*CGFloat(currIndex), y: 0), animated: true)
+            currIndex -= 1
+            scrollView.setContentOffset(CGPoint(x: UIScreen.main.bounds.width * CGFloat(currIndex), y: 0), animated: true)
+            progressBar.setProgress((1/6) * Float(currIndex+1), animated: true)
         }
     }
+        
+//    func allowNotif() {
+//
+//        let controller = OnboardingQuizVC()
+//
+//        let group = DispatchGroup()
+//        group.enter()
+//
+//        var isNotificationsEnabled = false
+//
+//        DispatchQueue.main.async {
+//           let center = UNUserNotificationCenter.current()
+//
+//           center.requestAuthorization(options: [.alert, .sound, .badge]) { granted, error in
+//
+//               if error != nil {
+//                   print("notification disabled!")
+//               }
+//
+//               if granted {
+//                   isNotificationsEnabled = true
+//
+//               } else {
+//                   isNotificationsEnabled = false
+//               }
+//
+//               group.leave()
+//
+//           }
+//
+//        }
+//
+//        group.notify(queue: .main) {
+//
+//            if let v = self.view as? OnboardingParentView {
+//                v.setVC(self)
+////                v.snp.makeConstraints { make in
+////                    make.width.equalToSuperview()
+////                    make.top.equalTo(scrollView)
+////                    make.bottom.equalTo(self.view.safeAreaLayoutGuide)
+////                }
+//                self.moveRight(v, self.multiplier)
+//                self.multiplier += 1
+//            }
+//
+//        }
+//
+//
+//    }
     
 }
 
+extension OnboardingQuizVC : UIImagePickerControllerDelegate, UINavigationControllerDelegate
+{
+    func imagePickerControllerDidCancel(_ picker:UIImagePickerController) {
+        
+        picker.dismiss(animated: true, completion: nil)
+        
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController,
+                                didFinishPickingMediaWithInfo info:[UIImagePickerController.InfoKey :Any]) {
+        
+        let image = info[.originalImage] as? UIImage
+        
+        picker.dismiss(animated: true, completion: nil)
+        
+        didConfirmPhoto(image)
+    }
+    
+}

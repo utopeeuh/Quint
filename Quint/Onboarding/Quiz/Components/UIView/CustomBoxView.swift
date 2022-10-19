@@ -10,8 +10,8 @@ import SnapKit
 
 class CustomBoxView: UIView {
     
-    private let containerBox = UIView()
-    private let contentBox = UIView()
+    public let containerBox = UIView()
+    public let contentBox = UIView()
     public var labelContainer = UILabel()
     public var labelContent = UILabel()
     private var leftBorder = UIView()

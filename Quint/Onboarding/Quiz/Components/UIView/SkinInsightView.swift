@@ -6,8 +6,9 @@
 //
 
 import UIKit
+import SnapKit
 
-class SkinInsightView: UIView {
+class SkinInsightView: OnboardingParentView {
     
     private let insightLabel = UILabel()
     private let insightCaptionLabel = UILabel()
@@ -58,7 +59,6 @@ class SkinInsightView: UIView {
         
         insightLabel.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
-            make.top.equalToSuperview().offset(147)
             make.width.equalToSuperview().offset(-40)
         }
         
@@ -76,7 +76,7 @@ class SkinInsightView: UIView {
         insightsButton.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
             make.height.equalTo(50)
-            make.bottom.equalToSuperview().offset(-62)
+            make.bottom.equalToSuperview().offset(-40)
             make.width.equalToSuperview().offset(-40)
         }
         

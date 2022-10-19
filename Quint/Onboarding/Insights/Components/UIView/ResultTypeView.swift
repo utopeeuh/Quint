@@ -33,9 +33,10 @@ class ResultTypeView: UIView {
     
     func configureComponents() {
         
+        backgroundImage.backgroundColor = .yellow
         backgroundImage.image = UIImage(named: "face_2_logo")
+        backgroundImage.layer.cornerRadius = 0
         backgroundImage.layer.compositingFilter = "overlayBlendMode"
-        backgroundImage.sizeToFit()
         
 //        applyGradient(colours: [K.Color.greenLightQuint, K.Color.greenQuint], locations: [0,1])
         titleLabel.text = "SKIN TYPE"
@@ -55,7 +56,6 @@ class ResultTypeView: UIView {
         
         backgroundImage.snp.makeConstraints { make in
             make.leading.equalTo(148)
-            make.top.equalTo(-56)
         }
         
         titleLabel.snp.makeConstraints { make in

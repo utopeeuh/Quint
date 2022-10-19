@@ -6,9 +6,10 @@
 //
 
 import UIKit
+import SnapKit
 import TTGTags
 
-class SkinProblemView: UIView {
+class SkinProblemView: OnboardingParentView {
     
     private var selections = [String]()
     private let skinProblemLabel = UILabel()
@@ -81,7 +82,9 @@ class SkinProblemView: UIView {
             
         }
         
+        nextButton.isEnabled = false
         nextButton.setText("Next")
+        nextButton.addTarget(self, action: #selector(nextOnClick), for: .touchUpInside)
         
     }
     
@@ -93,7 +96,6 @@ class SkinProblemView: UIView {
         
         skinProblemLabel.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
-            make.top.equalToSuperview().offset(70)
             make.width.equalToSuperview().offset(-40)
         }
         
@@ -107,10 +109,9 @@ class SkinProblemView: UIView {
         nextButton.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
             make.height.equalTo(50)
-            make.bottom.equalToSuperview().offset(-62)
+            make.bottom.equalToSuperview().offset(-40)
             make.width.equalToSuperview().offset(-40)
         }
-
         
     }
     
@@ -121,24 +122,21 @@ extension SkinProblemView: TTGTextTagCollectionViewDelegate {
     func textTagCollectionView(_ textTagCollectionView: TTGTextTagCollectionView!, didTap tag: TTGTextTag!, at index: UInt) {
         
         for i in 0..<K.Category.skinProblem.count {
-
-            let currTag = textTagCollectionView.getTagAt(UInt(i))
             
-            if currTag?.selected  == true {
-                nextButton.backgroundColor = K.Color.greenButtonQuint
-                nextButton.setTitleColor(K.Color.whiteQuint, for: .normal)
+            let tag = textTagCollectionView.getTagAt(UInt(i))
+            
+            if tag?.selected == true {
                 nextButton.isEnabled = true
-                return
-            } else {
-                nextButton.backgroundColor = UIColor(red: 230/255, green: 230/255, blue: 230/255, alpha: 1)
-                nextButton.setTitleColor(UIColor(red: 125/255, green: 125/255, blue: 125/255, alpha: 1), for: .normal)
-                nextButton.isEnabled = false
+                nextButton.backgroundColor = K.Color.greenQuint
+                nextButton.setTitleColor(K.Color.whiteQuint, for: .normal)
                 return
             }
-
+            
         }
         
         nextButton.isEnabled = false
+        nextButton.backgroundColor = UIColor(red: 230/255, green: 230/255, blue: 230/255, alpha: 1)
+        nextButton.setTitleColor(UIColor(red: 125/255, green: 125/255, blue: 125/255, alpha: 1), for: .normal)
         
     }
     

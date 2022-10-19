@@ -12,6 +12,7 @@ class ResultLabel: UILabel {
     override init(frame: CGRect) {
         super.init(frame: frame)
         font = .clashGroteskMedium(size: 24)
+        textColor = K.Color.whiteQuint
     }
     
     required init?(coder: NSCoder) {

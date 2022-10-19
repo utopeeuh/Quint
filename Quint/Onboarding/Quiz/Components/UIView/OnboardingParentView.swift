@@ -10,6 +10,7 @@ import UIKit
 import SnapKit
 
 class OnboardingParentView: UIView{
+    
     var currVC: OnboardingQuizVC!
     
     override init(frame: CGRect) {

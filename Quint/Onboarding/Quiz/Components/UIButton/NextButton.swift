@@ -21,7 +21,7 @@ class NextButton: UIButton {
         layer.shadowOffset = CGSize(width: 0, height: 2)
         layer.shadowColor = K.Color.shadowQuint.cgColor
         layer.shadowOpacity = 5.0
-//        buttonDisabled()
+        
     }
 
     func setText(_ title: String?) {
@@ -29,41 +29,11 @@ class NextButton: UIButton {
         sizeToFit()
     }
     
-    func buttonDisabled(){
 //        self.layer.sublayers?.removeFirst()
 //        applyGradient(colours: [.white, .white], locations: [1.0, 0.0])
 //        setTitleColor(K.Color.greenQuint, for: .normal)
 //        titleLabel?.font = .interMedium(size: 13)
 //        sizeToFit()
-        
-        titleLabel?.font = .clashGroteskMedium(size: 18)
-        
-        layer.cornerRadius = 8
-        backgroundColor = K.Color.disableBgBtnQuint
-        setTitleColor(K.Color.disableTextBtnQuint, for: .normal)
-        
-        layer.shadowOffset = CGSize(width: 0, height: 2)
-        layer.shadowColor = K.Color.shadowQuint.cgColor
-        layer.shadowOpacity = 5.0
-    }
-    
-    func buttonEnabled(){
-//        layer.sublayers?.removeFirst()
-//        applyGradient(colours: [K.Color.greenQuint, K.Color.greenLightQuint], locations: [1.0, 0.0])
-//        setTitleColor(K.Color.whiteQuint, for: .normal)
-//        titleLabel?.font = .interSemiBold(size: 13)
-//        sizeToFit()
-        
-        titleLabel?.font = .clashGroteskMedium(size: 18)
-        
-        layer.cornerRadius = 8
-        backgroundColor = K.Color.greenButtonQuint
-        setTitleColor(K.Color.whiteQuint, for: .normal)
-        
-        layer.shadowOffset = CGSize(width: 0, height: 2)
-        layer.shadowColor = K.Color.shadowQuint.cgColor
-        layer.shadowOpacity = 5.0
-    }
 
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")

@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SnapKit
 
 class SkinConditionView: OnboardingParentView {
     
@@ -85,7 +86,7 @@ class SkinConditionView: OnboardingParentView {
         nextButton.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
             make.height.equalTo(50)
-            make.bottom.equalToSuperview()
+            make.bottom.equalToSuperview().offset(-40)
             make.width.equalToSuperview().offset(-40)
         }
         

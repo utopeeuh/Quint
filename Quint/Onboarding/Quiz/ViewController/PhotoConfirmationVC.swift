@@ -8,9 +8,19 @@
 import UIKit
 import SnapKit
 
-class PhotoConfirmationVC: PhotoLogVC {
+protocol PhotoConfirmationVCDelegate: AnyObject {
+    
+    func didTapConfirmButton() -> Void
+    
+    func didTapCancelButton() -> Void
+    
+}
+
+class PhotoConfirmationVC: UIViewController {
     
     var chosenImage: UIImage?
+    
+    weak var delegate: PhotoConfirmationVCDelegate?
     
     private let backBtn: UIButton = {
         
@@ -91,11 +101,12 @@ class PhotoConfirmationVC: PhotoLogVC {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        backBtn.addTarget(self, action: #selector(didTapPhoto), for: .touchUpInside)
-        self.navigationItem.leftBarButtonItem = UIBarButtonItem(customView: backBtn)
+        cancelBtn.addTarget(self, action: #selector(didTapCancel), for: .touchUpInside)
         
-        cancelBtn.addTarget(self, action: #selector(didTapPhoto), for: .touchUpInside)
         photoConfirmBtn.addTarget(self, action: #selector(didTapConfirm), for: .touchUpInside)
+        
+        backBtn.addTarget(self, action: #selector(didTapBack), for: .touchUpInside)
+        
         
         view.backgroundColor = K.Color.bgQuint
         
@@ -108,26 +119,28 @@ class PhotoConfirmationVC: PhotoLogVC {
     
     override func configureLayout() {
         
-        view.addSubview(backBtn)
+        view.multipleSubviews(view: backBtn,
+                                    photoConfirmLbl,
+                                    photoFrameImg,
+                                    cancelBtn,
+                                    photoConfirmBtn)
+        
         backBtn.snp.makeConstraints { make in
             make.width.height.equalTo(24)
         }
 
-        view.addSubview(photoConfirmLbl)
         photoConfirmLbl.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
             make.right.equalTo(backBtn).offset(44)
             make.top.equalToSuperview().offset(65)
         }
         
-        view.addSubview(photoFrameImg)
         photoFrameImg.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
             make.top.equalTo(photoConfirmLbl.snp.bottom).offset(16)
             make.height.equalTo(569)
         }
         
-        view.addSubview(cancelBtn)
         cancelBtn.snp.makeConstraints { make in
             make.top.equalTo(photoFrameImg.snp.bottom).offset(44)
             make.width.equalTo(170)
@@ -135,7 +148,6 @@ class PhotoConfirmationVC: PhotoLogVC {
             make.left.equalToSuperview().offset(20)
         }
         
-        view.addSubview(photoConfirmBtn)
         photoConfirmBtn.snp.makeConstraints { make in
             make.top.equalTo(photoFrameImg.snp.bottom).offset(44)
             make.width.height.equalTo(cancelBtn)
@@ -144,16 +156,22 @@ class PhotoConfirmationVC: PhotoLogVC {
         
     }
     
-    // MARK: - Selectors
-    
-    override func didTapPhoto() {
+    @objc func didTapBack() {
+        
         self.dismiss(animated: true)
-        super.didTapPhoto()
+        
     }
     
     @objc func didTapConfirm() {
-        let controller = QuizNotifVC()
-        navigationController?.pushViewController(controller, animated: true)
+        
+        delegate?.didTapConfirmButton()
+        
+    }
+    
+    @objc func didTapCancel() {
+        
+        delegate?.didTapCancelButton()
+        
     }
     
 }

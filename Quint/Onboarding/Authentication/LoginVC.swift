@@ -54,14 +54,14 @@ class LoginVC: UIViewController {
     
     override func configureLayout() {
         
-        view.addSubview(topSpacer)
-        view.addSubview(logoImage)
-        view.addSubview(taglineLabel)
-        view.addSubview(captionLabel)
-        view.addSubview(startButton)
-        view.addSubview(signInButton)
-        view.addSubview(bottomSpacer)
-
+        view.multipleSubviews(view: topSpacer,
+                                    logoImage,
+                                    taglineLabel,
+                                    captionLabel,
+                                    startButton,
+                                    signInButton,
+                                    bottomSpacer)
+        
 //        [topSpacer,
 //         logoImage,
 //         taglineLabel,

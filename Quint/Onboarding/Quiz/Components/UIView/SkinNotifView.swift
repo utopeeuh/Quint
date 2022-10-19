@@ -6,8 +6,9 @@
 //
 
 import UIKit
+import SnapKit
 
-class SkinNotifView: UIView {
+class SkinNotifView: OnboardingParentView {
     
     private let notifLabel = UILabel()
     private let notifCaptionLabel = UILabel()
@@ -46,6 +47,7 @@ class SkinNotifView: UIView {
         notifLogo.image = UIImage(named: "notif_logo")
         
         notifButton.setText("Allow notifications")
+        notifButton.addTarget(self, action: #selector(nextOnClick), for: .touchUpInside)
         
     }
     
@@ -58,7 +60,6 @@ class SkinNotifView: UIView {
         
         notifLabel.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
-            make.top.equalToSuperview().offset(147)
             make.width.equalToSuperview().offset(-40)
         }
         
@@ -76,7 +77,7 @@ class SkinNotifView: UIView {
         notifButton.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
             make.height.equalTo(50)
-            make.bottom.equalToSuperview().offset(-62)
+            make.bottom.equalToSuperview().offset(-40)
             make.width.equalToSuperview().offset(-40)
         }
         

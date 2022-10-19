@@ -104,7 +104,6 @@ class NightRoutinesViewController: UIViewController, UIScrollViewDelegate, UITab
     
     let navbar: UIView = {
         let nav = UIView()
-        nav.backgroundColor = UIColor(red: 11/255, green: 28/255, blue: 87/255, alpha: 1)
         return nav
     }()
     
@@ -171,6 +170,9 @@ class NightRoutinesViewController: UIViewController, UIScrollViewDelegate, UITab
     }()
     
     override func configureComponents() {
+        navbar.frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 252)
+        navbar.applyGradient(colours: [UIColor(red: 45/255, green: 61/255, blue: 119/255, alpha: 1), UIColor(red: 11/255, green: 28/255, blue: 87/255, alpha: 1)], locations: [0, 1], radius: 0)
+        
         navbar.addSubview(sunIcon)
         navbar.addSubview(titleMorning)
         mainStackView.addArrangedSubview(navbar)
@@ -255,9 +257,7 @@ class NightRoutinesViewController: UIViewController, UIScrollViewDelegate, UITab
        }
         
         navbar.snp.makeConstraints { (make) -> Void in
-            make.left.equalTo(self.view)
-            make.right.equalTo(self.view)
-            make.top.equalTo(self.topLayoutGuide.snp.top)
+            make.top.width.equalToSuperview()
             make.height.equalTo(252)
         }
         

@@ -22,7 +22,7 @@ struct K{
         static let greyQuint = UIColor(red: 35/255, green: 36/255, blue: 35/255, alpha: 1)
         static let greyDarkQuint = UIColor(red: 125/255, green: 125/255, blue: 125/255, alpha: 1)
         
-        static let greenLightQuint = UIColor(red: 255/255, green: 87/255, blue: 51/255, alpha: 1)
+        static let greenLightQuint = UIColor(red: 53/255, green: 84/255, blue: 73/255, alpha: 1)
         static let yellowLightQuint = UIColor(red: 255/255, green: 211/255, blue: 99/255, alpha: 1)
         static let orangeLightQuint = UIColor(red: 255/255, green: 149/255, blue: 73/255, alpha: 1)
         static let redLightQuint = UIColor(red: 255/255, green: 99/255, blue: 99/255, alpha: 1)

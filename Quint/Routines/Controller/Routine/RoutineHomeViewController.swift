@@ -68,14 +68,7 @@ class RoutineHomeViewController: UIViewController, CLLocationManagerDelegate{
         return label
     }()
 
-    private var UVLevelPoint: UILabel = {
-        let label = UILabel()
-        label.text = ""
-        label.textColor = .white
-        label.textAlignment = .center
-        label.layer.cornerRadius = 20
-        return label
-    }()
+    private var UVLevelPoint = UVPointView()
 
     func getUserLocation() {
         locationManager.requestWhenInUseAuthorization()
@@ -89,25 +82,35 @@ class RoutineHomeViewController: UIViewController, CLLocationManagerDelegate{
                 let weather = try await service.weather(for: location)
                 print("UV INDEX: " + String(describing: weather.currentWeather.uvIndex))
                 UVLevelParameter.text = String(describing: weather.currentWeather.uvIndex.category)
-                UVLevelPoint.text = String(describing: weather.currentWeather.uvIndex.value)
+                UVLevelPoint.setNumber(weather.currentWeather.uvIndex.value)
+                
                 if weather.currentWeather.uvIndex.value >= 3{
                     UVLevelSuggestion.isHidden = false
                     UVLevelSuggestionIcon.isHidden = false
                 }
                 
+                
+                var lightColor: UIColor?
+                var darkColor: UIColor?
+                
                 if weather.currentWeather.uvIndex.value <= 1 {
-                    UVLevelPoint.layer.backgroundColor = CGColor(red: 53/255, green: 84/255, blue: 73/255, alpha: 1)
+                    lightColor = K.Color.greenLightQuint
+                    darkColor = K.Color.greenQuint
                 }else if weather.currentWeather.uvIndex.value > 1 && weather.currentWeather.uvIndex.value <= 3 {
-                    UVLevelPoint.layer.backgroundColor = CGColor(red: 255/255, green: 211/255, blue: 99/255, alpha: 1)
-                    UVLevelPoint.textColor = UIColor(red: 35/255, green: 36/255, blue: 35/255, alpha: 1)
+                    lightColor = K.Color.yellowLightQuint
+                    darkColor = K.Color.yellowQuint
                 }else if weather.currentWeather.uvIndex.value > 3 && weather.currentWeather.uvIndex.value <= 6 {
-                    UVLevelPoint.layer.backgroundColor = CGColor(red: 255/255, green: 150/255, blue: 73/255, alpha: 1)
+                    lightColor = K.Color.orangeLightQuint
+                    darkColor = K.Color.orangeQuint
                 }else if weather.currentWeather.uvIndex.value > 6 && weather.currentWeather.uvIndex.value <= 8 {
-                    UVLevelPoint.layer.backgroundColor = CGColor(red: 255/255, green: 99/255, blue: 99/255, alpha: 1)
+                    lightColor = K.Color.redLightQuint
+                    darkColor = K.Color.redQuint
                 }else if weather.currentWeather.uvIndex.value > 8 && weather.currentWeather.uvIndex.value <= 11 {
-                    UVLevelPoint.layer.backgroundColor = CGColor(red: 168/255, green: 99/255, blue: 255/255, alpha: 1)
+                    lightColor = K.Color.purpleLightQuint
+                    darkColor = K.Color.purpleQuint
                 }
                 
+                UVLevelPoint.applyGradient(colours: [lightColor!, darkColor!], locations: [0,1], radius: 20)
                 
             } catch {
                 print(String(describing: error))
@@ -187,12 +190,6 @@ class RoutineHomeViewController: UIViewController, CLLocationManagerDelegate{
         configureComponents()
         configureLayout()
         
-//        if morningRoutine.isUserInteractionEnabled == false || nightRoutine.isUserInteractionEnabled == false {
-//            hStackReminder.isHidden = true
-//            logRoutine.leftBtn.setImage(UIImage(systemName: "lock.open"), for: .normal)
-//            logRoutine.isUserInteractionEnabled = true
-//        }
-        
     }
 
     override func configureComponents() {
@@ -251,21 +248,6 @@ class RoutineHomeViewController: UIViewController, CLLocationManagerDelegate{
         mainStackView.addArrangedSubview(morningRoutine)
         mainStackView.addArrangedSubview(nightRoutine)
         mainStackView.addArrangedSubview(logRoutine)
-//        mainStackView.addArrangedSubview(productGuide)
-        
-        // Generate buttons for top scroll
-//        var catButtons: [SmallCategoryButtonGuide] = []
-//        for i in 0..<categories.count {
-//            let button = SmallCategoryButtonGuide(categoryId: i+1)
-//            button.addTarget(self, action: #selector(selectTopCategory), for: .touchUpInside)
-//            button.setText(categories[i+1])
-//            button.setImageCategory(categoriesImage[i+1])
-//            button.centerVertically()
-//            catButtons.append(button)
-//        }
-//        scrollView.setButtons(catButtons)
-        
-//        mainStackView.addArrangedSubview(scrollView)
         mainStackView.addArrangedSubview(dailyTips)
         
     }
@@ -342,28 +324,14 @@ class RoutineHomeViewController: UIViewController, CLLocationManagerDelegate{
             make.height.equalTo(45)
         }
         
-//        scrollView.snp.makeConstraints { make in
-//            make.top.equalTo(productGuide.snp.bottom).offset(16)
-//            make.height.equalTo(144)
-//            make.width.equalTo(120)
-//            make.left.equalToSuperview()
-//            make.right.equalToSuperview()
-//        }
-        
         dailyTips.snp.makeConstraints { make in
             make.height.equalTo(180)
             make.width.equalTo(300)
         }
-        
-//        mainStackView.snp.makeConstraints { make in
-//            make.top.right.bottom.left.equalToSuperview()
-//        }
+
         
     }
-    
-//    @objc func selectTopCategory() {
-//        print("TES!!!!")
-//    }
+
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]){
         guard let location = locations.first else {

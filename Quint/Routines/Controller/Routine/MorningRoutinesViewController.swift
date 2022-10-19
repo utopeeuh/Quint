@@ -108,9 +108,8 @@ class MorningRoutinesViewController: UIViewController, UIScrollViewDelegate, UIT
         navigationController?.popViewController(animated: true)
     }
     
-    let navbar: UIView = {
+    var navbar: UIView = {
         let nav = UIView()
-        nav.backgroundColor = UIColor(red: 242/255, green: 105/255, blue: 6/255, alpha: 1)
         return nav
     }()
     
@@ -177,6 +176,9 @@ class MorningRoutinesViewController: UIViewController, UIScrollViewDelegate, UIT
     }()
     
     override func configureComponents() {
+        navbar.frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 252)
+        navbar.applyGradient(colours: [K.Color.orangeLightQuint, K.Color.orangeQuint], locations: [0, 1], radius: 0)
+        
         navbar.addSubview(sunIcon)
         navbar.addSubview(titleMorning)
         mainStackView.addArrangedSubview(navbar)
@@ -261,9 +263,7 @@ class MorningRoutinesViewController: UIViewController, UIScrollViewDelegate, UIT
        }
         
         navbar.snp.makeConstraints { (make) -> Void in
-            make.left.equalTo(self.view)
-            make.right.equalTo(self.view)
-            make.top.equalTo(self.topLayoutGuide.snp.top)
+            make.top.width.equalToSuperview()
             make.height.equalTo(252)
         }
         

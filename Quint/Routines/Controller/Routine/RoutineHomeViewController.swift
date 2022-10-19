@@ -43,7 +43,7 @@ class RoutineHomeViewController: UIViewController, CLLocationManagerDelegate{
     private let UVLevelSuggestion: UILabel = {
         let label = UILabel()
         label.text = "Apply your Sunscreen"
-        label.font = label.font.withSize(12)
+        label.font = .interSemi(size: 12)
         label.textAlignment = .center
         label.textColor = UIColor(red: 242/255, green: 53/255, blue: 53/255, alpha: 1)
         label.numberOfLines = 0
@@ -55,7 +55,7 @@ class RoutineHomeViewController: UIViewController, CLLocationManagerDelegate{
     private let UVLevelLabel: UILabel = {
         let label = UILabel()
         label.text = "UV LEVEL"
-        label.font = label.font.withSize(12)
+        label.font = .interMedium(size: 12)
         label.textColor = UIColor(red: 35/255, green: 36/255, blue: 35/255, alpha: 1)
         return label
     }()
@@ -64,7 +64,7 @@ class RoutineHomeViewController: UIViewController, CLLocationManagerDelegate{
         let label = UILabel()
         label.text = ""
         label.textColor = UIColor(red: 7/255, green: 8/255, blue: 7/255, alpha: 1)
-        label.font = UIFont.boldSystemFont(ofSize: 16)
+        label.font = .interSemi(size: 16)
         return label
     }()
 

@@ -35,7 +35,7 @@ class DailyLogViewController: UIViewController {
     private var moodLabel: UILabel = {
         let label = UILabel()
         label.text = "How do you feel today?"
-        label.font = label.font.withSize(20)
+        label.font = .clashGroteskMedium(size: 20)
         label.textColor = .black
         return label
     }()
@@ -43,7 +43,7 @@ class DailyLogViewController: UIViewController {
     private var sleepLabel: UILabel = {
         let label = UILabel()
         label.text = "How long did you sleep last night?"
-        label.font = label.font.withSize(20)
+        label.font = .clashGroteskMedium(size: 20)
         label.textColor = .black
         return label
     }()
@@ -51,7 +51,7 @@ class DailyLogViewController: UIViewController {
     private var activityLabel: UILabel = {
         let label = UILabel()
         label.text = "What is your today's activity level?"
-        label.font = label.font.withSize(20)
+        label.font = .clashGroteskMedium(size: 20)
         label.textColor = .black
         return label
     }()
@@ -59,7 +59,7 @@ class DailyLogViewController: UIViewController {
     private var feelSkinLabel: UILabel = {
         let label = UILabel()
         label.text = "How do you feel about your skin?"
-        label.font = label.font.withSize(20)
+        label.font = .clashGroteskMedium(size: 20)
         label.textColor = .black
         return label
     }()
@@ -67,7 +67,7 @@ class DailyLogViewController: UIViewController {
     private let createLogBtn: UIButton = {
         let button = UIButton()
         button.setTitleColor(.white, for: .normal)
-        button.titleLabel?.font = button.titleLabel?.font.withSize(13)
+        button.titleLabel?.font = .clashGroteskMedium(size: 18)
         button.setTitle("Create log", for: .normal)
         button.layer.cornerRadius = 8.0
         button.backgroundColor = K.Color.greenQuint
@@ -87,7 +87,7 @@ class DailyLogViewController: UIViewController {
     private let feelBetterBtn: UIButton = {
         let button = UIButton()
         button.setTitleColor(K.Color.greenQuint, for: .normal)
-        button.titleLabel?.font = button.titleLabel?.font.withSize(13)
+        button.titleLabel?.font = .interMedium(size: 16)
         button.setImage(UIImage(systemName: "hand.thumbsup.fill")?.withTintColor(K.Color.greenQuint, renderingMode: .alwaysOriginal), for: .normal)
         button.setTitle(" Better", for: .normal)
         button.layer.cornerRadius = 8.0
@@ -99,7 +99,7 @@ class DailyLogViewController: UIViewController {
     private let feelWorseBtn: UIButton = {
         let button = UIButton()
         button.setTitleColor(K.Color.greenQuint, for: .normal)
-        button.titleLabel?.font = button.titleLabel?.font.withSize(13)
+        button.titleLabel?.font = .interMedium(size: 16)
         button.setImage(UIImage(systemName: "hand.thumbsdown.fill")?.withTintColor(K.Color.greenQuint, renderingMode: .alwaysOriginal), for: .normal)
         button.setTitle(" Worsen", for: .normal)
         button.layer.cornerRadius = 8.0
@@ -131,7 +131,7 @@ class DailyLogViewController: UIViewController {
     private let sedentaryBtn: UIButton = {
         let button = UIButton()
         button.setTitleColor(K.Color.greenQuint, for: .normal)
-        button.titleLabel?.font = button.titleLabel?.font.withSize(13)
+        button.titleLabel?.font = .interSemi(size: 13)
         button.setImage(UIImage(named: "sedentaryIcon"), for: .normal)
         button.setTitle(" Sedentary", for: .normal)
         button.layer.cornerRadius = 8.0
@@ -144,7 +144,7 @@ class DailyLogViewController: UIViewController {
     private let activeBtn: UIButton = {
         let button = UIButton()
         button.setTitleColor(K.Color.greenQuint, for: .normal)
-        button.titleLabel?.font = button.titleLabel?.font.withSize(13)
+        button.titleLabel?.font = .interSemi(size: 13)
         button.setImage(UIImage(named: "activeIcon"), for: .normal)
         button.setTitle("    Active", for: .normal)
         button.layer.cornerRadius = 8.0
@@ -157,7 +157,7 @@ class DailyLogViewController: UIViewController {
     private let veryActiveBtn: UIButton = {
         let button = UIButton()
         button.setTitleColor(K.Color.greenQuint, for: .normal)
-        button.titleLabel?.font = button.titleLabel?.font.withSize(13)
+        button.titleLabel?.font = .interSemi(size: 13)
         button.setImage(UIImage(named: "veryActiveIcon"), for: .normal)
         button.setTitle(" Very Active", for: .normal)
         button.layer.cornerRadius = 8.0
@@ -334,7 +334,7 @@ class DailyLogViewController: UIViewController {
         button.sizeToFit()
         let barButton = UIBarButtonItem(customView: button)
         navigationItem.leftBarButtonItem = barButton
-        navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor(red: 7/255, green: 8/255, blue: 7/255, alpha: 1), .font: UIFont(name: "Inter", size: 16)]
+        navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor(red: 7/255, green: 8/255, blue: 7/255, alpha: 1), .font: UIFont(name: "Inter-Medium", size: 16)]
     }
     
     @objc func goToHomeRoutine() {

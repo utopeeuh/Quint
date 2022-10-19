@@ -39,7 +39,7 @@ class ReminderUIView: UIView {
         label.text = "Unlock today skin condition log by finishing at least one routine"
         label.numberOfLines = 0
         label.textColor = UIColor(red: 35/255, green: 36/255, blue: 35/255, alpha: 1)
-        label.font = label.font.withSize(14)
+        label.font = .interMedium(size: 14)
         return label
     }()
     

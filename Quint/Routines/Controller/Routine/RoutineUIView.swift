@@ -172,7 +172,7 @@ class RoutineUIView: UIView {
     var titleRoutine: UILabel = {
         let label = UILabel()
         label.textColor = UIColor(red: 7/255, green: 8/255, blue: 7/255, alpha: 1)
-        label.font = label.font.withSize(16)
+        label.font = .interMedium(size: 16)
         label.numberOfLines = 2
         return label
     }()

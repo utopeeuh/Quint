@@ -33,6 +33,7 @@ class NightRoutinesStepsTableViewCell: UITableViewCell {
         label.layer.cornerRadius = 14.0
         label.layer.backgroundColor = CGColor(red: 11/255, green: 28/255, blue: 87/255, alpha: 1)
         label.textAlignment = .center
+        label.font = .interMedium(size: 16)
         return label
     }()
     
@@ -40,7 +41,7 @@ class NightRoutinesStepsTableViewCell: UITableViewCell {
         let label = UILabel()
         label.textColor = UIColor(red: 7/255, green: 8/255, blue: 7/255, alpha: 1)
         label.text = ""
-        label.font = label.font.withSize(18)
+        label.font = .interMedium(size: 18)
         return label
     }()
     
@@ -83,7 +84,7 @@ class NightRoutinesStepsTableViewCell: UITableViewCell {
     }
 
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
-        super.init(style: .value1, reuseIdentifier: "RoutineStepsTableViewCell")
+        super.init(style: .value1, reuseIdentifier: "NightRoutineStepsTableViewCell")
         configureComponents()
         configureLayout()
     }

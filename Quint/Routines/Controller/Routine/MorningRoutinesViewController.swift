@@ -126,7 +126,7 @@ class MorningRoutinesViewController: UIViewController, UIScrollViewDelegate, UIT
     private let routineSteps: UILabel = {
         let label = UILabel()
         label.text = "Routine steps"
-        label.font = label.font.withSize(22)
+        label.font = .clashGroteskMedium(size: 22)
         label.textColor = .black
         return label
     }()
@@ -134,7 +134,7 @@ class MorningRoutinesViewController: UIViewController, UIScrollViewDelegate, UIT
     private let editBtn: UIButton = {
         let button = UIButton()
         button.setTitleColor(UIColor(red: 35/255, green: 36/255, blue: 35/255, alpha: 1), for: .normal)
-        button.titleLabel?.font = button.titleLabel?.font.withSize(13)
+        button.titleLabel?.font = .clashGroteskMedium(size: 13)
         button.setTitle("Edit steps", for: .normal)
         button.backgroundColor = UIColor(red: 230/255, green: 230/255, blue: 230/255, alpha: 1)
         button.layer.cornerRadius = 14.0
@@ -144,7 +144,7 @@ class MorningRoutinesViewController: UIViewController, UIScrollViewDelegate, UIT
     private let addBtn: UIButton = {
         let button = UIButton()
         button.setTitleColor(UIColor(red: 35/255, green: 36/255, blue: 35/255, alpha: 1), for: .normal)
-        button.titleLabel?.font = button.titleLabel?.font.withSize(13)
+        button.titleLabel?.font = .clashGroteskMedium(size: 18)
         button.setTitle("+ Add new step", for: .normal)
         button.layer.cornerRadius = 8.0
         button.layer.borderWidth = 1.0
@@ -154,7 +154,7 @@ class MorningRoutinesViewController: UIViewController, UIScrollViewDelegate, UIT
     private let finishBtn: UIButton = {
         let button = UIButton()
         button.setTitleColor(.white, for: .normal)
-        button.titleLabel?.font = button.titleLabel?.font.withSize(13)
+        button.titleLabel?.font = .clashGroteskMedium(size: 18 )
         button.setTitle("Finish routine", for: .normal)
         button.layer.cornerRadius = 8.0
         button.backgroundColor = .black
@@ -324,7 +324,7 @@ class MorningRoutinesViewController: UIViewController, UIScrollViewDelegate, UIT
         let title = UILabel()
         title.textColor = .white
         title.text = "Morning routine"
-        title.font = title.font.withSize(30)
+        title.font = .clashGroteskMedium(size: 30)
         return title
     }()
     

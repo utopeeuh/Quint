@@ -37,7 +37,7 @@ class DailySkincareTips: UIView {
         let label = UILabel()
         label.text = "Daily skincare tips"
         label.textColor = .white
-        label.font = UIFont.boldSystemFont(ofSize: 24)
+        label.font = .clashGroteskMedium(size: 24)
         label.numberOfLines = 0
         return label
     }()
@@ -46,7 +46,7 @@ class DailySkincareTips: UIView {
         let label = UILabel()
         label.text = "Hydration is a must for healthy, glowing skin. Dehydrated skin can feel dry, itchy, and dull."
         label.textColor = .white
-        label.font = label.font.withSize(14)
+        label.font = .interRegular(size: 14)
         label.numberOfLines = 0
         return label
     }()
@@ -55,7 +55,7 @@ class DailySkincareTips: UIView {
         let label = UILabel()
         label.text = "Drink liquids throughout the day, including electrolytes, to keep your hydration level."
         label.textColor = .white
-        label.font = label.font.withSize(14)
+        label.font = .interRegular(size: 14)
         label.numberOfLines = 0
         return label
     }()

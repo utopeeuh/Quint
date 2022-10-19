@@ -47,7 +47,7 @@ class AddNewStepUIViewController: UIViewController {
         let label = UILabel()
         label.text = "Add new step"
         label.textColor = .black
-        label.font = label.font.withSize(16)
+        label.font = .interMedium(size: 16)
         return label
     }()
     
@@ -60,7 +60,6 @@ class AddNewStepUIViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
-        self.title = "Add new step"
         ConfigureUI()
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(self.handleCloseAction))
         dimmedView.addGestureRecognizer(tapGesture)
@@ -199,17 +198,9 @@ class AddNewStepUIViewController: UIViewController {
         
         containerView.addSubview(mainStackView)
         mainStackView.translatesAutoresizingMaskIntoConstraints = false
-        
        
-        
-        // Set dynamic constraints
-        // First, set container to default height
-        // after panning, the height can expand
         containerViewHeightConstraint = containerView.heightAnchor.constraint(equalToConstant: defaultHeight)
         
-        // By setting the height to default height, the container will be hide below the bottom anchor view
-        // Later, will bring it up by set it to 0
-        // set the constant to default height to bring it down again
         containerViewBottomConstraint = containerView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: defaultHeight)
         // Activate constraints
         containerViewHeightConstraint?.isActive = true

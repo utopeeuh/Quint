@@ -38,7 +38,7 @@ class newStepUIView: UIView {
     var titleLabel: UILabel = {
         let label = UILabel()
         label.textColor = .black
-        label.font = label.font.withSize(16)
+        label.font = .interRegular(size: 16)
         return label
     }()
     

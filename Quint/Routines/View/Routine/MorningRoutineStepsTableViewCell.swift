@@ -33,6 +33,7 @@ class MorningRoutineStepsTableViewCell: UITableViewCell {
         label.layer.cornerRadius = 14.0
         label.layer.backgroundColor = CGColor(red: 242/255, green: 105/255, blue: 6/255, alpha: 1)
         label.textAlignment = .center
+        label.font = .interMedium(size: 16)
         return label
     }()
     
@@ -41,6 +42,7 @@ class MorningRoutineStepsTableViewCell: UITableViewCell {
         label.textColor = UIColor(red: 7/255, green: 8/255, blue: 7/255, alpha: 1)
         label.text = ""
         label.font = label.font.withSize(18)
+        label.font = .interMedium(size: 18)
         return label
     }()
     
@@ -97,7 +99,7 @@ class MorningRoutineStepsTableViewCell: UITableViewCell {
     }
 
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
-        super.init(style: .value1, reuseIdentifier: "RoutineStepsTableViewCell")
+        super.init(style: .value1, reuseIdentifier: "MorningRoutineStepsTableViewCell")
         configureComponents()
         configureLayout()
     }

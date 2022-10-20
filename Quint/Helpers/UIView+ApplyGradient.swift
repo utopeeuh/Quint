@@ -9,13 +9,13 @@ import Foundation
 import UIKit
 
 extension UIView{
-    func applyGradient(colours: [UIColor], locations: [NSNumber]?)
+    func applyGradient(colours: [UIColor], locations: [NSNumber]?, radius: Int)
     {
         let gradient: CAGradientLayer = CAGradientLayer()
         gradient.frame = self.bounds
         gradient.colors = colours.map { $0.cgColor }
         gradient.locations = locations
-        gradient.cornerRadius = 10
+        gradient.cornerRadius = CGFloat(radius)
         self.layer.insertSublayer(gradient, at: 0)
     }
     

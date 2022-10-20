@@ -14,7 +14,7 @@ class NextButton: UIButton {
         
 //        backgroundColor = K.Color.disableBgBtnQuint
         frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width-40, height: 50)
-        applyGradient(colours: [K.Color.purpleLightQuint, K.Color.purpleQuint], locations: [0, 1])
+        applyGradient(colours: [K.Color.purpleLightQuint, K.Color.purpleQuint], locations: [0, 1], radius: 8)
         setTitleColor(K.Color.disableTextBtnQuint, for: .normal)
         titleLabel?.font = .clashGroteskMedium(size: 18)
         layer.cornerRadius = 8
@@ -22,7 +22,6 @@ class NextButton: UIButton {
         layer.shadowOffset = CGSize(width: 0, height: 2)
         layer.shadowColor = K.Color.shadowQuint.cgColor
         layer.shadowOpacity = 5.0
-        
     }
 
     func setText(_ title: String?) {

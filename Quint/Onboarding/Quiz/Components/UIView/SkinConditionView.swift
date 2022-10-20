@@ -8,17 +8,16 @@
 import UIKit
 import SnapKit
 
-class SkinConditionView: OnboardingParentView {
+class SkinConditionView: OnboardingParentView, CollapsableStackDelegate {
     
     private let skinConditionLabel = UILabel()
-    var stackView = UIStackView()
-    var boxes: [K.Box] = []
+    
+    private var collapsableStack = CollapsableStack()
+    
     public let nextButton = NextButton()
-    var textHeight: CGFloat = 0
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        
         configureUI()
     }
     
@@ -39,25 +38,13 @@ class SkinConditionView: OnboardingParentView {
         skinConditionLabel.font = .clashGroteskMedium(size: 30)
         skinConditionLabel.textAlignment = .left
         
-        var yes = K.Box()
-        yes.title = "Yes"
-        yes.desc = "Sensitive skin is more prone to react to stimuli to which normal skin has no reaction. It is a fragile skin, usually accompanied by feelings of discomfort, such as heat, tightness, redness or itching."
-        boxes.append(yes)
+        collapsableStack.append(CollapsableButton(title: "Yes", desc: "Sensitive skin is more prone to react to stimuli to which normal skin has no reaction. It is a fragile skin, usually accompanied by feelings of discomfort, such as heat, tightness, redness or itching."))
         
-        var no = K.Box()
-        no.title = "No"
-        no.desc = ""
-        boxes.append(no)
+        collapsableStack.append(CollapsableButton(title: "No", desc: ""))
         
-        for b in boxes {
-            let skinTypeBox = CustomBoxView(title: b.title!, desc: b.desc!)
-            stackView.addArrangedSubview(skinTypeBox)
-            textHeight = skinTypeBox.labelContent.requiredHeight
+        collapsableStack.buttons.forEach { b in
+            b.headerBtn.addTarget(self, action: #selector(onClickExpand), for: .touchUpInside)
         }
-        stackView.axis = .vertical
-        stackView.spacing = 12
-        stackView.distribution = .equalSpacing
-        stackView.layoutSubviews()
         
         nextButton.setText("Next")
         nextButton.addTarget(self, action: #selector(nextOnClick), for: .touchUpInside)
@@ -66,7 +53,7 @@ class SkinConditionView: OnboardingParentView {
     func configureLayout() {
         
         addSubview(skinConditionLabel)
-        addSubview(stackView)
+        addSubview(collapsableStack)
         addSubview(nextButton)
         
         skinConditionLabel.snp.makeConstraints { make in
@@ -75,12 +62,11 @@ class SkinConditionView: OnboardingParentView {
             make.width.equalToSuperview().offset(-40)
         }
        
-        stackView.snp.makeConstraints { make in
-            make.centerX.equalToSuperview()
+        collapsableStack.snp.makeConstraints { make in
             make.top.equalTo(skinConditionLabel.snp.bottom).offset(32)
-            make.width.equalToSuperview()
-            make.height.equalTo((90 + Int(textHeight)) * boxes.count)
-            
+            make.centerX.equalToSuperview()
+            make.height.equalTo(collapsableStack.getHeight())
+            make.width.equalToSuperview().offset(-40)
         }
         
         nextButton.snp.makeConstraints { make in
@@ -90,5 +76,11 @@ class SkinConditionView: OnboardingParentView {
             make.width.equalToSuperview().offset(-40)
         }
         
+    }
+    
+    func onClickExpand(_ sender: UIButton) {
+        if let collapsable = sender.superview as? CollapsableButton{
+            collapsableStack.showView(collapsable)
+        }
     }
 }

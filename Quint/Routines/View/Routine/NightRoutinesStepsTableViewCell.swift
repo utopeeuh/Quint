@@ -26,7 +26,7 @@ class NightRoutinesStepsTableViewCell: UITableViewCell {
         return stackView
     }()
     
-    private var numLabel: UILabel = {
+    var numLabel: UILabel = {
         let label = UILabel()
         label.text = ""
         label.textColor = .white
@@ -45,10 +45,11 @@ class NightRoutinesStepsTableViewCell: UITableViewCell {
         return label
     }()
     
-    private var imageRight: UIImageView = {
+    var imageRight: UIImageView = {
         let image = UIImageView()
         image.image = UIImage(systemName: "chevron.right")
         image.tintColor = UIColor(red: 125/255, green: 125/255, blue: 125/255, alpha: 1)
+        image.isHidden = false
         return image
     }()
     
@@ -63,17 +64,17 @@ class NightRoutinesStepsTableViewCell: UITableViewCell {
         numLabel.snp.makeConstraints { make in
             make.left.equalTo(self.safeAreaInsets).offset(50)
             make.width.height.equalTo(28)
-            make.top.equalTo(self.safeAreaInsets).offset(7.5)
+            make.top.equalTo(self.safeAreaInsets).offset(11)
         }
         
         titleLabel.snp.makeConstraints { make in
             make.left.equalTo(numLabel.snp.right).offset(20)
-            make.top.equalTo(self.safeAreaInsets).offset(10.8)
+            make.top.equalTo(self.safeAreaInsets).offset(14.65)
         }
         
         imageRight.snp.makeConstraints { make in
             make.left.equalTo(titleLabel.snp.right)
-            make.top.equalTo(self.safeAreaInsets).offset(11.5)
+            make.top.equalTo(self.safeAreaInsets).offset(14.5)
             make.right.equalTo(self.safeAreaLayoutGuide).offset(-15)
         }
         

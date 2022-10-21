@@ -23,16 +23,16 @@ class MorningRoutinesViewController: UIViewController, UIScrollViewDelegate, UIT
     var products: [Product] = [Product]()
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return products.count
+        return 1
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return products.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "MorningRoutineStepsTableViewCell", for: indexPath) as! MorningRoutineStepsTableViewCell
-        let currentLastItem = products[indexPath.section]
+        let currentLastItem = products[indexPath.row]
         cell.product = currentLastItem
         cell.backgroundColor = UIColor.white
         cell.layer.borderColor = UIColor.white.cgColor
@@ -228,7 +228,7 @@ class MorningRoutinesViewController: UIViewController, UIScrollViewDelegate, UIT
     // method to run when table view cell is tapped
        func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
            // note that indexPath.section is used rather than indexPath.row
-           print("You tapped cell number \(indexPath.section).")
+           print("You tapped cell number \(indexPath.row).")
        }
     
     func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
@@ -239,9 +239,9 @@ class MorningRoutinesViewController: UIViewController, UIScrollViewDelegate, UIT
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            products.remove(at: indexPath.section)
-//            tableView.deleteRows(at: [indexPath], with: .fade)
-            tableView.deleteSections([indexPath.section], with: .fade)
+            products.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: .fade)
+//            tableView.deleteSections([indexPath.section], with: .fade)
         }
     }
     

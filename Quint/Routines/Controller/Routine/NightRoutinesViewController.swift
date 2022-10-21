@@ -17,22 +17,28 @@ class NightRoutinesViewController: UIViewController, UIScrollViewDelegate, UITab
     var products: [Product] = [Product]()
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return products.count
+        return 1
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return products.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "NightRoutineStepsTableViewCell", for: indexPath) as! NightRoutinesStepsTableViewCell
-        let currentLastItem = products[indexPath.section]
+        let currentLastItem = products[indexPath.row]
         cell.product = currentLastItem
         
         cell.backgroundColor = UIColor.white
         cell.layer.borderColor = UIColor.white.cgColor
         cell.layer.borderWidth = 1
         cell.layer.cornerRadius = 8
+        
+        if tableView.isEditing == true {
+            cell.imageRight.isHidden = true
+        } else {
+            cell.imageRight.isHidden = false
+        }
         return cell
     }
     
@@ -206,10 +212,12 @@ class NightRoutinesViewController: UIViewController, UIScrollViewDelegate, UITab
             finishBtn.isEnabled = false
             finishBtn.layer.backgroundColor = CGColor(red: 230/255, green: 230/255, blue: 230/255, alpha: 1)
             finishBtn.setTitleColor(UIColor(red: 125/255, green: 125/255, blue: 125/255, alpha: 125/255), for: .normal)
+            tableView.reloadData()
         }else {
             finishBtn.isEnabled = true
             finishBtn.layer.backgroundColor = UIColor.black.cgColor
             finishBtn.setTitleColor(.white, for: .normal)
+            tableView.reloadData()
         }
         
     }
@@ -217,7 +225,7 @@ class NightRoutinesViewController: UIViewController, UIScrollViewDelegate, UITab
     // method to run when table view cell is tapped
        func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
            // note that indexPath.section is used rather than indexPath.row
-           print("You tapped cell number \(indexPath.section).")
+           print("You tapped cell number \(indexPath.row).")
        }
     
     func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
@@ -228,9 +236,9 @@ class NightRoutinesViewController: UIViewController, UIScrollViewDelegate, UITab
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            products.remove(at: indexPath.section)
-//            tableView.deleteRows(at: [indexPath], with: .fade)
-            tableView.deleteSections([indexPath.section], with: .fade)
+            products.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: .fade)
+//            tableView.deleteSections([indexPath.section], with: .fade)
         }
     }
     

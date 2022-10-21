@@ -26,7 +26,7 @@ class MorningRoutineStepsTableViewCell: UITableViewCell {
         return stackView
     }()
     
-    private var numLabel: UILabel = {
+    var numLabel: UILabel = {
         let label = UILabel()
         label.text = ""
         label.textColor = .white
@@ -46,12 +46,14 @@ class MorningRoutineStepsTableViewCell: UITableViewCell {
         return label
     }()
     
-    private var imageRight: UIImageView = {
+    var imageRight: UIImageView = {
         let image = UIImageView()
         image.image = UIImage(systemName: "chevron.right")
         image.tintColor = UIColor(red: 125/255, green: 125/255, blue: 125/255, alpha: 1)
+        image.isHidden = false
         return image
     }()
+    
     
     func configureComponents() {
         hStackViewCell.addArrangedSubview(numLabel)
@@ -75,7 +77,7 @@ class MorningRoutineStepsTableViewCell: UITableViewCell {
         imageRight.snp.makeConstraints { make in
             make.left.equalTo(titleLabel.snp.right)
             make.top.equalTo(self.safeAreaInsets).offset(14.5)
-            make.right.equalTo(self.safeAreaLayoutGuide).offset(-50)
+            make.right.equalTo(self.safeAreaLayoutGuide).offset(-15)
         }
         
         hStackViewCell.snp.makeConstraints { make in

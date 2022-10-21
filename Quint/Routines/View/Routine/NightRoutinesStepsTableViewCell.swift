@@ -61,7 +61,7 @@ class NightRoutinesStepsTableViewCell: UITableViewCell {
     func configureLayout() {
         self.addSubview(hStackViewCell)
         numLabel.snp.makeConstraints { make in
-            make.left.equalTo(self.safeAreaInsets).offset(20)
+            make.left.equalTo(self.safeAreaInsets).offset(50)
             make.width.height.equalTo(28)
             make.top.equalTo(self.safeAreaInsets).offset(7.5)
         }

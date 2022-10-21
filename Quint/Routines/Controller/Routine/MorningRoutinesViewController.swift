@@ -13,7 +13,7 @@ import SnapKit
 
 struct Product {
     let titleLabel: String
-    let numLabel: String
+    var numLabel: String
     let imageRight: UIImage
 }
 
@@ -34,11 +34,15 @@ class MorningRoutinesViewController: UIViewController, UIScrollViewDelegate, UIT
         let cell = tableView.dequeueReusableCell(withIdentifier: "MorningRoutineStepsTableViewCell", for: indexPath) as! MorningRoutineStepsTableViewCell
         let currentLastItem = products[indexPath.section]
         cell.product = currentLastItem
-        
         cell.backgroundColor = UIColor.white
         cell.layer.borderColor = UIColor.white.cgColor
         cell.layer.borderWidth = 1
         cell.layer.cornerRadius = 8
+        if tableView.isEditing == true {
+            cell.imageRight.isHidden = true
+        } else {
+            cell.imageRight.isHidden = false
+        }
         return cell
     }
     
@@ -67,7 +71,6 @@ class MorningRoutinesViewController: UIViewController, UIScrollViewDelegate, UIT
     }()
     
     func bindTableData() {
-     
         products.append(Product(titleLabel: "Toner", numLabel: "1", imageRight: UIImage(systemName: "chevron.right")!))
         products.append(Product(titleLabel: "Cleanser", numLabel: "2", imageRight: UIImage(systemName: "chevron.right")!))
         products.append(Product(titleLabel: "Serum", numLabel: "3", imageRight: UIImage(systemName: "chevron.right")!))
@@ -212,10 +215,12 @@ class MorningRoutinesViewController: UIViewController, UIScrollViewDelegate, UIT
             finishBtn.isEnabled = false
             finishBtn.layer.backgroundColor = CGColor(red: 230/255, green: 230/255, blue: 230/255, alpha: 1)
             finishBtn.setTitleColor(UIColor(red: 125/255, green: 125/255, blue: 125/255, alpha: 125/255), for: .normal)
+            tableView.reloadData()
         }else {
             finishBtn.isEnabled = true
             finishBtn.layer.backgroundColor = UIColor.black.cgColor
             finishBtn.setTitleColor(.white, for: .normal)
+            tableView.reloadData()
         }
         
     }

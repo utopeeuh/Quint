@@ -28,12 +28,9 @@ class NightRoutinesViewController: UIViewController, UIScrollViewDelegate, UITab
         let cell = tableView.dequeueReusableCell(withIdentifier: "NightRoutineStepsTableViewCell", for: indexPath) as! NightRoutinesStepsTableViewCell
         let currentLastItem = products[indexPath.row]
         cell.product = currentLastItem
-        
-        cell.backgroundColor = UIColor.white
-        cell.layer.borderColor = UIColor.white.cgColor
+        cell.layer.borderColor = UIColor.clear.cgColor
         cell.layer.borderWidth = 1
         cell.layer.cornerRadius = 8
-        
         if tableView.isEditing == true {
             cell.imageRight.isHidden = true
         } else {
@@ -48,19 +45,20 @@ class NightRoutinesViewController: UIViewController, UIScrollViewDelegate, UITab
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 50
+        return 65
     }
     
 
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor =  UIColor(red: 244/255, green: 244/255, blue: 244/255, alpha: 1)
+        self.tableView.backgroundColor = UIColor(red: 244/255, green: 244/255, blue: 244/255, alpha: 1)
         navBar()
         ConfigureUI()
     }
     
     private let tableView: UITableView = {
-        let tv = UITableView(frame: CGRect(x: 0, y: 0, width: 0, height: 0), style: .insetGrouped)
+        let tv = UITableView(frame: CGRect(x: 0, y: 0, width: 0, height: 0), style: .plain)
         tv.translatesAutoresizingMaskIntoConstraints = false
         tv.register(NightRoutinesStepsTableViewCell.self, forCellReuseIdentifier: "NightRoutineStepsTableViewCell")
         return tv
@@ -160,12 +158,6 @@ class NightRoutinesViewController: UIViewController, UIScrollViewDelegate, UITab
         return button
     }()
     
-    private let scrollView: UIScrollView = {
-        let view = UIScrollView()
-        view.translatesAutoresizingMaskIntoConstraints = false
-        return view
-    }()
-    
     private lazy var stepsStackView: UIStackView = {
         let stackView = UIStackView()
         stackView.translatesAutoresizingMaskIntoConstraints = false
@@ -190,6 +182,8 @@ class NightRoutinesViewController: UIViewController, UIScrollViewDelegate, UITab
 
         tableView.delegate = self
         tableView.dataSource = self
+        tableView.backgroundColor = .clear
+        tableView.separatorStyle = UITableViewCell.SeparatorStyle.none
         mainStackView.addArrangedSubview(tableView)
         mainStackView.addArrangedSubview(addBtn)
         addBtn.addTarget(self, action: #selector(goToAddNewPage), for: .touchUpInside)
@@ -312,6 +306,8 @@ class NightRoutinesViewController: UIViewController, UIScrollViewDelegate, UITab
         
         tableView.snp.makeConstraints { make in
             make.top.equalTo(hStackViewHeader.snp.bottom).offset(15)
+            make.left.equalTo(view.safeAreaLayoutGuide).offset(20)
+            make.right.equalTo(view.safeAreaLayoutGuide).offset(-20)
         }
         
     }

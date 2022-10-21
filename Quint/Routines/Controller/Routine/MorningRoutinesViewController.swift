@@ -34,7 +34,6 @@ class MorningRoutinesViewController: UIViewController, UIScrollViewDelegate, UIT
         let cell = tableView.dequeueReusableCell(withIdentifier: "MorningRoutineStepsTableViewCell", for: indexPath) as! MorningRoutineStepsTableViewCell
         let currentLastItem = products[indexPath.row]
         cell.product = currentLastItem
-        cell.backgroundColor = UIColor.white
         cell.layer.borderColor = UIColor.clear.cgColor
         cell.layer.borderWidth = 1
         cell.layer.cornerRadius = 8
@@ -164,12 +163,6 @@ class MorningRoutinesViewController: UIViewController, UIScrollViewDelegate, UIT
         return button
     }()
     
-    private let scrollView: UIScrollView = {
-        let view = UIScrollView()
-        view.translatesAutoresizingMaskIntoConstraints = false
-        return view
-    }()
-    
     private lazy var stepsStackView: UIStackView = {
         let stackView = UIStackView()
         stackView.translatesAutoresizingMaskIntoConstraints = false
@@ -194,6 +187,8 @@ class MorningRoutinesViewController: UIViewController, UIScrollViewDelegate, UIT
 
         tableView.delegate = self
         tableView.dataSource = self
+        tableView.backgroundColor = .clear
+        tableView.separatorStyle = UITableViewCell.SeparatorStyle.none
         mainStackView.addArrangedSubview(tableView)
         mainStackView.addArrangedSubview(addBtn)
         addBtn.addTarget(self, action: #selector(goToAddNewPage), for: .touchUpInside)

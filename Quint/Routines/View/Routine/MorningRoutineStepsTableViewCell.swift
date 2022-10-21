@@ -17,14 +17,6 @@ class MorningRoutineStepsTableViewCell: UITableViewCell {
         }
     }
     
-    private lazy var mainStackView: UIStackView = {
-        let stackView = UIStackView()
-        stackView.translatesAutoresizingMaskIntoConstraints = false
-        stackView.axis = .vertical
-        stackView.alignment = .fill
-        return stackView
-    }()
-    
     let containerView: UIView = {
         let view = UIView()
         view.backgroundColor = .white
@@ -34,7 +26,7 @@ class MorningRoutineStepsTableViewCell: UITableViewCell {
     
     let spacerView: UIView = {
         let view = UIView()
-        view.backgroundColor = UIColor(red: 244/255, green: 244/255, blue: 244/255, alpha: 1)
+        view.backgroundColor = .clear
         return view
     }()
     
@@ -77,17 +69,18 @@ class MorningRoutineStepsTableViewCell: UITableViewCell {
     
     
     func configureComponents() {
+        backgroundColor = .clear
         hStackViewCell.addArrangedSubview(numLabel)
         hStackViewCell.addArrangedSubview(titleLabel)
         hStackViewCell.addArrangedSubview(imageRight)
         
         containerView.addSubview(hStackViewCell)
-        mainStackView.addArrangedSubview(containerView)
-        mainStackView.addArrangedSubview(spacerView)
     }
     
     func configureLayout() {
-        self.addSubview(mainStackView)
+        addSubview(containerView)
+        addSubview(spacerView)
+        
         numLabel.snp.makeConstraints { make in
             make.left.equalTo(self.safeAreaInsets).offset(50)
             make.width.height.equalTo(28)
@@ -111,15 +104,14 @@ class MorningRoutineStepsTableViewCell: UITableViewCell {
         }
         
         spacerView.snp.makeConstraints { make in
-            make.height.equalTo(15)
-            make.left.equalTo(self.safeAreaLayoutGuide)
-            make.right.equalTo(self.safeAreaLayoutGuide)
+            make.left.right.equalToSuperview()
+            make.top.equalTo(containerView.snp.bottom)
+            make.bottom.equalToSuperview()
         }
         
         containerView.snp.makeConstraints { make in
             make.height.equalTo(50)
-            make.left.equalToSuperview().offset(20)
-            make.right.equalToSuperview().offset(-20)
+            make.top.left.right.equalToSuperview()
         }
     }
 

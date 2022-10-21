@@ -17,6 +17,19 @@ class NightRoutinesStepsTableViewCell: UITableViewCell {
         }
     }
     
+    let containerView: UIView = {
+        let view = UIView()
+        view.backgroundColor = .white
+        view.layer.cornerRadius = 10
+        return view
+    }()
+    
+    let spacerView: UIView = {
+        let view = UIView()
+        view.backgroundColor = .clear
+        return view
+    }()
+    
     private lazy var hStackViewCell: UIStackView = {
         let stackView = UIStackView()
         stackView.translatesAutoresizingMaskIntoConstraints = false
@@ -54,13 +67,17 @@ class NightRoutinesStepsTableViewCell: UITableViewCell {
     }()
     
     func configureComponents() {
+        backgroundColor = .clear
         hStackViewCell.addArrangedSubview(numLabel)
         hStackViewCell.addArrangedSubview(titleLabel)
         hStackViewCell.addArrangedSubview(imageRight)
+        
+        containerView.addSubview(hStackViewCell)
     }
     
     func configureLayout() {
-        self.addSubview(hStackViewCell)
+        addSubview(containerView)
+        addSubview(spacerView)
         numLabel.snp.makeConstraints { make in
             make.left.equalTo(self.safeAreaInsets).offset(50)
             make.width.height.equalTo(28)
@@ -82,12 +99,24 @@ class NightRoutinesStepsTableViewCell: UITableViewCell {
             make.width.equalTo(self.safeAreaLayoutGuide)
             make.left.equalTo(self.safeAreaInsets)
         }
+        
+        spacerView.snp.makeConstraints { make in
+            make.left.right.equalToSuperview()
+            make.top.equalTo(containerView.snp.bottom)
+            make.bottom.equalToSuperview()
+        }
+        
+        containerView.snp.makeConstraints { make in
+            make.height.equalTo(50)
+            make.top.left.right.equalToSuperview()
+        }
     }
 
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: .value1, reuseIdentifier: "NightRoutineStepsTableViewCell")
         configureComponents()
         configureLayout()
+        self.layer.borderWidth = 0
     }
     
     required init?(coder: NSCoder) {

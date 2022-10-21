@@ -35,7 +35,7 @@ class MorningRoutinesViewController: UIViewController, UIScrollViewDelegate, UIT
         let currentLastItem = products[indexPath.row]
         cell.product = currentLastItem
         cell.backgroundColor = UIColor.white
-        cell.layer.borderColor = UIColor.white.cgColor
+        cell.layer.borderColor = UIColor.clear.cgColor
         cell.layer.borderWidth = 1
         cell.layer.cornerRadius = 8
         if tableView.isEditing == true {
@@ -52,19 +52,20 @@ class MorningRoutinesViewController: UIViewController, UIScrollViewDelegate, UIT
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 50
+        return 65
     }
     
 
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor =  UIColor(red: 244/255, green: 244/255, blue: 244/255, alpha: 1)
+        self.tableView.backgroundColor = UIColor(red: 244/255, green: 244/255, blue: 244/255, alpha: 1)
         navBar()
         ConfigureUI()
     }
     
     private let tableView: UITableView = {
-        let tv = UITableView(frame: CGRect(x: 0, y: 0, width: 0, height: 0), style: .insetGrouped)
+        let tv = UITableView(frame: CGRect(x: 0, y: 0, width: 0, height: 0), style: .plain)
         tv.translatesAutoresizingMaskIntoConstraints = false
         tv.register(MorningRoutineStepsTableViewCell.self, forCellReuseIdentifier: "MorningRoutineStepsTableViewCell")
         return tv
@@ -245,17 +246,6 @@ class MorningRoutinesViewController: UIViewController, UIScrollViewDelegate, UIT
         }
     }
     
-    let cellSpacingHeight: CGFloat = 0
-    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return cellSpacingHeight
-    }
-
-    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-         let headerView = UIView()
-        headerView.backgroundColor = UIColor.clear
-         return headerView
-     }
-    
     override func configureLayout() {
         view.addSubview(mainStackView)
         
@@ -315,6 +305,8 @@ class MorningRoutinesViewController: UIViewController, UIScrollViewDelegate, UIT
         
         tableView.snp.makeConstraints { make in
             make.top.equalTo(hStackViewHeader.snp.bottom).offset(15)
+            make.left.equalTo(view.safeAreaLayoutGuide).offset(20)
+            make.right.equalTo(view.safeAreaLayoutGuide).offset(-20)
         }
         
     }

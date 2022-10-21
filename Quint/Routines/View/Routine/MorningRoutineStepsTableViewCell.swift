@@ -17,6 +17,27 @@ class MorningRoutineStepsTableViewCell: UITableViewCell {
         }
     }
     
+    private lazy var mainStackView: UIStackView = {
+        let stackView = UIStackView()
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+        stackView.axis = .vertical
+        stackView.alignment = .fill
+        return stackView
+    }()
+    
+    let containerView: UIView = {
+        let view = UIView()
+        view.backgroundColor = .white
+        view.layer.cornerRadius = 10
+        return view
+    }()
+    
+    let spacerView: UIView = {
+        let view = UIView()
+        view.backgroundColor = UIColor(red: 244/255, green: 244/255, blue: 244/255, alpha: 1)
+        return view
+    }()
+    
     private lazy var hStackViewCell: UIStackView = {
         let stackView = UIStackView()
         stackView.translatesAutoresizingMaskIntoConstraints = false
@@ -59,10 +80,14 @@ class MorningRoutineStepsTableViewCell: UITableViewCell {
         hStackViewCell.addArrangedSubview(numLabel)
         hStackViewCell.addArrangedSubview(titleLabel)
         hStackViewCell.addArrangedSubview(imageRight)
+        
+        containerView.addSubview(hStackViewCell)
+        mainStackView.addArrangedSubview(containerView)
+        mainStackView.addArrangedSubview(spacerView)
     }
     
     func configureLayout() {
-        self.addSubview(hStackViewCell)
+        self.addSubview(mainStackView)
         numLabel.snp.makeConstraints { make in
             make.left.equalTo(self.safeAreaInsets).offset(50)
             make.width.height.equalTo(28)
@@ -84,19 +109,17 @@ class MorningRoutineStepsTableViewCell: UITableViewCell {
             make.width.equalTo(self.safeAreaLayoutGuide)
             make.left.equalTo(self.safeAreaInsets)
         }
-    }
-    
-    func changeCons() {
-        numLabel.snp.makeConstraints { make in
-            make.left.equalTo(self.safeAreaInsets).offset(20)
-            make.width.height.equalTo(28)
-            make.top.equalTo(self.safeAreaInsets).offset(11)
+        
+        spacerView.snp.makeConstraints { make in
+            make.height.equalTo(15)
+            make.left.equalTo(self.safeAreaLayoutGuide)
+            make.right.equalTo(self.safeAreaLayoutGuide)
         }
         
-        imageRight.snp.makeConstraints { make in
-            make.left.equalTo(titleLabel.snp.right)
-            make.top.equalTo(self.safeAreaInsets).offset(14.5)
-            make.right.equalTo(self.safeAreaLayoutGuide).offset(-15)
+        containerView.snp.makeConstraints { make in
+            make.height.equalTo(50)
+            make.left.equalToSuperview().offset(20)
+            make.right.equalToSuperview().offset(-20)
         }
     }
 
@@ -104,6 +127,7 @@ class MorningRoutineStepsTableViewCell: UITableViewCell {
         super.init(style: .value1, reuseIdentifier: "MorningRoutineStepsTableViewCell")
         configureComponents()
         configureLayout()
+        self.layer.borderWidth = 0
     }
     
     required init?(coder: NSCoder) {
@@ -112,3 +136,5 @@ class MorningRoutineStepsTableViewCell: UITableViewCell {
         configureLayout()
     }
 }
+
+

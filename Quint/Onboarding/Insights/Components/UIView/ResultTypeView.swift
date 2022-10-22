@@ -41,7 +41,7 @@ class ResultTypeView: UIView {
 //        backgroundImage.layer.compositingFilter = "overlayBlendMode"
         
         self.frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width-40, height: 208)
-        self.applyGradient(colours: [K.Color.greenLightQuint, K.Color.greenQuint], locations: [0,1])
+        self.applyGradient(colours: [K.Color.greenLightQuint, K.Color.greenQuint], locations: [0,1], radius: 8)
         
         titleLabel.text = "SKIN TYPE"
         titleLabel.textColor = K.Color.greenSkinProblemQuint

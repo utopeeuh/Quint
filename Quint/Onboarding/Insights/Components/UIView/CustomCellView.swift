@@ -95,7 +95,7 @@ class CustomCellView: UIView {
     
     func setAsNight() {
         
-        containerBox.applyGradient(colours: [K.Color.blueLightQuint, K.Color.blueQuint], locations: [0, 1])
+        containerBox.applyGradient(colours: [K.Color.blueLightQuint, K.Color.blueQuint], locations: [0, 1], radius: 8)
         
         numberLabel.layer.backgroundColor = K.Color.blueQuint.cgColor
         numberLabel.textColor = K.Color.whiteQuint
@@ -111,7 +111,7 @@ class CustomCellView: UIView {
     
     func setAsMorning() {
         
-        containerBox.applyGradient(colours: [K.Color.orangeLightQuint, K.Color.orangeQuint], locations: [0, 1])
+        containerBox.applyGradient(colours: [K.Color.orangeLightQuint, K.Color.orangeQuint], locations: [0, 1], radius: 8)
         
         numberLabel.layer.backgroundColor = K.Color.orangeQuint.cgColor
         numberLabel.textColor = K.Color.whiteQuint

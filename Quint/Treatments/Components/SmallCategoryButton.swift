@@ -21,8 +21,9 @@ class SmallCategoryButton: CategoryButton{
         
         backgroundColor = K.Color.whiteQuint
         setTitleColor(K.Color.greenQuint, for: .normal)
-        titleLabel?.font = UIFont.systemFont(ofSize: 13)
+        titleLabel?.font = .interMedium(size: 13)
         layer.cornerRadius = 10
+        
     }
 
     required init?(coder aDecoder: NSCoder) {
@@ -35,6 +36,9 @@ class SmallCategoryButton: CategoryButton{
     }
     
     func select(){
+//        self.frame = CGRect(x: 0, y: 0, width: 91, height: 36)
+//        self.applyGradient(colours: [K.Color.greenLightQuint, K.Color.greenQuint], locations: [0,1], radius: 8)
+//        titleLabel?.font = .interSemiBold(size: 13)
         backgroundColor = K.Color.greenQuint
         setTitleColor(K.Color.whiteQuint, for: .normal)
     }

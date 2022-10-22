@@ -60,8 +60,8 @@
 		95EB50F228EA821600412176 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 95EB50F028EA821600412176 /* LaunchScreen.storyboard */; };
 		95EB50FA28EA82D700412176 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 95EB50F928EA82D700412176 /* Podfile */; };
 		95F4478A28FFED4C00183DD9 /* CollapsableButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F4478928FFED4C00183DD9 /* CollapsableButton.swift */; };
+		A0004BF92902688600B98B73 /* OnboardingProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0004BF82902688600B98B73 /* OnboardingProtocol.swift */; };
 		A014EA1328FEAF2A0020DC35 /* UIView+MultipleSubviews.swift in Sources */ = {isa = PBXBuildFile; fileRef = A014EA1228FEAF2A0020DC35 /* UIView+MultipleSubviews.swift */; };
-		A0004BF92902688600B98B73 /* OnboardingProtocolVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0004BF82902688600B98B73 /* OnboardingProtocolVC.swift */; };
 		A03857B528F7C7E100A4B566 /* UIView+ApplyGradient.swift in Sources */ = {isa = PBXBuildFile; fileRef = A03857B328F7C7E100A4B566 /* UIView+ApplyGradient.swift */; };
 		A03857B628F7C7E100A4B566 /* UILabel+RequiredHeight.swift in Sources */ = {isa = PBXBuildFile; fileRef = A03857B428F7C7E100A4B566 /* UILabel+RequiredHeight.swift */; };
 		A03857C328F80B3400A4B566 /* SignInAppleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A03857C228F80B3400A4B566 /* SignInAppleButton.swift */; };
@@ -90,7 +90,6 @@
 		A0F560ED28FAA9050091DF7B /* SkinLogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0F560EC28FAA9050091DF7B /* SkinLogView.swift */; };
 		A0F560EF28FAA91E0091DF7B /* SkinNotifView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0F560EE28FAA91E0091DF7B /* SkinNotifView.swift */; };
 		A0F560F128FAA92A0091DF7B /* SkinInsightView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0F560F028FAA92A0091DF7B /* SkinInsightView.swift */; };
-		A0FF96E328F5122200D4B699 /* QuizGesture.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0FF96E228F5122200D4B699 /* QuizGesture.swift */; };
 		A296D17E4F8D7FC95EC4001C /* Pods_Quint.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4FCA6C82D050D03E78104B2C /* Pods_Quint.framework */; };
 /* End PBXBuildFile section */
 
@@ -153,8 +152,8 @@
 		95EB50F328EA821600412176 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		95EB50F928EA82D700412176 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		95F4478928FFED4C00183DD9 /* CollapsableButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollapsableButton.swift; sourceTree = "<group>"; };
+		A0004BF82902688600B98B73 /* OnboardingProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingProtocol.swift; sourceTree = "<group>"; };
 		A014EA1228FEAF2A0020DC35 /* UIView+MultipleSubviews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+MultipleSubviews.swift"; sourceTree = "<group>"; };
-		A0004BF82902688600B98B73 /* OnboardingProtocolVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingProtocolVC.swift; sourceTree = "<group>"; };
 		A03857B328F7C7E100A4B566 /* UIView+ApplyGradient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+ApplyGradient.swift"; sourceTree = "<group>"; };
 		A03857B428F7C7E100A4B566 /* UILabel+RequiredHeight.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UILabel+RequiredHeight.swift"; sourceTree = "<group>"; };
 		A03857C228F80B3400A4B566 /* SignInAppleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInAppleButton.swift; sourceTree = "<group>"; };
@@ -183,7 +182,6 @@
 		A0F560EC28FAA9050091DF7B /* SkinLogView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkinLogView.swift; sourceTree = "<group>"; };
 		A0F560EE28FAA91E0091DF7B /* SkinNotifView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkinNotifView.swift; sourceTree = "<group>"; };
 		A0F560F028FAA92A0091DF7B /* SkinInsightView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkinInsightView.swift; sourceTree = "<group>"; };
-		A0FF96E228F5122200D4B699 /* QuizGesture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizGesture.swift; sourceTree = "<group>"; };
 		EC353203A173754AD46E48CF /* Pods-Quint.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Quint.debug.xcconfig"; path = "Target Support Files/Pods-Quint/Pods-Quint.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -229,10 +227,10 @@
 		951034CC28EFF54C0011AE39 /* Onboarding */ = {
 			isa = PBXGroup;
 			children = (
+				A0004BF82902688600B98B73 /* OnboardingProtocol.swift */,
 				951034D128EFF54C0011AE39 /* Authentication */,
 				A00ECCC328F1770B0050F91C /* Quiz */,
 				A0EF1EFF28FCFE280065AB9A /* Insights */,
-				A0004BF82902688600B98B73 /* OnboardingProtocolVC.swift */,
 			);
 			path = Onboarding;
 			sourceTree = "<group>";
@@ -407,7 +405,6 @@
 		A03857B228F7C5F500A4B566 /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				A0FF96E228F5122200D4B699 /* QuizGesture.swift */,
 				A0F21F3F28FD52840072497E /* PhotoConfirmationVC.swift */,
 				A03857BB28F804F000A4B566 /* UIButton */,
 				A03857BA28F804B100A4B566 /* UIView */,
@@ -647,7 +644,6 @@
 				A0E7EB1428F8545500F56802 /* ViewPreview.swift in Sources */,
 				95EB50E328EA821400412176 /* AppDelegate.swift in Sources */,
 				A0F560E928FAA4E10091DF7B /* SkinConditionView.swift in Sources */,
-				A0FF96E328F5122200D4B699 /* QuizGesture.swift in Sources */,
 				95F4478A28FFED4C00183DD9 /* CollapsableButton.swift in Sources */,
 				A04BD72329012B0200BEBDAB /* CustomCellView.swift in Sources */,
 				A03857C528F80B4100A4B566 /* NextButton.swift in Sources */,
@@ -686,7 +682,7 @@
 				A0EF1F1228FD0BAA0065AB9A /* DescriptionLabel.swift in Sources */,
 				959C2BF628ED341E007B1251 /* CAGradientLayer+SetGradient.swift in Sources */,
 				A0F560EB28FAA8FC0091DF7B /* SkinProblemView.swift in Sources */,
-				A0004BF92902688600B98B73 /* OnboardingProtocolVC.swift in Sources */,
+				A0004BF92902688600B98B73 /* OnboardingProtocol.swift in Sources */,
 				959C2BF528ED341E007B1251 /* Constants.swift in Sources */,
 				951034E428EFF8820011AE39 /* SkincareGuideTableViewCell.swift in Sources */,
 				95233BDE28EF3F3E00A4470E /* UIScrollView+RemoveSubviews.swift in Sources */,

@@ -46,6 +46,7 @@ class SkinConditionView: OnboardingParentView, CollapsableStackDelegate {
             b.headerBtn.addTarget(self, action: #selector(onClickExpand), for: .touchUpInside)
         }
         
+//        nextButton.isEnabled = false
         nextButton.setText("Next")
         nextButton.addTarget(self, action: #selector(nextOnClick), for: .touchUpInside)
     }

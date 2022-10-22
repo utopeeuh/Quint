@@ -30,7 +30,7 @@ class CollapsableHeaderButton: UIButton{
         sizeToFit()
         
         titleLabel!.frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width-72, height: 0)
-        titleLabel!.font = .interSemiBold(size: 16)
+        titleLabel!.font = .interMedium(size: 16)
         titleLabel!.lineBreakMode = .byWordWrapping
         titleLabel!.numberOfLines = 0
         setTitleColor(.black, for: .normal)
@@ -94,6 +94,7 @@ class CollapsableHeaderButton: UIButton{
     
     func selected(){
         layer.borderWidth = 1.5
+        titleLabel!.font = .interSemiBold(size: 16)
         setTitleColor(K.Color.greenQuint, for: .normal)
         numberFrame.applyGradient(colours: [K.Color.greenLightQuint, K.Color.greenQuint], locations: [0,1], radius: 12)
         numberLbl.textColor = K.Color.whiteQuint
@@ -106,6 +107,7 @@ class CollapsableHeaderButton: UIButton{
             numberFrame.layer.sublayers!.remove(at: 0)
         }
                 
+        titleLabel!.font = .interMedium(size: 16)
         numberLbl.textColor = K.Color.blackQuint
         chevron.image = UIImage(named: "ChevronDown")
         layer.borderWidth = 0

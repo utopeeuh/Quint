@@ -33,4 +33,5 @@ class OnboardingParentView: UIView{
     @objc func nextOnClick(){
         currQuizVC.nextOnClick()
     }
+    
 }

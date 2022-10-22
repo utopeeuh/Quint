@@ -18,13 +18,9 @@ class SkinProblemView: OnboardingParentView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-
         configureUI()
-        
-        collectionView.alignment = .left
         collectionView.delegate = self
         collectionView.reload()
-        
     }
         
     required init?(coder: NSCoder) {
@@ -37,6 +33,8 @@ class SkinProblemView: OnboardingParentView {
     }
     
     func configureComponents() {
+        
+        collectionView.alignment = .left
         
         skinProblemLabel.numberOfLines = 2
         skinProblemLabel.textColor = K.Color.blackQuint
@@ -126,7 +124,7 @@ extension SkinProblemView: TTGTextTagCollectionViewDelegate {
             
             if tag?.selected == true {
                 nextButton.isEnabled = true
-                nextButton.applyGradient(colours: [K.Color.greenLightQuint, K.Color.greenQuint], locations: [0, 1])
+                nextButton.applyGradient(colours: [K.Color.greenLightQuint, K.Color.greenQuint], locations: [0, 1], radius: 8)
                 nextButton.setTitleColor(K.Color.whiteQuint, for: .normal)
                 return
             }

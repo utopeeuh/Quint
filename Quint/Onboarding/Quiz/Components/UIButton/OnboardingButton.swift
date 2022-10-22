@@ -13,11 +13,10 @@ class OnboardingButton: UIButton {
         super.init(frame: .zero)
         
         frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width-40, height: 50)
-        applyGradient(colours: [K.Color.greenLightQuint, K.Color.greenQuint], locations: [0, 1])
+        applyGradient(colours: [K.Color.greenLightQuint, K.Color.greenQuint], locations: [0, 1], radius: 8)
         
         titleLabel?.font = .clashGroteskMedium(size: 18)
         setTitleColor(K.Color.whiteQuint, for: .normal)
-        layer.cornerRadius = 8
     }
 
     func setText(_ title: String?) {

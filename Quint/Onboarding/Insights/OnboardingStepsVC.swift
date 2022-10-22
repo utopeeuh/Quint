@@ -46,7 +46,8 @@ class OnboardingStepsVC: UIViewController {
         scrollView.showsHorizontalScrollIndicator = false
         
         nextButton.setText("Next")
-        nextButton.applyGradient(colours: [K.Color.greenLightQuint, K.Color.greenQuint], locations: [0,1])
+        nextButton.applyGradient(colours: [K.Color.greenLightQuint, K.Color.greenQuint], locations: [0,1], radius: 8)
+        nextButton.addTarget(self, action: #selector(goToHome), for: .touchUpInside)
 
     }
     
@@ -83,6 +84,11 @@ class OnboardingStepsVC: UIViewController {
             make.height.equalTo(50)
         }
         
+    }
+    
+    @objc func goToHome() {
+        let controller = SkincareGuideViewController()
+        self.navigationController?.pushViewController(controller, animated: true)
     }
     
 }

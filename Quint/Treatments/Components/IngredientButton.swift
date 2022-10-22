@@ -18,10 +18,11 @@ class IngredientButton: CategoryButton {
 //        contentEdgeInsets = UIEdgeInsets(top: 18, left: 24, bottom: 18, right: 24)
         layer.cornerRadius = 10
         backgroundColor = K.Color.whiteQuint
-        titleLabel?.font = UIFont.systemFont(ofSize: 18)
+        titleLabel?.font = .interMedium(size: 18)
         setTitleColor(.black, for: .normal)
         titleLabel?.lineBreakMode = NSLineBreakMode.byWordWrapping
         titleLabel?.textAlignment = .center
+        
     }
     
     override func setText(_ title: String?) {

@@ -77,7 +77,7 @@ class PhotoConfirmationVC: UIViewController {
         button.titleLabel?.font = .clashGroteskMedium(size: 18)
         
         button.frame = CGRect(x: 0, y: 0, width: 170, height: 50)
-        button.applyGradient(colours: [K.Color.greenLightQuint, K.Color.greenQuint], locations: [0, 1])
+        button.applyGradient(colours: [K.Color.greenLightQuint, K.Color.greenQuint], locations: [0, 1], radius: 8)
 
         button.layer.cornerRadius = 8
         button.setTitleColor(K.Color.whiteQuint, for: .normal)

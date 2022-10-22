@@ -40,7 +40,7 @@ class ResultProblemView: UIView {
 //        backgroundImage.sizeToFit()
         
         self.frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width-40, height: 468)
-        self.applyGradient(colours: [K.Color.redLightQuint, K.Color.redQuint], locations: [0,1])
+        self.applyGradient(colours: [K.Color.redLightQuint, K.Color.redQuint], locations: [0,1], radius: 8)
         titleLabel.text = "SKIN PROBLEM"
         titleLabel.textColor = K.Color.redSkinProblemQuint
         

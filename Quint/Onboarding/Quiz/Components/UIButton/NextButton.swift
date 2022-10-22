@@ -13,7 +13,6 @@ class NextButton: UIButton {
         super.init(frame: .zero)
         
         frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width-40, height: 50)
-//        applyGradient(colours: [K.Color.greenLightQuint, K.Color.greenQuint], locations: [0, 1])
         
         backgroundColor = K.Color.disableBgBtnQuint
         setTitleColor(K.Color.disableTextBtnQuint, for: .normal)

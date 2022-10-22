@@ -51,9 +51,12 @@ class OnboardingQuizVC: UIViewController, PhotoConfirmationVCDelegate {
         
         for child in childContents
         {
-            if let view = child as? SkinLogView
-            {
+            if let view = child as? SkinLogView {
                 view.takePhotoButton.addTarget(self, action: #selector(didTapPhoto), for: .touchUpInside)
+            }
+            
+            if let view = child as? SkinInsightView {
+                view.insightsButton.addTarget(self, action: #selector(goToOnboardingResult), for: .touchUpInside)
             }
         }
         
@@ -181,10 +184,14 @@ class OnboardingQuizVC: UIViewController, PhotoConfirmationVCDelegate {
         }
     }
     
+    @objc func goToOnboardingResult() {
+        let controller = OnboardingResultVC()
+        self.navigationController?.pushViewController(controller, animated: true)
+    }
+    
 }
 
-extension OnboardingQuizVC : UIImagePickerControllerDelegate, UINavigationControllerDelegate
-{
+extension OnboardingQuizVC : UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     func imagePickerControllerDidCancel(_ picker:UIImagePickerController) {
         picker.dismiss(animated: true, completion: nil)
         moveToCurrIndex()

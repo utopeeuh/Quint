@@ -59,7 +59,7 @@ class SkinProblemView: OnboardingParentView {
         
         let selectedContent = TTGTextTagStringContent()
         selectedContent.textFont = .interSemiBold(size: 16)!
-        selectedContent.textColor = K.Color.greenButtonQuint
+        selectedContent.textColor = K.Color.greenQuint
         
         let selectedStyle = TTGTextTagStyle()
         selectedStyle.backgroundColor = K.Color.whiteQuint
@@ -70,7 +70,7 @@ class SkinProblemView: OnboardingParentView {
         selectedStyle.shadowColor = K.Color.shadowQuint
         selectedStyle.shadowOpacity = 5.0
         selectedStyle.borderWidth = 1.5
-        selectedStyle.borderColor = K.Color.greenButtonQuint
+        selectedStyle.borderColor = K.Color.greenQuint
         
         for i in 0..<K.Category.skinProblem.count {
             
@@ -102,8 +102,7 @@ class SkinProblemView: OnboardingParentView {
         collectionView.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
             make.top.equalTo(skinProblemLabel.snp.bottom).offset(32)
-            make.width.equalTo(350)
-            make.height.equalTo(156)
+            make.width.equalToSuperview().offset(-40)
         }
 
         nextButton.snp.makeConstraints { make in
@@ -127,16 +126,17 @@ extension SkinProblemView: TTGTextTagCollectionViewDelegate {
             
             if tag?.selected == true {
                 nextButton.isEnabled = true
-                nextButton.backgroundColor = K.Color.greenQuint
+                nextButton.applyGradient(colours: [K.Color.greenLightQuint, K.Color.greenQuint], locations: [0, 1])
                 nextButton.setTitleColor(K.Color.whiteQuint, for: .normal)
                 return
             }
             
         }
         
+        nextButton.removeSublayer(layerIndex: 0)
         nextButton.isEnabled = false
-        nextButton.backgroundColor = UIColor(red: 230/255, green: 230/255, blue: 230/255, alpha: 1)
-        nextButton.setTitleColor(UIColor(red: 125/255, green: 125/255, blue: 125/255, alpha: 1), for: .normal)
+        nextButton.backgroundColor = K.Color.disableBgBtnQuint
+        nextButton.setTitleColor(K.Color.disableTextBtnQuint, for: .normal)
         
     }
     

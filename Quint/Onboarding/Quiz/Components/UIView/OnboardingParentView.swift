@@ -11,7 +11,8 @@ import SnapKit
 
 class OnboardingParentView: UIView{
     
-    var currVC: OnboardingQuizVC!
+    var currQuizVC: OnboardingQuizVC!
+    var currResultVC: OnboardingResultVC!
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -21,11 +22,15 @@ class OnboardingParentView: UIView{
         fatalError()
     }
     
-    func setVC(_ vc: OnboardingQuizVC){
-        self.currVC = vc
+    func setQuizVC(_ vc: OnboardingQuizVC) {
+        self.currQuizVC = vc
+    }
+    
+    func setResultVC(_ vc: OnboardingResultVC) {
+        self.currResultVC = vc
     }
     
     @objc func nextOnClick(){
-        currVC.nextOnClick()
+        currQuizVC.nextOnClick()
     }
 }

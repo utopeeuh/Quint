@@ -12,13 +12,12 @@ class OnboardingButton: UIButton {
     required init() {
         super.init(frame: .zero)
         
-//        setTitle("Get started", for: .normal)
+        frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width-40, height: 50)
+        applyGradient(colours: [K.Color.greenLightQuint, K.Color.greenQuint], locations: [0, 1])
+        
         titleLabel?.font = .clashGroteskMedium(size: 18)
-//        applyGradient(colours: [K.Color.greenLightQuint, K.Color.greenQuint], locations: [0.0, 1.0])
         setTitleColor(K.Color.whiteQuint, for: .normal)
         layer.cornerRadius = 8
-        backgroundColor = K.Color.greenQuint
-//        sizeToFit()
     }
 
     func setText(_ title: String?) {

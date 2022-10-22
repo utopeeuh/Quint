@@ -7,6 +7,7 @@
 
 import UIKit
 import SnapKit
+import SwiftUI
 
 class ResultProblemView: UIView {
     
@@ -14,11 +15,10 @@ class ResultProblemView: UIView {
     private let resultLabel = ResultLabel()
     private let descriptionLabel = DescriptionLabel()
     private let backgroundImage = UIImageView()
+    var textHeight: CGFloat = 0
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        backgroundColor = K.Color.redLightQuint
-        layer.cornerRadius = 10
         configureUI()
     }
         
@@ -33,48 +33,77 @@ class ResultProblemView: UIView {
     
     func configureComponents() {
         
-        backgroundImage.image = UIImage(named: "warning_logo")
-        backgroundImage.layer.compositingFilter = "overlayBlendMode"
-        backgroundImage.sizeToFit()
+        self.layer.cornerRadius = 10
         
-//        applyGradient(colours: [K.Color.greenLightQuint, K.Color.greenQuint], locations: [0,1])
+//        backgroundImage.image = UIImage(named: "warning_logo")
+//        backgroundImage.layer.compositingFilter = "overlayBlendMode"
+//        backgroundImage.sizeToFit()
+        
+        self.frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width-40, height: 468)
+        self.applyGradient(colours: [K.Color.redLightQuint, K.Color.redQuint], locations: [0,1])
         titleLabel.text = "SKIN PROBLEM"
+        titleLabel.textColor = K.Color.redSkinProblemQuint
         
         resultLabel.numberOfLines = 2
         resultLabel.text = "Acne, dark circles, oiliness, redness"
         
-        descriptionLabel.numberOfLines = 4
-        descriptionLabel.text = "Feeling of tightness and roughness. It may also acquire an ashy gray color, with occurrence of desquamation, itching, redness and small cracks."
+        descriptionLabel.frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width - 48, height: 0)
+        descriptionLabel.numberOfLines = 0
+        descriptionLabel.lineBreakMode = .byWordWrapping
+        descriptionLabel.text = "Acne: uninflamed blackheads to pus-filled pimples or large, red and tender bumps.\n\nDark circles: dark circles under your eyes happen when the skin beneath both eyes appears darkened\n\nOiliness: oversized sebaceous glands produce excessive amounts of sebum giving the appearance of shiny and greasy skin.\n\nRedness: A response of skin tissues to injury or irritation; characterized by pain and swelling and redness and heat."
+        textHeight = descriptionLabel.requiredHeight
+        descriptionLabel.sizeToFit()
         
     }
     
     func configureLayout() {
         
-        addSubview(backgroundImage)
-        addSubview(titleLabel)
-        addSubview(resultLabel)
-        addSubview(descriptionLabel)
+        multipleSubviews(view: titleLabel,
+                               resultLabel,
+                               descriptionLabel)
         
-        backgroundImage.snp.makeConstraints { make in
-            make.leading.equalTo(148)
-            make.top.equalTo(-56)
-        }
+//        backgroundImage.snp.makeConstraints { make in
+//            make.leading.equalTo(148)
+//            make.top.equalTo(-56)
+//        }
         
         titleLabel.snp.makeConstraints { make in
-            make.centerX.equalToSuperview().offset(28)
+            make.centerX.equalToSuperview()
+            make.top.equalTo(safeAreaLayoutGuide).offset(28)
             make.width.equalToSuperview().offset(-48)
         }
         
         resultLabel.snp.makeConstraints { make in
-            make.top.equalTo(titleLabel.snp.bottom).offset(8)
+            make.centerX.equalToSuperview()
+            make.top.equalTo(titleLabel.snp.bottom).offset(10)
             make.width.equalToSuperview().offset(-48)
         }
         
         descriptionLabel.snp.makeConstraints { make in
-            make.top.equalTo(resultLabel.snp.bottom).offset(10)
+            make.centerX.equalToSuperview()
             make.width.equalToSuperview().offset(-48)
+            make.height.equalTo(descriptionLabel.requiredHeight)
+            make.top.equalTo(resultLabel.snp.bottom).offset(10)
         }
         
     }
     
+}
+
+struct ResultProblemViewPreview: PreviewProvider {
+    static var previews: some View {
+        ViewPreview {
+            ResultProblemView()
+        }
+        .previewDevice(PreviewDevice(rawValue: "iPhone 14"))
+        .previewDisplayName("iPhone 14")
+        .ignoresSafeArea()
+        
+        ViewPreview {
+            ResultProblemView()
+        }
+        .previewDevice(PreviewDevice(rawValue: "iPhone 8"))
+        .previewDisplayName("iPhone 8")
+        .ignoresSafeArea()
+    }
 }

@@ -8,14 +8,6 @@
 import UIKit
 import SnapKit
 
-protocol PhotoConfirmationVCDelegate: AnyObject {
-    
-    func didTapConfirmButton() -> Void
-    
-    func didTapCancelButton() -> Void
-    
-}
-
 class PhotoConfirmationVC: UIViewController {
     
     var chosenImage: UIImage?
@@ -35,7 +27,7 @@ class PhotoConfirmationVC: UIViewController {
         
         let label = UILabel()
         label.numberOfLines = 2
-        label.textColor = UIColor(red: 7/255, green: 8/255, blue: 7/255, alpha: 1)
+        label.textColor = K.Color.blackQuint
         label.text = "Photo confirmation"
         label.font = .interMedium(size: 16)
         label.textAlignment = .center
@@ -63,14 +55,14 @@ class PhotoConfirmationVC: UIViewController {
         button.titleLabel?.font = .clashGroteskMedium(size: 18)
         
         button.layer.cornerRadius = 8
-        button.backgroundColor = UIColor(red: 254/255, green: 254/255, blue: 254/255, alpha: 1)
-        button.setTitleColor(UIColor(red: 53/255, green: 84/255, blue: 73/255, alpha: 1), for: .normal)
+        button.backgroundColor = K.Color.whiteQuint
+        button.setTitleColor(K.Color.greenQuint, for: .normal)
         
         button.layer.borderWidth = 1.5
-        button.layer.borderColor = UIColor(red: 53/255, green: 84/255, blue: 73/255, alpha: 1).cgColor
+        button.layer.borderColor = K.Color.greenQuint.cgColor
         
         button.layer.shadowOffset = CGSize(width: 0, height: 2)
-        button.layer.shadowColor = UIColor(red: 16/255, green: 24/255, blue: 40/255, alpha: 0.05).cgColor
+        button.layer.shadowColor = K.Color.shadowQuint.cgColor
         button.layer.shadowOpacity = 5.0
         
         return button
@@ -84,13 +76,14 @@ class PhotoConfirmationVC: UIViewController {
         button.setTitle("Confirm photo", for: .normal)
         button.titleLabel?.font = .clashGroteskMedium(size: 18)
         
+        button.frame = CGRect(x: 0, y: 0, width: 170, height: 50)
+        button.applyGradient(colours: [K.Color.greenLightQuint, K.Color.greenQuint], locations: [0, 1])
+
         button.layer.cornerRadius = 8
-        button.backgroundColor = UIColor(red: 29/255, green: 53/255, blue: 44/255, alpha: 1)
-//        button.applyGradient(colours: [K.Color.greenQuint, K.Color.greenLightQuint], locations: [1,0])
-        button.setTitleColor(UIColor(red: 254/255, green: 254/255, blue: 254/255, alpha: 1), for: .normal)
+        button.setTitleColor(K.Color.whiteQuint, for: .normal)
         
         button.layer.shadowOffset = CGSize(width: 0, height: 2)
-        button.layer.shadowColor = UIColor(red: 16/255, green: 24/255, blue: 40/255, alpha: 0.05).cgColor
+        button.layer.shadowColor = K.Color.shadowQuint.cgColor
         button.layer.shadowOpacity = 5.0
         
         return button
@@ -141,7 +134,8 @@ class PhotoConfirmationVC: UIViewController {
         photoFrameImg.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
             make.top.equalTo(photoConfirmLbl.snp.bottom).offset(16)
-            make.height.equalTo(569)
+            make.width.equalToSuperview()
+            make.bottom.equalToSuperview().offset(-180)
         }
         
         cancelBtn.snp.makeConstraints { make in

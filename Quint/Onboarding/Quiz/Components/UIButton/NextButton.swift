@@ -12,9 +12,10 @@ class NextButton: UIButton {
     required init() {
         super.init(frame: .zero)
         
-//        backgroundColor = K.Color.disableBgBtnQuint
         frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width-40, height: 50)
-        applyGradient(colours: [K.Color.purpleLightQuint, K.Color.purpleQuint], locations: [0, 1], radius: 8)
+//        applyGradient(colours: [K.Color.greenLightQuint, K.Color.greenQuint], locations: [0, 1])
+        
+        backgroundColor = K.Color.disableBgBtnQuint
         setTitleColor(K.Color.disableTextBtnQuint, for: .normal)
         titleLabel?.font = .clashGroteskMedium(size: 18)
         layer.cornerRadius = 8
@@ -29,12 +30,6 @@ class NextButton: UIButton {
         sizeToFit()
     }
     
-//        self.layer.sublayers?.removeFirst()
-//        applyGradient(colours: [.white, .white], locations: [1.0, 0.0])
-//        setTitleColor(K.Color.greenQuint, for: .normal)
-//        titleLabel?.font = .interMedium(size: 13)
-//        sizeToFit()
-
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }

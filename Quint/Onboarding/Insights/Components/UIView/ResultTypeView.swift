@@ -7,6 +7,7 @@
 
 import UIKit
 import SnapKit
+import SwiftUI
 
 class ResultTypeView: UIView {
 
@@ -14,11 +15,10 @@ class ResultTypeView: UIView {
     private let resultLabel = ResultLabel()
     private let descriptionLabel = DescriptionLabel()
     private let backgroundImage = UIImageView()
+    private var textHeight: CGFloat = 0
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        backgroundColor = K.Color.greenButtonQuint
-        layer.cornerRadius = 10
         configureUI()
     }
     
@@ -33,46 +33,78 @@ class ResultTypeView: UIView {
     
     func configureComponents() {
         
-        backgroundImage.backgroundColor = .yellow
-        backgroundImage.image = UIImage(named: "face_2_logo")
-        backgroundImage.layer.cornerRadius = 0
-        backgroundImage.layer.compositingFilter = "overlayBlendMode"
+        self.layer.cornerRadius = 10
         
-//        applyGradient(colours: [K.Color.greenLightQuint, K.Color.greenQuint], locations: [0,1])
+//        backgroundImage.image = UIImage(named: "face_3_logo")
+//        backgroundImage.frame = bounds
+//        backgroundImage.layer.cornerRadius = 0
+//        backgroundImage.layer.compositingFilter = "overlayBlendMode"
+        
+        self.frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width-40, height: 208)
+        self.applyGradient(colours: [K.Color.greenLightQuint, K.Color.greenQuint], locations: [0,1])
+        
         titleLabel.text = "SKIN TYPE"
+        titleLabel.textColor = K.Color.greenSkinProblemQuint
+        
         resultLabel.text = "Dry skin"
         
-        descriptionLabel.numberOfLines = 4
+        descriptionLabel.frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width - 48, height: 0)
+        descriptionLabel.numberOfLines = 0
+        descriptionLabel.lineBreakMode = .byWordWrapping
         descriptionLabel.text = "Feeling of tightness and roughness. It may also acquire an ashy gray color, with occurrence of desquamation, itching, redness and small cracks."
+        textHeight = descriptionLabel.requiredHeight
+        descriptionLabel.sizeToFit()
         
     }
     
     func configureLayout() {
         
-        addSubview(backgroundImage)
-        addSubview(titleLabel)
-        addSubview(resultLabel)
-        addSubview(descriptionLabel)
+        multipleSubviews(view: titleLabel,
+                               resultLabel,
+                               descriptionLabel)
         
-        backgroundImage.snp.makeConstraints { make in
-            make.leading.equalTo(148)
-        }
+//        backgroundImage.snp.makeConstraints { make in
+//            make.width.height.equalTo(250)
+//            make.leading.equalTo(150)
+//        }
         
         titleLabel.snp.makeConstraints { make in
-            make.centerX.equalToSuperview().offset(28)
+            make.centerX.equalToSuperview()
+            make.top.equalTo(safeAreaLayoutGuide).offset(28)
             make.width.equalToSuperview().offset(-48)
         }
         
         resultLabel.snp.makeConstraints { make in
-            make.top.equalTo(titleLabel.snp.bottom).offset(8)
+            make.centerX.equalToSuperview()
+            make.top.equalTo(titleLabel.snp.bottom).offset(10)
             make.width.equalToSuperview().offset(-48)
         }
         
         descriptionLabel.snp.makeConstraints { make in
-            make.top.equalTo(resultLabel.snp.bottom).offset(10)
+            make.centerX.equalToSuperview()
             make.width.equalToSuperview().offset(-48)
+            make.height.equalTo(descriptionLabel.requiredHeight)
+            make.top.equalTo(resultLabel.snp.bottom).offset(10)
         }
         
     }
     
+}
+
+struct ResultTypeViewPreview: PreviewProvider {
+    static var previews: some View {
+        ViewPreview {
+            ResultTypeView()
+        }
+        .previewDevice(PreviewDevice(rawValue: "iPhone 14"))
+        .previewDisplayName("iPhone 14")
+        .ignoresSafeArea()
+        
+        ViewPreview {
+            ResultTypeView()
+        }
+        .previewDevice(PreviewDevice(rawValue: "iPhone 8"))
+        .previewDisplayName("iPhone 8")
+        .ignoresSafeArea()
+    }
 }

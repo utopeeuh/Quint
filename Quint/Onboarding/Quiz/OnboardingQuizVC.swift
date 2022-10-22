@@ -10,54 +10,19 @@ import SnapKit
 
 class OnboardingQuizVC: UIViewController, PhotoConfirmationVCDelegate {
     
-    func didTapConfirmButton() {
-        
-        nextOnClick()
-        photoConfirmationVC.dismiss(animated: true)
-        
-    }
-    
-    func didTapCancelButton() {
-        
-        photoConfirmationVC.dismiss(animated: true)
-        self.didTapPhoto()
-        
-    }
-    
-    @objc func didTapPhoto() {
-        let picker = UIImagePickerController()
-        picker.sourceType = .camera
-        picker.cameraDevice = .front
-        picker.delegate = self
-        picker.cameraFlashMode = .off
-        present(picker, animated: true)
-        moveToCurrIndex()
-    }
-    
-    // from uiimagepicker delegate
-    func didConfirmPhoto(_ image: UIImage?) {
-        
-        let vc = photoConfirmationVC
-        vc.chosenImage = image
-        vc.delegate = self
-        vc.modalPresentationStyle = .fullScreen
-        present(vc, animated: true)
-        moveToCurrIndex()
-        
-    }
-
+    lazy var notifView = SkinNotifView()
     private var photoConfirmationVC = PhotoConfirmationVC()
     private var backButton = BackButton()
     private var progressBar = UIProgressView()
     private var scrollView = UIScrollView()
     
     // page indexing as follows
-    private var childContents: [UIView] = [
+    private lazy var childContents: [UIView] = [
         SkinTypeView(),
         SkinConditionView(),
         SkinProblemView(),
         SkinLogView(),
-        SkinNotifView(),
+        notifView,
         SkinInsightView()
     ]
     
@@ -68,9 +33,6 @@ class OnboardingQuizVC: UIViewController, PhotoConfirmationVCDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        view.backgroundColor = K.Color.bgQuint
-        
         configureUI()
     }
     
@@ -79,6 +41,9 @@ class OnboardingQuizVC: UIViewController, PhotoConfirmationVCDelegate {
     }
     
     override func configureComponents() {
+        
+        view.backgroundColor = K.Color.bgQuint
+        notifView.delegate = self
         
         self.navigationController?.setNavigationBarHidden(true, animated: false)
         
@@ -93,15 +58,14 @@ class OnboardingQuizVC: UIViewController, PhotoConfirmationVCDelegate {
         }
         
         scrollView.backgroundColor = K.Color.bgQuint
-        scrollView.isScrollEnabled = true
+        scrollView.isScrollEnabled = false
         scrollView.showsVerticalScrollIndicator = false
         scrollView.showsHorizontalScrollIndicator = false
-        scrollView.contentSize = CGSize(width: UIScreen.main.bounds.width*2, height: UIScreen.main.bounds.height)
-        scrollView.isScrollEnabled = false
+        scrollView.contentSize = CGSize(width: UIScreen.main.bounds.width*CGFloat(childContents.count), height: UIScreen.main.bounds.height)
         
         progressBar.setProgress(1/6, animated: true)
-        progressBar.trackTintColor = UIColor(red: 230/255, green: 230/255, blue: 230/255, alpha: 1)
-        progressBar.progressTintColor = K.Color.greenButtonQuint
+        progressBar.trackTintColor = K.Color.disableBgBtnQuint
+        progressBar.progressTintColor = K.Color.greenQuint
         progressBar.layer.cornerRadius = 4
         progressBar.clipsToBounds = true
     }
@@ -123,7 +87,7 @@ class OnboardingQuizVC: UIViewController, PhotoConfirmationVCDelegate {
             guard let v = childContents[i] as? OnboardingParentView
             else { return }
             
-            v.setVC(self)
+            v.setQuizVC(self)
             v.snp.makeConstraints { make in
                 
                 make.width.equalToSuperview()
@@ -131,10 +95,8 @@ class OnboardingQuizVC: UIViewController, PhotoConfirmationVCDelegate {
                 make.bottom.equalTo(self.view.safeAreaLayoutGuide)
                 
                 let isFirstPage = i == 0
-                let isLastPage  = i == childContents.count - 1
                 
                 if isFirstPage      { make.leading.equalToSuperview() }
-                else if isLastPage  { make.trailing.equalToSuperview() }
                 else                { make.leading.equalTo(prev!.snp.trailing) }
                 
                 prev = v
@@ -162,10 +124,50 @@ class OnboardingQuizVC: UIViewController, PhotoConfirmationVCDelegate {
         
     }
     
+    func moveToCurrIndex(){
+        scrollView.setContentOffset(CGPoint(x: UIScreen.main.bounds.width * CGFloat(currIndex), y: 0), animated: true)
+    }
+    
     func nextOnClick(){
         currIndex += 1
         moveToCurrIndex()
         progressBar.setProgress((1/6) * Float(currIndex+1), animated: true)
+    }
+    
+    func didTapConfirmButton() {
+        
+        nextOnClick()
+        photoConfirmationVC.dismiss(animated: true)
+        
+    }
+    
+    func didTapCancelButton() {
+        
+        photoConfirmationVC.dismiss(animated: true)
+        self.didTapPhoto()
+        
+    }
+    
+    // from uiimagepicker delegate
+    func didConfirmPhoto(_ image: UIImage?) {
+        
+        let vc = photoConfirmationVC
+        vc.chosenImage = image
+        vc.delegate = self
+        vc.modalPresentationStyle = .fullScreen
+        present(vc, animated: true)
+        moveToCurrIndex()
+        
+    }
+    
+    @objc func didTapPhoto() {
+        let picker = UIImagePickerController()
+        picker.sourceType = .camera
+        picker.cameraDevice = .front
+        picker.delegate = self
+        picker.cameraFlashMode = .off
+        present(picker, animated: true)
+        moveToCurrIndex()
     }
     
     @objc func backOnClick(){
@@ -179,13 +181,29 @@ class OnboardingQuizVC: UIViewController, PhotoConfirmationVCDelegate {
         }
     }
     
-    func moveToCurrIndex(){
-        scrollView.setContentOffset(CGPoint(x: UIScreen.main.bounds.width * CGFloat(currIndex), y: 0), animated: true)
-    }
-        
-    func allowNotif() {
+}
 
-        let controller = OnboardingQuizVC()
+extension OnboardingQuizVC : UIImagePickerControllerDelegate, UINavigationControllerDelegate
+{
+    func imagePickerControllerDidCancel(_ picker:UIImagePickerController) {
+        picker.dismiss(animated: true, completion: nil)
+        moveToCurrIndex()
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController,
+                                didFinishPickingMediaWithInfo info:[UIImagePickerController.InfoKey :Any]) {
+        
+        let image = info[.originalImage] as? UIImage
+    
+        picker.dismiss(animated: false, completion: nil)
+        didConfirmPhoto(image)
+    }
+    
+}
+
+extension OnboardingQuizVC: AllowNotificationDelegate {
+    
+    func allowNotif() {
 
         let group = DispatchGroup()
         group.enter()
@@ -216,29 +234,11 @@ class OnboardingQuizVC: UIViewController, PhotoConfirmationVCDelegate {
 
         group.notify(queue: .main) {
 
-            
+            self.nextOnClick()
 
         }
 
 
-    }
-    
-}
-
-extension OnboardingQuizVC : UIImagePickerControllerDelegate, UINavigationControllerDelegate
-{
-    func imagePickerControllerDidCancel(_ picker:UIImagePickerController) {
-        picker.dismiss(animated: true, completion: nil)
-        moveToCurrIndex()
-    }
-    
-    func imagePickerController(_ picker: UIImagePickerController,
-                                didFinishPickingMediaWithInfo info:[UIImagePickerController.InfoKey :Any]) {
-        
-        let image = info[.originalImage] as? UIImage
-    
-        picker.dismiss(animated: false, completion: nil)
-        didConfirmPhoto(image)
     }
     
 }

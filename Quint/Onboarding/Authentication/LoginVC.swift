@@ -41,7 +41,7 @@ class LoginVC: UIViewController {
         taglineLabel.textAlignment = .center
 
         captionLabel.numberOfLines = 3
-        captionLabel.textColor = UIColor(red: 35/255, green: 36/255, blue: 35/255, alpha: 1)
+        captionLabel.textColor = K.Color.greyDarkQuint
         captionLabel.text = "Find the best skin care product and ingredients for yourself with personalized information while tracking your facial skin routine progress."
         captionLabel.font = .interRegular(size: 16)
         captionLabel.textAlignment = .center
@@ -62,16 +62,6 @@ class LoginVC: UIViewController {
                                     signInButton,
                                     bottomSpacer)
         
-//        [topSpacer,
-//         logoImage,
-//         taglineLabel,
-//         captionLabel,
-//         startButton,
-//         signInButton,
-//         bottomSpacer].forEach {
-//          self.view.addSubview($0)
-//        }
-        
         topSpacer.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
             make.width.equalTo(1)
@@ -82,22 +72,22 @@ class LoginVC: UIViewController {
         
         logoImage.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
-            make.width.equalTo(92)
+            make.width.equalToSuperview().offset(-300)
             make.height.equalTo(118)
         }
 
         taglineLabel.snp.makeConstraints { make in
-            make.height.equalTo(72)
-            make.width.equalTo(350)
-            make.top.equalTo(logoImage.snp.bottom).offset(60)
             make.centerX.equalToSuperview()
+            make.width.equalToSuperview().offset(-40)
+            make.height.equalTo(72)
+            make.top.equalTo(logoImage.snp.bottom).offset(60)
         }
 
         captionLabel.snp.makeConstraints { make in
-            make.height.equalTo(100)
-            make.width.equalTo(357)
-            make.top.equalTo(taglineLabel.snp.bottom)
             make.centerX.equalToSuperview()
+            make.height.equalTo(100)
+            make.width.equalToSuperview().offset(-33)
+            make.top.equalTo(taglineLabel.snp.bottom).offset(18)
         }
 
         startButton.snp.makeConstraints { make in
@@ -173,10 +163,6 @@ extension LoginVC: ASAuthorizationControllerDelegate {
             let userIdentifier = appleIDCredential.user
             let fullName = appleIDCredential.fullName
             let email = appleIDCredential.email
-            
-//            print(email)
-//            print(fullName)
-//            print(userIdentifier)
             
             break
             

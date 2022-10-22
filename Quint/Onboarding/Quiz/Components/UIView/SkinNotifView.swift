@@ -10,6 +10,7 @@ import SnapKit
 
 class SkinNotifView: OnboardingParentView {
     
+    var delegate: AllowNotificationDelegate!
     private let notifLabel = UILabel()
     private let notifCaptionLabel = UILabel()
     private let notifLogo = UIImageView()
@@ -47,7 +48,7 @@ class SkinNotifView: OnboardingParentView {
         notifLogo.image = UIImage(named: "notif_logo")
         
         notifButton.setText("Allow notifications")
-        notifButton.addTarget(self, action: #selector(nextOnClick), for: .touchUpInside)
+        notifButton.addTarget(self, action: #selector(allowNotif), for: .touchUpInside)
         
     }
     
@@ -81,6 +82,10 @@ class SkinNotifView: OnboardingParentView {
             make.width.equalToSuperview().offset(-40)
         }
         
+    }
+    
+    @objc func allowNotif() {
+        delegate.allowNotif()
     }
     
 }

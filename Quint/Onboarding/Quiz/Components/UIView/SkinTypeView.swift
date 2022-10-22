@@ -8,15 +8,13 @@
 import UIKit
 import SnapKit
 
-class SkinTypeView: OnboardingParentView {
+class SkinTypeView: OnboardingParentView, CollapsableStackDelegate {
     
     private let skinTypeLabel = UILabel()
-    var stackView = UIStackView()
-    var boxes: [K.Box] = []
-    var customBox: CustomBoxView!
     public let nextButton = NextButton()
-    var textHeight: CGFloat = 0
-    var tapGesture = UITapGestureRecognizer()
+    
+    private var buttons: [CollapsableButton] = []
+    private var collapsableStack = CollapsableStack()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -38,42 +36,19 @@ class SkinTypeView: OnboardingParentView {
         skinTypeLabel.font = .clashGroteskMedium(size: 30)
         skinTypeLabel.textAlignment = .left
         
-        var normalSkin = K.Box()
-        normalSkin.title = "Normal skin"
-        normalSkin.desc = "This skin is neither too dry nor too oily. It has regular texture, no imperfections and a clean, soft appearance, and does not need special care."
-        boxes.append(normalSkin)
+        let button = CollapsableButton(title: "Normal skin", desc: "This skin is neither too dry nor too oily. It has regular texture, no imperfections and a clean, soft appearance, and does not need special care.")
+        button.headerBtn.setNumber(1)
+        collapsableStack.append(button)
         
-        var drySkin = K.Box()
-        drySkin.title = "Dry skin"
-        drySkin.desc = "Feeling of tightness and roughness. It may also acquire an ashy gray color, with occurrence of desquamation, itching, redness and small cracks."
-        boxes.append(drySkin)
+        collapsableStack.append(CollapsableButton(title: "Dry skin", desc: "Feeling of tightness and roughness. It may also acquire an ashy gray color, with occurrence of desquamation, itching, redness and small cracks."))
         
-        var oilySkin = K.Box()
-        oilySkin.title = "Oily skin"
-        oilySkin.desc = "Oily skin has a porous, humid and bright appearance. It is caused by excessive fat production by sebaceous glands."
-        boxes.append(oilySkin)
+        collapsableStack.append(CollapsableButton(title: "Oily skin dasdasdasdaksdjasdjasjdopasjdloajsdlkajsldkjalskdjlaksdjlaksjdlaksjdlaksdjlaskjd", desc: "Oily skin has a porous, humid and bright appearance. It is caused by excessive fat production by sebaceous glands."))
         
-        var combinationSkin = K.Box()
-        combinationSkin.title = "Combination skin"
-        combinationSkin.desc = "Characteristics of both dry and oily skin. The area with more oil is usually the T- zone (forehead, nose, and chin), while the cheeks is normal or dry."
-        boxes.append(combinationSkin)
+        collapsableStack.append(CollapsableButton(title: "Combination skin", desc: "Characteristics of both dry and oily skin. The area with more oil is usually the T- zone (forehead, nose, and chin), while the cheeks is normal or dry."))
         
-        for b in boxes {
-            let skinTypeBox = CustomBoxView(title: b.title!, desc: b.desc!)
-            textHeight = skinTypeBox.labelContent.requiredHeight
-            
-            tapGesture = UITapGestureRecognizer(target: self, action: #selector(singleTap))
-            tapGesture.numberOfTapsRequired = 1
-            
-            stackView.addArrangedSubview(skinTypeBox)
+        collapsableStack.buttons.forEach { b in
+            b.headerBtn.addTarget(self, action: #selector(onClickExpand), for: .touchUpInside)
         }
-        
-//        print(textHeight)
-        
-        stackView.axis = .vertical
-        stackView.spacing = 12
-        stackView.distribution = .equalSpacing
-        stackView.layoutSubviews()
         
         nextButton.setText("Next")
         nextButton.addTarget(self, action: #selector(nextOnClick), for: .touchUpInside)
@@ -83,7 +58,7 @@ class SkinTypeView: OnboardingParentView {
     func configureLayout() {
         
         addSubview(skinTypeLabel)
-        addSubview(stackView)
+        addSubview(collapsableStack)
         addSubview(nextButton)
         
         skinTypeLabel.snp.makeConstraints { make in
@@ -91,11 +66,11 @@ class SkinTypeView: OnboardingParentView {
             make.width.equalToSuperview().offset(-40)
         }
        
-        stackView.snp.makeConstraints { make in
-            make.centerX.equalToSuperview()
+        collapsableStack.snp.makeConstraints { make in
             make.top.equalTo(skinTypeLabel.snp.bottom).offset(32)
-            make.width.equalToSuperview()
-            make.height.equalTo((51 + Int(textHeight)) * boxes.count)
+            make.centerX.equalToSuperview()
+            make.height.equalTo(collapsableStack.getHeight())
+            make.width.equalToSuperview().offset(-40)
         }
         
         nextButton.snp.makeConstraints { make in
@@ -104,17 +79,12 @@ class SkinTypeView: OnboardingParentView {
             make.bottom.equalToSuperview().offset(-40)
             make.width.equalToSuperview().offset(-40)
         }
-        
     }
     
-    @objc func singleTap() {
-
-        customBox.containerBox.backgroundColor = K.Color.whiteQuint
-        customBox.containerBox.layer.cornerRadius = 8
-
-        customBox.labelContainer.textColor = K.Color.blackQuint
-        customBox.labelContainer.font = .interMedium(size: 16)
-        
+    @objc func onClickExpand(_ sender: UIButton){
+        if let collapsable = sender.superview as? CollapsableButton{
+            collapsableStack.showView(collapsable)
+        }
     }
     
 }

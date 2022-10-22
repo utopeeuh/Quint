@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		950404C329010E0100B37DFD /* CollapsableStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 950404C229010E0100B37DFD /* CollapsableStack.swift */; };
+		950404C52901216500B37DFD /* CollapsableStackDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 950404C42901216500B37DFD /* CollapsableStackDelegate.swift */; };
+		950404C72901283300B37DFD /* CollapsableHeaderButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 950404C62901283300B37DFD /* CollapsableHeaderButton.swift */; };
 		951034BE28EFC13D0011AE39 /* HeaderLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951034BD28EFC13D0011AE39 /* HeaderLabel.swift */; };
 		951034C028EFEDA90011AE39 /* IngredientButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951034BF28EFEDA90011AE39 /* IngredientButton.swift */; };
 		951034C828EFF51F0011AE39 /* UIViewController+DismissKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951034C328EFF51F0011AE39 /* UIViewController+DismissKeyboard.swift */; };
@@ -56,10 +59,10 @@
 		95EB50EF28EA821600412176 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 95EB50EE28EA821600412176 /* Assets.xcassets */; };
 		95EB50F228EA821600412176 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 95EB50F028EA821600412176 /* LaunchScreen.storyboard */; };
 		95EB50FA28EA82D700412176 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 95EB50F928EA82D700412176 /* Podfile */; };
-		A014EA1328FEAF2A0020DC35 /* MultipleSubview.swift in Sources */ = {isa = PBXBuildFile; fileRef = A014EA1228FEAF2A0020DC35 /* MultipleSubview.swift */; };
+		95F4478A28FFED4C00183DD9 /* CollapsableButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F4478928FFED4C00183DD9 /* CollapsableButton.swift */; };
+		A014EA1328FEAF2A0020DC35 /* UIView+MultipleSubviews.swift in Sources */ = {isa = PBXBuildFile; fileRef = A014EA1228FEAF2A0020DC35 /* UIView+MultipleSubviews.swift */; };
 		A03857B528F7C7E100A4B566 /* UIView+ApplyGradient.swift in Sources */ = {isa = PBXBuildFile; fileRef = A03857B328F7C7E100A4B566 /* UIView+ApplyGradient.swift */; };
 		A03857B628F7C7E100A4B566 /* UILabel+RequiredHeight.swift in Sources */ = {isa = PBXBuildFile; fileRef = A03857B428F7C7E100A4B566 /* UILabel+RequiredHeight.swift */; };
-		A03857BF28F8061E00A4B566 /* CustomBoxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A03857BE28F8061E00A4B566 /* CustomBoxView.swift */; };
 		A03857C328F80B3400A4B566 /* SignInAppleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A03857C228F80B3400A4B566 /* SignInAppleButton.swift */; };
 		A03857C528F80B4100A4B566 /* NextButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A03857C428F80B4100A4B566 /* NextButton.swift */; };
 		A03857C728F80B7100A4B566 /* SkipButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A03857C628F80B7100A4B566 /* SkipButton.swift */; };
@@ -91,6 +94,9 @@
 /* Begin PBXFileReference section */
 		1DE7348A28BE8A5E92A105D1 /* Pods-Quint.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Quint.release.xcconfig"; path = "Target Support Files/Pods-Quint/Pods-Quint.release.xcconfig"; sourceTree = "<group>"; };
 		4FCA6C82D050D03E78104B2C /* Pods_Quint.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Quint.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		950404C229010E0100B37DFD /* CollapsableStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollapsableStack.swift; sourceTree = "<group>"; };
+		950404C42901216500B37DFD /* CollapsableStackDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollapsableStackDelegate.swift; sourceTree = "<group>"; };
+		950404C62901283300B37DFD /* CollapsableHeaderButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollapsableHeaderButton.swift; sourceTree = "<group>"; };
 		951034BD28EFC13D0011AE39 /* HeaderLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderLabel.swift; sourceTree = "<group>"; };
 		951034BF28EFEDA90011AE39 /* IngredientButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientButton.swift; sourceTree = "<group>"; };
 		951034C328EFF51F0011AE39 /* UIViewController+DismissKeyboard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+DismissKeyboard.swift"; sourceTree = "<group>"; };
@@ -143,10 +149,10 @@
 		95EB50F128EA821600412176 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		95EB50F328EA821600412176 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		95EB50F928EA82D700412176 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		A014EA1228FEAF2A0020DC35 /* MultipleSubview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultipleSubview.swift; sourceTree = "<group>"; };
+		95F4478928FFED4C00183DD9 /* CollapsableButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollapsableButton.swift; sourceTree = "<group>"; };
+		A014EA1228FEAF2A0020DC35 /* UIView+MultipleSubviews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+MultipleSubviews.swift"; sourceTree = "<group>"; };
 		A03857B328F7C7E100A4B566 /* UIView+ApplyGradient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+ApplyGradient.swift"; sourceTree = "<group>"; };
 		A03857B428F7C7E100A4B566 /* UILabel+RequiredHeight.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UILabel+RequiredHeight.swift"; sourceTree = "<group>"; };
-		A03857BE28F8061E00A4B566 /* CustomBoxView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomBoxView.swift; sourceTree = "<group>"; };
 		A03857C228F80B3400A4B566 /* SignInAppleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInAppleButton.swift; sourceTree = "<group>"; };
 		A03857C428F80B4100A4B566 /* NextButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NextButton.swift; sourceTree = "<group>"; };
 		A03857C628F80B7100A4B566 /* SkipButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkipButton.swift; sourceTree = "<group>"; };
@@ -337,7 +343,8 @@
 				9538752028EDE2A1001979A8 /* PinterestLayout.swift */,
 				95233BDD28EF3F3E00A4470E /* UIScrollView+RemoveSubviews.swift */,
 				951034C328EFF51F0011AE39 /* UIViewController+DismissKeyboard.swift */,
-				A014EA1228FEAF2A0020DC35 /* MultipleSubview.swift */,
+				A014EA1228FEAF2A0020DC35 /* UIView+MultipleSubviews.swift */,
+				950404C42901216500B37DFD /* CollapsableStackDelegate.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -406,7 +413,6 @@
 		A03857BA28F804B100A4B566 /* UIView */ = {
 			isa = PBXGroup;
 			children = (
-				A03857BE28F8061E00A4B566 /* CustomBoxView.swift */,
 				A0F21F4128FD53850072497E /* OnboardingParentView.swift */,
 				A03857CD28F81E7200A4B566 /* SkinTypeView.swift */,
 				A0F560E828FAA4E10091DF7B /* SkinConditionView.swift */,
@@ -414,6 +420,8 @@
 				A0F560EC28FAA9050091DF7B /* SkinLogView.swift */,
 				A0F560EE28FAA91E0091DF7B /* SkinNotifView.swift */,
 				A0F560F028FAA92A0091DF7B /* SkinInsightView.swift */,
+				95F4478928FFED4C00183DD9 /* CollapsableButton.swift */,
+				950404C229010E0100B37DFD /* CollapsableStack.swift */,
 			);
 			path = UIView;
 			sourceTree = "<group>";
@@ -426,6 +434,7 @@
 				A03857C428F80B4100A4B566 /* NextButton.swift */,
 				A03857C628F80B7100A4B566 /* SkipButton.swift */,
 				A03857CF28F8353400A4B566 /* BackButton.swift */,
+				950404C62901283300B37DFD /* CollapsableHeaderButton.swift */,
 			);
 			path = UIButton;
 			sourceTree = "<group>";
@@ -638,6 +647,7 @@
 				95EB50E328EA821400412176 /* AppDelegate.swift in Sources */,
 				A0F560E928FAA4E10091DF7B /* SkinConditionView.swift in Sources */,
 				A0FF96E328F5122200D4B699 /* QuizGesture.swift in Sources */,
+				95F4478A28FFED4C00183DD9 /* CollapsableButton.swift in Sources */,
 				A03857C528F80B4100A4B566 /* NextButton.swift in Sources */,
 				951034E328EFF8820011AE39 /* RoutineHomeViewController.swift in Sources */,
 				A0EF1F0328FCFFC70065AB9A /* InsightSteps.swift in Sources */,
@@ -645,26 +655,28 @@
 				A03857C328F80B3400A4B566 /* SignInAppleButton.swift in Sources */,
 				A03857C928F80B9900A4B566 /* OnboardingButton.swift in Sources */,
 				A0EF1F1028FD0B4C0065AB9A /* ResultLabel.swift in Sources */,
-				A014EA1328FEAF2A0020DC35 /* MultipleSubview.swift in Sources */,
+				A014EA1328FEAF2A0020DC35 /* UIView+MultipleSubviews.swift in Sources */,
 				A03857B628F7C7E100A4B566 /* UILabel+RequiredHeight.swift in Sources */,
 				A0EF1F0528FD00D80065AB9A /* OnboardingResultVC.swift in Sources */,
 				951034BE28EFC13D0011AE39 /* HeaderLabel.swift in Sources */,
 				A0EF1F0928FD08080065AB9A /* ResultTypeView.swift in Sources */,
+				950404C72901283300B37DFD /* CollapsableHeaderButton.swift in Sources */,
 				A03857D028F8353400A4B566 /* BackButton.swift in Sources */,
 				9538752228EDE2A1001979A8 /* ApiService.swift in Sources */,
 				A03857D728F84C5C00A4B566 /* ViewControllerPreview.swift in Sources */,
 				A0F560EF28FAA91E0091DF7B /* SkinNotifView.swift in Sources */,
 				95233BDC28EF3B3000A4470E /* ProductListView.swift in Sources */,
 				A0EF1F0E28FD0A300065AB9A /* TitleLabel.swift in Sources */,
-				A03857BF28F8061E00A4B566 /* CustomBoxView.swift in Sources */,
 				95EB50E528EA821400412176 /* SceneDelegate.swift in Sources */,
 				95A4311A28EE8F7F007A2108 /* CategoryButton.swift in Sources */,
 				951034CB28EFF51F0011AE39 /* UIImageView+DropShadow.swift in Sources */,
+				950404C52901216500B37DFD /* CollapsableStackDelegate.swift in Sources */,
 				95EB50ED28EA821400412176 /* Quint.xcdatamodeld in Sources */,
 				951034D828EFF54C0011AE39 /* OnboardingQuizVC.swift in Sources */,
 				A0EF1F0B28FD08100065AB9A /* ResultProblemView.swift in Sources */,
 				951034E228EFF8820011AE39 /* SkincareGuideViewController.swift in Sources */,
 				A0F21F4228FD53850072497E /* OnboardingParentView.swift in Sources */,
+				950404C329010E0100B37DFD /* CollapsableStack.swift in Sources */,
 				A0F560F128FAA92A0091DF7B /* SkinInsightView.swift in Sources */,
 				951034D728EFF54C0011AE39 /* LoginVC.swift in Sources */,
 				A0F560ED28FAA9050091DF7B /* SkinLogView.swift in Sources */,
@@ -829,7 +841,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Quint/Quint.entitlements;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = J3D4SXSPFL;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -845,8 +858,9 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.vendly.macro;
+				PRODUCT_BUNDLE_IDENTIFIER = com.vendly.quint;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "Quint iCloud";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -860,7 +874,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Quint/Quint.entitlements;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = J3D4SXSPFL;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -876,8 +891,9 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.vendly.macro;
+				PRODUCT_BUNDLE_IDENTIFIER = com.vendly.quint;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "Quint iCloud";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

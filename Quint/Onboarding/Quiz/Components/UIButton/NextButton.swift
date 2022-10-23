@@ -19,9 +19,6 @@ class NextButton: UIButton {
         titleLabel?.font = .clashGroteskMedium(size: 18)
         layer.cornerRadius = 8
         
-        layer.shadowOffset = CGSize(width: 0, height: 2)
-        layer.shadowColor = K.Color.shadowQuint.cgColor
-        layer.shadowOpacity = 5.0
     }
 
     func setText(_ title: String?) {

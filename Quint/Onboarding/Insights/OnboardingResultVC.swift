@@ -12,10 +12,12 @@ class OnboardingResultVC: UIViewController {
     
     private var titleLabel = UILabel()
     private var scrollView = UIScrollView()
+    private var backButton = UIButton()
     private var view1 = PhotoResultView()
     private var view2 = ResultTypeView()
     private var view3 = ResultProblemView()
     private var view4 = RecIngredientView()
+    private var pageNumber = UILabel()
     private var nextButton = OnboardingButton()
     
     // page indexing as follows
@@ -35,6 +37,9 @@ class OnboardingResultVC: UIViewController {
         
         self.view.backgroundColor = K.Color.bgQuint
         
+        backButton.setImage(UIImage(named: "close_icon"), for: .normal)
+        backButton.addTarget(self, action: #selector(backOnClick), for: .touchUpInside)
+        
         titleLabel.text = "Skin insights"
         titleLabel.font = .interMedium(size: 16)
         titleLabel.textColor = K.Color.blackQuint
@@ -45,6 +50,11 @@ class OnboardingResultVC: UIViewController {
         scrollView.showsVerticalScrollIndicator = false
         scrollView.showsHorizontalScrollIndicator = false
         
+        pageNumber.font = .interSemiBold(size: 14)
+        let numberText = customizeColor(string: "1 ", color: K.Color.blackQuint)
+        numberText.append(customizeColor(string: "of 2", color: K.Color.greyQuint))
+        pageNumber.attributedText = numberText
+        
         nextButton.setText("Next")
         nextButton.applyGradient(colours: [K.Color.greenLightQuint, K.Color.greenQuint], locations: [0,1], radius: 8)
         nextButton.addTarget(self, action: #selector(goToOnboardingSteps), for: .touchUpInside)
@@ -53,11 +63,13 @@ class OnboardingResultVC: UIViewController {
     
     override func configureLayout() {
 
-        view.multipleSubviews(view: titleLabel,
+        view.multipleSubviews(view: backButton,
+                                    titleLabel,
                                     scrollView)
         
         scrollView.multipleSubviews(view: view1, view2,
                                           view3, view4,
+                                          pageNumber,
                                           nextButton)
         
         // layouting child view content
@@ -65,8 +77,18 @@ class OnboardingResultVC: UIViewController {
 //            scrollView.addSubview($0)
 //        }
         
+        backButton.snp.makeConstraints { make in
+            make.leading.equalToSuperview().offset(20)
+            make.top.equalToSuperview().offset(60)
+        }
+        
+        titleLabel.snp.makeConstraints { make in
+            make.centerX.equalToSuperview()
+            make.top.equalToSuperview().offset(60)
+        }
+        
         scrollView.snp.makeConstraints { make in
-            make.top.equalToSuperview()
+            make.top.equalTo(titleLabel).offset(58)
             make.bottom.equalTo(view)
             make.width.equalTo(UIScreen.main.bounds.width)
         }
@@ -99,10 +121,15 @@ class OnboardingResultVC: UIViewController {
             make.height.equalTo(250)
         }
         
+        pageNumber.snp.makeConstraints { make in
+            make.centerX.equalToSuperview()
+            make.top.equalTo(view4.snp.bottom).offset(30)
+        }
+        
         nextButton.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
             make.width.equalToSuperview().offset(-40)
-            make.top.equalTo(view4.snp.bottom).offset(50)
+            make.top.equalTo(pageNumber.snp.bottom).offset(34)
             make.height.equalTo(50)
         }
         
@@ -111,6 +138,15 @@ class OnboardingResultVC: UIViewController {
     @objc func goToOnboardingSteps() {
         let controller = OnboardingStepsVC()
         self.navigationController?.pushViewController(controller, animated: true)
+    }
+    
+    @objc func backOnClick(){
+        self.navigationController?.popViewController(animated: true)
+    }
+    
+    func customizeColor(string: String, color: UIColor) -> NSMutableAttributedString {
+        return NSMutableAttributedString(string: string, attributes:
+            [NSAttributedString.Key.foregroundColor : color ])
     }
     
 }

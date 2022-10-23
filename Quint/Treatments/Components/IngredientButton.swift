@@ -22,7 +22,6 @@ class IngredientButton: CategoryButton {
         setTitleColor(.black, for: .normal)
         titleLabel?.lineBreakMode = NSLineBreakMode.byWordWrapping
         titleLabel?.textAlignment = .center
-        
     }
     
     override func setText(_ title: String?) {

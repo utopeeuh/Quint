@@ -31,10 +31,11 @@ class PhotoResultView: UIView {
         func configureComponents() {
             
             self.backgroundColor = K.Color.whiteQuint
-            self.layer.cornerRadius = 10
-            self.layer.shadowOffset = CGSize(width: 0, height: 2)
+            self.layer.shadowOpacity = 1
+            self.layer.shadowRadius = 36
+            self.layer.shadowOffset = CGSize(width: 0, height: 16)
             self.layer.shadowColor = K.Color.shadowQuint.cgColor
-            self.layer.shadowOpacity = 5.0
+            self.layer.cornerRadius = 10
             
             titleLabel.text = "Skin Log Photo"
             titleLabel.font = .clashGroteskMedium(size: 20)
@@ -42,7 +43,11 @@ class PhotoResultView: UIView {
             
             photoLogImage.image = UIImage(named: "receipt_logo")
             photoLogImage.layer.cornerRadius = 8
-            photoLogImage.backgroundColor = UIColor(red: 230/255, green: 230/255, blue: 230/255, alpha: 1)
+            photoLogImage.backgroundColor = K.Color.disableBgBtnQuint
+            photoLogImage.layer.shadowColor = K.Color.shadowQuint.cgColor
+            photoLogImage.layer.shadowOpacity = 1
+            photoLogImage.layer.shadowRadius = 48
+            photoLogImage.layer.shadowOffset = CGSize(width: 0, height: 16)
             
             retakeButton.setTitle("Retake", for: .normal)
             retakeButton.titleLabel?.font = .interMedium(size: 13)

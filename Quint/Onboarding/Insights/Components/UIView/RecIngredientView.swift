@@ -29,11 +29,12 @@ class RecIngredientView: UIView {
     }
 
     func configureComponents() {
-
+        
         self.backgroundColor = K.Color.bgQuint
-        self.layer.shadowColor = K.Color.greyQuint.cgColor
-        self.layer.shadowOpacity = 0.5
-        self.layer.shadowOffset = CGSize(width: 0.2, height: 0.3)
+        self.layer.shadowOpacity = 1
+        self.layer.shadowRadius = 36
+        self.layer.shadowOffset = CGSize(width: 0, height: 16)
+        self.layer.shadowColor = K.Color.shadowQuint.cgColor
         self.layer.cornerRadius = 10
         
         titleLabel.font = .clashGroteskMedium(size: 20)

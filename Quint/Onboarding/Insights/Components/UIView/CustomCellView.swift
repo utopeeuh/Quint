@@ -35,9 +35,10 @@ class CustomCellView: UIView {
         containerBox.frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width-80, height: 56)
         containerBox.backgroundColor = K.Color.whiteQuint
         containerBox.layer.cornerRadius = 8
-        containerBox.layer.shadowColor = K.Color.greyQuint.cgColor
-        containerBox.layer.shadowOpacity = 0.5
-        containerBox.layer.shadowOffset = CGSize(width: 0.2, height: 0.3)
+        containerBox.layer.shadowColor = K.Color.shadowQuint.cgColor
+        containerBox.layer.shadowOpacity = 1
+        containerBox.layer.shadowRadius = 10
+        containerBox.layer.shadowOffset = CGSize(width: 0, height: 16)
         
         numberLabel.text = "1"
         numberLabel.layer.cornerRadius = 12

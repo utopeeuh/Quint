@@ -10,10 +10,12 @@ import SnapKit
 
 class OnboardingStepsVC: UIViewController {
     
+    private var backButton = BackButton()
     private var headerLabel = UILabel()
     private var titleLabel = UILabel()
     private var scrollView = UIScrollView()
     private var view1 = StepContainerView()
+    private var pageNumber = UILabel()
     private var nextButton = OnboardingButton()
     private var textHeight: CGFloat = 0
     
@@ -25,6 +27,10 @@ class OnboardingStepsVC: UIViewController {
     override func configureComponents() {
         
         self.view.backgroundColor = K.Color.bgQuint
+        
+        self.navigationController?.setNavigationBarHidden(true, animated: false)
+
+        backButton.addTarget(self, action: #selector(backOnClick), for: .touchUpInside)
         
         headerLabel.text = "Skin insights"
         headerLabel.font = .interMedium(size: 16)
@@ -45,6 +51,11 @@ class OnboardingStepsVC: UIViewController {
         scrollView.showsVerticalScrollIndicator = false
         scrollView.showsHorizontalScrollIndicator = false
         
+        pageNumber.font = .interSemiBold(size: 14)
+        let numberText = customizeColor(string: "2 ", color: K.Color.blackQuint)
+        numberText.append(customizeColor(string: "of 2", color: K.Color.greyQuint))
+        pageNumber.attributedText = numberText
+        
         nextButton.setText("Next")
         nextButton.applyGradient(colours: [K.Color.greenLightQuint, K.Color.greenQuint], locations: [0,1], radius: 8)
         nextButton.addTarget(self, action: #selector(goToHome), for: .touchUpInside)
@@ -53,15 +64,27 @@ class OnboardingStepsVC: UIViewController {
     
     override func configureLayout() {
         
-        view.multipleSubviews(view: headerLabel,
+        view.multipleSubviews(view: backButton,
+                                    headerLabel,
                                     scrollView)
 
         scrollView.multipleSubviews(view: titleLabel,
                                           view1,
+                                          pageNumber,
                                           nextButton)
 
+        backButton.snp.makeConstraints { make in
+            make.leading.equalToSuperview().offset(20)
+            make.top.equalToSuperview().offset(60)
+        }
+        
+        headerLabel.snp.makeConstraints { make in
+            make.centerX.equalToSuperview()
+            make.top.equalToSuperview().offset(60)
+        }
+        
         scrollView.snp.makeConstraints { make in
-            make.top.equalToSuperview()
+            make.top.equalTo(headerLabel).offset(60)
             make.bottom.equalTo(view)
             make.width.equalTo(UIScreen.main.bounds.width)
         }
@@ -77,9 +100,14 @@ class OnboardingStepsVC: UIViewController {
             make.width.equalToSuperview().offset(-40)
         }
 
+        pageNumber.snp.makeConstraints { make in
+            make.centerX.equalToSuperview()
+            make.top.equalTo(view1.snp.bottom).offset(30)
+        }
+        
         nextButton.snp.makeConstraints { make in
             make.centerX.equalTo(scrollView)
-            make.top.equalTo(view1.snp.bottom).offset(36)
+            make.top.equalTo(pageNumber.snp.bottom).offset(36)
             make.width.equalToSuperview().offset(-40)
             make.height.equalTo(50)
         }
@@ -87,8 +115,17 @@ class OnboardingStepsVC: UIViewController {
     }
     
     @objc func goToHome() {
-        let controller = SkincareGuideViewController()
-        self.navigationController?.pushViewController(controller, animated: true)
+//        let controller = SkincareGuideViewController()
+//        self.navigationController?.pushViewController(controller, animated: true)
+    }
+    
+    @objc func backOnClick(){
+        self.navigationController?.popViewController(animated: true)
+    }
+    
+    func customizeColor(string: String, color: UIColor) -> NSMutableAttributedString {
+        return NSMutableAttributedString(string: string, attributes:
+            [NSAttributedString.Key.foregroundColor : color ])
     }
     
 }

@@ -13,7 +13,7 @@ class ResultProblemView: UIView {
     
     private let titleLabel = TitleLabel()
     private let resultLabel = ResultLabel()
-    private let descriptionLabel = DescriptionLabel()
+    private var descriptionLabel = DescriptionLabel()
     private let backgroundImage = UIImageView()
     var textHeight: CGFloat = 0
     
@@ -21,7 +21,7 @@ class ResultProblemView: UIView {
         super.init(frame: frame)
         configureUI()
     }
-        
+    
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
@@ -33,6 +33,10 @@ class ResultProblemView: UIView {
     
     func configureComponents() {
         
+        self.layer.shadowOpacity = 1
+        self.layer.shadowRadius = 36
+        self.layer.shadowOffset = CGSize(width: 0, height: 16)
+        self.layer.shadowColor = K.Color.shadowQuint.cgColor
         self.layer.cornerRadius = 10
         
 //        backgroundImage.image = UIImage(named: "warning_logo")
@@ -44,13 +48,28 @@ class ResultProblemView: UIView {
         titleLabel.text = "SKIN PROBLEM"
         titleLabel.textColor = K.Color.redSkinProblemQuint
         
-        resultLabel.numberOfLines = 2
         resultLabel.text = "Acne, dark circles, oiliness, redness"
+        textHeight = resultLabel.requiredHeight
+        resultLabel.sizeToFit()
         
         descriptionLabel.frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width - 48, height: 0)
         descriptionLabel.numberOfLines = 0
         descriptionLabel.lineBreakMode = .byWordWrapping
-        descriptionLabel.text = "Acne: uninflamed blackheads to pus-filled pimples or large, red and tender bumps.\n\nDark circles: dark circles under your eyes happen when the skin beneath both eyes appears darkened\n\nOiliness: oversized sebaceous glands produce excessive amounts of sebum giving the appearance of shiny and greasy skin.\n\nRedness: A response of skin tissues to injury or irritation; characterized by pain and swelling and redness and heat."
+        
+        let descText = customizeFont(string: "\u{2022} Acne: ", font: .interSemiBold(size: 14)!)
+        descText.append(customizeFont(string: "uninflamed blackheads to pus-filled pimples or large, red and tender bumps.\n\n", font: .interRegular(size: 14)!))
+        
+        descText.append(customizeFont(string: "\u{2022} Dark circles: ", font: .interSemiBold(size: 14)!))
+        descText.append(customizeFont(string: "dark circles under your eyes happen when the skin beneath both eyes appears darkened.\n\n", font: .interRegular(size: 14)!))
+        
+        descText.append(customizeFont(string: "\u{2022} Oiliness: ", font: .interSemiBold(size: 14)!))
+        descText.append(customizeFont(string: "oversized sebaceous glands produce excessive amounts of sebum giving the appearance of shiny and greasy skin.\n\n", font: .interRegular(size: 14)!))
+        
+        descText.append(customizeFont(string: "\u{2022} Redness: ", font: .interSemiBold(size: 14)!))
+        descText.append(customizeFont(string: "A response of skin tissues to injury or irritation; characterized by pain and swelling and redness and heat.\n\n", font: .interRegular(size: 14)!))
+        
+        descriptionLabel.attributedText = descText
+        
         textHeight = descriptionLabel.requiredHeight
         descriptionLabel.sizeToFit()
         
@@ -86,6 +105,11 @@ class ResultProblemView: UIView {
             make.top.equalTo(resultLabel.snp.bottom).offset(10)
         }
         
+    }
+    
+    func customizeFont(string: String, font: UIFont) -> NSMutableAttributedString {
+        return NSMutableAttributedString(string: string, attributes:
+            [NSAttributedString.Key.font : font ])
     }
     
 }

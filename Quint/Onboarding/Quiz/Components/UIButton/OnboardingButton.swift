@@ -17,6 +17,7 @@ class OnboardingButton: UIButton {
         
         titleLabel?.font = .clashGroteskMedium(size: 18)
         setTitleColor(K.Color.whiteQuint, for: .normal)
+        
     }
 
     func setText(_ title: String?) {

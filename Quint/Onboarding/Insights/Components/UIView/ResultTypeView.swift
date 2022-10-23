@@ -33,6 +33,10 @@ class ResultTypeView: UIView {
     
     func configureComponents() {
         
+        self.layer.shadowOpacity = 1
+        self.layer.shadowRadius = 36
+        self.layer.shadowOffset = CGSize(width: 0, height: 16)
+        self.layer.shadowColor = K.Color.shadowQuint.cgColor
         self.layer.cornerRadius = 10
         
 //        backgroundImage.image = UIImage(named: "face_3_logo")

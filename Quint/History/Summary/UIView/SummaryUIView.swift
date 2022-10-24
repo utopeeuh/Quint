@@ -9,6 +9,6 @@ import UIKit
 
 class SummaryUIView: UIView {
 
-   var x = 1
+   var x = 10
 
 }

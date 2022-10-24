@@ -9,16 +9,16 @@
 /* Begin PBXBuildFile section */
 		950B32E128F912440095EFB5 /* RatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 950B32E028F912440095EFB5 /* RatingView.swift */; };
 		950D428B28FDC9B400657816 /* IngDetailLowerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 950D428A28FDC9B400657816 /* IngDetailLowerView.swift */; };
+		950404C329010E0100B37DFD /* CollapsableStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 950404C229010E0100B37DFD /* CollapsableStack.swift */; };
+		950404C52901216500B37DFD /* CollapsableStackDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 950404C42901216500B37DFD /* CollapsableStackDelegate.swift */; };
+		950404C72901283300B37DFD /* CollapsableHeaderButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 950404C62901283300B37DFD /* CollapsableHeaderButton.swift */; };
 		951034BE28EFC13D0011AE39 /* HeaderLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951034BD28EFC13D0011AE39 /* HeaderLabel.swift */; };
 		951034C028EFEDA90011AE39 /* IngredientButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951034BF28EFEDA90011AE39 /* IngredientButton.swift */; };
 		951034C828EFF51F0011AE39 /* UIViewController+DismissKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951034C328EFF51F0011AE39 /* UIViewController+DismissKeyboard.swift */; };
 		951034CA28EFF51F0011AE39 /* UIFont+CustomFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951034C528EFF51F0011AE39 /* UIFont+CustomFont.swift */; };
 		951034CB28EFF51F0011AE39 /* UIImageView+DropShadow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951034C628EFF51F0011AE39 /* UIImageView+DropShadow.swift */; };
-		951034D428EFF54C0011AE39 /* QuizSkinCondVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951034CD28EFF54C0011AE39 /* QuizSkinCondVC.swift */; };
-		951034D528EFF54C0011AE39 /* QuizSkinTypeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951034CF28EFF54C0011AE39 /* QuizSkinTypeCell.swift */; };
-		951034D628EFF54C0011AE39 /* QuizSkinCondCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951034D028EFF54C0011AE39 /* QuizSkinCondCell.swift */; };
-		951034D728EFF54C0011AE39 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951034D228EFF54C0011AE39 /* LoginViewController.swift */; };
-		951034D828EFF54C0011AE39 /* QuizSkinTypeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951034D328EFF54C0011AE39 /* QuizSkinTypeVC.swift */; };
+		951034D728EFF54C0011AE39 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951034D228EFF54C0011AE39 /* LoginVC.swift */; };
+		951034D828EFF54C0011AE39 /* OnboardingQuizVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951034D328EFF54C0011AE39 /* OnboardingQuizVC.swift */; };
 		951034E228EFF8820011AE39 /* SkincareGuideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951034DD28EFF8820011AE39 /* SkincareGuideViewController.swift */; };
 		951034E328EFF8820011AE39 /* RoutineHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951034DE28EFF8820011AE39 /* RoutineHomeViewController.swift */; };
 		951034E428EFF8820011AE39 /* SkincareGuideTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951034E128EFF8820011AE39 /* SkincareGuideTableViewCell.swift */; };
@@ -87,6 +87,38 @@
 		95EB50FA28EA82D700412176 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 95EB50F928EA82D700412176 /* Podfile */; };
 		95FC28BC28F1592F00994750 /* UILabel+RequiredHeight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95FC28BB28F1592F00994750 /* UILabel+RequiredHeight.swift */; };
 		C9131C6A5795F6F5C360774C /* libPods-Quint.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A4222B49AA562D57AC4B33E /* libPods-Quint.a */; };
+		95F4478A28FFED4C00183DD9 /* CollapsableButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F4478928FFED4C00183DD9 /* CollapsableButton.swift */; };
+		A0004BF92902688600B98B73 /* OnboardingProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0004BF82902688600B98B73 /* OnboardingProtocol.swift */; };
+		A014EA1328FEAF2A0020DC35 /* UIView+MultipleSubviews.swift in Sources */ = {isa = PBXBuildFile; fileRef = A014EA1228FEAF2A0020DC35 /* UIView+MultipleSubviews.swift */; };
+		A03857B528F7C7E100A4B566 /* UIView+ApplyGradient.swift in Sources */ = {isa = PBXBuildFile; fileRef = A03857B328F7C7E100A4B566 /* UIView+ApplyGradient.swift */; };
+		A03857B628F7C7E100A4B566 /* UILabel+RequiredHeight.swift in Sources */ = {isa = PBXBuildFile; fileRef = A03857B428F7C7E100A4B566 /* UILabel+RequiredHeight.swift */; };
+		A03857C328F80B3400A4B566 /* SignInAppleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A03857C228F80B3400A4B566 /* SignInAppleButton.swift */; };
+		A03857C528F80B4100A4B566 /* NextButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A03857C428F80B4100A4B566 /* NextButton.swift */; };
+		A03857C728F80B7100A4B566 /* SkipButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A03857C628F80B7100A4B566 /* SkipButton.swift */; };
+		A03857C928F80B9900A4B566 /* OnboardingButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A03857C828F80B9900A4B566 /* OnboardingButton.swift */; };
+		A03857CE28F81E7200A4B566 /* SkinTypeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A03857CD28F81E7200A4B566 /* SkinTypeView.swift */; };
+		A03857D028F8353400A4B566 /* BackButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A03857CF28F8353400A4B566 /* BackButton.swift */; };
+		A03857D728F84C5C00A4B566 /* ViewControllerPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = A03857D628F84C5C00A4B566 /* ViewControllerPreview.swift */; };
+		A04BD72329012B0200BEBDAB /* CustomCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04BD72229012B0200BEBDAB /* CustomCellView.swift */; };
+		A0E7EB1428F8545500F56802 /* ViewPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0E7EB1328F8545500F56802 /* ViewPreview.swift */; };
+		A0EF1F0128FCFFA60065AB9A /* OnboardingResultVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0EF1F0028FCFFA60065AB9A /* OnboardingResultVC.swift */; };
+		A0EF1F0328FCFFC70065AB9A /* OnboardingStepsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0EF1F0228FCFFC70065AB9A /* OnboardingStepsVC.swift */; };
+		A0EF1F0928FD08080065AB9A /* ResultTypeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0EF1F0828FD08080065AB9A /* ResultTypeView.swift */; };
+		A0EF1F0B28FD08100065AB9A /* ResultProblemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0EF1F0A28FD08100065AB9A /* ResultProblemView.swift */; };
+		A0EF1F0E28FD0A300065AB9A /* TitleLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0EF1F0D28FD0A300065AB9A /* TitleLabel.swift */; };
+		A0EF1F1028FD0B4C0065AB9A /* ResultLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0EF1F0F28FD0B4C0065AB9A /* ResultLabel.swift */; };
+		A0EF1F1228FD0BAA0065AB9A /* DescriptionLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0EF1F1128FD0BAA0065AB9A /* DescriptionLabel.swift */; };
+		A0F21F4028FD52840072497E /* PhotoConfirmationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0F21F3F28FD52840072497E /* PhotoConfirmationVC.swift */; };
+		A0F21F4228FD53850072497E /* OnboardingParentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0F21F4128FD53850072497E /* OnboardingParentView.swift */; };
+		A0F519E72900261000623A7F /* PhotoResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0F519E62900261000623A7F /* PhotoResultView.swift */; };
+		A0F519E9290032B700623A7F /* RecIngredientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0F519E8290032B700623A7F /* RecIngredientView.swift */; };
+		A0F519EB290064CC00623A7F /* StepContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0F519EA290064CC00623A7F /* StepContainerView.swift */; };
+		A0F560E928FAA4E10091DF7B /* SkinConditionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0F560E828FAA4E10091DF7B /* SkinConditionView.swift */; };
+		A0F560EB28FAA8FC0091DF7B /* SkinProblemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0F560EA28FAA8FC0091DF7B /* SkinProblemView.swift */; };
+		A0F560ED28FAA9050091DF7B /* SkinLogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0F560EC28FAA9050091DF7B /* SkinLogView.swift */; };
+		A0F560EF28FAA91E0091DF7B /* SkinNotifView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0F560EE28FAA91E0091DF7B /* SkinNotifView.swift */; };
+		A0F560F128FAA92A0091DF7B /* SkinInsightView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0F560F028FAA92A0091DF7B /* SkinInsightView.swift */; };
+		A296D17E4F8D7FC95EC4001C /* Pods_Quint.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4FCA6C82D050D03E78104B2C /* Pods_Quint.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -94,16 +126,17 @@
 		6A4222B49AA562D57AC4B33E /* libPods-Quint.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Quint.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		950B32E028F912440095EFB5 /* RatingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingView.swift; sourceTree = "<group>"; };
 		950D428A28FDC9B400657816 /* IngDetailLowerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngDetailLowerView.swift; sourceTree = "<group>"; };
+		4FCA6C82D050D03E78104B2C /* Pods_Quint.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Quint.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		950404C229010E0100B37DFD /* CollapsableStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollapsableStack.swift; sourceTree = "<group>"; };
+		950404C42901216500B37DFD /* CollapsableStackDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollapsableStackDelegate.swift; sourceTree = "<group>"; };
+		950404C62901283300B37DFD /* CollapsableHeaderButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollapsableHeaderButton.swift; sourceTree = "<group>"; };
 		951034BD28EFC13D0011AE39 /* HeaderLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderLabel.swift; sourceTree = "<group>"; };
 		951034BF28EFEDA90011AE39 /* IngredientButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientButton.swift; sourceTree = "<group>"; };
 		951034C328EFF51F0011AE39 /* UIViewController+DismissKeyboard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+DismissKeyboard.swift"; sourceTree = "<group>"; };
 		951034C528EFF51F0011AE39 /* UIFont+CustomFont.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIFont+CustomFont.swift"; sourceTree = "<group>"; };
 		951034C628EFF51F0011AE39 /* UIImageView+DropShadow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImageView+DropShadow.swift"; sourceTree = "<group>"; };
-		951034CD28EFF54C0011AE39 /* QuizSkinCondVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuizSkinCondVC.swift; sourceTree = "<group>"; };
-		951034CF28EFF54C0011AE39 /* QuizSkinTypeCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuizSkinTypeCell.swift; sourceTree = "<group>"; };
-		951034D028EFF54C0011AE39 /* QuizSkinCondCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuizSkinCondCell.swift; sourceTree = "<group>"; };
-		951034D228EFF54C0011AE39 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
-		951034D328EFF54C0011AE39 /* QuizSkinTypeVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuizSkinTypeVC.swift; sourceTree = "<group>"; };
+		951034D228EFF54C0011AE39 /* LoginVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
+		951034D328EFF54C0011AE39 /* OnboardingQuizVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingQuizVC.swift; sourceTree = "<group>"; };
 		951034D928EFF8740011AE39 /* Quint.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Quint.entitlements; sourceTree = "<group>"; };
 		951034DD28EFF8820011AE39 /* SkincareGuideViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SkincareGuideViewController.swift; sourceTree = "<group>"; };
 		951034DE28EFF8820011AE39 /* RoutineHomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoutineHomeViewController.swift; sourceTree = "<group>"; };
@@ -174,6 +207,37 @@
 		95EB50F328EA821600412176 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		95EB50F928EA82D700412176 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		95FC28BB28F1592F00994750 /* UILabel+RequiredHeight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+RequiredHeight.swift"; sourceTree = "<group>"; };
+		95F4478928FFED4C00183DD9 /* CollapsableButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollapsableButton.swift; sourceTree = "<group>"; };
+		A0004BF82902688600B98B73 /* OnboardingProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingProtocol.swift; sourceTree = "<group>"; };
+		A014EA1228FEAF2A0020DC35 /* UIView+MultipleSubviews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+MultipleSubviews.swift"; sourceTree = "<group>"; };
+		A03857B328F7C7E100A4B566 /* UIView+ApplyGradient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+ApplyGradient.swift"; sourceTree = "<group>"; };
+		A03857B428F7C7E100A4B566 /* UILabel+RequiredHeight.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UILabel+RequiredHeight.swift"; sourceTree = "<group>"; };
+		A03857C228F80B3400A4B566 /* SignInAppleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInAppleButton.swift; sourceTree = "<group>"; };
+		A03857C428F80B4100A4B566 /* NextButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NextButton.swift; sourceTree = "<group>"; };
+		A03857C628F80B7100A4B566 /* SkipButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkipButton.swift; sourceTree = "<group>"; };
+		A03857C828F80B9900A4B566 /* OnboardingButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingButton.swift; sourceTree = "<group>"; };
+		A03857CD28F81E7200A4B566 /* SkinTypeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkinTypeView.swift; sourceTree = "<group>"; };
+		A03857CF28F8353400A4B566 /* BackButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackButton.swift; sourceTree = "<group>"; };
+		A03857D628F84C5C00A4B566 /* ViewControllerPreview.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllerPreview.swift; sourceTree = "<group>"; };
+		A04BD72229012B0200BEBDAB /* CustomCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCellView.swift; sourceTree = "<group>"; };
+		A0E7EB1328F8545500F56802 /* ViewPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewPreview.swift; sourceTree = "<group>"; };
+		A0EF1F0028FCFFA60065AB9A /* OnboardingResultVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingResultVC.swift; sourceTree = "<group>"; };
+		A0EF1F0228FCFFC70065AB9A /* OnboardingStepsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingStepsVC.swift; sourceTree = "<group>"; };
+		A0EF1F0828FD08080065AB9A /* ResultTypeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultTypeView.swift; sourceTree = "<group>"; };
+		A0EF1F0A28FD08100065AB9A /* ResultProblemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultProblemView.swift; sourceTree = "<group>"; };
+		A0EF1F0D28FD0A300065AB9A /* TitleLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleLabel.swift; sourceTree = "<group>"; };
+		A0EF1F0F28FD0B4C0065AB9A /* ResultLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultLabel.swift; sourceTree = "<group>"; };
+		A0EF1F1128FD0BAA0065AB9A /* DescriptionLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DescriptionLabel.swift; sourceTree = "<group>"; };
+		A0F21F3F28FD52840072497E /* PhotoConfirmationVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PhotoConfirmationVC.swift; path = Quint/Onboarding/Quiz/ViewController/PhotoConfirmationVC.swift; sourceTree = SOURCE_ROOT; };
+		A0F21F4128FD53850072497E /* OnboardingParentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingParentView.swift; sourceTree = "<group>"; };
+		A0F519E62900261000623A7F /* PhotoResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoResultView.swift; sourceTree = "<group>"; };
+		A0F519E8290032B700623A7F /* RecIngredientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecIngredientView.swift; sourceTree = "<group>"; };
+		A0F519EA290064CC00623A7F /* StepContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepContainerView.swift; sourceTree = "<group>"; };
+		A0F560E828FAA4E10091DF7B /* SkinConditionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkinConditionView.swift; sourceTree = "<group>"; };
+		A0F560EA28FAA8FC0091DF7B /* SkinProblemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkinProblemView.swift; sourceTree = "<group>"; };
+		A0F560EC28FAA9050091DF7B /* SkinLogView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkinLogView.swift; sourceTree = "<group>"; };
+		A0F560EE28FAA91E0091DF7B /* SkinNotifView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkinNotifView.swift; sourceTree = "<group>"; };
+		A0F560F028FAA92A0091DF7B /* SkinInsightView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkinInsightView.swift; sourceTree = "<group>"; };
 		EC353203A173754AD46E48CF /* Pods-Quint.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Quint.debug.xcconfig"; path = "Target Support Files/Pods-Quint/Pods-Quint.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -182,7 +246,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C9131C6A5795F6F5C360774C /* libPods-Quint.a in Frameworks */,
+				A296D17E4F8D7FC95EC4001C /* Pods_Quint.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -223,27 +287,18 @@
 		951034CC28EFF54C0011AE39 /* Onboarding */ = {
 			isa = PBXGroup;
 			children = (
-				951034CD28EFF54C0011AE39 /* QuizSkinCondVC.swift */,
-				951034CE28EFF54C0011AE39 /* TableViewCell */,
+				A0004BF82902688600B98B73 /* OnboardingProtocol.swift */,
 				951034D128EFF54C0011AE39 /* Authentication */,
-				951034D328EFF54C0011AE39 /* QuizSkinTypeVC.swift */,
+				A00ECCC328F1770B0050F91C /* Quiz */,
+				A0EF1EFF28FCFE280065AB9A /* Insights */,
 			);
 			path = Onboarding;
-			sourceTree = "<group>";
-		};
-		951034CE28EFF54C0011AE39 /* TableViewCell */ = {
-			isa = PBXGroup;
-			children = (
-				951034CF28EFF54C0011AE39 /* QuizSkinTypeCell.swift */,
-				951034D028EFF54C0011AE39 /* QuizSkinCondCell.swift */,
-			);
-			path = TableViewCell;
 			sourceTree = "<group>";
 		};
 		951034D128EFF54C0011AE39 /* Authentication */ = {
 			isa = PBXGroup;
 			children = (
-				951034D228EFF54C0011AE39 /* LoginViewController.swift */,
+				951034D228EFF54C0011AE39 /* LoginVC.swift */,
 			);
 			path = Authentication;
 			sourceTree = "<group>";
@@ -362,9 +417,12 @@
 		959C2BF228ED341E007B1251 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				A0E7EB1528F8549300F56802 /* Preview SwiftUI */,
 				9538751C28EDE2A1001979A8 /* ApiService.swift */,
 				95CC136428FE4BDC00D3396A /* UITextView+RequiredHeight.swift */,
 				959C2BF328ED341E007B1251 /* Constants.swift */,
+				A03857B428F7C7E100A4B566 /* UILabel+RequiredHeight.swift */,
+				A03857B328F7C7E100A4B566 /* UIView+ApplyGradient.swift */,
 				959C2BF428ED341E007B1251 /* CAGradientLayer+SetGradient.swift */,
 				951034C628EFF51F0011AE39 /* UIImageView+DropShadow.swift */,
 				951034C528EFF51F0011AE39 /* UIFont+CustomFont.swift */,
@@ -377,6 +435,8 @@
 				9524228E28F42E1800361166 /* UIView+ApplyGradient.swift */,
 				9588035528FD6DEF00E31E39 /* UILabel+NumberOfLines.swift */,
 				95CC136628FE67C000D3396A /* AttributedString+Styles.swift */,
+				A014EA1228FEAF2A0020DC35 /* UIView+MultipleSubviews.swift */,
+				950404C42901216500B37DFD /* CollapsableStackDelegate.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -464,10 +524,109 @@
 			path = Quint;
 			sourceTree = "<group>";
 		};
+		A00ECCC328F1770B0050F91C /* Quiz */ = {
+			isa = PBXGroup;
+			children = (
+				A03857B228F7C5F500A4B566 /* Components */,
+				951034D328EFF54C0011AE39 /* OnboardingQuizVC.swift */,
+			);
+			path = Quiz;
+			sourceTree = "<group>";
+		};
+		A03857B228F7C5F500A4B566 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				A0F21F3F28FD52840072497E /* PhotoConfirmationVC.swift */,
+				A03857BB28F804F000A4B566 /* UIButton */,
+				A03857BA28F804B100A4B566 /* UIView */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		A03857BA28F804B100A4B566 /* UIView */ = {
+			isa = PBXGroup;
+			children = (
+				A0F21F4128FD53850072497E /* OnboardingParentView.swift */,
+				A03857CD28F81E7200A4B566 /* SkinTypeView.swift */,
+				A0F560E828FAA4E10091DF7B /* SkinConditionView.swift */,
+				A0F560EA28FAA8FC0091DF7B /* SkinProblemView.swift */,
+				A0F560EC28FAA9050091DF7B /* SkinLogView.swift */,
+				A0F560EE28FAA91E0091DF7B /* SkinNotifView.swift */,
+				A0F560F028FAA92A0091DF7B /* SkinInsightView.swift */,
+				95F4478928FFED4C00183DD9 /* CollapsableButton.swift */,
+				950404C229010E0100B37DFD /* CollapsableStack.swift */,
+			);
+			path = UIView;
+			sourceTree = "<group>";
+		};
+		A03857BB28F804F000A4B566 /* UIButton */ = {
+			isa = PBXGroup;
+			children = (
+				A03857C828F80B9900A4B566 /* OnboardingButton.swift */,
+				A03857C228F80B3400A4B566 /* SignInAppleButton.swift */,
+				A03857C428F80B4100A4B566 /* NextButton.swift */,
+				A03857C628F80B7100A4B566 /* SkipButton.swift */,
+				A03857CF28F8353400A4B566 /* BackButton.swift */,
+				950404C62901283300B37DFD /* CollapsableHeaderButton.swift */,
+			);
+			path = UIButton;
+			sourceTree = "<group>";
+		};
+		A0E7EB1528F8549300F56802 /* Preview SwiftUI */ = {
+			isa = PBXGroup;
+			children = (
+				A03857D628F84C5C00A4B566 /* ViewControllerPreview.swift */,
+				A0E7EB1328F8545500F56802 /* ViewPreview.swift */,
+			);
+			path = "Preview SwiftUI";
+			sourceTree = "<group>";
+		};
+		A0EF1EFF28FCFE280065AB9A /* Insights */ = {
+			isa = PBXGroup;
+			children = (
+				A0EF1F0628FD071B0065AB9A /* Components */,
+				A0EF1F0028FCFFA60065AB9A /* OnboardingResultVC.swift */,
+				A0EF1F0228FCFFC70065AB9A /* OnboardingStepsVC.swift */,
+			);
+			path = Insights;
+			sourceTree = "<group>";
+		};
+		A0EF1F0628FD071B0065AB9A /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				A0EF1F0C28FD0A220065AB9A /* UILabel */,
+				A0EF1F0728FD07ED0065AB9A /* UIView */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		A0EF1F0728FD07ED0065AB9A /* UIView */ = {
+			isa = PBXGroup;
+			children = (
+				A0EF1F0828FD08080065AB9A /* ResultTypeView.swift */,
+				A0EF1F0A28FD08100065AB9A /* ResultProblemView.swift */,
+				A0F519E62900261000623A7F /* PhotoResultView.swift */,
+				A0F519E8290032B700623A7F /* RecIngredientView.swift */,
+				A0F519EA290064CC00623A7F /* StepContainerView.swift */,
+				A04BD72229012B0200BEBDAB /* CustomCellView.swift */,
+			);
+			path = UIView;
+			sourceTree = "<group>";
+		};
+		A0EF1F0C28FD0A220065AB9A /* UILabel */ = {
+			isa = PBXGroup;
+			children = (
+				A0EF1F0D28FD0A300065AB9A /* TitleLabel.swift */,
+				A0EF1F0F28FD0B4C0065AB9A /* ResultLabel.swift */,
+				A0EF1F1128FD0BAA0065AB9A /* DescriptionLabel.swift */,
+			);
+			path = UILabel;
+			sourceTree = "<group>";
+		};
 		DB8EE3D5BA362498C5AC9D3D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				6A4222B49AA562D57AC4B33E /* libPods-Quint.a */,
+				4FCA6C82D050D03E78104B2C /* Pods_Quint.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -483,7 +642,7 @@
 				95EB50DB28EA821400412176 /* Sources */,
 				95EB50DC28EA821400412176 /* Frameworks */,
 				95EB50DD28EA821400412176 /* Resources */,
-				C1CFCFC7D9323B0716C3D010 /* [CP] Copy Pods Resources */,
+				22BD2B97C881997AD3503752 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -558,6 +717,23 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		22BD2B97C881997AD3503752 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Quint/Pods-Quint-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Quint/Pods-Quint-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Quint/Pods-Quint-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		B46B201D501C264AA824B831 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -580,23 +756,6 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		C1CFCFC7D9323B0716C3D010 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Quint/Pods-Quint-resources-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Quint/Pods-Quint-resources-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Quint/Pods-Quint-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -611,11 +770,24 @@
 				95EB50E728EA821400412176 /* TreatmentsVC.swift in Sources */,
 				9538752328EDE2A1001979A8 /* ProductListCollectionView.swift in Sources */,
 				951034CA28EFF51F0011AE39 /* UIFont+CustomFont.swift in Sources */,
+				A03857CE28F81E7200A4B566 /* SkinTypeView.swift in Sources */,
+				A03857B528F7C7E100A4B566 /* UIView+ApplyGradient.swift in Sources */,
 				959C2C0228ED44A3007B1251 /* UIViewController+ConfigureUI.swift in Sources */,
 				9543DA7328F834AE00E37A28 /* ProductDetailTopView.swift in Sources */,
 				9524229128F4326D00361166 /* AllIngredientsVC.swift in Sources */,
+				A0E7EB1428F8545500F56802 /* ViewPreview.swift in Sources */,
 				95EB50E328EA821400412176 /* AppDelegate.swift in Sources */,
+				A0F560E928FAA4E10091DF7B /* SkinConditionView.swift in Sources */,
+				95F4478A28FFED4C00183DD9 /* CollapsableButton.swift in Sources */,
+				A04BD72329012B0200BEBDAB /* CustomCellView.swift in Sources */,
+				A03857C528F80B4100A4B566 /* NextButton.swift in Sources */,
 				951034E328EFF8820011AE39 /* RoutineHomeViewController.swift in Sources */,
+				A0EF1F0328FCFFC70065AB9A /* OnboardingStepsVC.swift in Sources */,
+				A03857C328F80B3400A4B566 /* SignInAppleButton.swift in Sources */,
+				A03857C928F80B9900A4B566 /* OnboardingButton.swift in Sources */,
+				A0EF1F1028FD0B4C0065AB9A /* ResultLabel.swift in Sources */,
+				A014EA1328FEAF2A0020DC35 /* UIView+MultipleSubviews.swift in Sources */,
+				A03857B628F7C7E100A4B566 /* UILabel+RequiredHeight.swift in Sources */,
 				951034BE28EFC13D0011AE39 /* HeaderLabel.swift in Sources */,
 				9572F0B528F694E00035BCA3 /* UsageCell.swift in Sources */,
 				951034D628EFF54C0011AE39 /* QuizSkinCondCell.swift in Sources */,
@@ -630,6 +802,15 @@
 				95233BDC28EF3B3000A4470E /* ProductListView.swift in Sources */,
 				95A902DA28F53F03007B7F5C /* IngredientListSection.swift in Sources */,
 				9524229328F43E5F00361166 /* IngredientListCollectionView.swift in Sources */,
+				A0F519E9290032B700623A7F /* RecIngredientView.swift in Sources */,
+				A0EF1F0928FD08080065AB9A /* ResultTypeView.swift in Sources */,
+				950404C72901283300B37DFD /* CollapsableHeaderButton.swift in Sources */,
+				A03857D028F8353400A4B566 /* BackButton.swift in Sources */,
+				9538752228EDE2A1001979A8 /* ApiService.swift in Sources */,
+				A03857D728F84C5C00A4B566 /* ViewControllerPreview.swift in Sources */,
+				A0F560EF28FAA91E0091DF7B /* SkinNotifView.swift in Sources */,
+				95233BDC28EF3B3000A4470E /* ProductListView.swift in Sources */,
+				A0EF1F0E28FD0A300065AB9A /* TitleLabel.swift in Sources */,
 				95EB50E528EA821400412176 /* SceneDelegate.swift in Sources */,
 				9543DA7628F8361B00E37A28 /* RatingCell.swift in Sources */,
 				9572F0B728F694F10035BCA3 /* SafetyCell.swift in Sources */,
@@ -646,22 +827,37 @@
 				95EB50ED28EA821400412176 /* Quint.xcdatamodeld in Sources */,
 				951034D828EFF54C0011AE39 /* QuizSkinTypeVC.swift in Sources */,
 				9572F0BB28F698F90035BCA3 /* IngredientDetailVC.swift in Sources */,
+				950404C52901216500B37DFD /* CollapsableStackDelegate.swift in Sources */,
+				A0F519EB290064CC00623A7F /* StepContainerView.swift in Sources */,
+				95EB50ED28EA821400412176 /* Quint.xcdatamodeld in Sources */,
+				951034D828EFF54C0011AE39 /* OnboardingQuizVC.swift in Sources */,
+				A0EF1F0B28FD08100065AB9A /* ResultProblemView.swift in Sources */,
 				951034E228EFF8820011AE39 /* SkincareGuideViewController.swift in Sources */,
-				951034D728EFF54C0011AE39 /* LoginViewController.swift in Sources */,
+				A0F21F4228FD53850072497E /* OnboardingParentView.swift in Sources */,
+				950404C329010E0100B37DFD /* CollapsableStack.swift in Sources */,
+				A0F560F128FAA92A0091DF7B /* SkinInsightView.swift in Sources */,
+				951034D728EFF54C0011AE39 /* LoginVC.swift in Sources */,
+				A0F560ED28FAA9050091DF7B /* SkinLogView.swift in Sources */,
 				9538752528EDE2A1001979A8 /* ProductListCell.swift in Sources */,
 				9572F0B028F68EC00035BCA3 /* InformationCell.swift in Sources */,
+				A0EF1F1228FD0BAA0065AB9A /* DescriptionLabel.swift in Sources */,
 				959C2BF628ED341E007B1251 /* CAGradientLayer+SetGradient.swift in Sources */,
-				951034D428EFF54C0011AE39 /* QuizSkinCondVC.swift in Sources */,
+				A0F560EB28FAA8FC0091DF7B /* SkinProblemView.swift in Sources */,
+				A0004BF92902688600B98B73 /* OnboardingProtocol.swift in Sources */,
 				959C2BF528ED341E007B1251 /* Constants.swift in Sources */,
 				951034E428EFF8820011AE39 /* SkincareGuideTableViewCell.swift in Sources */,
 				9543DA7128F826AA00E37A28 /* ProductDetailVC.swift in Sources */,
 				951034D528EFF54C0011AE39 /* QuizSkinTypeCell.swift in Sources */,
 				95233BDE28EF3F3E00A4470E /* UIScrollView+RemoveSubviews.swift in Sources */,
+				A0F21F4028FD52840072497E /* PhotoConfirmationVC.swift in Sources */,
 				951034C028EFEDA90011AE39 /* IngredientButton.swift in Sources */,
 				95233BE528EF4B5D00A4470E /* HorizontalScrollButtons.swift in Sources */,
 				95233BE128EF481F00A4470E /* IngredientListView.swift in Sources */,
 				9543DA6F28F7BBBA00E37A28 /* PrecautionSegmentView.swift in Sources */,
+				A0EF1F0128FCFFA60065AB9A /* OnboardingResultVC.swift in Sources */,
+				A0F519E72900261000623A7F /* PhotoResultView.swift in Sources */,
 				951034C828EFF51F0011AE39 /* UIViewController+DismissKeyboard.swift in Sources */,
+				A03857C728F80B7100A4B566 /* SkipButton.swift in Sources */,
 				95233BE928EF55AB00A4470E /* SmallCategoryButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -809,7 +1005,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Quint/Quint.entitlements;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = M3J6YQYJKM;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -825,8 +1022,9 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.vendly.macro;
+				PRODUCT_BUNDLE_IDENTIFIER = com.vendly.quint;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "Quint iCloud";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -840,7 +1038,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Quint/Quint.entitlements;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = M3J6YQYJKM;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -856,8 +1055,9 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.vendly.macro;
+				PRODUCT_BUNDLE_IDENTIFIER = com.vendly.quint;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "Quint iCloud";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

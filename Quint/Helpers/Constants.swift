@@ -19,20 +19,30 @@ struct K{
     struct Color{
         static let bgQuint = UIColor(red: 244/255, green: 244/255, blue: 244/255, alpha: 1)
         static let whiteQuint = UIColor(red: 254/255, green: 254/255, blue: 254/255, alpha: 1)
+        static let blackQuint = UIColor(red: 7/255, green: 8/255, blue: 7/255, alpha: 1)
         static let greyDarkQuint = UIColor(red: 35/255, green: 36/255, blue: 35/255, alpha: 1)
         static let greyQuint = UIColor(red: 125/255, green: 125/255, blue: 125/255, alpha: 1)
         
         static let greenLightQuint = UIColor(red: 53/255, green: 84/255, blue: 73/255, alpha: 1)
         static let yellowLightQuint = UIColor(red: 255/255, green: 211/255, blue: 99/255, alpha: 1)
-        static let orangeLightQuint = UIColor(red: 255/255, green: 149/255, blue: 73/255, alpha: 1)
+        static let orangeLightQuint = UIColor(red: 255/255, green: 161/255, blue: 92/255, alpha: 1)
         static let redLightQuint = UIColor(red: 255/255, green: 99/255, blue: 99/255, alpha: 1)
         static let purpleLightQuint = UIColor(red: 169/255, green: 99/255, blue: 255/255, alpha: 1)
+        static let blueLightQuint = UIColor(red: 45/255, green: 61/255, blue: 119/255, alpha: 1)
         
         static let greenQuint = UIColor(red: 29/255, green: 53/255, blue: 44/255, alpha: 1)
         static let yellowQuint = UIColor(red: 239/255, green: 179/255, blue: 28/255, alpha: 1)
-        static let orangeQuint = UIColor(red: 243/255, green: 106/255, blue: 7/255, alpha: 1)
+        static let orangeQuint = UIColor(red: 242/255, green: 105/255, blue: 6/255, alpha: 1)
         static let redQuint = UIColor(red: 199/255, green: 59/255, blue: 59/255, alpha: 1)
         static let purpleQuint = UIColor(red: 121/255, green: 31/255, blue: 238/255, alpha: 1)
+        static let blueQuint = UIColor(red: 11/255, green: 28/255, blue: 87/255, alpha: 1)
+        
+        static let shadowQuint = UIColor(red: 16/255, green: 24/255, blue: 40/255, alpha: 0.05)
+        static let disableBgBtnQuint = UIColor(red: 230/255, green: 230/255, blue: 230/255, alpha: 1)
+        static let disableTextBtnQuint = UIColor(red: 125/255, green: 125/255, blue: 125/255, alpha: 1)
+        static let greenSkinProblemQuint = UIColor(red: 172/255, green: 203/255, blue: 192/255, alpha: 1)
+        static let redSkinProblemQuint = UIColor(red: 255/255, green: 224/255, blue: 224/255, alpha: 1)
+        static let greyWhiteQuint = UIColor(red: 240/255, green: 240/255, blue: 240/255, alpha: 1)
     }
     
     struct identifiers {
@@ -42,9 +52,24 @@ struct K{
     }
     
     struct Category{
+        
+        static let skinProblem = [1: "Acne", 2: "Black heads", 3: "Dark circles", 4: "Dryness", 5: "Dullness", 6: "Oiliness", 7: "Redness", 8: "Uneven texture"]
+        
         static let product = [1: "Toner", 2: "Serum", 3: "Eye Care", 4: "Acne Treatment", 5: "Face Wash", 6: "Face Scrub", 7: "Micellar Water", 8: "Moisturizer", 9: "Sunscreen"]
         
-        static let ingredient = [1: "Anti-acne", 2: "Anti-aging", 3: "Anti-bacterial", 4: "Brightening", 5: "Hydrating", 6: "Moisturizing", 7: "pH Balancer", 8: "Soothing", 9: "UV Protection"]
+        static let ingredient = [1: "Anti-acne", 2: "Anti-aging", 3: "Anti-bacterial", 4: "Anti-inflammatory", 5: "Brightening", 6: "Hydrating", 7: "Moisturizing", 8: "pH Balancer", 9: "Soothing", 10: "UV Protection"]
+        
+        static let skincareSteps: [SkinEssential] = [
+        
+            SkinEssential(title: "Cleanser", partOfDay: .all),
+            SkinEssential(title: "Toner", partOfDay: .all),
+            SkinEssential(title: "Serum", partOfDay: .all),
+            SkinEssential(title: "Eye care", partOfDay: .night),
+            SkinEssential(title: "Moisturizer", partOfDay: .all),
+            SkinEssential(title: "Acne care", partOfDay: .night),
+            SkinEssential(title: "Sunscreen", partOfDay: .morning)
+        
+        ]
     }
     
     struct Dummy{
@@ -59,6 +84,17 @@ struct K{
         static let none = 0
         static let up = 1
         static let down = 2
+    }
+    
+    enum PartOfDay {
+        case morning
+        case night
+        case all
+    }
+    
+    struct SkinEssential {
+        var title: String
+        var partOfDay: PartOfDay
     }
 }
 

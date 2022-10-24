@@ -20,9 +20,11 @@ class SmallCategoryButton: CategoryButton{
         contentEdgeInsets = UIEdgeInsets(top: 8, left: 14, bottom: 8, right: 14)
         
         applyGradient(colours: [K.Color.greenQuint, K.Color.greenLightQuint], locations: [1.0, 0.0])
+//        backgroundColor = K.Color.whiteQuint
         setTitleColor(K.Color.greenQuint, for: .normal)
         titleLabel?.font = .interMedium(size: 13)
         layer.cornerRadius = 10
+        
     }
 
     required init?(coder aDecoder: NSCoder) {

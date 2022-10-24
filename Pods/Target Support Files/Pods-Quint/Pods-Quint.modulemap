@@ -1,4 +1,4 @@
-module Pods_Quint {
+framework module Pods_Quint {
   umbrella header "Pods-Quint-umbrella.h"
 
   export *

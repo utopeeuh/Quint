@@ -1,5 +1,5 @@
 # Uncomment the next line to define a global platform for your project
-# platform :ios, '9.0'
+# platform :ios, '12.0'
 
 target 'Quint' do
   pod 'Kingfisher', '~> 7.0'
@@ -12,4 +12,6 @@ target 'Quint' do
   pod 'Fakery'
   pod 'SMIconLabel'
   pod 'RxDataSources', '~> 5.0'
+  use_frameworks!
+  pod "TTGTagCollectionView"
 end

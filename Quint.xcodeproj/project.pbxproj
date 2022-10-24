@@ -22,6 +22,7 @@
 		72BF72D728F7B3FD0036C456 /* sleepHourUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72BF72D628F7B3FD0036C456 /* sleepHourUIView.swift */; };
 		72BF72D928F838B00036C456 /* moodSliderUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72BF72D828F838B00036C456 /* moodSliderUIView.swift */; };
 		72F64B34290665F200AF4306 /* SummaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72F64B33290665F200AF4306 /* SummaryViewController.swift */; };
+		72F64B372906673100AF4306 /* SummaryUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72F64B362906673100AF4306 /* SummaryUIView.swift */; };
 		950404C329010E0100B37DFD /* CollapsableStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 950404C229010E0100B37DFD /* CollapsableStack.swift */; };
 		950404C52901216500B37DFD /* CollapsableStackDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 950404C42901216500B37DFD /* CollapsableStackDelegate.swift */; };
 		950404C72901283300B37DFD /* CollapsableHeaderButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 950404C62901283300B37DFD /* CollapsableHeaderButton.swift */; };
@@ -154,6 +155,7 @@
 		72BF72D628F7B3FD0036C456 /* sleepHourUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = sleepHourUIView.swift; sourceTree = "<group>"; };
 		72BF72D828F838B00036C456 /* moodSliderUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = moodSliderUIView.swift; sourceTree = "<group>"; };
 		72F64B33290665F200AF4306 /* SummaryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryViewController.swift; sourceTree = "<group>"; };
+		72F64B362906673100AF4306 /* SummaryUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryUIView.swift; sourceTree = "<group>"; };
 		950404C229010E0100B37DFD /* CollapsableStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollapsableStack.swift; sourceTree = "<group>"; };
 		950404C42901216500B37DFD /* CollapsableStackDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollapsableStackDelegate.swift; sourceTree = "<group>"; };
 		950404C62901283300B37DFD /* CollapsableHeaderButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollapsableHeaderButton.swift; sourceTree = "<group>"; };
@@ -319,6 +321,7 @@
 		72F64B31290665C200AF4306 /* UIView */ = {
 			isa = PBXGroup;
 			children = (
+				72F64B362906673100AF4306 /* SummaryUIView.swift */,
 			);
 			path = UIView;
 			sourceTree = "<group>";
@@ -923,6 +926,7 @@
 				95EB50E528EA821400412176 /* SceneDelegate.swift in Sources */,
 				9543DA7628F8361B00E37A28 /* RatingCell.swift in Sources */,
 				9572F0B728F694F10035BCA3 /* SafetyCell.swift in Sources */,
+				72F64B372906673100AF4306 /* SummaryUIView.swift in Sources */,
 				957F0D03290656DC00FFFB06 /* HorizontalScrollButtons.swift in Sources */,
 				95CC136528FE4BDC00D3396A /* UITextView+RequiredHeight.swift in Sources */,
 				9572F0B328F694C70035BCA3 /* AllergenCell.swift in Sources */,

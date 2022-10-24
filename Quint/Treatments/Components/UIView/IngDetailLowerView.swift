@@ -52,12 +52,7 @@ class IngDetailLowerView: UIView{
         return 0
     }
     
-    func configureUI(){
-        configureComponents()
-        configureLayout()
-    }
-    
-    func configureComponents(){
+    override func configureComponents(){
         backgroundColor = K.Color.bgQuint
         
         factLbl.text = "Quick facts"
@@ -103,7 +98,7 @@ class IngDetailLowerView: UIView{
         addToHeight(48*4 + 18*5)
     }
     
-    func configureLayout(){
+    override func configureLayout(){
         addSubview(factLbl)
         addSubview(factStack)
         addSubview(allergenLbl)

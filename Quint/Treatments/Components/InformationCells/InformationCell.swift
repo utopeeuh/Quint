@@ -28,12 +28,7 @@ class InformationCell: UIView{
         fatalError()
     }
     
-    func configureUI(){
-        configureComponents()
-        configureLayout()
-    }
-    
-    func configureComponents(){
+    override func configureComponents(){
         backgroundColor = K.Color.whiteQuint
         layer.cornerRadius = 8
     
@@ -57,7 +52,7 @@ class InformationCell: UIView{
         return descLabel.requiredHeight + 36
     }
     
-    func configureLayout(){
+    override func configureLayout(){
         addSubview(iconImageView)
         addSubview(descLabel)
         

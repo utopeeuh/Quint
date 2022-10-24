@@ -30,12 +30,7 @@ class QuickFactCell: UIView{
         fatalError()
     }
     
-    func configureUI(){
-        configureComponents()
-        configureLayout()
-    }
-    
-    func configureComponents(){
+    override func configureComponents(){
         backgroundColor = K.Color.whiteQuint
         layer.cornerRadius = 8
         
@@ -55,7 +50,7 @@ class QuickFactCell: UIView{
         textLbl.sizeToFit()
     }
     
-    func configureLayout(){
+    override func configureLayout(){
         
         addSubview(numberArea)
         addSubview(numberLbl)

@@ -26,12 +26,7 @@ class ResultTypeView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func configureUI(){
-        configureComponents()
-        configureLayout()
-    }
-    
-    func configureComponents() {
+    override func configureComponents() {
         
         self.layer.shadowOpacity = 1
         self.layer.shadowRadius = 36
@@ -61,7 +56,7 @@ class ResultTypeView: UIView {
         
     }
     
-    func configureLayout() {
+    override func configureLayout() {
         
         multipleSubviews(view: titleLabel,
                                resultLabel,

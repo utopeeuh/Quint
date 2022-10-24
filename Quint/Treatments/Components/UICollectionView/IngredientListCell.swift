@@ -25,8 +25,7 @@ class IngredientListCell: UICollectionViewCell {
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        configureComponents()
-        configureLayout()
+        configureUI()
     }
     
     override init(frame: CGRect) {
@@ -42,13 +41,13 @@ class IngredientListCell: UICollectionViewCell {
         nameLabel.removeFromSuperview()
     }
     
-    func configureComponents(){
+    override func configureComponents(){
         layer.cornerRadius = 10
         backgroundColor = K.Color.whiteQuint
         contentView.addSubview(nameLabel)
     }
     
-    func configureLayout(){
+    override func configureLayout(){
         nameLabel.snp.makeConstraints { make in
             make.centerX.centerY.equalTo(contentView)
             make.width.equalTo(contentView).offset(-48)

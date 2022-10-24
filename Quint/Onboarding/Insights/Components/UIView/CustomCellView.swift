@@ -24,13 +24,8 @@ class CustomCellView: UIView {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
-    func configureUI(){
-        configureComponents()
-        configureLayout()
-    }
 
-    func configureComponents() {
+    override func configureComponents() {
         
         containerBox.frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width-80, height: 56)
         containerBox.backgroundColor = K.Color.whiteQuint
@@ -56,7 +51,7 @@ class CustomCellView: UIView {
         
     }
     
-    func configureLayout() {
+    override func configureLayout() {
 
         multipleSubviews(view: containerBox,
                                numberLabel,

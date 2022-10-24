@@ -25,12 +25,7 @@ class SkinInsightView: OnboardingParentView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func configureUI(){
-        configureComponents()
-        configureLayout()
-    }
-    
-    func configureComponents() {
+    override func configureComponents() {
         
         insightLabel.numberOfLines = 2
         insightLabel.textColor = K.Color.blackQuint
@@ -50,7 +45,7 @@ class SkinInsightView: OnboardingParentView {
         
     }
     
-    func configureLayout() {
+    override func configureLayout() {
         
         addSubview(insightLabel)
         addSubview(insightCaptionLabel)

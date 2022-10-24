@@ -34,12 +34,7 @@ class PrecautionSegmentView: UIView{
         fatalError()
     }
     
-    func configureUI(){
-        configureComponents()
-        configureLayout()
-    }
-    
-    func configureComponents(){
+    override func configureComponents(){
         allergenLabel.text = "Allergen"
         usageLabel.text = "Usage precaution"
         safetyLabel.text = "Safety precaution"
@@ -69,7 +64,7 @@ class PrecautionSegmentView: UIView{
         addToHeight(18*4)
     }
     
-    func configureLayout(){
+    override func configureLayout(){
         addSubview(allergenLabel)
         addSubview(allergenStack)
         addSubview(usageLabel)

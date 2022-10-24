@@ -48,7 +48,7 @@ class LargeCategoryCard: CategoryButton {
         backgroundColor = .white
     }
     
-    func configureLayout(){
+    override func configureLayout(){
         
         self.addSubview(cardStack)
         

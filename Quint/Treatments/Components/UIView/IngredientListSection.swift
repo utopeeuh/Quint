@@ -23,11 +23,6 @@ class IngredientListSection: UIView{
         fatalError("init(coder:) has not been implemented")
     }
     
-    func configureUI(){
-        configureComponents()
-        configureLayout()
-    }
-    
     func setHeader(_ text: String){
         sectionHeader.text = text
     }
@@ -40,12 +35,12 @@ class IngredientListSection: UIView{
         return CGFloat(ingredientCollection.getCount()*(88+22)/2) 
     }
     
-    func configureComponents(){
+    override func configureComponents(){
         backgroundColor = K.Color.bgQuint
         ingredientCollection.feedCollection.isScrollEnabled = false
     }
     
-    func configureLayout(){
+    override func configureLayout(){
         
         addSubview(sectionHeader)
         addSubview(ingredientCollection)

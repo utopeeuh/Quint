@@ -10,7 +10,7 @@ import UIKit
 
 extension NSMutableAttributedString {
     var fontSize:CGFloat { return 16 }
-    var boldFont:UIFont { return .interSemi(size: fontSize)! }
+    var boldFont:UIFont { return .interSemiBold(size: fontSize)! }
     var normalFont:UIFont { return .interRegular(size: fontSize)!}
     
     func bold(_ value:String) -> NSMutableAttributedString {

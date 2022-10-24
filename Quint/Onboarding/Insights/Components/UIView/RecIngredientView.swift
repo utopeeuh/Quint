@@ -22,13 +22,8 @@ class RecIngredientView: UIView {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
-    func configureUI(){
-        configureComponents()
-        configureLayout()
-    }
 
-    func configureComponents() {
+    override func configureComponents() {
         
         self.backgroundColor = K.Color.bgQuint
         self.layer.shadowOpacity = 1
@@ -64,7 +59,7 @@ class RecIngredientView: UIView {
         
     }
     
-    func configureLayout() {
+    override func configureLayout() {
 
         multipleSubviews(view: titleLabel,
                                skinProblemScrollCategories,

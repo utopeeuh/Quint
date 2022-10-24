@@ -25,12 +25,7 @@ class SkinConditionView: OnboardingParentView, CollapsableStackDelegate {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func configureUI(){
-        configureComponents()
-        configureLayout()
-    }
-    
-    func configureComponents() {
+    override func configureComponents() {
         
         skinConditionLabel.numberOfLines = 2
         skinConditionLabel.textColor = UIColor(red: 7/255, green: 8/255, blue: 7/255, alpha: 1)
@@ -51,7 +46,7 @@ class SkinConditionView: OnboardingParentView, CollapsableStackDelegate {
         nextButton.addTarget(self, action: #selector(nextOnClick), for: .touchUpInside)
     }
     
-    func configureLayout() {
+    override func configureLayout() {
         
         addSubview(skinConditionLabel)
         addSubview(collapsableStack)

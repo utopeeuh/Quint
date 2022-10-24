@@ -26,12 +26,7 @@ class SkinNotifView: OnboardingParentView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func configureUI(){
-        configureComponents()
-        configureLayout()
-    }
-    
-    func configureComponents() {
+    override func configureComponents() {
         
         notifLabel.numberOfLines = 2
         notifLabel.textColor = K.Color.blackQuint
@@ -52,7 +47,7 @@ class SkinNotifView: OnboardingParentView {
         
     }
     
-    func configureLayout() {
+    override func configureLayout() {
         
         addSubview(notifLabel)
         addSubview(notifCaptionLabel)

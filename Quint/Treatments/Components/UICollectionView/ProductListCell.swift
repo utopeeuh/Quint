@@ -55,7 +55,7 @@ class ProductListCell: UICollectionViewCell {
         label.textAlignment = .center
         label.translatesAutoresizingMaskIntoConstraints = false
         label.text = "99%"
-        label.font = .interSemi(size: 14)
+        label.font = .interSemiBold(size: 14)
         
         label.setContentHuggingPriority(.defaultHigh, for: .vertical)
         
@@ -75,8 +75,7 @@ class ProductListCell: UICollectionViewCell {
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        configureComponents()
-        configureLayout()
+        configureUI()
     }
     
     override init(frame: CGRect) {
@@ -100,7 +99,7 @@ class ProductListCell: UICollectionViewCell {
         info = nil
     }
     
-    func configureComponents(){
+    override func configureComponents(){
         layer.cornerRadius = 10
         backgroundColor = K.Color.whiteQuint
 
@@ -110,7 +109,7 @@ class ProductListCell: UICollectionViewCell {
         contentView.addSubview(ratingLabel)
     }
     
-    func configureLayout(){
+    override func configureLayout(){
         img.snp.makeConstraints { make in
             make.top.equalTo(contentView.snp.top).offset(20)
             make.height.width.equalTo(150)

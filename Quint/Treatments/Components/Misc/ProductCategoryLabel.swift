@@ -28,16 +28,11 @@ class ProductCategoryLabel: UIView {
         configureUI()
     }
     
-    func configureUI(){
-        configureComponents()
-        configureLayout()
-    }
-    
-    func configureComponents(){
+    override func configureComponents(){
         backgroundColor = K.Color.greenLightQuint
         layer.cornerRadius = 4
     
-        typeLabel.font = .interSemi(size: 12)
+        typeLabel.font = .interSemiBold(size: 12)
         typeLabel.textColor = K.Color.whiteQuint
         typeLabel.numberOfLines = 0
         typeLabel.lineBreakMode = .byWordWrapping
@@ -47,7 +42,7 @@ class ProductCategoryLabel: UIView {
         typeLabel.sizeToFit()
     }
     
-    func configureLayout(){
+    override func configureLayout(){
         addSubview(typeLabel)
 
         typeLabel.snp.makeConstraints { make in

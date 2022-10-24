@@ -27,12 +27,7 @@ class SkinProblemView: OnboardingParentView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func configureUI(){
-        configureComponents()
-        configureLayout()
-    }
-    
-    func configureComponents() {
+    override func configureComponents() {
         
         collectionView.alignment = .left
         
@@ -86,7 +81,7 @@ class SkinProblemView: OnboardingParentView {
         
     }
     
-    func configureLayout() {
+    override func configureLayout() {
         
         addSubview(skinProblemLabel)
         addSubview(collectionView)

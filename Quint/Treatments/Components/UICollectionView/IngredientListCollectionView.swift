@@ -14,7 +14,7 @@ class IngredientListCollectionView: UIView {
     
     override init(frame: CGRect){
         super.init(frame: frame)
-        configureUI()
+        configure()
     }
     
     required init?(coder: NSCoder) {
@@ -22,7 +22,7 @@ class IngredientListCollectionView: UIView {
     }
 
     
-    func configureUI(){
+    override func configure(){
         
         let layout = PinterestLayout()
         layout.delegate = self

@@ -30,13 +30,8 @@ class ProductDetailTopView: UIView{
     required init?(coder: NSCoder) {
         fatalError()
     }
-    
-    func configureUI(){
-        configureComponents()
-        configureLayout()
-    }
-    
-    func configureComponents(){
+
+    override func configureComponents(){
         
         imageFrame.frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 328)
         imageFrame.backgroundColor = K.Color.whiteQuint
@@ -90,7 +85,7 @@ class ProductDetailTopView: UIView{
         }
     }
     
-    func configureLayout(){
+    override func configureLayout(){
         //frame, image, main stack
         
         addSubview(imageFrame)

@@ -28,12 +28,7 @@ class IngredientListView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func configureUI(){
-        configureComponents()
-        configureLayout()
-    }
-    
-    func configureComponents(){
+    override func configureComponents(){
         
         searchBar.layer.borderWidth = 0
         searchBar.backgroundImage = UIImage()
@@ -88,7 +83,7 @@ class IngredientListView: UIView {
         categoryLabel.text = "Ingredient categories"
     }
     
-    func configureLayout(){
+    override func configureLayout(){
         addSubview(searchBar)
         addSubview(headerStack)
         addSubview(topScrollCategories)

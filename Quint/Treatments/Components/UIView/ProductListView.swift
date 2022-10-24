@@ -27,12 +27,7 @@ class ProductListView: UIView{
         fatalError("init(coder:) has not been implemented")
     }
     
-    func configureUI(){
-        configureComponents()
-        configureLayout()
-    }
-    
-    func configureComponents(){
+    override func configureComponents(){
         // Generate buttons for top scroll
         var catButtons: [SmallCategoryButton] = []
         for i in 0..<categories.count {
@@ -45,7 +40,7 @@ class ProductListView: UIView{
         selectTopCategory(catButtons[0])
     }
     
-    func configureLayout(){
+    override func configureLayout(){
         addSubview(topLabel)
         addSubview(scrollView)
         addSubview(productCollection)

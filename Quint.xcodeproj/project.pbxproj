@@ -7,18 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		950B32E128F912440095EFB5 /* RatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 950B32E028F912440095EFB5 /* RatingView.swift */; };
-		950D428B28FDC9B400657816 /* IngDetailLowerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 950D428A28FDC9B400657816 /* IngDetailLowerView.swift */; };
 		950404C329010E0100B37DFD /* CollapsableStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 950404C229010E0100B37DFD /* CollapsableStack.swift */; };
 		950404C52901216500B37DFD /* CollapsableStackDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 950404C42901216500B37DFD /* CollapsableStackDelegate.swift */; };
 		950404C72901283300B37DFD /* CollapsableHeaderButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 950404C62901283300B37DFD /* CollapsableHeaderButton.swift */; };
+		950B32E128F912440095EFB5 /* RatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 950B32E028F912440095EFB5 /* RatingView.swift */; };
+		950D428B28FDC9B400657816 /* IngDetailLowerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 950D428A28FDC9B400657816 /* IngDetailLowerView.swift */; };
 		951034BE28EFC13D0011AE39 /* HeaderLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951034BD28EFC13D0011AE39 /* HeaderLabel.swift */; };
 		951034C028EFEDA90011AE39 /* IngredientButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951034BF28EFEDA90011AE39 /* IngredientButton.swift */; };
 		951034C828EFF51F0011AE39 /* UIViewController+DismissKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951034C328EFF51F0011AE39 /* UIViewController+DismissKeyboard.swift */; };
 		951034CA28EFF51F0011AE39 /* UIFont+CustomFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951034C528EFF51F0011AE39 /* UIFont+CustomFont.swift */; };
 		951034CB28EFF51F0011AE39 /* UIImageView+DropShadow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951034C628EFF51F0011AE39 /* UIImageView+DropShadow.swift */; };
 		951034D728EFF54C0011AE39 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951034D228EFF54C0011AE39 /* LoginVC.swift */; };
-		951034D828EFF54C0011AE39 /* OnboardingQuizVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951034D328EFF54C0011AE39 /* OnboardingQuizVC.swift */; };
 		951034E228EFF8820011AE39 /* SkincareGuideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951034DD28EFF8820011AE39 /* SkincareGuideViewController.swift */; };
 		951034E328EFF8820011AE39 /* RoutineHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951034DE28EFF8820011AE39 /* RoutineHomeViewController.swift */; };
 		951034E428EFF8820011AE39 /* SkincareGuideTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951034E128EFF8820011AE39 /* SkincareGuideTableViewCell.swift */; };
@@ -39,17 +38,14 @@
 		9510352528EFFFDB0011AE39 /* Inter-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9510351528EFFFDB0011AE39 /* Inter-SemiBold.ttf */; };
 		9510352628EFFFDB0011AE39 /* ClashGrotesk-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9510351628EFFFDB0011AE39 /* ClashGrotesk-Medium.otf */; };
 		9510352B28F007DB0011AE39 /* LargeCategoryCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9510352A28F007DB0011AE39 /* LargeCategoryCard.swift */; };
-		95233BDC28EF3B3000A4470E /* ProductListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95233BDB28EF3B3000A4470E /* ProductListView.swift */; };
 		95233BDE28EF3F3E00A4470E /* UIScrollView+RemoveSubviews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95233BDD28EF3F3E00A4470E /* UIScrollView+RemoveSubviews.swift */; };
 		95233BE128EF481F00A4470E /* IngredientListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95233BE028EF481F00A4470E /* IngredientListView.swift */; };
 		95233BE528EF4B5D00A4470E /* HorizontalScrollButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95233BE428EF4B5D00A4470E /* HorizontalScrollButtons.swift */; };
 		95233BE928EF55AB00A4470E /* SmallCategoryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95233BE828EF55AB00A4470E /* SmallCategoryButton.swift */; };
-		9524228F28F42E1800361166 /* UIView+ApplyGradient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9524228E28F42E1800361166 /* UIView+ApplyGradient.swift */; };
 		9524229128F4326D00361166 /* AllIngredientsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9524229028F4326D00361166 /* AllIngredientsVC.swift */; };
 		9524229328F43E5F00361166 /* IngredientListCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9524229228F43E5F00361166 /* IngredientListCollectionView.swift */; };
 		9524229528F43F7900361166 /* IngredientListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9524229428F43F7900361166 /* IngredientListCell.swift */; };
 		9538752128EDE2A1001979A8 /* UICollectionView+Loading.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9538751B28EDE2A1001979A8 /* UICollectionView+Loading.swift */; };
-		9538752228EDE2A1001979A8 /* ApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9538751C28EDE2A1001979A8 /* ApiService.swift */; };
 		9538752328EDE2A1001979A8 /* ProductListCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9538751D28EDE2A1001979A8 /* ProductListCollectionView.swift */; };
 		9538752528EDE2A1001979A8 /* ProductListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9538751F28EDE2A1001979A8 /* ProductListCell.swift */; };
 		9538752628EDE2A1001979A8 /* PinterestLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9538752028EDE2A1001979A8 /* PinterestLayout.swift */; };
@@ -66,6 +62,11 @@
 		9572F0B928F694F90035BCA3 /* SensitivityCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9572F0B828F694F90035BCA3 /* SensitivityCell.swift */; };
 		9572F0BB28F698F90035BCA3 /* IngredientDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9572F0BA28F698F90035BCA3 /* IngredientDetailVC.swift */; };
 		9572F0BD28F6AF5A0035BCA3 /* SourceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9572F0BC28F6AF5A0035BCA3 /* SourceCell.swift */; };
+		957F0CE82906410000FFFB06 /* ApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 957F0CE72906410000FFFB06 /* ApiService.swift */; };
+		957F0CEA2906415300FFFB06 /* ProductListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 957F0CE92906415300FFFB06 /* ProductListView.swift */; };
+		957F0CEC2906418500FFFB06 /* OnboardingQuizVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 957F0CEB2906418500FFFB06 /* OnboardingQuizVC.swift */; };
+		957F0CEF2906423500FFFB06 /* UIView+ConfigureUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 957F0CEE2906423500FFFB06 /* UIView+ConfigureUI.swift */; };
+		957F0CF42906436200FFFB06 /* UIView+ApplyGradient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 957F0CF32906436200FFFB06 /* UIView+ApplyGradient.swift */; };
 		9588035628FD6DEF00E31E39 /* UILabel+NumberOfLines.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9588035528FD6DEF00E31E39 /* UILabel+NumberOfLines.swift */; };
 		959C2BF528ED341E007B1251 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 959C2BF328ED341E007B1251 /* Constants.swift */; };
 		959C2BF628ED341E007B1251 /* CAGradientLayer+SetGradient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 959C2BF428ED341E007B1251 /* CAGradientLayer+SetGradient.swift */; };
@@ -81,16 +82,12 @@
 		95EB50E528EA821400412176 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95EB50E428EA821400412176 /* SceneDelegate.swift */; };
 		95EB50E728EA821400412176 /* TreatmentsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95EB50E628EA821400412176 /* TreatmentsVC.swift */; };
 		95EB50EA28EA821400412176 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 95EB50E828EA821400412176 /* Main.storyboard */; };
-		95EB50ED28EA821400412176 /* Quint.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 95EB50EB28EA821400412176 /* Quint.xcdatamodeld */; };
 		95EB50EF28EA821600412176 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 95EB50EE28EA821600412176 /* Assets.xcassets */; };
 		95EB50F228EA821600412176 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 95EB50F028EA821600412176 /* LaunchScreen.storyboard */; };
 		95EB50FA28EA82D700412176 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 95EB50F928EA82D700412176 /* Podfile */; };
-		95FC28BC28F1592F00994750 /* UILabel+RequiredHeight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95FC28BB28F1592F00994750 /* UILabel+RequiredHeight.swift */; };
-		C9131C6A5795F6F5C360774C /* libPods-Quint.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A4222B49AA562D57AC4B33E /* libPods-Quint.a */; };
 		95F4478A28FFED4C00183DD9 /* CollapsableButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F4478928FFED4C00183DD9 /* CollapsableButton.swift */; };
 		A0004BF92902688600B98B73 /* OnboardingProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0004BF82902688600B98B73 /* OnboardingProtocol.swift */; };
 		A014EA1328FEAF2A0020DC35 /* UIView+MultipleSubviews.swift in Sources */ = {isa = PBXBuildFile; fileRef = A014EA1228FEAF2A0020DC35 /* UIView+MultipleSubviews.swift */; };
-		A03857B528F7C7E100A4B566 /* UIView+ApplyGradient.swift in Sources */ = {isa = PBXBuildFile; fileRef = A03857B328F7C7E100A4B566 /* UIView+ApplyGradient.swift */; };
 		A03857B628F7C7E100A4B566 /* UILabel+RequiredHeight.swift in Sources */ = {isa = PBXBuildFile; fileRef = A03857B428F7C7E100A4B566 /* UILabel+RequiredHeight.swift */; };
 		A03857C328F80B3400A4B566 /* SignInAppleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A03857C228F80B3400A4B566 /* SignInAppleButton.swift */; };
 		A03857C528F80B4100A4B566 /* NextButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A03857C428F80B4100A4B566 /* NextButton.swift */; };
@@ -123,20 +120,18 @@
 
 /* Begin PBXFileReference section */
 		1DE7348A28BE8A5E92A105D1 /* Pods-Quint.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Quint.release.xcconfig"; path = "Target Support Files/Pods-Quint/Pods-Quint.release.xcconfig"; sourceTree = "<group>"; };
-		6A4222B49AA562D57AC4B33E /* libPods-Quint.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Quint.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		950B32E028F912440095EFB5 /* RatingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingView.swift; sourceTree = "<group>"; };
-		950D428A28FDC9B400657816 /* IngDetailLowerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngDetailLowerView.swift; sourceTree = "<group>"; };
 		4FCA6C82D050D03E78104B2C /* Pods_Quint.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Quint.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		950404C229010E0100B37DFD /* CollapsableStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollapsableStack.swift; sourceTree = "<group>"; };
 		950404C42901216500B37DFD /* CollapsableStackDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollapsableStackDelegate.swift; sourceTree = "<group>"; };
 		950404C62901283300B37DFD /* CollapsableHeaderButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollapsableHeaderButton.swift; sourceTree = "<group>"; };
+		950B32E028F912440095EFB5 /* RatingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingView.swift; sourceTree = "<group>"; };
+		950D428A28FDC9B400657816 /* IngDetailLowerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngDetailLowerView.swift; sourceTree = "<group>"; };
 		951034BD28EFC13D0011AE39 /* HeaderLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderLabel.swift; sourceTree = "<group>"; };
 		951034BF28EFEDA90011AE39 /* IngredientButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientButton.swift; sourceTree = "<group>"; };
 		951034C328EFF51F0011AE39 /* UIViewController+DismissKeyboard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+DismissKeyboard.swift"; sourceTree = "<group>"; };
 		951034C528EFF51F0011AE39 /* UIFont+CustomFont.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIFont+CustomFont.swift"; sourceTree = "<group>"; };
 		951034C628EFF51F0011AE39 /* UIImageView+DropShadow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImageView+DropShadow.swift"; sourceTree = "<group>"; };
 		951034D228EFF54C0011AE39 /* LoginVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
-		951034D328EFF54C0011AE39 /* OnboardingQuizVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingQuizVC.swift; sourceTree = "<group>"; };
 		951034D928EFF8740011AE39 /* Quint.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Quint.entitlements; sourceTree = "<group>"; };
 		951034DD28EFF8820011AE39 /* SkincareGuideViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SkincareGuideViewController.swift; sourceTree = "<group>"; };
 		951034DE28EFF8820011AE39 /* RoutineHomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoutineHomeViewController.swift; sourceTree = "<group>"; };
@@ -158,17 +153,14 @@
 		9510351528EFFFDB0011AE39 /* Inter-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-SemiBold.ttf"; sourceTree = "<group>"; };
 		9510351628EFFFDB0011AE39 /* ClashGrotesk-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ClashGrotesk-Medium.otf"; sourceTree = "<group>"; };
 		9510352A28F007DB0011AE39 /* LargeCategoryCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LargeCategoryCard.swift; sourceTree = "<group>"; };
-		95233BDB28EF3B3000A4470E /* ProductListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductListView.swift; sourceTree = "<group>"; };
 		95233BDD28EF3F3E00A4470E /* UIScrollView+RemoveSubviews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIScrollView+RemoveSubviews.swift"; sourceTree = "<group>"; };
 		95233BE028EF481F00A4470E /* IngredientListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientListView.swift; sourceTree = "<group>"; };
 		95233BE428EF4B5D00A4470E /* HorizontalScrollButtons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorizontalScrollButtons.swift; sourceTree = "<group>"; };
 		95233BE828EF55AB00A4470E /* SmallCategoryButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmallCategoryButton.swift; sourceTree = "<group>"; };
-		9524228E28F42E1800361166 /* UIView+ApplyGradient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+ApplyGradient.swift"; sourceTree = "<group>"; };
 		9524229028F4326D00361166 /* AllIngredientsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllIngredientsVC.swift; sourceTree = "<group>"; };
 		9524229228F43E5F00361166 /* IngredientListCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientListCollectionView.swift; sourceTree = "<group>"; };
 		9524229428F43F7900361166 /* IngredientListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientListCell.swift; sourceTree = "<group>"; };
 		9538751B28EDE2A1001979A8 /* UICollectionView+Loading.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UICollectionView+Loading.swift"; sourceTree = "<group>"; };
-		9538751C28EDE2A1001979A8 /* ApiService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiService.swift; sourceTree = "<group>"; };
 		9538751D28EDE2A1001979A8 /* ProductListCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductListCollectionView.swift; sourceTree = "<group>"; };
 		9538751F28EDE2A1001979A8 /* ProductListCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductListCell.swift; sourceTree = "<group>"; };
 		9538752028EDE2A1001979A8 /* PinterestLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PinterestLayout.swift; sourceTree = "<group>"; };
@@ -185,6 +177,12 @@
 		9572F0B828F694F90035BCA3 /* SensitivityCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SensitivityCell.swift; sourceTree = "<group>"; };
 		9572F0BA28F698F90035BCA3 /* IngredientDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientDetailVC.swift; sourceTree = "<group>"; };
 		9572F0BC28F6AF5A0035BCA3 /* SourceCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SourceCell.swift; sourceTree = "<group>"; };
+		957F0CE3290640C800FFFB06 /* ApiService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ApiService.swift; path = Quint/Helpers/ApiService.swift; sourceTree = SOURCE_ROOT; };
+		957F0CE72906410000FFFB06 /* ApiService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiService.swift; sourceTree = "<group>"; };
+		957F0CE92906415300FFFB06 /* ProductListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductListView.swift; sourceTree = "<group>"; };
+		957F0CEB2906418500FFFB06 /* OnboardingQuizVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OnboardingQuizVC.swift; path = Quint/Onboarding/Quiz/VC/OnboardingQuizVC.swift; sourceTree = SOURCE_ROOT; };
+		957F0CEE2906423500FFFB06 /* UIView+ConfigureUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+ConfigureUI.swift"; sourceTree = "<group>"; };
+		957F0CF32906436200FFFB06 /* UIView+ApplyGradient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+ApplyGradient.swift"; sourceTree = "<group>"; };
 		9588035528FD6DEF00E31E39 /* UILabel+NumberOfLines.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+NumberOfLines.swift"; sourceTree = "<group>"; };
 		959C2BF328ED341E007B1251 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		959C2BF428ED341E007B1251 /* CAGradientLayer+SetGradient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CAGradientLayer+SetGradient.swift"; sourceTree = "<group>"; };
@@ -206,11 +204,9 @@
 		95EB50F128EA821600412176 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		95EB50F328EA821600412176 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		95EB50F928EA82D700412176 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		95FC28BB28F1592F00994750 /* UILabel+RequiredHeight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+RequiredHeight.swift"; sourceTree = "<group>"; };
 		95F4478928FFED4C00183DD9 /* CollapsableButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollapsableButton.swift; sourceTree = "<group>"; };
 		A0004BF82902688600B98B73 /* OnboardingProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingProtocol.swift; sourceTree = "<group>"; };
 		A014EA1228FEAF2A0020DC35 /* UIView+MultipleSubviews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+MultipleSubviews.swift"; sourceTree = "<group>"; };
-		A03857B328F7C7E100A4B566 /* UIView+ApplyGradient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+ApplyGradient.swift"; sourceTree = "<group>"; };
 		A03857B428F7C7E100A4B566 /* UILabel+RequiredHeight.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UILabel+RequiredHeight.swift"; sourceTree = "<group>"; };
 		A03857C228F80B3400A4B566 /* SignInAppleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInAppleButton.swift; sourceTree = "<group>"; };
 		A03857C428F80B4100A4B566 /* NextButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NextButton.swift; sourceTree = "<group>"; };
@@ -228,7 +224,7 @@
 		A0EF1F0D28FD0A300065AB9A /* TitleLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleLabel.swift; sourceTree = "<group>"; };
 		A0EF1F0F28FD0B4C0065AB9A /* ResultLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultLabel.swift; sourceTree = "<group>"; };
 		A0EF1F1128FD0BAA0065AB9A /* DescriptionLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DescriptionLabel.swift; sourceTree = "<group>"; };
-		A0F21F3F28FD52840072497E /* PhotoConfirmationVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PhotoConfirmationVC.swift; path = Quint/Onboarding/Quiz/ViewController/PhotoConfirmationVC.swift; sourceTree = SOURCE_ROOT; };
+		A0F21F3F28FD52840072497E /* PhotoConfirmationVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PhotoConfirmationVC.swift; path = Quint/Onboarding/Quiz/VC/PhotoConfirmationVC.swift; sourceTree = SOURCE_ROOT; };
 		A0F21F4128FD53850072497E /* OnboardingParentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingParentView.swift; sourceTree = "<group>"; };
 		A0F519E62900261000623A7F /* PhotoResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoResultView.swift; sourceTree = "<group>"; };
 		A0F519E8290032B700623A7F /* RecIngredientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecIngredientView.swift; sourceTree = "<group>"; };
@@ -414,28 +410,60 @@
 			path = InformationCells;
 			sourceTree = "<group>";
 		};
+		957F0CED2906420200FFFB06 /* VC */ = {
+			isa = PBXGroup;
+			children = (
+				957F0CEB2906418500FFFB06 /* OnboardingQuizVC.swift */,
+				A0F21F3F28FD52840072497E /* PhotoConfirmationVC.swift */,
+			);
+			path = VC;
+			sourceTree = "<group>";
+		};
+		957F0CF02906425400FFFB06 /* UILabel */ = {
+			isa = PBXGroup;
+			children = (
+				9588035528FD6DEF00E31E39 /* UILabel+NumberOfLines.swift */,
+				A03857B428F7C7E100A4B566 /* UILabel+RequiredHeight.swift */,
+			);
+			path = UILabel;
+			sourceTree = "<group>";
+		};
+		957F0CF12906426A00FFFB06 /* UIView */ = {
+			isa = PBXGroup;
+			children = (
+				957F0CF32906436200FFFB06 /* UIView+ApplyGradient.swift */,
+				A014EA1228FEAF2A0020DC35 /* UIView+MultipleSubviews.swift */,
+				957F0CEE2906423500FFFB06 /* UIView+ConfigureUI.swift */,
+			);
+			path = UIView;
+			sourceTree = "<group>";
+		};
+		957F0CF22906428500FFFB06 /* UIViewController */ = {
+			isa = PBXGroup;
+			children = (
+				959C2C0128ED44A3007B1251 /* UIViewController+ConfigureUI.swift */,
+			);
+			path = UIViewController;
+			sourceTree = "<group>";
+		};
 		959C2BF228ED341E007B1251 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				957F0CF22906428500FFFB06 /* UIViewController */,
+				957F0CF12906426A00FFFB06 /* UIView */,
+				957F0CF02906425400FFFB06 /* UILabel */,
 				A0E7EB1528F8549300F56802 /* Preview SwiftUI */,
-				9538751C28EDE2A1001979A8 /* ApiService.swift */,
 				95CC136428FE4BDC00D3396A /* UITextView+RequiredHeight.swift */,
 				959C2BF328ED341E007B1251 /* Constants.swift */,
-				A03857B428F7C7E100A4B566 /* UILabel+RequiredHeight.swift */,
-				A03857B328F7C7E100A4B566 /* UIView+ApplyGradient.swift */,
 				959C2BF428ED341E007B1251 /* CAGradientLayer+SetGradient.swift */,
+				957F0CE72906410000FFFB06 /* ApiService.swift */,
 				951034C628EFF51F0011AE39 /* UIImageView+DropShadow.swift */,
 				951034C528EFF51F0011AE39 /* UIFont+CustomFont.swift */,
 				9538751B28EDE2A1001979A8 /* UICollectionView+Loading.swift */,
-				959C2C0128ED44A3007B1251 /* UIViewController+ConfigureUI.swift */,
 				9538752028EDE2A1001979A8 /* PinterestLayout.swift */,
 				95233BDD28EF3F3E00A4470E /* UIScrollView+RemoveSubviews.swift */,
 				951034C328EFF51F0011AE39 /* UIViewController+DismissKeyboard.swift */,
-				95FC28BB28F1592F00994750 /* UILabel+RequiredHeight.swift */,
-				9524228E28F42E1800361166 /* UIView+ApplyGradient.swift */,
-				9588035528FD6DEF00E31E39 /* UILabel+NumberOfLines.swift */,
 				95CC136628FE67C000D3396A /* AttributedString+Styles.swift */,
-				A014EA1228FEAF2A0020DC35 /* UIView+MultipleSubviews.swift */,
 				950404C42901216500B37DFD /* CollapsableStackDelegate.swift */,
 			);
 			path = Helpers;
@@ -457,8 +485,8 @@
 			children = (
 				950D428A28FDC9B400657816 /* IngDetailLowerView.swift */,
 				95A902DB28F54925007B7F5C /* IngredientSegmentView.swift */,
+				957F0CE92906415300FFFB06 /* ProductListView.swift */,
 				9543DA6E28F7BBBA00E37A28 /* PrecautionSegmentView.swift */,
-				95233BDB28EF3B3000A4470E /* ProductListView.swift */,
 				95233BE028EF481F00A4470E /* IngredientListView.swift */,
 				95A902D928F53F03007B7F5C /* IngredientListSection.swift */,
 				9543DA7228F834AE00E37A28 /* ProductDetailTopView.swift */,
@@ -527,8 +555,8 @@
 		A00ECCC328F1770B0050F91C /* Quiz */ = {
 			isa = PBXGroup;
 			children = (
+				957F0CED2906420200FFFB06 /* VC */,
 				A03857B228F7C5F500A4B566 /* Components */,
-				951034D328EFF54C0011AE39 /* OnboardingQuizVC.swift */,
 			);
 			path = Quiz;
 			sourceTree = "<group>";
@@ -536,7 +564,6 @@
 		A03857B228F7C5F500A4B566 /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				A0F21F3F28FD52840072497E /* PhotoConfirmationVC.swift */,
 				A03857BB28F804F000A4B566 /* UIButton */,
 				A03857BA28F804B100A4B566 /* UIView */,
 			);
@@ -575,6 +602,7 @@
 		A0E7EB1528F8549300F56802 /* Preview SwiftUI */ = {
 			isa = PBXGroup;
 			children = (
+				957F0CE3290640C800FFFB06 /* ApiService.swift */,
 				A03857D628F84C5C00A4B566 /* ViewControllerPreview.swift */,
 				A0E7EB1328F8545500F56802 /* ViewPreview.swift */,
 			);
@@ -771,12 +799,12 @@
 				9538752328EDE2A1001979A8 /* ProductListCollectionView.swift in Sources */,
 				951034CA28EFF51F0011AE39 /* UIFont+CustomFont.swift in Sources */,
 				A03857CE28F81E7200A4B566 /* SkinTypeView.swift in Sources */,
-				A03857B528F7C7E100A4B566 /* UIView+ApplyGradient.swift in Sources */,
 				959C2C0228ED44A3007B1251 /* UIViewController+ConfigureUI.swift in Sources */,
 				9543DA7328F834AE00E37A28 /* ProductDetailTopView.swift in Sources */,
 				9524229128F4326D00361166 /* AllIngredientsVC.swift in Sources */,
 				A0E7EB1428F8545500F56802 /* ViewPreview.swift in Sources */,
 				95EB50E328EA821400412176 /* AppDelegate.swift in Sources */,
+				957F0CF42906436200FFFB06 /* UIView+ApplyGradient.swift in Sources */,
 				A0F560E928FAA4E10091DF7B /* SkinConditionView.swift in Sources */,
 				95F4478A28FFED4C00183DD9 /* CollapsableButton.swift in Sources */,
 				A04BD72329012B0200BEBDAB /* CustomCellView.swift in Sources */,
@@ -788,28 +816,24 @@
 				A0EF1F1028FD0B4C0065AB9A /* ResultLabel.swift in Sources */,
 				A014EA1328FEAF2A0020DC35 /* UIView+MultipleSubviews.swift in Sources */,
 				A03857B628F7C7E100A4B566 /* UILabel+RequiredHeight.swift in Sources */,
+				957F0CEA2906415300FFFB06 /* ProductListView.swift in Sources */,
 				951034BE28EFC13D0011AE39 /* HeaderLabel.swift in Sources */,
 				9572F0B528F694E00035BCA3 /* UsageCell.swift in Sources */,
-				951034D628EFF54C0011AE39 /* QuizSkinCondCell.swift in Sources */,
 				9588035628FD6DEF00E31E39 /* UILabel+NumberOfLines.swift in Sources */,
 				95CC136728FE67C000D3396A /* AttributedString+Styles.swift in Sources */,
 				9572F0B928F694F90035BCA3 /* SensitivityCell.swift in Sources */,
 				95A902DC28F54925007B7F5C /* IngredientSegmentView.swift in Sources */,
 				95A902D828F52D46007B7F5C /* IngredientCategoryDetailVC.swift in Sources */,
 				95CC136328FE4A1400D3396A /* QuickFactCell.swift in Sources */,
-				9538752228EDE2A1001979A8 /* ApiService.swift in Sources */,
-				95FC28BC28F1592F00994750 /* UILabel+RequiredHeight.swift in Sources */,
-				95233BDC28EF3B3000A4470E /* ProductListView.swift in Sources */,
 				95A902DA28F53F03007B7F5C /* IngredientListSection.swift in Sources */,
 				9524229328F43E5F00361166 /* IngredientListCollectionView.swift in Sources */,
 				A0F519E9290032B700623A7F /* RecIngredientView.swift in Sources */,
 				A0EF1F0928FD08080065AB9A /* ResultTypeView.swift in Sources */,
+				957F0CE82906410000FFFB06 /* ApiService.swift in Sources */,
 				950404C72901283300B37DFD /* CollapsableHeaderButton.swift in Sources */,
 				A03857D028F8353400A4B566 /* BackButton.swift in Sources */,
-				9538752228EDE2A1001979A8 /* ApiService.swift in Sources */,
 				A03857D728F84C5C00A4B566 /* ViewControllerPreview.swift in Sources */,
 				A0F560EF28FAA91E0091DF7B /* SkinNotifView.swift in Sources */,
-				95233BDC28EF3B3000A4470E /* ProductListView.swift in Sources */,
 				A0EF1F0E28FD0A300065AB9A /* TitleLabel.swift in Sources */,
 				95EB50E528EA821400412176 /* SceneDelegate.swift in Sources */,
 				9543DA7628F8361B00E37A28 /* RatingCell.swift in Sources */,
@@ -818,23 +842,20 @@
 				95CC136528FE4BDC00D3396A /* UITextView+RequiredHeight.swift in Sources */,
 				9572F0B328F694C70035BCA3 /* AllergenCell.swift in Sources */,
 				9524229528F43F7900361166 /* IngredientListCell.swift in Sources */,
-				9524228F28F42E1800361166 /* UIView+ApplyGradient.swift in Sources */,
 				9510352B28F007DB0011AE39 /* LargeCategoryCard.swift in Sources */,
 				950D428B28FDC9B400657816 /* IngDetailLowerView.swift in Sources */,
 				9572F0BD28F6AF5A0035BCA3 /* SourceCell.swift in Sources */,
 				951034CB28EFF51F0011AE39 /* UIImageView+DropShadow.swift in Sources */,
 				9543DA7828F85A7A00E37A28 /* ProductCategoryLabel.swift in Sources */,
-				95EB50ED28EA821400412176 /* Quint.xcdatamodeld in Sources */,
-				951034D828EFF54C0011AE39 /* QuizSkinTypeVC.swift in Sources */,
 				9572F0BB28F698F90035BCA3 /* IngredientDetailVC.swift in Sources */,
 				950404C52901216500B37DFD /* CollapsableStackDelegate.swift in Sources */,
 				A0F519EB290064CC00623A7F /* StepContainerView.swift in Sources */,
-				95EB50ED28EA821400412176 /* Quint.xcdatamodeld in Sources */,
-				951034D828EFF54C0011AE39 /* OnboardingQuizVC.swift in Sources */,
 				A0EF1F0B28FD08100065AB9A /* ResultProblemView.swift in Sources */,
 				951034E228EFF8820011AE39 /* SkincareGuideViewController.swift in Sources */,
 				A0F21F4228FD53850072497E /* OnboardingParentView.swift in Sources */,
 				950404C329010E0100B37DFD /* CollapsableStack.swift in Sources */,
+				957F0CEF2906423500FFFB06 /* UIView+ConfigureUI.swift in Sources */,
+				957F0CEC2906418500FFFB06 /* OnboardingQuizVC.swift in Sources */,
 				A0F560F128FAA92A0091DF7B /* SkinInsightView.swift in Sources */,
 				951034D728EFF54C0011AE39 /* LoginVC.swift in Sources */,
 				A0F560ED28FAA9050091DF7B /* SkinLogView.swift in Sources */,
@@ -847,7 +868,6 @@
 				959C2BF528ED341E007B1251 /* Constants.swift in Sources */,
 				951034E428EFF8820011AE39 /* SkincareGuideTableViewCell.swift in Sources */,
 				9543DA7128F826AA00E37A28 /* ProductDetailVC.swift in Sources */,
-				951034D528EFF54C0011AE39 /* QuizSkinTypeCell.swift in Sources */,
 				95233BDE28EF3F3E00A4470E /* UIScrollView+RemoveSubviews.swift in Sources */,
 				A0F21F4028FD52840072497E /* PhotoConfirmationVC.swift in Sources */,
 				951034C028EFEDA90011AE39 /* IngredientButton.swift in Sources */,

@@ -27,12 +27,7 @@ class IngredientSegmentView: UIView{
         fatalError()
     }
     
-    func configureUI(){
-        configureComponents()
-        configureLayout()
-    }
-    
-    func configureComponents() {
+    override func configureComponents() {
         
         goodIngCollection.setSource(K.Dummy.ingredient)
         goodIngCollection.setHeader("Good for you")
@@ -54,7 +49,7 @@ class IngredientSegmentView: UIView{
         return goodIngCollection.getHeight() + notableIngCollection.getHeight() + 24 + otherIngredientLabel.requiredHeight + 12 + ingredientList.requiredHeight + 24
     }
     
-    func configureLayout() {
+    override func configureLayout() {
         
        addSubview(goodIngCollection)
        addSubview(notableIngCollection)

@@ -23,12 +23,7 @@ class PhotoResultView: UIView {
             fatalError("init(coder:) has not been implemented")
         }
         
-        func configureUI(){
-            configureComponents()
-            configureLayout()
-        }
-
-        func configureComponents() {
+    override func configureComponents() {
             
             self.backgroundColor = K.Color.whiteQuint
             self.layer.shadowOpacity = 1
@@ -57,7 +52,7 @@ class PhotoResultView: UIView {
             
         }
         
-        func configureLayout() {
+    override func configureLayout() {
 
             multipleSubviews(view: titleLabel,
                                    photoLogImage,

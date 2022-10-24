@@ -34,13 +34,8 @@ class RatingView: UIView{
     required init?(coder: NSCoder) {
         fatalError()
     }
-    
-    func configureUI(){
-        configureComponents()
-        configureLayout()
-    }
-    
-    func configureComponents(){
+
+    override func configureComponents(){
         backgroundColor = K.Color.whiteQuint
         layer.cornerRadius = 8
         
@@ -49,7 +44,7 @@ class RatingView: UIView{
         thumbsUp = UIImageView(image: UIImage(named: "ThumbsUpIcon"))
         
         ratingNumber.text = "69%"
-        ratingNumber.font = .interSemi(size: 14)
+        ratingNumber.font = .interSemiBold(size: 14)
         ratingNumber.textColor = K.Color.greenQuint
         ratingNumber.lineBreakMode = .byWordWrapping
         ratingNumber.numberOfLines = 0
@@ -73,7 +68,7 @@ class RatingView: UIView{
         thumbsDown.addGestureRecognizer(gestureDown)
     }
     
-    func configureLayout(){
+    override func configureLayout(){
         self.addSubview(thumbsUpView)
         self.addSubview(seperator)
         self.addSubview(thumbsDown)

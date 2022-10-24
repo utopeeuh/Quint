@@ -186,7 +186,7 @@
 //    var logRoutine = RoutineUIView()
 //    
 //    
-//    func configureComponents() {
+//    override func configureComponents() {
 //        vStackViewUV.addArrangedSubview(UVLevelLabel)
 //        vStackViewUV.addArrangedSubview(UVLevelParameter)
 //        
@@ -225,7 +225,7 @@
 //        
 //    }
 //    
-//    func configureLayout() {
+//    override func configureLayout() {
 //        view.addSubview(mainStackView)
 //        
 //        hStackViewUV.snp.makeConstraints { make in

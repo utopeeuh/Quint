@@ -51,7 +51,7 @@ class IngredientDetailVC: UIViewController{
         descLbl.sizeToFit()
         descTruncHeight = descLbl.bounds.height
         
-        seeMoreBtn.font =  .interSemi(size: 14)
+        seeMoreBtn.font =  .interSemiBold(size: 14)
         seeMoreBtn.textColor = K.Color.greenQuint
         seeMoreBtn.textAlignment = .left
         seeMoreBtn.numberOfLines = 0
@@ -181,6 +181,6 @@ class IngredientDetailVC: UIViewController{
         seeMoreBtn.icon = UIImage(named: "ArrowDown")
         seeMoreBtn.sizeToFit()
         mainScroll.contentSize.height = scrollHeight
-        print(scrollHeight)
+        print(scrollHeight!)
     }
 }

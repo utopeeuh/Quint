@@ -34,12 +34,7 @@ class CollapsableButton: UIView{
         fatalError()
     }
     
-    func configureUI(){
-        configureComponents()
-        configureLayout()
-    }
-    
-    func configureComponents(){
+    override func configureComponents(){
         
         headerBtn.addTarget(self, action: #selector(showDesc), for: .touchUpInside)
         
@@ -58,7 +53,7 @@ class CollapsableButton: UIView{
         descView.alpha = 0
     }
     
-    func configureLayout(){
+    override func configureLayout(){
         addSubview(descView)
         addSubview(headerBtn)
         

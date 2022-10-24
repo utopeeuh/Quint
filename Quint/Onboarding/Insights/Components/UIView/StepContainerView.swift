@@ -22,13 +22,8 @@ class StepContainerView: UIView {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
-    func configureUI(){
-        configureComponents()
-        configureLayout()
-    }
 
-    func configureComponents() {
+    override func configureComponents() {
         
         layer.cornerRadius = 10
         backgroundColor = K.Color.whiteQuint
@@ -56,7 +51,7 @@ class StepContainerView: UIView {
         
     }
     
-    func configureLayout() {
+    override func configureLayout() {
 
         addSubview(titleLabel)
         titleLabel.snp.makeConstraints { make in

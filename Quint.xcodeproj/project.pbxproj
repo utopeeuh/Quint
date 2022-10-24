@@ -21,6 +21,7 @@
 		72BF72D528F6A93C0036C456 /* UIButton+MoveImageTextLeft.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72BF72D428F6A93C0036C456 /* UIButton+MoveImageTextLeft.swift */; };
 		72BF72D728F7B3FD0036C456 /* sleepHourUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72BF72D628F7B3FD0036C456 /* sleepHourUIView.swift */; };
 		72BF72D928F838B00036C456 /* moodSliderUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72BF72D828F838B00036C456 /* moodSliderUIView.swift */; };
+		72F64B34290665F200AF4306 /* SummaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72F64B33290665F200AF4306 /* SummaryViewController.swift */; };
 		950404C329010E0100B37DFD /* CollapsableStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 950404C229010E0100B37DFD /* CollapsableStack.swift */; };
 		950404C52901216500B37DFD /* CollapsableStackDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 950404C42901216500B37DFD /* CollapsableStackDelegate.swift */; };
 		950404C72901283300B37DFD /* CollapsableHeaderButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 950404C62901283300B37DFD /* CollapsableHeaderButton.swift */; };
@@ -152,6 +153,7 @@
 		72BF72D428F6A93C0036C456 /* UIButton+MoveImageTextLeft.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+MoveImageTextLeft.swift"; sourceTree = "<group>"; };
 		72BF72D628F7B3FD0036C456 /* sleepHourUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = sleepHourUIView.swift; sourceTree = "<group>"; };
 		72BF72D828F838B00036C456 /* moodSliderUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = moodSliderUIView.swift; sourceTree = "<group>"; };
+		72F64B33290665F200AF4306 /* SummaryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryViewController.swift; sourceTree = "<group>"; };
 		950404C229010E0100B37DFD /* CollapsableStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollapsableStack.swift; sourceTree = "<group>"; };
 		950404C42901216500B37DFD /* CollapsableStackDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollapsableStackDelegate.swift; sourceTree = "<group>"; };
 		950404C62901283300B37DFD /* CollapsableHeaderButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollapsableHeaderButton.swift; sourceTree = "<group>"; };
@@ -295,6 +297,38 @@
 				72BF72C828F4514E0036C456 /* PopupRoutine.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		72F64B2F290665B300AF4306 /* History */ = {
+			isa = PBXGroup;
+			children = (
+				72F64B30290665BC00AF4306 /* Summary */,
+			);
+			path = History;
+			sourceTree = "<group>";
+		};
+		72F64B30290665BC00AF4306 /* Summary */ = {
+			isa = PBXGroup;
+			children = (
+				72F64B32290665C900AF4306 /* ViewControllers */,
+				72F64B31290665C200AF4306 /* UIView */,
+			);
+			path = Summary;
+			sourceTree = "<group>";
+		};
+		72F64B31290665C200AF4306 /* UIView */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = UIView;
+			sourceTree = "<group>";
+		};
+		72F64B32290665C900AF4306 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				72F64B33290665F200AF4306 /* SummaryViewController.swift */,
+			);
+			path = ViewControllers;
 			sourceTree = "<group>";
 		};
 		95078B1728EC7F8500093069 /* Treatments */ = {
@@ -577,6 +611,7 @@
 				95EB50E228EA821400412176 /* AppDelegate.swift */,
 				95EB50E428EA821400412176 /* SceneDelegate.swift */,
 				959C2BF228ED341E007B1251 /* Helpers */,
+				72F64B2F290665B300AF4306 /* History */,
 				951034DA28EFF8820011AE39 /* Routines */,
 				951034CC28EFF54C0011AE39 /* Onboarding */,
 				95078B1728EC7F8500093069 /* Treatments */,
@@ -857,6 +892,7 @@
 				95F4478A28FFED4C00183DD9 /* CollapsableButton.swift in Sources */,
 				A04BD72329012B0200BEBDAB /* CustomCellView.swift in Sources */,
 				A03857C528F80B4100A4B566 /* NextButton.swift in Sources */,
+				72F64B34290665F200AF4306 /* SummaryViewController.swift in Sources */,
 				951034E328EFF8820011AE39 /* RoutineHomeViewController.swift in Sources */,
 				A0EF1F0328FCFFC70065AB9A /* OnboardingStepsVC.swift in Sources */,
 				A03857C328F80B3400A4B566 /* SignInAppleButton.swift in Sources */,

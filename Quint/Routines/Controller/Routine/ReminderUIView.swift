@@ -54,17 +54,16 @@ class ReminderUIView: UIView {
 
     required init?(coder: NSCoder) {
         super.init(coder: coder)
-        configureComponents()
-        configureLayout()
+        configureUI()
         
     }
     
-    func configureComponents() {
+    override func configureComponents() {
         hStackReminder.addArrangedSubview(reminderIconView)
         hStackReminder.addArrangedSubview(reminderRoutine)
     }
     
-    func configureLayout() {
+    override func configureLayout() {
         self.addSubview(hStackReminder)
         hStackReminder.snp.makeConstraints { make in
             make.height.equalTo(66)

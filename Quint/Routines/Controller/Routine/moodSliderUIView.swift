@@ -42,24 +42,20 @@ class moodSliderUIView: UIView {
         self.backgroundColor = .white
         self.layer.cornerRadius = 8.0
         self.isUserInteractionEnabled = true
-        configureComponents()
-        configureLayout()
+        configureUI()
     }
 
     required init?(coder: NSCoder) {
         super.init(coder: coder)
-        configureComponents()
-        configureLayout()
-        
     }
     
-    func configureComponents() {
+    override func configureComponents() {
         vStackViewSlider.addArrangedSubview(moodSlider)
         vStackViewSlider.addArrangedSubview(moodDetail)
     }
     
     
-    func configureLayout() {
+    override func configureLayout() {
         self.addSubview(vStackViewSlider)
         
         UIView.animate(withDuration: 0.8) { [self] in

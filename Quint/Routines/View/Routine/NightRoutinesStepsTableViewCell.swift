@@ -66,7 +66,7 @@ class NightRoutinesStepsTableViewCell: UITableViewCell {
         return image
     }()
     
-    func configureComponents() {
+    override func configureComponents() {
         backgroundColor = .clear
         hStackViewCell.addArrangedSubview(numLabel)
         hStackViewCell.addArrangedSubview(titleLabel)
@@ -75,7 +75,7 @@ class NightRoutinesStepsTableViewCell: UITableViewCell {
         containerView.addSubview(hStackViewCell)
     }
     
-    func configureLayout() {
+    override func configureLayout() {
         addSubview(containerView)
         addSubview(spacerView)
         numLabel.snp.makeConstraints { make in
@@ -121,8 +121,7 @@ class NightRoutinesStepsTableViewCell: UITableViewCell {
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
-        configureComponents()
-        configureLayout()
+        configureUI()
     }
 
 }

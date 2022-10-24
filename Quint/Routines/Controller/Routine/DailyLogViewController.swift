@@ -150,7 +150,7 @@ class DailyLogViewController: UIViewController {
     private let sedentaryBtn: UIButton = {
         let button = UIButton()
         button.setTitleColor(K.Color.greenQuint, for: .normal)
-        button.titleLabel?.font = .interSemi(size: 13)
+        button.titleLabel?.font = .interSemiBold(size: 13)
         button.setImage(UIImage(named: "sedentaryIcon"), for: .normal)
         button.setTitle(" Sedentary", for: .normal)
         button.layer.cornerRadius = 8.0
@@ -163,7 +163,7 @@ class DailyLogViewController: UIViewController {
     private let activeBtn: UIButton = {
         let button = UIButton()
         button.setTitleColor(K.Color.greenQuint, for: .normal)
-        button.titleLabel?.font = .interSemi(size: 13)
+        button.titleLabel?.font = .interSemiBold(size: 13)
         button.setImage(UIImage(named: "activeIcon"), for: .normal)
         button.setTitle("    Active", for: .normal)
         button.layer.cornerRadius = 8.0
@@ -176,7 +176,7 @@ class DailyLogViewController: UIViewController {
     private let veryActiveBtn: UIButton = {
         let button = UIButton()
         button.setTitleColor(K.Color.greenQuint, for: .normal)
-        button.titleLabel?.font = .interSemi(size: 13)
+        button.titleLabel?.font = .interSemiBold(size: 13)
         button.setImage(UIImage(named: "veryActiveIcon"), for: .normal)
         button.setTitle(" Very Active", for: .normal)
         button.layer.cornerRadius = 8.0

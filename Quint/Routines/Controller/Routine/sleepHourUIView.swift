@@ -39,9 +39,7 @@ class sleepHourUIView: UIView {
 
     required init?(coder: NSCoder) {
         super.init(coder: coder)
-        configureComponents()
-        configureLayout()
-        
+        configureUI()
     }
     
     private var minBtn: UIButton = {
@@ -113,7 +111,7 @@ class sleepHourUIView: UIView {
         
     }
     
-    func configureComponents() {
+    override func configureComponents() {
         hStackSleepHour.addArrangedSubview(minBtn)
         minBtn.addTarget(self, action: #selector(minHandler), for: .touchUpInside)
         
@@ -137,7 +135,7 @@ class sleepHourUIView: UIView {
     }
     
     
-    func configureLayout() {
+    override func configureLayout() {
         self.addSubview(hStackSleepHour)
         
         minBtn.snp.makeConstraints { make in

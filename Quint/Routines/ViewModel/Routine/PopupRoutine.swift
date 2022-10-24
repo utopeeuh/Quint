@@ -118,7 +118,7 @@ class PopupRoutine: UIView {
         }
     }
     
-    func configureComponents() {
+    override func configureComponents() {
         mainStackView.addArrangedSubview(imagePencil)
         mainStackView.addArrangedSubview(titleLabel)
         mainStackView.addArrangedSubview(subTitleLabel)

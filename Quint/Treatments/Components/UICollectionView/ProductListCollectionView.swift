@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import Fakery
 
 class ProductListCollectionView: UIView {
 

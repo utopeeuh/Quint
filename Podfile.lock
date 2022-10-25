@@ -4,7 +4,6 @@ PODS:
   - Charts/Core (4.1.0):
     - SwiftAlgorithms (~> 1.0)
   - Differentiator (5.0.0)
-  - Fakery (5.1.0)
   - Kingfisher (7.4.0)
   - RxCocoa (6.5.0):
     - RxRelay (= 6.5.0)
@@ -19,24 +18,24 @@ PODS:
   - SMIconLabel (0.5.0)
   - SnapKit (5.6.0)
   - SwiftAlgorithms (1.0.0)
+  - SwiftyJSON (4.3.0)
   - TTGTagCollectionView (2.3.0)
 
 DEPENDENCIES:
   - Charts
-  - Fakery
   - Kingfisher (~> 7.0)
   - RxCocoa (= 6.5.0)
   - RxDataSources (~> 5.0)
   - RxSwift (= 6.5.0)
   - SMIconLabel
   - SnapKit (~> 5.6)
+  - SwiftyJSON (~> 4.0)
   - TTGTagCollectionView
 
 SPEC REPOS:
   trunk:
     - Charts
     - Differentiator
-    - Fakery
     - Kingfisher
     - RxCocoa
     - RxDataSources
@@ -45,12 +44,12 @@ SPEC REPOS:
     - SMIconLabel
     - SnapKit
     - SwiftAlgorithms
+    - SwiftyJSON
     - TTGTagCollectionView
 
 SPEC CHECKSUMS:
   Charts: 354f86803d11d9c35de280587fef50d1af063978
   Differentiator: e8497ceab83c1b10ca233716d547b9af21b9344d
-  Fakery: a90caff00ca5cacde6c161c3eafc72314a03d34d
   Kingfisher: 596b207973051aae5e4c54a1c1cb39837ea10d36
   RxCocoa: 94f817b71c07517321eb4f9ad299112ca8af743b
   RxDataSources: aa47cc1ed6c500fa0dfecac5c979b723542d79cf
@@ -59,8 +58,9 @@ SPEC CHECKSUMS:
   SMIconLabel: 979cdbe5b1cda89bff21eeb3c8f4cbc2aad8e3b1
   SnapKit: e01d52ebb8ddbc333eefe2132acf85c8227d9c25
   SwiftAlgorithms: 38dda4731d19027fdeee1125f973111bf3386b53
+  SwiftyJSON: 6faa0040f8b59dead0ee07436cbf76b73c08fd08
   TTGTagCollectionView: 4104f93281097eae5adbf4444811e32f5e52dc95
 
-PODFILE CHECKSUM: 316b2594eaede5a28401e41c7ebea6016c57f836
+PODFILE CHECKSUM: b7e66bc8843db56b239b927702e233f2a3b373a5
 
 COCOAPODS: 1.11.3

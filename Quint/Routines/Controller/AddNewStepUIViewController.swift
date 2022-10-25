@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SnapKit
 
 @available(iOS 16.0, *)
 class AddNewStepUIViewController: UIViewController {
@@ -76,10 +77,7 @@ class AddNewStepUIViewController: UIViewController {
         navbar.backgroundColor = .white
         self.view.addSubview(navbar)
         navbar.snp.makeConstraints { (make) -> Void in
-            make.left.equalTo(self.view)
-            make.right.equalTo(self.view)
-            make.top.equalTo(self.topLayoutGuide.snp.top)
-            make.bottom.equalTo(self.topLayoutGuide.snp.bottom)
+            make.edges.equalToSuperview()
         }
         configureComponents()
         configureLayout()

@@ -10,7 +10,7 @@ import UIKit
 import CoreData
 import SwiftyJSON
 
-class Seeder{
+class Seeder: SeederDelegate{
     
     var json: JSON!
     var fileName: String!

@@ -11,8 +11,10 @@ import CoreData
 
 class dummy: UIViewController{
     let seeder = IngredientSeeder()
+    let seederIng = ProductSeeder()
     override func viewDidLoad() {
         seeder.seedFromJson()
+        seederIng.seedFromJson()
 //        seeder.fetch()
     }
 }

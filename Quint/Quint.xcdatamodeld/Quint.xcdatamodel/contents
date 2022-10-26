@@ -14,4 +14,14 @@
         <attribute name="source" optional="YES" attributeType="String"/>
         <attribute name="usage" optional="YES" attributeType="String"/>
     </entity>
+    <entity name="Products" representedClassName="ProductModel" syncable="YES">
+        <attribute name="brand" optional="YES" attributeType="String"/>
+        <attribute name="category_id" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="id" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="image" optional="YES" attributeType="String"/>
+        <attribute name="ingredients" optional="YES" attributeType="Transformable"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="price" optional="YES" attributeType="String"/>
+        <attribute name="url" optional="YES" attributeType="String"/>
+    </entity>
 </model>

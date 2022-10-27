@@ -32,11 +32,11 @@ class IngredientSeeder: Seeder{
             newIngredient.name = subJson["Name"].cleanString()
             newIngredient.alt = subJson["Alt"].cleanString()
             newIngredient.desc = subJson["Description"].cleanString()
-            newIngredient.effects = [subJson["Effects"].cleanString()]
-            newIngredient.goodNormal = 1
-            newIngredient.goodDry = 1
-            newIngredient.goodCombi = 1
-            newIngredient.goodOily = 1
+            newIngredient.effects = subJson["Effects"].cleanString().components(separatedBy: ", ")
+            newIngredient.goodNormal = goodForValue(subJson["GoodNormal"])
+            newIngredient.goodDry = goodForValue(subJson["GoodDry"])
+            newIngredient.goodCombi = goodForValue(subJson["GoodCombi"])
+            newIngredient.goodOily = goodForValue(subJson["GoodOily"])
             newIngredient.allergen = subJson["Allergens"].cleanString()
             newIngredient.usage = subJson["Usage"].cleanString()
             newIngredient.source = subJson["Source"].cleanString()
@@ -48,6 +48,19 @@ class IngredientSeeder: Seeder{
         }
         catch{
             print("Seeding failed")
+        }
+    }
+    
+    let NEUTRAL:NSNumber = 0
+    let GOOD:NSNumber  = 1
+    let AVOID:NSNumber  = 2
+    
+    func goodForValue(_ textVal: JSON)->NSNumber{
+        let text = textVal.cleanString()
+        switch(text){
+        case "Good": return GOOD
+        case "Avoid": return AVOID
+        default:  return NEUTRAL
         }
     }
 //    

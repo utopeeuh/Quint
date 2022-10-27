@@ -22,27 +22,6 @@ class DataHelper{
         context = appDelegate.persistentContainer.viewContext
     }
     
-    
-//    func addParty(_ partyList: [PartyModel]) -> [PartyModel]{
-//            var newPartyList = partyList
-//            
-//            let entity = NSEntityDescription.entity(forEntityName: "PartyModel", in: context)
-//            let newParty = PartyModel(entity: entity!, insertInto: context)
-//            
-//            newParty.id = newPartyList.count as NSNumber
-//            
-//            do{
-//                try context.save()
-//                newPartyList.append(newParty)
-//                print("Added new party")
-//            }
-//            catch{
-//                print("context add party save error")
-//            }
-//            
-//            return newPartyList
-//        }
-    
     func clearDatabase(entityName: String) {
 
         let persistentContainer = NSPersistentContainer(name: entityName)

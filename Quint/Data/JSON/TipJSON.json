@@ -1,0 +1,42 @@
+[
+  {
+    "Id": 1,
+    "Description": "Keep your hands off your face. Whenever you touch your face, it will transfer dirt, germs, and oil from your hands to your face. Avoid squeezing pimples, as this can cause scarring."
+  },
+  {
+    "Id": 2,
+    "Description": "UV rays can cause dark spots, accelerate the premature aging to skin cancer. Use sunscreen of at least SPF 30 if you are outside. Re-apply sunscreen every 2-3 hours."
+  },
+  {
+    "Id": 3,
+    "Description": "If your skin feels dull, rough, has large pores and is prone to breakouts, it means that your skin needs to be exfoliated. Exfoliate twice a week to remove dead skin cells from your face."
+  },
+  {
+    "Id": 4,
+    "Description": "Exercise can make the skin cleaner because it improves blood circulation so that it helps remove dirt and \"toxins\" that accumulate and clog your skin pores."
+  },
+  {
+    "Id": 5,
+    "Description": "Stress can trigger increased production of the hormone cortisol, which stimulates the oil glands in the skin, which triggers acne. For that avoid the cause of your stress by doing things that make your mood happy."
+  },
+  {
+    "Id": 6,
+    "Description": "A patch test is done to see if there is a negative reaction from your skin to a new product. The trick is to use it on the inner arm or neck and leave it on for 24 hours. If there is no negative reaction, continue to use."
+  },
+  {
+    "Id": 7,
+    "Description": "Excess caffeine can cause dry skin, dullness, and wrinkles because the diuretic effect of caffeine can cause dehydration. For that, meet the needs of the skin by regularly using skincare products."
+  },
+  {
+    "Id": 8,
+    "Description": "Some sleeping positions can cause fine lines. In time, these lines can turn into deep wrinkles. The supine position is a good position because it can prevent wrinkles on the face and neck."
+  },
+  {
+    "Id": 9,
+    "Description": "Consuming 6 ounces of tuna fillet can meet 40% of your daily vitamin B2 needs which is useful for making the skin more glowing and healthy, preventing free radicals and removing toxins in the body."
+  },
+  {
+    "Id": 10,
+    "Description": "Skin care should not stop just at your face. If you're not showing the skin on your neck the same love as the skin as your face, all your work could be for nothing."
+  }
+]

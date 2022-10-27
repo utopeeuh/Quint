@@ -14,7 +14,7 @@ import CoreData
 class LogModel: NSManagedObject{
     @NSManaged var date: Date
     @NSManaged var sleep: NSNumber
-    @NSManaged var activityId: NSNumber
+    @NSManaged var activityLevel: NSNumber
     @NSManaged var isBetter: Bool
     @NSManaged var imagePath: String?
 }

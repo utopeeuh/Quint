@@ -31,6 +31,7 @@ class ProblemSeeder: Seeder{
             newProblem.id = Int(index)!+1 as NSNumber
             newProblem.title = subJson["Title"].cleanString()
             newProblem.desc = subJson["Description"].cleanString()
+            newProblem.isActive = false
         }
         
         do{

@@ -1,0 +1,22 @@
+[
+  {
+    "Id": 1,
+    "Title": "Normal Skin",
+    "Description": "This skin is neither too dry nor too oily. It has regular texture, no imperfections and a clean, soft appearance, and does not need special care."
+  },
+  {
+    "Id": 2,
+    "Title": "Dry Skin",
+    "Description": "Feeling of tightness and roughness. It may also acquire an ashy gray color, with occurrence of desquamation, itching, redness and small cracks."
+  },
+  {
+    "Id": 3,
+    "Title": "Oily Skin",
+    "Description": "Oily skin has a porous, humid and bright appearance. It is caused by excessive fat production by sebaceous glands."
+  },
+  {
+    "Id": 4,
+    "Title": "Combination Skin",
+    "Description": "Characteristics of both dry and oily skin. The area with more oil is usually the T- zone (forehead, nose, and chin), while the cheeks is normal or dry."
+  }
+]

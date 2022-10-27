@@ -13,5 +13,5 @@ import CoreData
 
 class RoutineModel: NSManagedObject{
     @NSManaged var id: NSNumber
-    @NSManaged var stepIds: [NSNumber]?
+    @NSManaged var title: String?
 }

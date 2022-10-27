@@ -1,0 +1,38 @@
+[
+  {
+    "Id": 1,
+    "Title": "Toner"
+  },
+  {
+    "Id": 2,
+    "Title": "Serum"
+  },
+  {
+    "Id": 3,
+    "Title": "Eye Care"
+  },
+  {
+    "Id": 4,
+    "Title": "Acne Care"
+  },
+  {
+    "Id": 5,
+    "Title": "Cleanser"
+  },
+  {
+    "Id": 6,
+    "Title": "Exfoliator"
+  },
+  {
+    "Id": 7,
+    "Title": "Micellar"
+  },
+  {
+    "Id": 8,
+    "Title": "Moisturizer"
+  },
+  {
+    "Id": 9,
+    "Title": "Sunscreen"
+  }
+]

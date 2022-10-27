@@ -1,0 +1,188 @@
+[
+  {
+    "Id": 1,
+    "Category_Id": 1,
+    "Title": "Wash your face",
+    "Description": "Use a cleanser with some warm water and a soft washcloth to cleanse your face. Gently massage the cleanser into your skin to remove makeup, dirt, and impurities. \n\nRinse well with warm water, then splash some cold water on your face when you finish. Then, blot your face dry with a clean towel."
+  },
+  {
+    "Id": 2,
+    "Category_Id": 1,
+    "Title": "Put toner on cotton pad",
+    "Description": "Pour some toner on the pad until it feels damp but not overly soaked. You could also use a cotton ball for this step if it’s all you have on hand. \n\nHowever, cotton pads will soak up less product than cotton balls, which will help conserve your toner."
+  },
+  {
+    "Id": 3,
+    "Category_Id": 1,
+    "Title": "Lightly spread the toner over your face and neck",
+    "Description": "Use the cotton pad to gently wipe the product over your face, neck, and décolletage. Avoid the eye area and be careful not to get product on your lips. \n\nPay particular attention to crevasses and difficult-to-reach areas including the brows, sides of the nose, near the ears, and hairline. \n\nThe toner will help remove the impurities that the cleanser couldn’t reach, as well as any cleanser residue or salt, chlorine, or chemicals found in tap water."
+  },
+  {
+    "Id": 4,
+    "Category_Id": 1,
+    "Title": "Wait for the toner to dry",
+    "Description": "Since most toners are water-based, they absorb into the skin fairly quickly. Make sure to let the toner sink in completely before applying other products. This will help your skin retain moisture and protect against impurities."
+  },
+  {
+    "Id": 5,
+    "Category_Id": 2,
+    "Title": "Apply 1 drop to each section of your face",
+    "Description": "The amount of serum you use will vary depending on the consistency of the ingredients. When using thinner serums, you only need a tiny amount. \n\nApply 1 drop to your finger, then rub onto your cheek. Repeat this for the other cheek, as well as your forehead and nose/chin area. Gently rub the serum in an upwards motion."
+  },
+  {
+    "Id": 6,
+    "Category_Id": 2,
+    "Title": "Tap your skin gently for 30-60s",
+    "Description": "After you’ve rubbed the serum onto your skin, place your fingers on your cheek and press your skin in small, circular motions. Repeat this across the entirety of your face for about a minute."
+  },
+  {
+    "Id": 7,
+    "Category_Id": 2,
+    "Title": "Wait one minute",
+    "Description": "Your serum will mostly dissolve into your skin after about a minute."
+  },
+  {
+    "Id": 8,
+    "Category_Id": 3,
+    "Title": "Use your ring finger.",
+    "Description": "It’s your weakest finger, so it will naturally have a gentle touch."
+  },
+  {
+    "Id": 9,
+    "Category_Id": 3,
+    "Title": "Scoop up a pea-sized amount of product.",
+    "Description": ""
+  },
+  {
+    "Id": 10,
+    "Category_Id": 3,
+    "Title": "Gently tap small dots under your eyes",
+    "Description": "Starting in the innermost corner and moving outward. Avoid applying cream too close to your bottom eyelashes."
+  },
+  {
+    "Id": 11,
+    "Category_Id": 3,
+    "Title": "Pat the product into your skin",
+    "Description": "Avoid dragging or rubbing."
+  },
+  {
+    "Id": 12,
+    "Category_Id": 3,
+    "Title": "Wait 2 minutes to let the cream fully absorb.",
+    "Description": ""
+  },
+  {
+    "Id": 13,
+    "Category_Id": 4,
+    "Title": "Squeeze a pea sized amount of product onto your finger",
+    "Description": "One of the most common mistakes people make when trying to treat acne is using too much of the prescription-strength product. \n\nBecause you’ve been prescribed a topical lotion or cream that has clinically proven acne-fighting prescription ingredients in it, it’s super important to not use too much."
+  },
+  {
+    "Id": 14,
+    "Category_Id": 4,
+    "Title": "Dab the acne cream on the affected areas",
+    "Description": "Next, use your finger to gently dab it onto the affected areas. You may want to apply directly onto the blemishes themselves, carefully distributing the pea sized amount over the whole area."
+  },
+  {
+    "Id": 15,
+    "Category_Id": 4,
+    "Title": "Massage the acne treatment through",
+    "Description": "Once you’ve evenly distributed the pea sized dollop over your acne, gently massage and spread it over the whole affected area. You’ll end up with a very thin layer of the acne cream over the affected area, not just on the individual blemishes. \n\nBecause acne starts inside your pores, it’s helpful to have the medication spread thinly and evenly over the whole area you’re breaking out to help prevent acne from forming."
+  },
+  {
+    "Id": 16,
+    "Category_Id": 5,
+    "Title": "Wash your hands",
+    "Description": "Before washing your face, make sure your hands are clean. Washing your face with dirty hands can cause grime and impurities from your hands to end up on your face!"
+  },
+  {
+    "Id": 17,
+    "Category_Id": 5,
+    "Title": "Wet your face",
+    "Description": "Apply lukewarm water to your face before applying your cleanser. This step helps the cleanser go smoothly on your skin and spread evenly across your face."
+  },
+  {
+    "Id": 18,
+    "Category_Id": 5,
+    "Title": "Apply cleanser",
+    "Description": "Squeeze a dime-size amount of your cleanser onto clean hands and then apply it to your face. Make sure to apply the product evenly to your face and don’t forget about places like your hairline, jawline, and neck.\n\nBe careful around your eyes and mouth. If you get product in these areas, it can lead to irritation."
+  },
+  {
+    "Id": 19,
+    "Category_Id": 5,
+    "Title": "Gently massage your face",
+    "Description": "After applying your cleanser, gently massage your face and neck with your fingers, using small, circular motions."
+  },
+  {
+    "Id": 20,
+    "Category_Id": 5,
+    "Title": "Rinse",
+    "Description": "When you are finished cleansing your skin, rinse your face off with lukewarm water. Depending on personal preference, you can use a washcloth or just your hands to remove the cleanser after washing.\n\nAvoid using hot water when rinsing your face. Using water that is too hot can irritate your skin and dry out your skin."
+  },
+  {
+    "Id": 21,
+    "Category_Id": 5,
+    "Title": "Pat your face dry",
+    "Description": "Use a soft towel to gently pat your skin dry. The skin on your face is delicate, so avoid rubbing or pulling your skin as you remove excess moisture."
+  },
+  {
+    "Id": 22,
+    "Category_Id": 6,
+    "Title": "Apply your exfoliator by making circular motions with your fingers",
+    "Description": "Put a quarter-size amount of your chemical exfoliator or scrub on your fingertips. Then, rub it across your face with circular motions.\n\nTry not to apply too much product while you exfoliate, and don't be too aggressive when you apply the exfoliator."
+  },
+  {
+    "Id": 23,
+    "Category_Id": 6,
+    "Title": "Rinse off the exfoliator with cool water and pat your face dry",
+    "Description": "Splash the water over your face until all of the product is removed. Use cool water to shrink the look of your pores. Then, blot your face dry using a soft, clean towel."
+  },
+  {
+    "Id": 24,
+    "Category_Id": 7,
+    "Title": "Moisten a cotton pad with micellar water",
+    "Description": "Pour micellar water onto a makeup remover pad, cotton ball, makeup wipe, or gentle washcloth."
+  },
+  {
+    "Id": 25,
+    "Category_Id": 7,
+    "Title": "Gently wipe the moist pad across your face",
+    "Description": "Move the pad across your skin to remove dirt, grime, or sweat"
+  },
+  {
+    "Id": 26,
+    "Category_Id": 7,
+    "Title": "Dry with a clean towel or use another face wash.",
+    "Description": "You can wrap up the cleansing portion of your skincare routine with the micellar water and dry your face with an unused towel, or you can use micellar water as part of a double-cleanse routine."
+  },
+  {
+    "Id": 27,
+    "Category_Id": 8,
+    "Title": "Use an almond-sized amount of product for each application",
+    "Description": "The amount of moisturizer to use varies by product. In general, thinner moisturizers can be applied more generously since your face absorbs them quickly. \n\nIf you’re using a really thick moisturizer, a small dollop should do the trick. If you aren't sure where to start, go with an almond-sized amount of product."
+  },
+  {
+    "Id": 28,
+    "Category_Id": 8,
+    "Title": "Dab a small amount of the moisturizer on different areas of your face",
+    "Description": "Use clean fingertips to apply small dabs of the moisturizer onto key dry areas like your forehead, cheeks, nose, and chin. This helps to distribute the product evenly all over your face."
+  },
+  {
+    "Id": 29,
+    "Category_Id": 8,
+    "Title": "Spread the moisturizer evenly around your face with your fingertips",
+    "Description": "Using your fingertips, smooth each dab of moisturizer upwards and outwards on your face using circular motions. \n\nYou only need to apply gentle pressure to blend the moisturizer into your skin evenly. Be extra careful around the delicate eye area."
+  },
+  {
+    "Id": 30,
+    "Category_Id": 9,
+    "Title": "Lay it on thick",
+    "Description": "Use a tablespoon of sunscreen (of at least an SPF 25) on your face, and about two ounces for your body. Unless you slather on a thick layer, you’re probably just getting an SPF 10 out of your SPF 30."
+  },
+  {
+    "Id": 31,
+    "Category_Id": 9,
+    "Title": "Dot sunscreen directly onto your face",
+    "Description": "Instead of squeezing a giant blob onto your hands and applying it. This technique helps it absorb more quickly and evenly."
+  }
+]

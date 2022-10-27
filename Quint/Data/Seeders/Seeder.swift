@@ -28,6 +28,7 @@ class Seeder: SeederDelegate{
                 print("parse error: \(error.localizedDescription)")
             }
         } else {
+            
             print("Invalid filename/path.")
         }
         

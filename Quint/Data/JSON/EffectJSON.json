@@ -1,0 +1,56 @@
+[
+  {
+    "Id": 1,
+    "Title": "Anti-acne",
+    "Description": "Prevent and fight against acne by preventing and unclogging clogged pores",
+    "Icon": "AntiAcneCategory"
+  },
+  {
+    "Id": 2,
+    "Title": "Anti-aging",
+    "Description": "Slows your skin aging, reduce age spots, or prevent wrinkles",
+    "Icon": "AntiAgingCategory"
+  },
+  {
+    "Id": 3,
+    "Title": "Anti-bacterial",
+    "Description": "Control micro-organisms growth on your skin",
+    "Icon": "AntiBacterialCategory"
+  },
+  {
+    "Id": 4,
+    "Title": "Brightening",
+    "Description": "Fade brownish spots (hyper-pigmentation) caused by sun damage or PIH (post-inflammatory hyper-pigmentation)",
+    "Icon": "BrighteningCategory"
+  },
+  {
+    "Id": 5,
+    "Title": "Hydrating",
+    "Description": "Attract water to the outermost layer of the skin",
+    "Icon": "HydratingCategory"
+  },
+  {
+    "Id": 6,
+    "Title": "Moisturizing",
+    "Description": "Lubricate the skin to prevent water from escaping",
+    "Icon": "MoisturizingCategory"
+  },
+  {
+    "Id": 7,
+    "Title": "pH balancer",
+    "Description": "pH balanced skincare for optimal skincare benefits",
+    "Icon": "PhBalanceCategory"
+  },
+  {
+    "Id": 8,
+    "Title": "Soothing",
+    "Description": "Lightening discomfort of your skin",
+    "Icon": "SoothingCategory"
+  },
+  {
+    "Id": 9,
+    "Title": "UV protection",
+    "Description": "Protects your skin from UV lights",
+    "Icon": "UVCategory"
+  }
+]

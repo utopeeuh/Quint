@@ -27,9 +27,7 @@ class UserSeeder: Seeder{
 
         newUser.skinTypeId = 1
         newUser.isSensitive = true
-        newUser.problemIds = [1,2,3]
-        
-        
+    
         do{
             try context.save()
             print("Seeding success")

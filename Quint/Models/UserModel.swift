@@ -14,5 +14,4 @@ import CoreData
 class UserModel: NSManagedObject{
     @NSManaged var skinTypeId: NSNumber
     @NSManaged var isSensitive: Bool
-    @NSManaged var problemIds: [NSNumber]
 }

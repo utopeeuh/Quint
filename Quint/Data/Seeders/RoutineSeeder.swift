@@ -14,7 +14,7 @@ class RoutineSeeder: Seeder{
     
     required init() {
         super.init()
-        self.fileName = "RoutineJSON"
+        self.fileName = ""
     }
     
     override func seed(){
@@ -23,18 +23,20 @@ class RoutineSeeder: Seeder{
         let context : NSManagedObjectContext = appDelegate.persistentContainer.viewContext
         let entity: NSEntityDescription = NSEntityDescription.entity(forEntityName: "Routines", in: context)!
         
-        for (index,_):(String, JSON) in json {
-            // Do something you want
+        let morningRoutine = RoutineModel(entity: entity, insertInto: context)
 
-            let newRoutine = RoutineModel(entity: entity, insertInto: context)
-
-            newRoutine.id = Int(index)!+1 as NSNumber
-            newRoutine.stepIds = [1,2,3]
-        }
+        morningRoutine.id = 1
+        morningRoutine.title = "Morning"
         
+//        let nightRoutine = RoutineModel(entity: entity, insertInto: context)
+//        
+//        nightRoutine.id = 2
+//        nightRoutine.title = "Night"
+//        
         do{
             try context.save()
             print("Seeding success")
+            
         }
         catch{
             print("Seeding failed")

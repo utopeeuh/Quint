@@ -1,0 +1,42 @@
+[
+  {
+    "Id": 1,
+    "Title": "Acne",
+    "Description": "Uninflamed blackheads to pus-filled pimples or large, red and tender bumps."
+  },
+  {
+    "Id": 2,
+    "Title": "Black heads",
+    "Description": "Open bumps on the skin that fill with excess oil and dead skin"
+  },
+  {
+    "Id": 3,
+    "Title": "Dark circles",
+    "Description": "Dark circles under your eyes happen when the skin beneath both eyes appears darkened"
+  },
+  {
+    "Id": 4,
+    "Title": "Dryness",
+    "Description": "Skin easily loses moisture and hydration causing rough, flaky or scaly patches of skin."
+  },
+  {
+    "Id": 5,
+    "Title": "Dullness",
+    "Description": "A lack of radiance or an inability to reflect light well. Skin looks dry, patchy, ashy, or lackluster."
+  },
+  {
+    "Id": 6,
+    "Title": "Oiliness",
+    "Description": "Oversized sebaceous glands produce excessive amounts of sebum giving the appearance of shiny and greasy skin."
+  },
+  {
+    "Id": 7,
+    "Title": "Redness",
+    "Description": "A response of skin tissues to injury or irritation; characterized by pain and swelling and redness and heat."
+  },
+  {
+    "Id": 8,
+    "Title": "Uneven texture",
+    "Description": "Skin feel rough or bumpy to the touch due to excess dead skin cells built up on the surface of the skin"
+  }
+]

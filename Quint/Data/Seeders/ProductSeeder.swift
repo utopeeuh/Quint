@@ -34,8 +34,7 @@ class ProductSeeder: Seeder{
             newProduct.price = subJson["Price"].cleanString()
             newProduct.url = subJson["Url"].cleanString()
             newProduct.image = subJson["Image"].cleanString()
-            newProduct.ingredients = ["Water", "Cum"]
-//            newProduct.ingredients = subJson["Ingredients"].cleanString()
+            newProduct.ingredients = convertIngredientsToArray(subJson["Ingredients"])
         }
         
         do{
@@ -45,5 +44,16 @@ class ProductSeeder: Seeder{
         catch{
             print("Seeding failed")
         }
+    }
+    
+    func convertIngredientsToArray(_ list: JSON)->[String]{
+        let firstArr = list.cleanString().components(separatedBy: ",")
+        
+        var cleanArr: [String] = []
+        firstArr.forEach { ing in
+            cleanArr.append(ing.trimmingCharacters(in: .whitespacesAndNewlines))
+        }
+        
+        return cleanArr
     }
 }

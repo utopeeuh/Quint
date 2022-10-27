@@ -87,10 +87,8 @@
 		958253FD2908F7B50053AABC /* RoutineSeeder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 958253FC2908F7B50053AABC /* RoutineSeeder.swift */; };
 		958253FF2908F7EF0053AABC /* RoutineModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 958253FE2908F7EF0053AABC /* RoutineModel.swift */; };
 		958254032908F8030053AABC /* LogModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 958254022908F8030053AABC /* LogModel.swift */; };
-		958254092908F9310053AABC /* CategorySeeder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 958254082908F9310053AABC /* CategorySeeder.swift */; };
-		9582540B2908F9400053AABC /* CategoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9582540A2908F9400053AABC /* CategoryModel.swift */; };
-		958254112908FC2B0053AABC /* ActivitySeeder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 958254102908FC2B0053AABC /* ActivitySeeder.swift */; };
-		958254132908FC360053AABC /* ActivityModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 958254122908FC360053AABC /* ActivityModel.swift */; };
+		958254092908F9310053AABC /* EffectSeeder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 958254082908F9310053AABC /* EffectSeeder.swift */; };
+		9582540B2908F9400053AABC /* EffectModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9582540A2908F9400053AABC /* EffectModel.swift */; };
 		958254152908FFF20053AABC /* SkinTypeSeeder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 958254142908FFF20053AABC /* SkinTypeSeeder.swift */; };
 		958254172908FFFD0053AABC /* ProblemSeeder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 958254162908FFFD0053AABC /* ProblemSeeder.swift */; };
 		958254192909000B0053AABC /* SkinTypeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 958254182909000B0053AABC /* SkinTypeModel.swift */; };
@@ -107,6 +105,18 @@
 		958E32F72907C92000171AF3 /* IngredientModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 958E32F62907C92000171AF3 /* IngredientModel.swift */; };
 		958E32FB2907DA9C00171AF3 /* Quint.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 958E32F92907DA9C00171AF3 /* Quint.xcdatamodeld */; };
 		958E32FD2907E0E400171AF3 /* JSON+CleanString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 958E32FC2907E0E400171AF3 /* JSON+CleanString.swift */; };
+		9595D376290A369B00167C41 /* TipSeeder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9595D375290A369B00167C41 /* TipSeeder.swift */; };
+		9595D378290A36A900167C41 /* TipModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9595D377290A36A900167C41 /* TipModel.swift */; };
+		9595D37A290A39BA00167C41 /* CategorySeeder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9595D379290A39BA00167C41 /* CategorySeeder.swift */; };
+		9595D37C290A39C700167C41 /* CategoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9595D37B290A39C700167C41 /* CategoryModel.swift */; };
+		9595D37E290A461000167C41 /* UsageStepSeeder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9595D37D290A461000167C41 /* UsageStepSeeder.swift */; };
+		9595D380290A462300167C41 /* UsageStepModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9595D37F290A462300167C41 /* UsageStepModel.swift */; };
+		9595D387290A522300167C41 /* EffectJSON.json in Resources */ = {isa = PBXBuildFile; fileRef = 9595D381290A522200167C41 /* EffectJSON.json */; };
+		9595D388290A522300167C41 /* UsageStepJSON.json in Resources */ = {isa = PBXBuildFile; fileRef = 9595D382290A522200167C41 /* UsageStepJSON.json */; };
+		9595D389290A522300167C41 /* ProblemJSON.json in Resources */ = {isa = PBXBuildFile; fileRef = 9595D383290A522200167C41 /* ProblemJSON.json */; };
+		9595D38A290A522300167C41 /* SkinTypeJSON.json in Resources */ = {isa = PBXBuildFile; fileRef = 9595D384290A522200167C41 /* SkinTypeJSON.json */; };
+		9595D38C290A522300167C41 /* TipJSON.json in Resources */ = {isa = PBXBuildFile; fileRef = 9595D386290A522300167C41 /* TipJSON.json */; };
+		9595D38E290A523600167C41 /* CategoryJSON.json in Resources */ = {isa = PBXBuildFile; fileRef = 9595D38D290A523600167C41 /* CategoryJSON.json */; };
 		959C2BF528ED341E007B1251 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 959C2BF328ED341E007B1251 /* Constants.swift */; };
 		959C2BF628ED341E007B1251 /* CAGradientLayer+SetGradient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 959C2BF428ED341E007B1251 /* CAGradientLayer+SetGradient.swift */; };
 		959C2C0228ED44A3007B1251 /* UIViewController+ConfigureUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 959C2C0128ED44A3007B1251 /* UIViewController+ConfigureUI.swift */; };
@@ -245,10 +255,8 @@
 		958253FC2908F7B50053AABC /* RoutineSeeder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutineSeeder.swift; sourceTree = "<group>"; };
 		958253FE2908F7EF0053AABC /* RoutineModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutineModel.swift; sourceTree = "<group>"; };
 		958254022908F8030053AABC /* LogModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogModel.swift; sourceTree = "<group>"; };
-		958254082908F9310053AABC /* CategorySeeder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategorySeeder.swift; sourceTree = "<group>"; };
-		9582540A2908F9400053AABC /* CategoryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryModel.swift; sourceTree = "<group>"; };
-		958254102908FC2B0053AABC /* ActivitySeeder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivitySeeder.swift; sourceTree = "<group>"; };
-		958254122908FC360053AABC /* ActivityModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityModel.swift; sourceTree = "<group>"; };
+		958254082908F9310053AABC /* EffectSeeder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EffectSeeder.swift; sourceTree = "<group>"; };
+		9582540A2908F9400053AABC /* EffectModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EffectModel.swift; sourceTree = "<group>"; };
 		958254142908FFF20053AABC /* SkinTypeSeeder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkinTypeSeeder.swift; sourceTree = "<group>"; };
 		958254162908FFFD0053AABC /* ProblemSeeder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProblemSeeder.swift; sourceTree = "<group>"; };
 		958254182909000B0053AABC /* SkinTypeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkinTypeModel.swift; sourceTree = "<group>"; };
@@ -265,6 +273,18 @@
 		958E32F62907C92000171AF3 /* IngredientModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientModel.swift; sourceTree = "<group>"; };
 		958E32FA2907DA9C00171AF3 /* Quint.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Quint.xcdatamodel; sourceTree = "<group>"; };
 		958E32FC2907E0E400171AF3 /* JSON+CleanString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "JSON+CleanString.swift"; sourceTree = "<group>"; };
+		9595D375290A369B00167C41 /* TipSeeder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipSeeder.swift; sourceTree = "<group>"; };
+		9595D377290A36A900167C41 /* TipModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipModel.swift; sourceTree = "<group>"; };
+		9595D379290A39BA00167C41 /* CategorySeeder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategorySeeder.swift; sourceTree = "<group>"; };
+		9595D37B290A39C700167C41 /* CategoryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryModel.swift; sourceTree = "<group>"; };
+		9595D37D290A461000167C41 /* UsageStepSeeder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsageStepSeeder.swift; sourceTree = "<group>"; };
+		9595D37F290A462300167C41 /* UsageStepModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsageStepModel.swift; sourceTree = "<group>"; };
+		9595D381290A522200167C41 /* EffectJSON.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = EffectJSON.json; sourceTree = "<group>"; };
+		9595D382290A522200167C41 /* UsageStepJSON.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = UsageStepJSON.json; sourceTree = "<group>"; };
+		9595D383290A522200167C41 /* ProblemJSON.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = ProblemJSON.json; sourceTree = "<group>"; };
+		9595D384290A522200167C41 /* SkinTypeJSON.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = SkinTypeJSON.json; sourceTree = "<group>"; };
+		9595D386290A522300167C41 /* TipJSON.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = TipJSON.json; sourceTree = "<group>"; };
+		9595D38D290A523600167C41 /* CategoryJSON.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = CategoryJSON.json; sourceTree = "<group>"; };
 		959C2BF328ED341E007B1251 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		959C2BF428ED341E007B1251 /* CAGradientLayer+SetGradient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CAGradientLayer+SetGradient.swift"; sourceTree = "<group>"; };
 		959C2C0128ED44A3007B1251 /* UIViewController+ConfigureUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+ConfigureUI.swift"; sourceTree = "<group>"; };
@@ -540,13 +560,16 @@
 				958E32F42907BCF300171AF3 /* Seeder.swift */,
 				958E32E52907940100171AF3 /* SeederDelegate.swift */,
 				958E32E72907940E00171AF3 /* IngredientSeeder.swift */,
-				958254102908FC2B0053AABC /* ActivitySeeder.swift */,
-				958254082908F9310053AABC /* CategorySeeder.swift */,
+				958254082908F9310053AABC /* EffectSeeder.swift */,
+				9595D379290A39BA00167C41 /* CategorySeeder.swift */,
+				9595D37D290A461000167C41 /* UsageStepSeeder.swift */,
 				958253EE2908D64D0053AABC /* ProductSeeder.swift */,
 				958254142908FFF20053AABC /* SkinTypeSeeder.swift */,
 				958254162908FFFD0053AABC /* ProblemSeeder.swift */,
 				958253FC2908F7B50053AABC /* RoutineSeeder.swift */,
 				95825420290904050053AABC /* UserSeeder.swift */,
+				9595D375290A369B00167C41 /* TipSeeder.swift */,
+				958E32F22907AC8500171AF3 /* DataHelper.swift */,
 			);
 			path = Seeders;
 			sourceTree = "<group>";
@@ -556,6 +579,12 @@
 			children = (
 				958253FA2908E7220053AABC /* ProductsJSON.json */,
 				958E32F02907A2EE00171AF3 /* IngredientsJSON.json */,
+				9595D381290A522200167C41 /* EffectJSON.json */,
+				9595D38D290A523600167C41 /* CategoryJSON.json */,
+				9595D383290A522200167C41 /* ProblemJSON.json */,
+				9595D384290A522200167C41 /* SkinTypeJSON.json */,
+				9595D386290A522300167C41 /* TipJSON.json */,
+				9595D382290A522200167C41 /* UsageStepJSON.json */,
 			);
 			path = JSON;
 			sourceTree = "<group>";
@@ -678,8 +707,9 @@
 			isa = PBXGroup;
 			children = (
 				958E32F62907C92000171AF3 /* IngredientModel.swift */,
-				958254122908FC360053AABC /* ActivityModel.swift */,
-				9582540A2908F9400053AABC /* CategoryModel.swift */,
+				9582540A2908F9400053AABC /* EffectModel.swift */,
+				9595D37B290A39C700167C41 /* CategoryModel.swift */,
+				9595D37F290A462300167C41 /* UsageStepModel.swift */,
 				958253F82908D7720053AABC /* ProductModel.swift */,
 				958254022908F8030053AABC /* LogModel.swift */,
 				958254182909000B0053AABC /* SkinTypeModel.swift */,
@@ -687,6 +717,7 @@
 				9582541E290902B70053AABC /* StepModel.swift */,
 				958253FE2908F7EF0053AABC /* RoutineModel.swift */,
 				95FB6A612906DC3300F18E33 /* UserModel.swift */,
+				9595D377290A36A900167C41 /* TipModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -705,7 +736,6 @@
 				958E32EC29079F9200171AF3 /* dummy.swift */,
 				958E32E929079C7A00171AF3 /* JSON */,
 				958E32E4290793F500171AF3 /* Seeders */,
-				958E32F22907AC8500171AF3 /* DataHelper.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -880,23 +910,29 @@
 				95EB50F228EA821600412176 /* LaunchScreen.storyboard in Resources */,
 				9510352428EFFFDB0011AE39 /* Inter-Black.ttf in Resources */,
 				9510352628EFFFDB0011AE39 /* ClashGrotesk-Medium.otf in Resources */,
+				9595D387290A522300167C41 /* EffectJSON.json in Resources */,
 				958253FB2908E7220053AABC /* ProductsJSON.json in Resources */,
 				9510351E28EFFFDB0011AE39 /* ClashGrotesk-Extralight.otf in Resources */,
 				95EB50EF28EA821600412176 /* Assets.xcassets in Resources */,
 				9510352328EFFFDB0011AE39 /* Inter-ExtraLight.ttf in Resources */,
+				9595D38A290A522300167C41 /* SkinTypeJSON.json in Resources */,
 				9510352228EFFFDB0011AE39 /* Inter-ExtraBold.ttf in Resources */,
 				9510351D28EFFFDB0011AE39 /* Inter-Bold.ttf in Resources */,
 				9510351A28EFFFDB0011AE39 /* Inter-Light.ttf in Resources */,
 				9510351828EFFFDB0011AE39 /* ClashGrotesk-Bold.otf in Resources */,
+				9595D389290A522300167C41 /* ProblemJSON.json in Resources */,
 				9510352028EFFFDB0011AE39 /* Inter-Regular.ttf in Resources */,
 				95EB50FA28EA82D700412176 /* Podfile in Resources */,
 				9510352528EFFFDB0011AE39 /* Inter-SemiBold.ttf in Resources */,
 				9510351928EFFFDB0011AE39 /* ClashGrotesk-Regular.otf in Resources */,
+				9595D38C290A522300167C41 /* TipJSON.json in Resources */,
 				9510351728EFFFDB0011AE39 /* Inter-Medium.ttf in Resources */,
 				95EB50EA28EA821400412176 /* Main.storyboard in Resources */,
 				9510351F28EFFFDB0011AE39 /* ClashGrotesk-Light.otf in Resources */,
 				9510352128EFFFDB0011AE39 /* ClashGrotesk-Variable.ttf in Resources */,
 				9510351C28EFFFDB0011AE39 /* Inter-Thin.ttf in Resources */,
+				9595D388290A522300167C41 /* UsageStepJSON.json in Resources */,
+				9595D38E290A523600167C41 /* CategoryJSON.json in Resources */,
 				9510351B28EFFFDB0011AE39 /* ClashGrotesk-Semibold.otf in Resources */,
 				958E32F12907A2EE00171AF3 /* IngredientsJSON.json in Resources */,
 			);
@@ -954,16 +990,17 @@
 				9538752B28EDE53C001979A8 /* Photo.swift in Sources */,
 				957F0CFB290655C200FFFB06 /* UIFont+CustomFont.swift in Sources */,
 				9538752628EDE2A1001979A8 /* PinterestLayout.swift in Sources */,
-				958254112908FC2B0053AABC /* ActivitySeeder.swift in Sources */,
 				72BF72D728F7B3FD0036C456 /* sleepHourUIView.swift in Sources */,
 				957F0D05290656FB00FFFB06 /* HeaderLabel.swift in Sources */,
 				72BF72C928F4514E0036C456 /* PopupRoutine.swift in Sources */,
 				95A1E05C28F3F64300386972 /* UIImage+ScaleImage.swift in Sources */,
+				9595D378290A36A900167C41 /* TipModel.swift in Sources */,
 				9538752128EDE2A1001979A8 /* UICollectionView+Loading.swift in Sources */,
 				950B32E128F912440095EFB5 /* RatingView.swift in Sources */,
 				958E32F52907BCF300171AF3 /* Seeder.swift in Sources */,
 				A03857CE28F81E7200A4B566 /* SkinTypeView.swift in Sources */,
 				7242F9CC28F12C5A009EB962 /* SmallCategoryButtonGuide.swift in Sources */,
+				9595D37C290A39C700167C41 /* CategoryModel.swift in Sources */,
 				72BF72D128F548DD0036C456 /* DailyLogViewController.swift in Sources */,
 				72BF72CB28F5186E0036C456 /* ReminderUIView.swift in Sources */,
 				959C2C0228ED44A3007B1251 /* UIViewController+ConfigureUI.swift in Sources */,
@@ -980,12 +1017,15 @@
 				958E32E62907940100171AF3 /* SeederDelegate.swift in Sources */,
 				A04BD72329012B0200BEBDAB /* CustomCellView.swift in Sources */,
 				A03857C528F80B4100A4B566 /* NextButton.swift in Sources */,
+				9595D37E290A461000167C41 /* UsageStepSeeder.swift in Sources */,
 				951034E328EFF8820011AE39 /* RoutineHomeViewController.swift in Sources */,
 				A0EF1F0328FCFFC70065AB9A /* OnboardingStepsVC.swift in Sources */,
+				9595D380290A462300167C41 /* UsageStepModel.swift in Sources */,
 				A03857C328F80B3400A4B566 /* SignInAppleButton.swift in Sources */,
 				A03857C928F80B9900A4B566 /* OnboardingButton.swift in Sources */,
 				957F0D00290656BE00FFFB06 /* ProductListCollectionView.swift in Sources */,
 				A0EF1F1028FD0B4C0065AB9A /* ResultLabel.swift in Sources */,
+				9595D376290A369B00167C41 /* TipSeeder.swift in Sources */,
 				A014EA1328FEAF2A0020DC35 /* UIView+MultipleSubviews.swift in Sources */,
 				A03857B628F7C7E100A4B566 /* UILabel+RequiredHeight.swift in Sources */,
 				9572F0B528F694E00035BCA3 /* UsageCell.swift in Sources */,
@@ -1030,7 +1070,7 @@
 				9572F0BB28F698F90035BCA3 /* IngredientDetailVC.swift in Sources */,
 				958254152908FFF20053AABC /* SkinTypeSeeder.swift in Sources */,
 				958E32ED29079F9200171AF3 /* dummy.swift in Sources */,
-				958254092908F9310053AABC /* CategorySeeder.swift in Sources */,
+				958254092908F9310053AABC /* EffectSeeder.swift in Sources */,
 				950404C52901216500B37DFD /* CollapsableStackDelegate.swift in Sources */,
 				A0F519EB290064CC00623A7F /* StepContainerView.swift in Sources */,
 				A0EF1F0B28FD08100065AB9A /* ResultProblemView.swift in Sources */,
@@ -1041,7 +1081,7 @@
 				957F0CEF2906423500FFFB06 /* UIView+ConfigureUI.swift in Sources */,
 				958253F72908D6E50053AABC /* NightRoutinesStepsTableViewCell.swift in Sources */,
 				958253F62908D6E50053AABC /* MorningRoutineStepsTableViewCell.swift in Sources */,
-				9582540B2908F9400053AABC /* CategoryModel.swift in Sources */,
+				9582540B2908F9400053AABC /* EffectModel.swift in Sources */,
 				957F0CEC2906418500FFFB06 /* OnboardingQuizVC.swift in Sources */,
 				A0F560F128FAA92A0091DF7B /* SkinInsightView.swift in Sources */,
 				957F0D092906573900FFFB06 /* IngredientButton.swift in Sources */,
@@ -1051,6 +1091,7 @@
 				9572F0B028F68EC00035BCA3 /* InformationCell.swift in Sources */,
 				958253EF2908D64D0053AABC /* ProductSeeder.swift in Sources */,
 				A0EF1F1228FD0BAA0065AB9A /* DescriptionLabel.swift in Sources */,
+				9595D37A290A39BA00167C41 /* CategorySeeder.swift in Sources */,
 				957F0D0B2906573900FFFB06 /* CategoryButton.swift in Sources */,
 				72B6EDC328FFAFA30056B374 /* UVPointView.swift in Sources */,
 				951034D828EFF54C0011AE39 /* (null) in Sources */,
@@ -1062,7 +1103,6 @@
 				A0004BF92902688600B98B73 /* OnboardingProtocol.swift in Sources */,
 				959C2BF528ED341E007B1251 /* Constants.swift in Sources */,
 				9543DA7128F826AA00E37A28 /* ProductDetailVC.swift in Sources */,
-				958254132908FC360053AABC /* ActivityModel.swift in Sources */,
 				A0F21F4028FD52840072497E /* PhotoConfirmationVC.swift in Sources */,
 				951034D528EFF54C0011AE39 /* (null) in Sources */,
 				72B6EDBD28FD11BC0056B374 /* newStepUIView.swift in Sources */,

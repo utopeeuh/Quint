@@ -70,3 +70,9 @@ class CollapsableStack: UIView{
         }
     }
 }
+
+@objc protocol CollapsableStackDelegate{
+    @objc func onClickExpand(_ sender: UIButton)
+}
+
+

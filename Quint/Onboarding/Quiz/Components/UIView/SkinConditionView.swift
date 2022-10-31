@@ -41,7 +41,6 @@ class SkinConditionView: OnboardingParentView, CollapsableStackDelegate {
             b.headerBtn.addTarget(self, action: #selector(onClickExpand), for: .touchUpInside)
         }
         
-//        nextButton.isEnabled = false
         nextButton.setText("Next")
         nextButton.addTarget(self, action: #selector(nextOnClick), for: .touchUpInside)
     }
@@ -77,6 +76,7 @@ class SkinConditionView: OnboardingParentView, CollapsableStackDelegate {
     func onClickExpand(_ sender: UIButton) {
         if let collapsable = sender.superview as? CollapsableButton{
             collapsableStack.showView(collapsable)
+            nextButton.setEnabled()
         }
     }
 }

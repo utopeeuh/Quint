@@ -14,6 +14,7 @@ class NextButton: UIButton {
         
         frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width-40, height: 50)
         
+        isEnabled = false
         backgroundColor = K.Color.disableBgBtnQuint
         setTitleColor(K.Color.disableTextBtnQuint, for: .normal)
         titleLabel?.font = .clashGroteskMedium(size: 18)
@@ -24,6 +25,12 @@ class NextButton: UIButton {
     func setText(_ title: String?) {
         setTitle(title, for: .normal)
         sizeToFit()
+    }
+    
+    func setEnabled(){
+        isEnabled = true
+        applyGradient(colours: [K.Color.greenLightQuint, K.Color.greenQuint], locations: [0, 1], radius: 8)
+        setTitleColor(K.Color.whiteQuint, for: .normal)
     }
     
     required init?(coder aDecoder: NSCoder) {

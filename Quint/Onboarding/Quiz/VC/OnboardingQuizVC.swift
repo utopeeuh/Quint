@@ -10,6 +10,8 @@ import SnapKit
 
 class OnboardingQuizVC: UIViewController, PhotoConfirmationVCDelegate {
     
+    private var newUser = UserModel()
+    
     lazy var notifView = SkinNotifView()
     private var photoConfirmationVC = PhotoConfirmationVC()
     private var backButton = BackButton()
@@ -156,6 +158,7 @@ class OnboardingQuizVC: UIViewController, PhotoConfirmationVCDelegate {
         
         let vc = photoConfirmationVC
         vc.chosenImage = image
+        //get image here
         vc.delegate = self
         vc.modalPresentationStyle = .fullScreen
         present(vc, animated: true)
@@ -185,6 +188,8 @@ class OnboardingQuizVC: UIViewController, PhotoConfirmationVCDelegate {
     }
     
     @objc func goToOnboardingResult() {
+        // pass user to onboarding
+        
         let controller = OnboardingResultVC()
         self.navigationController?.pushViewController(controller, animated: true)
     }

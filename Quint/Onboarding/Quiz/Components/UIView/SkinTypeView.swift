@@ -8,7 +8,7 @@
 import UIKit
 import SnapKit
 
-class SkinTypeView: OnboardingParentView, CollapsableStackDelegate {
+class SkinTypeView: OnboardingParentView {
     
     private let skinTypeLabel = UILabel()
     public var nextButton = NextButton()
@@ -31,13 +31,8 @@ class SkinTypeView: OnboardingParentView, CollapsableStackDelegate {
         skinTypeLabel.font = .clashGroteskMedium(size: 30)
         skinTypeLabel.textAlignment = .left
 
-//        nextButton.isEnabled = false
         nextButton.setText("Next")
         nextButton.addTarget(self, action: #selector(nextOnClick), for: .touchUpInside)
-        
-//        let button = CollapsableButton(title: "Normal skin", desc: "This skin is neither too dry nor too oily. It has regular texture, no imperfections and a clean, soft appearance, and does not need special care.")
-//        button.headerBtn.setNumber(1)
-//        collapsableStack.append(button)
         
         collapsableStack.append(CollapsableButton(title: "Normal skin", desc: "This skin is neither too dry nor too oily. It has regular texture, no imperfections and a clean, soft appearance, and does not need special care."))
         
@@ -49,18 +44,7 @@ class SkinTypeView: OnboardingParentView, CollapsableStackDelegate {
         
         collapsableStack.buttons.forEach { b in
             b.headerBtn.addTarget(self, action: #selector(onClickExpand), for: .touchUpInside)
-            
-            if b.headerBtn.isSelected == true {
-                nextButton.isEnabled = true
-                nextButton.applyGradient(colours: [K.Color.greenLightQuint, K.Color.greenQuint], locations: [0, 1], radius: 8)
-                nextButton.setTitleColor(K.Color.whiteQuint, for: .normal)
-                return
-            }
-            
-//            nextButton.removeSublayer(layerIndex: 0)
-//            nextButton.isEnabled = false
-//            nextButton.backgroundColor = K.Color.disableBgBtnQuint
-//            nextButton.setTitleColor(K.Color.disableTextBtnQuint, for: .normal)
+
         }
         
     }
@@ -90,12 +74,14 @@ class SkinTypeView: OnboardingParentView, CollapsableStackDelegate {
             make.width.equalToSuperview().offset(-40)
         }
     }
-    
+}
+
+extension SkinTypeView: CollapsableStackDelegate{
     @objc func onClickExpand(_ sender: UIButton){
         if let collapsable = sender.superview as? CollapsableButton{
             collapsableStack.showView(collapsable)
+            nextButton.setEnabled()
         }
     }
-    
 }
 

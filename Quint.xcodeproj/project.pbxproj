@@ -18,7 +18,6 @@
 		72BF72D728F7B3FD0036C456 /* sleepHourUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72BF72D628F7B3FD0036C456 /* sleepHourUIView.swift */; };
 		72BF72D928F838B00036C456 /* moodSliderUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72BF72D828F838B00036C456 /* moodSliderUIView.swift */; };
 		950404C329010E0100B37DFD /* CollapsableStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 950404C229010E0100B37DFD /* CollapsableStack.swift */; };
-		950404C52901216500B37DFD /* CollapsableStackDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 950404C42901216500B37DFD /* CollapsableStackDelegate.swift */; };
 		950404C72901283300B37DFD /* CollapsableHeaderButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 950404C62901283300B37DFD /* CollapsableHeaderButton.swift */; };
 		950B32E128F912440095EFB5 /* RatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 950B32E028F912440095EFB5 /* RatingView.swift */; };
 		950D428B28FDC9B400657816 /* IngDetailLowerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 950D428A28FDC9B400657816 /* IngDetailLowerView.swift */; };
@@ -185,7 +184,6 @@
 		72BF72D628F7B3FD0036C456 /* sleepHourUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = sleepHourUIView.swift; sourceTree = "<group>"; };
 		72BF72D828F838B00036C456 /* moodSliderUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = moodSliderUIView.swift; sourceTree = "<group>"; };
 		950404C229010E0100B37DFD /* CollapsableStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollapsableStack.swift; sourceTree = "<group>"; };
-		950404C42901216500B37DFD /* CollapsableStackDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollapsableStackDelegate.swift; sourceTree = "<group>"; };
 		950404C62901283300B37DFD /* CollapsableHeaderButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollapsableHeaderButton.swift; sourceTree = "<group>"; };
 		950B32E028F912440095EFB5 /* RatingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingView.swift; sourceTree = "<group>"; };
 		950D428A28FDC9B400657816 /* IngDetailLowerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngDetailLowerView.swift; sourceTree = "<group>"; };
@@ -605,7 +603,6 @@
 				95233BDD28EF3F3E00A4470E /* UIScrollView+RemoveSubviews.swift */,
 				951034C328EFF51F0011AE39 /* UIViewController+DismissKeyboard.swift */,
 				95CC136628FE67C000D3396A /* AttributedString+Styles.swift */,
-				950404C42901216500B37DFD /* CollapsableStackDelegate.swift */,
 				95A1E05B28F3F64300386972 /* UIImage+ScaleImage.swift */,
 				72BF72D428F6A93C0036C456 /* UIButton+MoveImageTextLeft.swift */,
 				72B6EDC028FF97580056B374 /* UIView+ApplyGradient.swift */,
@@ -1067,7 +1064,6 @@
 				9572F0BB28F698F90035BCA3 /* IngredientDetailVC.swift in Sources */,
 				958254152908FFF20053AABC /* SkinTypeSeeder.swift in Sources */,
 				958254092908F9310053AABC /* EffectSeeder.swift in Sources */,
-				950404C52901216500B37DFD /* CollapsableStackDelegate.swift in Sources */,
 				A0F519EB290064CC00623A7F /* StepContainerView.swift in Sources */,
 				A0EF1F0B28FD08100065AB9A /* ResultProblemView.swift in Sources */,
 				951034E228EFF8820011AE39 /* (null) in Sources */,

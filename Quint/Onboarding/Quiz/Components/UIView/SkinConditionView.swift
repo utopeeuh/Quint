@@ -73,6 +73,14 @@ class SkinConditionView: OnboardingParentView, CollapsableStackDelegate {
         
     }
     
+    func isSensitive() -> Bool{
+        if collapsableStack.selectedIndex == 0{
+            return true
+        }
+            
+        return false
+    }
+    
     func onClickExpand(_ sender: UIButton) {
         if let collapsable = sender.superview as? CollapsableButton{
             collapsableStack.showView(collapsable)

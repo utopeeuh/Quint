@@ -10,7 +10,11 @@ import SnapKit
 
 class OnboardingQuizVC: UIViewController, PhotoConfirmationVCDelegate {
     
-    private var newUser = UserModel()
+    private var newUser : UserModel?
+    var selectedSkinType : Int?
+    var isSensitive : Bool?
+    var skinProblems : [Int]?
+    var chosenImage : UIImage?
     
     lazy var notifView = SkinNotifView()
     private var photoConfirmationVC = PhotoConfirmationVC()
@@ -134,6 +138,23 @@ class OnboardingQuizVC: UIViewController, PhotoConfirmationVCDelegate {
     }
     
     func nextOnClick(){
+        
+        switch(childContents[currIndex]){
+        case is SkinTypeView:
+            selectedSkinType = (childContents[currIndex] as! SkinTypeView).getSkinType()
+            print(selectedSkinType!)
+            break
+        case is SkinConditionView:
+            isSensitive = (childContents[currIndex] as! SkinConditionView).isSensitive()
+            print(isSensitive!)
+            break
+        case is SkinProblemView:
+            skinProblems = (childContents[currIndex] as! SkinProblemView).getSelectedProblems()
+            print(skinProblems!)
+            break
+        default:
+            break
+        }
         currIndex += 1
         moveToCurrIndex()
         progressBar.setProgress((1/6) * Float(currIndex+1), animated: true)
@@ -142,6 +163,7 @@ class OnboardingQuizVC: UIViewController, PhotoConfirmationVCDelegate {
     func didTapConfirmButton() {
         
         nextOnClick()
+        chosenImage = photoConfirmationVC.chosenImage
         photoConfirmationVC.dismiss(animated: true)
         
     }
@@ -158,7 +180,6 @@ class OnboardingQuizVC: UIViewController, PhotoConfirmationVCDelegate {
         
         let vc = photoConfirmationVC
         vc.chosenImage = image
-        //get image here
         vc.delegate = self
         vc.modalPresentationStyle = .fullScreen
         present(vc, animated: true)

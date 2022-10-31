@@ -74,6 +74,10 @@ class SkinTypeView: OnboardingParentView {
             make.width.equalToSuperview().offset(-40)
         }
     }
+    
+    func getSkinType() -> Int{
+        return collapsableStack.selectedIndex
+    }
 }
 
 extension SkinTypeView: CollapsableStackDelegate{

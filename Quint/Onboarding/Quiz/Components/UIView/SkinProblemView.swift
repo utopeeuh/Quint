@@ -107,6 +107,14 @@ class SkinProblemView: OnboardingParentView {
         
     }
     
+    func getSelectedProblems() -> [Int]{
+        var selectedIndexes: [Int] = []
+        collectionView.allSelectedTags().forEach { textTag in
+            selectedIndexes.append(Int(textTag.tagId))
+        }
+        return selectedIndexes
+    }
+    
 }
 
 extension SkinProblemView: TTGTextTagCollectionViewDelegate {

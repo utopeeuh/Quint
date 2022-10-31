@@ -10,6 +10,7 @@ import UIKit
 import SnapKit
 
 class CollapsableStack: UIView{
+    var selectedIndex: Int = 0
     var buttons: [CollapsableButton] = []
     
     override init(frame: CGRect) {
@@ -46,7 +47,7 @@ class CollapsableStack: UIView{
     }
     
     func showView(_ collapsable: CollapsableButton){
-        let currIndex = buttons.firstIndex(of: collapsable) ?? 0
+        selectedIndex = buttons.firstIndex(of: collapsable) ?? 0
         
         snp.updateConstraints { make in
             make.height.equalTo(getHeight()+collapsable.getHeightDiff())
@@ -58,10 +59,10 @@ class CollapsableStack: UIView{
                 buttons[i].transform = CGAffineTransform(translationX: 0, y: 0)
             })
 
-            if(i != currIndex){
+            if(i != selectedIndex){
                 buttons[i].hideDesc()
                 
-                if(i > currIndex){
+                if(i > selectedIndex){
                     UIView.animate(withDuration: 0.4, animations: { [self] in
                         buttons[i].transform = CGAffineTransform(translationX: 0, y: collapsable.descText.requiredHeight+12)
                     })

@@ -29,13 +29,16 @@ class LoginVC: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = K.Color.bgQuint
         
-        print(isFirstTime as! Bool)
         if isFirstTime as! Bool == true{
             print("Inital seeding")
             seeders.forEach { seeder in
                 seeder.seedFromJson()
             }
             UserDefaults.standard.set(false, forKey: K.UD.firstTime)
+        }
+        
+        else{
+            print("Skip seeding")
         }
         
         configureUI()

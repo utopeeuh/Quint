@@ -11,7 +11,7 @@ class ResultLabel: UILabel {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        self.frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width - 48, height: 0)
+        self.frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width - 88, height: 0)
         numberOfLines = 0
         lineBreakMode = .byWordWrapping
         font = .clashGroteskMedium(size: 24)

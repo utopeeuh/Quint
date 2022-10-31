@@ -13,7 +13,7 @@ class HorizontalScrollButtons: UIScrollView {
         super.init(frame: frame)
         backgroundColor = K.Color.bgQuint
         contentInset = UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 10)
-        setContentOffset(CGPoint(x: -20, y: 0), animated: false)
+        setContentOffset(CGPoint(x: -25, y: 0), animated: false)
     }
     
     required init?(coder: NSCoder) {
@@ -24,6 +24,8 @@ class HorizontalScrollButtons: UIScrollView {
     // Make sure to be child of CategoryButton and have width & height
     // defined in the subclass (refer to SmallCategoryButton)
     func setButtons(_ buttons: [CategoryButton]){
+        subviews.forEach({ $0.removeFromSuperview() })
+        
         var totalWidth = 0
 
         for i in 0..<buttons.count {

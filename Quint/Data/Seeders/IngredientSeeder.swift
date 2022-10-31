@@ -32,7 +32,7 @@ class IngredientSeeder: Seeder{
             newIngredient.name = subJson["Name"].cleanString()
             newIngredient.alt = subJson["Alt"].cleanString()
             newIngredient.desc = subJson["Description"].cleanString()
-            newIngredient.effects = subJson["Effects"].cleanString().components(separatedBy: ", ")
+            newIngredient.effects = subJson["Effects"].cleanString()
             newIngredient.goodNormal = goodForValue(subJson["GoodNormal"])
             newIngredient.goodDry = goodForValue(subJson["GoodDry"])
             newIngredient.goodCombi = goodForValue(subJson["GoodCombi"])

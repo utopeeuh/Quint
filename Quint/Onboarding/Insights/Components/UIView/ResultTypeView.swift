@@ -8,6 +8,7 @@
 import UIKit
 import SnapKit
 import SwiftUI
+import CoreData
 
 class ResultTypeView: UIView {
 
@@ -39,21 +40,13 @@ class ResultTypeView: UIView {
 //        backgroundImage.layer.cornerRadius = 0
 //        backgroundImage.layer.compositingFilter = "overlayBlendMode"
         
-        self.frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width-40, height: 208)
-        self.applyGradient(colours: [K.Color.greenLightQuint, K.Color.greenQuint], locations: [0,1], radius: 8)
-        
         titleLabel.text = "SKIN TYPE"
         titleLabel.textColor = K.Color.greenSkinProblemQuint
+        titleLabel.sizeToFit()
         
-        resultLabel.text = "Dry skin"
-        
-        descriptionLabel.frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width - 48, height: 0)
+        descriptionLabel.frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width - 88, height: 0)
         descriptionLabel.numberOfLines = 0
         descriptionLabel.lineBreakMode = .byWordWrapping
-        descriptionLabel.text = "Feeling of tightness and roughness. It may also acquire an ashy gray color, with occurrence of desquamation, itching, redness and small cracks."
-        textHeight = descriptionLabel.requiredHeight
-        descriptionLabel.sizeToFit()
-        
     }
     
     override func configureLayout() {
@@ -82,28 +75,48 @@ class ResultTypeView: UIView {
         descriptionLabel.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
             make.width.equalToSuperview().offset(-48)
-            make.height.equalTo(descriptionLabel.requiredHeight)
             make.top.equalTo(resultLabel.snp.bottom).offset(10)
         }
         
     }
     
-}
-
-struct ResultTypeViewPreview: PreviewProvider {
-    static var previews: some View {
-        ViewPreview {
-            ResultTypeView()
-        }
-        .previewDevice(PreviewDevice(rawValue: "iPhone 14"))
-        .previewDisplayName("iPhone 14")
-        .ignoresSafeArea()
+    func setType(typeId: Int){
+        //fetch type
+        let skinType = getSkinType(id: typeId)
         
-        ViewPreview {
-            ResultTypeView()
-        }
-        .previewDevice(PreviewDevice(rawValue: "iPhone 8"))
-        .previewDisplayName("iPhone 8")
-        .ignoresSafeArea()
+        //set text here
+        resultLabel.text = skinType.title
+        resultLabel.sizeToFit()
+        descriptionLabel.text = skinType.desc
+        descriptionLabel.sizeToFit()
+        
+        self.frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width-40, height: titleLabel.requiredHeight + resultLabel.requiredHeight + descriptionLabel.requiredHeight + 74)
+        self.applyGradient(colours: [K.Color.greenLightQuint, K.Color.greenQuint], locations: [0,1], radius: 8)
     }
+    
+    public func getSkinType(id: Int) -> SkinTypeModel{
+            
+        var skinType: SkinTypeModel?
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let context: NSManagedObjectContext = appDelegate.persistentContainer.viewContext
+        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "SkinTypes")
+        let idPredicate = NSPredicate(format: "id == %@", String(describing:id+1))
+        request.predicate = idPredicate
+        
+        do{
+            let results:NSArray = try context.fetch(request) as NSArray
+            
+            for result in results {
+                skinType  = result as? SkinTypeModel
+            }
+            
+            return skinType!
+        }
+        catch{
+            print("fetch failed")
+        }
+        
+        return skinType!
+    }
+    
 }

@@ -10,6 +10,7 @@ import SnapKit
 
 class OnboardingStepsVC: UIViewController {
     
+    var data : OnboardingData?
     private var backButton = BackButton()
     private var headerLabel = UILabel()
     private var titleLabel = UILabel()
@@ -115,6 +116,9 @@ class OnboardingStepsVC: UIViewController {
     }
     
     @objc func goToHome() {
+        // update user
+        // update routines
+        
 //        let controller = SkincareGuideViewController()
 //        self.navigationController?.pushViewController(controller, animated: true)
     }

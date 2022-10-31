@@ -10,26 +10,24 @@ import SnapKit
 
 class OnboardingResultVC: UIViewController {
     
+    var data : OnboardingData?
     private var titleLabel = UILabel()
     private var scrollView = UIScrollView()
     private var backButton = UIButton()
-    private var view1 = PhotoResultView()
-    private var view2 = ResultTypeView()
-    private var view3 = ResultProblemView()
-    private var view4 = RecIngredientView()
+    private var photoResultView = PhotoResultView()
+    private var resultTypeView = ResultTypeView()
+    private var resultProblemView = ResultProblemView()
+    private var recIngredientView = RecIngredientView()
     private var pageNumber = UILabel()
     private var nextButton = OnboardingButton()
     
-    // page indexing as follows
-//    private var childContents: [UIView] = [
-//        PhotoResultView(),
-//        ResultTypeView(),
-//        ResultProblemView(),
-//        RecIngredientView()
-//    ]
-    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        resultTypeView.setType(typeId: data!.selectedSkinType!)
+        resultProblemView.setProblems(problemIds: data!.skinProblems!)
+        recIngredientView.setIngredients(problemIds: data!.skinProblems!)
+        
         configureUI()
     }
     
@@ -59,6 +57,9 @@ class OnboardingResultVC: UIViewController {
         nextButton.applyGradient(colours: [K.Color.greenLightQuint, K.Color.greenQuint], locations: [0,1], radius: 8)
         nextButton.addTarget(self, action: #selector(goToOnboardingSteps), for: .touchUpInside)
         
+        // Set onboarding result data
+        
+        photoResultView.setImage(image: (data?.chosenImage ?? UIImage(named: "activeIcon"))!)
     }
     
     override func configureLayout() {
@@ -67,15 +68,12 @@ class OnboardingResultVC: UIViewController {
                                     titleLabel,
                                     scrollView)
         
-        scrollView.multipleSubviews(view: view1, view2,
-                                          view3, view4,
-                                          pageNumber,
-                                          nextButton)
-        
-        // layouting child view content
-//        childContents.forEach {
-//            scrollView.addSubview($0)
-//        }
+        scrollView.multipleSubviews(view: photoResultView,
+                                    resultTypeView,
+                                    resultProblemView,
+                                    recIngredientView,
+                                    pageNumber,
+                                    nextButton)
         
         backButton.snp.makeConstraints { make in
             make.leading.equalToSuperview().offset(20)
@@ -93,37 +91,37 @@ class OnboardingResultVC: UIViewController {
             make.width.equalTo(UIScreen.main.bounds.width)
         }
         
-        view1.snp.makeConstraints { make in
+        photoResultView.snp.makeConstraints { make in
             make.centerX.equalTo(scrollView)
             make.top.equalTo(scrollView)
             make.width.equalToSuperview().offset(-40)
             make.height.equalTo(400)
         }
 
-        view2.snp.makeConstraints { make in
+        resultTypeView.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
-            make.top.equalTo(view1.snp.bottom).offset(19)
+            make.top.equalTo(photoResultView.snp.bottom).offset(19)
             make.width.equalToSuperview().offset(-40)
-            make.height.equalTo(208)
+            make.height.equalTo(resultTypeView.frame.height)
         }
 
-        view3.snp.makeConstraints { make in
+        resultProblemView.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
-            make.top.equalTo(view2.snp.bottom).offset(19)
+            make.top.equalTo(resultTypeView.snp.bottom).offset(19)
             make.width.equalToSuperview().offset(-40)
-            make.height.equalTo(468)
+            make.height.equalTo(resultProblemView.frame.height)
         }
         
-        view4.snp.makeConstraints { make in
+        recIngredientView.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
-            make.top.equalTo(view3.snp.bottom).offset(19)
+            make.top.equalTo(resultProblemView.snp.bottom).offset(19)
             make.width.equalToSuperview().offset(-40)
             make.height.equalTo(250)
         }
         
         pageNumber.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
-            make.top.equalTo(view4.snp.bottom).offset(30)
+            make.top.equalTo(recIngredientView.snp.bottom).offset(30)
         }
         
         nextButton.snp.makeConstraints { make in
@@ -136,8 +134,9 @@ class OnboardingResultVC: UIViewController {
     }
     
     @objc func goToOnboardingSteps() {
-        let controller = OnboardingStepsVC()
-        self.navigationController?.pushViewController(controller, animated: true)
+        let vc = OnboardingStepsVC()
+        vc.data = data
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
     @objc func backOnClick(){

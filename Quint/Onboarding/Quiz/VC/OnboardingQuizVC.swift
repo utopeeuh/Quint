@@ -10,11 +10,7 @@ import SnapKit
 
 class OnboardingQuizVC: UIViewController, PhotoConfirmationVCDelegate {
     
-    private var newUser : UserModel?
-    var selectedSkinType : Int?
-    var isSensitive : Bool?
-    var skinProblems : [Int]?
-    var chosenImage : UIImage?
+    var data = OnboardingData()
     
     lazy var notifView = SkinNotifView()
     private var photoConfirmationVC = PhotoConfirmationVC()
@@ -141,16 +137,16 @@ class OnboardingQuizVC: UIViewController, PhotoConfirmationVCDelegate {
         
         switch(childContents[currIndex]){
         case is SkinTypeView:
-            selectedSkinType = (childContents[currIndex] as! SkinTypeView).getSkinType()
-            print(selectedSkinType!)
+            data.selectedSkinType = (childContents[currIndex] as! SkinTypeView).getSkinType()
+            print(data.selectedSkinType!)
             break
         case is SkinConditionView:
-            isSensitive = (childContents[currIndex] as! SkinConditionView).isSensitive()
-            print(isSensitive!)
+            data.isSensitive = (childContents[currIndex] as! SkinConditionView).isSensitive()
+            print(data.isSensitive!)
             break
         case is SkinProblemView:
-            skinProblems = (childContents[currIndex] as! SkinProblemView).getSelectedProblems()
-            print(skinProblems!)
+            data.skinProblems = (childContents[currIndex] as! SkinProblemView).getSelectedProblems()
+            print(data.skinProblems!)
             break
         default:
             break
@@ -163,7 +159,7 @@ class OnboardingQuizVC: UIViewController, PhotoConfirmationVCDelegate {
     func didTapConfirmButton() {
         
         nextOnClick()
-        chosenImage = photoConfirmationVC.chosenImage
+        data.chosenImage = photoConfirmationVC.chosenImage
         photoConfirmationVC.dismiss(animated: true)
         
     }
@@ -209,10 +205,10 @@ class OnboardingQuizVC: UIViewController, PhotoConfirmationVCDelegate {
     }
     
     @objc func goToOnboardingResult() {
-        // pass user to onboarding
-        
-        let controller = OnboardingResultVC()
-        self.navigationController?.pushViewController(controller, animated: true)
+        // pass data to onboarding result
+        let vc = OnboardingResultVC()
+        vc.data = data
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
 }

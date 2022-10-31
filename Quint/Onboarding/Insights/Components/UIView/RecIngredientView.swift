@@ -7,6 +7,7 @@
 
 import UIKit
 import SnapKit
+import CoreData
 
 class RecIngredientView: UIView {
     
@@ -32,31 +33,11 @@ class RecIngredientView: UIView {
         self.layer.shadowColor = K.Color.shadowQuint.cgColor
         self.layer.cornerRadius = 10
         
+        ingredientScrollList.setContentOffset(CGPoint(x: -25, y: 0), animated: false)
+        
         titleLabel.font = .clashGroteskMedium(size: 20)
         titleLabel.text = "Recommended ingredients"
         titleLabel.textColor = K.Color.blackQuint
-        
-        // Generate buttons before adding to scrollview
-        var skinProblemButton: [SmallCategoryButton] = []
-        for i in 0..<K.Category.ingredient.count {
-            let newButton = SmallCategoryButton(categoryId: i+1)
-            newButton.setText(K.Category.ingredient[i+1])
-            newButton.addTarget(self, action: #selector(selectSkinProblemCategory), for: .touchUpInside)
-            skinProblemButton.append(newButton)
-        }
-        skinProblemScrollCategories.setButtons(skinProblemButton)
-        selectSkinProblemCategory(skinProblemButton[0])
-        
-        var ingredientButtons: [IngredientButton] = []
-        
-        for i in 0..<K.Dummy.ingredient.count {
-            let newButton = IngredientButton(categoryId: i+1)
-            newButton.setText(K.Dummy.ingredient[i+1])
-            newButton.addTarget(self, action: #selector(goToIngredientDetail), for: .touchUpInside)
-            ingredientButtons.append(newButton)
-        }
-        ingredientScrollList.setButtons(ingredientButtons)
-        
     }
     
     override func configureLayout() {
@@ -92,10 +73,133 @@ class RecIngredientView: UIView {
             }
         }
         sender.select()
+        
+        // fetch ingredient list
+        let ingredientList = getIngredientListByEffect(effect: sender.titleLabel!.text!)
+        // set ingredient list here
+        var ingredientButtons: [IngredientButton] = []
+        
+        for i in 0..<ingredientList.count {
+            let newButton = IngredientButton(categoryId: Int(truncating: ingredientList[i].id))
+            newButton.setText(ingredientList[i].name)
+            newButton.addTarget(self, action: #selector(goToIngredientDetail), for: .touchUpInside)
+            ingredientButtons.append(newButton)
+        }
+        ingredientScrollList.setButtons(ingredientButtons)
+        ingredientScrollList.setContentOffset(CGPoint(x: -25, y: 0), animated: true)
+        print("content size: \(ingredientScrollList.contentSize.width)")
     }
     
     @objc func goToIngredientDetail (_ sender: IngredientButton){
         
+    }
+    
+    func getIngredientListByEffect(effect: String) -> [IngredientModel]{
+        var ingredientList: [IngredientModel] = []
+        
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let context: NSManagedObjectContext = appDelegate.persistentContainer.viewContext
+        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Ingredients")
+        
+        let effectPredicate = NSPredicate(format: "effects CONTAINS[c] %@", effect)
+        
+        request.predicate = effectPredicate
+        
+        do{
+            let results:NSArray = try context.fetch(request) as NSArray
+            
+            for result in results {
+                let ingredient = result as! IngredientModel
+                ingredientList.append(ingredient)
+            }
+        }
+        catch{
+            print("fetch failed")
+        }
+        
+        return ingredientList
+    }
+    
+    func fetchEffectList(effectIds: [Int]) -> [EffectModel]{
+            
+        var effectList: [EffectModel] = []
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let context: NSManagedObjectContext = appDelegate.persistentContainer.viewContext
+        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Effects")
+        
+        var predicateList: [NSPredicate] = []
+        effectIds.forEach { id in
+            let idPredicate = NSPredicate(format: "id == %@", String(describing:id))
+            predicateList.append(idPredicate)
+        }
+        let compoundPredicate = NSCompoundPredicate(type: .or, subpredicates: predicateList)
+        
+        request.predicate = compoundPredicate
+        
+        do{
+            let results:NSArray = try context.fetch(request) as NSArray
+            
+            for result in results {
+                let effect = result as? EffectModel
+                effectList.append(effect!)
+            }
+        }
+        catch{
+            print("fetch failed")
+        }
+        
+        return effectList
+    }
+    
+    func getEffectIdsByProblem(problemId: Int) -> [Int]{
+        var effectIds : [Int] = []
+        
+        if (problemId+1 == K.Category.acne || problemId+1 == K.Category.blackHeads){
+            effectIds.append(K.Effect.antiAcne)
+            effectIds.append(K.Effect.antiBacterial)
+        }
+        if (problemId+1 == K.Category.darkCircles || problemId+1 == K.Category.dullness){
+            effectIds.append(K.Effect.brightening)
+        }
+        if (problemId+1 == K.Category.dryness){
+            effectIds.append(K.Effect.hydrating)
+        }
+        if (problemId+1 == K.Category.oiliness || problemId+1 == K.Category.dryness){
+            effectIds.append(K.Effect.moisturizing)
+        }
+        if (problemId+1 == K.Category.redness || problemId+1 == K.Category.acne){
+            effectIds.append(K.Effect.soothing)
+        }
+        
+        effectIds.append(K.Effect.uvProtection)
+        
+        return effectIds
+    }
+    
+    func setIngredients(problemIds: [Int]){
+        
+        // fetch ingredient category
+        var effectList: [EffectModel] = []
+        problemIds.forEach { problemId in
+            let effectIds = getEffectIdsByProblem(problemId: problemId)
+            let currEffectList = fetchEffectList(effectIds: effectIds)
+            currEffectList.forEach { effect in
+                if(effectList.contains(effect) == false){
+                    effectList.append(effect)
+                }
+            }
+        }
+        
+        // set categories
+        var skinProblemButton: [SmallCategoryButton] = []
+        for i in 0..<effectList.count {
+            let newButton = SmallCategoryButton(categoryId: Int(truncating: effectList[i].id))
+            newButton.setText(effectList[i].title)
+            newButton.addTarget(self, action: #selector(selectSkinProblemCategory), for: .touchUpInside)
+            skinProblemButton.append(newButton)
+        }
+        skinProblemScrollCategories.setButtons(skinProblemButton)
+        selectSkinProblemCategory(skinProblemButton[0])
     }
     
 }

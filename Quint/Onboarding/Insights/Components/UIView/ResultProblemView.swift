@@ -8,9 +8,11 @@
 import UIKit
 import SnapKit
 import SwiftUI
+import CoreData
 
 class ResultProblemView: UIView {
     
+    private var problemList: [ProblemModel] = []
     private let titleLabel = TitleLabel()
     private let resultLabel = ResultLabel()
     private var descriptionLabel = DescriptionLabel()
@@ -38,36 +40,13 @@ class ResultProblemView: UIView {
 //        backgroundImage.layer.compositingFilter = "overlayBlendMode"
 //        backgroundImage.sizeToFit()
         
-        self.frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width-40, height: 468)
-        self.applyGradient(colours: [K.Color.redLightQuint, K.Color.redQuint], locations: [0,1], radius: 8)
         titleLabel.text = "SKIN PROBLEM"
+        titleLabel.sizeToFit()
         titleLabel.textColor = K.Color.redSkinProblemQuint
         
-        resultLabel.text = "Acne, dark circles, oiliness, redness"
-        textHeight = resultLabel.requiredHeight
-        resultLabel.sizeToFit()
-        
-        descriptionLabel.frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width - 48, height: 0)
+        descriptionLabel.frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width - 88, height: 0)
         descriptionLabel.numberOfLines = 0
         descriptionLabel.lineBreakMode = .byWordWrapping
-        
-        let descText = customizeFont(string: "\u{2022} Acne: ", font: .interSemiBold(size: 14)!)
-        descText.append(customizeFont(string: "uninflamed blackheads to pus-filled pimples or large, red and tender bumps.\n\n", font: .interRegular(size: 14)!))
-        
-        descText.append(customizeFont(string: "\u{2022} Dark circles: ", font: .interSemiBold(size: 14)!))
-        descText.append(customizeFont(string: "dark circles under your eyes happen when the skin beneath both eyes appears darkened.\n\n", font: .interRegular(size: 14)!))
-        
-        descText.append(customizeFont(string: "\u{2022} Oiliness: ", font: .interSemiBold(size: 14)!))
-        descText.append(customizeFont(string: "oversized sebaceous glands produce excessive amounts of sebum giving the appearance of shiny and greasy skin.\n\n", font: .interRegular(size: 14)!))
-        
-        descText.append(customizeFont(string: "\u{2022} Redness: ", font: .interSemiBold(size: 14)!))
-        descText.append(customizeFont(string: "A response of skin tissues to injury or irritation; characterized by pain and swelling and redness and heat.\n\n", font: .interRegular(size: 14)!))
-        
-        descriptionLabel.attributedText = descText
-        
-        textHeight = descriptionLabel.requiredHeight
-        descriptionLabel.sizeToFit()
-        
     }
     
     override func configureLayout() {
@@ -90,39 +69,107 @@ class ResultProblemView: UIView {
         resultLabel.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
             make.top.equalTo(titleLabel.snp.bottom).offset(10)
+            make.height.equalTo(0)
             make.width.equalToSuperview().offset(-48)
         }
         
         descriptionLabel.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
             make.width.equalToSuperview().offset(-48)
-            make.height.equalTo(descriptionLabel.requiredHeight)
+            make.height.equalTo(0)
             make.top.equalTo(resultLabel.snp.bottom).offset(10)
         }
         
     }
     
-    func customizeFont(string: String, font: UIFont) -> NSMutableAttributedString {
-        return NSMutableAttributedString(string: string, attributes:
-            [NSAttributedString.Key.font : font ])
+    func setProblems(problemIds: [Int]){
+        problemList = fetchProblems(problemIds: problemIds)
+        
+        resultLabel.text = generateResultTitle()
+        resultLabel.sizeToFit()
+        descriptionLabel.attributedText = generateDesc()
+        descriptionLabel.sizeToFit()
+        
+        descriptionLabel.snp.updateConstraints { make in
+            make.height.equalTo(descriptionLabel.requiredHeight)
+        }
+        
+        resultLabel.snp.updateConstraints { make in
+            make.height.equalTo(resultLabel.requiredHeight)
+        }
+        
+        print(titleLabel.requiredHeight)
+        print(descriptionLabel.requiredHeight)
+        print(resultLabel.requiredHeight)
+        
+        self.frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width-40, height: 56+titleLabel.requiredHeight+descriptionLabel.requiredHeight+resultLabel.requiredHeight+18)
+        
+        self.applyGradient(colours: [K.Color.redLightQuint, K.Color.redQuint], locations: [0,1], radius: 8)
     }
     
-}
-
-struct ResultProblemViewPreview: PreviewProvider {
-    static var previews: some View {
-        ViewPreview {
-            ResultProblemView()
+    func generateResultTitle() -> String{
+        var titleString = ""
+        for i in 0..<problemList.count{
+            if (i == 0){
+                titleString += problemList[i].title!.firstUppercased
+            }
+            else{
+                titleString += problemList[i].title!.lowercased()
+            }
+            
+            if(i != problemList.count-1){
+                titleString += ", "
+            }
         }
-        .previewDevice(PreviewDevice(rawValue: "iPhone 14"))
-        .previewDisplayName("iPhone 14")
-        .ignoresSafeArea()
         
-        ViewPreview {
-            ResultProblemView()
-        }
-        .previewDevice(PreviewDevice(rawValue: "iPhone 8"))
-        .previewDisplayName("iPhone 8")
-        .ignoresSafeArea()
+        return titleString
     }
+    
+    func generateDesc() -> NSMutableAttributedString{
+        let desc = NSMutableAttributedString(string: "")
+        problemList.forEach { problem in
+            desc.append(NSMutableAttributedString(string: "\u{2022} \(problem.title!): ", attributes: [NSAttributedString.Key.font : UIFont.interSemiBold(size: 14)! ]))
+            
+            desc.append(NSMutableAttributedString(string: problem.desc!, attributes: [NSAttributedString.Key.font : UIFont.interRegular(size: 14)! ]))
+                        
+            if(problem != problemList.last){
+                desc.append(NSAttributedString(string: "\n\n"))
+            }
+        }
+    
+        return desc
+    }
+    
+    public func fetchProblems(problemIds: [Int]) -> [ProblemModel]{
+            
+        var problemList: [ProblemModel] = []
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let context: NSManagedObjectContext = appDelegate.persistentContainer.viewContext
+        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Problems")
+        
+        var predicateList: [NSPredicate] = []
+        problemIds.forEach { id in
+            let idPredicate = NSPredicate(format: "id == %@", String(describing:id+1))
+            predicateList.append(idPredicate)
+        }
+        let compoundPredicate = NSCompoundPredicate(type: .or, subpredicates: predicateList)
+        
+        request.predicate = compoundPredicate
+        
+        do{
+            let results:NSArray = try context.fetch(request) as NSArray
+            
+            for result in results {
+                let problem = result as? ProblemModel
+                problemList.append(problem!)
+            }
+            
+            return problemList
+        }
+        catch{
+            print("fetch failed")
+        }
+        
+        return problemList
+    }    
 }

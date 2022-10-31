@@ -133,6 +133,8 @@
 		95EB50EF28EA821600412176 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 95EB50EE28EA821600412176 /* Assets.xcassets */; };
 		95EB50F228EA821600412176 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 95EB50F028EA821600412176 /* LaunchScreen.storyboard */; };
 		95EB50FA28EA82D700412176 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 95EB50F928EA82D700412176 /* Podfile */; };
+		95F0DCB7290F8F5900CEEA00 /* OnboardingData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F0DCB6290F8F5900CEEA00 /* OnboardingData.swift */; };
+		95F3834F290FBF4B00FA1815 /* String+LetterCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F3834E290FBF4B00FA1815 /* String+LetterCase.swift */; };
 		95F4478A28FFED4C00183DD9 /* CollapsableButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F4478928FFED4C00183DD9 /* CollapsableButton.swift */; };
 		95FB6A622906DC3300F18E33 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95FB6A612906DC3300F18E33 /* UserModel.swift */; };
 		95FB6A642906DC4500F18E33 /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95FB6A632906DC4500F18E33 /* UserViewModel.swift */; };
@@ -302,6 +304,8 @@
 		95EB50F128EA821600412176 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		95EB50F328EA821600412176 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		95EB50F928EA82D700412176 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		95F0DCB6290F8F5900CEEA00 /* OnboardingData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingData.swift; sourceTree = "<group>"; };
+		95F3834E290FBF4B00FA1815 /* String+LetterCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+LetterCase.swift"; sourceTree = "<group>"; };
 		95F4478928FFED4C00183DD9 /* CollapsableButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollapsableButton.swift; sourceTree = "<group>"; };
 		95FB6A612906DC3300F18E33 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		95FB6A632906DC4500F18E33 /* UserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
@@ -607,6 +611,7 @@
 				72BF72D428F6A93C0036C456 /* UIButton+MoveImageTextLeft.swift */,
 				72B6EDC028FF97580056B374 /* UIView+ApplyGradient.swift */,
 				958E32FC2907E0E400171AF3 /* JSON+CleanString.swift */,
+				95F3834E290FBF4B00FA1815 /* String+LetterCase.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -748,6 +753,7 @@
 			children = (
 				A03857BB28F804F000A4B566 /* UIButton */,
 				A03857BA28F804B100A4B566 /* UIView */,
+				95F0DCB6290F8F5900CEEA00 /* OnboardingData.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -795,8 +801,6 @@
 			isa = PBXGroup;
 			children = (
 				A0EF1F0628FD071B0065AB9A /* Components */,
-				A0EF1F0028FCFFA60065AB9A /* OnboardingResultVC.swift */,
-				A0EF1F0228FCFFC70065AB9A /* OnboardingStepsVC.swift */,
 			);
 			path = Insights;
 			sourceTree = "<group>";
@@ -804,6 +808,8 @@
 		A0EF1F0628FD071B0065AB9A /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				A0EF1F0028FCFFA60065AB9A /* OnboardingResultVC.swift */,
+				A0EF1F0228FCFFC70065AB9A /* OnboardingStepsVC.swift */,
 				A0EF1F0C28FD0A220065AB9A /* UILabel */,
 				A0EF1F0728FD07ED0065AB9A /* UIView */,
 			);
@@ -1025,6 +1031,7 @@
 				9572F0B528F694E00035BCA3 /* UsageCell.swift in Sources */,
 				9588035628FD6DEF00E31E39 /* UILabel+NumberOfLines.swift in Sources */,
 				958253F32908D6D50053AABC /* MorningRoutineStepsTableViewCell.swift in Sources */,
+				95F3834F290FBF4B00FA1815 /* String+LetterCase.swift in Sources */,
 				95CC136728FE67C000D3396A /* AttributedString+Styles.swift in Sources */,
 				9572F0B928F694F90035BCA3 /* SensitivityCell.swift in Sources */,
 				95A902DC28F54925007B7F5C /* IngredientSegmentView.swift in Sources */,
@@ -1060,6 +1067,7 @@
 				950D428B28FDC9B400657816 /* IngDetailLowerView.swift in Sources */,
 				9572F0BD28F6AF5A0035BCA3 /* SourceCell.swift in Sources */,
 				951034CB28EFF51F0011AE39 /* UIImageView+DropShadow.swift in Sources */,
+				95F0DCB7290F8F5900CEEA00 /* OnboardingData.swift in Sources */,
 				9543DA7828F85A7A00E37A28 /* ProductCategoryLabel.swift in Sources */,
 				9572F0BB28F698F90035BCA3 /* IngredientDetailVC.swift in Sources */,
 				958254152908FFF20053AABC /* SkinTypeSeeder.swift in Sources */,

@@ -15,13 +15,13 @@ class PhotoResultView: UIView {
     private let retakeButton = UIButton()
     
     override init(frame: CGRect) {
-            super.init(frame: frame)
-            configureUI()
-        }
+        super.init(frame: frame)
+        configureUI()
+    }
         
-        required init?(coder: NSCoder) {
-            fatalError("init(coder:) has not been implemented")
-        }
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
         
     override func configureComponents() {
             
@@ -36,7 +36,6 @@ class PhotoResultView: UIView {
             titleLabel.font = .clashGroteskMedium(size: 20)
             titleLabel.textColor = K.Color.blackQuint
             
-            photoLogImage.image = UIImage(named: "receipt_logo")
             photoLogImage.layer.cornerRadius = 8
             photoLogImage.backgroundColor = K.Color.disableBgBtnQuint
             photoLogImage.layer.shadowColor = K.Color.shadowQuint.cgColor
@@ -79,5 +78,7 @@ class PhotoResultView: UIView {
             
         }
 
-    
+    func setImage(image: UIImage){
+        photoLogImage.image = image
+    }
 }

@@ -51,16 +51,36 @@ struct K{
         static let photosApi = "https://picsum.photos/v2/list"
     }
     
+    struct Effect{
+        static let antiAcne = 1
+        static let antiAging = 2
+        static let antiBacterial = 3
+        static let brightening = 4
+        static let hydrating = 5
+        static let moisturizing = 6
+        static let phBalancing = 7
+        static let soothing = 8
+        static let uvProtection = 9
+    }
+    
     struct Category{
+        static let acne = 1
+        static let blackHeads = 2
+        static let darkCircles = 3
+        static let dryness = 4
+        static let dullness = 5
+        static let oiliness = 6
+        static let redness = 7
+        static let unevenTexture = 8
         
         static let skinProblem = [1: "Acne", 2: "Black heads", 3: "Dark circles", 4: "Dryness", 5: "Dullness", 6: "Oiliness", 7: "Redness", 8: "Uneven texture"]
         
         static let product = [1: "Toner", 2: "Serum", 3: "Eye Care", 4: "Acne Treatment", 5: "Face Wash", 6: "Face Scrub", 7: "Micellar Water", 8: "Moisturizer", 9: "Sunscreen"]
         
         static let productGuide = [1: "Cleanser", 2: "Serum", 3: "Eye Care", 4: "Acne Care", 5: "Toner", 6: "Micellar", 7: "Moisturizer", 8: "Sunscreen"]
-        
+
         static let productGuideImageName = [1: "cleanser", 2: "serum", 3: "eyeCare", 4: "acneCare", 5: "toner", 6: "micellar", 7: "moisturizer", 8: "sunScreen"]
-        
+
         static let ingredient = [1: "Anti-acne", 2: "Anti-aging", 3: "Anti-bacterial", 4: "Anti-inflammatory", 5: "Brightening", 6: "Hydrating", 7: "Moisturizing", 8: "pH Balancer", 9: "Soothing", 10: "UV Protection"]
         
         static let skincareSteps: [SkinEssential] = [

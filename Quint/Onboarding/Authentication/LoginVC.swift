@@ -12,6 +12,9 @@ import SwiftUI
 
 class LoginVC: UIViewController {
     
+    private let isFirstTime = UserDefaults.standard.object(forKey: K.UD.firstTime) ?? true
+    private let seeders = [IngredientSeeder(), EffectSeeder(), CategorySeeder(), UsageStepSeeder(), ProductSeeder(), SkinTypeSeeder(), ProblemSeeder(), RoutineSeeder(), UserSeeder(), TipSeeder()]
+
     private let topSpacer = UIView()
     private let bottomSpacer = UIView()
     private let logoImage = UIImageView()
@@ -25,6 +28,16 @@ class LoginVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = K.Color.bgQuint
+        
+        print(isFirstTime as! Bool)
+        if isFirstTime as! Bool == true{
+            print("Inital seeding")
+            seeders.forEach { seeder in
+                seeder.seedFromJson()
+            }
+            UserDefaults.standard.set(false, forKey: K.UD.firstTime)
+        }
+        
         configureUI()
     }
     
@@ -190,22 +203,4 @@ extension LoginVC: ASAuthorizationControllerPresentationContextProviding {
         return self.view.window!
     }
     
-}
-
-struct LoginVCPreview: PreviewProvider {
-    static var previews: some View {
-        ViewControllerPreview {
-            LoginVC()
-        }
-        .previewDevice(PreviewDevice(rawValue: "iPhone 14"))
-        .previewDisplayName("iPhone 14")
-        .ignoresSafeArea()
-        
-        ViewControllerPreview {
-            LoginVC()
-        }
-        .previewDevice(PreviewDevice(rawValue: "iPhone 8"))
-        .previewDisplayName("iPhone 8")
-        .ignoresSafeArea()
-    }
 }

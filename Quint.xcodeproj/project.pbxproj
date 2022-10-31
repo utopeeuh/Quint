@@ -98,7 +98,6 @@
 		9588035628FD6DEF00E31E39 /* UILabel+NumberOfLines.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9588035528FD6DEF00E31E39 /* UILabel+NumberOfLines.swift */; };
 		958E32E62907940100171AF3 /* SeederDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 958E32E52907940100171AF3 /* SeederDelegate.swift */; };
 		958E32E82907940E00171AF3 /* IngredientSeeder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 958E32E72907940E00171AF3 /* IngredientSeeder.swift */; };
-		958E32ED29079F9200171AF3 /* dummy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 958E32EC29079F9200171AF3 /* dummy.swift */; };
 		958E32F12907A2EE00171AF3 /* IngredientsJSON.json in Resources */ = {isa = PBXBuildFile; fileRef = 958E32F02907A2EE00171AF3 /* IngredientsJSON.json */; };
 		958E32F32907AC8500171AF3 /* DataHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 958E32F22907AC8500171AF3 /* DataHelper.swift */; };
 		958E32F52907BCF300171AF3 /* Seeder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 958E32F42907BCF300171AF3 /* Seeder.swift */; };
@@ -266,7 +265,6 @@
 		9588035528FD6DEF00E31E39 /* UILabel+NumberOfLines.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+NumberOfLines.swift"; sourceTree = "<group>"; };
 		958E32E52907940100171AF3 /* SeederDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeederDelegate.swift; sourceTree = "<group>"; };
 		958E32E72907940E00171AF3 /* IngredientSeeder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientSeeder.swift; sourceTree = "<group>"; };
-		958E32EC29079F9200171AF3 /* dummy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dummy.swift; sourceTree = "<group>"; };
 		958E32F02907A2EE00171AF3 /* IngredientsJSON.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = IngredientsJSON.json; sourceTree = "<group>"; };
 		958E32F22907AC8500171AF3 /* DataHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataHelper.swift; sourceTree = "<group>"; };
 		958E32F42907BCF300171AF3 /* Seeder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Seeder.swift; sourceTree = "<group>"; };
@@ -733,7 +731,6 @@
 		95FB6A652906DD6000F18E33 /* Data */ = {
 			isa = PBXGroup;
 			children = (
-				958E32EC29079F9200171AF3 /* dummy.swift */,
 				958E32E929079C7A00171AF3 /* JSON */,
 				958E32E4290793F500171AF3 /* Seeders */,
 			);
@@ -1069,7 +1066,6 @@
 				9543DA7828F85A7A00E37A28 /* ProductCategoryLabel.swift in Sources */,
 				9572F0BB28F698F90035BCA3 /* IngredientDetailVC.swift in Sources */,
 				958254152908FFF20053AABC /* SkinTypeSeeder.swift in Sources */,
-				958E32ED29079F9200171AF3 /* dummy.swift in Sources */,
 				958254092908F9310053AABC /* EffectSeeder.swift in Sources */,
 				950404C52901216500B37DFD /* CollapsableStackDelegate.swift in Sources */,
 				A0F519EB290064CC00623A7F /* StepContainerView.swift in Sources */,

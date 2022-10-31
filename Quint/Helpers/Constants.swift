@@ -100,6 +100,10 @@ struct K{
         var title: String
         var partOfDay: PartOfDay
     }
+    
+    struct UD{
+        static let firstTime = "FIRST_TIME_OPEN"
+    }
 }
 
 

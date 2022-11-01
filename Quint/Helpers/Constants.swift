@@ -51,6 +51,37 @@ struct K{
         static let photosApi = "https://picsum.photos/v2/list"
     }
     
+    static let defaultRoutineOnboarding = [ProductCategory.cleanser
+                                           ,ProductCategory.toner
+                                           ,ProductCategory.serum
+                                           ,ProductCategory.eyeCare
+                                           ,ProductCategory.moisturizer
+                                           ,ProductCategory.acneCare
+                                           ,ProductCategory.sunscreen]
+    
+    struct ProductCategory{
+        static let cleanser = 1
+        static let toner = 2
+        static let serum = 3
+        static let eyeCare = 4
+        static let moisturizer = 5
+        static let acneCare = 6
+        static let sunscreen = 7
+        static let exfoliator = 8
+        static let micellar = 9
+    }
+    
+    struct Problem{
+        static let acne = 1
+        static let blackHeads = 2
+        static let darkCircles = 3
+        static let dryness = 4
+        static let dullness = 5
+        static let oiliness = 6
+        static let redness = 7
+        static let unevenTexture = 8
+    }
+    
     struct Effect{
         static let antiAcne = 1
         static let antiAging = 2
@@ -64,14 +95,6 @@ struct K{
     }
     
     struct Category{
-        static let acne = 1
-        static let blackHeads = 2
-        static let darkCircles = 3
-        static let dryness = 4
-        static let dullness = 5
-        static let oiliness = 6
-        static let redness = 7
-        static let unevenTexture = 8
         
         static let skinProblem = [1: "Acne", 2: "Black heads", 3: "Dark circles", 4: "Dryness", 5: "Dullness", 6: "Oiliness", 7: "Redness", 8: "Uneven texture"]
         

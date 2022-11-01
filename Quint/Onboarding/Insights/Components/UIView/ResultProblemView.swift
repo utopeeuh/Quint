@@ -83,7 +83,7 @@ class ResultProblemView: UIView {
     }
     
     func setProblems(problemIds: [Int]){
-        problemList = fetchProblems(problemIds: problemIds)
+        problemList = DataHelper.shared.fetchProblems(problemIds: problemIds)
         
         resultLabel.text = generateResultTitle()
         resultLabel.sizeToFit()
@@ -139,37 +139,4 @@ class ResultProblemView: UIView {
     
         return desc
     }
-    
-    public func fetchProblems(problemIds: [Int]) -> [ProblemModel]{
-            
-        var problemList: [ProblemModel] = []
-        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        let context: NSManagedObjectContext = appDelegate.persistentContainer.viewContext
-        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Problems")
-        
-        var predicateList: [NSPredicate] = []
-        problemIds.forEach { id in
-            let idPredicate = NSPredicate(format: "id == %@", String(describing:id+1))
-            predicateList.append(idPredicate)
-        }
-        let compoundPredicate = NSCompoundPredicate(type: .or, subpredicates: predicateList)
-        
-        request.predicate = compoundPredicate
-        
-        do{
-            let results:NSArray = try context.fetch(request) as NSArray
-            
-            for result in results {
-                let problem = result as? ProblemModel
-                problemList.append(problem!)
-            }
-            
-            return problemList
-        }
-        catch{
-            print("fetch failed")
-        }
-        
-        return problemList
-    }    
 }

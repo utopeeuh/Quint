@@ -13,4 +13,5 @@ struct OnboardingData{
     var isSensitive : Bool?
     var skinProblems : [Int]?
     var chosenImage : UIImage?
+    var routineCategoryList = K.defaultRoutineOnboarding
 }

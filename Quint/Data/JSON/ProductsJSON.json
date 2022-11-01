@@ -1,7 +1,7 @@
 [
   {
     "Id": 1,
-    "Category_id": 4,
+    "Category_id": 6,
     "Brand": "AVIONE",
     "Name": "Royale Acne Care Dry Lotion",
     "Price": "Rp 49.000",
@@ -11,7 +11,7 @@
   },
   {
     "Id": 2,
-    "Category_id": 4,
+    "Category_id": 6,
     "Brand": "AVOSKIN",
     "Name": "Miraculous Acne Solution Spot Treatment",
     "Price": "Rp 243.100",
@@ -21,7 +21,7 @@
   },
   {
     "Id": 3,
-    "Category_id": 4,
+    "Category_id": 6,
     "Brand": "AZARINE",
     "Name": "Acne Spot Gel",
     "Price": "Rp 45.000",
@@ -31,7 +31,7 @@
   },
   {
     "Id": 4,
-    "Category_id": 4,
+    "Category_id": 6,
     "Brand": "BLOOMKA",
     "Name": "TGIF Acne Spot Treatment Clay Cream",
     "Price": "Rp 159.000",
@@ -41,7 +41,7 @@
   },
   {
     "Id": 5,
-    "Category_id": 4,
+    "Category_id": 6,
     "Brand": "BREYLEE",
     "Name": "Sticker Jerawat",
     "Price": "Rp 30.000 - Rp 35.000",
@@ -51,7 +51,7 @@
   },
   {
     "Id": 6,
-    "Category_id": 4,
+    "Category_id": 6,
     "Brand": "BREYLEE",
     "Name": "Krim Penghilang Noda Bekas Jerawat, Luka & Stretch Mark",
     "Price": "Rp 100.000",
@@ -61,7 +61,7 @@
   },
   {
     "Id": 7,
-    "Category_id": 4,
+    "Category_id": 6,
     "Brand": "BREYLEE",
     "Name": "Acne Treatment Cream",
     "Price": "Rp 80.000",
@@ -71,7 +71,7 @@
   },
   {
     "Id": 8,
-    "Category_id": 4,
+    "Category_id": 6,
     "Brand": "COSRX",
     "Name": "Acne Pimple Master Patch",
     "Price": "Rp 56.000",
@@ -81,7 +81,7 @@
   },
   {
     "Id": 9,
-    "Category_id": 4,
+    "Category_id": 6,
     "Brand": "COSRX",
     "Name": "Clear Fit Master Patch",
     "Price": "Rp 56.000",
@@ -91,7 +91,7 @@
   },
   {
     "Id": 10,
-    "Category_id": 4,
+    "Category_id": 6,
     "Brand": "COSRX",
     "Name": "Centella Blemish Cream",
     "Price": "Rp 290.000",
@@ -101,7 +101,7 @@
   },
   {
     "Id": 11,
-    "Category_id": 4,
+    "Category_id": 6,
     "Brand": "COSRX",
     "Name": "AC Collection Acne Patch",
     "Price": "Rp 89.900",
@@ -111,7 +111,7 @@
   },
   {
     "Id": 12,
-    "Category_id": 4,
+    "Category_id": 6,
     "Brand": "COSRX",
     "Name": "Acne Pimple Master Patch",
     "Price": "Rp 168.000",
@@ -121,7 +121,7 @@
   },
   {
     "Id": 13,
-    "Category_id": 4,
+    "Category_id": 6,
     "Brand": "COSRX",
     "Name": "Clear Fit Master Patch",
     "Price": "Rp 168.000",
@@ -131,7 +131,7 @@
   },
   {
     "Id": 14,
-    "Category_id": 4,
+    "Category_id": 6,
     "Brand": "COSRX",
     "Name": "AC Collection Blemish Spot Drying Lotion",
     "Price": "Rp 285.000",
@@ -141,7 +141,7 @@
   },
   {
     "Id": 15,
-    "Category_id": 4,
+    "Category_id": 6,
     "Brand": "COSRX",
     "Name": "Pure Fit Cica Powder 2.0",
     "Price": "Rp 201.000",
@@ -151,7 +151,7 @@
   },
   {
     "Id": 16,
-    "Category_id": 4,
+    "Category_id": 6,
     "Brand": "DERMA ANGEL",
     "Name": "Acne Patch Night",
     "Price": "Rp 18.000 - Rp 32.500",
@@ -161,7 +161,7 @@
   },
   {
     "Id": 17,
-    "Category_id": 4,
+    "Category_id": 6,
     "Brand": "DERMA ANGEL",
     "Name": "Acne Care Intensive Gel",
     "Price": "Rp 99.900",
@@ -171,7 +171,7 @@
   },
   {
     "Id": 18,
-    "Category_id": 4,
+    "Category_id": 6,
     "Brand": "ERHA",
     "Name": "Acneact Acne Spot Gel",
     "Price": "Rp 67.200",
@@ -181,7 +181,7 @@
   },
   {
     "Id": 19,
-    "Category_id": 4,
+    "Category_id": 6,
     "Brand": "ESSENHERB",
     "Name": "Tea Tree Probiotics Spot Gel",
     "Price": "Rp 195.000",
@@ -191,7 +191,7 @@
   },
   {
     "Id": 20,
-    "Category_id": 4,
+    "Category_id": 6,
     "Brand": "EVERWHITE",
     "Name": "Acne Pair Cream",
     "Price": "Rp 83.300",
@@ -201,7 +201,7 @@
   },
   {
     "Id": 21,
-    "Category_id": 4,
+    "Category_id": 6,
     "Brand": "FOCALLURE",
     "Name": "ACNE PIMPLE PATCH",
     "Price": "Rp 18.000",
@@ -211,7 +211,7 @@
   },
   {
     "Id": 22,
-    "Category_id": 4,
+    "Category_id": 6,
     "Brand": "HOLIKA HOLIKA",
     "Name": "Ac Mild Red Spot Patch",
     "Price": "Rp 78.000",
@@ -221,7 +221,7 @@
   },
   {
     "Id": 23,
-    "Category_id": 4,
+    "Category_id": 6,
     "Brand": "INNERTRUE",
     "Name": "Acneficent Treatment Gel",
     "Price": "Rp 80.000",
@@ -231,7 +231,7 @@
   },
   {
     "Id": 24,
-    "Category_id": 4,
+    "Category_id": 6,
     "Brand": "JARTE BEAUTY",
     "Name": "Bye Bye Acne (Spot Treatment)",
     "Price": "Rp 135.000",
@@ -241,7 +241,7 @@
   },
   {
     "Id": 25,
-    "Category_id": 4,
+    "Category_id": 6,
     "Brand": "MAD FOR MAKEUP",
     "Name": "Star Hydrocolloid Pimple Patch",
     "Price": "Rp 39.000",
@@ -251,7 +251,7 @@
   },
   {
     "Id": 26,
-    "Category_id": 4,
+    "Category_id": 6,
     "Brand": "MINERAL BOTANICA",
     "Name": "Zit Zapper For Acne",
     "Price": "Rp 56.900",
@@ -261,7 +261,7 @@
   },
   {
     "Id": 27,
-    "Category_id": 4,
+    "Category_id": 6,
     "Brand": "MISSHA",
     "Name": "Acne Patch Set",
     "Price": "Rp 114.300",
@@ -271,7 +271,7 @@
   },
   {
     "Id": 28,
-    "Category_id": 4,
+    "Category_id": 6,
     "Brand": "MISSHA",
     "Name": "Near Skin Trouble Cut Spot Solution",
     "Price": "Rp 458.850",
@@ -281,7 +281,7 @@
   },
   {
     "Id": 29,
-    "Category_id": 4,
+    "Category_id": 6,
     "Brand": "MURAD",
     "Name": "Acne Body Wash",
     "Price": "Rp 900.000",
@@ -291,7 +291,7 @@
   },
   {
     "Id": 30,
-    "Category_id": 4,
+    "Category_id": 6,
     "Brand": "NACIFIC",
     "Name": "Origin Red Salicylic Acid Spot Cream",
     "Price": "Rp 339.000",
@@ -301,7 +301,7 @@
   },
   {
     "Id": 31,
-    "Category_id": 4,
+    "Category_id": 6,
     "Brand": "NPURE",
     "Name": "Cica Acne Spot",
     "Price": "Rp 69.000",
@@ -311,7 +311,7 @@
   },
   {
     "Id": 32,
-    "Category_id": 4,
+    "Category_id": 6,
     "Brand": "OMNISKIN",
     "Name": "Volcanic Ash Pimple Drying Lotion",
     "Price": "Rp 89.000",
@@ -321,7 +321,7 @@
   },
   {
     "Id": 33,
-    "Category_id": 4,
+    "Category_id": 6,
     "Brand": "RISTRA",
     "Name": "Ristra Acne Spot Drying Treatment",
     "Price": "Rp 208.000",
@@ -331,7 +331,7 @@
   },
   {
     "Id": 34,
-    "Category_id": 4,
+    "Category_id": 6,
     "Brand": "SENSATIA BOTANICALS",
     "Name": "Tea Tree & Lemon Spot Treatment",
     "Price": "Rp 110.000",
@@ -341,7 +341,7 @@
   },
   {
     "Id": 35,
-    "Category_id": 4,
+    "Category_id": 6,
     "Brand": "SKIN GAME",
     "Name": "Acne Warrior Spot Treatment",
     "Price": "Rp 125.000",
@@ -351,7 +351,7 @@
   },
   {
     "Id": 36,
-    "Category_id": 4,
+    "Category_id": 6,
     "Brand": "SKIN1004",
     "Name": "Madagascar Centella Spot Cream 20ml",
     "Price": "Rp 257.000",
@@ -361,7 +361,7 @@
   },
   {
     "Id": 37,
-    "Category_id": 4,
+    "Category_id": 6,
     "Brand": "SKINTIFIC",
     "Name": "Salicylic Acid Acne Spot Treatment",
     "Price": "Rp 98.800",
@@ -371,7 +371,7 @@
   },
   {
     "Id": 38,
-    "Category_id": 4,
+    "Category_id": 6,
     "Brand": "SNP",
     "Name": "PREP Salironic Spot Gel",
     "Price": "Rp 160.000",
@@ -381,7 +381,7 @@
   },
   {
     "Id": 39,
-    "Category_id": 4,
+    "Category_id": 6,
     "Brand": "SOME BY MI",
     "Name": "Tea Tree Clear Spot Oil",
     "Price": "Rp 284.000",
@@ -391,7 +391,7 @@
   },
   {
     "Id": 40,
-    "Category_id": 4,
+    "Category_id": 6,
     "Brand": "SOME BY MI",
     "Name": "AHA-BHA-PHA Miracle Spot Cream",
     "Price": "Rp 475.000",
@@ -401,7 +401,7 @@
   },
   {
     "Id": 41,
-    "Category_id": 4,
+    "Category_id": 6,
     "Brand": "SUKIN",
     "Name": "Blemish Control Spot Banishing Gel",
     "Price": "Rp 159.000",
@@ -411,7 +411,7 @@
   },
   {
     "Id": 42,
-    "Category_id": 4,
+    "Category_id": 6,
     "Brand": "TERRA BEAUTE",
     "Name": "Acne Spot Treatment",
     "Price": "Rp 75.000",
@@ -421,7 +421,7 @@
   },
   {
     "Id": 43,
-    "Category_id": 4,
+    "Category_id": 6,
     "Brand": "WARDAH",
     "Name": "Acnederm Acne Spot Treatment Gel",
     "Price": "Rp 24.500",
@@ -431,7 +431,7 @@
   },
   {
     "Id": 44,
-    "Category_id": 4,
+    "Category_id": 6,
     "Brand": "WHITELAB",
     "Name": "Whitelab Acne Cream",
     "Price": "Rp 62.600",
@@ -441,7 +441,7 @@
   },
   {
     "Id": 45,
-    "Category_id": 4,
+    "Category_id": 6,
     "Brand": "YOU BEAUTY",
     "Name": "AcnePlus Triple Action Spot Care",
     "Price": "Rp 43.000",
@@ -451,7 +451,7 @@
   },
   {
     "Id": 46,
-    "Category_id": 4,
+    "Category_id": 6,
     "Brand": "ZLOTA",
     "Name": "Acne Spot Treatment",
     "Price": "Rp 69.000",
@@ -461,7 +461,7 @@
   },
   {
     "Id": 47,
-    "Category_id": 5,
+    "Category_id": 1,
     "Brand": "A'PIEU",
     "Name": "Deep Clean Foam Cleanser (Pore)",
     "Price": "Rp 69.900",
@@ -471,7 +471,7 @@
   },
   {
     "Id": 48,
-    "Category_id": 5,
+    "Category_id": 1,
     "Brand": "ARIUL",
     "Name": "Smooth & Pure Cleansing Foam",
     "Price": "Rp 31.500 - Rp 49.900",
@@ -481,7 +481,7 @@
   },
   {
     "Id": 49,
-    "Category_id": 5,
+    "Category_id": 1,
     "Brand": "AVOSKIN",
     "Name": "Natural Sublime Facial Cleanser",
     "Price": "Rp 132.100",
@@ -491,7 +491,7 @@
   },
   {
     "Id": 50,
-    "Category_id": 5,
+    "Category_id": 1,
     "Brand": "AVOSKIN",
     "Name": "Naufa Pure Olive Oil Bar Soap",
     "Price": "Rp 24.500",
@@ -501,7 +501,7 @@
   },
   {
     "Id": 51,
-    "Category_id": 5,
+    "Category_id": 1,
     "Brand": "BIODERMA",
     "Name": "Atoderm Gel Douche",
     "Price": "Rp 125.000 - Rp 330.000",
@@ -511,7 +511,7 @@
   },
   {
     "Id": 52,
-    "Category_id": 5,
+    "Category_id": 1,
     "Brand": "BIO-ESSENCE",
     "Name": "Bio Renew Deep Cleanser",
     "Price": "Rp 83.500",
@@ -521,7 +521,7 @@
   },
   {
     "Id": 53,
-    "Category_id": 5,
+    "Category_id": 1,
     "Brand": "BIYU",
     "Name": "Pure Gentle Cleanser",
     "Price": "Rp 30.000 - Rp 99.000",
@@ -531,7 +531,7 @@
   },
   {
     "Id": 54,
-    "Category_id": 5,
+    "Category_id": 1,
     "Brand": "CETAPHIL",
     "Name": "Gentle Skin Cleanser",
     "Price": "Rp 59.000 - Rp 457.000",
@@ -541,7 +541,7 @@
   },
   {
     "Id": 55,
-    "Category_id": 5,
+    "Category_id": 1,
     "Brand": "CETAPHIL",
     "Name": "Oily Skin Cleanser",
     "Price": "Rp 245.700",
@@ -551,7 +551,7 @@
   },
   {
     "Id": 56,
-    "Category_id": 5,
+    "Category_id": 1,
     "Brand": "COSRX",
     "Name": "Low pH Good Morning Cleanser",
     "Price": "Rp 59.900 - Rp 149.000",
@@ -561,7 +561,7 @@
   },
   {
     "Id": 57,
-    "Category_id": 5,
+    "Category_id": 1,
     "Brand": "COSRX",
     "Name": "Salicylic Acid Daily Gentle Cleanser",
     "Price": "Rp 149.000",
@@ -571,7 +571,7 @@
   },
   {
     "Id": 58,
-    "Category_id": 5,
+    "Category_id": 1,
     "Brand": "COSRX",
     "Name": "Pure Fit Cica Cleanser",
     "Price": "Rp 225.000",
@@ -581,7 +581,7 @@
   },
   {
     "Id": 59,
-    "Category_id": 5,
+    "Category_id": 1,
     "Brand": "DEAR KLAIRS",
     "Name": "Rich Moist Foaming Cleanser",
     "Price": "Rp 255.000",
@@ -591,7 +591,7 @@
   },
   {
     "Id": 60,
-    "Category_id": 5,
+    "Category_id": 1,
     "Brand": "DHC",
     "Name": "Deep Cleansing Oil",
     "Price": "Rp 100.000 - Rp 355.000",
@@ -601,7 +601,7 @@
   },
   {
     "Id": 61,
-    "Category_id": 5,
+    "Category_id": 1,
     "Brand": "DHC",
     "Name": "Mineral Face Wash",
     "Price": "Rp 255.000",
@@ -611,7 +611,7 @@
   },
   {
     "Id": 62,
-    "Category_id": 5,
+    "Category_id": 1,
     "Brand": "DHC",
     "Name": "Face Wash Powder",
     "Price": "Rp 205.000",
@@ -621,7 +621,7 @@
   },
   {
     "Id": 63,
-    "Category_id": 5,
+    "Category_id": 1,
     "Brand": "EMINA",
     "Name": "Ms Pimple Acne Solution Face Wash",
     "Price": "Rp 21.000",
@@ -631,7 +631,7 @@
   },
   {
     "Id": 64,
-    "Category_id": 5,
+    "Category_id": 1,
     "Brand": "EVERWHITE",
     "Name": "Facial Wash",
     "Price": "Rp 64.400",
@@ -641,7 +641,7 @@
   },
   {
     "Id": 65,
-    "Category_id": 5,
+    "Category_id": 1,
     "Brand": "GENTLE HOUR",
     "Name": "Call It A Day Cleansing Balm",
     "Price": "Rp 240.000",
@@ -651,7 +651,7 @@
   },
   {
     "Id": 66,
-    "Category_id": 5,
+    "Category_id": 1,
     "Brand": "HARLETTE",
     "Name": "Oatmilk Gentle Facial Wash",
     "Price": "Rp 117.500",
@@ -661,7 +661,7 @@
   },
   {
     "Id": 67,
-    "Category_id": 5,
+    "Category_id": 1,
     "Brand": "HEIMISH",
     "Name": "All Clean Green Foam",
     "Price": "Rp 180.000",
@@ -671,7 +671,7 @@
   },
   {
     "Id": 68,
-    "Category_id": 5,
+    "Category_id": 1,
     "Brand": "KEANA NADESHIKO",
     "Name": "KEANA Baking Soda Scrub Wash",
     "Price": "Rp 201.000",
@@ -681,7 +681,7 @@
   },
   {
     "Id": 69,
-    "Category_id": 5,
+    "Category_id": 1,
     "Brand": "KEANA NADESHIKO",
     "Name": "KEANA Baking Soda Cleansing Gel",
     "Price": "Rp 201.000",
@@ -691,7 +691,7 @@
   },
   {
     "Id": 70,
-    "Category_id": 5,
+    "Category_id": 1,
     "Brand": "KLEVERU",
     "Name": "Sea Buckthorn Cleansing Gel",
     "Price": "Rp 77.700",
@@ -701,7 +701,7 @@
   },
   {
     "Id": 71,
-    "Category_id": 5,
+    "Category_id": 1,
     "Brand": "LACOCO",
     "Name": "Ultimate Golden Swallow Facial Foam",
     "Price": "Rp 180.000",
@@ -711,7 +711,7 @@
   },
   {
     "Id": 72,
-    "Category_id": 5,
+    "Category_id": 1,
     "Brand": "NEUTROGENA",
     "Name": "Deep Clean Blackhead Eliminating Daily Scrub",
     "Price": "Rp 111.000",
@@ -721,7 +721,7 @@
   },
   {
     "Id": 73,
-    "Category_id": 5,
+    "Category_id": 1,
     "Brand": "NEUTROGENA",
     "Name": "Deep Clean Hydrating Foaming Cleanser",
     "Price": "Rp 111.000",
@@ -731,7 +731,7 @@
   },
   {
     "Id": 74,
-    "Category_id": 5,
+    "Category_id": 1,
     "Brand": "NEUTROGENA",
     "Name": "Liquid Pure Mild Facial Cleanser",
     "Price": "Rp 126.000",
@@ -741,7 +741,7 @@
   },
   {
     "Id": 75,
-    "Category_id": 5,
+    "Category_id": 1,
     "Brand": "NIVEA",
     "Name": "NIVEA Sparkling Bright Facial Foam",
     "Price": "Rp 18.200 - Rp 30.800",
@@ -751,7 +751,7 @@
   },
   {
     "Id": 76,
-    "Category_id": 5,
+    "Category_id": 1,
     "Brand": "NPURE",
     "Name": "Face Wash Cica Series",
     "Price": "Rp 90.000",
@@ -761,7 +761,7 @@
   },
   {
     "Id": 77,
-    "Category_id": 5,
+    "Category_id": 1,
     "Brand": "NPURE",
     "Name": "Noni Probiotics \"Cleanse Me Softly\" Gel Cleanser",
     "Price": "Rp 35.000 - Rp 69.000",
@@ -771,7 +771,7 @@
   },
   {
     "Id": 78,
-    "Category_id": 5,
+    "Category_id": 1,
     "Brand": "NPURE",
     "Name": "Marigold Deep-Cleanse Facial Wash",
     "Price": "Rp 90.000",
@@ -781,7 +781,7 @@
   },
   {
     "Id": 79,
-    "Category_id": 5,
+    "Category_id": 1,
     "Brand": "PYUNKANG YUL",
     "Name": "Cleansing Foam",
     "Price": "Rp 180.000",
@@ -791,7 +791,7 @@
   },
   {
     "Id": 80,
-    "Category_id": 5,
+    "Category_id": 1,
     "Brand": "PYUNKANG YUL",
     "Name": "Acne Facial Cleanser",
     "Price": "Rp 150.000",
@@ -801,7 +801,7 @@
   },
   {
     "Id": 81,
-    "Category_id": 5,
+    "Category_id": 1,
     "Brand": "ROJUKISS",
     "Name": "Jeju Lotus Glow & Bright Korean Cleanser",
     "Price": "Rp 29.900",
@@ -811,7 +811,7 @@
   },
   {
     "Id": 82,
-    "Category_id": 5,
+    "Category_id": 1,
     "Brand": "ROSE ALL DAY",
     "Name": "Butter Be Gone Cleansing Balm",
     "Price": "Rp 249.000",
@@ -821,7 +821,7 @@
   },
   {
     "Id": 83,
-    "Category_id": 5,
+    "Category_id": 1,
     "Brand": "ROSE ALL DAY",
     "Name": "Foaming Face Wash",
     "Price": "Rp 159.000",
@@ -831,7 +831,7 @@
   },
   {
     "Id": 84,
-    "Category_id": 5,
+    "Category_id": 1,
     "Brand": "RUNA BEAUTY",
     "Name": "Antioxidant Cleansing Butter",
     "Price": "Rp 189.000",
@@ -841,7 +841,7 @@
   },
   {
     "Id": 85,
-    "Category_id": 5,
+    "Category_id": 1,
     "Brand": "SAFI",
     "Name": "White Expert Purifying Cleanser",
     "Price": "Rp 29.000 - Rp 41.000",
@@ -851,7 +851,7 @@
   },
   {
     "Id": 86,
-    "Category_id": 5,
+    "Category_id": 1,
     "Brand": "SAFI",
     "Name": "Age Defy Cream Cleanser",
     "Price": "Rp 36.000 - Rp 62.200",
@@ -861,7 +861,7 @@
   },
   {
     "Id": 87,
-    "Category_id": 5,
+    "Category_id": 1,
     "Brand": "SAFI",
     "Name": "Safi White Natural Brightening Cleanser Grapefruit",
     "Price": "Rp 21.000 - Rp 36.000",
@@ -871,7 +871,7 @@
   },
   {
     "Id": 88,
-    "Category_id": 5,
+    "Category_id": 1,
     "Brand": "SAFI",
     "Name": "Safi Dermasafe Mousse Cleanser",
     "Price": "Rp 104.500",
@@ -881,7 +881,7 @@
   },
   {
     "Id": 89,
-    "Category_id": 5,
+    "Category_id": 1,
     "Brand": "SAFI",
     "Name": "Safi White Natural Brightening Cleanser Mangosteen",
     "Price": "Rp 21.000 - Rp 36.500",
@@ -891,7 +891,7 @@
   },
   {
     "Id": 90,
-    "Category_id": 5,
+    "Category_id": 1,
     "Brand": "SCARLETT WHITENING",
     "Name": "Scarlett Whitening Facial Wash",
     "Price": "Rp 82.500",
@@ -901,7 +901,7 @@
   },
   {
     "Id": 91,
-    "Category_id": 5,
+    "Category_id": 1,
     "Brand": "SENKA",
     "Name": "Senka - Perfect Whip",
     "Price": "Rp 32.500 - Rp 57.000",
@@ -911,7 +911,7 @@
   },
   {
     "Id": 92,
-    "Category_id": 5,
+    "Category_id": 1,
     "Brand": "SENKA",
     "Name": "Perfect Whip Acne Care",
     "Price": "Rp 49.500 - Rp 80.000",
@@ -921,7 +921,7 @@
   },
   {
     "Id": 93,
-    "Category_id": 5,
+    "Category_id": 1,
     "Brand": "SENKA",
     "Name": "Senka - Perfect Whip White",
     "Price": "Rp 32.500 - Rp 57.000",
@@ -931,7 +931,7 @@
   },
   {
     "Id": 94,
-    "Category_id": 5,
+    "Category_id": 1,
     "Brand": "SENKA",
     "Name": "Senka Perfect White Clay",
     "Price": "Rp 35.500 - Rp 63.000",
@@ -941,7 +941,7 @@
   },
   {
     "Id": 95,
-    "Category_id": 5,
+    "Category_id": 1,
     "Brand": "SENKA",
     "Name": "Perfect Whip Collagen",
     "Price": "Rp 49.500 - Rp 90.000",
@@ -951,7 +951,7 @@
   },
   {
     "Id": 96,
-    "Category_id": 5,
+    "Category_id": 1,
     "Brand": "SENKA",
     "Name": "Perfect Whip Fresh Anti Shine",
     "Price": "Rp 32.500 - Rp 57.000",
@@ -961,7 +961,7 @@
   },
   {
     "Id": 97,
-    "Category_id": 5,
+    "Category_id": 1,
     "Brand": "SENKA",
     "Name": "Perfect Whip U Jumbo",
     "Price": "Rp 90.000",
@@ -971,7 +971,7 @@
   },
   {
     "Id": 98,
-    "Category_id": 5,
+    "Category_id": 1,
     "Brand": "SKIN1004",
     "Name": "Madagascar Centella Ampoule Foam",
     "Price": "Rp 144.000 - Rp 223.000",
@@ -981,7 +981,7 @@
   },
   {
     "Id": 99,
-    "Category_id": 5,
+    "Category_id": 1,
     "Brand": "SKINTIFIC",
     "Name": "5X Ceramide Low pH Cleanser",
     "Price": "Rp 43.500 - Rp 109.900",
@@ -991,7 +991,7 @@
   },
   {
     "Id": 100,
-    "Category_id": 5,
+    "Category_id": 1,
     "Brand": "SKINTIFIC",
     "Name": "Purifying Barrier Ice Cream Cleansing Balm",
     "Price": "Rp 143.200",
@@ -1001,7 +1001,7 @@
   },
   {
     "Id": 101,
-    "Category_id": 5,
+    "Category_id": 1,
     "Brand": "SOME BY MI",
     "Name": "Blackhead Green Tea Miracle Bubble Cleanser",
     "Price": "Rp 445.000",
@@ -1011,7 +1011,7 @@
   },
   {
     "Id": 102,
-    "Category_id": 5,
+    "Category_id": 1,
     "Brand": "SOME BY MI",
     "Name": "Blemish Vita Brightening Bubble Cleanser",
     "Price": "Rp 394.000",
@@ -1021,7 +1021,7 @@
   },
   {
     "Id": 103,
-    "Category_id": 5,
+    "Category_id": 1,
     "Brand": "SUKIN",
     "Name": "Signature Foaming Facial Cleanser",
     "Price": "Rp 75.000 - Rp 159.000",
@@ -1031,7 +1031,7 @@
   },
   {
     "Id": 104,
-    "Category_id": 5,
+    "Category_id": 1,
     "Brand": "SUKIN",
     "Name": "Blemish Control Clearing Facial Wash",
     "Price": "Rp 179.000",
@@ -1041,7 +1041,7 @@
   },
   {
     "Id": 105,
-    "Category_id": 5,
+    "Category_id": 1,
     "Brand": "SUKIN",
     "Name": "Sensitive Cleansing Gel",
     "Price": "Rp 159.000",
@@ -1051,7 +1051,7 @@
   },
   {
     "Id": 106,
-    "Category_id": 5,
+    "Category_id": 1,
     "Brand": "TRUE TO SKIN",
     "Name": "Matcha Oat Gentle Cleanser",
     "Price": "Rp 86.000",
@@ -1061,7 +1061,7 @@
   },
   {
     "Id": 107,
-    "Category_id": 5,
+    "Category_id": 1,
     "Brand": "TRUEVE",
     "Name": "Gentle Low pH Facial Cleanser",
     "Price": "Rp 111.000",
@@ -1071,7 +1071,7 @@
   },
   {
     "Id": 108,
-    "Category_id": 5,
+    "Category_id": 1,
     "Brand": "TULUS",
     "Name": "Balanced Gel Cleanser",
     "Price": "Rp 159.00",
@@ -1081,7 +1081,7 @@
   },
   {
     "Id": 109,
-    "Category_id": 5,
+    "Category_id": 1,
     "Brand": "WARDAH",
     "Name": "Aloe Hydramild Facial Wash",
     "Price": "Rp 19.000 - Rp 29.000",
@@ -1091,7 +1091,7 @@
   },
   {
     "Id": 110,
-    "Category_id": 5,
+    "Category_id": 1,
     "Brand": "WHITELAB",
     "Name": "Brightening Facial Wash",
     "Price": "Rp 39.900",
@@ -1101,7 +1101,7 @@
   },
   {
     "Id": 111,
-    "Category_id": 5,
+    "Category_id": 1,
     "Brand": "WHITELAB",
     "Name": "Whitelab Acne Soap",
     "Price": "Rp 29.400",
@@ -1111,7 +1111,7 @@
   },
   {
     "Id": 112,
-    "Category_id": 5,
+    "Category_id": 1,
     "Brand": "WHITELAB",
     "Name": "Acne Care Facial Wash",
     "Price": "Rp 49.400",
@@ -1121,7 +1121,7 @@
   },
   {
     "Id": 113,
-    "Category_id": 6,
+    "Category_id": 8,
     "Brand": "AZARINE",
     "Name": "Rp 32.500",
     "Price": "Fresh Radiance Brightening Scrub",
@@ -1131,7 +1131,7 @@
   },
   {
     "Id": 114,
-    "Category_id": 6,
+    "Category_id": 8,
     "Brand": "BIODERMA",
     "Name": "Rp 258.500",
     "Price": "Sebium Gel Gommant / Exfoliating Gel",
@@ -1141,7 +1141,7 @@
   },
   {
     "Id": 115,
-    "Category_id": 6,
+    "Category_id": 8,
     "Brand": "BIO-ESSENCE",
     "Name": "Rp 176.500",
     "Price": "Bio-Renew Deep Exfoliating Gel",
@@ -1151,7 +1151,7 @@
   },
   {
     "Id": 116,
-    "Category_id": 6,
+    "Category_id": 8,
     "Brand": "BIO-ESSENCE",
     "Name": "Rp 95.000",
     "Price": "Bio-Treasure Japanese Apricot Seed Smoothing Face Scrub",
@@ -1161,7 +1161,7 @@
   },
   {
     "Id": 117,
-    "Category_id": 6,
+    "Category_id": 8,
     "Brand": "COSRX",
     "Name": "Rp 299.000",
     "Price": "BHA Blackhead Power Liquid",
@@ -1171,7 +1171,7 @@
   },
   {
     "Id": 118,
-    "Category_id": 6,
+    "Category_id": 8,
     "Brand": "DEAR KLAIRS",
     "Name": "Rp 340.000",
     "Price": "Gentle Black Sugar Facial Polish",
@@ -1181,7 +1181,7 @@
   },
   {
     "Id": 119,
-    "Category_id": 6,
+    "Category_id": 8,
     "Brand": "DHC",
     "Name": "Rp 255.000",
     "Price": "Facial Scrub",
@@ -1191,7 +1191,7 @@
   },
   {
     "Id": 120,
-    "Category_id": 6,
+    "Category_id": 8,
     "Brand": "EMINA",
     "Name": "Rp 26.500",
     "Price": "Apricot Jam Face Scrub",
@@ -1201,7 +1201,7 @@
   },
   {
     "Id": 121,
-    "Category_id": 6,
+    "Category_id": 8,
     "Brand": "FREEMAN BEAUTY",
     "Name": "Rp 97.800",
     "Price": "Indonesian Coconut Face Scrub 175ml",
@@ -1211,7 +1211,7 @@
   },
   {
     "Id": 122,
-    "Category_id": 6,
+    "Category_id": 8,
     "Brand": "HALE",
     "Name": "Rp 119.000",
     "Price": "Reborn AHA-BHA-PHA Peeling Gel",
@@ -1221,7 +1221,7 @@
   },
   {
     "Id": 123,
-    "Category_id": 6,
+    "Category_id": 8,
     "Brand": "L'OCCITANE",
     "Name": "Rp 620.000",
     "Price": "Reine Blanche Illuminating Scrub",
@@ -1231,7 +1231,7 @@
   },
   {
     "Id": 124,
-    "Category_id": 6,
+    "Category_id": 8,
     "Brand": "LOREAL PARIS",
     "Name": "Rp 82.700",
     "Price": "Aura Perfect Scrub - 100ml",
@@ -1241,7 +1241,7 @@
   },
   {
     "Id": 125,
-    "Category_id": 6,
+    "Category_id": 8,
     "Brand": "NEOGEN DERMALOGY",
     "Name": "Rp 319.000",
     "Price": "Dermalogy Real Cica Pad",
@@ -1251,7 +1251,7 @@
   },
   {
     "Id": 126,
-    "Category_id": 6,
+    "Category_id": 8,
     "Brand": "NEOGEN DERMALOGY",
     "Name": "Rp 249.000",
     "Price": "Bio Peel Gauze Peeling  Lemon",
@@ -1261,7 +1261,7 @@
   },
   {
     "Id": 127,
-    "Category_id": 6,
+    "Category_id": 8,
     "Brand": "NEOGEN DERMALOGY",
     "Name": "Rp 359.000",
     "Price": "Neogen Dermalogy Essence Pad",
@@ -1271,7 +1271,7 @@
   },
   {
     "Id": 128,
-    "Category_id": 6,
+    "Category_id": 8,
     "Brand": "NEOGEN DERMALOGY",
     "Name": "Rp 249.000",
     "Price": "Bio Peel Gauze Peeling Wine",
@@ -1281,7 +1281,7 @@
   },
   {
     "Id": 129,
-    "Category_id": 6,
+    "Category_id": 8,
     "Brand": "NEOGEN DERMALOGY",
     "Name": "Rp 249.000",
     "Price": "Bio Peel Gauze Peeling Greentea",
@@ -1291,7 +1291,7 @@
   },
   {
     "Id": 130,
-    "Category_id": 6,
+    "Category_id": 8,
     "Brand": "NOOLAB",
     "Name": "Rp 153.000",
     "Price": "First Step Exfoliating Gel",
@@ -1301,7 +1301,7 @@
   },
   {
     "Id": 131,
-    "Category_id": 6,
+    "Category_id": 8,
     "Brand": "NPURE",
     "Name": "Rp 29.000 - Rp 129.000",
     "Price": "Cica Clear Pad",
@@ -1311,7 +1311,7 @@
   },
   {
     "Id": 132,
-    "Category_id": 6,
+    "Category_id": 8,
     "Brand": "PETAL FRESH",
     "Name": "Rp 141.900",
     "Price": "Petal Fresh Pure Papaya Facial Scrub",
@@ -1321,7 +1321,7 @@
   },
   {
     "Id": 133,
-    "Category_id": 6,
+    "Category_id": 8,
     "Brand": "RESET THE SKIN",
     "Name": "Rp 118.000",
     "Price": "2% BHA Pore-refining Exfoliant",
@@ -1331,7 +1331,7 @@
   },
   {
     "Id": 134,
-    "Category_id": 6,
+    "Category_id": 8,
     "Brand": "SAFI",
     "Name": "Rp 57.500",
     "Price": "Age Defy Deep Exfoliator",
@@ -1341,7 +1341,7 @@
   },
   {
     "Id": 135,
-    "Category_id": 6,
+    "Category_id": 8,
     "Brand": "SAFI",
     "Name": "Rp 55.000",
     "Price": "White Expert Deep Exfoliator",
@@ -1351,7 +1351,7 @@
   },
   {
     "Id": 136,
-    "Category_id": 6,
+    "Category_id": 8,
     "Brand": "SENSATIA BOTANICALS",
     "Name": "Rp 120.000",
     "Price": "Coconut & Vanilla Facial Scrub - 60 ml",
@@ -1361,7 +1361,7 @@
   },
   {
     "Id": 137,
-    "Category_id": 6,
+    "Category_id": 8,
     "Brand": "SENSATIA BOTANICALS",
     "Name": "Rp 120.000",
     "Price": "Tea Tree & Lemon Facial Scrub",
@@ -1371,7 +1371,7 @@
   },
   {
     "Id": 138,
-    "Category_id": 6,
+    "Category_id": 8,
     "Brand": "SENSATIA BOTANICALS",
     "Name": "Rp 120.000",
     "Price": "Unscented Sensitive Facial Scrub",
@@ -1381,7 +1381,7 @@
   },
   {
     "Id": 139,
-    "Category_id": 6,
+    "Category_id": 8,
     "Brand": "SNP",
     "Name": "Rp 161.600",
     "Price": "SNP PREP Clayronic Scrub Foam",
@@ -1391,7 +1391,7 @@
   },
   {
     "Id": 140,
-    "Category_id": 6,
+    "Category_id": 8,
     "Brand": "ST. IVES",
     "Name": "Rp 72.500",
     "Price": "Gentle Smoothing Oatmeal Scrub & Mask",
@@ -1401,7 +1401,7 @@
   },
   {
     "Id": 141,
-    "Category_id": 6,
+    "Category_id": 8,
     "Brand": "ST. IVES",
     "Name": "Rp 72.500",
     "Price": "Fresh Skin Apricot Scrub",
@@ -1411,7 +1411,7 @@
   },
   {
     "Id": 142,
-    "Category_id": 6,
+    "Category_id": 8,
     "Brand": "ST. IVES",
     "Name": "Rp 72.500",
     "Price": "Radiant Skin Pink Lemon & Mandarin Orange Scrub",
@@ -1421,7 +1421,7 @@
   },
   {
     "Id": 143,
-    "Category_id": 6,
+    "Category_id": 8,
     "Brand": "ST. IVES",
     "Name": "Rp 72.500",
     "Price": "Soft Skin Avocado and Honey Face Scrub",
@@ -1431,7 +1431,7 @@
   },
   {
     "Id": 144,
-    "Category_id": 6,
+    "Category_id": 8,
     "Brand": "ST. IVES",
     "Name": "Rp 145.000",
     "Price": "St. Ives Coffee Face Scrub",
@@ -1441,7 +1441,7 @@
   },
   {
     "Id": 145,
-    "Category_id": 6,
+    "Category_id": 8,
     "Brand": "SUKIN",
     "Name": "Rp 75.000 - Rp 159.000",
     "Price": "Signature Revitalising Facial Scrub",
@@ -1451,7 +1451,7 @@
   },
   {
     "Id": 146,
-    "Category_id": 6,
+    "Category_id": 8,
     "Brand": "SUKIN",
     "Name": "Rp 175.000",
     "Price": "Sukin Brightening Jelly Exfoliator 125ml Tube",
@@ -1461,7 +1461,7 @@
   },
   {
     "Id": 147,
-    "Category_id": 6,
+    "Category_id": 8,
     "Brand": "SUKIN",
     "Name": "Rp 155.000",
     "Price": "Signature Revitalising Facial Scrub",
@@ -1471,7 +1471,7 @@
   },
   {
     "Id": 148,
-    "Category_id": 6,
+    "Category_id": 8,
     "Brand": "THE SAEM",
     "Name": "Rp 189.000",
     "Price": "Calamansi Pore Stick Cleanser",
@@ -1481,7 +1481,7 @@
   },
   {
     "Id": 149,
-    "Category_id": 6,
+    "Category_id": 8,
     "Brand": "UTAMA SPICE",
     "Name": "Rp 99.300",
     "Price": "Tea Tree Face Scrub",
@@ -1491,7 +1491,7 @@
   },
   {
     "Id": 150,
-    "Category_id": 6,
+    "Category_id": 8,
     "Brand": "WARDAH",
     "Name": "Rp 19.000",
     "Price": "Lightening Gentle Exfoliator",
@@ -1501,7 +1501,7 @@
   },
   {
     "Id": 151,
-    "Category_id": 7,
+    "Category_id": 9,
     "Brand": "BIORE",
     "Name": "Makeup Remover Perfect Cleansing Water Soften Up",
     "Price": "Rp 29.200 - Rp 71.100",
@@ -1511,7 +1511,7 @@
   },
   {
     "Id": 152,
-    "Category_id": 7,
+    "Category_id": 9,
     "Brand": "GARNIER",
     "Name": "Micellar Water Biphase",
     "Price": "Rp 27.200 - Rp 131.000",
@@ -1521,7 +1521,7 @@
   },
   {
     "Id": 153,
-    "Category_id": 7,
+    "Category_id": 9,
     "Brand": "BIORE",
     "Name": "Makeup Remover Perfect Cleansing Water Oil Clear",
     "Price": "Rp 29.200 - Rp 71.100",
@@ -1531,7 +1531,7 @@
   },
   {
     "Id": 154,
-    "Category_id": 7,
+    "Category_id": 9,
     "Brand": "NIVEA",
     "Name": "Hydration Micellair Skin Breathe",
     "Price": "Rp 33.800 - Rp 48.200",
@@ -1541,7 +1541,7 @@
   },
   {
     "Id": 155,
-    "Category_id": 7,
+    "Category_id": 9,
     "Brand": "NIVEA",
     "Name": "MicellAIR Xpert",
     "Price": "Rp 45.000",
@@ -1551,7 +1551,7 @@
   },
   {
     "Id": 156,
-    "Category_id": 7,
+    "Category_id": 9,
     "Brand": "POND'S",
     "Name": "Vitamin Micellar Water Brightening Rose",
     "Price": "Rp 10.300 - Rp 56.300",
@@ -1561,7 +1561,7 @@
   },
   {
     "Id": 157,
-    "Category_id": 7,
+    "Category_id": 9,
     "Brand": "EMINA",
     "Name": "Micellar Water Drop Cleanser â€“ Bright Stuff",
     "Price": "Rp 33.000",
@@ -1571,7 +1571,7 @@
   },
   {
     "Id": 158,
-    "Category_id": 7,
+    "Category_id": 9,
     "Brand": "NIVEA",
     "Name": "Micellair Oil & Acne Care",
     "Price": "Rp 33.900 - Rp 81.500",
@@ -1581,7 +1581,7 @@
   },
   {
     "Id": 159,
-    "Category_id": 7,
+    "Category_id": 9,
     "Brand": "NIVEA",
     "Name": "Pearl White Micellair Skin Breathe Triple Pack",
     "Price": "Rp 168.900",
@@ -1591,7 +1591,7 @@
   },
   {
     "Id": 160,
-    "Category_id": 7,
+    "Category_id": 9,
     "Brand": "GARNIER",
     "Name": "Duo Micellar Water Biphase - 400ml",
     "Price": "Rp 240.200",
@@ -1601,7 +1601,7 @@
   },
   {
     "Id": 161,
-    "Category_id": 7,
+    "Category_id": 9,
     "Brand": "BIODERMA",
     "Name": "Hydrabio H2O Micellar Water",
     "Price": "Rp 150.000 - Rp 285.000",
@@ -1611,7 +1611,7 @@
   },
   {
     "Id": 162,
-    "Category_id": 7,
+    "Category_id": 9,
     "Brand": "BARENBLISS",
     "Name": "Machi Peachy Micellar Water",
     "Price": "Rp 55.000",
@@ -1621,7 +1621,7 @@
   },
   {
     "Id": 163,
-    "Category_id": 7,
+    "Category_id": 9,
     "Brand": "SAFI",
     "Name": "Naturals Micellar Water",
     "Price": "Rp 34.500 - Rp 58.000",
@@ -1631,7 +1631,7 @@
   },
   {
     "Id": 164,
-    "Category_id": 7,
+    "Category_id": 9,
     "Brand": "GARNIER",
     "Name": "Duo Micellar Water (Blue) 400 ml",
     "Price": "Rp 179.800",
@@ -1641,7 +1641,7 @@
   },
   {
     "Id": 165,
-    "Category_id": 7,
+    "Category_id": 9,
     "Brand": "NIVEA",
     "Name": "MicellAir Oil & Acne Care 125ml Triplepack",
     "Price": "Rp 100.500",
@@ -1651,7 +1651,7 @@
   },
   {
     "Id": 166,
-    "Category_id": 7,
+    "Category_id": 9,
     "Brand": "SENKA",
     "Name": "SENKA All Clear Water White - Vibrant White",
     "Price": "Rp 76.000 - Rp 126.500",
@@ -1661,7 +1661,7 @@
   },
   {
     "Id": 167,
-    "Category_id": 7,
+    "Category_id": 9,
     "Brand": "NIVEA",
     "Name": "Nivea MicellAir Pearl and White (200ml + 125ml)",
     "Price": "Rp 90.100",
@@ -1671,7 +1671,7 @@
   },
   {
     "Id": 168,
-    "Category_id": 7,
+    "Category_id": 9,
     "Brand": "SENKA",
     "Name": "SENKA All Clear Water Fresh - Anti Shine",
     "Price": "Rp 76.000 - Rp 126.500",
@@ -1681,7 +1681,7 @@
   },
   {
     "Id": 169,
-    "Category_id": 7,
+    "Category_id": 9,
     "Brand": "HAPLE",
     "Name": "Micellar Water",
     "Price": "Rp 59.000 - Rp 109.000",
@@ -1691,7 +1691,7 @@
   },
   {
     "Id": 170,
-    "Category_id": 7,
+    "Category_id": 9,
     "Brand": "EMINA",
     "Name": "Skin Buddy Micellar Water",
     "Price": "Rp 17.500 - Rp 33.000",
@@ -1701,7 +1701,7 @@
   },
   {
     "Id": 171,
-    "Category_id": 7,
+    "Category_id": 9,
     "Brand": "NIVEA",
     "Name": "MicellAir Pearl & White 125mL Twinpack",
     "Price": "Rp 67.600",
@@ -1711,7 +1711,7 @@
   },
   {
     "Id": 172,
-    "Category_id": 7,
+    "Category_id": 9,
     "Brand": "POND'S",
     "Name": "Vitamin Micellar Water Hydrating Aloe",
     "Price": "Rp 25.400",
@@ -1721,7 +1721,7 @@
   },
   {
     "Id": 173,
-    "Category_id": 7,
+    "Category_id": 9,
     "Brand": "NIVEA",
     "Name": "NIVEA Micellair Hydration Triple Pack",
     "Price": "Rp 101.400",
@@ -1731,7 +1731,7 @@
   },
   {
     "Id": 174,
-    "Category_id": 7,
+    "Category_id": 9,
     "Brand": "NIVEA",
     "Name": "MicellAir Oil & Acne Care 125ml Twinpack",
     "Price": "Rp 67.000",
@@ -1741,7 +1741,7 @@
   },
   {
     "Id": 175,
-    "Category_id": 7,
+    "Category_id": 9,
     "Brand": "YOU BEAUTY",
     "Name": "Prebiotic-Infused Micellar Cleansing Water",
     "Price": "Rp 23.000 - Rp 35.000",
@@ -1751,7 +1751,7 @@
   },
   {
     "Id": 176,
-    "Category_id": 7,
+    "Category_id": 9,
     "Brand": "NIVEA",
     "Name": "Nivea MicellAir Hydration Skin 200ml + 125ml",
     "Price": "Rp 82.000",
@@ -1761,7 +1761,7 @@
   },
   {
     "Id": 177,
-    "Category_id": 7,
+    "Category_id": 9,
     "Brand": "GARNIER",
     "Name": "Micellar Water Rose",
     "Price": "Rp 33.500 - Rp 99.000",
@@ -1771,7 +1771,7 @@
   },
   {
     "Id": 178,
-    "Category_id": 7,
+    "Category_id": 9,
     "Brand": "MAKE P:REM",
     "Name": "Safe me. Relief green cleansing water",
     "Price": "Rp 252.000",
@@ -1781,7 +1781,7 @@
   },
   {
     "Id": 179,
-    "Category_id": 7,
+    "Category_id": 9,
     "Brand": "GARNIER",
     "Name": "Duo Pack Micellar Vitamin C",
     "Price": "Rp 191.800",
@@ -1791,7 +1791,7 @@
   },
   {
     "Id": 180,
-    "Category_id": 7,
+    "Category_id": 9,
     "Brand": "NIVEA",
     "Name": "MicellAir Hydration 125mL Twinpack",
     "Price": "Rp 67.600",
@@ -1801,7 +1801,7 @@
   },
   {
     "Id": 181,
-    "Category_id": 7,
+    "Category_id": 9,
     "Brand": "NIVEA",
     "Name": "Hydration Micellair Skin Breathe Triple Pack",
     "Price": "Rp 144.600",
@@ -1811,7 +1811,7 @@
   },
   {
     "Id": 182,
-    "Category_id": 7,
+    "Category_id": 9,
     "Brand": "SAFI",
     "Name": "Naturals Clarifying Cleanser + Toning Lotion - Pembersih Wajah",
     "Price": "Rp 156.400",
@@ -1821,7 +1821,7 @@
   },
   {
     "Id": 183,
-    "Category_id": 7,
+    "Category_id": 9,
     "Brand": "POND'S",
     "Name": "Pond's 2x Vitamin Micellar Water Hydrating Aloe FREE Anti Bacterial Face Mist",
     "Price": "Rp 82.000",
@@ -1831,7 +1831,7 @@
   },
   {
     "Id": 184,
-    "Category_id": 7,
+    "Category_id": 9,
     "Brand": "GARNIER",
     "Name": "Micellar Rose Water Cleanse & Glow",
     "Price": "Rp 44.400 - Rp 115.500",
@@ -1841,7 +1841,7 @@
   },
   {
     "Id": 185,
-    "Category_id": 7,
+    "Category_id": 9,
     "Brand": "GARNIER",
     "Name": "Duo Micellar Rose 400ml",
     "Price": "Rp 179.800",
@@ -1851,7 +1851,7 @@
   },
   {
     "Id": 186,
-    "Category_id": 7,
+    "Category_id": 9,
     "Brand": "POND'S",
     "Name": "Vitamin Micellar Water Charcoal",
     "Price": "Rp 25.400",
@@ -1861,7 +1861,7 @@
   },
   {
     "Id": 187,
-    "Category_id": 7,
+    "Category_id": 9,
     "Brand": "KLAVUU",
     "Name": "Marine Collagen Micro Cleansing Water",
     "Price": "Rp 252.000",
@@ -1871,7 +1871,7 @@
   },
   {
     "Id": 188,
-    "Category_id": 7,
+    "Category_id": 9,
     "Brand": "NIVEA",
     "Name": "NIVEA Micellair Pearl & White Triple Pack",
     "Price": "Rp 101.400",
@@ -1881,7 +1881,7 @@
   },
   {
     "Id": 189,
-    "Category_id": 7,
+    "Category_id": 9,
     "Brand": "GARNIER",
     "Name": "Duo Micellar Water (Pink) 400 ml",
     "Price": "Rp 179.800",
@@ -1891,7 +1891,7 @@
   },
   {
     "Id": 190,
-    "Category_id": 7,
+    "Category_id": 9,
     "Brand": "LOREAL PARIS",
     "Name": "Micellar Water",
     "Price": "Rp 145.000",
@@ -1901,7 +1901,7 @@
   },
   {
     "Id": 191,
-    "Category_id": 7,
+    "Category_id": 9,
     "Brand": "INNISFREE",
     "Name": "Green Tea Cleansing Water",
     "Price": "Rp 197.000",
@@ -1911,7 +1911,7 @@
   },
   {
     "Id": 192,
-    "Category_id": 7,
+    "Category_id": 9,
     "Brand": "POND'S",
     "Name": "Pond's 2x Vitamin Micellar Water Charcoal Micellar Water Charcoal FREE Anti Bacterial Face Mist",
     "Price": "Rp 82.000",
@@ -1921,7 +1921,7 @@
   },
   {
     "Id": 193,
-    "Category_id": 7,
+    "Category_id": 9,
     "Brand": "SAFI",
     "Name": "Twinpack Safi Naturals Micellar Water With Neem 200 ml - Pembersih Wajah",
     "Price": "Rp 116.000",
@@ -1931,7 +1931,7 @@
   },
   {
     "Id": 194,
-    "Category_id": 7,
+    "Category_id": 9,
     "Brand": "SAFI",
     "Name": "Naturals Micellar Water With Neem 100 & 200 ml",
     "Price": "Rp 92.500",
@@ -1941,7 +1941,7 @@
   },
   {
     "Id": 195,
-    "Category_id": 7,
+    "Category_id": 9,
     "Brand": "POND'S",
     "Name": "Vitamin Micellar Water Nourishing Milk",
     "Price": "Rp 35.000",
@@ -1951,7 +1951,7 @@
   },
   {
     "Id": 196,
-    "Category_id": 7,
+    "Category_id": 9,
     "Brand": "INNISFREE",
     "Name": "Green Tea Cleansing Water",
     "Price": "Rp 197.000",
@@ -1961,7 +1961,7 @@
   },
   {
     "Id": 197,
-    "Category_id": 7,
+    "Category_id": 9,
     "Brand": "POND'S",
     "Name": "Vitamin Micellar Water Nourishing Milk",
     "Price": "Rp 35.000",
@@ -1971,7 +1971,7 @@
   },
   {
     "Id": 198,
-    "Category_id": 7,
+    "Category_id": 9,
     "Brand": "INNISFREE",
     "Name": "Green Tea Cleansing Water",
     "Price": "Rp 197.000",
@@ -1981,7 +1981,7 @@
   },
   {
     "Id": 199,
-    "Category_id": 7,
+    "Category_id": 9,
     "Brand": "POND'S",
     "Name": "Vitamin Micellar Water Nourishing Milk",
     "Price": "Rp 35.000",
@@ -1991,7 +1991,7 @@
   },
   {
     "Id": 200,
-    "Category_id": 8,
+    "Category_id": 5,
     "Brand": "WHITELAB",
     "Name": "Brightening Night Cream",
     "Price": "Rp 68.300",
@@ -2001,7 +2001,7 @@
   },
   {
     "Id": 201,
-    "Category_id": 8,
+    "Category_id": 5,
     "Brand": "WHITELAB",
     "Name": "Brightening Day Cream",
     "Price": "Rp 63.000",
@@ -2011,7 +2011,7 @@
   },
   {
     "Id": 202,
-    "Category_id": 8,
+    "Category_id": 5,
     "Brand": "COSRX",
     "Name": "Advanced Snail 92 All in One Cream",
     "Price": "Rp 320.000",
@@ -2021,7 +2021,7 @@
   },
   {
     "Id": 203,
-    "Category_id": 8,
+    "Category_id": 5,
     "Brand": "SKINTIFIC",
     "Name": "360 Crystal Massager Lifting Eye Cream",
     "Price": "Rp 199.000",
@@ -2031,7 +2031,7 @@
   },
   {
     "Id": 204,
-    "Category_id": 8,
+    "Category_id": 5,
     "Brand": "ARIUL",
     "Name": "Watermelon Hydro Glow Cream",
     "Price": "Rp 155.000",
@@ -2041,7 +2041,7 @@
   },
   {
     "Id": 205,
-    "Category_id": 8,
+    "Category_id": 5,
     "Brand": "COSRX",
     "Name": "Hyaluronic Acid Intensive Cream",
     "Price": "Rp 285.000",
@@ -2051,7 +2051,7 @@
   },
   {
     "Id": 206,
-    "Category_id": 8,
+    "Category_id": 5,
     "Brand": "DEAR KLAIRS",
     "Name": "Midnight Blue Calming Cream",
     "Price": "Rp 370.000 - Rp 450.000",
@@ -2061,7 +2061,7 @@
   },
   {
     "Id": 207,
-    "Category_id": 8,
+    "Category_id": 5,
     "Brand": "HAPLE",
     "Name": "Sky Rose Moisturizer",
     "Price": "Rp 99.000",
@@ -2071,7 +2071,7 @@
   },
   {
     "Id": 208,
-    "Category_id": 8,
+    "Category_id": 5,
     "Brand": "DEAR ME BEAUTY",
     "Name": "Dear Me Beauty x KFC Skin Barrier Water Cream",
     "Price": "Rp 139.000",
@@ -2081,7 +2081,7 @@
   },
   {
     "Id": 209,
-    "Category_id": 8,
+    "Category_id": 5,
     "Brand": "KLAVUU",
     "Name": "Enriched Divine Pearl Cream",
     "Price": "Rp 858.000",
@@ -2091,7 +2091,7 @@
   },
   {
     "Id": 210,
-    "Category_id": 8,
+    "Category_id": 5,
     "Brand": "COSRX",
     "Name": "Full Fit Propolis Light Cream",
     "Price": "Rp 485.000",
@@ -2101,7 +2101,7 @@
   },
   {
     "Id": 211,
-    "Category_id": 8,
+    "Category_id": 5,
     "Brand": "BENTON",
     "Name": "Snail Bee High Content Lotion",
     "Price": "Rp 280.000",
@@ -2111,7 +2111,7 @@
   },
   {
     "Id": 212,
-    "Category_id": 8,
+    "Category_id": 5,
     "Brand": "I'M FROM",
     "Name": "Mugwort Spot Gel",
     "Price": "Rp 264.000",
@@ -2121,7 +2121,7 @@
   },
   {
     "Id": 213,
-    "Category_id": 8,
+    "Category_id": 5,
     "Brand": "SUKIN",
     "Name": "Sensitive Facial Moisturiser",
     "Price": "Rp 159.000",
@@ -2131,7 +2131,7 @@
   },
   {
     "Id": 214,
-    "Category_id": 8,
+    "Category_id": 5,
     "Brand": "AVOSKIN",
     "Name": "YSB Glow Concentrate Treatment 2% Alpha Arbutin + Multi Probiome + Beta Carotene",
     "Price": "Rp 105.500 - Rp 298.600",
@@ -2141,7 +2141,7 @@
   },
   {
     "Id": 215,
-    "Category_id": 8,
+    "Category_id": 5,
     "Brand": "PYUNKANG YUL",
     "Name": "Acne Spot Cream",
     "Price": "Rp 200.000",
@@ -2151,7 +2151,7 @@
   },
   {
     "Id": 216,
-    "Category_id": 8,
+    "Category_id": 5,
     "Brand": "ELSHESKIN",
     "Name": "Deep Hydrating Calming Moisturizer",
     "Price": "Rp 142.000",
@@ -2161,7 +2161,7 @@
   },
   {
     "Id": 217,
-    "Category_id": 8,
+    "Category_id": 5,
     "Brand": "VOTRE PEAU",
     "Name": "Retinol Barrier Cream",
     "Price": "Rp 165.000",
@@ -2171,7 +2171,7 @@
   },
   {
     "Id": 218,
-    "Category_id": 8,
+    "Category_id": 5,
     "Brand": "COSRX",
     "Name": "Balancium Comfort Ceramide Cream",
     "Price": "Rp 355.000",
@@ -2181,7 +2181,7 @@
   },
   {
     "Id": 219,
-    "Category_id": 8,
+    "Category_id": 5,
     "Brand": "SUKIN",
     "Name": "Oil Balancing Mattifying Facial Moisturiser",
     "Price": "Rp 199.000",
@@ -2191,7 +2191,7 @@
   },
   {
     "Id": 220,
-    "Category_id": 8,
+    "Category_id": 5,
     "Brand": "SOME BY MI",
     "Name": "Yuja Niacin Brightening Moisture Gel Cream",
     "Price": "Rp 334.000",
@@ -2201,7 +2201,7 @@
   },
   {
     "Id": 221,
-    "Category_id": 8,
+    "Category_id": 5,
     "Brand": "COSRX",
     "Name": "Pure Fit Cica Cream",
     "Price": "Rp 419.000",
@@ -2211,7 +2211,7 @@
   },
   {
     "Id": 222,
-    "Category_id": 8,
+    "Category_id": 5,
     "Brand": "AVOSKIN",
     "Name": "YSB Glow Concentrate Treatment Polypeptide + Multi Probiome + Acetyl Glucosamine + Red Algae",
     "Price": "Rp 138.800 - Rp 398.500",
@@ -2221,7 +2221,7 @@
   },
   {
     "Id": 223,
-    "Category_id": 8,
+    "Category_id": 5,
     "Brand": "SAFI",
     "Name": "Age Defy Renewal Night Cream",
     "Price": "Rp 102.000 - Rp 163.500",
@@ -2231,7 +2231,7 @@
   },
   {
     "Id": 224,
-    "Category_id": 8,
+    "Category_id": 5,
     "Brand": "I'M FROM",
     "Name": "Honey Glow Cream",
     "Price": "Rp 405.000",
@@ -2241,7 +2241,7 @@
   },
   {
     "Id": 225,
-    "Category_id": 8,
+    "Category_id": 5,
     "Brand": "SAFI",
     "Name": "White Expert Illuminating Day Cream SPF15 PA ++",
     "Price": "Rp 65.500 - Rp 117.000",
@@ -2251,7 +2251,7 @@
   },
   {
     "Id": 226,
-    "Category_id": 8,
+    "Category_id": 5,
     "Brand": "SAFI",
     "Name": "White Expert Replenishing Night Cream",
     "Price": "Rp 65.900 - Rp 121.000",
@@ -2261,7 +2261,7 @@
   },
   {
     "Id": 227,
-    "Category_id": 8,
+    "Category_id": 5,
     "Brand": "SKIN1004",
     "Name": "Madagascar Centella Soothing Cream",
     "Price": "Rp 131.000 - Rp 222.000",
@@ -2271,7 +2271,7 @@
   },
   {
     "Id": 228,
-    "Category_id": 8,
+    "Category_id": 5,
     "Brand": "STUDIO TROPIK",
     "Name": "Rich Skin Barrier Cream",
     "Price": "Rp 220.890",
@@ -2281,7 +2281,7 @@
   },
   {
     "Id": 229,
-    "Category_id": 8,
+    "Category_id": 5,
     "Brand": "SKIN1004",
     "Name": "Madagascar Centella Cream",
     "Price": "Rp 141.900 - Rp 261.000",
@@ -2291,7 +2291,7 @@
   },
   {
     "Id": 230,
-    "Category_id": 8,
+    "Category_id": 5,
     "Brand": "STUDIO TROPIK",
     "Name": "Fresh Skin Barrier Cream",
     "Price": "Rp 220.890",
@@ -2301,7 +2301,7 @@
   },
   {
     "Id": 231,
-    "Category_id": 8,
+    "Category_id": 5,
     "Brand": "SNP",
     "Name": "PREP Cicaronic Soothing Cream",
     "Price": "Rp 181.800",
@@ -2311,7 +2311,7 @@
   },
   {
     "Id": 232,
-    "Category_id": 8,
+    "Category_id": 5,
     "Brand": "CETAPHIL",
     "Name": "Brightening Day Protection Cream SPF15",
     "Price": "Rp 304.500",
@@ -2321,7 +2321,7 @@
   },
   {
     "Id": 233,
-    "Category_id": 8,
+    "Category_id": 5,
     "Brand": "PYUNKANG YUL",
     "Name": "Calming Moisture Balm",
     "Price": "Rp 240.000",
@@ -2331,7 +2331,7 @@
   },
   {
     "Id": 234,
-    "Category_id": 8,
+    "Category_id": 5,
     "Brand": "MEDIHEAL",
     "Name": "Tea Tree Biome Blemish Cica Cream",
     "Price": "Rp 325.000",
@@ -2341,7 +2341,7 @@
   },
   {
     "Id": 235,
-    "Category_id": 8,
+    "Category_id": 5,
     "Brand": "TRUE TO SKIN",
     "Name": "Azulene Oat - Barrier Cream",
     "Price": "Rp 116.500",
@@ -2351,7 +2351,7 @@
   },
   {
     "Id": 236,
-    "Category_id": 8,
+    "Category_id": 5,
     "Brand": "SAFI",
     "Name": "Safi Dermasafe Night Moisturiser",
     "Price": "Rp 158.900",
@@ -2361,7 +2361,7 @@
   },
   {
     "Id": 237,
-    "Category_id": 8,
+    "Category_id": 5,
     "Brand": "CETAPHIL",
     "Name": "Brightening Night Comfort Cream",
     "Price": "Rp 370.000",
@@ -2371,7 +2371,7 @@
   },
   {
     "Id": 238,
-    "Category_id": 8,
+    "Category_id": 5,
     "Brand": "CETAPHIL",
     "Name": "Moisturizing Cream",
     "Price": "Rp 286.000 - Rp 645.000",
@@ -2381,7 +2381,7 @@
   },
   {
     "Id": 239,
-    "Category_id": 8,
+    "Category_id": 5,
     "Brand": "BIODERMA",
     "Name": "Sensibio Light",
     "Price": "Rp 297.000",
@@ -2391,7 +2391,7 @@
   },
   {
     "Id": 240,
-    "Category_id": 8,
+    "Category_id": 5,
     "Brand": "LACOCO",
     "Name": "2% Bakuchiol Night Cream",
     "Price": "Rp 210.000",
@@ -2401,7 +2401,7 @@
   },
   {
     "Id": 241,
-    "Category_id": 8,
+    "Category_id": 5,
     "Brand": "CETAPHIL",
     "Name": "Dailyadvance LotionÂ® 85 g",
     "Price": "Rp 290.000",
@@ -2411,7 +2411,7 @@
   },
   {
     "Id": 242,
-    "Category_id": 8,
+    "Category_id": 5,
     "Brand": "DEAR KLAIRS",
     "Name": "Supple Preparation All Over Lotion",
     "Price": "Rp 375.000",
@@ -2421,7 +2421,7 @@
   },
   {
     "Id": 243,
-    "Category_id": 8,
+    "Category_id": 5,
     "Brand": "KEANA NADESHIKO",
     "Name": "KEANA Rice Cream",
     "Price": "Rp 252.000",
@@ -2431,7 +2431,7 @@
   },
   {
     "Id": 244,
-    "Category_id": 8,
+    "Category_id": 5,
     "Brand": "KLAIRS",
     "Name": "Rich Moist Soothing Cream",
     "Price": "Rp 385.000",
@@ -2441,7 +2441,7 @@
   },
   {
     "Id": 245,
-    "Category_id": 8,
+    "Category_id": 5,
     "Brand": "SNP",
     "Name": "PREP Vitaronic Gel Cream",
     "Price": "Rp 181.800",
@@ -2451,7 +2451,7 @@
   },
   {
     "Id": 246,
-    "Category_id": 8,
+    "Category_id": 5,
     "Brand": "NOOLAB",
     "Name": "Dew Moisturizer",
     "Price": "Rp 129.000",
@@ -2461,7 +2461,7 @@
   },
   {
     "Id": 247,
-    "Category_id": 8,
+    "Category_id": 5,
     "Brand": "PUREHEALS",
     "Name": "Centella 70 Cream",
     "Price": "Rp 254.000",
@@ -2471,7 +2471,7 @@
   },
   {
     "Id": 248,
-    "Category_id": 8,
+    "Category_id": 5,
     "Brand": "BIODERMA",
     "Name": "Sebium Global",
     "Price": "Rp 300.000",
@@ -2481,7 +2481,7 @@
   },
   {
     "Id": 249,
-    "Category_id": 8,
+    "Category_id": 5,
     "Brand": "COSRX",
     "Name": "Refresh AHA BHA Vitamin C Daily Cream",
     "Price": "Rp 300.000",
@@ -2491,7 +2491,7 @@
   },
   {
     "Id": 250,
-    "Category_id": 8,
+    "Category_id": 5,
     "Brand": "BIODERMA",
     "Name": "Sebium Pore Refiner",
     "Price": "Rp 345.000",
@@ -2501,7 +2501,7 @@
   },
   {
     "Id": 251,
-    "Category_id": 8,
+    "Category_id": 5,
     "Brand": "NPURE",
     "Name": "Marigold Memory Bounce Moisturizer",
     "Price": "Rp 100.000",
@@ -2511,7 +2511,7 @@
   },
   {
     "Id": 252,
-    "Category_id": 8,
+    "Category_id": 5,
     "Brand": "LANEIGE",
     "Name": "LNG Radian-C Cream 30ML (OL21)",
     "Price": "Rp 636.000",
@@ -2521,7 +2521,7 @@
   },
   {
     "Id": 253,
-    "Category_id": 8,
+    "Category_id": 5,
     "Brand": "SCARLETT WHITENING",
     "Name": "Scarlett Whitening Age Delay - Phyto Biotics Renewing Moisturizer",
     "Price": "Rp 82.500",
@@ -2531,7 +2531,7 @@
   },
   {
     "Id": 254,
-    "Category_id": 8,
+    "Category_id": 5,
     "Brand": "ERHA",
     "Name": "Essential Moisturizer",
     "Price": "Rp 140.000",
@@ -2541,7 +2541,7 @@
   },
   {
     "Id": 255,
-    "Category_id": 8,
+    "Category_id": 5,
     "Brand": "BARENBLISS",
     "Name": "Lab Power! OlÃ©omide Brightening Reviving Cream",
     "Price": "Rp 169.000",
@@ -2551,7 +2551,7 @@
   },
   {
     "Id": 256,
-    "Category_id": 8,
+    "Category_id": 5,
     "Brand": "BIYU",
     "Name": "Daily Light Moisturizer - Calm & Repair",
     "Price": "Rp 99.000",
@@ -2561,7 +2561,7 @@
   },
   {
     "Id": 257,
-    "Category_id": 8,
+    "Category_id": 5,
     "Brand": "SAFI",
     "Name": "Safi White Natural Brightening Cream Grapefruit",
     "Price": "Rp 36.000 - Rp 62.000",
@@ -2571,7 +2571,7 @@
   },
   {
     "Id": 258,
-    "Category_id": 8,
+    "Category_id": 5,
     "Brand": "BREYLEE",
     "Name": "Pomegranate Night Cream",
     "Price": "Rp 469.000",
@@ -2581,7 +2581,7 @@
   },
   {
     "Id": 259,
-    "Category_id": 8,
+    "Category_id": 5,
     "Brand": "I TRUST NATURE",
     "Name": "Pomegranate Moist Gel Cream",
     "Price": "Rp 169.000",
@@ -2591,7 +2591,7 @@
   },
   {
     "Id": 260,
-    "Category_id": 8,
+    "Category_id": 5,
     "Brand": "SOME BY MI",
     "Name": "V10 Vitamin Tone-up Cream",
     "Price": "Rp 384.000",
@@ -2601,7 +2601,7 @@
   },
   {
     "Id": 261,
-    "Category_id": 8,
+    "Category_id": 5,
     "Brand": "BREYLEE",
     "Name": "Pomegranate Day Cream",
     "Price": "Rp 459.000",
@@ -2611,7 +2611,7 @@
   },
   {
     "Id": 262,
-    "Category_id": 8,
+    "Category_id": 5,
     "Brand": "MORIGANIC",
     "Name": "Moriganic Hydro Cream",
     "Price": "Rp 99.000",
@@ -2621,7 +2621,7 @@
   },
   {
     "Id": 263,
-    "Category_id": 8,
+    "Category_id": 5,
     "Brand": "NOOLAB",
     "Name": "Skin Oasis Overnight Mask",
     "Price": "Rp 99.000",
@@ -2631,7 +2631,7 @@
   },
   {
     "Id": 264,
-    "Category_id": 8,
+    "Category_id": 5,
     "Brand": "KOSE",
     "Name": "Sekkisei Lotion",
     "Price": "Rp 749.000 - Rp 1.099.000",
@@ -2641,7 +2641,7 @@
   },
   {
     "Id": 265,
-    "Category_id": 8,
+    "Category_id": 5,
     "Brand": "YOU BEAUTY",
     "Name": "The Radiance White Advanced Day Cream",
     "Price": "Rp 68.000",
@@ -2651,7 +2651,7 @@
   },
   {
     "Id": 266,
-    "Category_id": 8,
+    "Category_id": 5,
     "Brand": "YOU BEAUTY",
     "Name": "Dazzling  Tone Up Face  Cream",
     "Price": "Rp 28.000",
@@ -2661,7 +2661,7 @@
   },
   {
     "Id": 267,
-    "Category_id": 8,
+    "Category_id": 5,
     "Brand": "HAPLE",
     "Name": "Sunshine Lotion",
     "Price": "Rp 149.000",
@@ -2671,7 +2671,7 @@
   },
   {
     "Id": 268,
-    "Category_id": 8,
+    "Category_id": 5,
     "Brand": "A'PIEU",
     "Name": "Madecasssoside Cica Cream 2X",
     "Price": "Rp 265.000",
@@ -2681,7 +2681,7 @@
   },
   {
     "Id": 269,
-    "Category_id": 8,
+    "Category_id": 5,
     "Brand": "QV SKINCARE",
     "Name": "QV Skin Lotion",
     "Price": "Rp 233.000 - Rp 367.000",
@@ -2691,7 +2691,7 @@
   },
   {
     "Id": 270,
-    "Category_id": 8,
+    "Category_id": 5,
     "Brand": "JOYLAB",
     "Name": "Wonderskin Ultimate Crème",
     "Price": "Rp 255.000",
@@ -2701,7 +2701,7 @@
   },
   {
     "Id": 271,
-    "Category_id": 8,
+    "Category_id": 5,
     "Brand": "NACIFIC",
     "Name": "Acne Cica Plus Clear Cream",
     "Price": "Rp 372.900",
@@ -2711,7 +2711,7 @@
   },
   {
     "Id": 272,
-    "Category_id": 8,
+    "Category_id": 5,
     "Brand": "NEUTROGENA",
     "Name": "Bright Boost Overnight Cream 50gr",
     "Price": "Rp 372.000",
@@ -2721,7 +2721,7 @@
   },
   {
     "Id": 273,
-    "Category_id": 8,
+    "Category_id": 5,
     "Brand": "SOME BY MI",
     "Name": "Rose Intensive Tone-up Cream",
     "Price": "Rp 384.000",
@@ -2731,7 +2731,7 @@
   },
   {
     "Id": 274,
-    "Category_id": 9,
+    "Category_id": 7,
     "Brand": "NPURE",
     "Name": "Cica Beat The Sun Powder",
     "Price": "Rp 119.000",
@@ -2741,7 +2741,7 @@
   },
   {
     "Id": 275,
-    "Category_id": 9,
+    "Category_id": 7,
     "Brand": "AVOSKIN",
     "Name": "The Great Shield Sunscreen",
     "Price": "Rp 65.500 - Rp 165.400",
@@ -2751,7 +2751,7 @@
   },
   {
     "Id": 276,
-    "Category_id": 9,
+    "Category_id": 7,
     "Brand": "WHITELAB",
     "Name": "UV Shield Tank Sunscreen Gel SPF 50++ PA++++",
     "Price": "Rp 76.000",
@@ -2761,7 +2761,7 @@
   },
   {
     "Id": 277,
-    "Category_id": 9,
+    "Category_id": 7,
     "Brand": "JARTE BEAUTY",
     "Name": "Sunscreen Spray Coral Friendly x Nathanie Christy",
     "Price": "Rp 55.000 - Rp 175.000",
@@ -2771,7 +2771,7 @@
   },
   {
     "Id": 278,
-    "Category_id": 9,
+    "Category_id": 7,
     "Brand": "NIVEA",
     "Name": "SUN Face Triple Protect Hokkaido Rose Sunscreen SPF50+++ 40mL",
     "Price": "Rp 91.700",
@@ -2781,7 +2781,7 @@
   },
   {
     "Id": 279,
-    "Category_id": 9,
+    "Category_id": 7,
     "Brand": "BIORE",
     "Name": "Biore UV Face Sunscreen Aqua Rich Light Up Essence SPF 50+ PA++++",
     "Price": "Rp 159.200",
@@ -2791,7 +2791,7 @@
   },
   {
     "Id": 280,
-    "Category_id": 9,
+    "Category_id": 7,
     "Brand": "VOTRE PEAU",
     "Name": "Facial Sun Shield SPF 50",
     "Price": "Rp 265.000",
@@ -2801,7 +2801,7 @@
   },
   {
     "Id": 281,
-    "Category_id": 9,
+    "Category_id": 7,
     "Brand": "DEAR ME BEAUTY",
     "Name": "Dear Me Beauty X KFC Primer Sunstick SPF 50+ PA++++",
     "Price": "Rp 139.000",
@@ -2811,7 +2811,7 @@
   },
   {
     "Id": 282,
-    "Category_id": 9,
+    "Category_id": 7,
     "Brand": "BLP BEAUTY",
     "Name": "Multipurpose Tinted Sunscreen SPF50/PA++++ 30gr",
     "Price": "Rp 189.000",
@@ -2821,7 +2821,7 @@
   },
   {
     "Id": 283,
-    "Category_id": 9,
+    "Category_id": 7,
     "Brand": "ERHA",
     "Name": "AcneAct Acne Sun Friendly SPF30/PA+++",
     "Price": "Rp 103.040",
@@ -2831,7 +2831,7 @@
   },
   {
     "Id": 284,
-    "Category_id": 9,
+    "Category_id": 7,
     "Brand": "CETAPHIL",
     "Name": "Daily Facial Moisturizer Lotion Spf15 118 ml",
     "Price": "Rp 286.000",
@@ -2841,7 +2841,7 @@
   },
   {
     "Id": 285,
-    "Category_id": 9,
+    "Category_id": 7,
     "Brand": "DEW IT",
     "Name": "Dew It In The Morning Face Sun Stick",
     "Price": "Rp 195.000",
@@ -2851,7 +2851,7 @@
   },
   {
     "Id": 286,
-    "Category_id": 9,
+    "Category_id": 7,
     "Brand": "MAKE P:REM",
     "Name": "UV Defense Me. Daily Sun Fluid SPF 50+ PA++++",
     "Price": "Rp 353.000",
@@ -2861,7 +2861,7 @@
   },
   {
     "Id": 287,
-    "Category_id": 9,
+    "Category_id": 7,
     "Brand": "MAKE P:REM",
     "Name": "UV Defense Me. Calming Sun Cream SPF 50+ PA++++",
     "Price": "Rp 228.000",
@@ -2871,7 +2871,7 @@
   },
   {
     "Id": 288,
-    "Category_id": 9,
+    "Category_id": 7,
     "Brand": "ERHA",
     "Name": "Perfect Shield Sunscreen Normal to Dry Skin",
     "Price": "Rp 91.840",
@@ -2881,7 +2881,7 @@
   },
   {
     "Id": 289,
-    "Category_id": 9,
+    "Category_id": 7,
     "Brand": "MISSHA",
     "Name": "All Around Aqua Sun Gel SPF50+/PA++++",
     "Price": "Rp 389.700",
@@ -2891,7 +2891,7 @@
   },
   {
     "Id": 290,
-    "Category_id": 9,
+    "Category_id": 7,
     "Brand": "BARENBLISS",
     "Name": "barenbliss My UV Armor SPF 50 PA++++",
     "Price": "Rp 89.000",
@@ -2901,7 +2901,7 @@
   },
   {
     "Id": 291,
-    "Category_id": 9,
+    "Category_id": 7,
     "Brand": "FOR SKINS SAKE",
     "Name": "Weightless Sunscreen SPF 50 PA ++++ [New Formula]",
     "Price": "Rp 50.000 - Rp 195.000",
@@ -2911,7 +2911,7 @@
   },
   {
     "Id": 292,
-    "Category_id": 9,
+    "Category_id": 7,
     "Brand": "NEOGEN DERMALOGY",
     "Name": "Day-Light Protection Sunscreen",
     "Price": "Rp 330.000",
@@ -2921,7 +2921,7 @@
   },
   {
     "Id": 293,
-    "Category_id": 9,
+    "Category_id": 7,
     "Brand": "YOU BEAUTY",
     "Name": "Tone Up UV Elixir SPF 50+ PA++++",
     "Price": "Rp 80.000",
@@ -2931,7 +2931,7 @@
   },
   {
     "Id": 294,
-    "Category_id": 9,
+    "Category_id": 7,
     "Brand": "SNP",
     "Name": "UV Perfect Air Cool Sun Cream",
     "Price": "Rp 181.800",
@@ -2941,7 +2941,7 @@
   },
   {
     "Id": 295,
-    "Category_id": 9,
+    "Category_id": 7,
     "Brand": "A'PIEU",
     "Name": "Pure Block Aqua Sun Gel Spf50+/Pa+++",
     "Price": "Rp 161.000",
@@ -2951,7 +2951,7 @@
   },
   {
     "Id": 296,
-    "Category_id": 9,
+    "Category_id": 7,
     "Brand": "FOR SKINS SAKE",
     "Name": "Velvet Sunscreen SPF 50 PA ++++",
     "Price": "Rp 80.000 - Rp 280.000",
@@ -2961,7 +2961,7 @@
   },
   {
     "Id": 297,
-    "Category_id": 9,
+    "Category_id": 7,
     "Brand": "EMINA",
     "Name": "Skin Buddy Sun Protection SPF 30 PA+++",
     "Price": "Rp 37.000",
@@ -2971,7 +2971,7 @@
   },
   {
     "Id": 298,
-    "Category_id": 9,
+    "Category_id": 7,
     "Brand": "BASE",
     "Name": "Ultra Soothe Natural Sunscreen SPF 50 PA+++",
     "Price": "Rp 169.000",
@@ -2981,7 +2981,7 @@
   },
   {
     "Id": 299,
-    "Category_id": 9,
+    "Category_id": 7,
     "Brand": "A'PIEU",
     "Name": "Pure Block Daily Sun Cream Spf 45, Pa+++",
     "Price": "Rp 165.000",
@@ -2991,7 +2991,7 @@
   },
   {
     "Id": 300,
-    "Category_id": 9,
+    "Category_id": 7,
     "Brand": "I TRUST NATURE",
     "Name": "Honey Sun Protection SPF 50+ PA+++",
     "Price": "Rp 169.000",
@@ -3001,7 +3001,7 @@
   },
   {
     "Id": 301,
-    "Category_id": 9,
+    "Category_id": 7,
     "Brand": "THE AUBREE",
     "Name": "Sunscreen SPF 50 PA +++",
     "Price": "Rp 109.000",
@@ -3011,7 +3011,7 @@
   },
   {
     "Id": 302,
-    "Category_id": 9,
+    "Category_id": 7,
     "Brand": "ELSHESKIN",
     "Name": "Protection Day Cream",
     "Price": "Rp 93.000",
@@ -3021,7 +3021,7 @@
   },
   {
     "Id": 303,
-    "Category_id": 9,
+    "Category_id": 7,
     "Brand": "SKIN GAME",
     "Name": "Cloud Sunscreen",
     "Price": "Rp 150.000 - Rp 299.000",
@@ -3031,7 +3031,7 @@
   },
   {
     "Id": 304,
-    "Category_id": 9,
+    "Category_id": 7,
     "Brand": "STUDIO TROPIK",
     "Name": "SPF 50+ PA++ (Mint) - Skin Pretty Filter",
     "Price": "Rp 187.590",
@@ -3041,7 +3041,7 @@
   },
   {
     "Id": 305,
-    "Category_id": 9,
+    "Category_id": 7,
     "Brand": "SKINTIFIC",
     "Name": "Ultra Light Serum Sunscreen",
     "Price": "",
@@ -3051,7 +3051,7 @@
   },
   {
     "Id": 306,
-    "Category_id": 9,
+    "Category_id": 7,
     "Brand": "MORIGANIC",
     "Name": "UV Watery Sun Cream",
     "Price": "Rp 99.000",
@@ -3061,7 +3061,7 @@
   },
   {
     "Id": 307,
-    "Category_id": 9,
+    "Category_id": 7,
     "Brand": "BENTON",
     "Name": "Mineral Sun Stick",
     "Price": "",
@@ -3071,7 +3071,7 @@
   },
   {
     "Id": 308,
-    "Category_id": 9,
+    "Category_id": 7,
     "Brand": "SAFI",
     "Name": "White Expert CC Cream SPF24PA++",
     "Price": "Rp 92.500",
@@ -3081,7 +3081,7 @@
   },
   {
     "Id": 309,
-    "Category_id": 9,
+    "Category_id": 7,
     "Brand": "LANEIGE",
     "Name": "LNG White Dew Tone Up Fluid 50ml (OL21)",
     "Price": "Rp 919.000",
@@ -3091,7 +3091,7 @@
   },
   {
     "Id": 310,
-    "Category_id": 9,
+    "Category_id": 7,
     "Brand": "STUDIO TROPIK",
     "Name": "SPF 50+ PA++ (Peach) - Skin Pretty Filter",
     "Price": "Rp 187.590",
@@ -3101,7 +3101,7 @@
   },
   {
     "Id": 311,
-    "Category_id": 9,
+    "Category_id": 7,
     "Brand": "DEAR ME BEAUTY",
     "Name": "Skin Barrier Sunscreen Gel",
     "Price": "Rp 99.000",
@@ -3111,7 +3111,7 @@
   },
   {
     "Id": 312,
-    "Category_id": 9,
+    "Category_id": 7,
     "Brand": "INNERTRUE",
     "Name": "Always Aqualite Sunscreen Spf 45 Pa+++",
     "Price": "Rp 150.000",
@@ -3121,7 +3121,7 @@
   },
   {
     "Id": 313,
-    "Category_id": 9,
+    "Category_id": 7,
     "Brand": "LANEIGE",
     "Name": "Laneige Radian-C Sun Cream SPF50+",
     "Price": "Rp 696.000",
@@ -3131,7 +3131,7 @@
   },
   {
     "Id": 314,
-    "Category_id": 9,
+    "Category_id": 7,
     "Brand": "JOYLAB",
     "Name": "I Love Sun-Day SPF 50 PA+++",
     "Price": "Rp 165.000",
@@ -3141,7 +3141,7 @@
   },
   {
     "Id": 315,
-    "Category_id": 9,
+    "Category_id": 7,
     "Brand": "YOU BEAUTY",
     "Name": "Sunscreen Triple UV Elixir SPF 50+ PA++++",
     "Price": "Rp 30.000 - Rp 65.000",
@@ -3151,7 +3151,7 @@
   },
   {
     "Id": 316,
-    "Category_id": 9,
+    "Category_id": 7,
     "Brand": "FACE REPUBLIC",
     "Name": "Purity Sun Essence",
     "Price": "Rp 219.900",
@@ -3161,7 +3161,7 @@
   },
   {
     "Id": 317,
-    "Category_id": 9,
+    "Category_id": 7,
     "Brand": "THE YEON",
     "Name": "Vita Fresh Gel Sunscreen",
     "Price": "Rp 270.000",
@@ -3171,7 +3171,7 @@
   },
   {
     "Id": 318,
-    "Category_id": 9,
+    "Category_id": 7,
     "Brand": "SAE'KIN",
     "Name": "Better Year Bundle",
     "Price": "Rp 1.200.000",
@@ -3181,7 +3181,7 @@
   },
   {
     "Id": 319,
-    "Category_id": 9,
+    "Category_id": 7,
     "Brand": "JARKEEN",
     "Name": "UV Tinted Booster",
     "Price": "Rp 168.000",
@@ -3191,7 +3191,7 @@
   },
   {
     "Id": 320,
-    "Category_id": 9,
+    "Category_id": 7,
     "Brand": "ERHA",
     "Name": "ERHA X AQUA Re-Fresh Hydrating Sunscreen SPF 30/PA++",
     "Price": "Rp 99.680",
@@ -3201,7 +3201,7 @@
   },
   {
     "Id": 321,
-    "Category_id": 9,
+    "Category_id": 7,
     "Brand": "CETAPHIL",
     "Name": "Uva/Uvb Defense Spf 50",
     "Price": "Rp 415.000",
@@ -3211,7 +3211,7 @@
   },
   {
     "Id": 322,
-    "Category_id": 9,
+    "Category_id": 7,
     "Brand": "ESSENHERB",
     "Name": "Tea Tree Green Sun Essence",
     "Price": "Rp 225.000",
@@ -3221,7 +3221,7 @@
   },
   {
     "Id": 323,
-    "Category_id": 9,
+    "Category_id": 7,
     "Brand": "THE AUBREE",
     "Name": "Artemisia Daily Sunscreen SPF 50 PA ++++",
     "Price": "Rp 109.000",
@@ -3231,7 +3231,7 @@
   },
   {
     "Id": 324,
-    "Category_id": 9,
+    "Category_id": 7,
     "Brand": "LACOCO",
     "Name": "Daily UV Counter SPF 50 PA ++++",
     "Price": "Rp 170.000",
@@ -3241,7 +3241,7 @@
   },
   {
     "Id": 325,
-    "Category_id": 9,
+    "Category_id": 7,
     "Brand": "KLAVUU",
     "Name": "UV Protection Fresh Sun Gel SPF 50+ PA++++",
     "Price": "Rp 263.000",
@@ -3251,7 +3251,7 @@
   },
   {
     "Id": 326,
-    "Category_id": 9,
+    "Category_id": 7,
     "Brand": "JOYLAB",
     "Name": "Brighter Sun Day SPF 50 PA++",
     "Price": "Rp 165.000",
@@ -3261,7 +3261,7 @@
   },
   {
     "Id": 327,
-    "Category_id": 9,
+    "Category_id": 7,
     "Brand": "DEW IT",
     "Name": "Dew It On The Go - Sunscreen Mist",
     "Price": "Rp 139.000 - Rp 220.000",
@@ -3271,7 +3271,7 @@
   },
   {
     "Id": 328,
-    "Category_id": 9,
+    "Category_id": 7,
     "Brand": "AZARINE",
     "Name": "Hydramax-C Sunscreen Serum",
     "Price": "Rp 65.000",
@@ -3281,7 +3281,7 @@
   },
   {
     "Id": 329,
-    "Category_id": 9,
+    "Category_id": 7,
     "Brand": "AZARINE",
     "Name": "Hydrashoothe Sunscreen Gel Spf45+++",
     "Price": "Rp 65.000",

@@ -25,10 +25,9 @@ class Seeder: SeederDelegate{
                 let data = try Data(contentsOf: URL(fileURLWithPath: path), options: .alwaysMapped)
                 json = try JSON(data: data)
             } catch let error {
-                print("parse error: \(error.localizedDescription)")
+                print("parse error: \(error)")
             }
         } else {
-            
             print("Invalid filename/path.")
         }
         

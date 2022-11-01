@@ -30,6 +30,8 @@ class CategorySeeder: Seeder{
             
             newCat.id = Int(index)!+1 as NSNumber
             newCat.title = subJson["Title"].cleanString()
+            newCat.isDay = (subJson["IsDay"]).rawValue as! NSNumber
+            newCat.isNight = (subJson["IsNight"]).rawValue as! NSNumber
         }
         
         do{

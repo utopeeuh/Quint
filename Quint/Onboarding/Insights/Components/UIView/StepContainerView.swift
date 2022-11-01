@@ -7,6 +7,7 @@
 
 import UIKit
 import SnapKit
+import CoreData
 
 class StepContainerView: UIView {
     
@@ -31,24 +32,6 @@ class StepContainerView: UIView {
         titleLabel.text = "All day essentials"
         titleLabel.font = .clashGroteskMedium(size: 24)
         titleLabel.textColor = K.Color.blackQuint
-        
-        for step in 0..<K.Category.skincareSteps.count {
-            
-            let view = CustomCellView()
-            let essential = K.Category.skincareSteps[step]
-            
-            view.numberLabel.text = String.init(format: "%d", step+1)
-            view.stepsLabel.text = essential.title
-            
-            if essential.partOfDay == .night {
-                view.setAsNight()
-            } else if essential.partOfDay == .morning {
-                view.setAsMorning()
-            }
-            
-            stepViews.append(view)
-        }
-        
     }
     
     override func configureLayout() {
@@ -58,6 +41,31 @@ class StepContainerView: UIView {
             make.centerX.equalToSuperview()
             make.top.equalToSuperview().offset(30)
             make.width.equalToSuperview().offset(-48)
+        }
+    }
+    
+    func setSteps(categoryIds: [Int]){
+        
+        var categoryList : [CategoryModel] = DataHelper.shared.fetchCategoryListById(categoryIds: categoryIds)
+        categoryList.sort(by: {Int(truncating: $0.id) < Int(truncating: $1.id)})
+        
+        for i in 0..<categoryList.count {
+            
+            let view = CustomCellView()
+            
+            view.numberLabel.text = String(describing: i+1)
+            view.stepsLabel.text = categoryList[i].title
+            
+            let currIsDay = categoryList[i].isDay as! Bool
+            let currIsNight = categoryList[i].isNight as! Bool
+            
+            if currIsDay && !currIsNight {
+                view.setAsMorning()
+            } else if currIsNight && !currIsDay{
+                view.setAsNight()
+            }
+            
+            stepViews.append(view)
         }
         
         stepViews.forEach {
@@ -88,7 +96,6 @@ class StepContainerView: UIView {
             }
             
         }
-        
     }
     
 }

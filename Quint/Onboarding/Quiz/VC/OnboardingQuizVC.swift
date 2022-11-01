@@ -147,6 +147,30 @@ class OnboardingQuizVC: UIViewController, PhotoConfirmationVCDelegate {
         case is SkinProblemView:
             data.skinProblems = (childContents[currIndex] as! SkinProblemView).getSelectedProblems()
             print(data.skinProblems!)
+            
+            data.routineCategoryList = K.defaultRoutineOnboarding
+            
+            var eyeCareFlag = false
+            var acneCareFlag = false
+            for i in 0..<data.skinProblems!.count{
+                if(data.skinProblems![i]+1 == K.Problem.darkCircles){
+                    print("has dark circles")
+                    eyeCareFlag = true
+                } else if (data.skinProblems![i]+1 == K.Problem.acne){
+                    print("has acne")
+                    acneCareFlag = true
+                }
+            }
+            
+            if !eyeCareFlag {
+                data.routineCategoryList.removeAll { $0 == K.ProductCategory.eyeCare }
+            }
+            if !acneCareFlag {
+                data.routineCategoryList.removeAll { $0 == K.ProductCategory.acneCare }
+            }
+            
+            print(data.routineCategoryList)
+            
             break
         default:
             break

@@ -75,7 +75,7 @@ class RecIngredientView: UIView {
         sender.select()
         
         // fetch ingredient list
-        let ingredientList = getIngredientListByEffect(effect: sender.titleLabel!.text!)
+        let ingredientList = DataHelper.shared.fetchIngredientListByEffect(effect: sender.titleLabel!.text!)
         // set ingredient list here
         var ingredientButtons: [IngredientButton] = []
         
@@ -94,80 +94,23 @@ class RecIngredientView: UIView {
         
     }
     
-    func getIngredientListByEffect(effect: String) -> [IngredientModel]{
-        var ingredientList: [IngredientModel] = []
-        
-        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        let context: NSManagedObjectContext = appDelegate.persistentContainer.viewContext
-        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Ingredients")
-        
-        let effectPredicate = NSPredicate(format: "effects CONTAINS[c] %@", effect)
-        
-        request.predicate = effectPredicate
-        
-        do{
-            let results:NSArray = try context.fetch(request) as NSArray
-            
-            for result in results {
-                let ingredient = result as! IngredientModel
-                ingredientList.append(ingredient)
-            }
-        }
-        catch{
-            print("fetch failed")
-        }
-        
-        return ingredientList
-    }
-    
-    func fetchEffectList(effectIds: [Int]) -> [EffectModel]{
-            
-        var effectList: [EffectModel] = []
-        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        let context: NSManagedObjectContext = appDelegate.persistentContainer.viewContext
-        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Effects")
-        
-        var predicateList: [NSPredicate] = []
-        effectIds.forEach { id in
-            let idPredicate = NSPredicate(format: "id == %@", String(describing:id))
-            predicateList.append(idPredicate)
-        }
-        let compoundPredicate = NSCompoundPredicate(type: .or, subpredicates: predicateList)
-        
-        request.predicate = compoundPredicate
-        
-        do{
-            let results:NSArray = try context.fetch(request) as NSArray
-            
-            for result in results {
-                let effect = result as? EffectModel
-                effectList.append(effect!)
-            }
-        }
-        catch{
-            print("fetch failed")
-        }
-        
-        return effectList
-    }
-    
     func getEffectIdsByProblem(problemId: Int) -> [Int]{
         var effectIds : [Int] = []
         
-        if (problemId+1 == K.Category.acne || problemId+1 == K.Category.blackHeads){
+        if (problemId+1 == K.Problem.acne || problemId+1 == K.Problem.blackHeads){
             effectIds.append(K.Effect.antiAcne)
             effectIds.append(K.Effect.antiBacterial)
         }
-        if (problemId+1 == K.Category.darkCircles || problemId+1 == K.Category.dullness){
+        if (problemId+1 == K.Problem.darkCircles || problemId+1 == K.Problem.dullness){
             effectIds.append(K.Effect.brightening)
         }
-        if (problemId+1 == K.Category.dryness){
+        if (problemId+1 == K.Problem.dryness){
             effectIds.append(K.Effect.hydrating)
         }
-        if (problemId+1 == K.Category.oiliness || problemId+1 == K.Category.dryness){
+        if (problemId+1 == K.Problem.oiliness || problemId+1 == K.Problem.dryness){
             effectIds.append(K.Effect.moisturizing)
         }
-        if (problemId+1 == K.Category.redness || problemId+1 == K.Category.acne){
+        if (problemId+1 == K.Problem.redness || problemId+1 == K.Problem.acne){
             effectIds.append(K.Effect.soothing)
         }
         
@@ -182,7 +125,7 @@ class RecIngredientView: UIView {
         var effectList: [EffectModel] = []
         problemIds.forEach { problemId in
             let effectIds = getEffectIdsByProblem(problemId: problemId)
-            let currEffectList = fetchEffectList(effectIds: effectIds)
+            let currEffectList = DataHelper.shared.fetchEffectList(effectIds: effectIds)
             currEffectList.forEach { effect in
                 if(effectList.contains(effect) == false){
                     effectList.append(effect)

@@ -1,38 +1,56 @@
 [
   {
     "Id": 1,
-    "Title": "Toner"
+    "Title": "Cleanser",
+    "IsDay": true,
+    "IsNight": true
   },
   {
     "Id": 2,
-    "Title": "Serum"
+    "Title": "Toner",
+    "IsDay": true,
+    "IsNight": true
   },
   {
     "Id": 3,
-    "Title": "Eye Care"
+    "Title": "Serum",
+    "IsDay": true,
+    "IsNight": true
   },
   {
     "Id": 4,
-    "Title": "Acne Care"
+    "Title": "Eye Care",
+    "IsDay": false,
+    "IsNight": true
   },
   {
     "Id": 5,
-    "Title": "Cleanser"
+    "Title": "Moisturizer",
+    "IsDay": true,
+    "IsNight": true
   },
   {
     "Id": 6,
-    "Title": "Exfoliator"
+    "Title": "Acne Care",
+    "IsDay": false,
+    "IsNight": true
   },
   {
     "Id": 7,
-    "Title": "Micellar"
+    "Title": "Sunscreen",
+    "IsDay": true,
+    "IsNight": false
   },
   {
     "Id": 8,
-    "Title": "Moisturizer"
+    "Title": "Exfoliator",
+    "IsDay": false,
+    "IsNight": false
   },
   {
     "Id": 9,
-    "Title": "Sunscreen"
+    "Title": "Micellar",
+    "IsDay": false,
+    "IsNight": false
   }
 ]

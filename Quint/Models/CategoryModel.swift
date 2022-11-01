@@ -14,4 +14,6 @@ import CoreData
 class CategoryModel: NSManagedObject{
     @NSManaged var id: NSNumber
     @NSManaged var title: String?
+    @NSManaged var isDay: NSNumber
+    @NSManaged var isNight: NSNumber
 }

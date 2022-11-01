@@ -229,7 +229,6 @@
 		9572F0B828F694F90035BCA3 /* SensitivityCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SensitivityCell.swift; sourceTree = "<group>"; };
 		9572F0BA28F698F90035BCA3 /* IngredientDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientDetailVC.swift; sourceTree = "<group>"; };
 		9572F0BC28F6AF5A0035BCA3 /* SourceCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SourceCell.swift; sourceTree = "<group>"; };
-		957F0CE3290640C800FFFB06 /* ApiService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ApiService.swift; path = Quint/Helpers/ApiService.swift; sourceTree = SOURCE_ROOT; };
 		957F0CE72906410000FFFB06 /* ApiService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiService.swift; sourceTree = "<group>"; };
 		957F0CEB2906418500FFFB06 /* OnboardingQuizVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OnboardingQuizVC.swift; path = Quint/Onboarding/Quiz/VC/OnboardingQuizVC.swift; sourceTree = SOURCE_ROOT; };
 		957F0CEE2906423500FFFB06 /* UIView+ConfigureUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+ConfigureUI.swift"; sourceTree = "<group>"; };
@@ -266,7 +265,7 @@
 		958E32E52907940100171AF3 /* SeederDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeederDelegate.swift; sourceTree = "<group>"; };
 		958E32E72907940E00171AF3 /* IngredientSeeder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientSeeder.swift; sourceTree = "<group>"; };
 		958E32F02907A2EE00171AF3 /* IngredientsJSON.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = IngredientsJSON.json; sourceTree = "<group>"; };
-		958E32F22907AC8500171AF3 /* DataHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataHelper.swift; sourceTree = "<group>"; };
+		958E32F22907AC8500171AF3 /* DataHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DataHelper.swift; path = ../Data/Seeders/DataHelper.swift; sourceTree = "<group>"; };
 		958E32F42907BCF300171AF3 /* Seeder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Seeder.swift; sourceTree = "<group>"; };
 		958E32F62907C92000171AF3 /* IngredientModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientModel.swift; sourceTree = "<group>"; };
 		958E32FA2907DA9C00171AF3 /* Quint.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Quint.xcdatamodel; sourceTree = "<group>"; };
@@ -569,7 +568,6 @@
 				958253FC2908F7B50053AABC /* RoutineSeeder.swift */,
 				95825420290904050053AABC /* UserSeeder.swift */,
 				9595D375290A369B00167C41 /* TipSeeder.swift */,
-				958E32F22907AC8500171AF3 /* DataHelper.swift */,
 			);
 			path = Seeders;
 			sourceTree = "<group>";
@@ -592,26 +590,13 @@
 		959C2BF228ED341E007B1251 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				958E32F22907AC8500171AF3 /* DataHelper.swift */,
+				959C2BF328ED341E007B1251 /* Constants.swift */,
+				95BDFC9F29116312002C70AA /* Others */,
 				957F0CF22906428500FFFB06 /* UIViewController */,
 				957F0CF12906426A00FFFB06 /* UIView */,
 				957F0CF02906425400FFFB06 /* UILabel */,
 				A0E7EB1528F8549300F56802 /* Preview SwiftUI */,
-				95CC136428FE4BDC00D3396A /* UITextView+RequiredHeight.swift */,
-				959C2BF328ED341E007B1251 /* Constants.swift */,
-				959C2BF428ED341E007B1251 /* CAGradientLayer+SetGradient.swift */,
-				957F0CE72906410000FFFB06 /* ApiService.swift */,
-				951034C628EFF51F0011AE39 /* UIImageView+DropShadow.swift */,
-				9538751B28EDE2A1001979A8 /* UICollectionView+Loading.swift */,
-				9538752028EDE2A1001979A8 /* PinterestLayout.swift */,
-				957F0CFA290655C200FFFB06 /* UIFont+CustomFont.swift */,
-				95233BDD28EF3F3E00A4470E /* UIScrollView+RemoveSubviews.swift */,
-				951034C328EFF51F0011AE39 /* UIViewController+DismissKeyboard.swift */,
-				95CC136628FE67C000D3396A /* AttributedString+Styles.swift */,
-				95A1E05B28F3F64300386972 /* UIImage+ScaleImage.swift */,
-				72BF72D428F6A93C0036C456 /* UIButton+MoveImageTextLeft.swift */,
-				72B6EDC028FF97580056B374 /* UIView+ApplyGradient.swift */,
-				958E32FC2907E0E400171AF3 /* JSON+CleanString.swift */,
-				95F3834E290FBF4B00FA1815 /* String+LetterCase.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -658,6 +643,28 @@
 				9524229428F43F7900361166 /* IngredientListCell.swift */,
 			);
 			path = UICollectionView;
+			sourceTree = "<group>";
+		};
+		95BDFC9F29116312002C70AA /* Others */ = {
+			isa = PBXGroup;
+			children = (
+				957F0CE72906410000FFFB06 /* ApiService.swift */,
+				95CC136428FE4BDC00D3396A /* UITextView+RequiredHeight.swift */,
+				959C2BF428ED341E007B1251 /* CAGradientLayer+SetGradient.swift */,
+				951034C628EFF51F0011AE39 /* UIImageView+DropShadow.swift */,
+				9538751B28EDE2A1001979A8 /* UICollectionView+Loading.swift */,
+				9538752028EDE2A1001979A8 /* PinterestLayout.swift */,
+				957F0CFA290655C200FFFB06 /* UIFont+CustomFont.swift */,
+				95233BDD28EF3F3E00A4470E /* UIScrollView+RemoveSubviews.swift */,
+				951034C328EFF51F0011AE39 /* UIViewController+DismissKeyboard.swift */,
+				95CC136628FE67C000D3396A /* AttributedString+Styles.swift */,
+				95A1E05B28F3F64300386972 /* UIImage+ScaleImage.swift */,
+				72BF72D428F6A93C0036C456 /* UIButton+MoveImageTextLeft.swift */,
+				72B6EDC028FF97580056B374 /* UIView+ApplyGradient.swift */,
+				958E32FC2907E0E400171AF3 /* JSON+CleanString.swift */,
+				95F3834E290FBF4B00FA1815 /* String+LetterCase.swift */,
+			);
+			path = Others;
 			sourceTree = "<group>";
 		};
 		95EB50D628EA821400412176 = {
@@ -790,7 +797,6 @@
 		A0E7EB1528F8549300F56802 /* Preview SwiftUI */ = {
 			isa = PBXGroup;
 			children = (
-				957F0CE3290640C800FFFB06 /* ApiService.swift */,
 				A03857D628F84C5C00A4B566 /* ViewControllerPreview.swift */,
 				A0E7EB1328F8545500F56802 /* ViewPreview.swift */,
 			);

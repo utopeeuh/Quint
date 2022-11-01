@@ -15,7 +15,7 @@ class OnboardingStepsVC: UIViewController {
     private var headerLabel = UILabel()
     private var titleLabel = UILabel()
     private var scrollView = UIScrollView()
-    private var view1 = StepContainerView()
+    private var stepsContainer = StepContainerView()
     private var pageNumber = UILabel()
     private var nextButton = OnboardingButton()
     private var textHeight: CGFloat = 0
@@ -52,6 +52,8 @@ class OnboardingStepsVC: UIViewController {
         scrollView.showsVerticalScrollIndicator = false
         scrollView.showsHorizontalScrollIndicator = false
         
+        stepsContainer.setSteps(categoryIds: data!.routineCategoryList)
+        
         pageNumber.font = .interSemiBold(size: 14)
         let numberText = customizeColor(string: "2 ", color: K.Color.blackQuint)
         numberText.append(customizeColor(string: "of 2", color: K.Color.greyQuint))
@@ -70,7 +72,7 @@ class OnboardingStepsVC: UIViewController {
                                     scrollView)
 
         scrollView.multipleSubviews(view: titleLabel,
-                                          view1,
+                                    stepsContainer,
                                           pageNumber,
                                           nextButton)
 
@@ -95,7 +97,7 @@ class OnboardingStepsVC: UIViewController {
             make.width.equalToSuperview().offset(-40)
         }
         
-        view1.snp.makeConstraints { make in
+        stepsContainer.snp.makeConstraints { make in
             make.centerX.equalTo(scrollView)
             make.top.equalTo(titleLabel.snp.bottom).offset(36)
             make.width.equalToSuperview().offset(-40)
@@ -103,7 +105,7 @@ class OnboardingStepsVC: UIViewController {
 
         pageNumber.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
-            make.top.equalTo(view1.snp.bottom).offset(30)
+            make.top.equalTo(stepsContainer.snp.bottom).offset(30)
         }
         
         nextButton.snp.makeConstraints { make in

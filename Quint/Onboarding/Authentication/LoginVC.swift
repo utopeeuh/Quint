@@ -10,6 +10,8 @@ import UIKit
 import SnapKit
 import SwiftUI
 
+@available(iOS 16.0, *)
+@available(iOS 16.0, *)
 class LoginVC: UIViewController {
     
     private let isFirstTime = UserDefaults.standard.object(forKey: K.UD.firstTime) ?? true
@@ -151,6 +153,7 @@ class LoginVC: UIViewController {
     
 }
 
+@available(iOS 16.0, *)
 extension LoginVC: ASAuthorizationControllerDelegate {
     
     func authorizationController(controller: ASAuthorizationController, didCompleteWithError error: Error) {
@@ -200,6 +203,7 @@ extension LoginVC: ASAuthorizationControllerDelegate {
     
 }
 
+@available(iOS 16.0, *)
 extension LoginVC: ASAuthorizationControllerPresentationContextProviding {
     
     func presentationAnchor(for controller: ASAuthorizationController) -> ASPresentationAnchor {

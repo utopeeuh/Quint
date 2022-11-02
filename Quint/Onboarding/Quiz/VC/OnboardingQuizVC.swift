@@ -8,6 +8,7 @@
 import UIKit
 import SnapKit
 
+@available(iOS 16.0, *)
 class OnboardingQuizVC: UIViewController, PhotoConfirmationVCDelegate {
     
     var data = OnboardingData()
@@ -237,6 +238,7 @@ class OnboardingQuizVC: UIViewController, PhotoConfirmationVCDelegate {
     
 }
 
+@available(iOS 16.0, *)
 extension OnboardingQuizVC : UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     func imagePickerControllerDidCancel(_ picker:UIImagePickerController) {
         picker.dismiss(animated: true, completion: nil)
@@ -254,6 +256,7 @@ extension OnboardingQuizVC : UIImagePickerControllerDelegate, UINavigationContro
     
 }
 
+@available(iOS 16.0, *)
 extension OnboardingQuizVC: AllowNotificationDelegate {
     
     func allowNotif() {

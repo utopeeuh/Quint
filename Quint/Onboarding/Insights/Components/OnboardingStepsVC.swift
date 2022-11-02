@@ -8,6 +8,7 @@
 import UIKit
 import SnapKit
 
+@available(iOS 16.0, *)
 class OnboardingStepsVC: UIViewController {
     
     var data : OnboardingData?
@@ -118,11 +119,22 @@ class OnboardingStepsVC: UIViewController {
     }
     
     @objc func goToHome() {
-        // update user
-        // update routines
         
-//        let controller = SkincareGuideViewController()
-//        self.navigationController?.pushViewController(controller, animated: true)
+        // Save onboarding data
+        DataHelper.shared.saveOnboardingData(data: data!)
+        
+        // Change userdefaults
+        UserDefaults.standard.set(true, forKey: K.UD.hasDoneOnboarding)
+        
+        // Set routine as root vc
+        let vc = RoutineHomeViewController()
+        let foregroundedScenes = UIApplication.shared.connectedScenes.filter { $0.activationState == .foregroundActive }
+        let window = foregroundedScenes.map { $0 as? UIWindowScene }.compactMap { $0 }.first?.windows.filter { $0.isKeyWindow }.first
+        
+        guard let uWindow = window else { return }
+
+        uWindow.rootViewController = vc
+        UIView.transition(with: uWindow, duration: 0.3, options: [.transitionCrossDissolve], animations: {}, completion: nil)
     }
     
     @objc func backOnClick(){

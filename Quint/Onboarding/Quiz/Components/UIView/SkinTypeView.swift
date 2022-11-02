@@ -8,6 +8,7 @@
 import UIKit
 import SnapKit
 
+@available(iOS 16.0, *)
 class SkinTypeView: OnboardingParentView {
     
     private let skinTypeLabel = UILabel()
@@ -80,6 +81,7 @@ class SkinTypeView: OnboardingParentView {
     }
 }
 
+@available(iOS 16.0, *)
 extension SkinTypeView: CollapsableStackDelegate{
     @objc func onClickExpand(_ sender: UIButton){
         if let collapsable = sender.superview as? CollapsableButton{

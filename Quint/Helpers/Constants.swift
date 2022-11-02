@@ -146,6 +146,7 @@ struct K{
     
     struct UD{
         static let firstTime = "FIRST_TIME_OPEN"
+        static let hasDoneOnboarding = "HAS_DONE_ONBOARDING"
     }
 }
 

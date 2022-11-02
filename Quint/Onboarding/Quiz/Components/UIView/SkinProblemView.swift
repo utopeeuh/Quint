@@ -9,6 +9,7 @@ import UIKit
 import SnapKit
 import TTGTags
 
+@available(iOS 16.0, *)
 class SkinProblemView: OnboardingParentView {
     
     private var selections = [String]()
@@ -117,6 +118,7 @@ class SkinProblemView: OnboardingParentView {
     
 }
 
+@available(iOS 16.0, *)
 extension SkinProblemView: TTGTextTagCollectionViewDelegate {
     
     func textTagCollectionView(_ textTagCollectionView: TTGTextTagCollectionView!, didTap tag: TTGTextTag!, at index: UInt) {

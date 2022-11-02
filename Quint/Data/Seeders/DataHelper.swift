@@ -21,6 +21,21 @@ class DataHelper{
         context = appDelegate.persistentContainer.viewContext
     }
     
+    public func saveOnboardingData(data: OnboardingData){
+        
+//         Set user skin type and sensitivity
+//         Set problems as active
+//         Create log with chosen image
+//         update routines
+        
+//        selectedSkinType : Int?
+//        isSensitive : Bool?
+//        skinProblems : [Int]?
+//        chosenImage : UIImage?
+//        routineCategoryList = K.defaultRoutineOnboarding
+        
+    }
+    
     public func fetchProblems(problemIds: [Int]) -> [ProblemModel]{
             
         var problemList: [ProblemModel] = []

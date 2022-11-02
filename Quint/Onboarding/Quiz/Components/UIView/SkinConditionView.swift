@@ -8,6 +8,7 @@
 import UIKit
 import SnapKit
 
+@available(iOS 16.0, *)
 class SkinConditionView: OnboardingParentView, CollapsableStackDelegate {
     
     private let skinConditionLabel = UILabel()

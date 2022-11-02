@@ -8,6 +8,7 @@
 import UIKit
 import SnapKit
 
+@available(iOS 16.0, *)
 class SkinNotifView: OnboardingParentView {
     
     var delegate: AllowNotificationDelegate!

@@ -16,7 +16,15 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         guard let scene = (scene as? UIWindowScene) else { return }
         window = UIWindow(windowScene: scene)
-        let nav = UINavigationController(rootViewController: LoginVC())
+        
+        let hasDoneOnboarding = UserDefaults.standard.object(forKey: K.UD.hasDoneOnboarding) ?? false
+        let nav : UINavigationController?
+        
+        if hasDoneOnboarding as! Bool{
+            nav = UINavigationController(rootViewController: RoutineHomeViewController())
+        } else{
+            nav = UINavigationController(rootViewController: LoginVC())
+        }
         
         window?.rootViewController = nav
         window?.makeKeyAndVisible()

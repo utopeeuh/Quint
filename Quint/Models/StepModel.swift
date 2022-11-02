@@ -12,7 +12,7 @@ import CoreData
 @objc(StepModel)
 
 class StepModel: NSManagedObject{
-    @NSManaged var id: NSNumber
+    @NSManaged var routineId: NSNumber
     @NSManaged var position: NSNumber
     @NSManaged var categoryId: NSNumber
 }

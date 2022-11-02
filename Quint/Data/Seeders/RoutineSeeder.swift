@@ -25,14 +25,14 @@ class RoutineSeeder: Seeder{
         
         let morningRoutine = RoutineModel(entity: entity, insertInto: context)
 
-        morningRoutine.id = 1
+        morningRoutine.id = K.Routine.morning as NSNumber
         morningRoutine.title = "Morning"
         
-//        let nightRoutine = RoutineModel(entity: entity, insertInto: context)
-//        
-//        nightRoutine.id = 2
-//        nightRoutine.title = "Night"
-//        
+        let nightRoutine = RoutineModel(entity: entity, insertInto: context)
+        
+        nightRoutine.id = K.Routine.night as NSNumber
+        nightRoutine.title = "Night"
+        
         do{
             try context.save()
             print("Seeding success")

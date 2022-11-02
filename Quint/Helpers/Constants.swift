@@ -71,6 +71,11 @@ struct K{
         static let micellar = 9
     }
     
+    struct Routine{
+        static let morning = 1
+        static let night = 2
+    }
+    
     struct Problem{
         static let acne = 1
         static let blackHeads = 2

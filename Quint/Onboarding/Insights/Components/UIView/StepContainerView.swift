@@ -47,7 +47,6 @@ class StepContainerView: UIView {
     func setSteps(categoryIds: [Int]){
         
         var categoryList : [CategoryModel] = DataHelper.shared.fetchCategoryListById(categoryIds: categoryIds)
-        categoryList.sort(by: {Int(truncating: $0.id) < Int(truncating: $1.id)})
         
         for i in 0..<categoryList.count {
             

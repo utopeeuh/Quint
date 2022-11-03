@@ -71,6 +71,10 @@ struct K{
         static let micellar = 9
     }
     
+    enum RoutineTime{
+        case morning, night
+    }
+    
     struct Routine{
         static let morning = 1
         static let night = 2

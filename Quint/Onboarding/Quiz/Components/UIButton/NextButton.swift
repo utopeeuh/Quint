@@ -15,7 +15,7 @@ class NextButton: UIButton {
         frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width-40, height: 50)
         
         backgroundColor = K.Color.disableBgBtnQuint
-        setTitleColor(K.Color.disableTextBtnQuint, for: .normal)
+        setTitleColor(K.Color.greyQuint, for: .normal)
         titleLabel?.font = .clashGroteskMedium(size: 18)
         layer.cornerRadius = 8
         

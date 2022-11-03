@@ -44,7 +44,6 @@
 		9510352528EFFFDB0011AE39 /* Inter-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9510351528EFFFDB0011AE39 /* Inter-SemiBold.ttf */; };
 		9510352628EFFFDB0011AE39 /* ClashGrotesk-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9510351628EFFFDB0011AE39 /* ClashGrotesk-Medium.otf */; };
 		9510352B28F007DB0011AE39 /* LargeCategoryCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9510352A28F007DB0011AE39 /* LargeCategoryCard.swift */; };
-		951147312913614300A80161 /* RoutineDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951147302913614300A80161 /* RoutineDetailVC.swift */; };
 		9524229128F4326D00361166 /* AllIngredientsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9524229028F4326D00361166 /* AllIngredientsVC.swift */; };
 		9524229328F43E5F00361166 /* IngredientListCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9524229228F43E5F00361166 /* IngredientListCollectionView.swift */; };
 		9524229528F43F7900361166 /* IngredientListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9524229428F43F7900361166 /* IngredientListCell.swift */; };
@@ -54,6 +53,7 @@
 		95436F6D2913682A00B72ED4 /* RoutineDetailStepCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95436F6C2913682A00B72ED4 /* RoutineDetailStepCell.swift */; };
 		95436F6F29136E6500B72ED4 /* RoutineStepInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95436F6E29136E6500B72ED4 /* RoutineStepInfo.swift */; };
 		95436F712913A5CF00B72ED4 /* RoutineCellTrashButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95436F702913A5CF00B72ED4 /* RoutineCellTrashButton.swift */; };
+		95436F732913E0D300B72ED4 /* RoutineDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95436F722913E0D300B72ED4 /* RoutineDetailVC.swift */; };
 		9543DA6F28F7BBBA00E37A28 /* PrecautionSegmentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9543DA6E28F7BBBA00E37A28 /* PrecautionSegmentView.swift */; };
 		9543DA7128F826AA00E37A28 /* ProductDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9543DA7028F826AA00E37A28 /* ProductDetailVC.swift */; };
 		9543DA7328F834AE00E37A28 /* ProductDetailTopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9543DA7228F834AE00E37A28 /* ProductDetailTopView.swift */; };
@@ -210,7 +210,6 @@
 		9510351528EFFFDB0011AE39 /* Inter-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-SemiBold.ttf"; sourceTree = "<group>"; };
 		9510351628EFFFDB0011AE39 /* ClashGrotesk-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ClashGrotesk-Medium.otf"; sourceTree = "<group>"; };
 		9510352A28F007DB0011AE39 /* LargeCategoryCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LargeCategoryCard.swift; sourceTree = "<group>"; };
-		951147302913614300A80161 /* RoutineDetailVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RoutineDetailVC.swift; path = ../../../../../../Desktop/RoutineDetailVC.swift; sourceTree = "<group>"; };
 		95233BDD28EF3F3E00A4470E /* UIScrollView+RemoveSubviews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIScrollView+RemoveSubviews.swift"; sourceTree = "<group>"; };
 		9524229028F4326D00361166 /* AllIngredientsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllIngredientsVC.swift; sourceTree = "<group>"; };
 		9524229228F43E5F00361166 /* IngredientListCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientListCollectionView.swift; sourceTree = "<group>"; };
@@ -221,6 +220,7 @@
 		95436F6C2913682A00B72ED4 /* RoutineDetailStepCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RoutineDetailStepCell.swift; path = ../../../../../../Desktop/RoutineDetailStepCell.swift; sourceTree = "<group>"; };
 		95436F6E29136E6500B72ED4 /* RoutineStepInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutineStepInfo.swift; sourceTree = "<group>"; };
 		95436F702913A5CF00B72ED4 /* RoutineCellTrashButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutineCellTrashButton.swift; sourceTree = "<group>"; };
+		95436F722913E0D300B72ED4 /* RoutineDetailVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoutineDetailVC.swift; sourceTree = "<group>"; };
 		9543DA6E28F7BBBA00E37A28 /* PrecautionSegmentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrecautionSegmentView.swift; sourceTree = "<group>"; };
 		9543DA7028F826AA00E37A28 /* ProductDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailVC.swift; sourceTree = "<group>"; };
 		9543DA7228F834AE00E37A28 /* ProductDetailTopView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailTopView.swift; sourceTree = "<group>"; };
@@ -424,7 +424,7 @@
 		951034DB28EFF8820011AE39 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				951147302913614300A80161 /* RoutineDetailVC.swift */,
+				95436F722913E0D300B72ED4 /* RoutineDetailVC.swift */,
 				951034DE28EFF8820011AE39 /* RoutineHomeViewController.swift */,
 				72BF72D028F548DD0036C456 /* DailyLogViewController.swift */,
 				72B6EDBA28FD07A90056B374 /* AddNewStepUIViewController.swift */,
@@ -1032,6 +1032,7 @@
 				957F0D00290656BE00FFFB06 /* ProductListCollectionView.swift in Sources */,
 				A0EF1F1028FD0B4C0065AB9A /* ResultLabel.swift in Sources */,
 				9595D376290A369B00167C41 /* TipSeeder.swift in Sources */,
+				95436F732913E0D300B72ED4 /* RoutineDetailVC.swift in Sources */,
 				A014EA1328FEAF2A0020DC35 /* UIView+MultipleSubviews.swift in Sources */,
 				A03857B628F7C7E100A4B566 /* UILabel+RequiredHeight.swift in Sources */,
 				9572F0B528F694E00035BCA3 /* UsageCell.swift in Sources */,
@@ -1087,7 +1088,6 @@
 				957F0CEF2906423500FFFB06 /* UIView+ConfigureUI.swift in Sources */,
 				9582540B2908F9400053AABC /* EffectModel.swift in Sources */,
 				957F0CEC2906418500FFFB06 /* OnboardingQuizVC.swift in Sources */,
-				951147312913614300A80161 /* RoutineDetailVC.swift in Sources */,
 				95436F6D2913682A00B72ED4 /* RoutineDetailStepCell.swift in Sources */,
 				A0F560F128FAA92A0091DF7B /* SkinInsightView.swift in Sources */,
 				957F0D092906573900FFFB06 /* IngredientButton.swift in Sources */,

@@ -72,6 +72,10 @@
 		956A703B29154437004FC262 /* SleepUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956A703129154436004FC262 /* SleepUIView.swift */; };
 		956A703C29154437004FC262 /* MoodLevelUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956A703229154436004FC262 /* MoodLevelUIView.swift */; };
 		956A703D29154437004FC262 /* SummaryHistoryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956A703429154436004FC262 /* SummaryHistoryVC.swift */; };
+		956A70452915477E004FC262 /* ProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956A70402915477E004FC262 /* ProfileVC.swift */; };
+		956A70462915477E004FC262 /* HeaderProfileUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956A70422915477E004FC262 /* HeaderProfileUIView.swift */; };
+		956A70472915477E004FC262 /* SettingsUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956A70432915477E004FC262 /* SettingsUIView.swift */; };
+		956A70482915477E004FC262 /* AboutMySkinUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956A70442915477E004FC262 /* AboutMySkinUIView.swift */; };
 		956BE5CB2914D9F100380D71 /* AddStepGestureRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956BE5CA2914D9F100380D71 /* AddStepGestureRecognizer.swift */; };
 		956BE5CD2914DED600380D71 /* AddNewStepProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956BE5CC2914DED600380D71 /* AddNewStepProtocol.swift */; };
 		956BE5CF2914F10000380D71 /* MoodSeeder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956BE5CE2914F10000380D71 /* MoodSeeder.swift */; };
@@ -260,6 +264,10 @@
 		956A703129154436004FC262 /* SleepUIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SleepUIView.swift; sourceTree = "<group>"; };
 		956A703229154436004FC262 /* MoodLevelUIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoodLevelUIView.swift; sourceTree = "<group>"; };
 		956A703429154436004FC262 /* SummaryHistoryVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SummaryHistoryVC.swift; sourceTree = "<group>"; };
+		956A70402915477E004FC262 /* ProfileVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileVC.swift; sourceTree = "<group>"; };
+		956A70422915477E004FC262 /* HeaderProfileUIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeaderProfileUIView.swift; sourceTree = "<group>"; };
+		956A70432915477E004FC262 /* SettingsUIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsUIView.swift; sourceTree = "<group>"; };
+		956A70442915477E004FC262 /* AboutMySkinUIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutMySkinUIView.swift; sourceTree = "<group>"; };
 		956BE5CA2914D9F100380D71 /* AddStepGestureRecognizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddStepGestureRecognizer.swift; sourceTree = "<group>"; };
 		956BE5CC2914DED600380D71 /* AddNewStepProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewStepProtocol.swift; sourceTree = "<group>"; };
 		956BE5CE2914F10000380D71 /* MoodSeeder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodSeeder.swift; sourceTree = "<group>"; };
@@ -420,14 +428,6 @@
 				72BF72C828F4514E0036C456 /* PopupRoutine.swift */,
 			);
 			path = ViewModel;
-			sourceTree = "<group>";
-		};
-		9505085C2914FFC500FAE957 /* ViewController */ = {
-			isa = PBXGroup;
-			children = (
-				9505085A2914FFA300FAE957 /* ReminderVC.swift */,
-			);
-			path = ViewController;
 			sourceTree = "<group>";
 		};
 		95078B1728EC7F8500093069 /* Treatments */ = {
@@ -604,6 +604,35 @@
 				956A703429154436004FC262 /* SummaryHistoryVC.swift */,
 			);
 			path = ViewController;
+			sourceTree = "<group>";
+		};
+		956A703E2915477E004FC262 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				956A703F2915477E004FC262 /* ViewController */,
+				956A70412915477E004FC262 /* View */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		956A703F2915477E004FC262 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				956A70402915477E004FC262 /* ProfileVC.swift */,
+				9505085A2914FFA300FAE957 /* ReminderVC.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		956A70412915477E004FC262 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				A0C33EE829102A51002BF2AC /* DatePickerView.swift */,
+				956A70422915477E004FC262 /* HeaderProfileUIView.swift */,
+				956A70432915477E004FC262 /* SettingsUIView.swift */,
+				956A70442915477E004FC262 /* AboutMySkinUIView.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		956BE5C72914D9D200380D71 /* UIView */ = {
@@ -830,8 +859,8 @@
 				951034CC28EFF54C0011AE39 /* Onboarding */,
 				95078B1728EC7F8500093069 /* Treatments */,
 				A0360C412906BB300021C0E1 /* History */,
-				A0C33EE7291029C4002BF2AC /* Profile-Reminder */,
 				9510350628EFFFDB0011AE39 /* Font */,
+				956A703E2915477E004FC262 /* Profile */,
 				95EB50E828EA821400412176 /* Main.storyboard */,
 				95EB50EE28EA821600412176 /* Assets.xcassets */,
 				95EB50F028EA821600412176 /* LaunchScreen.storyboard */,
@@ -962,23 +991,6 @@
 				950404C62901283300B37DFD /* CollapsableHeaderButton.swift */,
 			);
 			path = UIButton;
-			sourceTree = "<group>";
-		};
-		A0C33EE7291029C4002BF2AC /* Profile-Reminder */ = {
-			isa = PBXGroup;
-			children = (
-				9505085C2914FFC500FAE957 /* ViewController */,
-				A0C33EEB29102C28002BF2AC /* Components */,
-			);
-			path = "Profile-Reminder";
-			sourceTree = "<group>";
-		};
-		A0C33EEB29102C28002BF2AC /* Components */ = {
-			isa = PBXGroup;
-			children = (
-				A0C33EE829102A51002BF2AC /* DatePickerView.swift */,
-			);
-			path = Components;
 			sourceTree = "<group>";
 		};
 		A0E7EB1528F8549300F56802 /* Preview SwiftUI */ = {
@@ -1191,6 +1203,7 @@
 				72BF72D128F548DD0036C456 /* DailyLogViewController.swift in Sources */,
 				956BE5CF2914F10000380D71 /* MoodSeeder.swift in Sources */,
 				72BF72CB28F5186E0036C456 /* ReminderUIView.swift in Sources */,
+				956A70482915477E004FC262 /* AboutMySkinUIView.swift in Sources */,
 				959C2C0228ED44A3007B1251 /* UIViewController+ConfigureUI.swift in Sources */,
 				9543DA7328F834AE00E37A28 /* ProductDetailTopView.swift in Sources */,
 				958254032908F8030053AABC /* LogModel.swift in Sources */,
@@ -1232,6 +1245,7 @@
 				958E32E82907940E00171AF3 /* IngredientSeeder.swift in Sources */,
 				95A902D828F52D46007B7F5C /* IngredientCategoryDetailVC.swift in Sources */,
 				A049AB492907A848002C5143 /* NoActivityView.swift in Sources */,
+				956A70452915477E004FC262 /* ProfileVC.swift in Sources */,
 				95CC136328FE4A1400D3396A /* QuickFactCell.swift in Sources */,
 				95A902DA28F53F03007B7F5C /* IngredientListSection.swift in Sources */,
 				9524229328F43E5F00361166 /* IngredientListCollectionView.swift in Sources */,
@@ -1263,6 +1277,7 @@
 				956A703C29154437004FC262 /* MoodLevelUIView.swift in Sources */,
 				958253F92908D7720053AABC /* ProductModel.swift in Sources */,
 				9510352B28F007DB0011AE39 /* LargeCategoryCard.swift in Sources */,
+				956A70472915477E004FC262 /* SettingsUIView.swift in Sources */,
 				950D428B28FDC9B400657816 /* IngDetailLowerView.swift in Sources */,
 				9572F0BD28F6AF5A0035BCA3 /* SourceCell.swift in Sources */,
 				951034CB28EFF51F0011AE39 /* UIImageView+DropShadow.swift in Sources */,
@@ -1310,6 +1325,7 @@
 				959C2BF528ED341E007B1251 /* Constants.swift in Sources */,
 				9543DA7128F826AA00E37A28 /* ProductDetailVC.swift in Sources */,
 				A0F21F4028FD52840072497E /* PhotoConfirmationVC.swift in Sources */,
+				956A70462915477E004FC262 /* HeaderProfileUIView.swift in Sources */,
 				A0C33EE929102A51002BF2AC /* DatePickerView.swift in Sources */,
 				951034D528EFF54C0011AE39 /* (null) in Sources */,
 				72B6EDBD28FD11BC0056B374 /* NewStepUIView.swift in Sources */,

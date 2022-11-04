@@ -103,6 +103,57 @@ class DataHelper{
         return user
     }
     
+    public func fetchUnaddedSteps(time: K.RoutineTime) -> [CategoryModel]{
+        let allCategoryIds = [1,2,3,4,5,6,7,8,9]
+        let allCategories = fetchCategoryListById(categoryIds: allCategoryIds)
+        let addedSteps = fetchRoutineSteps(time: time)
+        
+        var unaddedSteps : [CategoryModel] = []
+       
+        allCategories.forEach { category in
+            if addedSteps.first(where: {$0.title == category.title}) == nil{
+                unaddedSteps.append(category)
+            }
+        }
+        
+        return unaddedSteps
+    }
+    
+    public func fetchRoutineSteps(time: K.RoutineTime) -> [RoutineStepInfo]{
+        var stepInfoList: [RoutineStepInfo] = []
+        var stepList: [StepModel] = []
+        
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let context: NSManagedObjectContext = appDelegate.persistentContainer.viewContext
+        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Steps")
+        
+        var routineId = K.Routine.morning
+        if time == K.RoutineTime.night{
+            routineId = K.Routine.night
+        }
+        
+        let timePredicate = NSPredicate(format: "routineId == %@", String(describing: routineId))
+        request.predicate = timePredicate
+        
+        do{
+            let results:NSArray = try context.fetch(request) as NSArray
+            
+            for result in results {
+                let step = result as? StepModel
+                stepList.append(step!)
+            }
+            
+            stepList.forEach { step in
+                let currCat = fetchCategoryById(categoryId: Int(truncating: step.categoryId))
+                stepInfoList.append(RoutineStepInfo(title: currCat.title!, position: Int(truncating: step.position)))
+            }
+        }
+        catch{
+            print("fetch failed")
+        }
+        return stepInfoList
+    }
+    
     public func fetchRoutines() -> [RoutineModel]{
             
         var routineList: [RoutineModel] = []
@@ -158,6 +209,26 @@ class DataHelper{
         }
         
         return problemList
+    }
+    
+    func fetchCategoryById(categoryId: Int) -> CategoryModel{
+        var category = CategoryModel()
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let context: NSManagedObjectContext = appDelegate.persistentContainer.viewContext
+        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Categories")
+        
+        let idPredicate = NSPredicate(format: "id == %@", String(describing: categoryId))
+        request.predicate = idPredicate
+        
+        do{
+            let results:NSArray = try context.fetch(request) as NSArray
+            category = (results.firstObject) as! CategoryModel
+        }
+        catch{
+            print("fetch failed")
+        }
+        
+        return category
     }
     
     func fetchCategoryListById(categoryIds: [Int]) -> [CategoryModel]{

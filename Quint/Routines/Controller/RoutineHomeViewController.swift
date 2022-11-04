@@ -257,13 +257,15 @@ class RoutineHomeViewController: UIViewController, CLLocationManagerDelegate{
     }
     
     @objc func goToMorningRoutine(sender: UITapGestureRecognizer) {
-//        let controller = MorningRoutinesViewController()
-//        navigationController?.pushViewController(controller, animated: true)
+        let controller = RoutineDetailVC()
+        controller.routineTime = .morning
+        navigationController?.pushViewController(controller, animated: true)
     }
     
     @objc func goToNightRoutine(sender: UITapGestureRecognizer) {
-//        let controller = NightRoutinesViewController()
-//        navigationController?.pushViewController(controller, animated: true)
+        let controller = RoutineDetailVC()
+        controller.routineTime = .night
+        navigationController?.pushViewController(controller, animated: true)
     }
     
     override func configureLayout() {

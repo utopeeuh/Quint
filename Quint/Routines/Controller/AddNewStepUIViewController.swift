@@ -11,127 +11,104 @@ import SnapKit
 @available(iOS 16.0, *)
 class AddNewStepUIViewController: UIViewController {
     
-    private lazy var mainStackView: UIStackView = {
-        let stackView = UIStackView()
-        stackView.translatesAutoresizingMaskIntoConstraints = false
-        stackView.axis = .vertical
-        stackView.alignment = .fill
-        stackView.spacing = 20
-        return stackView
-    }()
+    private var unaddedSteps : [CategoryModel] = []
+    var routineTime : K.RoutineTime?
     
-    private var crossButton: UIButton = {
-        let button = UIButton()
-        button.setImage(UIImage(systemName: "xmark"), for: .normal)
-        button.tintColor = UIColor(red: 7/255, green: 8/255, blue: 7/255, alpha: 1)
-        return button
-    }()
+    private var crossButton = UIButton()
+    private var titleLabel = UILabel()
+    private var handleBar = UIImageView()
+    private var seperator = UIView()
     
-    private lazy var hStackViewHeader: UIStackView = {
-        let stackView = UIStackView()
-        stackView.translatesAutoresizingMaskIntoConstraints = false
-        stackView.axis = .horizontal
-        stackView.alignment = .leading
-        return stackView
-    }()
+    private var productStack = UIStackView()
     
-    private lazy var vStackViewTitle: UIStackView = {
-        let stackView = UIStackView()
-        stackView.translatesAutoresizingMaskIntoConstraints = false
-        stackView.axis = .vertical
-        stackView.alignment = .center
-        stackView.spacing = 15
-        return stackView
-    }()
-    
-    private var titleLabel: UILabel = {
-        let label = UILabel()
-        label.text = "Add new step"
-        label.textColor = .black
-        label.font = .interMedium(size: 16)
-        return label
-    }()
-    
-    private var imageHeader: UIImageView = {
-        let image = UIImageView()
-        image.image = UIImage(named: "handle")
-        return image
-    }()
-
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupView()
-        ConfigureUI()
-        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(self.handleCloseAction))
-        dimmedView.addGestureRecognizer(tapGesture)
+        configureUI()
         setupPanGesture()
     }
     
-    
-    @objc func goToMorningRoutine() {
-        animateDismissView()
-    }
-    
-    func ConfigureUI() {
-        let navbar = UIView()
-        navbar.backgroundColor = .white
-        self.view.addSubview(navbar)
-        navbar.snp.makeConstraints { (make) -> Void in
-            make.edges.equalToSuperview()
-        }
-        configureComponents()
-        configureLayout()
-        
-    }
-    
-    var micellar = newStepUIView()
-    var eyeCream = newStepUIView()
-    var toner = newStepUIView()
-    var cleanser = newStepUIView()
-    var serum = newStepUIView()
-    var moisturizer = newStepUIView()
-    var acneCare = newStepUIView()
-    var exfoliator = newStepUIView()
-    
-    let lineView: UIView = {
-        let view = UIView()
-        view.backgroundColor = UIColor(red: 230/255, green: 230/255, blue: 230/255, alpha: 1)
-        return view
-    }()
-    
     override func configureComponents() {
         
-        vStackViewTitle.addArrangedSubview(imageHeader)
-        vStackViewTitle.addArrangedSubview(titleLabel)
+        crossButton.setImage(UIImage(named:"CrossIcon"), for: .normal)
         
-        hStackViewHeader.addArrangedSubview(crossButton)
-        hStackViewHeader.addArrangedSubview(vStackViewTitle)
-        containerView.addSubview(hStackViewHeader)
-        mainStackView.addArrangedSubview(lineView)
+        crossButton.addTarget(self, action: #selector(handleCloseAction), for: .touchUpInside)
         
-        mainStackView.addArrangedSubview(micellar)
-        micellar.titleLabel.text = "Micellar water"
+        titleLabel.text = "Add new step"
+        titleLabel.textColor = .black
+        titleLabel.font = .interMedium(size: 16)
         
-        mainStackView.addArrangedSubview(eyeCream)
-        eyeCream.titleLabel.text = "Eye cream"
+        handleBar.image = UIImage(named: "handle")
         
-        mainStackView.addArrangedSubview(toner)
-        toner.titleLabel.text = "Toner"
+        seperator.backgroundColor = UIColor(red: 230/255, green: 230/255, blue: 230/255, alpha: 1)
         
-        //Add target
-        crossButton.addTarget(self, action: #selector(goToMorningRoutine), for: .touchUpInside)
- 
+        productStack.axis = .vertical
+        productStack.distribution = .fill
+        productStack.spacing = 0
+
+        unaddedSteps = DataHelper.shared.fetchUnaddedSteps(time: routineTime!)
+        unaddedSteps.forEach { category in
+            let newCell = NewStepUIView()
+            newCell.setCategory(category: category)
+            //add target here
+            
+            productStack.addArrangedSubview(newCell)
+        }
+        
+        containerView.translatesAutoresizingMaskIntoConstraints = false
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(self.handleCloseAction))
+        dimmedView.addGestureRecognizer(tapGesture)
+        dimmedView.translatesAutoresizingMaskIntoConstraints = false
     }
     
     override func configureLayout() {
-        setupConstraints()
+        view.addSubview(dimmedView)
+        view.addSubview(containerView)
         
-        mainStackView.snp.makeConstraints { make in
-            make.left.equalTo(view.safeAreaInsets).offset(20)
-            make.right.equalTo(view.safeAreaInsets).offset(-20)
-            make.top.equalTo(hStackViewHeader.snp.bottom)
-            make.bottom.equalTo(view.safeAreaInsets).offset(-20)
+        //
+        containerView.multipleSubviews(view: crossButton, titleLabel, handleBar, seperator, productStack)
+        
+        crossButton.snp.makeConstraints { make in
+            make.top.equalToSuperview().offset(28)
+            make.left.equalToSuperview().offset(16)
         }
+        
+        handleBar.snp.makeConstraints { make in
+            make.top.equalToSuperview().offset(10)
+            make.centerX.equalToSuperview()
+        }
+        
+        titleLabel.snp.makeConstraints { make in
+            make.top.equalTo(handleBar.snp.bottom).offset(14)
+            make.centerX.equalToSuperview()
+        }
+        
+        seperator.snp.makeConstraints{ make in
+            make.top.equalTo(titleLabel.snp.bottom).offset(14)
+            make.width.centerX.equalToSuperview()
+            make.height.equalTo(1)
+        }
+        
+        productStack.subviews.forEach { view in
+            if let cell = view as? NewStepUIView{
+                cell.snp.makeConstraints { make in
+                    make.height.equalTo(cell.height)
+                }
+            }
+        }
+        
+        productStack.snp.makeConstraints { make in
+            make.left.right.equalToSuperview()
+            make.height.equalTo(NewStepUIView().height * productStack.subviews.count)
+            make.top.equalTo(seperator.snp.bottom)
+        }
+        //
+        
+        containerViewHeightConstraint = containerView.heightAnchor.constraint(equalToConstant: defaultHeight)
+        
+        containerViewBottomConstraint = containerView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: defaultHeight)
+        // Activate constraints
+        containerViewHeightConstraint?.isActive = true
+        containerViewBottomConstraint?.isActive = true
         
         containerView.snp.makeConstraints { make in
             make.left.equalTo(view.safeAreaLayoutGuide)
@@ -141,69 +118,9 @@ class AddNewStepUIViewController: UIViewController {
         dimmedView.snp.makeConstraints { make in
             make.top.bottom.left.right.equalToSuperview()
         }
-        
-        micellar.snp.makeConstraints { make in
-            make.height.equalTo(20)
-            make.left.equalTo(view.safeAreaLayoutGuide).offset(20)
-            make.right.equalTo(view.safeAreaLayoutGuide).offset(-20)
-        }
-        
-        eyeCream.snp.makeConstraints { make in
-            make.height.equalTo(20)
-            make.left.equalTo(view.safeAreaLayoutGuide).offset(20)
-            make.right.equalTo(view.safeAreaLayoutGuide).offset(-20)
-        }
-        
-        toner.snp.makeConstraints { make in
-            make.height.equalTo(25)
-            make.left.equalTo(view.safeAreaLayoutGuide).offset(20)
-            make.right.equalTo(view.safeAreaLayoutGuide).offset(-20)
-        }
-        
-        hStackViewHeader.snp.makeConstraints { make in
-            make.top.equalTo(view.safeAreaInsets).offset(20)
-            make.height.equalTo(50)
-        }
-        
-        crossButton.snp.makeConstraints { make in
-            make.width.height.equalTo(20)
-            make.top.equalTo(view.safeAreaInsets).offset(15)
-            make.left.equalTo(view.safeAreaInsets).offset(20)
-        }
-        
-        imageHeader.snp.makeConstraints { make in
-            make.height.equalTo(4)
-            make.width.equalTo(40)
-            make.top.equalToSuperview().offset(-20)
-            make.left.equalTo(crossButton.snp.left).offset(view.frame.width / 2 - 35)
-        }
-        
-        lineView.snp.makeConstraints { make in
-            make.height.equalTo(1)
-            make.left.equalTo(view.safeAreaLayoutGuide)
-            make.right.equalTo(view.safeAreaLayoutGuide)
-        }
-        
-        
     }
     
-    func setupConstraints() {
-        // Add subviews
-        view.addSubview(dimmedView)
-        view.addSubview(containerView)
-        dimmedView.translatesAutoresizingMaskIntoConstraints = false
-        containerView.translatesAutoresizingMaskIntoConstraints = false
-        
-        containerView.addSubview(mainStackView)
-        mainStackView.translatesAutoresizingMaskIntoConstraints = false
-       
-        containerViewHeightConstraint = containerView.heightAnchor.constraint(equalToConstant: defaultHeight)
-        
-        containerViewBottomConstraint = containerView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: defaultHeight)
-        // Activate constraints
-        containerViewHeightConstraint?.isActive = true
-        containerViewBottomConstraint?.isActive = true
-    }
+    //MARK: - TEMPLATE
     
     lazy var containerView: UIView = {
         let view = UIView()
@@ -221,10 +138,6 @@ class AddNewStepUIViewController: UIViewController {
         super.viewDidAppear(animated)
         animateShowDimmedView()
         animatePresentContainer()
-    }
-    
-    func setupView() {
-        view.backgroundColor = .clear
     }
     
     let maxDimmedAlpha: CGFloat = 0.6

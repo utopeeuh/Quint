@@ -17,8 +17,8 @@ class RoutineHistoryVC: UIViewController {
     private var calendarView = UICalendarView()
     private var expandButton = UIButton()
     private var scrollView = UIScrollView()
-    private var view1 = NoActivityView()
-    private var view2 = ActivityView()
+    private var noActivityView = NoActivityView()
+    private var activityView = ActivityView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,12 +30,9 @@ class RoutineHistoryVC: UIViewController {
         view.backgroundColor = K.Color.bgQuint
         
         viewBlanket.backgroundColor = K.Color.bgQuint
-        view.sendSubviewToBack(viewBlanket)
         detailSection.isUserInteractionEnabled = true
-
-        calendarView.frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width-40, height: 0)
-        calendarView.sizeToFit()
-
+        detailSection.backgroundColor = K.Color.bgQuint
+        
         calendarView.delegate = self
         calendarView.locale = .current
         
@@ -49,6 +46,8 @@ class RoutineHistoryVC: UIViewController {
         calendarView.fontDesign = .rounded
         calendarView.backgroundColor = K.Color.whiteQuint
         
+        expandButton.setImage(UIImage(named: "arrow_down_icon"), for: .normal)
+        expandButton.sizeToFit()
         expandButton.clipsToBounds = true
         expandButton.layer.cornerRadius = 13
         expandButton.layer.maskedCorners = [.layerMaxXMaxYCorner, .layerMinXMaxYCorner]
@@ -57,17 +56,24 @@ class RoutineHistoryVC: UIViewController {
         let tap = UITapGestureRecognizer(target: self, action: #selector(expandButtonOnClick))
         expandButton.addGestureRecognizer(tap)
         
+        expandButton.layer.masksToBounds = false
+        expandButton.layer.shadowColor = K.Color.greyQuint.cgColor
+        expandButton.layer.shadowOpacity = 0.1
+        expandButton.layer.shadowOffset = CGSize(width: 0, height: 10)
+        expandButton.layer.shadowRadius = 7
+        
+        scrollView.isUserInteractionEnabled = true
         scrollView.isScrollEnabled = true
-        scrollView.contentSize = CGSize(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height / 1.7)
+        
         scrollView.autoresizingMask = .flexibleHeight
         scrollView.showsVerticalScrollIndicator = false
         scrollView.showsHorizontalScrollIndicator = false
+        scrollView.backgroundColor = K.Color.bgQuint
         
-        view1.isHidden = true
-//        view2.isHidden = true
-        view2.editButton.addTarget(self, action: #selector(goToEditLog), for: .touchUpInside)
+        noActivityView.isHidden = true
+//        activityView.isHidden = true
+        activityView.editButton.addTarget(self, action: #selector(goToEditLog), for: .touchUpInside)
         
-        collapseDesc()
     }
     
     override func configureLayout() {
@@ -77,28 +83,28 @@ class RoutineHistoryVC: UIViewController {
                                     scrollView,
                                     expandButton)
         
-        detailSection.multipleSubviews(view: view1,
-                                             view2)
-        
         scrollView.addSubview(detailSection)
+        
+        detailSection.multipleSubviews(view: noActivityView,
+                                             activityView)
         
         calendarView.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
             make.top.equalTo(view.safeAreaLayoutGuide)
             make.width.equalToSuperview()
-            make.height.equalTo(415)
+            make.bottom.equalTo(viewBlanket.snp.bottom)
         }
         
         viewBlanket.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
-            make.top.equalTo(calendarView).offset(215)
+            make.top.equalTo(calendarView).offset(125)
             make.width.equalToSuperview()
-            make.height.equalTo(215)
+            make.height.equalTo(285)
         }
         
         expandButton.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
-            make.top.equalTo(viewBlanket.snp.top).offset(-15)
+            make.top.equalTo(viewBlanket)
             make.width.equalToSuperview()
         }
         
@@ -108,13 +114,13 @@ class RoutineHistoryVC: UIViewController {
             make.width.equalTo(UIScreen.main.bounds.width)
         }
         
-        view1.snp.makeConstraints { make in
+        noActivityView.snp.makeConstraints { make in
             make.centerX.equalTo(scrollView)
             make.top.equalTo(scrollView)
             make.width.equalTo(scrollView)
         }
         
-        view2.snp.makeConstraints { make in
+        activityView.snp.makeConstraints { make in
             make.centerX.equalTo(scrollView)
             make.top.equalTo(scrollView)
             make.width.equalTo(scrollView)
@@ -123,60 +129,58 @@ class RoutineHistoryVC: UIViewController {
     }
     
     @objc func expandButtonOnClick(sender: UITapGestureRecognizer){
-        if calendarView.bounds.height < 415 {
-            collapseDesc()
-//            expandDesc()
+        if viewBlanket.alpha == 1 {
+            expandCalendar()
             return
         }
-        expandDesc()
-//        collapseDesc()
+        collapseCalendar()
     }
-    
+
     @objc func goToEditLog() {
         let controller = AddNewStepUIViewController()
         self.navigationController?.pushViewController(controller, animated: true)
     }
 
-    func expandDesc(){
+    func expandCalendar(){
         
-        calendarView.snp.remakeConstraints { make in
-            make.centerX.equalToSuperview()
-            make.top.equalTo(view.safeAreaLayoutGuide)
-            make.width.equalToSuperview()
-            make.height.equalTo(200)
-        }
+        viewBlanket.backgroundColor = K.Color.whiteQuint
         
         UIView.animate(withDuration: 1.0, animations: { [self] in
-            detailSection.transform = CGAffineTransformMakeTranslation(0, 0)
-            expandButton.transform = CGAffineTransformMakeTranslation(0, 0)
-            viewBlanket.alpha = 1
-        })
-
-        expandButton.setImage(UIImage(named: "arrow_up_icon"), for: .normal)
-        expandButton.sizeToFit()
-        scrollView.contentSize.height = UIScreen.main.bounds.height / 1.7
-        
-    }
-
-    func collapseDesc(){
-        
-        UIView.animate(withDuration: 1.0, animations: { [self] in
-            detailSection.transform = CGAffineTransformMakeTranslation(0, 215)
-            expandButton.transform = CGAffineTransformMakeTranslation(0, 215)
+            
+            expandButton.transform = CGAffineTransformMakeTranslation(0, 285)
+            scrollView.transform = CGAffineTransformMakeTranslation(0, 285)
             viewBlanket.alpha = 0
-        }) { completion in
-            self.calendarView.snp.remakeConstraints { make in
-                make.centerX.equalToSuperview()
-                make.top.equalTo(self.view.safeAreaLayoutGuide)
-                make.width.equalToSuperview()
-                make.height.equalTo(415)
-            }
+            
+        }) { [self] completion in
+            
+            expandButton.setImage(UIImage(named: "arrow_up_icon"), for: .normal)
+            expandButton.sizeToFit()
+            scrollView.contentSize = CGSize(width: UIScreen.main.bounds.width, height: 800)
             
         }
-        expandButton.setImage(UIImage(named: "arrow_down_icon"), for: .normal)
-        expandButton.sizeToFit()
-        scrollView.contentSize.height = UIScreen.main.bounds.height / 1.7
         
+    }
+    
+    func collapseCalendar(){
+        
+        scrollView.setContentOffset(CGPoint(x: 0, y: 0), animated: true)
+        expandButton.setImage(UIImage(named: "arrow_up_icon"), for: .normal)
+
+        UIView.animate(withDuration: 1.0, animations: { [self] in
+            
+            expandButton.transform = CGAffineTransformMakeTranslation(0, 0)
+            scrollView.transform = CGAffineTransformMakeTranslation(0, 0)
+            viewBlanket.alpha = 1
+            
+        }) { [self] completion in
+            
+            expandButton.setImage(UIImage(named: "arrow_down_icon"), for: .normal)
+            expandButton.sizeToFit()
+            scrollView.contentSize = CGSize(width: UIScreen.main.bounds.width, height: 530)
+            viewBlanket.backgroundColor = K.Color.bgQuint
+            
+        }
+
     }
     
 }
@@ -191,6 +195,5 @@ extension RoutineHistoryVC: UICalendarViewDelegate, UICalendarSelectionSingleDat
     func dateSelection(_ selection: UICalendarSelectionSingleDate, didSelectDate dateComponents: DateComponents?) {
         print(dateComponents)
     }
-    
     
 }

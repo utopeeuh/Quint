@@ -20,7 +20,7 @@ class RoutineHomeViewController: UIViewController, CLLocationManagerDelegate{
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor =  UIColor(red: 244/255, green: 244/255, blue: 244/255, alpha: 1)
-        ConfigureUI()
+        configureUI()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -175,21 +175,6 @@ class RoutineHomeViewController: UIViewController, CLLocationManagerDelegate{
     private var categoriesImage = K.Category.productGuideImageName
     
     var dailyTips = DailySkincareTips()
-    
-    func ConfigureUI() {
-        let navbar = UIView()
-        navbar.backgroundColor = .white
-        self.view.addSubview(navbar)
-        navbar.snp.makeConstraints { (make) -> Void in
-            make.left.equalTo(self.view)
-            make.right.equalTo(self.view)
-            make.top.equalTo(self.topLayoutGuide.snp.top)
-            make.bottom.equalTo(self.topLayoutGuide.snp.bottom)
-        }
-        configureComponents()
-        configureLayout()
-        
-    }
 
     override func configureComponents() {
         
@@ -326,8 +311,9 @@ class RoutineHomeViewController: UIViewController, CLLocationManagerDelegate{
         }
         
         dailyTips.snp.makeConstraints { make in
-            make.height.equalTo(180)
-            make.width.equalTo(300)
+            make.height.equalTo(dailyTips.height)
+            make.width.equalTo(UIScreen.main.bounds.width-40)
+            make.centerX.equalToSuperview()
         }
 
         

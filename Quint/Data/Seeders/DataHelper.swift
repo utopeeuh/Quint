@@ -60,6 +60,26 @@ class DataHelper{
         }
     }
     
+    public func fetchRandomTip() -> String{
+        
+        var text = ""
+        var tipList : [TipModel] = []
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let context : NSManagedObjectContext = appDelegate.persistentContainer.viewContext
+        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Tips")
+        
+        do{
+            let results: [TipModel] = try context.fetch(request) as! [TipModel]
+            
+            text = results.randomElement()?.desc ?? ""
+        }
+        catch{
+            print("fetch failed")
+        }
+        
+        return text
+    }
+    
     public func createRoutineStep(stepInfo: RoutineStepInfo, time: K.RoutineTime){
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         let context : NSManagedObjectContext = appDelegate.persistentContainer.viewContext

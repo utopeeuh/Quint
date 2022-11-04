@@ -9,18 +9,18 @@ import Foundation
 import SnapKit
 
 class DailySkincareTips: UIView {
+    
+    var height : CGFloat = 0
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         self.backgroundColor = UIColor(patternImage: UIImage(named: "tipsBackground")!)
         self.layer.cornerRadius = 8.0
-        setupView()
-        setupConstraints()
+        configureUI()
     }
 
     required init?(coder: NSCoder) {
         super.init(coder: coder)
-        setupView()
-        setupConstraints()
     }
     
     private lazy var vStackViewTips: UIStackView = {
@@ -44,48 +44,37 @@ class DailySkincareTips: UIView {
     
     private var firstTips: UILabel = {
         let label = UILabel()
-        label.text = "Hydration is a must for healthy, glowing skin. Dehydrated skin can feel dry, itchy, and dull."
         label.textColor = .white
+        label.frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width-88, height: 0)
+        label.lineBreakMode = .byWordWrapping
         label.font = .interRegular(size: 14)
         label.numberOfLines = 0
         return label
     }()
     
-    private var secondTips: UILabel = {
-        let label = UILabel()
-        label.text = "Drink liquids throughout the day, including electrolytes, to keep your hydration level."
-        label.textColor = .white
-        label.font = .interRegular(size: 14)
-        label.numberOfLines = 0
-        return label
-    }()
-    
-    func setupView() {
-        vStackViewTips.addArrangedSubview(headerTitle)
-        vStackViewTips.addArrangedSubview(firstTips)
-        vStackViewTips.addArrangedSubview(secondTips)
-        addSubview(vStackViewTips)
+    override func configureComponents() {
+        
+        firstTips.text = DataHelper.shared.fetchRandomTip()
+        firstTips.sizeToFit()
+        height = firstTips.requiredHeight + 98
     }
     
-    func setupConstraints() {
+    override func configureLayout() {
+        
+        addSubview(headerTitle)
+        addSubview(firstTips)
+        
         headerTitle.snp.makeConstraints { make in
-            make.left.equalTo(self.safeAreaInsets).offset(20)
-            make.right.equalTo(self.safeAreaInsets).offset(-20)
-            make.top.equalTo(self.safeAreaInsets).offset(20)
+            make.left.equalTo(self.safeAreaInsets).offset(24)
+            make.right.equalTo(self.safeAreaInsets).offset(-24)
+            make.top.equalTo(self.safeAreaInsets).offset(28)
         }
         
         firstTips.snp.makeConstraints { make in
-            make.left.equalTo(self.safeAreaInsets).offset(20)
-            make.right.equalTo(self.safeAreaInsets).offset(-20)
-            make.top.equalTo(headerTitle.snp.bottom).offset(20)
-            make.width.equalTo(300)
-        }
-        
-        secondTips.snp.makeConstraints { make in
-            make.left.equalTo(self.safeAreaInsets).offset(20)
-            make.right.equalTo(self.safeAreaInsets).offset(-20)
-            make.top.equalTo(firstTips.snp.bottom).offset(20)
-            make.width.equalTo(300)
+            make.left.equalTo(self.safeAreaInsets).offset(24)
+            make.right.equalTo(self.safeAreaInsets).offset(-24)
+            make.top.equalTo(headerTitle.snp.bottom).offset(10)
+            make.height.equalTo(firstTips.requiredHeight)
         }
     }
 }

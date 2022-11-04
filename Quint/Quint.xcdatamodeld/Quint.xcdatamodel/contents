@@ -31,7 +31,14 @@
         <attribute name="date" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="imagePath" optional="YES" attributeType="String"/>
         <attribute name="isBetter" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="isDayDone" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="isNightDone" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="moodId" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="sleep" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+    </entity>
+    <entity name="Moods" representedClassName="MoodModel" syncable="YES">
+        <attribute name="id" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="title" optional="YES" attributeType="String"/>
     </entity>
     <entity name="Problems" representedClassName="ProblemModel" syncable="YES">
         <attribute name="desc" optional="YES" attributeType="String"/>
@@ -64,7 +71,7 @@
         <attribute name="position" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="routineId" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
     </entity>
-    <entity name="Tips" representedClassName="TipModel" syncable="YES" codeGenerationType="class">
+    <entity name="Tips" representedClassName="TipModel" syncable="YES">
         <attribute name="desc" optional="YES" attributeType="String"/>
         <attribute name="id" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
     </entity>

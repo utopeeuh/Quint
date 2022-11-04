@@ -13,9 +13,6 @@ import SwiftUI
 @available(iOS 16.0, *)
 @available(iOS 16.0, *)
 class LoginVC: UIViewController {
-    
-    private let isFirstTime = UserDefaults.standard.object(forKey: K.UD.firstTime) ?? true
-    private let seeders = [IngredientSeeder(), EffectSeeder(), CategorySeeder(), UsageStepSeeder(), ProductSeeder(), SkinTypeSeeder(), ProblemSeeder(), RoutineSeeder(), UserSeeder(), TipSeeder()]
 
     private let topSpacer = UIView()
     private let bottomSpacer = UIView()
@@ -30,19 +27,6 @@ class LoginVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = K.Color.bgQuint
-        
-        if isFirstTime as! Bool == true{
-            print("Inital seeding")
-            seeders.forEach { seeder in
-                seeder.seedFromJson()
-            }
-            UserDefaults.standard.set(false, forKey: K.UD.firstTime)
-        }
-        
-        else{
-            print("Skip seeding")
-        }
-        
         configureUI()
     }
     

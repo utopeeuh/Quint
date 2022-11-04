@@ -17,6 +17,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let scene = (scene as? UIWindowScene) else { return }
         window = UIWindow(windowScene: scene)
         
+        // Manage inital view
         let hasDoneOnboarding = UserDefaults.standard.object(forKey: K.UD.hasDoneOnboarding) ?? false
         let nav : UINavigationController?
         
@@ -28,7 +29,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         window?.rootViewController = nav
         window?.makeKeyAndVisible()
-        
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {

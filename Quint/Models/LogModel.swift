@@ -12,6 +12,9 @@ import CoreData
 @objc(LogModel)
 
 class LogModel: NSManagedObject{
+    @NSManaged var moodId: NSNumber
+    @NSManaged var isDayDone: Bool
+    @NSManaged var isNightDone: Bool
     @NSManaged var date: Date
     @NSManaged var sleep: NSNumber
     @NSManaged var activityLevel: NSNumber

@@ -61,6 +61,9 @@
 		9543DA7828F85A7A00E37A28 /* ProductCategoryLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9543DA7728F85A7A00E37A28 /* ProductCategoryLabel.swift */; };
 		956BE5CB2914D9F100380D71 /* AddStepGestureRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956BE5CA2914D9F100380D71 /* AddStepGestureRecognizer.swift */; };
 		956BE5CD2914DED600380D71 /* AddNewStepProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956BE5CC2914DED600380D71 /* AddNewStepProtocol.swift */; };
+		956BE5CF2914F10000380D71 /* MoodSeeder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956BE5CE2914F10000380D71 /* MoodSeeder.swift */; };
+		956BE5D12914F11400380D71 /* MoodModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956BE5D02914F11400380D71 /* MoodModel.swift */; };
+		956BE5D32914F14F00380D71 /* MoodJSON.json in Resources */ = {isa = PBXBuildFile; fileRef = 956BE5D22914F14F00380D71 /* MoodJSON.json */; };
 		9572F0B028F68EC00035BCA3 /* InformationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9572F0AF28F68EC00035BCA3 /* InformationCell.swift */; };
 		9572F0B328F694C70035BCA3 /* AllergenCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9572F0B228F694C70035BCA3 /* AllergenCell.swift */; };
 		9572F0B528F694E00035BCA3 /* UsageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9572F0B428F694E00035BCA3 /* UsageCell.swift */; };
@@ -231,6 +234,9 @@
 		956BE5C92914D9E300380D71 /* RoutineDetailStepCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutineDetailStepCell.swift; sourceTree = "<group>"; };
 		956BE5CA2914D9F100380D71 /* AddStepGestureRecognizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddStepGestureRecognizer.swift; sourceTree = "<group>"; };
 		956BE5CC2914DED600380D71 /* AddNewStepProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewStepProtocol.swift; sourceTree = "<group>"; };
+		956BE5CE2914F10000380D71 /* MoodSeeder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodSeeder.swift; sourceTree = "<group>"; };
+		956BE5D02914F11400380D71 /* MoodModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodModel.swift; sourceTree = "<group>"; };
+		956BE5D22914F14F00380D71 /* MoodJSON.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = MoodJSON.json; sourceTree = "<group>"; };
 		9572F0AF28F68EC00035BCA3 /* InformationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationCell.swift; sourceTree = "<group>"; };
 		9572F0B228F694C70035BCA3 /* AllergenCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllergenCell.swift; sourceTree = "<group>"; };
 		9572F0B428F694E00035BCA3 /* UsageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsageCell.swift; sourceTree = "<group>"; };
@@ -592,6 +598,7 @@
 				958253FC2908F7B50053AABC /* RoutineSeeder.swift */,
 				95825420290904050053AABC /* UserSeeder.swift */,
 				9595D375290A369B00167C41 /* TipSeeder.swift */,
+				956BE5CE2914F10000380D71 /* MoodSeeder.swift */,
 			);
 			path = Seeders;
 			sourceTree = "<group>";
@@ -607,6 +614,7 @@
 				9595D384290A522200167C41 /* SkinTypeJSON.json */,
 				9595D386290A522300167C41 /* TipJSON.json */,
 				9595D382290A522200167C41 /* UsageStepJSON.json */,
+				956BE5D22914F14F00380D71 /* MoodJSON.json */,
 			);
 			path = JSON;
 			sourceTree = "<group>";
@@ -749,6 +757,7 @@
 				958253FE2908F7EF0053AABC /* RoutineModel.swift */,
 				95FB6A612906DC3300F18E33 /* UserModel.swift */,
 				9595D377290A36A900167C41 /* TipModel.swift */,
+				956BE5D02914F11400380D71 /* MoodModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -947,6 +956,7 @@
 				9510352328EFFFDB0011AE39 /* Inter-ExtraLight.ttf in Resources */,
 				9595D38A290A522300167C41 /* SkinTypeJSON.json in Resources */,
 				9510352228EFFFDB0011AE39 /* Inter-ExtraBold.ttf in Resources */,
+				956BE5D32914F14F00380D71 /* MoodJSON.json in Resources */,
 				9510351D28EFFFDB0011AE39 /* Inter-Bold.ttf in Resources */,
 				9510351A28EFFFDB0011AE39 /* Inter-Light.ttf in Resources */,
 				9510351828EFFFDB0011AE39 /* ClashGrotesk-Bold.otf in Resources */,
@@ -1032,6 +1042,7 @@
 				7242F9CC28F12C5A009EB962 /* SmallCategoryButtonGuide.swift in Sources */,
 				9595D37C290A39C700167C41 /* CategoryModel.swift in Sources */,
 				72BF72D128F548DD0036C456 /* DailyLogViewController.swift in Sources */,
+				956BE5CF2914F10000380D71 /* MoodSeeder.swift in Sources */,
 				72BF72CB28F5186E0036C456 /* ReminderUIView.swift in Sources */,
 				959C2C0228ED44A3007B1251 /* UIViewController+ConfigureUI.swift in Sources */,
 				9543DA7328F834AE00E37A28 /* ProductDetailTopView.swift in Sources */,
@@ -1106,6 +1117,7 @@
 				958254092908F9310053AABC /* EffectSeeder.swift in Sources */,
 				A0F519EB290064CC00623A7F /* StepContainerView.swift in Sources */,
 				A0EF1F0B28FD08100065AB9A /* ResultProblemView.swift in Sources */,
+				956BE5D12914F11400380D71 /* MoodModel.swift in Sources */,
 				951034E228EFF8820011AE39 /* (null) in Sources */,
 				A0F21F4228FD53850072497E /* OnboardingParentView.swift in Sources */,
 				950404C329010E0100B37DFD /* CollapsableStack.swift in Sources */,

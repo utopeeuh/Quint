@@ -14,6 +14,23 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         print("Documents Directory: ", FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).last ?? "Not Found!")
         
+        // Conduct inital seedings
+        let seeders = [IngredientSeeder(), EffectSeeder(), CategorySeeder(), UsageStepSeeder(), ProductSeeder(), SkinTypeSeeder(), ProblemSeeder(), RoutineSeeder(), UserSeeder(), TipSeeder(), MoodSeeder()]
+        
+        let isFirstTime = UserDefaults.standard.object(forKey: K.UD.firstTime) ?? true
+        
+        if isFirstTime as! Bool == true{
+            print("Inital seeding")
+            seeders.forEach { seeder in
+                seeder.seedFromJson()
+            }
+            UserDefaults.standard.set(false, forKey: K.UD.firstTime)
+        }
+        
+        else{
+            print("Skip seeding")
+        }
+        
         return true
     }
 

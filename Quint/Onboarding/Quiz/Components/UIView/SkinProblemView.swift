@@ -139,7 +139,7 @@ extension SkinProblemView: TTGTextTagCollectionViewDelegate {
         nextButton.removeSublayer(layerIndex: 0)
         nextButton.isEnabled = false
         nextButton.backgroundColor = K.Color.disableBgBtnQuint
-        nextButton.setTitleColor(K.Color.disableTextBtnQuint, for: .normal)
+        nextButton.setTitleColor(K.Color.greyQuint, for: .normal)
         
     }
     

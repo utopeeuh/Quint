@@ -39,7 +39,6 @@ struct K{
         
         static let shadowQuint = UIColor(red: 16/255, green: 24/255, blue: 40/255, alpha: 0.05)
         static let disableBgBtnQuint = UIColor(red: 230/255, green: 230/255, blue: 230/255, alpha: 1)
-        static let disableTextBtnQuint = UIColor(red: 125/255, green: 125/255, blue: 125/255, alpha: 1)
         static let greenSkinProblemQuint = UIColor(red: 172/255, green: 203/255, blue: 192/255, alpha: 1)
         static let redSkinProblemQuint = UIColor(red: 255/255, green: 224/255, blue: 224/255, alpha: 1)
         static let greyWhiteQuint = UIColor(red: 240/255, green: 240/255, blue: 240/255, alpha: 1)

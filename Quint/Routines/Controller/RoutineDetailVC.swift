@@ -29,8 +29,7 @@ class RoutineDetailVC: UIViewController{
     
     private var routineStepsLbl = HeaderLabel()
     private var editBtn = UIButton()
-    private var addBtn = UIButton()
-    private var finishBtn = UIButton()
+    private var bottomBtn = UIButton()
     
     private var subViews : [UIView] = []
     
@@ -45,12 +44,6 @@ class RoutineDetailVC: UIViewController{
         
         view.backgroundColor = K.Color.bgQuint
         view.isUserInteractionEnabled = true
-        
-        mainScrollView.showsVerticalScrollIndicator = true
-        mainScrollView.isUserInteractionEnabled = true
-        mainScrollView.isScrollEnabled = true
-        mainScrollView.contentSize.width = UIScreen.main.bounds.width
-        mainScrollView.autoresizingMask = .flexibleHeight
         
         //set data
         routineSteps = DataHelper.shared.fetchRoutineSteps(time: routineTime!)
@@ -76,7 +69,7 @@ class RoutineDetailVC: UIViewController{
         heroBg.applyGradient(colours: heroGradientColors, locations: [0, 1], radius: 0)
 
         //back button
-        backBtn.frame = CGRect(x: 0, y: 0, width: 100, height: 30)
+//        backBtn.frame = CGRect(x: 0, y: 0, width: 100, height: 30)
         backBtn.setImage(UIImage(named: "ChevronLeft"), for: .normal)
         backBtn.setTitle(" ", for: .normal)
         backBtn.tintColor = .white
@@ -87,8 +80,12 @@ class RoutineDetailVC: UIViewController{
         tableView = UITableView(frame: CGRect(x: 0, y: 0, width: 0, height: 0), style: .plain)
         tableView.translatesAutoresizingMaskIntoConstraints = false
         tableView.register(RoutineDetailStepCell.self, forCellReuseIdentifier: "RoutineDetailStepCell")
-        tableView.backgroundColor = UIColor(red: 244/255, green: 244/255, blue: 244/255, alpha: 1)
-        tableView.isScrollEnabled = false
+        tableView.isScrollEnabled = true
+        tableView.delegate = self
+        tableView.dataSource = self
+        tableView.backgroundColor = .clear
+        tableView.separatorStyle = UITableViewCell.SeparatorStyle.none
+        tableView.reloadData()
         
         //routineStepsLbl
         routineStepsLbl.text = "Routine steps"
@@ -103,50 +100,25 @@ class RoutineDetailVC: UIViewController{
         editBtn.layer.cornerRadius = 14.0
         editBtn.addTarget(self, action: #selector(editMenu), for: .touchUpInside)
         
-        // add button
-        addBtn.setTitleColor(UIColor(red: 35/255, green: 36/255, blue: 35/255, alpha: 1), for: .normal)
-        addBtn.titleLabel?.font = .clashGroteskMedium(size: 18)
-        addBtn.setTitle("+ Add new step", for: .normal)
-        addBtn.layer.cornerRadius = 8.0
-        addBtn.layer.borderWidth = 1.0
-        addBtn.alpha = 0
-        addBtn.isHidden = true
-        addBtn.addTarget(self, action: #selector(goToAddNewPage), for: .touchUpInside)
-        
         //finish button
-        finishBtn.setTitleColor(.white, for: .normal)
-        finishBtn.titleLabel?.font = .clashGroteskMedium(size: 18 )
-        finishBtn.setTitle("Finish routine", for: .normal)
-        finishBtn.layer.cornerRadius = 8.0
-        finishBtn.backgroundColor = .black
-        
-        tableView.delegate = self
-        tableView.dataSource = self
-        tableView.backgroundColor = .clear
-        tableView.separatorStyle = UITableViewCell.SeparatorStyle.none
-        
-        tableView.reloadData()
+        bottomBtn.setTitleColor(.white, for: .normal)
+        bottomBtn.titleLabel?.font = .clashGroteskMedium(size: 18 )
+        bottomBtn.setTitle("Finish routine", for: .normal)
+        bottomBtn.layer.cornerRadius = 8.0
+        bottomBtn.backgroundColor = .black
+        bottomBtn.addTarget(self, action: #selector(bottomButtonOnClick), for: .touchUpInside)
     }
     
     override func configureLayout() {
-        mainScrollView.multipleSubviews(view: tableView,
-                                        routineStepsLbl,
-                                        editBtn,
-                                        addBtn)
         
         view.multipleSubviews(view: heroBg,
                               heroIcon,
                               mainTitle,
                               backBtn,
-                              mainScrollView,
-                              finishBtn)
-        
-        
-        mainScrollView.snp.makeConstraints { make in
-            make.top.equalTo(heroBg.snp.bottom)
-            make.left.right.equalToSuperview()
-            make.bottom.equalTo(finishBtn.snp.top).offset(-20)
-        }
+                              tableView,
+                              routineStepsLbl,
+                              editBtn,
+                              bottomBtn)
         
         heroBg.snp.makeConstraints { make in
             make.top.equalTo(view)
@@ -183,36 +155,39 @@ class RoutineDetailVC: UIViewController{
             make.height.equalTo(28)
         }
         
-        let tableHeight : CGFloat = CGFloat(routineSteps.count*60+(routineSteps.count-1)*12)
         tableView.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
             make.width.equalToSuperview().offset(-40)
             make.top.equalTo(routineStepsLbl.snp.bottom).offset(24)
-            make.height.equalTo(tableHeight)
+            make.bottom.equalTo(bottomBtn.snp.top).offset(-20)
         }
         
-        addBtn.snp.makeConstraints { make in
-            make.top.equalTo(tableView.snp.bottom).offset(24)
-            make.width.equalToSuperview().offset(-40)
-            make.centerX.equalToSuperview()
-            make.height.equalTo(50)
-        }
-        
-        finishBtn.snp.makeConstraints { make in
+        bottomBtn.snp.makeConstraints { make in
             make.bottom.equalTo(view.safeAreaLayoutGuide)
             make.width.equalToSuperview().offset(-40)
             make.centerX.equalToSuperview()
             make.height.equalTo(50)
         }
-        
-        mainScrollView.contentSize.height = 156+tableHeight
+    }
+    
+    @objc func bottomButtonOnClick(){
+        print("yo")
+        if tableView.isEditing{
+            goToAddNewPage()
+        } else {
+            finishRoutine()
+        }
     }
     
     @objc func goToHomeRoutine() {
         navigationController?.popViewController(animated: true)
     }
     
-    @objc func goToAddNewPage() {
+    func finishRoutine(){
+        
+    }
+    
+    func goToAddNewPage() {
         let controller = AddNewStepUIViewController()
         controller.routineTime = self.routineTime
         controller.modalPresentationStyle = .overCurrentContext
@@ -231,12 +206,7 @@ class RoutineDetailVC: UIViewController{
                     make.width.equalTo(53)
                 }
                 
-                addBtn.alpha = 1
-                addBtn.isHidden = false
-                
-                finishBtn.isEnabled = false
-                finishBtn.layer.backgroundColor = CGColor(red: 230/255, green: 230/255, blue: 230/255, alpha: 1)
-                finishBtn.setTitleColor(UIColor(red: 125/255, green: 125/255, blue: 125/255, alpha: 125/255), for: .normal)
+                bottomBtn.setTitle("+ Add new step", for: .normal)
             }
             else{
                 editBtn.setTitle("Edit steps", for: .normal)
@@ -246,19 +216,10 @@ class RoutineDetailVC: UIViewController{
                     make.width.equalTo(82)
                 }
                 
-                addBtn.alpha = 0
-
-                finishBtn.isEnabled = true
-                finishBtn.layer.backgroundColor = UIColor.black.cgColor
-                finishBtn.setTitleColor(.white, for: .normal)
+                bottomBtn.setTitle("Finish routine", for: .normal)
             }
             
-        }) { [self] completion in
-            if !tableView.isEditing{
-                addBtn.isHidden = true
-            }
-        }
-        
+        })
         tableView.reloadData()
     }
 }

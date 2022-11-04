@@ -4,7 +4,9 @@ PODS:
   - Charts/Core (4.1.0):
     - SwiftAlgorithms (~> 1.0)
   - Differentiator (5.0.0)
-  - Kingfisher (7.4.0)
+  - DropDown (2.3.13)
+  - Kingfisher (7.4.1)
+  - MonthYearPicker (4.0.2)
   - RxCocoa (6.5.0):
     - RxRelay (= 6.5.0)
     - RxSwift (= 6.5.0)
@@ -23,7 +25,9 @@ PODS:
 
 DEPENDENCIES:
   - Charts
+  - DropDown
   - Kingfisher (~> 7.0)
+  - MonthYearPicker
   - RxCocoa (= 6.5.0)
   - RxDataSources (~> 5.0)
   - RxSwift (= 6.5.0)
@@ -36,7 +40,9 @@ SPEC REPOS:
   trunk:
     - Charts
     - Differentiator
+    - DropDown
     - Kingfisher
+    - MonthYearPicker
     - RxCocoa
     - RxDataSources
     - RxRelay
@@ -50,7 +56,9 @@ SPEC REPOS:
 SPEC CHECKSUMS:
   Charts: 354f86803d11d9c35de280587fef50d1af063978
   Differentiator: e8497ceab83c1b10ca233716d547b9af21b9344d
-  Kingfisher: 596b207973051aae5e4c54a1c1cb39837ea10d36
+  DropDown: 8a2116376c1981888557f72ec2ffc9a5e0e456ec
+  Kingfisher: cd762a593a61b2fbecf7645c00f9a801a3ebfc9c
+  MonthYearPicker: 91f77106e6806d8c93c69e943ab0795fd420657f
   RxCocoa: 94f817b71c07517321eb4f9ad299112ca8af743b
   RxDataSources: aa47cc1ed6c500fa0dfecac5c979b723542d79cf
   RxRelay: 1de1523e604c72b6c68feadedd1af3b1b4d0ecbd
@@ -61,6 +69,6 @@ SPEC CHECKSUMS:
   SwiftyJSON: 6faa0040f8b59dead0ee07436cbf76b73c08fd08
   TTGTagCollectionView: 4104f93281097eae5adbf4444811e32f5e52dc95
 
-PODFILE CHECKSUM: b7e66bc8843db56b239b927702e233f2a3b373a5
+PODFILE CHECKSUM: 0bb91611516f223e6fb275c6646a69de08d06b8f
 
 COCOAPODS: 1.11.3

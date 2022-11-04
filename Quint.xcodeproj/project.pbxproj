@@ -19,6 +19,10 @@
 		72BF72D928F838B00036C456 /* moodSliderUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72BF72D828F838B00036C456 /* moodSliderUIView.swift */; };
 		950404C329010E0100B37DFD /* CollapsableStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 950404C229010E0100B37DFD /* CollapsableStack.swift */; };
 		950404C72901283300B37DFD /* CollapsableHeaderButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 950404C62901283300B37DFD /* CollapsableHeaderButton.swift */; };
+		950508542914FBBA00FAE957 /* OnboardingResultVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 950508522914FBBA00FAE957 /* OnboardingResultVC.swift */; };
+		950508552914FBBA00FAE957 /* OnboardingStepsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 950508532914FBBA00FAE957 /* OnboardingStepsVC.swift */; };
+		950508592914FC8400FAE957 /* RoutineDetailStepCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 950508582914FC8400FAE957 /* RoutineDetailStepCell.swift */; };
+		9505085B2914FFA300FAE957 /* ReminderVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9505085A2914FFA300FAE957 /* ReminderVC.swift */; };
 		950B32E128F912440095EFB5 /* RatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 950B32E028F912440095EFB5 /* RatingView.swift */; };
 		950D428B28FDC9B400657816 /* IngDetailLowerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 950D428A28FDC9B400657816 /* IngDetailLowerView.swift */; };
 		951034C828EFF51F0011AE39 /* UIViewController+DismissKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951034C328EFF51F0011AE39 /* UIViewController+DismissKeyboard.swift */; };
@@ -50,7 +54,6 @@
 		9538752128EDE2A1001979A8 /* UICollectionView+Loading.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9538751B28EDE2A1001979A8 /* UICollectionView+Loading.swift */; };
 		9538752628EDE2A1001979A8 /* PinterestLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9538752028EDE2A1001979A8 /* PinterestLayout.swift */; };
 		9538752B28EDE53C001979A8 /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9538752928EDE53C001979A8 /* Photo.swift */; };
-		95436F6D2913682A00B72ED4 /* RoutineDetailStepCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95436F6C2913682A00B72ED4 /* RoutineDetailStepCell.swift */; };
 		95436F6F29136E6500B72ED4 /* RoutineStepInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95436F6E29136E6500B72ED4 /* RoutineStepInfo.swift */; };
 		95436F712913A5CF00B72ED4 /* RoutineCellTrashButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95436F702913A5CF00B72ED4 /* RoutineCellTrashButton.swift */; };
 		95436F732913E0D300B72ED4 /* RoutineDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95436F722913E0D300B72ED4 /* RoutineDetailVC.swift */; };
@@ -157,15 +160,12 @@
 		A03857D728F84C5C00A4B566 /* ViewControllerPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = A03857D628F84C5C00A4B566 /* ViewControllerPreview.swift */; };
 		A049AB492907A848002C5143 /* NoActivityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A049AB482907A848002C5143 /* NoActivityView.swift */; };
 		A04BD72329012B0200BEBDAB /* CustomCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04BD72229012B0200BEBDAB /* CustomCellView.swift */; };
-		A0C33EE6291029BD002BF2AC /* ReminderVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C33EE5291029BD002BF2AC /* ReminderVC.swift */; };
 		A0C33EE929102A51002BF2AC /* DatePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C33EE829102A51002BF2AC /* DatePickerView.swift */; };
 		A0C8A0E32907881B00002D8C /* IngredientListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C8A0E22907881B00002D8C /* IngredientListView.swift */; };
 		A0C8A0E52907883700002D8C /* TreatmentsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C8A0E42907883700002D8C /* TreatmentsVC.swift */; };
 		A0D11F972908082D00B4F508 /* ActivityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0D11F962908082D00B4F508 /* ActivityView.swift */; };
 		A0D11F992908090B00B4F508 /* CustomLogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0D11F982908090B00B4F508 /* CustomLogView.swift */; };
 		A0E7EB1428F8545500F56802 /* ViewPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0E7EB1328F8545500F56802 /* ViewPreview.swift */; };
-		A0EF1F0128FCFFA60065AB9A /* OnboardingResultVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0EF1F0028FCFFA60065AB9A /* OnboardingResultVC.swift */; };
-		A0EF1F0328FCFFC70065AB9A /* OnboardingStepsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0EF1F0228FCFFC70065AB9A /* OnboardingStepsVC.swift */; };
 		A0EF1F0928FD08080065AB9A /* ResultTypeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0EF1F0828FD08080065AB9A /* ResultTypeView.swift */; };
 		A0EF1F0B28FD08100065AB9A /* ResultProblemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0EF1F0A28FD08100065AB9A /* ResultProblemView.swift */; };
 		A0EF1F0E28FD0A300065AB9A /* TitleLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0EF1F0D28FD0A300065AB9A /* TitleLabel.swift */; };
@@ -201,6 +201,10 @@
 		72BF72D828F838B00036C456 /* moodSliderUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = moodSliderUIView.swift; sourceTree = "<group>"; };
 		950404C229010E0100B37DFD /* CollapsableStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollapsableStack.swift; sourceTree = "<group>"; };
 		950404C62901283300B37DFD /* CollapsableHeaderButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollapsableHeaderButton.swift; sourceTree = "<group>"; };
+		950508522914FBBA00FAE957 /* OnboardingResultVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingResultVC.swift; sourceTree = "<group>"; };
+		950508532914FBBA00FAE957 /* OnboardingStepsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingStepsVC.swift; sourceTree = "<group>"; };
+		950508582914FC8400FAE957 /* RoutineDetailStepCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutineDetailStepCell.swift; sourceTree = "<group>"; };
+		9505085A2914FFA300FAE957 /* ReminderVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReminderVC.swift; sourceTree = "<group>"; };
 		950B32E028F912440095EFB5 /* RatingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingView.swift; sourceTree = "<group>"; };
 		950D428A28FDC9B400657816 /* IngDetailLowerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngDetailLowerView.swift; sourceTree = "<group>"; };
 		951034C328EFF51F0011AE39 /* UIViewController+DismissKeyboard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+DismissKeyboard.swift"; sourceTree = "<group>"; };
@@ -231,7 +235,6 @@
 		9538751B28EDE2A1001979A8 /* UICollectionView+Loading.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UICollectionView+Loading.swift"; sourceTree = "<group>"; };
 		9538752028EDE2A1001979A8 /* PinterestLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PinterestLayout.swift; sourceTree = "<group>"; };
 		9538752928EDE53C001979A8 /* Photo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
-		95436F6C2913682A00B72ED4 /* RoutineDetailStepCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RoutineDetailStepCell.swift; path = ../../../../../../Desktop/RoutineDetailStepCell.swift; sourceTree = "<group>"; };
 		95436F6E29136E6500B72ED4 /* RoutineStepInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutineStepInfo.swift; sourceTree = "<group>"; };
 		95436F702913A5CF00B72ED4 /* RoutineCellTrashButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutineCellTrashButton.swift; sourceTree = "<group>"; };
 		95436F722913E0D300B72ED4 /* RoutineDetailVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoutineDetailVC.swift; sourceTree = "<group>"; };
@@ -240,7 +243,6 @@
 		9543DA7228F834AE00E37A28 /* ProductDetailTopView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailTopView.swift; sourceTree = "<group>"; };
 		9543DA7528F8361B00E37A28 /* RatingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingCell.swift; sourceTree = "<group>"; };
 		9543DA7728F85A7A00E37A28 /* ProductCategoryLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCategoryLabel.swift; sourceTree = "<group>"; };
-		956BE5C92914D9E300380D71 /* RoutineDetailStepCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutineDetailStepCell.swift; sourceTree = "<group>"; };
 		956BE5CA2914D9F100380D71 /* AddStepGestureRecognizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddStepGestureRecognizer.swift; sourceTree = "<group>"; };
 		956BE5CC2914DED600380D71 /* AddNewStepProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewStepProtocol.swift; sourceTree = "<group>"; };
 		956BE5CE2914F10000380D71 /* MoodSeeder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodSeeder.swift; sourceTree = "<group>"; };
@@ -341,15 +343,12 @@
 		A03857D628F84C5C00A4B566 /* ViewControllerPreview.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllerPreview.swift; sourceTree = "<group>"; };
 		A049AB482907A848002C5143 /* NoActivityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoActivityView.swift; sourceTree = "<group>"; };
 		A04BD72229012B0200BEBDAB /* CustomCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCellView.swift; sourceTree = "<group>"; };
-		A0C33EE5291029BD002BF2AC /* ReminderVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderVC.swift; sourceTree = "<group>"; };
 		A0C33EE829102A51002BF2AC /* DatePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePickerView.swift; sourceTree = "<group>"; };
 		A0C8A0E22907881B00002D8C /* IngredientListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IngredientListView.swift; sourceTree = "<group>"; };
 		A0C8A0E42907883700002D8C /* TreatmentsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TreatmentsVC.swift; sourceTree = "<group>"; };
 		A0D11F962908082D00B4F508 /* ActivityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityView.swift; sourceTree = "<group>"; };
 		A0D11F982908090B00B4F508 /* CustomLogView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomLogView.swift; sourceTree = "<group>"; };
 		A0E7EB1328F8545500F56802 /* ViewPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewPreview.swift; sourceTree = "<group>"; };
-		A0EF1F0028FCFFA60065AB9A /* OnboardingResultVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingResultVC.swift; sourceTree = "<group>"; };
-		A0EF1F0228FCFFC70065AB9A /* OnboardingStepsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingStepsVC.swift; sourceTree = "<group>"; };
 		A0EF1F0828FD08080065AB9A /* ResultTypeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultTypeView.swift; sourceTree = "<group>"; };
 		A0EF1F0A28FD08100065AB9A /* ResultProblemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultProblemView.swift; sourceTree = "<group>"; };
 		A0EF1F0D28FD0A300065AB9A /* TitleLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleLabel.swift; sourceTree = "<group>"; };
@@ -395,6 +394,14 @@
 				72BF72C828F4514E0036C456 /* PopupRoutine.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		9505085C2914FFC500FAE957 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				9505085A2914FFA300FAE957 /* ReminderVC.swift */,
+			);
+			path = ViewController;
 			sourceTree = "<group>";
 		};
 		95078B1728EC7F8500093069 /* Treatments */ = {
@@ -465,7 +472,6 @@
 			children = (
 				956BE5C82914D9DE00380D71 /* Others */,
 				956BE5C72914D9D200380D71 /* UIView */,
-				95436F6C2913682A00B72ED4 /* RoutineDetailStepCell.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -544,7 +550,7 @@
 			isa = PBXGroup;
 			children = (
 				95436F6E29136E6500B72ED4 /* RoutineStepInfo.swift */,
-				956BE5C92914D9E300380D71 /* RoutineDetailStepCell.swift */,
+				950508582914FC8400FAE957 /* RoutineDetailStepCell.swift */,
 				95436F702913A5CF00B72ED4 /* RoutineCellTrashButton.swift */,
 				956BE5CA2914D9F100380D71 /* AddStepGestureRecognizer.swift */,
 			);
@@ -750,7 +756,7 @@
 				951034CC28EFF54C0011AE39 /* Onboarding */,
 				95078B1728EC7F8500093069 /* Treatments */,
 				A0360C412906BB300021C0E1 /* History */,
-				A0C33EE4291029AB002BF2AC /* Profile */,
+				A0C33EE7291029C4002BF2AC /* Profile-Reminder */,
 				9510350628EFFFDB0011AE39 /* Font */,
 				95EB50E828EA821400412176 /* Main.storyboard */,
 				95EB50EE28EA821600412176 /* Assets.xcassets */,
@@ -883,38 +889,13 @@
 			path = UIButton;
 			sourceTree = "<group>";
 		};
-		A0BBE7682906DD7500EAC588 /* ViewController */ = {
+		A0C33EE7291029C4002BF2AC /* Profile-Reminder */ = {
 			isa = PBXGroup;
 			children = (
-				A0EF1F0028FCFFA60065AB9A /* OnboardingResultVC.swift */,
-				A0EF1F0228FCFFC70065AB9A /* OnboardingStepsVC.swift */,
-			);
-			path = ViewController;
-			sourceTree = "<group>";
-		};
-		A0C33EE4291029AB002BF2AC /* Profile */ = {
-			isa = PBXGroup;
-			children = (
-				A0C33EE7291029C4002BF2AC /* Reminder */,
-			);
-			path = Profile;
-			sourceTree = "<group>";
-		};
-		A0C33EE7291029C4002BF2AC /* Reminder */ = {
-			isa = PBXGroup;
-			children = (
+				9505085C2914FFC500FAE957 /* ViewController */,
 				A0C33EEB29102C28002BF2AC /* Components */,
-				A0C33EEA29102C1F002BF2AC /* View Controller */,
 			);
-			path = Reminder;
-			sourceTree = "<group>";
-		};
-		A0C33EEA29102C1F002BF2AC /* View Controller */ = {
-			isa = PBXGroup;
-			children = (
-				A0C33EE5291029BD002BF2AC /* ReminderVC.swift */,
-			);
-			path = "View Controller";
+			path = "Profile-Reminder";
 			sourceTree = "<group>";
 		};
 		A0C33EEB29102C28002BF2AC /* Components */ = {
@@ -937,8 +918,9 @@
 		A0EF1EFF28FCFE280065AB9A /* Insights */ = {
 			isa = PBXGroup;
 			children = (
+				950508522914FBBA00FAE957 /* OnboardingResultVC.swift */,
+				950508532914FBBA00FAE957 /* OnboardingStepsVC.swift */,
 				A0EF1F0628FD071B0065AB9A /* Components */,
-				A0BBE7682906DD7500EAC588 /* ViewController */,
 			);
 			path = Insights;
 			sourceTree = "<group>";
@@ -946,8 +928,6 @@
 		A0EF1F0628FD071B0065AB9A /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				A0EF1F0028FCFFA60065AB9A /* OnboardingResultVC.swift */,
-				A0EF1F0228FCFFC70065AB9A /* OnboardingStepsVC.swift */,
 				A0EF1F0C28FD0A220065AB9A /* UILabel */,
 				A0EF1F0728FD07ED0065AB9A /* UIView */,
 			);
@@ -1144,7 +1124,6 @@
 				72BF72D128F548DD0036C456 /* DailyLogViewController.swift in Sources */,
 				956BE5CF2914F10000380D71 /* MoodSeeder.swift in Sources */,
 				72BF72CB28F5186E0036C456 /* ReminderUIView.swift in Sources */,
-				A0C33EE6291029BD002BF2AC /* ReminderVC.swift in Sources */,
 				959C2C0228ED44A3007B1251 /* UIViewController+ConfigureUI.swift in Sources */,
 				9543DA7328F834AE00E37A28 /* ProductDetailTopView.swift in Sources */,
 				958254032908F8030053AABC /* LogModel.swift in Sources */,
@@ -1161,13 +1140,13 @@
 				A03857C528F80B4100A4B566 /* NextButton.swift in Sources */,
 				9595D37E290A461000167C41 /* UsageStepSeeder.swift in Sources */,
 				951034E328EFF8820011AE39 /* RoutineHomeViewController.swift in Sources */,
-				A0EF1F0328FCFFC70065AB9A /* OnboardingStepsVC.swift in Sources */,
 				9595D380290A462300167C41 /* UsageStepModel.swift in Sources */,
 				A03857C328F80B3400A4B566 /* SignInAppleButton.swift in Sources */,
 				A03857C928F80B9900A4B566 /* OnboardingButton.swift in Sources */,
 				957F0D00290656BE00FFFB06 /* ProductListCollectionView.swift in Sources */,
 				A0EF1F1028FD0B4C0065AB9A /* ResultLabel.swift in Sources */,
 				9595D376290A369B00167C41 /* TipSeeder.swift in Sources */,
+				950508552914FBBA00FAE957 /* OnboardingStepsVC.swift in Sources */,
 				95436F732913E0D300B72ED4 /* RoutineDetailVC.swift in Sources */,
 				A014EA1328FEAF2A0020DC35 /* UIView+MultipleSubviews.swift in Sources */,
 				A03857B628F7C7E100A4B566 /* UILabel+RequiredHeight.swift in Sources */,
@@ -1223,13 +1202,13 @@
 				A0EF1F0B28FD08100065AB9A /* ResultProblemView.swift in Sources */,
 				956BE5D12914F11400380D71 /* MoodModel.swift in Sources */,
 				951034E228EFF8820011AE39 /* (null) in Sources */,
+				950508592914FC8400FAE957 /* RoutineDetailStepCell.swift in Sources */,
 				A0F21F4228FD53850072497E /* OnboardingParentView.swift in Sources */,
 				950404C329010E0100B37DFD /* CollapsableStack.swift in Sources */,
 				958E32FB2907DA9C00171AF3 /* Quint.xcdatamodeld in Sources */,
 				957F0CEF2906423500FFFB06 /* UIView+ConfigureUI.swift in Sources */,
 				9582540B2908F9400053AABC /* EffectModel.swift in Sources */,
 				957F0CEC2906418500FFFB06 /* OnboardingQuizVC.swift in Sources */,
-				95436F6D2913682A00B72ED4 /* RoutineDetailStepCell.swift in Sources */,
 				A0F560F128FAA92A0091DF7B /* SkinInsightView.swift in Sources */,
 				956BE5CB2914D9F100380D71 /* AddStepGestureRecognizer.swift in Sources */,
 				957F0D092906573900FFFB06 /* IngredientButton.swift in Sources */,
@@ -1263,14 +1242,15 @@
 				72BF72D528F6A93C0036C456 /* UIButton+MoveImageTextLeft.swift in Sources */,
 				9543DA6F28F7BBBA00E37A28 /* PrecautionSegmentView.swift in Sources */,
 				958253FD2908F7B50053AABC /* RoutineSeeder.swift in Sources */,
-				A0EF1F0128FCFFA60065AB9A /* OnboardingResultVC.swift in Sources */,
 				A0F519E72900261000623A7F /* PhotoResultView.swift in Sources */,
 				958E32F72907C92000171AF3 /* IngredientModel.swift in Sources */,
+				9505085B2914FFA300FAE957 /* ReminderVC.swift in Sources */,
 				95825421290904050053AABC /* UserSeeder.swift in Sources */,
 				951034C828EFF51F0011AE39 /* UIViewController+DismissKeyboard.swift in Sources */,
 				A03857C728F80B7100A4B566 /* SkipButton.swift in Sources */,
 				958254192909000B0053AABC /* SkinTypeModel.swift in Sources */,
 				95FB6A642906DC4500F18E33 /* UserViewModel.swift in Sources */,
+				950508542914FBBA00FAE957 /* OnboardingResultVC.swift in Sources */,
 				72B6EDBB28FD07A90056B374 /* AddNewStepVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

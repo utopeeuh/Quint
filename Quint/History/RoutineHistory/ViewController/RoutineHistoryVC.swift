@@ -137,7 +137,7 @@ class RoutineHistoryVC: UIViewController {
     }
 
     @objc func goToEditLog() {
-        let controller = AddNewStepUIViewController()
+        let controller = AddNewStepVC()
         self.navigationController?.pushViewController(controller, animated: true)
     }
 

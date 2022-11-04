@@ -133,7 +133,8 @@ class OnboardingStepsVC: UIViewController {
         
         guard let uWindow = window else { return }
 
-        uWindow.rootViewController = vc
+        let navController = UINavigationController(rootViewController: vc)
+        uWindow.rootViewController = navController
         UIView.transition(with: uWindow, duration: 0.3, options: [.transitionCrossDissolve], animations: {}, completion: nil)
     }
     

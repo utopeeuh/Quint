@@ -33,6 +33,10 @@ class RoutineDetailVC: UIViewController{
     
     private var subViews : [UIView] = []
     
+    override func viewWillAppear(_ animated: Bool) {
+        print("yo")
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationController?.isNavigationBarHidden = true
@@ -171,7 +175,6 @@ class RoutineDetailVC: UIViewController{
     }
     
     @objc func bottomButtonOnClick(){
-        print("yo")
         if tableView.isEditing{
             goToAddNewPage()
         } else {
@@ -188,8 +191,10 @@ class RoutineDetailVC: UIViewController{
     }
     
     func goToAddNewPage() {
-        let controller = AddNewStepUIViewController()
+        let controller = AddNewStepVC()
         controller.routineTime = self.routineTime
+        controller.delegate = self
+        
         controller.modalPresentationStyle = .overCurrentContext
         self.present(controller, animated: false)
     }
@@ -217,6 +222,9 @@ class RoutineDetailVC: UIViewController{
                 }
                 
                 bottomBtn.setTitle("Finish routine", for: .normal)
+                
+                //update steps here lempar routine steps
+                DataHelper.shared.updateRoutine(steps: routineSteps, time: routineTime!)
             }
             
         })
@@ -248,7 +256,6 @@ extension RoutineDetailVC: UITableViewDelegate, UITableViewDataSource{
                 if(cell.titleLabel.text == routineSteps[i].title){
                     cell.numLabel.text = String(describing: i+1)
                     routineSteps[i].position = i+1
-                    //UPDATE POSITION IN CORE DATA HERE
                 }
             }
         }
@@ -280,10 +287,14 @@ extension RoutineDetailVC: UITableViewDelegate, UITableViewDataSource{
             if sender.cellTitle == routineSteps[i].title{
                 let alert = UIAlertController(title: "Remove step?", message: nil, preferredStyle: .actionSheet)
 
-                alert.addAction(UIAlertAction(title: "Remove", style: .destructive , handler:{ (UIAlertAction) in
-                    self.routineSteps.remove(at: i)
-                    self.tableView.deleteRows(at: [IndexPath(row: i, section: 0)], with: .fade)
-                    //DELETE FROM CORE DATA
+                alert.addAction(UIAlertAction(title: "Remove", style: .destructive , handler:{ [self] (UIAlertAction) in
+                    
+                    // remove from core data
+                    DataHelper.shared.deleteStep(step: routineSteps[i], time: routineTime!)
+                    
+                    // remove from UI
+                    routineSteps.remove(at: i)
+                    tableView.deleteRows(at: [IndexPath(row: i, section: 0)], with: .fade)
                     
                 }))
                 alert.addAction(UIAlertAction(title: "Cancel", style: .cancel))
@@ -308,5 +319,14 @@ extension RoutineDetailVC: UITableViewDelegate, UITableViewDataSource{
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+}
+
+@available(iOS 16.0, *)
+extension RoutineDetailVC : AddNewStepDelegate {
+    func addedNewStep() {
+        routineSteps = DataHelper.shared.fetchRoutineSteps(time: routineTime!)
+        tableView.reloadData()
+        print("Reloaded data")
     }
 }

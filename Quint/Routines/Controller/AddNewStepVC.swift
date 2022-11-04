@@ -9,10 +9,11 @@ import UIKit
 import SnapKit
 
 @available(iOS 16.0, *)
-class AddNewStepUIViewController: UIViewController {
+class AddNewStepVC: UIViewController {
     
     private var unaddedSteps : [CategoryModel] = []
     var routineTime : K.RoutineTime?
+    var delegate: AddNewStepDelegate?
     
     private var crossButton = UIButton()
     private var titleLabel = UILabel()
@@ -50,6 +51,9 @@ class AddNewStepUIViewController: UIViewController {
             let newCell = NewStepUIView()
             newCell.setCategory(category: category)
             //add target here
+            let tap = AddStepGestureRecognizer(target: self, action: #selector(cellOnClick))
+            tap.categoryId = newCell.categoryId!
+            newCell.addGestureRecognizer(tap)
             
             productStack.addArrangedSubview(newCell)
         }
@@ -118,6 +122,17 @@ class AddNewStepUIViewController: UIViewController {
         dimmedView.snp.makeConstraints { make in
             make.top.bottom.left.right.equalToSuperview()
         }
+    }
+    
+    @objc func cellOnClick(sender: AddStepGestureRecognizer){
+        print("yo")
+        // 10 - unaddedSteps.count
+        let newStepCategory = DataHelper.shared.fetchCategoryById(categoryId: Int(truncating: sender.categoryId))
+        let isMorning = routineTime == .morning ? true : false
+    
+        DataHelper.shared.createRoutineStep(category: newStepCategory, isMorning: isMorning, position: (10-unaddedSteps.count))
+        animateDismissView()
+        delegate?.addedNewStep()
     }
     
     //MARK: - TEMPLATE

@@ -53,13 +53,31 @@ class DataHelper{
             }
             
             //  Create log with chosen image
-            
-            
-            
             try context.save()
         }
         catch{
             print("update onboarding data failed")
+        }
+    }
+    
+    public func createRoutineStep(stepInfo: RoutineStepInfo, time: K.RoutineTime){
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let context : NSManagedObjectContext = appDelegate.persistentContainer.viewContext
+        let entity: NSEntityDescription = NSEntityDescription.entity(forEntityName: "Steps", in: context)!
+        
+        let routineStep = StepModel(entity: entity, insertInto: context)
+
+        routineStep.routineId = (time == .morning ? K.Routine.morning : K.Routine.night) as NSNumber
+        routineStep.categoryId = fetchCategoryByTitle(title: stepInfo.title).id
+        routineStep.position = stepInfo.position as NSNumber
+        
+        do{
+            try context.save()
+            print("Create routine step success")
+            
+        }
+        catch{
+            print("Create routine step failed")
         }
     }
     
@@ -117,6 +135,61 @@ class DataHelper{
         }
         
         return unaddedSteps
+    }
+    
+    public func deleteStep(step: RoutineStepInfo, time: K.RoutineTime){
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let context: NSManagedObjectContext = appDelegate.persistentContainer.viewContext
+        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Steps")
+        
+        var routineId = K.Routine.morning
+        if time == K.RoutineTime.night{
+            routineId = K.Routine.night
+        }
+        
+        let timePredicate = NSPredicate(format: "routineId == %@", String(describing: routineId))
+        let idPredicate = NSPredicate(format: "position == %@", String(describing: step.position))
+        let compoundPredicate = NSCompoundPredicate(type: .or, subpredicates: [timePredicate, idPredicate])
+        
+        request.predicate = compoundPredicate
+        
+        do{
+            let results:NSArray = try context.fetch(request) as NSArray
+            context.delete(results.firstObject as! NSManagedObject)
+        }
+        catch{
+            print("fetch failed")
+        }
+    }
+    
+    public func updateRoutine(steps: [RoutineStepInfo], time: K.RoutineTime){
+        
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let context: NSManagedObjectContext = appDelegate.persistentContainer.viewContext
+        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Steps")
+        
+        var routineId = K.Routine.morning
+        if time == K.RoutineTime.night{
+            routineId = K.Routine.night
+        }
+        
+        let timePredicate = NSPredicate(format: "routineId == %@", String(describing: routineId))
+        request.predicate = timePredicate
+        
+        do{
+            let results:NSArray = try context.fetch(request) as NSArray
+            
+            for result in results {
+                context.delete(result as! NSManagedObject)
+            }
+            
+            steps.forEach { step in
+                createRoutineStep(stepInfo: step, time: time)
+            }
+        }
+        catch{
+            print("fetch failed")
+        }
     }
     
     public func fetchRoutineSteps(time: K.RoutineTime) -> [RoutineStepInfo]{
@@ -209,6 +282,26 @@ class DataHelper{
         }
         
         return problemList
+    }
+    
+    func fetchCategoryByTitle(title: String) -> CategoryModel{
+        var category = CategoryModel()
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let context: NSManagedObjectContext = appDelegate.persistentContainer.viewContext
+        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Categories")
+        
+        let idPredicate = NSPredicate(format: "title == %@", title)
+        request.predicate = idPredicate
+        
+        do{
+            let results:NSArray = try context.fetch(request) as NSArray
+            category = (results.firstObject) as! CategoryModel
+        }
+        catch{
+            print("fetch failed")
+        }
+        
+        return category
     }
     
     func fetchCategoryById(categoryId: Int) -> CategoryModel{

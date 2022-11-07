@@ -44,6 +44,7 @@ class RoutineVC: UIViewController, CLLocationManagerDelegate, LogModalDelegate{
     
     override func viewWillAppear(_ animated: Bool) {
 //        uvSection.getUserLocation()
+        checkDoneRoutines()
         logModal.hide()
     }
 
@@ -101,7 +102,6 @@ class RoutineVC: UIViewController, CLLocationManagerDelegate, LogModalDelegate{
             make.centerX.equalToSuperview()
             make.width.equalTo(UIScreen.main.bounds.width-40)
             make.top.equalTo(uvSection.snp.bottom).offset(28)
-//            make.top.equalTo(view.safeAreaLayoutGuide)
         }
         
         routineLbl.snp.makeConstraints { make in
@@ -136,6 +136,20 @@ class RoutineVC: UIViewController, CLLocationManagerDelegate, LogModalDelegate{
         }
     }
     
+    func checkDoneRoutines(){
+        if(LogRepository.shared.doesLogExists(date: Date.now)){
+            let currDayLog = LogRepository.shared.fetchLog(date: Date.now)
+            
+            if currDayLog.isDayDone == true {
+                morningRoutine.pressed()
+            }
+            
+            if currDayLog.isNightDone == true {
+                nightRoutine.pressed()
+            }
+        }
+    }
+    
     @objc func goToLog() {
         let controller = DailyLogVC()
         navigationController?.pushViewController(controller, animated: true)
@@ -158,6 +172,10 @@ class RoutineVC: UIViewController, CLLocationManagerDelegate, LogModalDelegate{
 extension RoutineVC: RoutineReminderDelegate{
     func hideRoutineReminder() {
         
+        if(nightRoutine.isChecked && !logRoutine.isChecked){
+            logModal.show()
+        }
+        
         if reminderView.isHidden == true{
             return
         }
@@ -172,8 +190,6 @@ extension RoutineVC: RoutineReminderDelegate{
                 view.transform = CGAffineTransform(translationX: 0, y: moveUpHeight)
             }
         })
-        
-        logModal.show()
     }
 }
 

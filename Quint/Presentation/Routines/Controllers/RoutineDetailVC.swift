@@ -183,7 +183,8 @@ class RoutineDetailVC: UIViewController{
     }
     
     func finishRoutine(){
-        
+        LogRepository.shared.setRoutineAsDone(time: routineTime!)
+        navigationController?.popViewController(animated: true)
     }
     
     func goToAddNewPage() {

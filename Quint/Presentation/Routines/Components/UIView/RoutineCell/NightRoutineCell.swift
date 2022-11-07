@@ -30,8 +30,9 @@ class NightRoutineCell: RoutineCell{
         self.alpha = 0.6
         self.backgroundColor = UIColor(red: 235/255, green: 235/255, blue: 235/255, alpha: 1)
         self.isUserInteractionEnabled = false
-        leftBtn.setImage(UIImage(named: "CheckmarkFill"), for: .normal)
+        self.isChecked = true
         
+        leftBtn.setImage(UIImage(named: "CheckmarkFill"), for: .normal)
         imageRoutine.image = UIImage(named: "iconNightDisabled")
         titleRoutine.attributedText = NSAttributedString(
             string: "Night routine",

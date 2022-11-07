@@ -32,9 +32,9 @@ class LogRoutineCell: RoutineCell{
         self.alpha = 0.6
         self.backgroundColor = UIColor(red: 235/255, green: 235/255, blue: 235/255, alpha: 1)
         self.isUserInteractionEnabled = false
+        self.isChecked = true
         
         leftBtn.setImage(UIImage(named: "CheckmarkFill"), for: .normal)
-        
         titleRoutine.attributedText = NSAttributedString(
             string: "Daily skin condition log",
             attributes: [.strikethroughStyle: NSUnderlineStyle.single.rawValue]

@@ -33,10 +33,6 @@ class RoutineDetailVC: UIViewController{
     
     private var subViews : [UIView] = []
     
-    override func viewWillAppear(_ animated: Bool) {
-        print("yo")
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationController?.isNavigationBarHidden = true

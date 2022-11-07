@@ -125,7 +125,6 @@ class AddNewStepVC: UIViewController {
     }
     
     @objc func cellOnClick(sender: AddStepGestureRecognizer){
-        print("yo")
         // 10 - unaddedSteps.count
         let newStepCategory = CategoriesRepository.shared.fetchCategory(id: Int(truncating: sender.categoryId))
         let isMorning = routineTime == .morning ? true : false

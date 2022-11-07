@@ -14,24 +14,16 @@ class DailySkincareTips: UIView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        self.backgroundColor = UIColor(patternImage: UIImage(named: "tipsBackground")!)
-        self.layer.cornerRadius = 8.0
+        
+        self.layer.cornerRadius = 10.0
+        self.clipsToBounds = true
+        self.backgroundColor = UIColor(patternImage: UIImage(named: "DailyTipsBg")!)
         configureUI()
     }
 
     required init?(coder: NSCoder) {
         super.init(coder: coder)
     }
-    
-    private lazy var vStackViewTips: UIStackView = {
-        let stackView = UIStackView()
-        stackView.translatesAutoresizingMaskIntoConstraints = false
-        stackView.axis = .vertical
-        stackView.distribution = .fill
-        stackView.alignment = .center
-        stackView.spacing = 20
-        return stackView
-    }()
     
     private var headerTitle: UILabel = {
         let label = UILabel()

@@ -13,9 +13,26 @@ import RxDataSources
 
 @available(iOS 16.0, *)
 class RoutineVC: UIViewController, CLLocationManagerDelegate{
+
+    private var whiteTopBar = UIView()
+    private var uvSection = UVSection()
+    private var reminderView = ReminderUIView()
     
-    let locationManager = CLLocationManager()
-    let service = WeatherService()
+    private var routineLbl = UILabel()
+    private var morningRoutine = MorningRoutineCell()
+    private var nightRoutine = NightRoutineCell()
+    private var logRoutine = LogRoutineCell()
+    
+    private lazy var routineCellsStack: UIStackView = {
+        let stackView = UIStackView()
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+        stackView.axis = .vertical
+        stackView.alignment = .fill
+        stackView.spacing = 12
+        return stackView
+    }()
+    
+    private var dailyTips = DailySkincareTips()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,216 +41,91 @@ class RoutineVC: UIViewController, CLLocationManagerDelegate{
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        getUserLocation()
+//        uvSection.getUserLocation()
     }
-    
-    
-    private let UVLevelSuggestionIcon: UIImageView = {
-        let imageView = UIImageView()
-        let targetSize = CGSize(width: 10, height: 10)
-        var image = UIImage(named: "Vector")?.withTintColor(UIColor(red: 242/255, green: 53/255, blue: 53/255, alpha: 1))
-        let scaledImage = image?.scalePreservingAspectRatio(
-            targetSize: targetSize
-        )
-        imageView.image = scaledImage
-        imageView.isHidden = true
-        return imageView
-    }()
 
-    private let UVLevelSuggestion: UILabel = {
-        let label = UILabel()
-        label.text = "Apply your Sunscreen"
-        label.font = .interSemiBold(size: 12)
-        label.textAlignment = .center
-        label.textColor = UIColor(red: 242/255, green: 53/255, blue: 53/255, alpha: 1)
-        label.numberOfLines = 0
-        label.isHidden = true
-        return label
-    }()
 
-    private let UVLevelLabel: UILabel = {
-        let label = UILabel()
-        label.text = "UV LEVEL"
-        label.font = .interMedium(size: 12)
-        label.textColor = UIColor(red: 35/255, green: 36/255, blue: 35/255, alpha: 1)
-        return label
-    }()
-
-    private var UVLevelParameter: UILabel = {
-        let label = UILabel()
-        label.text = ""
-        label.textColor = UIColor(red: 7/255, green: 8/255, blue: 7/255, alpha: 1)
-        label.font = .interSemiBold(size: 16)
-        return label
-    }()
-
-    private var UVLevelPoint = UVPointView()
-
-    func getUserLocation() {
-        locationManager.requestWhenInUseAuthorization()
-        locationManager.delegate = self
-        locationManager.startUpdatingLocation()
-    }
-    
-    func getWeather(location: CLLocation){
-        Task {
-            do {
-                let weather = try await service.weather(for: location)
-                print("UV INDEX: " + String(describing: weather.currentWeather.uvIndex))
-                UVLevelParameter.text = String(describing: weather.currentWeather.uvIndex.category)
-                UVLevelPoint.setNumber(weather.currentWeather.uvIndex.value)
-                
-                if weather.currentWeather.uvIndex.value >= 3{
-                    UVLevelSuggestion.isHidden = false
-                    UVLevelSuggestionIcon.isHidden = false
-                }
-                
-                
-                var lightColor: UIColor?
-                var darkColor: UIColor?
-                
-                if weather.currentWeather.uvIndex.value <= 1 {
-                    lightColor = K.Color.greenLightQuint
-                    darkColor = K.Color.greenQuint
-                }else if weather.currentWeather.uvIndex.value > 1 && weather.currentWeather.uvIndex.value <= 3 {
-                    lightColor = K.Color.yellowLightQuint
-                    darkColor = K.Color.yellowQuint
-                }else if weather.currentWeather.uvIndex.value > 3 && weather.currentWeather.uvIndex.value <= 6 {
-                    lightColor = K.Color.orangeLightQuint
-                    darkColor = K.Color.orangeQuint
-                }else if weather.currentWeather.uvIndex.value > 6 && weather.currentWeather.uvIndex.value <= 8 {
-                    lightColor = K.Color.redLightQuint
-                    darkColor = K.Color.redQuint
-                }else if weather.currentWeather.uvIndex.value > 8 && weather.currentWeather.uvIndex.value <= 11 {
-                    lightColor = K.Color.purpleLightQuint
-                    darkColor = K.Color.purpleQuint
-                }
-                
-                UVLevelPoint.applyGradient(colours: [lightColor!, darkColor!], locations: [0,1], radius: 20)
-                
-            } catch {
-                print(String(describing: error))
+    override func configureComponents() {
+        
+        whiteTopBar.backgroundColor = .white
+        
+        routineLbl.text = "Today's routines"
+        routineLbl.font = .clashGroteskMedium(size: 20)
+        
+        // morning routine
+        let morningGesture = UITapGestureRecognizer(target: self, action: #selector(goToMorningRoutine))
+        morningRoutine.addGestureRecognizer(morningGesture)
+        morningRoutine.currStack = routineCellsStack
+        
+        let nightGesture = UITapGestureRecognizer(target: self, action: #selector(goToNightRoutine))
+        nightRoutine.addGestureRecognizer(nightGesture)
+        nightRoutine.currStack = routineCellsStack
+        
+        let logGesture = UITapGestureRecognizer(target: self, action: #selector(goToDailyLog))
+        logRoutine.addGestureRecognizer(logGesture)
+        logRoutine.currStack = routineCellsStack
+        
+        // MARK: - ROUTINE
+        routineCellsStack.addArrangedSubview(morningRoutine)
+        routineCellsStack.addArrangedSubview(nightRoutine)
+        routineCellsStack.addArrangedSubview(logRoutine)
+        
+        routineCellsStack.arrangedSubviews.forEach { view in
+            if let v = view as? RoutineCell{
+                v.delegate = self
             }
         }
     }
     
-    private lazy var hStackViewUV: UIStackView = {
-        let stackView = UIStackView()
-        stackView.translatesAutoresizingMaskIntoConstraints = false
-        stackView.axis = .horizontal
-        stackView.distribution = .fill
-        stackView.alignment = .leading
-        return stackView
-    }()
-    
-    private lazy var vStackViewUV: UIStackView = {
-        let stackView = UIStackView()
-        stackView.translatesAutoresizingMaskIntoConstraints = false
-        stackView.axis = .vertical
-        stackView.distribution = .fill
-        stackView.alignment = .center
-        return stackView
-    }()
-    
-    private lazy var mainStackView: UIStackView = {
-        let stackView = UIStackView()
-        stackView.translatesAutoresizingMaskIntoConstraints = false
-        stackView.axis = .vertical
-        stackView.alignment = .fill
-        stackView.spacing = 20
-        return stackView
-    }()
-    
-    private var todayRoutine: UILabel = {
-        let label = UILabel()
-        label.text = "Today's routines"
-        label.numberOfLines = 0
-        label.font = label.font.withSize(20)
-        label.textColor = .black
-        return label
-    }()
-    
-    private var productGuide: UILabel = {
-        let label = UILabel()
-        label.text = "Product usage guide"
-        label.numberOfLines = 0
-        label.font = label.font.withSize(20)
-        label.textColor = .black
-        return label
-    }()
-    
-    var reminderStack = ReminderUIView()
-    
-    var morningRoutine = RoutineUIView()
-    
-    var nightRoutine = RoutineUIView()
-    
-    var logRoutine = RoutineUIView()
-    
-    private var scrollView = HorizontalScrollButtons()
-    private var categories = K.Category.productGuide
-    private var categoriesImage = K.Category.productGuideImageName
-    
-    var dailyTips = DailySkincareTips()
-
-    override func configureComponents() {
+    override func configureLayout() {
         
-        vStackViewUV.addArrangedSubview(UVLevelLabel)
-        vStackViewUV.addArrangedSubview(UVLevelParameter)
+        view.multipleSubviews(view: whiteTopBar, uvSection, reminderView, routineLbl, routineCellsStack, dailyTips)
         
-        hStackViewUV.addArrangedSubview(UVLevelPoint)
-        hStackViewUV.addArrangedSubview(vStackViewUV)
+        whiteTopBar.snp.makeConstraints { make in
+            make.top.left.right.equalToSuperview()
+            make.height.equalTo(50)
+        }
         
-        hStackViewUV.addArrangedSubview(UVLevelSuggestionIcon)
-        hStackViewUV.addArrangedSubview(UVLevelSuggestion)
-
-        mainStackView.addArrangedSubview(hStackViewUV)
-        mainStackView.addArrangedSubview(reminderStack)
-        mainStackView.addArrangedSubview(todayRoutine)
-
-        morningRoutine.leftBtn.setImage(UIImage(systemName: "circle"), for: .normal)
-        morningRoutine.imageRoutine.image = UIImage(named: "iconMorning")
-        morningRoutine.chevRight.image = UIImage(systemName: "chevron.right")
-        morningRoutine.titleRoutine.text = "Morning routine"
-        let morningGesture = UITapGestureRecognizer(target: self, action: #selector(goToMorningRoutine))
-        morningRoutine.addGestureRecognizer(morningGesture)
-        morningRoutine.btnId = 1
-        morningRoutine.currStack = mainStackView
-        morningRoutine.currPosition = 1
-        morningRoutine.name = "morning"
-        morningRoutine.isUserInteractionEnabled = true
+        uvSection.snp.makeConstraints { make in
+            make.top.equalTo(whiteTopBar.snp.bottom).offset(-3)
+            make.width.equalTo(view.safeAreaLayoutGuide)
+            make.height.equalTo(70)
+        }
         
-        nightRoutine.leftBtn.setImage(UIImage(systemName: "circle"), for: .normal)
-        nightRoutine.imageRoutine.image = UIImage(named: "iconNight")
-        nightRoutine.chevRight.image = UIImage(systemName: "chevron.right")
-        nightRoutine.titleRoutine.text = "Night routine"
-        let nightGesture = UITapGestureRecognizer(target: self, action: #selector(goToNightRoutine))
-        nightRoutine.addGestureRecognizer(nightGesture)
-        nightRoutine.btnId = 2
-        nightRoutine.currStack = mainStackView
-        nightRoutine.currPosition = 2
-        nightRoutine.name = "night"
-        nightRoutine.isUserInteractionEnabled = true
+        reminderView.snp.makeConstraints { make in
+            make.height.equalTo(reminderView.height)
+            make.centerX.equalToSuperview()
+            make.width.equalTo(UIScreen.main.bounds.width-40)
+            make.top.equalTo(uvSection.snp.bottom).offset(28)
+//            make.top.equalTo(view.safeAreaLayoutGuide)
+        }
         
-        logRoutine.leftBtn.setImage(UIImage(systemName: "lock"), for: .normal)
-        logRoutine.leftBtn.isEnabled = true
-        logRoutine.imageRoutine.image = UIImage(named: "iconLog")
-        logRoutine.chevRight.image = UIImage(systemName: "chevron.right")
-        logRoutine.titleRoutine.text = "Daily skin condition log"
-        let logGesture = UITapGestureRecognizer(target: self, action: #selector(goToDailyLog))
-        logRoutine.addGestureRecognizer(logGesture)
-        logRoutine.btnId = 3
-        logRoutine.currStack = mainStackView
-        logRoutine.currPosition = 3
-        logRoutine.name = "log"
-        logRoutine.isUserInteractionEnabled = false
+        routineLbl.snp.makeConstraints { make in
+            make.top.equalTo(reminderView.snp.bottom).offset(40)
+            make.left.equalToSuperview().offset(20)
+        }
         
-        // MARK: - ROUTINE
-        mainStackView.addArrangedSubview(morningRoutine)
-        mainStackView.addArrangedSubview(nightRoutine)
-        mainStackView.addArrangedSubview(logRoutine)
-        mainStackView.addArrangedSubview(dailyTips)
+        routineCellsStack.snp.makeConstraints { make in
+            make.top.equalTo(routineLbl.snp.bottom).offset(18)
+            make.centerX.equalToSuperview()
+            make.width.equalTo(UIScreen.main.bounds.width-40)
+            make.height.equalTo(60*3+24)
+        }
         
+        routineCellsStack.arrangedSubviews.forEach { subview in
+            subview.snp.makeConstraints { make in
+                make.height.equalTo(60)
+                make.width.equalToSuperview()
+                make.centerX.equalToSuperview()
+            }
+        }
+        
+        dailyTips.snp.makeConstraints { make in
+            make.height.equalTo(dailyTips.height)
+            make.width.equalTo(UIScreen.main.bounds.width-40)
+            make.centerX.equalToSuperview()
+            make.top.equalTo(routineCellsStack.snp.bottom).offset(48)
+        }
     }
     
     @objc func goToDailyLog(sender: UITapGestureRecognizer) {
@@ -252,80 +144,27 @@ class RoutineVC: UIViewController, CLLocationManagerDelegate{
         controller.routineTime = .night
         navigationController?.pushViewController(controller, animated: true)
     }
-    
-    override func configureLayout() {
-        view.addSubview(mainStackView)
-        
-        hStackViewUV.snp.makeConstraints { make in
-            make.left.equalTo(view.safeAreaLayoutGuide).offset(20)
-            make.right.equalTo(view.safeAreaLayoutGuide).offset(-20)
-            make.top.equalTo(view.safeAreaInsets).offset(40)
-        }
-        
-        UVLevelPoint.snp.makeConstraints { make in
-            make.width.height.equalTo(40)
-            make.top.equalToSuperview()
-        }
-        
-        UVLevelSuggestionIcon.snp.makeConstraints { make in
-            make.top.equalToSuperview().offset(23)
-            make.width.equalTo(11)
-            make.height.equalTo(9.5)
-        }
+}
 
-        UVLevelSuggestion.snp.makeConstraints { make in
-            make.height.equalTo(26)
-            make.width.equalTo(135)
-            make.top.equalToSuperview().offset(15)
-            make.right.equalTo(view.safeAreaInsets).offset(-16)
-        }
+@available(iOS 16.0, *)
+extension RoutineVC: RoutineReminderDelegate{
+    func hideRoutineReminder() {
         
-        UVLevelLabel.snp.makeConstraints { make in
-            make.leftMargin.equalTo(15)
-            make.top.equalTo(view.safeAreaInsets).offset(3.5)
-        }
-        
-        UVLevelParameter.snp.makeConstraints { make in
-            make.leftMargin.equalTo(15)
-        }
-        
-        todayRoutine.snp.makeConstraints { make in
-            make.top.equalTo(reminderStack.snp.bottom).offset(25)
-        }
-        
-        reminderStack.snp.makeConstraints { make in
-            make.height.equalTo(66)
-            make.centerX.equalTo(view.center.x)
-        }
-        
-        morningRoutine.snp.makeConstraints { make in
-            make.height.equalTo(45)
-        }
-        
-        nightRoutine.snp.makeConstraints { make in
-            make.height.equalTo(45)
-        }
-        
-        logRoutine.snp.makeConstraints { make in
-            make.height.equalTo(45)
-        }
-        
-        dailyTips.snp.makeConstraints { make in
-            make.height.equalTo(dailyTips.height)
-            make.width.equalTo(UIScreen.main.bounds.width-40)
-            make.centerX.equalToSuperview()
-        }
-
-        
-    }
-
-    
-    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]){
-        guard let location = locations.first else {
+        if reminderView.isHidden == true{
             return
         }
-        locationManager.stopUpdatingLocation()
-        getWeather(location: location)
+        
+        reminderView.hide()
+        
+        let moveUpHeight = -(reminderView.height + 40)
+        
+        let moveViews = [routineLbl, routineCellsStack, dailyTips]
+        UIView.animate(withDuration: 0.4, animations: {
+            moveViews.forEach { view in
+                view.transform = CGAffineTransform(translationX: 0, y: moveUpHeight)
+            }
+        })
     }
 }
+ 
 

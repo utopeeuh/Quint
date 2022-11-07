@@ -15,6 +15,8 @@ class UVPointView: UIView{
     override init(frame: CGRect) {
         super.init(frame: frame)
         self.layer.cornerRadius = 20
+        self.frame = CGRect(x: 0, y: 0, width: 40, height: 40)
+        
         number.font = .interMedium(size: 22)
         
         addSubview(number)

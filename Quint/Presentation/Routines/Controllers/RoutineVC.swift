@@ -12,7 +12,7 @@ import RxSwift
 import RxDataSources
 
 @available(iOS 16.0, *)
-class RoutineVC: UIViewController, CLLocationManagerDelegate{
+class RoutineVC: UIViewController, CLLocationManagerDelegate, LogModalDelegate{
 
     private var whiteTopBar = UIView()
     private var uvSection = UVSection()
@@ -34,6 +34,8 @@ class RoutineVC: UIViewController, CLLocationManagerDelegate{
     
     private var dailyTips = DailySkincareTips()
     
+    private var logModal = LogModal()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor =  UIColor(red: 244/255, green: 244/255, blue: 244/255, alpha: 1)
@@ -42,8 +44,8 @@ class RoutineVC: UIViewController, CLLocationManagerDelegate{
     
     override func viewWillAppear(_ animated: Bool) {
 //        uvSection.getUserLocation()
+        logModal.hide()
     }
-
 
     override func configureComponents() {
         
@@ -61,7 +63,7 @@ class RoutineVC: UIViewController, CLLocationManagerDelegate{
         nightRoutine.addGestureRecognizer(nightGesture)
         nightRoutine.currStack = routineCellsStack
         
-        let logGesture = UITapGestureRecognizer(target: self, action: #selector(goToDailyLog))
+        let logGesture = UITapGestureRecognizer(target: self, action: #selector(goToLog))
         logRoutine.addGestureRecognizer(logGesture)
         logRoutine.currStack = routineCellsStack
         
@@ -75,11 +77,13 @@ class RoutineVC: UIViewController, CLLocationManagerDelegate{
                 v.delegate = self
             }
         }
+        
+        logModal.delegate = self
     }
     
     override func configureLayout() {
         
-        view.multipleSubviews(view: whiteTopBar, uvSection, reminderView, routineLbl, routineCellsStack, dailyTips)
+        view.multipleSubviews(view: whiteTopBar, uvSection, reminderView, routineLbl, routineCellsStack, dailyTips, logModal)
         
         whiteTopBar.snp.makeConstraints { make in
             make.top.left.right.equalToSuperview()
@@ -126,9 +130,13 @@ class RoutineVC: UIViewController, CLLocationManagerDelegate{
             make.centerX.equalToSuperview()
             make.top.equalTo(routineCellsStack.snp.bottom).offset(48)
         }
+        
+        logModal.snp.makeConstraints { make in
+            make.edges.equalToSuperview()
+        }
     }
     
-    @objc func goToDailyLog(sender: UITapGestureRecognizer) {
+    @objc func goToLog() {
         let controller = DailyLogVC()
         navigationController?.pushViewController(controller, animated: true)
     }
@@ -164,7 +172,8 @@ extension RoutineVC: RoutineReminderDelegate{
                 view.transform = CGAffineTransform(translationX: 0, y: moveUpHeight)
             }
         })
+        
+        logModal.show()
     }
 }
- 
 

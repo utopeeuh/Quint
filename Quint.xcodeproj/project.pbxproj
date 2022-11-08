@@ -69,6 +69,7 @@
 		9543DA7328F834AE00E37A28 /* ProductDetailTopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9543DA7228F834AE00E37A28 /* ProductDetailTopView.swift */; };
 		9543DA7628F8361B00E37A28 /* RatingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9543DA7528F8361B00E37A28 /* RatingCell.swift */; };
 		9543DA7828F85A7A00E37A28 /* ProductCategoryLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9543DA7728F85A7A00E37A28 /* ProductCategoryLabel.swift */; };
+		955F63A5291AC48E00B2553A /* RoutineDetailProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955F63A4291AC48E00B2553A /* RoutineDetailProtocol.swift */; };
 		956A703529154437004FC262 /* DropDownUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956A702A29154436004FC262 /* DropDownUIView.swift */; };
 		956A703629154437004FC262 /* MonthYearWheelPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956A702B29154436004FC262 /* MonthYearWheelPicker.swift */; };
 		956A703729154437004FC262 /* MorningUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956A702D29154436004FC262 /* MorningUIView.swift */; };
@@ -279,6 +280,7 @@
 		9543DA7228F834AE00E37A28 /* ProductDetailTopView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailTopView.swift; sourceTree = "<group>"; };
 		9543DA7528F8361B00E37A28 /* RatingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingCell.swift; sourceTree = "<group>"; };
 		9543DA7728F85A7A00E37A28 /* ProductCategoryLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCategoryLabel.swift; sourceTree = "<group>"; };
+		955F63A4291AC48E00B2553A /* RoutineDetailProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutineDetailProtocol.swift; sourceTree = "<group>"; };
 		956A702A29154436004FC262 /* DropDownUIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DropDownUIView.swift; sourceTree = "<group>"; };
 		956A702B29154436004FC262 /* MonthYearWheelPicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MonthYearWheelPicker.swift; sourceTree = "<group>"; };
 		956A702D29154436004FC262 /* MorningUIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MorningUIView.swift; sourceTree = "<group>"; };
@@ -961,6 +963,7 @@
 				956BE5CC2914DED600380D71 /* AddNewStepProtocol.swift */,
 				951EF5CC2918E07900D28513 /* RoutineReminderProtocol.swift */,
 				951EF5CE29191D7900D28513 /* LogModalProtocol.swift */,
+				955F63A4291AC48E00B2553A /* RoutineDetailProtocol.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -1107,13 +1110,13 @@
 			isa = PBXGroup;
 			children = (
 				95F0DCB6290F8F5900CEEA00 /* OnboardingData.swift */,
-				A03857BB28F804F000A4B566 /* UIButton */,
-				A03857BA28F804B100A4B566 /* UIView */,
+				A0EF1F0C28FD0A220065AB9A /* UILabel */,
+				A0EF1F0728FD07ED0065AB9A /* UIView */,
 			);
 			path = Components;
 			sourceTree = "<group>";
 		};
-		A03857BA28F804B100A4B566 /* UIView */ = {
+		A03857BA28F804B100A4B566 /* UIViews */ = {
 			isa = PBXGroup;
 			children = (
 				A0F21F4128FD53850072497E /* OnboardingParentView.swift */,
@@ -1126,7 +1129,7 @@
 				95F4478928FFED4C00183DD9 /* CollapsableButton.swift */,
 				950404C229010E0100B37DFD /* CollapsableStack.swift */,
 			);
-			path = UIView;
+			path = UIViews;
 			sourceTree = "<group>";
 		};
 		A03857BB28F804F000A4B566 /* UIButton */ = {
@@ -1164,8 +1167,8 @@
 		A0EF1F0628FD071B0065AB9A /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				A0EF1F0C28FD0A220065AB9A /* UILabel */,
-				A0EF1F0728FD07ED0065AB9A /* UIView */,
+				A03857BB28F804F000A4B566 /* UIButton */,
+				A03857BA28F804B100A4B566 /* UIViews */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -1454,6 +1457,7 @@
 				956BE5D12914F11400380D71 /* MoodModel.swift in Sources */,
 				951034E228EFF8820011AE39 /* (null) in Sources */,
 				950508592914FC8400FAE957 /* RoutineDetailStepCell.swift in Sources */,
+				955F63A5291AC48E00B2553A /* RoutineDetailProtocol.swift in Sources */,
 				A0F21F4228FD53850072497E /* OnboardingParentView.swift in Sources */,
 				950404C329010E0100B37DFD /* CollapsableStack.swift in Sources */,
 				958E32FB2907DA9C00171AF3 /* Quint.xcdatamodeld in Sources */,
@@ -1658,29 +1662,34 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Quint/QuintDebug.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = J3D4SXSPFL;
+				DEVELOPMENT_TEAM = M3J6YQYJKM;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Quint/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Quint;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.macro.quint;
+				PRODUCT_BUNDLE_IDENTIFIER = com.daffa.quint;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "Quint iCloud";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -1691,29 +1700,34 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Quint/Quint.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CODE_SIGN_STYLE = Manual;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = J3D4SXSPFL;
+				DEVELOPMENT_TEAM = M3J6YQYJKM;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Quint/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Quint;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.macro.quint;
+				PRODUCT_BUNDLE_IDENTIFIER = com.daffa.quint;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "Quint iCloud";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

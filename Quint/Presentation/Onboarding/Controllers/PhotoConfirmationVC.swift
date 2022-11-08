@@ -7,6 +7,7 @@
 
 import UIKit
 import SnapKit
+import AVFoundation
 
 class PhotoConfirmationVC: UIViewController {
     
@@ -94,6 +95,10 @@ class PhotoConfirmationVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        navigationController?.isNavigationBarHidden = true
         
         cancelBtn.addTarget(self, action: #selector(didTapCancel), for: .touchUpInside)
         
@@ -156,7 +161,7 @@ class PhotoConfirmationVC: UIViewController {
     @objc func didTapBack() {
         
         self.dismiss(animated: true)
-        
+        navigationController?.popViewController(animated: true)
     }
     
     @objc func didTapConfirm() {

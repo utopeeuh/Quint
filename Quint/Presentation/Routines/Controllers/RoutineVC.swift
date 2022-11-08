@@ -7,12 +7,10 @@
 import CoreLocation
 import UIKit
 import WeatherKit
-import RxCocoa
-import RxSwift
-import RxDataSources
+import AVFoundation
 
 @available(iOS 16.0, *)
-class RoutineVC: UIViewController, CLLocationManagerDelegate, LogModalDelegate{
+class RoutineVC: UIViewController, CLLocationManagerDelegate, LogModalDelegate {
 
     private var whiteTopBar = UIView()
     private var uvSection = UVSection()
@@ -40,11 +38,12 @@ class RoutineVC: UIViewController, CLLocationManagerDelegate, LogModalDelegate{
         super.viewDidLoad()
         view.backgroundColor =  UIColor(red: 244/255, green: 244/255, blue: 244/255, alpha: 1)
         configureUI()
+        checkDoneRoutines()
     }
     
     override func viewWillAppear(_ animated: Bool) {
 //        uvSection.getUserLocation()
-        checkDoneRoutines()
+        
         logModal.hide()
     }
 
@@ -150,20 +149,17 @@ class RoutineVC: UIViewController, CLLocationManagerDelegate, LogModalDelegate{
         }
     }
     
-    @objc func goToLog() {
-        let controller = DailyLogVC()
-        navigationController?.pushViewController(controller, animated: true)
-    }
-    
     @objc func goToMorningRoutine(sender: UITapGestureRecognizer) {
         let controller = RoutineDetailVC()
         controller.routineTime = .morning
+        controller.delegate = self
         navigationController?.pushViewController(controller, animated: true)
     }
     
     @objc func goToNightRoutine(sender: UITapGestureRecognizer) {
         let controller = RoutineDetailVC()
         controller.routineTime = .night
+        controller.delegate = self
         navigationController?.pushViewController(controller, animated: true)
     }
 }
@@ -190,6 +186,66 @@ extension RoutineVC: RoutineReminderDelegate{
                 view.transform = CGAffineTransform(translationX: 0, y: moveUpHeight)
             }
         })
+    }
+}
+
+@available(iOS 16.0, *)
+extension RoutineVC: UIImagePickerControllerDelegate & UINavigationControllerDelegate, PhotoConfirmationVCDelegate{
+    
+    @objc func goToLog() {
+
+        if AVCaptureDevice.authorizationStatus(for: AVMediaType.video) ==  AVAuthorizationStatus.denied {
+            // If camera permission denied, show alert
+            
+        } else{
+        
+            let picker = UIImagePickerController()
+            picker.sourceType = .camera
+            picker.cameraDevice = .front
+            picker.delegate = self
+            picker.cameraFlashMode = .off
+            present(picker, animated: true)
+        }
+        
+        
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        picker.dismiss(animated: true, completion: nil)
+        
+        if AVCaptureDevice.authorizationStatus(for: AVMediaType.video) == .denied {
+            // If camera permission is denied
+            return
+        }
+        
+        let controller = PhotoConfirmationVC()
+        controller.delegate = self
+        
+        if let image = info[.originalImage] as? UIImage {
+            controller.chosenImage = image
+        }
+        
+        navigationController?.pushViewController(controller, animated: true)
+    }
+    
+    func didTapConfirmButton() {
+        
+    }
+    
+    func didTapCancelButton() {
+        navigationController?.popViewController(animated: true)
+    }
+}
+
+@available(iOS 16.0, *)
+extension RoutineVC: RoutineDetailDelegate{
+    func didTapFinish(time: K.RoutineTime) {
+        switch time {
+        case .morning:
+            morningRoutine.pressed()
+        default:
+            nightRoutine.pressed()
+        }
     }
 }
 

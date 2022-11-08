@@ -20,6 +20,8 @@
 		<string>ClashGrotesk-Regular.otf</string>
 		<string>ClashGrotesk-Semibold.otf</string>
 	</array>
+	<key>NSCameraUsageDescription</key>
+	<string>After enabling, you can use your device&apos;s camera to take skin logs</string>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>
@@ -39,7 +41,5 @@
 			</array>
 		</dict>
 	</dict>
-	<key>UIUserInterfaceStyle</key>
-	<string>Light</string>
 </dict>
 </plist>

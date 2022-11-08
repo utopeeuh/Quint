@@ -8,19 +8,14 @@
 import UIKit
 
 @available(iOS 16.0, *)
-class DailyLogVC: UIViewController {
+class DailyLogVC: UIViewController, UIImagePickerControllerDelegate & UINavigationControllerDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor =  UIColor(red: 244/255, green: 244/255, blue: 244/255, alpha: 1)
         self.title = "Daily skin log"
         navBar()
-        ConfigureUI()
-    }
-    
-    func ConfigureUI() {
-        configureComponents()
-        configureLayout()
+        configureUI()
     }
     
     private lazy var mainStackView: UIStackView = {

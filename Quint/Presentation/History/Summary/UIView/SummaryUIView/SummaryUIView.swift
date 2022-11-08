@@ -9,17 +9,24 @@ import UIKit
 
 class SummaryUIView: UIView {
     
+    var logList: [LogModel]!{
+        didSet {
+            setData()
+        }
+    }
+    
+    var descriptionText: String!
+    var imageName: String!
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         self.backgroundColor = .white
         self.layer.cornerRadius = 10.0
-        configureComponents()
-        configureLayout()
+        configureUI()
     }
 
     required init?(coder: NSCoder) {
         super.init(coder: coder)
-        configureUI()
     }
     
     private lazy var hStackView: UIStackView = {
@@ -77,7 +84,10 @@ class SummaryUIView: UIView {
         label.numberOfLines = 0
         return label
     }()
-
+    
+    func setData() {
+        
+    }
     
     override func configureComponents() {
         self.addSubview(titleImage)
@@ -99,6 +109,10 @@ class SummaryUIView: UIView {
         titleLabel.snp.makeConstraints { make in
             make.left.equalTo(titleImage.snp.right).offset(15)
             make.top.equalTo(self.safeAreaInsets).offset(27.5)
+        }
+        
+        bigTitleImage.snp.makeConstraints { make in
+            make.width.height.equalTo(32)
         }
         
         subTitleLabel.snp.makeConstraints { make in

@@ -115,4 +115,31 @@ class LogRepository: LogRepositoryDelegate{
             print("Set routine as done failed")
         }
     }
+    
+    func fetchLogList(dateStart: Date, dateEnd: Date) -> [LogModel] {
+        var logList: [LogModel] = []
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let context: NSManagedObjectContext = appDelegate.persistentContainer.viewContext
+        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Logs")
+      
+        let predicateStartDate = NSPredicate(format: "date >= %@", dateStart as CVarArg)
+        let predicateEndDate = NSPredicate(format: "date <= %@", dateEnd as CVarArg)
+        let compoundPredicate = NSCompoundPredicate(type: .and, subpredicates: [predicateStartDate, predicateEndDate])
+        
+        request.predicate = compoundPredicate
+        
+        do{
+            let results:NSArray = try context.fetch(request) as NSArray
+            
+            for result in results {
+                let logs = result as? LogModel
+                logList.append(logs!)
+            }
+        }
+        catch{
+            print("fetch failed")
+        }
+        
+        return logList
+    }
 }

@@ -17,12 +17,20 @@ class SummaryHistoryVC: UIViewController {
     var moodLevel = MoodLevelUIView()
     var activityLevel = ActivityLevelUIView()
     let monthYearPickerView = MonthYearWheelPicker()
+    var logList: [LogModel] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor =  UIColor(red: 244/255, green: 244/255, blue: 244/255, alpha: 1)
+        logList = LogRepository.shared.fetchLogList(dateStart: Calendar.current.startOfMonth(Date.now), dateEnd: Calendar.current.startOfDay(for: Date.now))
+        morningRoutine.logList = logList
+        nightRoutine.logList = logList
+        sleep.logList = logList
+        moodLevel.logList = logList
+        activityLevel.logList = logList
         configureUI()
     }
+    
     private lazy var hStackView: UIStackView = {
         let stackView = UIStackView()
         stackView.translatesAutoresizingMaskIntoConstraints = false
@@ -53,32 +61,32 @@ class SummaryHistoryVC: UIViewController {
         monthYearPickerView.onDateSelected = { (month, year) in
             var string: String!
             switch month {
-            case 1:
-                string = String("January \(year)")
-            case 2:
-                string = String("February \(year)")
-            case 3:
-                string = String("March \(year)")
-            case 4:
-                string = String("April \(year)")
-            case 5:
-                string = String("May \(year)")
-            case 6:
-                string = String("June \(year)")
-            case 7:
-                string = String("July \(year)")
-            case 8:
-                string = String("August \(year)")
-            case 9:
-                string = String("September \(year)")
-            case 10:
-                string = String("October \(year)")
-            case 11:
-                string = String("November \(year)")
-            case 12:
-                string = String("Desember \(year)")
-            default:
-                string = String("\(month) \(year)")
+                case 1:
+                    string = String("January \(year)")
+                case 2:
+                    string = String("February \(year)")
+                case 3:
+                    string = String("March \(year)")
+                case 4:
+                    string = String("April \(year)")
+                case 5:
+                    string = String("May \(year)")
+                case 6:
+                    string = String("June \(year)")
+                case 7:
+                    string = String("July \(year)")
+                case 8:
+                    string = String("August \(year)")
+                case 9:
+                    string = String("September \(year)")
+                case 10:
+                    string = String("October \(year)")
+                case 11:
+                    string = String("November \(year)")
+                case 12:
+                    string = String("Desember \(year)")
+                default:
+                    string = String("\(month) \(year)")
             }
 
             self.vwDropDown.lblTitle.text = string
@@ -106,7 +114,7 @@ class SummaryHistoryVC: UIViewController {
         monthYearPickerView.isHidden = true
         spacer.isHidden = true
         scrollView.showsVerticalScrollIndicator = false
-        scrollView.contentSize = CGSize(width: view.frame.width, height: 1235)
+        scrollView.contentSize = CGSize(width: view.frame.width, height: 1265)
     }
     
     override func configureComponents() {
@@ -115,7 +123,7 @@ class SummaryHistoryVC: UIViewController {
         view.addGestureRecognizer(touchAnyWhereGesture)
         scrollView.addSubview(scrollStackViewContainer)
         scrollView.showsVerticalScrollIndicator = false
-        scrollView.contentSize = CGSize(width: view.frame.width, height: 1235)
+        scrollView.contentSize = CGSize(width: view.frame.width, height: 1265)
         
         scrollView.addSubview(vwDropDown)
         vwDropDown.lblTitle.text = "November 2022"
@@ -154,7 +162,7 @@ class SummaryHistoryVC: UIViewController {
         }
         
         moodLevel.snp.makeConstraints { make in
-            make.height.equalTo(220)
+            make.height.equalTo(250)
         }
         
         activityLevel.snp.makeConstraints { make in
@@ -169,7 +177,7 @@ class SummaryHistoryVC: UIViewController {
         scrollStackViewContainer.snp.makeConstraints { make in
             make.left.equalTo(view.safeAreaLayoutGuide).offset(20)
             make.right.equalTo(view.safeAreaLayoutGuide).offset(-20)
-            make.height.equalTo(1235)
+            make.height.equalTo(1265)
             make.top.equalTo(vwDropDown.snp.bottom).offset(15)
         }
         

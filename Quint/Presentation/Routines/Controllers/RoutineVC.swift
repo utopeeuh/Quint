@@ -21,6 +21,8 @@ class RoutineVC: UIViewController, CLLocationManagerDelegate, LogModalDelegate {
     private var nightRoutine = NightRoutineCell()
     private var logRoutine = LogRoutineCell()
     
+    private var logFaceImage : UIImage?
+    
     private lazy var routineCellsStack: UIStackView = {
         let stackView = UIStackView()
         stackView.translatesAutoresizingMaskIntoConstraints = false
@@ -42,9 +44,27 @@ class RoutineVC: UIViewController, CLLocationManagerDelegate, LogModalDelegate {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-//        uvSection.getUserLocation()
-        
+        updateUV()
         logModal.hide()
+    }
+    
+    func updateUV(){
+        if CLLocationManager.locationServicesEnabled() {
+            switch CLLocationManager.authorizationStatus() {
+                case .restricted, .denied:
+                    uvSection.disable()
+            case .authorizedAlways, .authorizedWhenInUse, .notDetermined:
+                    uvSection.enable()
+                @unknown default:
+                    break
+            }
+        } else {
+            print("Location services are not enabled")
+        }
+    }
+    
+    func locationManagerDidChangeAuthorization(_ manager: CLLocationManager) {
+        updateUV()
     }
 
     override func configureComponents() {
@@ -194,8 +214,11 @@ extension RoutineVC: UIImagePickerControllerDelegate & UINavigationControllerDel
     
     @objc func goToLog() {
 
-        if AVCaptureDevice.authorizationStatus(for: AVMediaType.video) ==  AVAuthorizationStatus.denied {
+        if AVCaptureDevice.authorizationStatus(for: AVMediaType.video) ==  .denied {
             // If camera permission denied, show alert
+            let alert = UIAlertController.rejectedCameraAlert()
+            self.present(alert, animated: true, completion: nil)
+            return
             
         } else{
         
@@ -222,14 +245,17 @@ extension RoutineVC: UIImagePickerControllerDelegate & UINavigationControllerDel
         controller.delegate = self
         
         if let image = info[.originalImage] as? UIImage {
-            controller.chosenImage = image
+            logFaceImage = image
+            controller.chosenImage = logFaceImage
         }
         
         navigationController?.pushViewController(controller, animated: true)
     }
     
     func didTapConfirmButton() {
-        
+        let controller = DailyLogVC()
+        controller.faceImage = logFaceImage!
+        navigationController?.pushViewController(controller, animated: true)
     }
     
     func didTapCancelButton() {

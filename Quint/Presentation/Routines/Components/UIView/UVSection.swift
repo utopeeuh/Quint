@@ -27,7 +27,7 @@ class UVSection: UIView, CLLocationManagerDelegate{
 
     private let applySuncreenLbl: UILabel = {
         let label = UILabel()
-        label.text = "Apply your Sunscreen"
+        label.text = "Make sure location is enabled"
         label.font = .interSemiBold(size: 12)
         label.textAlignment = .center
         label.textColor = UIColor(red: 242/255, green: 53/255, blue: 53/255, alpha: 1)
@@ -101,7 +101,11 @@ class UVSection: UIView, CLLocationManagerDelegate{
         }
     }
     
-    func getUserLocation() {
+    func disable(){
+        applySuncreenLbl.text = "Make sure location is enabled"
+    }
+    
+    func enable(){
         locationManager.requestWhenInUseAuthorization()
         locationManager.delegate = self
         locationManager.startUpdatingLocation()
@@ -117,6 +121,7 @@ class UVSection: UIView, CLLocationManagerDelegate{
                 if weather.currentWeather.uvIndex.value >= 3{
                     warningIcon.isHidden = false
                     applySuncreenLbl.isHidden = false
+                    applySuncreenLbl.text = "Apply your sunscreen" 
                 }
                 
                 var lightColor: UIColor?
@@ -138,6 +143,8 @@ class UVSection: UIView, CLLocationManagerDelegate{
                     lightColor = K.Color.purpleLightQuint
                     darkColor = K.Color.purpleQuint
                 }
+                
+                UVLevelPoint.removeSublayer(layerIndex: 0)
                 
                 UVLevelPoint.applyGradient(colours: [lightColor!, darkColor!], locations: [0,1], radius: 20)
                 

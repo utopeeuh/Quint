@@ -218,6 +218,8 @@ class OnboardingQuizVC: UIViewController, PhotoConfirmationVCDelegate {
         }
         else{
             //Present alert - prompt to enable
+            let alert = UIAlertController.rejectedCameraAlert()
+            self.present(alert, animated: true, completion: nil)
         }
         
     }

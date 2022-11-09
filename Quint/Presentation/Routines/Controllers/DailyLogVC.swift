@@ -9,6 +9,8 @@ import UIKit
 
 @available(iOS 16.0, *)
 class DailyLogVC: UIViewController, UIImagePickerControllerDelegate & UINavigationControllerDelegate {
+    
+    var faceImage : UIImage?
 
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -13,6 +13,8 @@ class PhotoResultView: UIView {
     private let titleLabel = UILabel()
     private let photoLogImage = UIImageView()
     private let retakeButton = UIButton()
+    let imageHeight : CGFloat = (UIScreen.main.bounds.width-80)/3*4
+    let height = (UIScreen.main.bounds.width-80)/3*4 + 84
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -66,7 +68,7 @@ class PhotoResultView: UIView {
                 make.centerX.equalToSuperview()
                 make.width.equalToSuperview().offset(-40)
                 make.top.equalTo(titleLabel.snp.bottom).offset(24)
-                make.height.equalTo(302)
+                make.height.equalTo(imageHeight)
             }
             
             retakeButton.snp.makeConstraints { make in

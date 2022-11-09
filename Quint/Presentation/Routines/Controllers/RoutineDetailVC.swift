@@ -16,6 +16,7 @@ class RoutineDetailVC: UIViewController{
     
     var routineTime : K.RoutineTime?
     var routineSteps: [RoutineStepInfo] = []
+    var delegate: RoutineDetailDelegate?
     
     private var mainScrollView = UIScrollView()
     
@@ -185,6 +186,7 @@ class RoutineDetailVC: UIViewController{
     func finishRoutine(){
         LogRepository.shared.setRoutineAsDone(time: routineTime!)
         navigationController?.popViewController(animated: true)
+        delegate?.didTapFinish(time: routineTime ?? .morning)
     }
     
     func goToAddNewPage() {
@@ -288,6 +290,25 @@ extension RoutineDetailVC: UITableViewDelegate, UITableViewDataSource{
                     
                     // remove from core data
                     StepsRepository.shared.deleteRoutineStep(step: routineSteps[i], time: routineTime!)
+                    
+                    //remove from table
+                    UIView.animate(withDuration: 0.4, animations: { [self] in
+                        sender.superview!.alpha = 0
+                        
+                        // Move up all cells under sender by one cell's height
+                        let senderIndexPath = tableView.indexPath(for: sender.superview! as! UITableViewCell)
+                        
+                        tableView.visibleCells.forEach { cell in
+                            let cellIndexPath = tableView.indexPath(for: cell)
+                            if cellIndexPath!.row > senderIndexPath!.row {
+                                cell.transform = CGAffineTransform(translationX: 0, y: -72)
+                            }
+                        }
+                    }){ [self] completion in
+                        routineSteps.remove(at: i)
+                        tableView.reloadData()
+                    }
+                    
                 }))
                 
                 alert.addAction(UIAlertAction(title: "Cancel", style: .cancel))

@@ -7,6 +7,7 @@
 
 import UIKit
 import SnapKit
+import AVFoundation
 
 @available(iOS 16.0, *)
 class OnboardingQuizVC: UIViewController, PhotoConfirmationVCDelegate {
@@ -182,18 +183,14 @@ class OnboardingQuizVC: UIViewController, PhotoConfirmationVCDelegate {
     }
     
     func didTapConfirmButton() {
-        
         nextOnClick()
         data.chosenImage = photoConfirmationVC.chosenImage
         photoConfirmationVC.dismiss(animated: true)
-        
     }
     
     func didTapCancelButton() {
-        
         photoConfirmationVC.dismiss(animated: true)
         self.didTapPhoto()
-        
     }
     
     // from uiimagepicker delegate
@@ -205,17 +202,26 @@ class OnboardingQuizVC: UIViewController, PhotoConfirmationVCDelegate {
         vc.modalPresentationStyle = .fullScreen
         present(vc, animated: true)
         moveToCurrIndex()
-        
     }
     
     @objc func didTapPhoto() {
-        let picker = UIImagePickerController()
-        picker.sourceType = .camera
-        picker.cameraDevice = .front
-        picker.delegate = self
-        picker.cameraFlashMode = .off
-        present(picker, animated: true)
-        moveToCurrIndex()
+        // If camera permission is allowed OR not determined
+        let cameraPerms = AVCaptureDevice.authorizationStatus(for: AVMediaType.video)
+        if  cameraPerms == .authorized || cameraPerms == .notDetermined {
+            let picker = UIImagePickerController()
+            picker.sourceType = .camera
+            picker.cameraDevice = .front
+            picker.delegate = self
+            picker.cameraFlashMode = .off
+            present(picker, animated: true)
+            moveToCurrIndex()
+        }
+        else{
+            //Present alert - prompt to enable
+            let alert = UIAlertController.rejectedCameraAlert()
+            self.present(alert, animated: true, completion: nil)
+        }
+        
     }
     
     @objc func backOnClick(){
@@ -240,6 +246,7 @@ class OnboardingQuizVC: UIViewController, PhotoConfirmationVCDelegate {
 
 @available(iOS 16.0, *)
 extension OnboardingQuizVC : UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    
     func imagePickerControllerDidCancel(_ picker:UIImagePickerController) {
         picker.dismiss(animated: true, completion: nil)
         moveToCurrIndex()
@@ -249,9 +256,15 @@ extension OnboardingQuizVC : UIImagePickerControllerDelegate, UINavigationContro
                                 didFinishPickingMediaWithInfo info:[UIImagePickerController.InfoKey :Any]) {
         
         let image = info[.originalImage] as? UIImage
-    
-        picker.dismiss(animated: false, completion: nil)
-        didConfirmPhoto(image)
+        
+        // If camera permission is allowed
+        if AVCaptureDevice.authorizationStatus(for: AVMediaType.video) ==  AVAuthorizationStatus.authorized {
+            picker.dismiss(animated: false, completion: nil)
+            didConfirmPhoto(image)
+        } else{
+            // If permission rejected
+            picker.dismiss(animated: true, completion: nil)
+        }
     }
     
 }

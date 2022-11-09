@@ -60,7 +60,10 @@ class OnboardingResultVC: UIViewController {
         
         // Set onboarding result data
         
-        photoResultView.setImage(image: (data?.chosenImage ?? UIImage(named: "activeIcon"))!)
+        if(data?.chosenImage != nil){
+            photoResultView.setImage(image: data!.chosenImage!)
+        }
+        
     }
     
     override func configureLayout() {
@@ -96,12 +99,23 @@ class OnboardingResultVC: UIViewController {
             make.centerX.equalTo(scrollView)
             make.top.equalTo(scrollView)
             make.width.equalToSuperview().offset(-40)
-            make.height.equalTo(400)
+            
+            if data?.chosenImage == nil{
+                make.height.equalTo(0)
+            }else{
+                make.height.equalTo(photoResultView.height)
+            }
         }
 
         resultTypeView.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
-            make.top.equalTo(photoResultView.snp.bottom).offset(19)
+            
+            if data?.chosenImage == nil{
+                make.top.equalTo(scrollView)
+            }else{
+                make.top.equalTo(photoResultView.snp.bottom).offset(19)
+            }
+            
             make.width.equalToSuperview().offset(-40)
             make.height.equalTo(resultTypeView.frame.height)
         }

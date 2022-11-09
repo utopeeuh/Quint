@@ -15,7 +15,7 @@ class LogRoutineCell: RoutineCell{
         super.init()
         
         leftBtn.setImage(UIImage(named: "LockClosed"), for: .normal)
-        leftBtn.isEnabled = true
+        leftBtn.isEnabled = false
         imageRoutine.image = UIImage(named: "iconLog")
         titleRoutine.text = "Daily skin condition log"
         btnId = 3

@@ -20,5 +20,5 @@ class LogModel: NSManagedObject{
     @NSManaged var sleep: NSNumber
     @NSManaged var activityLevel: NSNumber
     @NSManaged var isBetter: Bool
-    @NSManaged var imagePath: String?
+    @NSManaged var image: Data?
 }

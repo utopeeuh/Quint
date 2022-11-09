@@ -14,6 +14,7 @@ protocol LogRepositoryDelegate{
     func doesLogExists(date: Date) -> Bool
     func fetchLog(date: Date) -> LogModel
     func createLog(date: Date)
+    func updateLogData(date: Date, logData: LogData)
 }
 
 class LogRepository: LogRepositoryDelegate{
@@ -141,5 +142,26 @@ class LogRepository: LogRepositoryDelegate{
         }
         
         return logList
+    }
+    
+    func updateLogData(date: Date, logData: LogData) {
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let context: NSManagedObjectContext = appDelegate.persistentContainer.viewContext
+        
+        let log = fetchLog(date: date)
+        
+        do{
+            log.activityLevel = logData.activityLevel! as NSNumber
+            log.sleep = logData.sleep! as NSNumber
+            log.moodId = logData.moodId as NSNumber
+            log.isBetter = logData.isBetter!
+            log.image = logData.image!.jpegData(compressionQuality: 0.5)
+            log.isLogDone = true
+            
+            try context.save()
+        }
+        catch{
+            print("Update log data failed")
+        }
     }
 }

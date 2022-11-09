@@ -387,7 +387,7 @@ class DailyLogVC: UIViewController, UIImagePickerControllerDelegate & UINavigati
     @objc func createLog(){
         logData.image = faceImage
         logData.sleep = sleepHours.getSleepNumber()
-//        LogRepository.shared.updateLogData(date: Date.now, logData)
+        LogRepository.shared.updateLogData(date: Date.now, logData: logData)
         
         navigationController?.popViewController(animated: true)
         

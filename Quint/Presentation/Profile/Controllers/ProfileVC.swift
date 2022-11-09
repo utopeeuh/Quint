@@ -59,6 +59,11 @@ class ProfileVC: UIViewController {
         })
     }
     
+    @objc func goToReminderSettings() {
+        let vc = ReminderVC()
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
     override func configureComponents() {
         view.addSubview(mainScrollView)
         mainScrollView.showsVerticalScrollIndicator = false
@@ -88,6 +93,10 @@ class ProfileVC: UIViewController {
         reminderNotification.iconImage.image = UIImage(named: "reminderProfileIcon")
         reminderNotification.namelabel.text = "Reminder notification"
         reminderNotification.chevronImage.image = UIImage(systemName: "chevron.right")
+        reminderNotification.isUserInteractionEnabled = true
+        let tapReminderNotif = UITapGestureRecognizer(target: self, action: #selector(goToReminderSettings))
+        reminderNotification.addGestureRecognizer(tapReminderNotif)
+        
         mainScrollView.addSubview(reminderNotification)
         
         deleteAcc.iconImage.image = UIImage(named: "deleteAccIcon")

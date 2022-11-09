@@ -24,7 +24,6 @@
 		950508542914FBBA00FAE957 /* OnboardingResultVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 950508522914FBBA00FAE957 /* OnboardingResultVC.swift */; };
 		950508552914FBBA00FAE957 /* OnboardingStepsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 950508532914FBBA00FAE957 /* OnboardingStepsVC.swift */; };
 		950508592914FC8400FAE957 /* RoutineDetailStepCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 950508582914FC8400FAE957 /* RoutineDetailStepCell.swift */; };
-		9505085B2914FFA300FAE957 /* ReminderVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9505085A2914FFA300FAE957 /* ReminderVC.swift */; };
 		950B32E128F912440095EFB5 /* RatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 950B32E028F912440095EFB5 /* RatingView.swift */; };
 		950D428B28FDC9B400657816 /* IngDetailLowerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 950D428A28FDC9B400657816 /* IngDetailLowerView.swift */; };
 		951034C828EFF51F0011AE39 /* UIViewController+DismissKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951034C328EFF51F0011AE39 /* UIViewController+DismissKeyboard.swift */; };
@@ -80,10 +79,8 @@
 		956A703B29154437004FC262 /* SleepUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956A703129154436004FC262 /* SleepUIView.swift */; };
 		956A703C29154437004FC262 /* MoodLevelUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956A703229154436004FC262 /* MoodLevelUIView.swift */; };
 		956A703D29154437004FC262 /* SummaryHistoryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956A703429154436004FC262 /* SummaryHistoryVC.swift */; };
-		956A70452915477E004FC262 /* ProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956A70402915477E004FC262 /* ProfileVC.swift */; };
 		956A70462915477E004FC262 /* HeaderProfileUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956A70422915477E004FC262 /* HeaderProfileUIView.swift */; };
 		956A70472915477E004FC262 /* SettingsUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956A70432915477E004FC262 /* SettingsUIView.swift */; };
-		956A70482915477E004FC262 /* AboutMySkinUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956A70442915477E004FC262 /* AboutMySkinUIView.swift */; };
 		956BE5CB2914D9F100380D71 /* AddStepGestureRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956BE5CA2914D9F100380D71 /* AddStepGestureRecognizer.swift */; };
 		956BE5CD2914DED600380D71 /* AddNewStepProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956BE5CC2914DED600380D71 /* AddNewStepProtocol.swift */; };
 		956BE5CF2914F10000380D71 /* MoodSeeder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956BE5CE2914F10000380D71 /* MoodSeeder.swift */; };
@@ -133,6 +130,11 @@
 		958E32FB2907DA9C00171AF3 /* Quint.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 958E32F92907DA9C00171AF3 /* Quint.xcdatamodeld */; };
 		958E32FD2907E0E400171AF3 /* JSON+CleanString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 958E32FC2907E0E400171AF3 /* JSON+CleanString.swift */; };
 		95935200291B4D7D00CF9A7A /* UIAlertController+RejectedCameraAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 959351FF291B4D7D00CF9A7A /* UIAlertController+RejectedCameraAlert.swift */; };
+		95935204291B71C100CF9A7A /* AboutMySkinUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95935201291B71C000CF9A7A /* AboutMySkinUIView.swift */; };
+		95935205291B71C100CF9A7A /* CustomReminderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95935202291B71C000CF9A7A /* CustomReminderView.swift */; };
+		95935206291B71C100CF9A7A /* TimePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95935203291B71C000CF9A7A /* TimePickerView.swift */; };
+		95935208291B71D400CF9A7A /* ReminderVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95935207291B71D400CF9A7A /* ReminderVC.swift */; };
+		9593520A291B721F00CF9A7A /* ProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95935209291B721F00CF9A7A /* ProfileVC.swift */; };
 		9595D376290A369B00167C41 /* TipSeeder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9595D375290A369B00167C41 /* TipSeeder.swift */; };
 		9595D378290A36A900167C41 /* TipModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9595D377290A36A900167C41 /* TipModel.swift */; };
 		9595D37A290A39BA00167C41 /* CategorySeeder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9595D379290A39BA00167C41 /* CategorySeeder.swift */; };
@@ -238,7 +240,6 @@
 		950508522914FBBA00FAE957 /* OnboardingResultVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingResultVC.swift; sourceTree = "<group>"; };
 		950508532914FBBA00FAE957 /* OnboardingStepsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingStepsVC.swift; sourceTree = "<group>"; };
 		950508582914FC8400FAE957 /* RoutineDetailStepCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutineDetailStepCell.swift; sourceTree = "<group>"; };
-		9505085A2914FFA300FAE957 /* ReminderVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReminderVC.swift; sourceTree = "<group>"; };
 		950B32E028F912440095EFB5 /* RatingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingView.swift; sourceTree = "<group>"; };
 		950D428A28FDC9B400657816 /* IngDetailLowerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngDetailLowerView.swift; sourceTree = "<group>"; };
 		951034C328EFF51F0011AE39 /* UIViewController+DismissKeyboard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+DismissKeyboard.swift"; sourceTree = "<group>"; };
@@ -293,10 +294,8 @@
 		956A703129154436004FC262 /* SleepUIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SleepUIView.swift; sourceTree = "<group>"; };
 		956A703229154436004FC262 /* MoodLevelUIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoodLevelUIView.swift; sourceTree = "<group>"; };
 		956A703429154436004FC262 /* SummaryHistoryVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SummaryHistoryVC.swift; sourceTree = "<group>"; };
-		956A70402915477E004FC262 /* ProfileVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileVC.swift; sourceTree = "<group>"; };
 		956A70422915477E004FC262 /* HeaderProfileUIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeaderProfileUIView.swift; sourceTree = "<group>"; };
 		956A70432915477E004FC262 /* SettingsUIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsUIView.swift; sourceTree = "<group>"; };
-		956A70442915477E004FC262 /* AboutMySkinUIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutMySkinUIView.swift; sourceTree = "<group>"; };
 		956BE5CA2914D9F100380D71 /* AddStepGestureRecognizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddStepGestureRecognizer.swift; sourceTree = "<group>"; };
 		956BE5CC2914DED600380D71 /* AddNewStepProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewStepProtocol.swift; sourceTree = "<group>"; };
 		956BE5CE2914F10000380D71 /* MoodSeeder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodSeeder.swift; sourceTree = "<group>"; };
@@ -346,6 +345,11 @@
 		958E32FA2907DA9C00171AF3 /* Quint.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Quint.xcdatamodel; sourceTree = "<group>"; };
 		958E32FC2907E0E400171AF3 /* JSON+CleanString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "JSON+CleanString.swift"; sourceTree = "<group>"; };
 		959351FF291B4D7D00CF9A7A /* UIAlertController+RejectedCameraAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIAlertController+RejectedCameraAlert.swift"; sourceTree = "<group>"; };
+		95935201291B71C000CF9A7A /* AboutMySkinUIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutMySkinUIView.swift; sourceTree = "<group>"; };
+		95935202291B71C000CF9A7A /* CustomReminderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomReminderView.swift; sourceTree = "<group>"; };
+		95935203291B71C000CF9A7A /* TimePickerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimePickerView.swift; sourceTree = "<group>"; };
+		95935207291B71D400CF9A7A /* ReminderVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReminderVC.swift; sourceTree = "<group>"; };
+		95935209291B721F00CF9A7A /* ProfileVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileVC.swift; sourceTree = "<group>"; };
 		9595D375290A369B00167C41 /* TipSeeder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipSeeder.swift; sourceTree = "<group>"; };
 		9595D377290A36A900167C41 /* TipModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipModel.swift; sourceTree = "<group>"; };
 		9595D379290A39BA00167C41 /* CategorySeeder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategorySeeder.swift; sourceTree = "<group>"; };
@@ -665,8 +669,8 @@
 		956A703F2915477E004FC262 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				956A70402915477E004FC262 /* ProfileVC.swift */,
-				9505085A2914FFA300FAE957 /* ReminderVC.swift */,
+				95935209291B721F00CF9A7A /* ProfileVC.swift */,
+				95935207291B71D400CF9A7A /* ReminderVC.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -677,7 +681,9 @@
 				A0C33EE829102A51002BF2AC /* DatePickerView.swift */,
 				956A70422915477E004FC262 /* HeaderProfileUIView.swift */,
 				956A70432915477E004FC262 /* SettingsUIView.swift */,
-				956A70442915477E004FC262 /* AboutMySkinUIView.swift */,
+				95935201291B71C000CF9A7A /* AboutMySkinUIView.swift */,
+				95935202291B71C000CF9A7A /* CustomReminderView.swift */,
+				95935203291B71C000CF9A7A /* TimePickerView.swift */,
 			);
 			path = UIView;
 			sourceTree = "<group>";
@@ -1370,20 +1376,22 @@
 				951EF5C52918A7C400D28513 /* MorningRoutineCell.swift in Sources */,
 				72BF72C928F4514E0036C456 /* LogModal.swift in Sources */,
 				95A1E05C28F3F64300386972 /* UIImage+ScaleImage.swift in Sources */,
+				95935204291B71C100CF9A7A /* AboutMySkinUIView.swift in Sources */,
 				9595D378290A36A900167C41 /* TipModel.swift in Sources */,
 				95E6D4C82916DF8A007BFF6D /* CategoriesRepository.swift in Sources */,
 				A0D11F972908082D00B4F508 /* ActivityView.swift in Sources */,
 				95E6D4DA2916E008007BFF6D /* StepsRepository.swift in Sources */,
 				9538752128EDE2A1001979A8 /* UICollectionView+Loading.swift in Sources */,
+				95935205291B71C100CF9A7A /* CustomReminderView.swift in Sources */,
 				950B32E128F912440095EFB5 /* RatingView.swift in Sources */,
 				958E32F52907BCF300171AF3 /* Seeder.swift in Sources */,
 				A03857CE28F81E7200A4B566 /* SkinTypeView.swift in Sources */,
+				95935208291B71D400CF9A7A /* ReminderVC.swift in Sources */,
 				7242F9CC28F12C5A009EB962 /* SmallCategoryButtonGuide.swift in Sources */,
 				9595D37C290A39C700167C41 /* CategoryModel.swift in Sources */,
 				72BF72D128F548DD0036C456 /* DailyLogVC.swift in Sources */,
 				956BE5CF2914F10000380D71 /* MoodSeeder.swift in Sources */,
 				72BF72CB28F5186E0036C456 /* ReminderUIView.swift in Sources */,
-				956A70482915477E004FC262 /* AboutMySkinUIView.swift in Sources */,
 				959C2C0228ED44A3007B1251 /* UIViewController+ConfigureUI.swift in Sources */,
 				9543DA7328F834AE00E37A28 /* ProductDetailTopView.swift in Sources */,
 				958254032908F8030053AABC /* LogModel.swift in Sources */,
@@ -1429,7 +1437,6 @@
 				958E32E82907940E00171AF3 /* IngredientSeeder.swift in Sources */,
 				95A902D828F52D46007B7F5C /* IngredientCategoryDetailVC.swift in Sources */,
 				A049AB492907A848002C5143 /* NoActivityView.swift in Sources */,
-				956A70452915477E004FC262 /* ProfileVC.swift in Sources */,
 				95CC136328FE4A1400D3396A /* QuickFactCell.swift in Sources */,
 				95A902DA28F53F03007B7F5C /* IngredientListSection.swift in Sources */,
 				9524229328F43E5F00361166 /* IngredientListCollectionView.swift in Sources */,
@@ -1500,6 +1507,7 @@
 				956A703729154437004FC262 /* MorningUIView.swift in Sources */,
 				A0EF1F1228FD0BAA0065AB9A /* DescriptionLabel.swift in Sources */,
 				9595D37A290A39BA00167C41 /* CategorySeeder.swift in Sources */,
+				95935206291B71C100CF9A7A /* TimePickerView.swift in Sources */,
 				95E6D4BF2916DEF2007BFF6D /* OnboardingQuizVC.swift in Sources */,
 				A0360C462906BCAD0021C0E1 /* HistoryRoutineView.swift in Sources */,
 				A0EF1F1228FD0BAA0065AB9A /* DescriptionLabel.swift in Sources */,
@@ -1525,11 +1533,11 @@
 				951034D528EFF54C0011AE39 /* (null) in Sources */,
 				72B6EDBD28FD11BC0056B374 /* NewStepUIView.swift in Sources */,
 				72BF72D528F6A93C0036C456 /* UIButton+MoveImageTextLeft.swift in Sources */,
+				9593520A291B721F00CF9A7A /* ProfileVC.swift in Sources */,
 				9543DA6F28F7BBBA00E37A28 /* PrecautionSegmentView.swift in Sources */,
 				958253FD2908F7B50053AABC /* RoutineSeeder.swift in Sources */,
 				A0F519E72900261000623A7F /* PhotoResultView.swift in Sources */,
 				958E32F72907C92000171AF3 /* IngredientModel.swift in Sources */,
-				9505085B2914FFA300FAE957 /* ReminderVC.swift in Sources */,
 				956A703929154437004FC262 /* ActivityLevelUIView.swift in Sources */,
 				95825421290904050053AABC /* UserSeeder.swift in Sources */,
 				951034C828EFF51F0011AE39 /* UIViewController+DismissKeyboard.swift in Sources */,
@@ -1687,9 +1695,6 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Quint/QuintDebug.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 58LNBVCQG4;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;

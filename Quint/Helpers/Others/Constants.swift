@@ -155,6 +155,10 @@ struct K{
     struct UD{
         static let firstTime = "FIRST_TIME_OPEN"
         static let hasDoneOnboarding = "HAS_DONE_ONBOARDING"
+        static let isMorningReminderOn = "IS_MORNING_REMINDER_ON"
+        static let isNightReminderOn = "IS_NIGHT_REMINDER_ON"
+        static let morningReminderTime = "MORNING_REMINDER_TIME"
+        static let nightReminderTime = "NIGHT_REMINDER_TIME"
     }
 }
 

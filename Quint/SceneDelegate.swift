@@ -24,7 +24,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         if hasDoneOnboarding as! Bool{
             nav = UINavigationController(rootViewController: ReminderVC())
         } else{
-            nav = UINavigationController(rootViewController: LoginVC())
+            nav = UINavigationController(rootViewController: ProfileVC())
         }
         
         window?.rootViewController = nav

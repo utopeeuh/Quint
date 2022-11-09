@@ -190,7 +190,6 @@ class OnboardingQuizVC: UIViewController, PhotoConfirmationVCDelegate {
     
     func didTapCancelButton() {
         photoConfirmationVC.dismiss(animated: true)
-        self.didTapPhoto()
     }
     
     // from uiimagepicker delegate

@@ -221,7 +221,6 @@ extension RoutineVC: UIImagePickerControllerDelegate & UINavigationControllerDel
             return
             
         } else{
-        
             let picker = UIImagePickerController()
             picker.sourceType = .camera
             picker.cameraDevice = .front
@@ -234,32 +233,39 @@ extension RoutineVC: UIImagePickerControllerDelegate & UINavigationControllerDel
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-        picker.dismiss(animated: true, completion: nil)
         
         if AVCaptureDevice.authorizationStatus(for: AVMediaType.video) == .denied {
             // If camera permission is denied
+            picker.dismiss(animated: true)
             return
         }
         
-        let controller = PhotoConfirmationVC()
-        controller.delegate = self
-        
-        if let image = info[.originalImage] as? UIImage {
-            logFaceImage = image
-            controller.chosenImage = logFaceImage
+        else if AVCaptureDevice.authorizationStatus(for: AVMediaType.video) == .authorized {
+            picker.dismiss(animated: false)
+            
+            let vc = PhotoConfirmationVC()
+            vc.delegate = self
+            
+            if let image = info[.originalImage] as? UIImage {
+                logFaceImage = image
+                vc.chosenImage = logFaceImage
+            }
+            
+            vc.modalPresentationStyle = .fullScreen
+            present(vc, animated: true)
         }
-        
-        navigationController?.pushViewController(controller, animated: true)
     }
     
     func didTapConfirmButton() {
+        self.dismiss(animated: true)
         let controller = DailyLogVC()
+        controller.delegate = self
         controller.faceImage = logFaceImage!
         navigationController?.pushViewController(controller, animated: true)
     }
     
     func didTapCancelButton() {
-        navigationController?.popViewController(animated: true)
+        self.dismiss(animated: true)
     }
 }
 
@@ -273,5 +279,8 @@ extension RoutineVC: RoutineDetailDelegate{
             nightRoutine.pressed()
         }
     }
+    
+    func didCreateLog(){
+        logRoutine.pressed()
+    }
 }
-

@@ -6,8 +6,9 @@
 //
 
 import UIKit
+import SnapKit
 
-class moodSliderUIView: UIView {
+class MoodSliderUIView: UIView {
     
     private lazy var vStackViewSlider: UIStackView = {
         let stackView = UIStackView()
@@ -33,7 +34,7 @@ class moodSliderUIView: UIView {
         let label = UILabel()
         label.text = "Nothing special"
         label.textColor = .black
-        label.font = label.font.withSize(18)
+        label.font = .interMedium(size: 18)
         return label
     }()
 
@@ -50,6 +51,9 @@ class moodSliderUIView: UIView {
     }
     
     override func configureComponents() {
+        
+        self.backgroundColor = .white
+        self.layer.cornerRadius = 8
         vStackViewSlider.addArrangedSubview(moodSlider)
         vStackViewSlider.addArrangedSubview(moodDetail)
     }
@@ -62,16 +66,18 @@ class moodSliderUIView: UIView {
             moodSlider.setValue(40.0, animated: true)
         }
         
+        vStackViewSlider.snp.makeConstraints { make in
+            make.height.equalToSuperview().offset(-40)
+            make.center.equalToSuperview()
+        }
+        
         moodSlider.snp.makeConstraints { make in
-            make.width.equalTo(300)
-            make.height.equalTo(30)
-            make.left.equalTo(self.safeAreaInsets).offset(25)
-            make.right.equalTo(self.safeAreaInsets).offset(-25)
-            make.top.equalTo(self.safeAreaInsets).offset(20)
+            make.width.equalTo(UIScreen.main.bounds.width-88)
+            make.height.equalTo(42)
         }
         
         moodDetail.snp.makeConstraints { make in
-            make.top.equalTo(moodSlider.snp.bottom).offset(15)
+            make.top.equalTo(moodSlider.snp.bottom).offset(20)
         }
     }
 

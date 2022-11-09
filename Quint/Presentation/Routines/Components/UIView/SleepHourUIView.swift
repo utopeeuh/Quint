@@ -1,45 +1,28 @@
 //
-//  sleepHourUIView.swift
+//  SleepHourUIView.swift
 //  Quint
 //
 //  Created by Stefanus Hermawan Sebastian on 13/10/22.
 //
 
+import Foundation
 import UIKit
+import SnapKit
 
-class sleepHourUIView: UIView {
-    
-    lazy var hStackSleepHour: UIStackView = {
-        let stackView = UIStackView()
-        stackView.translatesAutoresizingMaskIntoConstraints = false
-        stackView.axis = .horizontal
-        stackView.distribution = .fill
-        stackView.alignment = .leading
-        stackView.spacing = 85
-        return stackView
-    }()
-    
-    private lazy var vStackViewSleepHour: UIStackView = {
-        let stackView = UIStackView()
-        stackView.translatesAutoresizingMaskIntoConstraints = false
-        stackView.axis = .vertical
-        stackView.distribution = .fill
-        stackView.alignment = .center
-        return stackView
-    }()
+class SleepHourUIView: UIView {
 
+    let height : CGFloat = 134
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         self.backgroundColor = .white
         self.layer.cornerRadius = 8.0
         self.isUserInteractionEnabled = true
-        configureComponents()
-        configureLayout()
+        configureUI()
     }
 
     required init?(coder: NSCoder) {
         super.init(coder: coder)
-        configureUI()
     }
     
     private var minBtn: UIButton = {
@@ -54,12 +37,12 @@ class sleepHourUIView: UIView {
         return button
     }()
     
-    var countNum: Int = 8
+    private var countNum: Int = 8
     
     
     private var numLabel: UILabel = {
         let label = UILabel()
-        label.font = label.font.withSize(48)
+        label.font = .clashGroteskMedium(size: 48)
         label.textColor = K.Color.greenQuint
         return label
     }()
@@ -68,7 +51,7 @@ class sleepHourUIView: UIView {
         let label = UILabel()
         label.text = "Hours"
         label.textColor = .black
-        label.font = label.font.withSize(20)
+        label.font = .interMedium(size: 20)
         return label
     }()
     
@@ -84,10 +67,8 @@ class sleepHourUIView: UIView {
         
         if countNum == 10 {
             numLabel.text = "\(countNum)+"
-            hStackSleepHour.spacing = 71
         }else {
             numLabel.text = "\(countNum)"
-            hStackSleepHour.spacing = 85
         }
 
     }
@@ -103,19 +84,15 @@ class sleepHourUIView: UIView {
         
         if countNum == 10 {
             numLabel.text = "\(countNum)+"
-            hStackSleepHour.spacing = 71
         }else {
             numLabel.text = "\(countNum)"
-            hStackSleepHour.spacing = 85
         }
         
     }
     
     override func configureComponents() {
-        hStackSleepHour.addArrangedSubview(minBtn)
         minBtn.addTarget(self, action: #selector(minHandler), for: .touchUpInside)
         
-        vStackViewSleepHour.addArrangedSubview(numLabel)
         numLabel.text = String(countNum)
         if countNum == 1 {
             minBtn.isEnabled = false
@@ -126,33 +103,37 @@ class sleepHourUIView: UIView {
             plusBtn.isEnabled = false
         }
         
-        vStackViewSleepHour.addArrangedSubview(hoursLabel)
-        
-        hStackSleepHour.addArrangedSubview(vStackViewSleepHour)
-        
-        hStackSleepHour.addArrangedSubview(plusBtn)
         plusBtn.addTarget(self, action: #selector(plusHandler), for: .touchUpInside)
     }
     
     
     override func configureLayout() {
-        self.addSubview(hStackSleepHour)
-        
-        minBtn.snp.makeConstraints { make in
-            make.left.equalTo(self.safeAreaInsets).offset(25)
-            make.top.equalTo(self.safeAreaInsets).offset(30)
-        }
+        multipleSubviews(view: hoursLabel, numLabel, plusBtn, minBtn)
         
         numLabel.snp.makeConstraints { make in
-            make.top.equalTo(self.safeAreaInsets).offset(-25)
+            make.top.equalToSuperview().offset(32)
+            make.centerX.equalToSuperview()
+        }
+        
+        hoursLabel.snp.makeConstraints { make in
+            make.centerX.equalToSuperview()
+            make.bottom.equalToSuperview().offset(-32)
+        }
+        
+        minBtn.snp.makeConstraints { make in
+            make.left.equalToSuperview().offset(24)
+            make.centerY.equalToSuperview()
         }
         
         plusBtn.snp.makeConstraints { make in
-            make.right.equalTo(self.safeAreaInsets).offset(-25)
-            make.top.equalTo(self.safeAreaInsets).offset(30)
+            make.right.equalToSuperview().offset(-24)
+            make.centerY.equalToSuperview()
         }
         
-        
+    }
+    
+    func getSleepNumber() -> Int {
+        return countNum
     }
 
 }

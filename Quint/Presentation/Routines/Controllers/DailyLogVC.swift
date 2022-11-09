@@ -5,29 +5,40 @@
 //  Created by Stefanus Hermawan Sebastian on 11/10/22.
 //
 
+import Foundation
 import UIKit
+import SnapKit
 
 @available(iOS 16.0, *)
 class DailyLogVC: UIViewController, UIImagePickerControllerDelegate & UINavigationControllerDelegate {
     
+    private let mainScrollView = UIScrollView()
+    
     var faceImage : UIImage?
+    private var logData = LogData()
+    
+    private var activityButtons : [UIView] = []
+    private var feelButtons : [UIView] = []
+    
+    var delegate : RoutineDetailDelegate?
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor =  UIColor(red: 244/255, green: 244/255, blue: 244/255, alpha: 1)
         self.title = "Daily skin log"
+        
+        activityButtons = [sedentaryBtn, activeBtn, veryActiveBtn]
+        feelButtons = [feelBetterBtn, feelWorseBtn]
+        
         navBar()
         configureUI()
+        
+        feelBetterHandler()
+        sedentaryHandler()
     }
     
-    private lazy var mainStackView: UIStackView = {
-        let stackView = UIStackView()
-        stackView.translatesAutoresizingMaskIntoConstraints = false
-        stackView.axis = .vertical
-        stackView.alignment = .fill
-        stackView.spacing = 20
-        return stackView
-    }()
+    private var mainContainer = UIView()
     
     private var moodLabel: UILabel = {
         let label = UILabel()
@@ -70,13 +81,23 @@ class DailyLogVC: UIViewController, UIImagePickerControllerDelegate & UINavigati
         return button
     }()
     
-    private lazy var hStackButtonFeelSkin: UIStackView = {
+    private lazy var feelStack: UIStackView = {
         let stackView = UIStackView()
         stackView.translatesAutoresizingMaskIntoConstraints = false
         stackView.axis = .horizontal
-        stackView.distribution = .fill
+        stackView.distribution = .fillEqually
         stackView.alignment = .fill
-        stackView.spacing = 10
+        stackView.spacing = 12
+        return stackView
+    }()
+    
+    private lazy var activityStack: UIStackView = {
+        let stackView = UIStackView()
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+        stackView.axis = .vertical
+        stackView.distribution = .fillEqually
+        stackView.alignment = .fill
+        stackView.spacing = 12
         return stackView
     }()
     
@@ -107,11 +128,13 @@ class DailyLogVC: UIViewController, UIImagePickerControllerDelegate & UINavigati
     }()
     
     @objc func feelBetterHandler() {
+        logData.isBetter = true
         selectFeel(feelBetterBtn)
         deselectFeel(feelWorseBtn)
     }
     
     @objc func feelWorseHandler() {
+        logData.isBetter = false
         selectFeel(feelWorseBtn)
         deselectFeel(feelBetterBtn)
     }
@@ -184,26 +207,29 @@ class DailyLogVC: UIViewController, UIImagePickerControllerDelegate & UINavigati
     }()
     
     @objc func sedentaryHandler() {
-        sedentaryBtn.layer.borderWidth = 1.0
+        logData.activityLevel = K.ActivityLevel.sedentary
+        sedentaryBtn.layer.borderWidth = 1.5
         activeBtn.layer.borderWidth = 0.0
         veryActiveBtn.layer.borderWidth = 0.0
     }
     
     @objc func activeHandler() {
+        logData.activityLevel = K.ActivityLevel.active
         sedentaryBtn.layer.borderWidth = 0.0
-        activeBtn.layer.borderWidth = 1.0
+        activeBtn.layer.borderWidth = 1.5
         veryActiveBtn.layer.borderWidth = 0.0
     }
     
     @objc func veryActiveHandler() {
+        logData.activityLevel = K.ActivityLevel.veryActive
         sedentaryBtn.layer.borderWidth = 0.0
         activeBtn.layer.borderWidth = 0.0
-        veryActiveBtn.layer.borderWidth = 1.0
+        veryActiveBtn.layer.borderWidth = 1.5
     }
     
-    var sleepHours = sleepHourUIView()
+    var sleepHours = SleepHourUIView()
     
-    var sliderMood = moodSliderUIView()
+    var sliderMood = MoodSliderUIView()
     
     let step: Float = 20
     
@@ -218,134 +244,131 @@ class DailyLogVC: UIViewController, UIImagePickerControllerDelegate & UINavigati
         if roundedStepValue == 0.0 {
             sliderMood.moodDetail.text = "Stressed"
             sliderMood.moodSlider.setThumbImage(UIImage(named: "stressedEmoji"), for: .normal)
+            logData.moodId = K.Mood.stressed
         }else if roundedStepValue == 20.0 {
             sliderMood.moodDetail.text = "Sad"
             sliderMood.moodSlider.setThumbImage(UIImage(named: "sadEmoji"), for: .normal)
+            logData.moodId = K.Mood.sad
         }else if roundedStepValue == 40.0 {
             sliderMood.moodDetail.text = "Nothing special"
             sliderMood.moodSlider.setThumbImage(UIImage(named: "neutralEmoji"), for: .normal)
+            logData.moodId = K.Mood.nothing
         }else if roundedStepValue == 60.0 {
             sliderMood.moodDetail.text = "Happy"
             sliderMood.moodSlider.setThumbImage(UIImage(named: "happyEmoji"), for: .normal)
+            logData.moodId = K.Mood.happy
         }else if roundedStepValue == 80.0 {
             sliderMood.moodDetail.text = "Joyful"
             sliderMood.moodSlider.setThumbImage(UIImage(named: "joyfulEmoji"), for: .normal)
+            logData.moodId = K.Mood.joyful
         }
    }
     
     override func configureComponents() {
-        mainStackView.addArrangedSubview(moodLabel)
-        mainStackView.addArrangedSubview(sliderMood)
+        
+        
+        mainScrollView.isUserInteractionEnabled = true
+        mainScrollView.frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width-40, height: UIScreen.main.bounds.height)
+        mainScrollView.contentSize.height = 990
+        mainScrollView.showsVerticalScrollIndicator = false
+        
         sliderMood.moodSlider.addTarget(self, action: #selector(self.sliderValueDidChange(_:)), for: .valueChanged)
         
-        mainStackView.addArrangedSubview(sleepLabel)
-        mainStackView.addArrangedSubview(sleepHours)
-        
-        mainStackView.addArrangedSubview(activityLabel)
-        mainStackView.addArrangedSubview(sedentaryBtn)
+        activityButtons.forEach { view in
+            activityStack.addArrangedSubview(view)
+        }
         sedentaryBtn.addTarget(self, action: #selector(sedentaryHandler), for: UIControl.Event.touchUpInside)
-        mainStackView.addArrangedSubview(activeBtn)
         activeBtn.addTarget(self, action: #selector(activeHandler), for: UIControl.Event.touchUpInside)
-        mainStackView.addArrangedSubview(veryActiveBtn)
         veryActiveBtn.addTarget(self, action: #selector(veryActiveHandler), for: UIControl.Event.touchUpInside)
         
-        mainStackView.addArrangedSubview(feelSkinLabel)
-        hStackButtonFeelSkin.addArrangedSubview(feelBetterBtn)
+        feelButtons.forEach { view in
+            feelStack.addArrangedSubview(view)
+        }
         feelBetterBtn.addTarget(self, action: #selector(feelBetterHandler), for: UIControl.Event.touchUpInside)
-        hStackButtonFeelSkin.addArrangedSubview(feelWorseBtn)
         feelWorseBtn.addTarget(self, action: #selector(feelWorseHandler), for: UIControl.Event.touchUpInside)
-        mainStackView.addArrangedSubview(hStackButtonFeelSkin)
         
         feelBetterBtn.frame = CGRect(x: 0, y: 0, width: 150, height: 45)
         feelWorseBtn.frame = CGRect(x: 0, y: 0, width: 150, height: 45)
         
-        mainStackView.addArrangedSubview(createLogBtn)
         createLogBtn.frame = CGRect(x: 0, y: 0, width: 352, height: 45)
         createLogBtn.applyGradient(colours: [K.Color.greenLightQuint, K.Color.greenQuint], locations: [0, 1], radius: 8)
+        createLogBtn.addTarget(self, action: #selector(createLog), for: .touchUpInside)
     }
     
     override func configureLayout() {
-        view.addSubview(mainStackView)
-        mainStackView.snp.makeConstraints { make in
-            make.top.left.right.equalTo(view.safeAreaLayoutGuide)
+        
+        view.addSubview(mainScrollView)
+        
+        mainScrollView.multipleSubviews(view:
+                                moodLabel,
+                                sliderMood,
+                                sleepLabel,
+                                sleepHours,
+                                activityLabel,
+                                activityStack,
+                                feelSkinLabel,
+                                feelStack,
+                                createLogBtn
+        )
+        
+        mainScrollView.snp.makeConstraints { make in
+            make.width.equalTo(UIScreen.main.bounds.width-40)
+            make.centerX.equalToSuperview()
+            make.top.bottom.equalTo(view.safeAreaLayoutGuide)
         }
         
         moodLabel.snp.makeConstraints { make in
-            make.left.equalTo(view.safeAreaInsets).offset(20)
-        }
-        
-        sleepLabel.snp.makeConstraints { make in
-            make.left.equalTo(view.safeAreaInsets).offset(20)
-        }
-        
-        activityLabel.snp.makeConstraints { make in
-            make.left.equalTo(view.safeAreaInsets).offset(20)
-        }
-        
-        feelSkinLabel.snp.makeConstraints { make in
-            make.left.equalTo(view.safeAreaInsets).offset(20)
-        }
-        
-        createLogBtn.snp.makeConstraints { make in
-            make.height.equalTo(45)
-            make.left.equalTo(view.safeAreaLayoutGuide).offset(20)
-            make.right.equalTo(view.safeAreaLayoutGuide).offset(-20)
-        }
-        
-        hStackButtonFeelSkin.snp.makeConstraints { make in
-            make.left.equalTo(view.safeAreaLayoutGuide).offset(20)
-            make.right.equalTo(view.safeAreaLayoutGuide).offset(-20)
-        }
-        
-        feelBetterBtn.snp.makeConstraints { make in
-            make.height.equalTo(45)
-            make.width.equalTo(150)
-            make.left.equalTo(view.safeAreaInsets)
-        }
-        
-        feelWorseBtn.snp.makeConstraints { make in
-            make.height.equalTo(45)
-            make.width.equalTo(feelBetterBtn.snp.width)
-            make.right.equalTo(view.safeAreaInsets)
-        }
-        
-        sedentaryBtn.snp.makeConstraints { make in
-            make.height.equalTo(45)
-            make.left.equalTo(view.safeAreaLayoutGuide).offset(20)
-            make.right.equalTo(view.safeAreaLayoutGuide).offset(-20)
-        }
-        
-        activeBtn.snp.makeConstraints { make in
-            make.height.equalTo(45)
-            make.left.equalTo(view.safeAreaLayoutGuide).offset(20)
-            make.right.equalTo(view.safeAreaLayoutGuide).offset(-20)
-        }
-        
-        veryActiveBtn.snp.makeConstraints { make in
-            make.height.equalTo(45)
-            make.left.equalTo(view.safeAreaLayoutGuide).offset(20)
-            make.right.equalTo(view.safeAreaLayoutGuide).offset(-20)
-        }
-        
-        sleepHours.snp.makeConstraints { make in
-            make.height.equalTo(100)
-            make.left.equalTo(view.safeAreaLayoutGuide).offset(20)
-            make.right.equalTo(view.safeAreaLayoutGuide).offset(-20)
+            make.top.equalToSuperview().offset(28)
         }
         
         sliderMood.snp.makeConstraints { make in
-            make.height.equalTo(100)
-            make.left.equalTo(view.safeAreaLayoutGuide).offset(20)
-            make.right.equalTo(view.safeAreaLayoutGuide).offset(-20)
+            make.top.equalTo(moodLabel.snp.bottom).offset(18)
+            make.height.equalTo(128)
+            make.width.equalToSuperview()
         }
         
+        sleepLabel.snp.makeConstraints { make in
+            make.top.equalTo(sliderMood.snp.bottom).offset(50)
+        }
+        
+        sleepHours.snp.makeConstraints { make in
+            make.top.equalTo(sleepLabel.snp.bottom).offset(18)
+            make.width.equalToSuperview()
+            make.height.equalTo(134)
+        }
+        
+        activityLabel.snp.makeConstraints { make in
+            make.top.equalTo(sleepHours.snp.bottom).offset(50)
+        }
+        
+        activityStack.snp.makeConstraints { make in
+            make.top.equalTo(activityLabel.snp.bottom).offset(18)
+            make.width.equalToSuperview()
+            make.height.equalTo(204)
+        }
+        
+        feelSkinLabel.snp.makeConstraints { make in
+            make.top.equalTo(activityStack.snp.bottom).offset(50)
+        }
+        
+        feelStack.snp.makeConstraints { make in
+            make.top.equalTo(feelSkinLabel.snp.bottom).offset(18)
+            make.width.equalToSuperview()
+            make.height.equalTo(48)
+        }
+        
+        createLogBtn.snp.makeConstraints { make in
+            make.width.equalToSuperview()
+            make.height.equalTo(50)
+            make.top.equalTo(feelStack.snp.bottom).offset(72)
+        }
     }
     
     func navBar() {
         let button = UIButton(type: .custom)
-            //Set the image
+        //Set the image
         button.setImage(UIImage(systemName: "chevron.backward"), for: .normal)
-            //Set the title
+        //Set the title
         button.setTitle(" ", for: .normal)
         //Add target
         button.addTarget(self, action: #selector(goToHomeRoutine), for: .touchUpInside)
@@ -354,11 +377,21 @@ class DailyLogVC: UIViewController, UIImagePickerControllerDelegate & UINavigati
         button.sizeToFit()
         let barButton = UIBarButtonItem(customView: button)
         navigationItem.leftBarButtonItem = barButton
-        navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor(red: 7/255, green: 8/255, blue: 7/255, alpha: 1), .font: UIFont(name: "Inter-Medium", size: 16)]
+        navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor(red: 7/255, green: 8/255, blue: 7/255, alpha: 1), .font: UIFont(name: "Inter-Medium", size: 16)!]
     }
     
     @objc func goToHomeRoutine() {
         navigationController?.popViewController(animated: true)
+    }
+    
+    @objc func createLog(){
+        logData.image = faceImage
+        logData.sleep = sleepHours.getSleepNumber()
+//        LogRepository.shared.updateLogData(date: Date.now, logData)
+        
+        navigationController?.popViewController(animated: true)
+        
+        delegate?.didCreateLog()
     }
 
 }

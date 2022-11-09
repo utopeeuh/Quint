@@ -122,6 +122,9 @@ class UVSection: UIView, CLLocationManagerDelegate{
                     warningIcon.isHidden = false
                     applySuncreenLbl.isHidden = false
                     applySuncreenLbl.text = "Apply your sunscreen" 
+                } else {
+                    warningIcon.isHidden = true
+                    applySuncreenLbl.isHidden = true
                 }
                 
                 var lightColor: UIColor?

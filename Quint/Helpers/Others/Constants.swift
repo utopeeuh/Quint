@@ -160,6 +160,19 @@ struct K{
         static let morningReminderTime = "MORNING_REMINDER_TIME"
         static let nightReminderTime = "NIGHT_REMINDER_TIME"
     }
+    
+    struct ActivityLevel {
+        static let sedentary = 1
+        static let active = 2
+        static let veryActive = 3
+    }
+    
+    struct Mood {
+        static let stressed = 1
+        static let sad = 2
+        static let nothing = 3
+        static let happy = 4
+        static let joyful = 5
+        
+    }
 }
-
-

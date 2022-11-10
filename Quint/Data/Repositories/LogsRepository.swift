@@ -155,13 +155,34 @@ class LogRepository: LogRepositoryDelegate{
             log.sleep = logData.sleep! as NSNumber
             log.moodId = logData.moodId as NSNumber
             log.isBetter = logData.isBetter!
-            log.image = logData.image!.jpegData(compressionQuality: 0.5)
+            
+            //Check if log already has image from onboarding
+            if(log.image == nil){
+                log.image = logData.image!.jpegData(compressionQuality: 0.5)
+            }
+            
             log.isLogDone = true
             
             try context.save()
         }
         catch{
             print("Update log data failed")
+        }
+    }
+    
+    func insertImage(date: Date, image: UIImage) {
+        
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let context: NSManagedObjectContext = appDelegate.persistentContainer.viewContext
+
+        let currLog = fetchLog(date: date)
+        
+        do{
+            currLog.image = image.jpegData(compressionQuality: 0.6)
+            try context.save()
+        }
+        catch{
+            print("Insert log image failed")
         }
     }
 }

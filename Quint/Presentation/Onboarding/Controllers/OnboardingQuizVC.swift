@@ -238,6 +238,7 @@ class OnboardingQuizVC: UIViewController, PhotoConfirmationVCDelegate {
         // pass data to onboarding result
         let vc = OnboardingResultVC()
         vc.data = data
+        
         self.navigationController?.pushViewController(vc, animated: true)
     }
     

@@ -54,6 +54,11 @@ class DataHelper{
             }
             
             //  Create log with chosen image
+            if(data.chosenImage != nil){
+                LogRepository.shared.createLog(date: Date.now)
+                LogRepository.shared.insertImage(date: Date.now, image: data.chosenImage!)
+            }
+            
             try context.save()
         }
         catch{

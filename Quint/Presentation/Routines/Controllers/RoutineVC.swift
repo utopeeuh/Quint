@@ -220,7 +220,18 @@ extension RoutineVC: UIImagePickerControllerDelegate & UINavigationControllerDel
             self.present(alert, animated: true, completion: nil)
             return
             
-        } else{
+        }
+        else{
+            
+            // Check if log already has image
+            if LogRepository.shared.fetchLog(date: Date.now).image != nil{
+                // Skip image picker
+                let controller = DailyLogVC()
+                controller.delegate = self
+                navigationController?.pushViewController(controller, animated: true)
+                return
+            }
+            
             let picker = UIImagePickerController()
             picker.sourceType = .camera
             picker.cameraDevice = .front
@@ -241,7 +252,7 @@ extension RoutineVC: UIImagePickerControllerDelegate & UINavigationControllerDel
         }
         
         else if AVCaptureDevice.authorizationStatus(for: AVMediaType.video) == .authorized {
-            picker.dismiss(animated: false)
+            picker.dismiss(animated: true)
             
             let vc = PhotoConfirmationVC()
             vc.delegate = self

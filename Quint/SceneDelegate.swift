@@ -22,10 +22,14 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let nav : UINavigationController?
         
         if hasDoneOnboarding as! Bool{
-            nav = UINavigationController(rootViewController: ReminderVC())
+            nav = UINavigationController(rootViewController: LoginVC())
         } else{
             nav = UINavigationController(rootViewController: ProfileVC())
         }
+
+        UNUserNotificationCenter.current().requestAuthorization(options: [.sound, .badge, .alert], completionHandler: {
+            success, error in
+        })
         
         window?.rootViewController = nav
         window?.makeKeyAndVisible()

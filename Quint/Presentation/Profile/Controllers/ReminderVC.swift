@@ -9,19 +9,29 @@ import UIKit
 import SnapKit
 
 class ReminderVC: UIViewController {
-    
+
     private var backButton = BackButton()
     private var titleLabel = UILabel()
-    private var morningReminderView = CustomReminderView()
-    public var morningTimePicker = TimePickerView()
+
+    private var morningTimePicker: TimePickerView = {
+        let picker = TimePickerView()
+        picker.setTime(hour: 7, minute: 0, second: 0)
+        return picker
+    }()
+
+    private var nightTimePicker: TimePickerView = {
+        let picker = TimePickerView()
+        picker.setTime(hour: 19, minute: 0, second: 0)
+        return picker
+    }()
+
     private var nightReminderView = CustomReminderView()
-    public var nightTimePicker = TimePickerView()
-    public let date = Date()
-    
-    public let isMorningReminderOn = UserDefaults.standard.object(forKey: K.UD.isMorningReminderOn) ?? false
-    public let isNightReminderOn = UserDefaults.standard.object(forKey: K.UD.isNightReminderOn) ?? false
-    public let morningReminderTime = UserDefaults.standard.object(forKey: K.UD.morningReminderTime) ?? false
-    public let nightReminderTime = UserDefaults.standard.object(forKey: K.UD.nightReminderTime) ?? false
+
+    private var morningReminderView = CustomReminderView()
+
+    public let isMorningReminderOn = UserDefaults.standard.bool(forKey: K.UD.isMorningReminderOn)
+
+    public let isNightReminderOn = UserDefaults.standard.bool(forKey: K.UD.isNightReminderOn)
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,20 +49,53 @@ class ReminderVC: UIViewController {
         titleLabel.font = .interMedium(size: 16)
         titleLabel.textColor = K.Color.blackQuint
         
-        morningReminderView.reminderSwitch.addTarget(self, action: #selector(morningSwitchOnClick), for: UIControl.Event.valueChanged)
         morningReminderView.setImage(UIImage(named: "iconMorning"))
         morningReminderView.setTitle("Morning")
         
-        nightReminderView.reminderSwitch.addTarget(self, action: #selector(nightSwitchOnClick), for: UIControl.Event.valueChanged)
         nightReminderView.setImage(UIImage(named: "iconNight"))
         nightReminderView.setTitle("Night")
 
-        morningTimePicker.changeDefaultTime(time: "07:00")
-        nightTimePicker.changeDefaultTime(time: "19:00")
+        if let morningReminderTime = UserDefaults.standard.object(forKey: K.UD.morningReminderTime) as? Date
+        {
+            morningTimePicker.setTime(morningReminderTime)
+        }
+        if let nightReminderTime   = UserDefaults.standard.object(forKey: K.UD.nightReminderTime) as? Date
+        {
+            nightTimePicker.setTime(nightReminderTime)
+        }
         
-        morningTimePicker.alpha = 0
-        nightTimePicker.alpha = 0
+        if isMorningReminderOn {
+            nightReminderView.transform = CGAffineTransformMakeTranslation(0, 50)
+            nightTimePicker.transform = CGAffineTransformMakeTranslation(0, 50)
+            morningTimePicker.alpha = 1
+        } else {
+            nightReminderView.transform = CGAffineTransformMakeTranslation(0, 0)
+            nightTimePicker.transform = CGAffineTransformMakeTranslation(0, 0)
+            morningTimePicker.alpha = 0
+        }
         
+        if isNightReminderOn {
+            nightTimePicker.alpha = 1
+        } else {
+            nightTimePicker.alpha = 0
+        }
+
+        morningTimePicker.onValueChanged = { [unowned self] date in
+            LocalNotification.shared.requestDailyMorningRoutine(
+                hour: morningTimePicker.hourComponent,
+                minute: morningTimePicker.minuteComponent
+            )
+            UserDefaults.standard.set(date, forKey: K.UD.morningReminderTime)
+        }
+
+        nightTimePicker.onValueChanged = { [unowned self] date in
+            LocalNotification.shared.requestDailyNightRoutine(
+                hour: nightTimePicker.hourComponent,
+                minute: nightTimePicker.minuteComponent
+            )
+            UserDefaults.standard.set(date, forKey: K.UD.nightReminderTime)
+        }
+
     }
     
     override func configureLayout() {
@@ -63,7 +106,6 @@ class ReminderVC: UIViewController {
                                     morningTimePicker,
                                     nightReminderView,
                                     nightTimePicker)
-        
         
         backButton.snp.makeConstraints { make in
             make.leading.equalToSuperview().offset(20)
@@ -116,15 +158,6 @@ class ReminderVC: UIViewController {
                 morningTimePicker.alpha = 1
             })
             
-//            if isMorningReminderOn as! Bool == false {
-//                morningTimePicker.timePicker.date = date
-//                UserDefaults.standard.set(true, forKey: K.UD.morningReminderTime)
-//            } else {
-//                reminderSwitch.isOn = false
-//            }
-//
-//            print(morningTimePicker.timePicker.date)
-            
         } else {
             
             UIView.animate(withDuration: 0.2, animations: { [self] in
@@ -134,31 +167,18 @@ class ReminderVC: UIViewController {
             })
             
         }
-
     }
     
-    @objc func nightSwitchOnClick(reminderSwitch: UISwitch) {
+    override func viewWillAppear(_ animated: Bool) {
         
-        if reminderSwitch.isOn {
-            
-            UIView.animate(withDuration: 0.2, animations: { [self] in
-                nightTimePicker.alpha = 1
-            })
-            
-//            if isNightReminderOn as! Bool == false {
-//                nightTimePicker.timePicker.date = date
-//                UserDefaults.standard.set(true, forKey: K.UD.nightReminderTime)
-//            } else {
-//                reminderSwitch.isOn = false
-//            }
-//            print(nightTimePicker.timePicker.date)
-            
-        } else {
-            UIView.animate(withDuration: 0.2, animations: { [self] in
-                nightTimePicker.alpha = 0
-            })
-        }
-
+        super.viewWillAppear(true)
+        
+        morningReminderView.reminderSwitch.isOn = isMorningReminderOn
+        morningReminderView.reminderSwitch.addTarget(self, action: #selector(timePickerSwitchOnClick), for: .touchUpInside)
+        
+        nightReminderView.reminderSwitch.isOn = isNightReminderOn
+        nightReminderView.reminderSwitch.addTarget(self, action: #selector(timePickerSwitchOnClick), for: .touchUpInside)
+        
     }
-    
+
 }

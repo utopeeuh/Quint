@@ -108,6 +108,19 @@ class SummaryHistoryVC: UIViewController {
     
     @objc private func monthYearWheelPickerDidChange() {
         let date = monthYearPickerView.date
+        print(date)
+        if Calendar.current.startOfMonth(date) == Calendar.current.startOfMonth(Date.now) {
+            logList = LogRepository.shared.fetchLogList(dateStart: Calendar.current.startOfMonth(Date.now), dateEnd: Calendar.current.startOfDay(for: Date.now))
+        }else {
+            logList = LogRepository.shared.fetchLogList(dateStart: Calendar.current.startOfMonth(date), dateEnd: Calendar.current.endOfMonth(date))
+        }
+        
+        morningRoutine.logList = logList
+        nightRoutine.logList = logList
+        sleep.logList = logList
+        moodLevel.logList = logList
+        activityLevel.logList = logList
+        
     }
     
     @objc func anyWhereHandler() {

@@ -22,7 +22,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let nav : UINavigationController?
         
         if hasDoneOnboarding as! Bool{
-            nav = UINavigationController(rootViewController: RoutineVC())
+            nav = UINavigationController(rootViewController: SummaryHistoryVC())
         } else{
             nav = UINavigationController(rootViewController: LoginVC())
         }

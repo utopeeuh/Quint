@@ -24,7 +24,7 @@ class MorningUIView: SummaryUIView {
         var denom = 1
         var parameterPersentage: Float = Float(morningRoutineCounter/denom*100)
         
-        if Calendar.current.startOfMonth(logList.first!.date) == Calendar.current.startOfMonth(Date.now) {
+        if Calendar.current.startOfMonth(logList.first?.date ?? Date.now) == Calendar.current.startOfMonth(Date.now) {
             denom = Int(Calendar.current.component(.day, from: Date.now))
         }else {
             denom = Int(Calendar.current.component(.day, from: Calendar.current.endOfMonth(logList.first!.date)))

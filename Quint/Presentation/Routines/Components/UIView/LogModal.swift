@@ -76,6 +76,7 @@ class LogModal: UIView {
         self.isHidden = true
         
         configureUI()
+        hide()
     }
     
     required init?(coder aDecoder: NSCoder) {

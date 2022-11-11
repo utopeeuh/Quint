@@ -21,6 +21,7 @@ class IngredientCategoryDetailVC: UIViewController{
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.tabBarController?.tabBar.isHidden = true
         view.backgroundColor = K.Color.whiteQuint
         
         // dummy category ID

@@ -15,7 +15,8 @@ class LogRoutineCell: RoutineCell{
         super.init()
         
         leftBtn.setImage(UIImage(named: "LockClosed"), for: .normal)
-        leftBtn.isEnabled = false
+//        leftBtn.isEnabled = false
+        leftBtn.removeTarget(self, action: #selector(pressed), for: .touchUpInside)
         imageRoutine.image = UIImage(named: "iconLog")
         titleRoutine.text = "Daily skin condition log"
         btnId = 3

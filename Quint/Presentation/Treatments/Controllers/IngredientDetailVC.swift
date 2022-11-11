@@ -27,6 +27,7 @@ class IngredientDetailVC: UIViewController{
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.tabBarController?.tabBar.isHidden = true
         configureUI()
     }
     

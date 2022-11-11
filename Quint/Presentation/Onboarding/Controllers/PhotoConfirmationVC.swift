@@ -98,6 +98,7 @@ class PhotoConfirmationVC: UIViewController {
     }
     
     override func viewDidAppear(_ animated: Bool) {
+        
         navigationController?.isNavigationBarHidden = true
         
         cancelBtn.addTarget(self, action: #selector(didTapCancel), for: .touchUpInside)

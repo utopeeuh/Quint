@@ -136,6 +136,7 @@
 		95935208291B71D400CF9A7A /* ReminderVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95935207291B71D400CF9A7A /* ReminderVC.swift */; };
 		9593520A291B721F00CF9A7A /* ProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95935209291B721F00CF9A7A /* ProfileVC.swift */; };
 		9593520C291B742000CF9A7A /* LogData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9593520B291B742000CF9A7A /* LogData.swift */; };
+		9594E525291CA51300E376A6 /* TabBarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9594E524291CA51300E376A6 /* TabBarVC.swift */; };
 		9595D376290A369B00167C41 /* TipSeeder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9595D375290A369B00167C41 /* TipSeeder.swift */; };
 		9595D378290A36A900167C41 /* TipModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9595D377290A36A900167C41 /* TipModel.swift */; };
 		9595D37A290A39BA00167C41 /* CategorySeeder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9595D379290A39BA00167C41 /* CategorySeeder.swift */; };
@@ -160,6 +161,7 @@
 		95CC136328FE4A1400D3396A /* QuickFactCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CC136228FE4A1400D3396A /* QuickFactCell.swift */; };
 		95CC136528FE4BDC00D3396A /* UITextView+RequiredHeight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CC136428FE4BDC00D3396A /* UITextView+RequiredHeight.swift */; };
 		95CC136728FE67C000D3396A /* AttributedString+Styles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CC136628FE67C000D3396A /* AttributedString+Styles.swift */; };
+		95CED62B291DFAC200E0AD98 /* UIApplication+TopVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CED62A291DFAC200E0AD98 /* UIApplication+TopVC.swift */; };
 		95E6D4A42916DB01007BFF6D /* UIScrollView+RemoveSubviews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95233BDD28EF3F3E00A4470E /* UIScrollView+RemoveSubviews.swift */; };
 		95E6D4BF2916DEF2007BFF6D /* OnboardingQuizVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E6D4BD2916DEF2007BFF6D /* OnboardingQuizVC.swift */; };
 		95E6D4C02916DEF2007BFF6D /* PhotoConfirmationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E6D4BE2916DEF2007BFF6D /* PhotoConfirmationVC.swift */; };
@@ -352,6 +354,7 @@
 		95935207291B71D400CF9A7A /* ReminderVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReminderVC.swift; sourceTree = "<group>"; };
 		95935209291B721F00CF9A7A /* ProfileVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileVC.swift; sourceTree = "<group>"; };
 		9593520B291B742000CF9A7A /* LogData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogData.swift; sourceTree = "<group>"; };
+		9594E524291CA51300E376A6 /* TabBarVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarVC.swift; sourceTree = "<group>"; };
 		9595D375290A369B00167C41 /* TipSeeder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipSeeder.swift; sourceTree = "<group>"; };
 		9595D377290A36A900167C41 /* TipModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipModel.swift; sourceTree = "<group>"; };
 		9595D379290A39BA00167C41 /* CategorySeeder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategorySeeder.swift; sourceTree = "<group>"; };
@@ -376,6 +379,7 @@
 		95CC136228FE4A1400D3396A /* QuickFactCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickFactCell.swift; sourceTree = "<group>"; };
 		95CC136428FE4BDC00D3396A /* UITextView+RequiredHeight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextView+RequiredHeight.swift"; sourceTree = "<group>"; };
 		95CC136628FE67C000D3396A /* AttributedString+Styles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AttributedString+Styles.swift"; sourceTree = "<group>"; };
+		95CED62A291DFAC200E0AD98 /* UIApplication+TopVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+TopVC.swift"; sourceTree = "<group>"; };
 		95E6D4BD2916DEF2007BFF6D /* OnboardingQuizVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingQuizVC.swift; sourceTree = "<group>"; };
 		95E6D4BE2916DEF2007BFF6D /* PhotoConfirmationVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoConfirmationVC.swift; sourceTree = "<group>"; };
 		95E6D4C12916DF62007BFF6D /* ProductsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsRepository.swift; sourceTree = "<group>"; };
@@ -881,6 +885,14 @@
 			path = Others;
 			sourceTree = "<group>";
 		};
+		95CED629291DFAB200E0AD98 /* UIApplication */ = {
+			isa = PBXGroup;
+			children = (
+				95CED62A291DFAC200E0AD98 /* UIApplication+TopVC.swift */,
+			);
+			path = UIApplication;
+			sourceTree = "<group>";
+		};
 		95E6D4A12916DAD6007BFF6D /* Repositories */ = {
 			isa = PBXGroup;
 			children = (
@@ -904,6 +916,7 @@
 		95E6D4A22916DAF6007BFF6D /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				95CED629291DFAB200E0AD98 /* UIApplication */,
 				721F0AF1291A0C63004EDC8B /* Calendar */,
 				957F0CF22906428500FFFB06 /* UIViewController */,
 				957F0CF12906426A00FFFB06 /* UIView */,
@@ -1018,6 +1031,7 @@
 		95E6D4DB2916F59C007BFF6D /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				9594E524291CA51300E376A6 /* TabBarVC.swift */,
 				951034DA28EFF8820011AE39 /* Routines */,
 				951034D128EFF54C0011AE39 /* Authentication */,
 				A0EF1EFF28FCFE280065AB9A /* Onboarding Result */,
@@ -1445,6 +1459,7 @@
 				95A902DA28F53F03007B7F5C /* IngredientListSection.swift in Sources */,
 				9524229328F43E5F00361166 /* IngredientListCollectionView.swift in Sources */,
 				A0F519E9290032B700623A7F /* RecIngredientView.swift in Sources */,
+				9594E525291CA51300E376A6 /* TabBarVC.swift in Sources */,
 				956A703B29154437004FC262 /* SleepUIView.swift in Sources */,
 				951EF5C92918A7D600D28513 /* LogRoutineCell.swift in Sources */,
 				A0C8A0E52907883700002D8C /* TreatmentsVC.swift in Sources */,
@@ -1506,6 +1521,7 @@
 				957F0D01290656BE00FFFB06 /* ProductListCell.swift in Sources */,
 				957F0CFD2906569A00FFFB06 /* ProductListView.swift in Sources */,
 				A0F560ED28FAA9050091DF7B /* SkinLogView.swift in Sources */,
+				95CED62B291DFAC200E0AD98 /* UIApplication+TopVC.swift in Sources */,
 				9572F0B028F68EC00035BCA3 /* InformationCell.swift in Sources */,
 				958253EF2908D64D0053AABC /* ProductSeeder.swift in Sources */,
 				956A703729154437004FC262 /* MorningUIView.swift in Sources */,

@@ -12,6 +12,8 @@ import SnapKit
 @available(iOS 16.0, *)
 class DailyLogVC: UIViewController, UIImagePickerControllerDelegate & UINavigationControllerDelegate {
     
+    private let backBtn = UIButton()
+    private let pageTitle = UILabel()
     private let mainScrollView = UIScrollView()
     
     var faceImage : UIImage?
@@ -25,13 +27,13 @@ class DailyLogVC: UIViewController, UIImagePickerControllerDelegate & UINavigati
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.tabBarController?.tabBar.isHidden = true
         view.backgroundColor =  UIColor(red: 244/255, green: 244/255, blue: 244/255, alpha: 1)
         self.title = "Daily skin log"
         
         activityButtons = [sedentaryBtn, activeBtn, veryActiveBtn]
         feelButtons = [feelBetterBtn, feelWorseBtn]
         
-        navBar()
         configureUI()
         
         feelBetterHandler()
@@ -266,11 +268,18 @@ class DailyLogVC: UIViewController, UIImagePickerControllerDelegate & UINavigati
     
     override func configureComponents() {
         
-        
         mainScrollView.isUserInteractionEnabled = true
         mainScrollView.frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width-40, height: UIScreen.main.bounds.height)
         mainScrollView.contentSize.height = 990
         mainScrollView.showsVerticalScrollIndicator = false
+        
+        backBtn.setImage(UIImage(named: "arrow_back"), for: .normal)
+        backBtn.setTitle("", for: .normal)
+        backBtn.sizeToFit()
+        backBtn.addTarget(self, action: #selector(didTapBack), for: .touchUpInside)
+        
+        pageTitle.text = "Daily skin log"
+        pageTitle.font = .interMedium(size: 16)
         
         sliderMood.moodSlider.addTarget(self, action: #selector(self.sliderValueDidChange(_:)), for: .valueChanged)
         
@@ -300,6 +309,8 @@ class DailyLogVC: UIViewController, UIImagePickerControllerDelegate & UINavigati
         view.addSubview(mainScrollView)
         
         mainScrollView.multipleSubviews(view:
+                                backBtn,
+                                pageTitle,
                                 moodLabel,
                                 sliderMood,
                                 sleepLabel,
@@ -317,8 +328,18 @@ class DailyLogVC: UIViewController, UIImagePickerControllerDelegate & UINavigati
             make.top.bottom.equalTo(view.safeAreaLayoutGuide)
         }
         
+        backBtn.snp.makeConstraints { make in
+            make.top.equalToSuperview()
+            make.centerY.equalTo(pageTitle)
+        }
+        
+        pageTitle.snp.makeConstraints { make in
+            make.top.equalToSuperview().offset(9)
+            make.centerX.equalToSuperview()
+        }
+        
         moodLabel.snp.makeConstraints { make in
-            make.top.equalToSuperview().offset(28)
+            make.top.equalTo(pageTitle.snp.bottom).offset(28)
         }
         
         sliderMood.snp.makeConstraints { make in
@@ -364,24 +385,8 @@ class DailyLogVC: UIViewController, UIImagePickerControllerDelegate & UINavigati
         }
     }
     
-    func navBar() {
-        let button = UIButton(type: .custom)
-        //Set the image
-        button.setImage(UIImage(systemName: "chevron.backward"), for: .normal)
-        //Set the title
-        button.setTitle(" ", for: .normal)
-        //Add target
-        button.addTarget(self, action: #selector(goToHomeRoutine), for: .touchUpInside)
-        button.tintColor = UIColor(red: 7/255, green: 8/255, blue: 7/255, alpha: 1)
-        button.frame = CGRect(x: 0, y: 0, width: 100, height: 30)
-        button.sizeToFit()
-        let barButton = UIBarButtonItem(customView: button)
-        navigationItem.leftBarButtonItem = barButton
-        navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor(red: 7/255, green: 8/255, blue: 7/255, alpha: 1), .font: UIFont(name: "Inter-Medium", size: 16)!]
-    }
-    
-    @objc func goToHomeRoutine() {
-        navigationController?.popViewController(animated: true)
+    @objc func didTapBack(){
+        delegate?.backFromLog(didCreate: false)
     }
     
     @objc func createLog(){
@@ -394,7 +399,7 @@ class DailyLogVC: UIViewController, UIImagePickerControllerDelegate & UINavigati
         
         navigationController?.popViewController(animated: true)
         
-        delegate?.didCreateLog()
+        delegate?.backFromLog(didCreate: true)
     }
 
 }

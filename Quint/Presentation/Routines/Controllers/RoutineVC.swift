@@ -44,8 +44,8 @@ class RoutineVC: UIViewController, CLLocationManagerDelegate, LogModalDelegate {
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        self.tabBarController?.tabBar.isHidden = false
         updateUV()
-        logModal.hide()
     }
     
     func updateUV(){
@@ -166,17 +166,21 @@ class RoutineVC: UIViewController, CLLocationManagerDelegate, LogModalDelegate {
             if currDayLog.isNightDone == true {
                 nightRoutine.pressed()
             }
+            
+            if currDayLog.isLogDone == true {
+                logRoutine.pressed()
+            }
         }
     }
     
-    @objc func goToMorningRoutine(sender: UITapGestureRecognizer) {
+    @objc func goToMorningRoutine() {
         let controller = RoutineDetailVC()
         controller.routineTime = .morning
         controller.delegate = self
         navigationController?.pushViewController(controller, animated: true)
     }
     
-    @objc func goToNightRoutine(sender: UITapGestureRecognizer) {
+    @objc func goToNightRoutine() {
         let controller = RoutineDetailVC()
         controller.routineTime = .night
         controller.delegate = self
@@ -237,42 +241,42 @@ extension RoutineVC: UIImagePickerControllerDelegate & UINavigationControllerDel
             picker.cameraDevice = .front
             picker.delegate = self
             picker.cameraFlashMode = .off
-            present(picker, animated: true)
+            self.present(picker, animated: true)
+            
         }
-        
-        
     }
-    
+
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         
-        if AVCaptureDevice.authorizationStatus(for: AVMediaType.video) == .denied {
-            // If camera permission is denied
-            picker.dismiss(animated: true)
-            return
-        }
-        
-        else if AVCaptureDevice.authorizationStatus(for: AVMediaType.video) == .authorized {
-            picker.dismiss(animated: true)
+        if AVCaptureDevice.authorizationStatus(for: AVMediaType.video) == .authorized {
+            var image = info[.originalImage] as? UIImage
             
-            let vc = PhotoConfirmationVC()
-            vc.delegate = self
-            
-            if let image = info[.originalImage] as? UIImage {
+            if((image) != nil){
                 logFaceImage = image
-                vc.chosenImage = logFaceImage
+                let vc = PhotoConfirmationVC()
+                vc.delegate = self
+                vc.chosenImage = logFaceImage!
+                vc.modalPresentationStyle = .fullScreen
+                picker.present(vc, animated: true)
             }
-            
-            vc.modalPresentationStyle = .fullScreen
-            present(vc, animated: true)
         }
+    }
+    
+    @objc func goToPhotoConfirmation(){
+        
+        let vc = PhotoConfirmationVC()
+        vc.delegate = self
+        vc.chosenImage = logFaceImage!
+        vc.modalPresentationStyle = .fullScreen
+        UIApplication.topViewController()?.present(vc, animated: true)
     }
     
     func didTapConfirmButton() {
-        self.dismiss(animated: true)
         let controller = DailyLogVC()
         controller.delegate = self
         controller.faceImage = logFaceImage!
-        navigationController?.pushViewController(controller, animated: true)
+        controller.modalPresentationStyle = .fullScreen
+        UIApplication.topViewController()?.present(controller, animated: true)
     }
     
     func didTapCancelButton() {
@@ -282,6 +286,7 @@ extension RoutineVC: UIImagePickerControllerDelegate & UINavigationControllerDel
 
 @available(iOS 16.0, *)
 extension RoutineVC: RoutineDetailDelegate{
+    
     func didTapFinish(time: K.RoutineTime) {
         switch time {
         case .morning:
@@ -291,7 +296,13 @@ extension RoutineVC: RoutineDetailDelegate{
         }
     }
     
-    func didCreateLog(){
-        logRoutine.pressed()
+    func backFromLog(didCreate: Bool){
+        dismiss(animated: true){
+            if let vc = UIApplication.topViewController() as? RoutineVC {
+                if (didCreate){
+                    vc.logRoutine.pressed()
+                }
+            }
+        }
     }
 }

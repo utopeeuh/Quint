@@ -28,6 +28,7 @@ class ProductDetailVC: UIViewController{
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.tabBarController?.tabBar.isHidden = true
         
         zero = CGAffineTransform(translationX: 0.0, y: 0.0)
         moveLeft = CGAffineTransform(translationX: -(self.view.bounds.width * 1), y: 0.0)

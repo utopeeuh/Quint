@@ -19,15 +19,14 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         // Manage inital view
         let hasDoneOnboarding = UserDefaults.standard.object(forKey: K.UD.hasDoneOnboarding) ?? false
-        let nav : UINavigationController?
         
         if hasDoneOnboarding as! Bool{
-            nav = UINavigationController(rootViewController: RoutineVC())
+//            window?.rootViewController = UINavigationController(rootViewController: RoutineVC())
+            window?.rootViewController = TabBarVC()
         } else{
-            nav = UINavigationController(rootViewController: LoginVC())
+            window?.rootViewController = UINavigationController(rootViewController: LoginVC())
         }
         
-        window?.rootViewController = nav
         window?.makeKeyAndVisible()
     }
 

@@ -127,14 +127,13 @@ class OnboardingStepsVC: UIViewController {
         UserDefaults.standard.set(true, forKey: K.UD.hasDoneOnboarding)
         
         // Set routine as root vc
-        let vc = RoutineVC()
+        let vc = TabBarVC()
         let foregroundedScenes = UIApplication.shared.connectedScenes.filter { $0.activationState == .foregroundActive }
         let window = foregroundedScenes.map { $0 as? UIWindowScene }.compactMap { $0 }.first?.windows.filter { $0.isKeyWindow }.first
         
         guard let uWindow = window else { return }
 
-        let navController = UINavigationController(rootViewController: vc)
-        uWindow.rootViewController = navController
+        uWindow.rootViewController = vc
         UIView.transition(with: uWindow, duration: 0.3, options: [.transitionCrossDissolve], animations: {}, completion: nil)
     }
     

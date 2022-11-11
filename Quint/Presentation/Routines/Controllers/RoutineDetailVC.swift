@@ -37,6 +37,7 @@ class RoutineDetailVC: UIViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationController?.isNavigationBarHidden = true
+        self.tabBarController?.tabBar.isHidden = true
         overrideUserInterfaceStyle = .dark
         configureUI()
     }

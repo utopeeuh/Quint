@@ -10,5 +10,5 @@ import UIKit
 
 protocol RoutineDetailDelegate{
     func didTapFinish(time: K.RoutineTime)
-    func didCreateLog()
+    func backFromLog(didCreate: Bool)
 }

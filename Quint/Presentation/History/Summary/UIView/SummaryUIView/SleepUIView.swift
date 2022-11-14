@@ -24,8 +24,7 @@ class SleepUIView: SummaryUIView {
         logList.forEach { log in
             sleepHourCounter += Float(log.sleep)
         }
-//        sleepHour = sleepHourCounter/Float(logList.count)
-        sleepHour = 3
+        sleepHour = sleepHourCounter/Float(logList.count)
         if sleepHour > 9.0 {
             imageName = "confusedIcon"
             descriptionText = "You are sleeping more than you should be. You only need 7-9 hours to sleep. Oversleeping may potentially cause health problems."

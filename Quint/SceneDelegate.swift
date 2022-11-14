@@ -21,14 +21,11 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let hasDoneOnboarding = UserDefaults.standard.object(forKey: K.UD.hasDoneOnboarding) ?? false
         
         if hasDoneOnboarding as! Bool{
+//            window?.rootViewController = UINavigationController(rootViewController: RoutineVC())
             window?.rootViewController = TabBarVC()
         } else{
             window?.rootViewController = UINavigationController(rootViewController: LoginVC())
         }
-
-        UNUserNotificationCenter.current().requestAuthorization(options: [.sound, .badge, .alert], completionHandler: {
-            success, error in
-        })
         
         window?.makeKeyAndVisible()
     }

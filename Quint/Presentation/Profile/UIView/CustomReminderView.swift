@@ -38,6 +38,8 @@ class CustomReminderView: UIView {
         labelImage.text = ""
         labelImage.font = .interMedium(size: 16)
         labelImage.textColor = K.Color.blackQuint
+        
+//        reminderSwitch.addTarget(self, action: #selector(switchChanged), for: UIControl.Event.valueChanged)
 
     }
         
@@ -73,5 +75,15 @@ class CustomReminderView: UIView {
         labelImage.text = title
         sizeToFit()
     }
+    
+//    @objc func switchChanged(reminderSwitch: UISwitch) {
+//
+//        if reminderSwitch.isOn {
+//            print("toggle on")
+//        } else {
+//            print("toggle off")
+//        }
+//
+//    }
     
 }

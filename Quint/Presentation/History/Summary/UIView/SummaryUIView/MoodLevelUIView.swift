@@ -9,11 +9,11 @@ import UIKit
 
 class MoodLevelUIView: SummaryUIView {
     
-    var joyfulCounter = 5 // harusnya 0 kalo udah ada datanya
-    var happyCounter = 4 // harusnya 0 kalo udah ada datanya
-    var normalCounter = 3 // harusnya 0 kalo udah ada datanya
-    var sadCounter = 2 // harusnya 0 kalo udah ada datanya
-    var stressedCounter = 1 // harusnya 0 kalo udah ada datanya
+    var joyfulCounter = 0
+    var happyCounter = 0
+    var normalCounter = 0
+    var sadCounter = 0
+    var stressedCounter = 0
     var moodLevel: String!
     
     override init(frame: CGRect) {

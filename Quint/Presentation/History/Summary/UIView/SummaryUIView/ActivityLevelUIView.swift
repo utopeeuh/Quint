@@ -9,9 +9,9 @@ import UIKit
 
 class ActivityLevelUIView: SummaryUIView {
     
-    var veryActiveCounter = 3 // harusnya 0 kalo udah ada datanya
-    var activeCounter = 2 // harusnya 0 kalo udah ada datanya
-    var sedentaryCounter = 1 // harusnya 0 kalo udah ada datanya
+    var veryActiveCounter = 0
+    var activeCounter = 0
+    var sedentaryCounter = 0 
     var activityLevel: String!
 
     override init(frame: CGRect) {

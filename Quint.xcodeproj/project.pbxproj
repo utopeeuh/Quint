@@ -192,7 +192,6 @@
 		A0004BF92902688600B98B73 /* OnboardingProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0004BF82902688600B98B73 /* OnboardingProtocol.swift */; };
 		A014EA1328FEAF2A0020DC35 /* UIView+MultipleSubviews.swift in Sources */ = {isa = PBXBuildFile; fileRef = A014EA1228FEAF2A0020DC35 /* UIView+MultipleSubviews.swift */; };
 		A0360C402906BB2C0021C0E1 /* RoutineHistoryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0360C3F2906BB2C0021C0E1 /* RoutineHistoryVC.swift */; };
-		A0360C462906BCAD0021C0E1 /* HistoryRoutineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0360C452906BCAD0021C0E1 /* HistoryRoutineView.swift */; };
 		A03857B628F7C7E100A4B566 /* UILabel+RequiredHeight.swift in Sources */ = {isa = PBXBuildFile; fileRef = A03857B428F7C7E100A4B566 /* UILabel+RequiredHeight.swift */; };
 		A03857C328F80B3400A4B566 /* SignInAppleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A03857C228F80B3400A4B566 /* SignInAppleButton.swift */; };
 		A03857C528F80B4100A4B566 /* NextButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A03857C428F80B4100A4B566 /* NextButton.swift */; };
@@ -412,7 +411,6 @@
 		A0004BF82902688600B98B73 /* OnboardingProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingProtocol.swift; sourceTree = "<group>"; };
 		A014EA1228FEAF2A0020DC35 /* UIView+MultipleSubviews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+MultipleSubviews.swift"; sourceTree = "<group>"; };
 		A0360C3F2906BB2C0021C0E1 /* RoutineHistoryVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutineHistoryVC.swift; sourceTree = "<group>"; };
-		A0360C452906BCAD0021C0E1 /* HistoryRoutineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryRoutineView.swift; sourceTree = "<group>"; };
 		A03857B428F7C7E100A4B566 /* UILabel+RequiredHeight.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UILabel+RequiredHeight.swift"; sourceTree = "<group>"; };
 		A03857C228F80B3400A4B566 /* SignInAppleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInAppleButton.swift; sourceTree = "<group>"; };
 		A03857C428F80B4100A4B566 /* NextButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NextButton.swift; sourceTree = "<group>"; };
@@ -1137,7 +1135,6 @@
 		A0360C432906BC820021C0E1 /* UIView */ = {
 			isa = PBXGroup;
 			children = (
-				A0360C452906BCAD0021C0E1 /* HistoryRoutineView.swift */,
 				A049AB482907A848002C5143 /* NoActivityView.swift */,
 				A0D11F962908082D00B4F508 /* ActivityView.swift */,
 				A0D11F982908090B00B4F508 /* CustomLogView.swift */,
@@ -1533,7 +1530,6 @@
 				9595D37A290A39BA00167C41 /* CategorySeeder.swift in Sources */,
 				95935206291B71C100CF9A7A /* TimePickerView.swift in Sources */,
 				95E6D4BF2916DEF2007BFF6D /* OnboardingQuizVC.swift in Sources */,
-				A0360C462906BCAD0021C0E1 /* HistoryRoutineView.swift in Sources */,
 				A0EF1F1228FD0BAA0065AB9A /* DescriptionLabel.swift in Sources */,
 				A0360C402906BB2C0021C0E1 /* RoutineHistoryVC.swift in Sources */,
 				957F0D0B2906573900FFFB06 /* CategoryButton.swift in Sources */,

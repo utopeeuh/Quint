@@ -19,6 +19,7 @@ class ActivityView: CustomLogView {
     private var moodCell = CustomLogView()
     private var activityLevelCell = CustomLogView()
     private var skinCondCell = CustomLogView()
+    var logModel: LogModel?
     
     private var logLabel = UILabel()
     public var editButton = UIButton()
@@ -61,28 +62,37 @@ class ActivityView: CustomLogView {
         
         morningCell.setImage(UIImage(named: "morning_icon"))
         morningCell.setTitle("Morning", K.Color.greyQuint)
-        morningCell.setDesc("Done", K.Color.blackQuint)
+        if logModel?.isDayDone == true {
+            morningCell.setDesc("Done", K.Color.blackQuint)
+        }else {
+            morningCell.setDesc("Not yet", K.Color.greyQuint)
+        }
+        
         
         nightCell.setImage(UIImage(named: "night_icon"))
         nightCell.setBackground(K.Color.disableBgBtnQuint)
         nightCell.setTitle("Night", K.Color.greyQuint)
-        nightCell.setDesc("Not yet", K.Color.greyQuint)
+        if logModel?.isDayDone == true {
+            nightCell.setDesc("Done", K.Color.blackQuint)
+        }else {
+            nightCell.setDesc("Not yet", K.Color.greyQuint)
+        }
         
         sleepCell.setImage(UIImage(named: "sleep_icon"))
         sleepCell.setTitle("Sleep time", K.Color.greyQuint)
-        sleepCell.setDesc("6 hours", K.Color.blackQuint)
+        sleepCell.setDesc("\(logModel?.sleep)", K.Color.blackQuint)
         
         moodCell.setImage(UIImage(named: "mood_level_icon"))
         moodCell.setTitle("Mood level", K.Color.greyQuint)
-        moodCell.setDesc("Happy", K.Color.blackQuint)
+        moodCell.setDesc("\(logModel?.moodId)", K.Color.blackQuint)
         
         activityLevelCell.setImage(UIImage(named: "activity_level_icon"))
         activityLevelCell.setTitle("Activity level", K.Color.greyQuint)
-        activityLevelCell.setDesc("Active", K.Color.blackQuint)
+        activityLevelCell.setDesc("\(logModel?.activityLevel)", K.Color.blackQuint)
         
         skinCondCell.setImage(UIImage(named: "skin_cond_icon"))
         skinCondCell.setTitle("Skin condition", K.Color.greyQuint)
-        skinCondCell.setDesc("Better", K.Color.blackQuint)
+        skinCondCell.setDesc("\(logModel?.isBetter)", K.Color.blackQuint)
         
     }
         

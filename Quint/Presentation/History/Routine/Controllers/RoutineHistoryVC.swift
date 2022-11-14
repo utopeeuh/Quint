@@ -7,11 +7,11 @@
 
 import UIKit
 import SnapKit
+import CoreData
 
 @available(iOS 16.0, *)
 class RoutineHistoryVC: UIViewController {
     
-//    private var historyRoutineView = HistoryRoutineView()
     private var detailSection = UIView()
     private var viewBlanket = UIView()
     private var calendarView = UICalendarView()
@@ -19,6 +19,7 @@ class RoutineHistoryVC: UIViewController {
     private var scrollView = UIScrollView()
     private var noActivityView = NoActivityView()
     private var activityView = ActivityView()
+    var logModel: LogModel?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -71,9 +72,7 @@ class RoutineHistoryVC: UIViewController {
         scrollView.backgroundColor = K.Color.bgQuint
         
         noActivityView.isHidden = true
-//        activityView.isHidden = true
         activityView.editButton.addTarget(self, action: #selector(goToEditLog), for: .touchUpInside)
-        
     }
     
     override func configureLayout() {
@@ -193,7 +192,13 @@ extension RoutineHistoryVC: UICalendarViewDelegate, UICalendarSelectionSingleDat
     }
     
     func dateSelection(_ selection: UICalendarSelectionSingleDate, didSelectDate dateComponents: DateComponents?) {
-        print(dateComponents)
+        if LogRepository.shared.doesLogExists(date: dateComponents?.date ?? Date.now) == true {
+            noActivityView.isHidden = true
+            logModel = LogRepository.shared.fetchLog(date: dateComponents?.date ?? Date.now)
+            activityView.logModel = logModel
+        }else {
+            noActivityView.isHidden = false
+        }
     }
     
 }

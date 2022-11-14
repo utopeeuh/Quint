@@ -129,6 +129,7 @@
 		958E32F72907C92000171AF3 /* IngredientModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 958E32F62907C92000171AF3 /* IngredientModel.swift */; };
 		958E32FB2907DA9C00171AF3 /* Quint.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 958E32F92907DA9C00171AF3 /* Quint.xcdatamodeld */; };
 		958E32FD2907E0E400171AF3 /* JSON+CleanString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 958E32FC2907E0E400171AF3 /* JSON+CleanString.swift */; };
+		9590E3A62921F2F100A2AFC9 /* ReminderNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9590E3A52921F2F100A2AFC9 /* ReminderNotification.swift */; };
 		95935200291B4D7D00CF9A7A /* UIAlertController+RejectedCameraAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 959351FF291B4D7D00CF9A7A /* UIAlertController+RejectedCameraAlert.swift */; };
 		95935204291B71C100CF9A7A /* AboutMySkinUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95935201291B71C000CF9A7A /* AboutMySkinUIView.swift */; };
 		95935205291B71C100CF9A7A /* CustomReminderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95935202291B71C000CF9A7A /* CustomReminderView.swift */; };
@@ -347,6 +348,7 @@
 		958E32F62907C92000171AF3 /* IngredientModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientModel.swift; sourceTree = "<group>"; };
 		958E32FA2907DA9C00171AF3 /* Quint.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Quint.xcdatamodel; sourceTree = "<group>"; };
 		958E32FC2907E0E400171AF3 /* JSON+CleanString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "JSON+CleanString.swift"; sourceTree = "<group>"; };
+		9590E3A52921F2F100A2AFC9 /* ReminderNotification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderNotification.swift; sourceTree = "<group>"; };
 		959351FF291B4D7D00CF9A7A /* UIAlertController+RejectedCameraAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIAlertController+RejectedCameraAlert.swift"; sourceTree = "<group>"; };
 		95935201291B71C000CF9A7A /* AboutMySkinUIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutMySkinUIView.swift; sourceTree = "<group>"; };
 		95935202291B71C000CF9A7A /* CustomReminderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomReminderView.swift; sourceTree = "<group>"; };
@@ -881,6 +883,7 @@
 				9538752028EDE2A1001979A8 /* PinterestLayout.swift */,
 				957F0CE72906410000FFFB06 /* ApiService.swift */,
 				959C2BF328ED341E007B1251 /* Constants.swift */,
+				9590E3A52921F2F100A2AFC9 /* ReminderNotification.swift */,
 			);
 			path = Others;
 			sourceTree = "<group>";
@@ -1448,6 +1451,7 @@
 				95F3834F290FBF4B00FA1815 /* String+LetterCase.swift in Sources */,
 				95CC136728FE67C000D3396A /* AttributedString+Styles.swift in Sources */,
 				9572F0B928F694F90035BCA3 /* SensitivityCell.swift in Sources */,
+				9590E3A62921F2F100A2AFC9 /* ReminderNotification.swift in Sources */,
 				A0D11F992908090B00B4F508 /* CustomLogView.swift in Sources */,
 				95A902DC28F54925007B7F5C /* IngredientSegmentView.swift in Sources */,
 				95436F712913A5CF00B72ED4 /* RoutineCellTrashButton.swift in Sources */,

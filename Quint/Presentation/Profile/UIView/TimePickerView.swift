@@ -8,11 +8,46 @@
 import UIKit
 import SnapKit
 
-class TimePickerView: UIView {
-    
+class TimePickerView: UIView
+{
+    public static let defaultTime: Date = .now
+
+    public let calendar: Calendar = {
+        var calendar = Calendar(identifier: .gregorian)
+        calendar.timeZone = TimeZone(identifier: "UTC")!
+        return calendar
+    }()
+
+    public let referenceDate = Date(timeIntervalSince1970: 0)
+
+    public var onValueChanged: ((Date) -> Void)?
+
     private var setLabel = UILabel()
-    public var timePicker = UIDatePicker()
-    
+
+    public var date: Date { get { return timePicker.date } }
+
+    // time interval since relative to 0
+    // if set time (hour: 2, minute: 0, second: 0)
+    // then return type should be 2 * 60 * 60 = 7200
+    public var timeInterval: TimeInterval { get {
+        timePicker.date.timeIntervalSince(referenceDate)
+    }}
+
+    public var hourComponent: Int { get {
+        return calendar.component(.hour, from: date)
+    }}
+
+    public var minuteComponent: Int { get {
+        return calendar.component(.minute, from: date)
+    }}
+
+    private var timePicker: UIDatePicker = {
+        let picker = UIDatePicker()
+        picker.date = TimePickerView.defaultTime
+        picker.timeZone = TimeZone(identifier: "UTC")
+        return picker
+    }()
+
     override init(frame: CGRect) {
         super.init(frame: frame)
         configureUI()
@@ -31,6 +66,7 @@ class TimePickerView: UIView {
 
         timePicker.isUserInteractionEnabled = true
         timePicker.datePickerMode = .time
+        timePicker.addTarget(self, action: #selector(datePickerChanged(picker:)), for: .valueChanged)
         
     }
         
@@ -51,16 +87,17 @@ class TimePickerView: UIView {
         }
         
     }
-    
-    func changeDefaultTime(time: String) {
-        
-        let formatter = DateFormatter()
-        formatter.timeStyle = .short
-        formatter.dateFormat = "HH:mm"
 
-        let picker = formatter.date(from: time)
-        timePicker.date = picker!
-        
+    @objc func datePickerChanged(picker: UIDatePicker) {
+        onValueChanged?(picker.date)
     }
-    
+
+    public func setTime(hour: Int, minute: Int, second: Int) {
+        let timeInterval = hour * 60 * 60 + minute * 60 + second
+        timePicker.date = referenceDate.advanced(by: TimeInterval(timeInterval))
+    }
+
+    public func setTime(_ date: Date) {
+        timePicker.date = date
+    }
 }

@@ -28,9 +28,6 @@
 		950D428B28FDC9B400657816 /* IngDetailLowerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 950D428A28FDC9B400657816 /* IngDetailLowerView.swift */; };
 		951034C828EFF51F0011AE39 /* UIViewController+DismissKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951034C328EFF51F0011AE39 /* UIViewController+DismissKeyboard.swift */; };
 		951034CB28EFF51F0011AE39 /* UIImageView+DropShadow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951034C628EFF51F0011AE39 /* UIImageView+DropShadow.swift */; };
-		951034D528EFF54C0011AE39 /* (null) in Sources */ = {isa = PBXBuildFile; };
-		951034D828EFF54C0011AE39 /* (null) in Sources */ = {isa = PBXBuildFile; };
-		951034E228EFF8820011AE39 /* (null) in Sources */ = {isa = PBXBuildFile; };
 		951034E328EFF8820011AE39 /* RoutineVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951034DE28EFF8820011AE39 /* RoutineVC.swift */; };
 		9510351728EFFFDB0011AE39 /* Inter-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9510350728EFFFDB0011AE39 /* Inter-Medium.ttf */; };
 		9510351828EFFFDB0011AE39 /* ClashGrotesk-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9510350828EFFFDB0011AE39 /* ClashGrotesk-Bold.otf */; };
@@ -222,6 +219,7 @@
 		A0F560ED28FAA9050091DF7B /* SkinLogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0F560EC28FAA9050091DF7B /* SkinLogView.swift */; };
 		A0F560EF28FAA91E0091DF7B /* SkinNotifView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0F560EE28FAA91E0091DF7B /* SkinNotifView.swift */; };
 		A0F560F128FAA92A0091DF7B /* SkinInsightView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0F560F028FAA92A0091DF7B /* SkinInsightView.swift */; };
+		CF1EAC49BD318420E6DECBA6 /* ReminderNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF1EAC19CF210DF29BDB2614 /* ReminderNotification.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -441,6 +439,7 @@
 		A0F560EC28FAA9050091DF7B /* SkinLogView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkinLogView.swift; sourceTree = "<group>"; };
 		A0F560EE28FAA91E0091DF7B /* SkinNotifView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkinNotifView.swift; sourceTree = "<group>"; };
 		A0F560F028FAA92A0091DF7B /* SkinInsightView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkinInsightView.swift; sourceTree = "<group>"; };
+		CF1EAC19CF210DF29BDB2614 /* ReminderNotification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReminderNotification.swift; sourceTree = "<group>"; };
 		EE3046C9CA3BD59353F70E37 /* Pods-Quint.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Quint.release.xcconfig"; path = "Target Support Files/Pods-Quint/Pods-Quint.release.xcconfig"; sourceTree = "<group>"; };
 		F696CE5A8549B5760A27A501 /* Pods_Quint.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Quint.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -881,6 +880,7 @@
 				9538752028EDE2A1001979A8 /* PinterestLayout.swift */,
 				957F0CE72906410000FFFB06 /* ApiService.swift */,
 				959C2BF328ED341E007B1251 /* Constants.swift */,
+				CF1EAC19CF210DF29BDB2614 /* ReminderNotification.swift */,
 			);
 			path = Others;
 			sourceTree = "<group>";
@@ -1504,7 +1504,6 @@
 				A0F519EB290064CC00623A7F /* StepContainerView.swift in Sources */,
 				A0EF1F0B28FD08100065AB9A /* ResultProblemView.swift in Sources */,
 				956BE5D12914F11400380D71 /* MoodModel.swift in Sources */,
-				951034E228EFF8820011AE39 /* (null) in Sources */,
 				950508592914FC8400FAE957 /* RoutineDetailStepCell.swift in Sources */,
 				955F63A5291AC48E00B2553A /* RoutineDetailProtocol.swift in Sources */,
 				A0F21F4228FD53850072497E /* OnboardingParentView.swift in Sources */,
@@ -1535,7 +1534,6 @@
 				957F0D0B2906573900FFFB06 /* CategoryButton.swift in Sources */,
 				95436F6F29136E6500B72ED4 /* RoutineStepInfo.swift in Sources */,
 				72B6EDC328FFAFA30056B374 /* UVPointView.swift in Sources */,
-				951034D828EFF54C0011AE39 /* (null) in Sources */,
 				95A1E05A28F3F61D00386972 /* DailySkincareTipsView.swift in Sources */,
 				72BF72D928F838B00036C456 /* MoodSliderUIView.swift in Sources */,
 				A0C8A0E32907881B00002D8C /* IngredientListView.swift in Sources */,
@@ -1550,7 +1548,6 @@
 				956A70462915477E004FC262 /* HeaderProfileUIView.swift in Sources */,
 				A0C33EE929102A51002BF2AC /* DatePickerView.swift in Sources */,
 				951EF5C72918A7D000D28513 /* NightRoutineCell.swift in Sources */,
-				951034D528EFF54C0011AE39 /* (null) in Sources */,
 				72B6EDBD28FD11BC0056B374 /* NewStepUIView.swift in Sources */,
 				72BF72D528F6A93C0036C456 /* UIButton+MoveImageTextLeft.swift in Sources */,
 				9593520A291B721F00CF9A7A /* ProfileVC.swift in Sources */,
@@ -1568,6 +1565,7 @@
 				72B6EDBB28FD07A90056B374 /* AddNewStepVC.swift in Sources */,
 				956A703529154437004FC262 /* DropDownUIView.swift in Sources */,
 				95E6D4A42916DB01007BFF6D /* UIScrollView+RemoveSubviews.swift in Sources */,
+				CF1EAC49BD318420E6DECBA6 /* ReminderNotification.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

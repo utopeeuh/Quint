@@ -52,24 +52,29 @@ class TabBarVC: UITabBarController, UITabBarControllerDelegate {
         
         
         // Treatment tab
-        let tabTwo = TreatmentsVC()
+        let tabTwo = UINavigationController(rootViewController: TreatmentsVC())
         let tabTwoBarItem = UITabBarItem(title: "Treatment", image: UIImage(named:"TabBarTreatment"), selectedImage: UIImage(named: "TabBarTreatmentSelected"))
         
         tabTwo.tabBarItem = tabTwoBarItem
         
+        let tabThree = UINavigationController(rootViewController: RoutineHistoryVC())
+        let tabThreeBarItem = UITabBarItem(title: "History", image: UIImage(named:"TabBarHistory"), selectedImage: UIImage(named: "TabBarHistorySelected"))
+        
+        tabThree.tabBarItem = tabThreeBarItem
+        
         // Profile tab
-        let tabFour = ProfileVC()
+        let tabFour = UINavigationController(rootViewController: ProfileVC())
         let tabFourBarItem = UITabBarItem(title: "Profile", image: UIImage(named:"TabBarProfile"), selectedImage: UIImage(named: "TabBarProfileSelected"))
         
         tabFour.tabBarItem = tabFourBarItem
         
-        let tabBars = [tabOne, tabTwo, tabFour]
+        let tabBars = [tabOne, tabTwo, tabThree, tabFour]
         tabBars.forEach { vc in
             vc.tabBarItem.image = vc.tabBarItem.image?.withRenderingMode(.alwaysTemplate)
             vc.tabBarItem.selectedImage = vc.tabBarItem.selectedImage?.withRenderingMode(.alwaysOriginal)
         }
         
-        self.viewControllers = [tabOne, tabTwo, tabFour]
+        self.viewControllers = [tabOne, tabTwo, tabThree, tabFour]
     }
     
     // UITabBarControllerDelegate method

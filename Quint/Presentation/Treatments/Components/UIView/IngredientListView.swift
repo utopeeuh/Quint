@@ -54,7 +54,7 @@ class IngredientListView: UIView {
         // Generate buttons before adding to scrollview
         var topCatButtons: [SmallCategoryButton] = []
         for i in 0..<K.Category.ingredient.count {
-            let newBtn = SmallCategoryButton(categoryId: i+1)
+            let newBtn = SmallCategoryButton(id: i+1)
             newBtn.setText(K.Category.ingredient[i+1])
             newBtn.addTarget(self, action: #selector(selectTopCategory), for: .touchUpInside)
             topCatButtons.append(newBtn)
@@ -64,17 +64,16 @@ class IngredientListView: UIView {
         
         var ingredientButtons: [IngredientButton] = []
         for i in 0..<K.Dummy.ingredient.count {
-            let newBtn = IngredientButton(categoryId: i+1)
+            let newBtn = IngredientButton(id: i+1)
             newBtn.setText(K.Dummy.ingredient[i+1])
             newBtn.addTarget(self, action: #selector(goToIngredientDetail), for: .touchUpInside)
             ingredientButtons.append(newBtn)
         }
         ingredientScrollList.setButtons(ingredientButtons)
         
-        var largeCatButtons: [LargeCategoryCard] = []
+        var largeCatButtons: [LargeEffectButton] = []
         for i in 0..<K.Category.ingredient.count {
-            let newBtn = LargeCategoryCard(categoryId: i+1)
-            newBtn.setText(K.Category.ingredient[i+1])
+            let newBtn = LargeEffectButton(id: i+1)
             newBtn.addTarget(self, action: #selector(goToIngredientDetail), for: .touchUpInside)
             largeCatButtons.append(newBtn)
         }

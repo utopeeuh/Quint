@@ -13,7 +13,6 @@ class HeaderLabel: UILabel{
     override init(frame: CGRect) {
         super.init(frame: frame)
         
-        text = "Recommended products"
         font = .clashGroteskMedium(size: 20)
         textColor = .black
     }

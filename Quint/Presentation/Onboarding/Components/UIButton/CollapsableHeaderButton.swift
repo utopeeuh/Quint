@@ -36,6 +36,7 @@ class CollapsableHeaderButton: UIButton{
         setTitleColor(.black, for: .normal)
         
         self.frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width-40, height: titleLabel!.requiredHeight+28)
+        
         layer.shadowColor = UIColor.black.cgColor
         layer.shadowOpacity = 0
         layer.shadowOffset = CGSize(width: 0, height: titleLabel!.requiredHeight+28)
@@ -60,6 +61,9 @@ class CollapsableHeaderButton: UIButton{
         btnFrame.isUserInteractionEnabled = false
         btnFrame.layer.cornerRadius = self.layer.cornerRadius
         
+        titleLabel!.frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width-140, height: 0)
+        titleLabel?.sizeToFit()
+        
         numberFrame.backgroundColor = K.Color.bgQuint
         numberFrame.layer.cornerRadius = 12
         
@@ -68,6 +72,14 @@ class CollapsableHeaderButton: UIButton{
         numberLbl.textAlignment = .center
         
         chevron = UIImageView(image: UIImage(named: "ChevronDown"))
+        
+        if let superCollapsable = superview as? CollapsableButton{
+            
+            if superCollapsable.descText.text == "" {
+                chevron.alpha = 0
+                
+            }
+        }
         
         btnFrame.addSubview(numberFrame)
         btnFrame.addSubview(numberLbl)

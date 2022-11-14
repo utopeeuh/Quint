@@ -31,7 +31,7 @@ class CollapsableStack: UIView{
                 make.top.equalToSuperview()
             }
             else{
-                make.top.equalTo(buttons.last!.snp.bottom).offset(12)
+                make.top.equalTo(buttons.last!.snp.bottom).offset(14)
             }
         }
         
@@ -62,7 +62,7 @@ class CollapsableStack: UIView{
             if(i != selectedIndex){
                 buttons[i].hideDesc()
                 
-                if(i > selectedIndex){
+                if(i > selectedIndex && collapsable.descText.text != ""){
                     UIView.animate(withDuration: 0.4, animations: { [self] in
                         buttons[i].transform = CGAffineTransform(translationX: 0, y: collapsable.descText.requiredHeight+12)
                     })

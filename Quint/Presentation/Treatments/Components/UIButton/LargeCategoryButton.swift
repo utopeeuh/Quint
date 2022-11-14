@@ -1,34 +1,26 @@
 //
-//  LargeCategoryCard.swift
+//  LargeCategoryButton.swift
 //  Quint
 //
-//  Created by Tb. Daffa Amadeo Zhafrana on 07/10/22.
+//  Created by Tb. Daffa Amadeo Zhafrana on 14/11/22.
 //
 
 import UIKit
 
-class LargeCategoryCard: CategoryButton {
+class LargeCategoryButton: CategoryButton {
 
     var categoryCard: UIView!
-    var imgView: UIImageView!
+    var imgView = UIImageView()
     var title = UILabel()
     var cardStack = UIStackView()
     
-    required init(categoryId: Int) {
-        super.init(categoryId: .zero)
+    required init(id: Int) {
+        super.init(id: .zero)
         
-        self.categoryId = categoryId
-        width = 152
-        height = 164
-        
-        frame = CGRect(x: 0, y: 0, width: width, height: height)
+        self.id = id
         
         layer.cornerRadius = 10
-        
-//        categoryCard = UIView(frame: self.frame)
-//        categoryCard.isUserInteractionEnabled = false
-        
-        imgView = UIImageView(image: K.CategoryImage.ingredient[self.categoryId] as? UIImage)
+                
         title.textColor = K.Color.greenQuint
         title.font = .interMedium(size: 16)
         title.frame = CGRect(x: 0, y: 0, width: 104, height: 0)
@@ -42,6 +34,7 @@ class LargeCategoryCard: CategoryButton {
         cardStack.addArrangedSubview(imgView)
         cardStack.addArrangedSubview(title)
         cardStack.translatesAutoresizingMaskIntoConstraints = false
+        cardStack.isUserInteractionEnabled = false
         cardStack.backgroundColor = .white
         cardStack.alignment = .center
         
@@ -57,9 +50,8 @@ class LargeCategoryCard: CategoryButton {
         }
         
         cardStack.snp.makeConstraints { make in
-            make.left.equalTo(self).offset(24)
-            make.right.equalTo(self).offset(-24)
-            make.centerY.equalTo(self)
+            make.width.equalToSuperview().offset(-32)
+            make.centerY.centerX.equalToSuperview()
             make.height.equalTo(52+title.requiredHeight+16)
         }
     }
@@ -67,11 +59,4 @@ class LargeCategoryCard: CategoryButton {
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
-    override func setText(_ title: String?) {
-        self.title.text = title
-        configureLayout()
-    }
-
-
 }

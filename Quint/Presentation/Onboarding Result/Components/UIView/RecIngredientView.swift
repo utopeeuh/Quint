@@ -80,7 +80,7 @@ class RecIngredientView: UIView {
         var ingredientButtons: [IngredientButton] = []
         
         for i in 0..<ingredientList.count {
-            let newButton = IngredientButton(categoryId: Int(truncating: ingredientList[i].id))
+            let newButton = IngredientButton(id: Int(truncating: ingredientList[i].id))
             newButton.setText(ingredientList[i].name)
             newButton.addTarget(self, action: #selector(goToIngredientDetail), for: .touchUpInside)
             ingredientButtons.append(newButton)
@@ -136,7 +136,7 @@ class RecIngredientView: UIView {
         // set categories
         var skinProblemButton: [SmallCategoryButton] = []
         for i in 0..<effectList.count {
-            let newButton = SmallCategoryButton(categoryId: Int(truncating: effectList[i].id))
+            let newButton = SmallCategoryButton(id: Int(truncating: effectList[i].id))
             newButton.setText(effectList[i].title)
             newButton.addTarget(self, action: #selector(selectSkinProblemCategory), for: .touchUpInside)
             skinProblemButton.append(newButton)

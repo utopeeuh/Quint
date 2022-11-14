@@ -8,14 +8,14 @@
 import UIKit
 
 class CategoryButton: UIButton {
-    var categoryId: Int!
+    var id: Int!
     var width: Int!
     var height: Int!
     var heightProductGuide: Int!
     
-    required init(categoryId: Int) {
+    required init(id: Int) {
         super.init(frame: .zero)
-        self.categoryId = categoryId
+        self.id = id
     }
     
     func setText(_ title: String?) {

@@ -94,6 +94,22 @@ class CollapsableButton: UIView{
         })
     }
     
+    func setNumber(_ i: Int){
+        headerBtn.setNumber(i)
+        
+        headerBtn.snp.updateConstraints { make in
+            make.height.equalTo(headerBtn.titleLabel!.requiredHeight+28)
+        }
+        
+        descView.snp.updateConstraints { make in
+            make.top.equalTo(headerBtn.snp.bottom).offset(14)
+        }
+        
+        self.snp.updateConstraints { make in
+            make.height.equalTo(headerBtn.titleLabel!.requiredHeight+28)
+        }
+    }
+    
     func hideDesc(){
         UIView.animate(withDuration: 0.4, animations: { [self] in
             descView.alpha = 0

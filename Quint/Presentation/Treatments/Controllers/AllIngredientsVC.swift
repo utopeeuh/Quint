@@ -25,7 +25,7 @@ class AllIngredientsVC: UIViewController{
     override func configureComponents() {
         var catButtons: [SmallCategoryButton] = []
         for i in 0..<K.Category.ingredient.count {
-            let button = SmallCategoryButton(categoryId: i+1)
+            let button = SmallCategoryButton(id: i+1)
             button.addTarget(self, action: #selector(selectTopCategory), for: .touchUpInside)
             button.setText(K.Category.ingredient[i+1])
             catButtons.append(button)

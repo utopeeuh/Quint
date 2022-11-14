@@ -106,13 +106,9 @@ struct K{
         
         static let skinProblem = [1: "Acne", 2: "Black heads", 3: "Dark circles", 4: "Dryness", 5: "Dullness", 6: "Oiliness", 7: "Redness", 8: "Uneven texture"]
         
-        static let product = [1: "Toner", 2: "Serum", 3: "Eye Care", 4: "Acne Treatment", 5: "Face Wash", 6: "Face Scrub", 7: "Micellar Water", 8: "Moisturizer", 9: "Sunscreen"]
-        
-        static let productGuide = [1: "Cleanser", 2: "Serum", 3: "Eye Care", 4: "Acne Care", 5: "Toner", 6: "Micellar", 7: "Moisturizer", 8: "Sunscreen"]
+        static let product = [1: "Cleanser", 2: "Toner", 3: "Serum", 4: "Eye Care", 5: "Moisturizer", 6: "Acne Care", 7: "Sunscreen", 8: "Exfoliator", 9: "Micellar"]
 
-        static let productGuideImageName = [1: "cleanser", 2: "serum", 3: "eyeCare", 4: "acneCare", 5: "toner", 6: "micellar", 7: "moisturizer", 8: "sunScreen"]
-
-        static let ingredient = [1: "Anti-acne", 2: "Anti-aging", 3: "Anti-bacterial", 4: "Anti-inflammatory", 5: "Brightening", 6: "Hydrating", 7: "Moisturizing", 8: "pH Balancer", 9: "Soothing", 10: "UV Protection"]
+        static let ingredient = [1: "Anti-acne", 2: "Anti-aging", 3: "Anti-bacterial", 4:  "Brightening", 5: "Hydrating", 6: "Moisturizing", 7: "pH Balancer", 8: "Soothing", 9: "UV Protection"]
         
         static let skincareSteps: [SkinEssential] = [
         
@@ -133,6 +129,8 @@ struct K{
     
     struct CategoryImage{
         static let ingredient = [1: UIImage(named: "AntiAcneCategory"), 2: UIImage(named: "AntiAgingCategory"), 3: UIImage(named: "AntiBacterialCategory"), 4: UIImage(named: "BrighteningCategory"), 5: UIImage(named: "HydratingCategory"), 6: UIImage(named: "MoisturizingCategory"), 7: UIImage(named: "PhBalanceCategory"), 8: UIImage(named: "SoothingCategory"), 9: UIImage(named: "UVCategory")]
+        
+        static let product = [1: UIImage(named: "CleanserGuideIcon"), 2: UIImage(named: "TonerGuideIcon"), 3: UIImage(named: "SerumGuideIcon"), 4: UIImage(named: "EyeCareGuideIcon"), 5: UIImage(named: "MoisturizerGuideIcon"), 6: UIImage(named: "AcneCareGuideIcon"), 7: UIImage(named: "SunscreenGuideIcon"), 8: UIImage(named: "ExfoliatorGuideIcon"), 9: UIImage(named: "MicellarGuideIcon")]
     }
     
     struct Rated{

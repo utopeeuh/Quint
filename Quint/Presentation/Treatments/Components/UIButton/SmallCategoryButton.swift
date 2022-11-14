@@ -10,12 +10,12 @@ import UIKit
 
 class SmallCategoryButton: CategoryButton{
     
-    required init(categoryId: Int) {
-        super.init(categoryId: .zero)
+    required init(id: Int) {
+        super.init(id: .zero)
         
-        self.categoryId = categoryId
+        self.id = id
         width = 130
-        height = 40
+        height = 36
         
         contentEdgeInsets = UIEdgeInsets(top: 8, left: 14, bottom: 8, right: 14)
         

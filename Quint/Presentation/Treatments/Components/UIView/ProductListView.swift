@@ -12,10 +12,13 @@ import Kingfisher
 
 class ProductListView: UIView{
     
+    
     let productCollection = ProductListCollectionView()
-    private var scrollView = HorizontalScrollButtons()
+    private var productEffectScroll = HorizontalScrollButtons()
+    private var usageGuideScroll = HorizontalScrollButtons()
     private var categories = K.Category.product
-    private var topLabel = HeaderLabel()
+    private var recProductsLabel = HeaderLabel()
+    private var usageGuideLabel = HeaderLabel()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -28,49 +31,97 @@ class ProductListView: UIView{
     }
     
     override func configureComponents(){
-        // Generate buttons for top scroll
+        
+        // Fade in collection view
+        productCollection.alpha = 0
+        
+        // Create labels
+        usageGuideLabel.text = "Product usage guides"
+        recProductsLabel.text = "Recommended products"
+        
+        // Generate buttons for filter category scroll and guide scroll
         var catButtons: [SmallCategoryButton] = []
+        var guideButtons: [LargeUsageButton] = []
         for i in 0..<categories.count {
-            let button = SmallCategoryButton(categoryId: i+1)
-            button.addTarget(self, action: #selector(selectTopCategory), for: .touchUpInside)
-            button.setText(categories[i+1])
-            catButtons.append(button)
+            
+            // Generate filter category buttons
+            let catBtn = SmallCategoryButton(id: i+1)
+            catBtn.addTarget(self, action: #selector(selectTopCategory), for: .touchUpInside)
+            catBtn.setText(categories[i+1])
+            catButtons.append(catBtn)
+            
+            // Generate guide buttons
+            let guideButton = LargeUsageButton(id: i+1)
+            guideButton.addTarget(self, action: #selector(guideOnClick), for: .touchUpInside)
+            guideButtons.append(guideButton)
         }
-        scrollView.setButtons(catButtons)
+        
+        productEffectScroll.setButtons(catButtons)
         selectTopCategory(catButtons[0])
+        
+        // Select for the second time fixes layout erros, not sure why
+        selectTopCategory(catButtons[0])
+        
+        usageGuideScroll.setButtons(guideButtons)
     }
     
     override func configureLayout(){
-        addSubview(topLabel)
-        addSubview(scrollView)
+        multipleSubviews(view: usageGuideLabel, usageGuideScroll)
+        addSubview(recProductsLabel)
+        addSubview(productEffectScroll)
         addSubview(productCollection)
         
-        topLabel.snp.makeConstraints { make in
+        usageGuideLabel.snp.makeConstraints { make in
             make.top.equalToSuperview()
             make.width.equalToSuperview().offset(-40)
             make.centerX.equalToSuperview()
         }
         
-        scrollView.snp.makeConstraints { make in
-            make.top.equalTo(topLabel.snp.bottom).offset(16)
+        usageGuideScroll.snp.makeConstraints { make in
+            make.height.equalTo(144)
+            make.top.equalTo(usageGuideLabel.snp.bottom).offset(18)
+            make.width.equalToSuperview()
+        }
+        
+        recProductsLabel.snp.makeConstraints { make in
+            make.top.equalTo(usageGuideScroll.snp.bottom).offset(36)
+            make.width.equalToSuperview().offset(-40)
+            make.centerX.equalToSuperview()
+        }
+        
+        productEffectScroll.snp.makeConstraints { make in
+            make.top.equalTo(recProductsLabel.snp.bottom).offset(16)
             make.height.equalTo(40)
-            make.left.equalToSuperview()
-            make.right.equalToSuperview()
+            make.left.right.equalToSuperview()
         }
         
         productCollection.snp.makeConstraints { make in
-            make.top.equalTo(scrollView.snp.bottom).offset(36)
+            make.top.equalTo(productEffectScroll.snp.bottom).offset(36)
             make.centerX.bottom.equalToSuperview()
             make.width.equalToSuperview().offset(-20)
         }
     }
     
     @objc func selectTopCategory(_ sender: SmallCategoryButton) {
-        for view in scrollView.subviews as [UIView] {
+        for view in productEffectScroll.subviews as [UIView] {
             if let btn = view as? SmallCategoryButton {
                 btn.deselect()
             }
         }
         sender.select()
+        print(sender.id)
     }
+    
+    @objc func guideOnClick(_ sender: LargeUsageButton){
+        let controller = UsageGuideVC()
+        controller.categoryId = sender.id
+        (superview?.next as? UIViewController)?.navigationController?.pushViewController(controller, animated: true)
+    }
+    
+    func fadeIn(){
+        UIView.animate(withDuration: 0.2) {
+            self.productCollection.alpha = 1
+        }
+    }
+    
 }

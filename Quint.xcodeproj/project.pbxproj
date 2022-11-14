@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		1ADCA1863C1BC789C15FCE03 /* Pods_Quint.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F696CE5A8549B5760A27A501 /* Pods_Quint.framework */; };
 		721F0AF3291A0CE8004EDC8B /* Calendar+StartOfMonth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 721F0AF2291A0CE8004EDC8B /* Calendar+StartOfMonth.swift */; };
-		7242F9CC28F12C5A009EB962 /* SmallCategoryButtonGuide.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7242F9CB28F12C5A009EB962 /* SmallCategoryButtonGuide.swift */; };
 		72B6EDBB28FD07A90056B374 /* AddNewStepVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72B6EDBA28FD07A90056B374 /* AddNewStepVC.swift */; };
 		72B6EDBD28FD11BC0056B374 /* NewStepUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72B6EDBC28FD11BC0056B374 /* NewStepUIView.swift */; };
 		72B6EDC328FFAFA30056B374 /* UVPointView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72B6EDC228FFAFA30056B374 /* UVPointView.swift */; };
@@ -48,7 +47,7 @@
 		9510352428EFFFDB0011AE39 /* Inter-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9510351428EFFFDB0011AE39 /* Inter-Black.ttf */; };
 		9510352528EFFFDB0011AE39 /* Inter-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9510351528EFFFDB0011AE39 /* Inter-SemiBold.ttf */; };
 		9510352628EFFFDB0011AE39 /* ClashGrotesk-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9510351628EFFFDB0011AE39 /* ClashGrotesk-Medium.otf */; };
-		9510352B28F007DB0011AE39 /* LargeCategoryCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9510352A28F007DB0011AE39 /* LargeCategoryCard.swift */; };
+		9510352B28F007DB0011AE39 /* LargeEffectButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9510352A28F007DB0011AE39 /* LargeEffectButton.swift */; };
 		951EF5C52918A7C400D28513 /* MorningRoutineCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951EF5C42918A7C400D28513 /* MorningRoutineCell.swift */; };
 		951EF5C72918A7D000D28513 /* NightRoutineCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951EF5C62918A7D000D28513 /* NightRoutineCell.swift */; };
 		951EF5C92918A7D600D28513 /* LogRoutineCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951EF5C82918A7D600D28513 /* LogRoutineCell.swift */; };
@@ -130,6 +129,9 @@
 		958E32FB2907DA9C00171AF3 /* Quint.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 958E32F92907DA9C00171AF3 /* Quint.xcdatamodeld */; };
 		958E32FD2907E0E400171AF3 /* JSON+CleanString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 958E32FC2907E0E400171AF3 /* JSON+CleanString.swift */; };
 		9590E3A62921F2F100A2AFC9 /* ReminderNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9590E3A52921F2F100A2AFC9 /* ReminderNotification.swift */; };
+		9590E3A8292212D200A2AFC9 /* LargeCategoryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9590E3A7292212D200A2AFC9 /* LargeCategoryButton.swift */; };
+		9590E3AA2922158100A2AFC9 /* LargeUsageButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9590E3A92922158100A2AFC9 /* LargeUsageButton.swift */; };
+		9590E3AC29221FA300A2AFC9 /* UsageGuideVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9590E3AB29221FA300A2AFC9 /* UsageGuideVC.swift */; };
 		95935200291B4D7D00CF9A7A /* UIAlertController+RejectedCameraAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 959351FF291B4D7D00CF9A7A /* UIAlertController+RejectedCameraAlert.swift */; };
 		95935204291B71C100CF9A7A /* AboutMySkinUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95935201291B71C000CF9A7A /* AboutMySkinUIView.swift */; };
 		95935205291B71C100CF9A7A /* CustomReminderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95935202291B71C000CF9A7A /* CustomReminderView.swift */; };
@@ -228,7 +230,6 @@
 /* Begin PBXFileReference section */
 		5456D68DA10051CB0B3B10F1 /* Pods-Quint.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Quint.debug.xcconfig"; path = "Target Support Files/Pods-Quint/Pods-Quint.debug.xcconfig"; sourceTree = "<group>"; };
 		721F0AF2291A0CE8004EDC8B /* Calendar+StartOfMonth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Calendar+StartOfMonth.swift"; sourceTree = "<group>"; };
-		7242F9CB28F12C5A009EB962 /* SmallCategoryButtonGuide.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmallCategoryButtonGuide.swift; sourceTree = "<group>"; };
 		7259524328F0249300783907 /* QuintDebug.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = QuintDebug.entitlements; sourceTree = "<group>"; };
 		72B6EDBA28FD07A90056B374 /* AddNewStepVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewStepVC.swift; sourceTree = "<group>"; };
 		72B6EDBC28FD11BC0056B374 /* NewStepUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewStepUIView.swift; sourceTree = "<group>"; };
@@ -266,7 +267,7 @@
 		9510351428EFFFDB0011AE39 /* Inter-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-Black.ttf"; sourceTree = "<group>"; };
 		9510351528EFFFDB0011AE39 /* Inter-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-SemiBold.ttf"; sourceTree = "<group>"; };
 		9510351628EFFFDB0011AE39 /* ClashGrotesk-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ClashGrotesk-Medium.otf"; sourceTree = "<group>"; };
-		9510352A28F007DB0011AE39 /* LargeCategoryCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LargeCategoryCard.swift; sourceTree = "<group>"; };
+		9510352A28F007DB0011AE39 /* LargeEffectButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LargeEffectButton.swift; sourceTree = "<group>"; };
 		951EF5C42918A7C400D28513 /* MorningRoutineCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MorningRoutineCell.swift; sourceTree = "<group>"; };
 		951EF5C62918A7D000D28513 /* NightRoutineCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NightRoutineCell.swift; sourceTree = "<group>"; };
 		951EF5C82918A7D600D28513 /* LogRoutineCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogRoutineCell.swift; sourceTree = "<group>"; };
@@ -349,6 +350,9 @@
 		958E32FA2907DA9C00171AF3 /* Quint.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Quint.xcdatamodel; sourceTree = "<group>"; };
 		958E32FC2907E0E400171AF3 /* JSON+CleanString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "JSON+CleanString.swift"; sourceTree = "<group>"; };
 		9590E3A52921F2F100A2AFC9 /* ReminderNotification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderNotification.swift; sourceTree = "<group>"; };
+		9590E3A7292212D200A2AFC9 /* LargeCategoryButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LargeCategoryButton.swift; sourceTree = "<group>"; };
+		9590E3A92922158100A2AFC9 /* LargeUsageButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LargeUsageButton.swift; sourceTree = "<group>"; };
+		9590E3AB29221FA300A2AFC9 /* UsageGuideVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsageGuideVC.swift; sourceTree = "<group>"; };
 		959351FF291B4D7D00CF9A7A /* UIAlertController+RejectedCameraAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIAlertController+RejectedCameraAlert.swift"; sourceTree = "<group>"; };
 		95935201291B71C000CF9A7A /* AboutMySkinUIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutMySkinUIView.swift; sourceTree = "<group>"; };
 		95935202291B71C000CF9A7A /* CustomReminderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomReminderView.swift; sourceTree = "<group>"; };
@@ -502,6 +506,7 @@
 				9524229028F4326D00361166 /* AllIngredientsVC.swift */,
 				95A902D728F52D46007B7F5C /* IngredientCategoryDetailVC.swift */,
 				9543DA7028F826AA00E37A28 /* ProductDetailVC.swift */,
+				9590E3AB29221FA300A2AFC9 /* UsageGuideVC.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -835,8 +840,9 @@
 				957F0D082906573900FFFB06 /* CategoryButton.swift */,
 				957F0D062906573900FFFB06 /* IngredientButton.swift */,
 				957F0D072906573900FFFB06 /* SmallCategoryButton.swift */,
-				9510352A28F007DB0011AE39 /* LargeCategoryCard.swift */,
-				7242F9CB28F12C5A009EB962 /* SmallCategoryButtonGuide.swift */,
+				9510352A28F007DB0011AE39 /* LargeEffectButton.swift */,
+				9590E3A92922158100A2AFC9 /* LargeUsageButton.swift */,
+				9590E3A7292212D200A2AFC9 /* LargeCategoryButton.swift */,
 			);
 			path = UIButton;
 			sourceTree = "<group>";
@@ -1407,7 +1413,6 @@
 				958E32F52907BCF300171AF3 /* Seeder.swift in Sources */,
 				A03857CE28F81E7200A4B566 /* SkinTypeView.swift in Sources */,
 				95935208291B71D400CF9A7A /* ReminderVC.swift in Sources */,
-				7242F9CC28F12C5A009EB962 /* SmallCategoryButtonGuide.swift in Sources */,
 				9595D37C290A39C700167C41 /* CategoryModel.swift in Sources */,
 				72BF72D128F548DD0036C456 /* DailyLogVC.swift in Sources */,
 				956BE5CF2914F10000380D71 /* MoodSeeder.swift in Sources */,
@@ -1424,6 +1429,7 @@
 				957F0CF42906436200FFFB06 /* UIView+ApplyGradient.swift in Sources */,
 				958254172908FFFD0053AABC /* ProblemSeeder.swift in Sources */,
 				956A703629154437004FC262 /* MonthYearWheelPicker.swift in Sources */,
+				9590E3A8292212D200A2AFC9 /* LargeCategoryButton.swift in Sources */,
 				A0F560E928FAA4E10091DF7B /* SkinConditionView.swift in Sources */,
 				95F4478A28FFED4C00183DD9 /* CollapsableButton.swift in Sources */,
 				95E6D4C02916DEF2007BFF6D /* PhotoConfirmationVC.swift in Sources */,
@@ -1469,6 +1475,7 @@
 				A0C8A0E52907883700002D8C /* TreatmentsVC.swift in Sources */,
 				A0EF1F0928FD08080065AB9A /* ResultTypeView.swift in Sources */,
 				958E32F32907AC8500171AF3 /* DataHelper.swift in Sources */,
+				9590E3AC29221FA300A2AFC9 /* UsageGuideVC.swift in Sources */,
 				957F0CE82906410000FFFB06 /* ApiService.swift in Sources */,
 				958253FF2908F7EF0053AABC /* RoutineModel.swift in Sources */,
 				957F0D0A2906573900FFFB06 /* SmallCategoryButton.swift in Sources */,
@@ -1494,7 +1501,7 @@
 				956A703C29154437004FC262 /* MoodLevelUIView.swift in Sources */,
 				95E6D4C62916DF7E007BFF6D /* EffectsRepository.swift in Sources */,
 				958253F92908D7720053AABC /* ProductModel.swift in Sources */,
-				9510352B28F007DB0011AE39 /* LargeCategoryCard.swift in Sources */,
+				9510352B28F007DB0011AE39 /* LargeEffectButton.swift in Sources */,
 				956A70472915477E004FC262 /* SettingsUIView.swift in Sources */,
 				950D428B28FDC9B400657816 /* IngDetailLowerView.swift in Sources */,
 				9572F0BD28F6AF5A0035BCA3 /* SourceCell.swift in Sources */,
@@ -1502,6 +1509,7 @@
 				95F0DCB7290F8F5900CEEA00 /* OnboardingData.swift in Sources */,
 				951EF5CF29191D7900D28513 /* LogModalProtocol.swift in Sources */,
 				9543DA7828F85A7A00E37A28 /* ProductCategoryLabel.swift in Sources */,
+				9590E3AA2922158100A2AFC9 /* LargeUsageButton.swift in Sources */,
 				9572F0BB28F698F90035BCA3 /* IngredientDetailVC.swift in Sources */,
 				958254152908FFF20053AABC /* SkinTypeSeeder.swift in Sources */,
 				958254092908F9310053AABC /* EffectSeeder.swift in Sources */,

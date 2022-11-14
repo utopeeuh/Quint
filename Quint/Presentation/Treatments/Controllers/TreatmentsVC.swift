@@ -34,6 +34,11 @@ class TreatmentsVC: UIViewController{
         configureUI()
     }
     
+    override func viewDidAppear(_ animated: Bool){
+        // Fade in products
+        productListView.fadeIn()
+    }
+    
     @objc func changeTab(sender: UISegmentedControl) {
         print("Switched tabs")
         
@@ -70,6 +75,7 @@ class TreatmentsVC: UIViewController{
         segmentedControl.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
             make.top.equalTo(view.safeAreaLayoutGuide)
+            make.height.equalTo(37)
             make.width.equalToSuperview().offset(-40)
         }
         

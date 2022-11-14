@@ -9,9 +9,9 @@ import UIKit
 
 class IngredientButton: CategoryButton {
 
-    required init(categoryId: Int) {
-        super.init(categoryId: .zero)
-        self.categoryId = categoryId
+    required init(id: Int) {
+        super.init(id: .zero)
+        self.id = id
         width = 158
         height = 88
         frame = CGRect(x: 0, y: 0, width: width, height: height)

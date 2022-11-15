@@ -19,7 +19,7 @@ class IngredientModel: NSManagedObject{
     @NSManaged var effects: String?
     @NSManaged var goodNormal: NSNumber
     @NSManaged var goodDry: NSNumber
-    @NSManaged var goodCombi: NSNumber
+    @NSManaged var goodCombination: NSNumber
     @NSManaged var goodOily: NSNumber
     @NSManaged var allergen: String?
     @NSManaged var usage: String?

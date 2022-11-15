@@ -171,6 +171,18 @@ struct K{
         static let nothing = 3
         static let happy = 4
         static let joyful = 5
-        
+    }
+    
+    struct SkinType {
+        static let normal = 1
+        static let dry = 2
+        static let oily = 3
+        static let combination = 4
+    }
+    
+    struct RecommendationLevel {
+        static let neutral : NSNumber = 0
+        static let good : NSNumber  = 1
+        static let avoid : NSNumber  = 2
     }
 }

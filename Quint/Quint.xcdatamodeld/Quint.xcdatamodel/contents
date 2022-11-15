@@ -17,7 +17,7 @@
         <attribute name="alt" optional="YES" attributeType="String"/>
         <attribute name="desc" optional="YES" attributeType="String"/>
         <attribute name="effects" optional="YES" attributeType="String"/>
-        <attribute name="goodCombi" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="goodCombination" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="goodDry" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="goodNormal" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="goodOily" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>

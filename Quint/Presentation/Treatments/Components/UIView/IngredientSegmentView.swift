@@ -29,10 +29,10 @@ class IngredientSegmentView: UIView{
     
     override func configureComponents() {
         
-        goodIngCollection.setSource(K.Dummy.ingredient)
+        goodIngCollection.setSource(IngredientsRepository.shared.fetchIngredientList())
         goodIngCollection.setHeader("Good for you")
         
-        notableIngCollection.setSource(K.Dummy.ingredient)
+        notableIngCollection.setSource(IngredientsRepository.shared.fetchIngredientList())
         notableIngCollection.setHeader("Notable ingredients")
         
         otherIngredientLabel.text = "Other ingredients"

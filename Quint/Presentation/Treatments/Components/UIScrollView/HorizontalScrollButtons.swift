@@ -12,8 +12,8 @@ class HorizontalScrollButtons: UIScrollView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         backgroundColor = K.Color.bgQuint
-        contentInset = UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 10)
-        setContentOffset(CGPoint(x: -25, y: 0), animated: false)
+        contentInset = UIEdgeInsets(top: 0, left: 20, bottom: 0, right: 10)
+        setContentOffset(CGPoint(x: -20, y: 0), animated: false)
     }
     
     required init?(coder: NSCoder) {

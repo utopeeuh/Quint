@@ -19,6 +19,8 @@ class IngredientListView: UIView {
     var categoryLabel = HeaderLabel()
     var largeCategoryScroll = HorizontalScrollButtons()
     
+    private var effectList : [EffectModel] = []
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         configureUI()
@@ -51,29 +53,28 @@ class IngredientListView: UIView {
         headerStack.addArrangedSubview(headerLabel)
         headerStack.addArrangedSubview(seeMoreBtn)
         
+        
+        // fetch and sort effects
+        effectList = EffectsRepository.shared.fetchEffectList()
+        
         // Generate buttons before adding to scrollview
         var topCatButtons: [SmallCategoryButton] = []
-        for i in 0..<K.Category.ingredient.count {
-            let newBtn = SmallCategoryButton(id: i+1)
-            newBtn.setText(K.Category.ingredient[i+1])
+        for i in 0..<effectList.count {
+            let newBtn = SmallCategoryButton(id: Int(truncating: effectList[i].id))
+            newBtn.setText(effectList[i].title)
             newBtn.addTarget(self, action: #selector(selectTopCategory), for: .touchUpInside)
             topCatButtons.append(newBtn)
         }
         topScrollCategories.setButtons(topCatButtons)
         selectTopCategory(topCatButtons[0])
+        selectTopCategory(topCatButtons[0])
         
-        var ingredientButtons: [IngredientButton] = []
-        for i in 0..<K.Dummy.ingredient.count {
-            let newBtn = IngredientButton(id: i+1)
-            newBtn.setText(K.Dummy.ingredient[i+1])
-            newBtn.addTarget(self, action: #selector(goToIngredientDetail), for: .touchUpInside)
-            ingredientButtons.append(newBtn)
-        }
-        ingredientScrollList.setButtons(ingredientButtons)
+        refreshIngredients(effect: effectList.first?.title ?? "")
         
         var largeCatButtons: [LargeEffectButton] = []
-        for i in 0..<K.Category.ingredient.count {
-            let newBtn = LargeEffectButton(id: i+1)
+        for i in 0..<effectList.count {
+            let newBtn = LargeEffectButton(id: Int(truncating: effectList[i].id))
+            newBtn.effect = effectList[i]
             newBtn.addTarget(self, action: #selector(goToIngredientDetail), for: .touchUpInside)
             largeCatButtons.append(newBtn)
         }
@@ -90,14 +91,14 @@ class IngredientListView: UIView {
         addSubview(categoryLabel)
         addSubview(largeCategoryScroll)
         
-        searchBar.snp.makeConstraints { make in
-            make.top.equalToSuperview().offset(-8)
-            make.width.equalToSuperview().offset(-28)
-            make.centerX.equalToSuperview()
-        }
-        
+//        searchBar.snp.makeConstraints { make in
+//            make.top.equalToSuperview().offset(-8)
+//            make.width.equalToSuperview().offset(-28)
+//            make.centerX.equalToSuperview()
+//        }
+//
         headerStack.snp.makeConstraints { make in
-            make.top.equalTo(searchBar.snp.bottom).offset(16)
+            make.top.equalToSuperview()
             make.width.equalToSuperview().offset(-40)
             make.centerX.equalToSuperview()
             make.height.equalTo(headerLabel.font.pointSize+2)
@@ -136,14 +137,33 @@ class IngredientListView: UIView {
             }
         }
         sender.select()
+        refreshIngredients(effect: effectList[sender.id-1].title ?? "")
+    }
+    
+    func refreshIngredients(effect: String){
+        var ingredientButtons: [IngredientButton] = []
+        let ingredientList = IngredientsRepository.shared.fetchIngredientList(effect: effect)
+        for i in 0..<ingredientList.count {
+            let newBtn = IngredientButton(id: Int(truncating: ingredientList[i].id))
+            newBtn.setText(ingredientList[i].name)
+            newBtn.addTarget(self, action: #selector(goToIngredientDetail), for: .touchUpInside)
+            ingredientButtons.append(newBtn)
+        }
+        
+        ingredientScrollList.setButtons(ingredientButtons)
+        ingredientScrollList.setContentOffset(CGPoint(x: -20, y: 0), animated: true)
     }
     
     @objc func seeMoreOnClick(_ sender: UIButton){
-        
+        let controller = AllIngredientsVC()
+        controller.effectList = effectList
+        (superview?.next as? UIViewController)?.navigationController?.pushViewController(controller, animated: true)
     }
     
     @objc func goToIngredientDetail (_ sender: IngredientButton){
-        
+        let controller = IngredientCategoryDetailVC()
+        controller.effect = effectList[sender.id-1]
+        (superview?.next as? UIViewController)?.navigationController?.pushViewController(controller, animated: true)
     }
 
 }

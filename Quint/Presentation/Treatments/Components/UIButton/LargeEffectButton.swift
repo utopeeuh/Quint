@@ -8,17 +8,23 @@
 import UIKit
 
 class LargeEffectButton: LargeCategoryButton {
+    
+    var effect: EffectModel? {
+        didSet{
+            imgView.image = K.CategoryImage.ingredient[Int(truncating: effect?.id ?? 1)] as? UIImage
+            title.text = effect?.title
+            configureLayout()
+        }
+    }
 
     required init(id: Int) {
         super.init(id: id)
-        imgView.image = K.CategoryImage.ingredient[id] as? UIImage
-        title.text = K.Category.ingredient[id]
+        
         width = 152
         height = 164
         frame = CGRect(x: 0, y: 0, width: width, height: height)
-        configureLayout()
     }
-
+    
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }

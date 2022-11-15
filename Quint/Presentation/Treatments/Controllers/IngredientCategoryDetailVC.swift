@@ -11,11 +11,15 @@ import SnapKit
 
 class IngredientCategoryDetailVC: UIViewController{
     
-    var catId: Int!
+    var effect: EffectModel?
+    
+    private let viewTitle = UILabel()
+    private let backBtn = UIButton(type: .custom)
     
     private var catImageView: UIImageView!
     private var catNameLabel = UILabel()
     private var catDescLabel = UILabel()
+    private var ingredientList : [IngredientModel] = []
     private var ingredientCollection = IngredientListCollectionView()
     private var bottomView = UIView()
     
@@ -24,36 +28,53 @@ class IngredientCategoryDetailVC: UIViewController{
         self.tabBarController?.tabBar.isHidden = true
         view.backgroundColor = K.Color.whiteQuint
         
-        // dummy category ID
-        catId = 1
+        ingredientList = IngredientsRepository.shared.fetchIngredientList(effect: effect?.title ?? "")
         
         configureUI()
     }
     
     override func configureComponents() {
-        catImageView = UIImageView(image: K.CategoryImage.ingredient[catId] as? UIImage)
         
-        catNameLabel.text = K.Category.ingredient[catId]
+        viewTitle.font = .interMedium(size: 16)
+        viewTitle.text = (effect?.title ?? "Error") + " ingredients"
+
+        backBtn.setImage(UIImage(named: "arrow_back"), for: .normal)
+        backBtn.setTitle("", for: .normal)
+        backBtn.sizeToFit()
+        backBtn.addTarget(self, action: #selector(backOnClick), for: .touchUpInside)
+        
+        catImageView = UIImageView(image: K.CategoryImage.ingredient[Int(truncating: effect?.id ?? 1)] as? UIImage)
+        
+        catNameLabel.text = effect?.title
         catNameLabel.font = .clashGroteskMedium(size: 30)
         
-        catDescLabel.text = "Prevent and fight against acne by preventing and unclogging clogged pores"
+        catDescLabel.text = effect?.desc
         catDescLabel.font = .interMedium(size: 16)
         catDescLabel.frame = CGRect(x: 0, y: 0, width: view.frame.width-40, height: catDescLabel.requiredHeight)
         catDescLabel.numberOfLines = 0
         catDescLabel.lineBreakMode = .byWordWrapping
         
+        ingredientCollection.setSource(ingredientList)
         bottomView.backgroundColor = K.Color.bgQuint
         bottomView.addSubview(ingredientCollection)
     }
     
     override func configureLayout() {
-        view.addSubview(catImageView)
-        view.addSubview(catNameLabel)
-        view.addSubview(catDescLabel)
-        view.addSubview(bottomView)
+        view.multipleSubviews(view: backBtn, viewTitle, catImageView, catNameLabel, catDescLabel, bottomView)
+        
+        backBtn.snp.makeConstraints { make in
+            make.left.equalToSuperview().offset(20)
+            make.top.equalTo(view.safeAreaLayoutGuide).offset(11)
+            make.size.equalTo(24)
+        }
+        
+        viewTitle.snp.makeConstraints { make in
+            make.centerY.equalTo(backBtn)
+            make.centerX.equalToSuperview()
+        }
         
         catImageView.snp.makeConstraints { make in
-            make.top.equalTo(view.safeAreaLayoutGuide)
+            make.top.equalTo(viewTitle.snp.bottom).offset(37)
             make.height.width.equalTo(52)
             make.left.equalTo(view.safeAreaLayoutGuide).offset(20)
         }
@@ -82,5 +103,9 @@ class IngredientCategoryDetailVC: UIViewController{
             make.top.equalTo(catDescLabel.snp.bottom).offset(28)
             make.left.right.bottom.equalToSuperview()
         }
+    }
+    
+    @objc func backOnClick(){
+        navigationController?.popViewController(animated: true)
     }
 }

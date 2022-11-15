@@ -35,7 +35,7 @@ class IngredientSeeder: Seeder{
             newIngredient.effects = subJson["Effects"].cleanString()
             newIngredient.goodNormal = goodForValue(subJson["GoodNormal"])
             newIngredient.goodDry = goodForValue(subJson["GoodDry"])
-            newIngredient.goodCombi = goodForValue(subJson["GoodCombi"])
+            newIngredient.goodCombination = goodForValue(subJson["GoodCombination"])
             newIngredient.goodOily = goodForValue(subJson["GoodOily"])
             newIngredient.allergen = subJson["Allergens"].cleanString()
             newIngredient.usage = subJson["Usage"].cleanString()
@@ -51,17 +51,14 @@ class IngredientSeeder: Seeder{
         }
     }
     
-    let NEUTRAL:NSNumber = 0
-    let GOOD:NSNumber  = 1
-    let AVOID:NSNumber  = 2
-    
     func goodForValue(_ textVal: JSON)->NSNumber{
         let text = textVal.cleanString()
-        switch(text){
-        case "Good": return GOOD
-        case "Avoid": return AVOID
-        default:  return NEUTRAL
-        }
+        
+        let valueDict = [ "Good" : K.RecommendationLevel.good,
+                          "Neutral" : K.RecommendationLevel.neutral,
+                          "Avoid" : K.RecommendationLevel.avoid
+                        ]
+        return (valueDict[text] ?? K.RecommendationLevel.avoid) as NSNumber
     }
 //    
 //    func fetch(){

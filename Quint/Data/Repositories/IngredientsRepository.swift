@@ -11,6 +11,7 @@ import CoreData
 
 protocol IngredientsRepositoryDelegate{
     func fetchIngredientList(effect: String) -> [IngredientModel]
+    func fetchIngredientList() -> [IngredientModel]
 }
 
 class IngredientsRepository: IngredientsRepositoryDelegate{
@@ -38,6 +39,36 @@ class IngredientsRepository: IngredientsRepositoryDelegate{
         }
         catch{
             print("fetch failed")
+        }
+        
+        return ingredientList
+    }
+    
+    func fetchIngredientList() -> [IngredientModel]{
+        var ingredientList: [IngredientModel] = []
+        
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let context: NSManagedObjectContext = appDelegate.persistentContainer.viewContext
+        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Ingredients")
+        
+        let currUser = UserRepository.shared.fetchUser()
+        
+        let skinTypesGoodFor = [K.SkinType.normal : "goodNormal",
+                                K.SkinType.dry: "goodDry",
+                                K.SkinType.oily: "goodOily",
+                                K.SkinType.combination: "goodCombination"]
+        
+        let goodForPredicate = NSPredicate(format: "\(skinTypesGoodFor[Int(truncating: currUser.skinTypeId)]!) != \(K.RecommendationLevel.avoid)")
+        
+        request.predicate = goodForPredicate
+        
+        do{
+            if let results = try context.fetch(request) as? [IngredientModel] {
+                ingredientList = results
+            }
+        }
+        catch{
+            print("Fetch ingredient list failed")
         }
         
         return ingredientList

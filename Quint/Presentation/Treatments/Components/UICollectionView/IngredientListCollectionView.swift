@@ -9,8 +9,8 @@ import UIKit
 
 class IngredientListCollectionView: UIView {
 
-    var feedCollection: UICollectionView!
-    var source = K.Dummy.ingredient
+    private var feedCollection: UICollectionView!
+    private var source : [IngredientModel] = []
     
     override init(frame: CGRect){
         super.init(frame: frame)
@@ -41,27 +41,28 @@ class IngredientListCollectionView: UIView {
         }
     }
     
-    func setSource(_ source: [Int: String]){
+    func setSource(_ source: [IngredientModel]){
         self.source = source
-        self.feedCollection.reloadData()
+        feedCollection.reloadData()
+        feedCollection.setContentOffset(CGPoint(x: 0.0, y: 0.0), animated: true)
     }
     
     func getCount() -> Int{
-        return source.count*3
+        return source.count
     }
 }
 
 extension IngredientListCollectionView : UICollectionViewDataSource , UICollectionViewDelegate  {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return source.count*3
+        return source.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "IngredientListCell", for: indexPath) as! IngredientListCell
 
-        cell.nameLabel.text = source[2]!
+        cell.nameLabel.text = source[indexPath.row].name
         return cell
     }
 }

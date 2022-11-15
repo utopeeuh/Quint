@@ -30,6 +30,8 @@ class TreatmentsVC: UIViewController{
         zero = CGAffineTransform(translationX: 0.0, y: 0.0)
         moveLeft = CGAffineTransform(translationX: -(self.view.bounds.width * 1), y: 0.0)
         moveRight = CGAffineTransform(translationX: (self.view.bounds.width * 1), y: 0.0)
+        
+        navigationController?.isNavigationBarHidden = true
 
         configureUI()
     }
@@ -74,7 +76,7 @@ class TreatmentsVC: UIViewController{
         
         segmentedControl.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
-            make.top.equalTo(view.safeAreaLayoutGuide)
+            make.top.equalTo(view.safeAreaLayoutGuide).offset(24)
             make.height.equalTo(37)
             make.width.equalToSuperview().offset(-40)
         }

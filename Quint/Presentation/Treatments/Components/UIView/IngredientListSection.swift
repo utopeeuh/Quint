@@ -27,7 +27,7 @@ class IngredientListSection: UIView{
         sectionHeader.text = text
     }
     
-    func setSource(_ source: [Int: String]){
+    func setSource(_ source: [IngredientModel]){
         ingredientCollection.setSource(source)
     }
     
@@ -37,7 +37,6 @@ class IngredientListSection: UIView{
     
     override func configureComponents(){
         backgroundColor = K.Color.bgQuint
-        ingredientCollection.feedCollection.isScrollEnabled = false
     }
     
     override func configureLayout(){

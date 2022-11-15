@@ -273,6 +273,7 @@ extension RoutineVC: UIImagePickerControllerDelegate & UINavigationControllerDel
     
     func didTapConfirmButton() {
         let controller = DailyLogVC()
+        controller.logDate = Date.now
         controller.delegate = self
         controller.faceImage = logFaceImage!
         controller.modalPresentationStyle = .fullScreen

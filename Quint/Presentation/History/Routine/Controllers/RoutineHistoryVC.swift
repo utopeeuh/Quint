@@ -12,7 +12,6 @@ import CoreData
 @available(iOS 16.0, *)
 class RoutineHistoryVC: UIViewController {
     
-    private var detailSection = UIView()
     private var viewBlanket = UIView()
     private var calendarView = UICalendarView()
     private var expandButton = UIButton()
@@ -20,6 +19,9 @@ class RoutineHistoryVC: UIViewController {
     private var noActivityView = NoActivityView()
     private var activityView = ActivityView()
     var logModel: LogModel?
+    var selectedDate: Date?
+    
+    var btnTes = UIButton()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,21 +33,23 @@ class RoutineHistoryVC: UIViewController {
         view.backgroundColor = K.Color.bgQuint
         
         viewBlanket.backgroundColor = K.Color.bgQuint
-        detailSection.isUserInteractionEnabled = true
-        detailSection.backgroundColor = K.Color.bgQuint
         
         calendarView.delegate = self
         calendarView.locale = .current
         
         let gregorianCalendar = Calendar(identifier: .gregorian)
         calendarView.calendar = gregorianCalendar
-
+        
         let selection = UICalendarSelectionSingleDate(delegate: self)
+        selection.setSelected(Calendar.current.dateComponents([.year, .month, .day], from: Date.now), animated: false)
+        selectedDate = Date.now
+        
         calendarView.selectionBehavior = selection
-
         calendarView.tintColor = K.Color.greenQuint
         calendarView.fontDesign = .rounded
         calendarView.backgroundColor = K.Color.whiteQuint
+        
+        refreshLogData(date: selection.selectedDate!.date!)
         
         expandButton.setImage(UIImage(named: "arrow_down_icon"), for: .normal)
         expandButton.sizeToFit()
@@ -71,8 +75,10 @@ class RoutineHistoryVC: UIViewController {
         scrollView.showsHorizontalScrollIndicator = false
         scrollView.backgroundColor = K.Color.bgQuint
         
-        noActivityView.isHidden = true
-        activityView.editButton.addTarget(self, action: #selector(goToEditLog), for: .touchUpInside)
+//        noActivityView.isHidden = false
+//        activityView.isHidden = true
+        activityView.editButton.addTarget(self, action: #selector(goToDailyLog), for: .touchUpInside)
+        noActivityView.logButton.addTarget(self, action: #selector(goToDailyLog), for: .touchUpInside)
     }
     
     override func configureLayout() {
@@ -82,10 +88,8 @@ class RoutineHistoryVC: UIViewController {
                                     scrollView,
                                     expandButton)
         
-        scrollView.addSubview(detailSection)
-        
-        detailSection.multipleSubviews(view: noActivityView,
-                                             activityView)
+        scrollView.addSubview(noActivityView)
+        scrollView.addSubview(activityView)
         
         calendarView.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
@@ -117,12 +121,14 @@ class RoutineHistoryVC: UIViewController {
             make.centerX.equalTo(scrollView)
             make.top.equalTo(scrollView)
             make.width.equalTo(scrollView)
+            make.height.equalTo(scrollView)
         }
         
         activityView.snp.makeConstraints { make in
             make.centerX.equalTo(scrollView)
             make.top.equalTo(scrollView)
             make.width.equalTo(scrollView)
+            make.height.equalTo(scrollView)
         }
         
     }
@@ -135,9 +141,15 @@ class RoutineHistoryVC: UIViewController {
         collapseCalendar()
     }
 
-    @objc func goToEditLog() {
-        let controller = AddNewStepVC()
-        self.navigationController?.pushViewController(controller, animated: true)
+    @objc func goToDailyLog() {
+        if LogRepository.shared.doesLogExists(date: selectedDate ?? Date.now) == false {
+            LogRepository.shared.createLog(date: selectedDate ?? Date.now)
+        }
+        
+        let controller = DailyLogVC()
+        controller.logDate = selectedDate
+        navigationController?.pushViewController(controller, animated: true)
+        navigationController?.navigationBar.isHidden = true
     }
 
     func expandCalendar(){
@@ -192,13 +204,39 @@ extension RoutineHistoryVC: UICalendarViewDelegate, UICalendarSelectionSingleDat
     }
     
     func dateSelection(_ selection: UICalendarSelectionSingleDate, didSelectDate dateComponents: DateComponents?) {
-        if LogRepository.shared.doesLogExists(date: dateComponents?.date ?? Date.now) == true {
+        refreshLogData(date: selection.selectedDate!.date!)
+    }
+    
+    func refreshLogData(date: Date){
+        
+        if LogRepository.shared.doesLogExists(date: date) {
             noActivityView.isHidden = true
-            logModel = LogRepository.shared.fetchLog(date: dateComponents?.date ?? Date.now)
-            activityView.logModel = logModel
+            activityView.isHidden = false
+            
+            logModel = LogRepository.shared.fetchLog(date: date)
+            activityView.refreshData(logModel: logModel!)
+            selectedDate = date
         }else {
             noActivityView.isHidden = false
+            activityView.isHidden = true
         }
     }
+    
+}
+
+@available(iOS 16.0, *)
+extension RoutineHistoryVC: RoutineDetailDelegate {
+    func didTapFinish(time: K.RoutineTime) {
+        return
+    }
+    
+    func backFromLog(didCreate: Bool) {
+        refreshLogData(date: selectedDate!)
+        if didCreate {
+            noActivityView.isHidden = true
+            activityView.isHidden = false
+        }
+    }
+    
     
 }

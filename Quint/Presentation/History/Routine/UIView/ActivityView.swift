@@ -8,6 +8,7 @@
 import UIKit
 import SnapKit
 
+@available(iOS 16.0, *)
 class ActivityView: CustomLogView {
     
     private var dateLabel = UILabel()
@@ -62,37 +63,20 @@ class ActivityView: CustomLogView {
         
         morningCell.setImage(UIImage(named: "morning_icon"))
         morningCell.setTitle("Morning", K.Color.greyQuint)
-        if logModel?.isDayDone == true {
-            morningCell.setDesc("Done", K.Color.blackQuint)
-        }else {
-            morningCell.setDesc("Not yet", K.Color.greyQuint)
-        }
-        
-        
+
         nightCell.setImage(UIImage(named: "night_icon"))
         nightCell.setBackground(K.Color.disableBgBtnQuint)
         nightCell.setTitle("Night", K.Color.greyQuint)
-        if logModel?.isDayDone == true {
-            nightCell.setDesc("Done", K.Color.blackQuint)
-        }else {
-            nightCell.setDesc("Not yet", K.Color.greyQuint)
-        }
         
         sleepCell.setImage(UIImage(named: "sleep_icon"))
         sleepCell.setTitle("Sleep time", K.Color.greyQuint)
-        sleepCell.setDesc("\(logModel?.sleep)", K.Color.blackQuint)
-        
-        moodCell.setImage(UIImage(named: "mood_level_icon"))
+       
         moodCell.setTitle("Mood level", K.Color.greyQuint)
-        moodCell.setDesc("\(logModel?.moodId)", K.Color.blackQuint)
         
-        activityLevelCell.setImage(UIImage(named: "activity_level_icon"))
         activityLevelCell.setTitle("Activity level", K.Color.greyQuint)
-        activityLevelCell.setDesc("\(logModel?.activityLevel)", K.Color.blackQuint)
         
-        skinCondCell.setImage(UIImage(named: "skin_cond_icon"))
         skinCondCell.setTitle("Skin condition", K.Color.greyQuint)
-        skinCondCell.setDesc("\(logModel?.isBetter)", K.Color.blackQuint)
+        
         
     }
         
@@ -119,7 +103,7 @@ class ActivityView: CustomLogView {
             make.top.equalTo(routineLabel.snp.bottom).offset(20)
             make.leading.equalTo(20)
             make.width.equalTo(171)
-            make.height.equalTo(76)
+            make.height.equalTo(90)
         }
         
         nightCell.snp.makeConstraints { make in
@@ -163,6 +147,69 @@ class ActivityView: CustomLogView {
             make.width.equalTo(81)
             make.height.equalTo(28)
         }
+        
+    }
+    
+    func refreshData(logModel: LogModel){
+        self.logModel = logModel
+        
+        sleepCell.setDesc("\(String(describing: logModel.sleep)) hours", K.Color.blackQuint)
+        
+        if logModel.isDayDone == true {
+            morningCell.setDesc("Done", K.Color.blackQuint)
+        }else {
+            morningCell.setDesc("Not yet", K.Color.greyQuint)
+        }
+        
+        if logModel.isNightDone == true {
+            nightCell.setDesc("Done", K.Color.blackQuint)
+        }else {
+            nightCell.setDesc("Not yet", K.Color.greyQuint)
+        }
+        
+        switch logModel.moodId {
+            case 1:
+                moodCell.setImage(UIImage(named: "stressedEmoji"))
+                moodCell.setDesc("Stressed", K.Color.blackQuint)
+            case 2:
+                moodCell.setImage(UIImage(named: "sadEmoji"))
+                moodCell.setDesc("Sad", K.Color.blackQuint)
+            case 3:
+                moodCell.setImage(UIImage(named: "neutralEmoji"))
+                moodCell.setDesc("Nothing special", K.Color.blackQuint)
+            case 4:
+                moodCell.setImage(UIImage(named: "happyEmoji"))
+                moodCell.setDesc("Happy", K.Color.blackQuint)
+            case 5:
+                moodCell.setImage(UIImage(named: "joyfulEmoji"))
+                moodCell.setDesc("Joyful", K.Color.blackQuint)
+            default:
+                print("error")
+        }
+        
+        switch logModel.activityLevel {
+            case 1:
+                activityLevelCell.setImage(UIImage(named: "sedentaryIcon"))
+                activityLevelCell.setDesc("Sedentary", K.Color.blackQuint)
+            case 2:
+                activityLevelCell.setImage(UIImage(named: "activeIcon"))
+                activityLevelCell.setDesc("Active", K.Color.blackQuint)
+            case 3:
+                activityLevelCell.setImage(UIImage(named: "veryActiveIcon"))
+                activityLevelCell.setDesc("Very active", K.Color.blackQuint)
+            default:
+                print("error")
+        }
+        
+        if logModel.isBetter == true {
+            skinCondCell.setImage(UIImage(named: "skin_cond_icon"))
+            skinCondCell.setDesc("Better", K.Color.blackQuint)
+        }else {
+            skinCondCell.setImage(UIImage(named: "worsenIcon"))
+            skinCondCell.setDesc("Worsen", K.Color.blackQuint)
+        }
+        
+        
         
     }
     

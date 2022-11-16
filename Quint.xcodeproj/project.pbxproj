@@ -166,6 +166,7 @@
 		95CC136528FE4BDC00D3396A /* UITextView+RequiredHeight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CC136428FE4BDC00D3396A /* UITextView+RequiredHeight.swift */; };
 		95CC136728FE67C000D3396A /* AttributedString+Styles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CC136628FE67C000D3396A /* AttributedString+Styles.swift */; };
 		95CED62B291DFAC200E0AD98 /* UIApplication+TopVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CED62A291DFAC200E0AD98 /* UIApplication+TopVC.swift */; };
+		95DC5F372925324A006ADDA1 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 95DC5F362925324A006ADDA1 /* GoogleService-Info.plist */; };
 		95E6D4A42916DB01007BFF6D /* UIScrollView+RemoveSubviews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95233BDD28EF3F3E00A4470E /* UIScrollView+RemoveSubviews.swift */; };
 		95E6D4BF2916DEF2007BFF6D /* OnboardingQuizVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E6D4BD2916DEF2007BFF6D /* OnboardingQuizVC.swift */; };
 		95E6D4C02916DEF2007BFF6D /* PhotoConfirmationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E6D4BE2916DEF2007BFF6D /* PhotoConfirmationVC.swift */; };
@@ -388,6 +389,7 @@
 		95CC136428FE4BDC00D3396A /* UITextView+RequiredHeight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextView+RequiredHeight.swift"; sourceTree = "<group>"; };
 		95CC136628FE67C000D3396A /* AttributedString+Styles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AttributedString+Styles.swift"; sourceTree = "<group>"; };
 		95CED62A291DFAC200E0AD98 /* UIApplication+TopVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+TopVC.swift"; sourceTree = "<group>"; };
+		95DC5F362925324A006ADDA1 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		95E6D4BD2916DEF2007BFF6D /* OnboardingQuizVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingQuizVC.swift; sourceTree = "<group>"; };
 		95E6D4BE2916DEF2007BFF6D /* PhotoConfirmationVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoConfirmationVC.swift; sourceTree = "<group>"; };
 		95E6D4C12916DF62007BFF6D /* ProductsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsRepository.swift; sourceTree = "<group>"; };
@@ -1088,6 +1090,7 @@
 				95EB50EE28EA821600412176 /* Assets.xcassets */,
 				95EB50F028EA821600412176 /* LaunchScreen.storyboard */,
 				95EB50F328EA821600412176 /* Info.plist */,
+				95DC5F362925324A006ADDA1 /* GoogleService-Info.plist */,
 				958E32F92907DA9C00171AF3 /* Quint.xcdatamodeld */,
 				95EB50F928EA82D700412176 /* Podfile */,
 			);
@@ -1330,6 +1333,7 @@
 				9595D389290A522300167C41 /* ProblemJSON.json in Resources */,
 				9510352028EFFFDB0011AE39 /* Inter-Regular.ttf in Resources */,
 				95EB50FA28EA82D700412176 /* Podfile in Resources */,
+				95DC5F372925324A006ADDA1 /* GoogleService-Info.plist in Resources */,
 				9510352528EFFFDB0011AE39 /* Inter-SemiBold.ttf in Resources */,
 				9510351928EFFFDB0011AE39 /* ClashGrotesk-Regular.otf in Resources */,
 				9595D38C290A522300167C41 /* TipJSON.json in Resources */,

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>200000747636-33mrgu25if9bi0lpjlpk6iti97cdddmv.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.200000747636-33mrgu25if9bi0lpjlpk6iti97cdddmv</string>
+	<key>API_KEY</key>
+	<string>AIzaSyAbnqj5-ZhWM8Fg4PXgoC_njuTt_EqR3fc</string>
+	<key>GCM_SENDER_ID</key>
+	<string>200000747636</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.vendly.quint</string>
+	<key>PROJECT_ID</key>
+	<string>quint-macro</string>
+	<key>STORAGE_BUCKET</key>
+	<string>quint-macro.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:200000747636:ios:db2c732318650898eff921</string>
+</dict>
+</plist>

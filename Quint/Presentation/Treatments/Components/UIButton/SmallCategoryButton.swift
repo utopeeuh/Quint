@@ -37,6 +37,12 @@ class SmallCategoryButton: CategoryButton{
         setTitleColor(K.Color.greenQuint, for: .normal)
         titleLabel?.font = .interMedium(size: 13)
         sizeToFit()
+        
+        self.layer.sublayers?.removeFirst()
+        applyGradient(colours: [.white, .white], locations: [1.0, 0.0], radius: 10)
+        setTitleColor(K.Color.greenQuint, for: .normal)
+        titleLabel?.font = .interMedium(size: 13)
+        sizeToFit()
     }
     
     func select(){

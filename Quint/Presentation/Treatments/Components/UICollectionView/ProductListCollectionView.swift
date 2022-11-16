@@ -11,9 +11,13 @@ class ProductListCollectionView: UIView {
 
     var feedCollection: UICollectionView!
     
+    var source : [ProductModel] = []
+    
     var photos = [Photo]()
     
-    var headers = [String]()
+    var height : CGFloat = 0
+    private var colOneHeight : CGFloat = 0
+    private var colTwoHeight : CGFloat = 0
     
     override init(frame: CGRect){
         super.init(frame: frame)
@@ -37,6 +41,7 @@ class ProductListCollectionView: UIView {
         feedCollection.backgroundColor = K.Color.bgQuint
         feedCollection.dataSource = self
         feedCollection.showsVerticalScrollIndicator = false
+        feedCollection.isScrollEnabled = false
         feedCollection.toggleActivityIndicator()
         
         self.addSubview(feedCollection)
@@ -60,32 +65,45 @@ class ProductListCollectionView: UIView {
             }
         }
     }
+    
+    func setSource(_ source: [ProductModel], completion: @escaping () -> () = {}){
+    
+        height = 0
+        colOneHeight = 0
+        colTwoHeight = 0
+        
+        self.source = source
+        
+        self.feedCollection.reloadData()
+        
+        let layout = PinterestLayout()
+        layout.delegate = self
+        self.feedCollection.collectionViewLayout = layout
+        
+        completion()
+    }
 }
 
 extension ProductListCollectionView : UICollectionViewDataSource , UICollectionViewDelegate  {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return photos.count
+        return source.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ProductListCell", for: indexPath) as! ProductListCell
 
-        cell.info = photos[indexPath.row]
-        let dummyPhoto = Photo("1", 100, "", "https://www.soco.id/cdn-cgi/image/w=150,format=auto,dpr=1.45/https://images.soco.id/29fbc95c-e81a-4afb-8c68-57530c3d7a94-.jpg")
-        cell.info = dummyPhoto
-        if(indexPath.row % 2 == 0){
-            cell.nameLabel.text = "Ini nama panjang cuma buat testing ya harusnya udh dynamic"
-        }
-        else{
-            cell.nameLabel.text = "ini nama pendek aja"
-        }
+        let product = source[indexPath.row]
         
-        cell.brandLabel.text = "Innisfree"
+        // Set product photo
+        let productPhoto = Photo(String(describing: product.id), 150, "", product.image)
+        cell.info = productPhoto
+        
+        // Set product
+        cell.product = product
         
         return cell
-        
     }
 
 }
@@ -94,37 +112,25 @@ extension ProductListCollectionView : PinterestLayoutDelegate {
    
     func collectionView(_ collectionView: UICollectionView, heightForPhotoAtIndexPath indexPath: IndexPath, cellWidth: CGFloat) -> CGFloat {
         
-        var nameHeight: CGFloat!
-        var brandHeight: CGFloat!
+        let cell = ProductListCell()
+        cell.product = source[indexPath.row]
         
-        if(indexPath.row % 2 == 0){
-            nameHeight = requiredHeight(text: "Ini nama panjang cuma buat testing ya harusnya udh dynamic", cellWidth: cellWidth, isBrand: false)
-            brandHeight = requiredHeight(text: "Innisfree", cellWidth: 145, isBrand: true)
+        let cellHeight = (166 + cell.nameLabel.requiredHeight + cell.brandLabel.requiredHeight + 36 + 68)
+        
+        // If on col 1
+        if (indexPath.row % 2 != 0){
+            colOneHeight += cellHeight
         }
-        else{
-            nameHeight = requiredHeight(text: "ini nama pendek aja", cellWidth: cellWidth, isBrand: false)
-            brandHeight = requiredHeight(text: "Innisfree", cellWidth: cellWidth, isBrand: true)
-        }
-    
-        //img height + text heights + text offsets + img offset + rating offset
-        return (150+nameHeight+brandHeight+86)
-    }
-    
-    func requiredHeight(text:String , cellWidth : CGFloat, isBrand: Bool) -> CGFloat {
-        let font: UIFont!
-        if(isBrand){
-            font = .interRegular(size: 13)
-        }
-        else{
-            font = .interMedium(size: 16)
+        // If on col 2
+        else {
+            colTwoHeight += cellHeight
         }
         
-        let label:UILabel = UILabel(frame: CGRect(x: 0, y: 0, width: cellWidth-36, height: .greatestFiniteMagnitude))
-        label.numberOfLines = 0
-        label.lineBreakMode = .byWordWrapping
-        label.font = font
-        label.text = text
-        label.sizeToFit()
-        return label.frame.height
+        // Current is last, determine which column is taller
+        if (indexPath.row == source.count-1){
+            height = colOneHeight > colTwoHeight ? colOneHeight : colTwoHeight
+        }
+        
+        return cellHeight
     }
 }

@@ -11,8 +11,9 @@ import RxSwift
 import RxCocoa
 
 class TreatmentsVC: UIViewController{
-
-    private var vstack = UIStackView()
+    
+    private var scrollView = UIScrollView()
+    
     private var segmentedControl = UISegmentedControl(items: ["Products", "Ingredients"])
     
     private var productListView = ProductListView()
@@ -39,6 +40,8 @@ class TreatmentsVC: UIViewController{
     override func viewDidAppear(_ animated: Bool){
         // Fade in products
         productListView.fadeIn()
+
+        scrollView.contentSize = CGSize(width: UIScreen.main.bounds.width, height: productListView.height+120)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -64,6 +67,7 @@ class TreatmentsVC: UIViewController{
                 self.ingredientListView.transform = self.zero
             }) { completion in
                 self.productListView.isHidden = true
+                self.scrollView.contentSize = CGSize(width: UIScreen.main.bounds.width, height: 452)
             }
         }
     }
@@ -71,16 +75,26 @@ class TreatmentsVC: UIViewController{
     override func configureComponents(){
         segmentedControl.selectedSegmentIndex = 0
         segmentedControl.addTarget(self, action: #selector(changeTab), for: .valueChanged)
+        
+        scrollView.frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
+        
+        productListView.delegate = self
     }
     
     override func configureLayout(){
-        view.addSubview(segmentedControl)
-        view.addSubview(productListView)
-        view.addSubview(ingredientListView)
+        view.addSubview(scrollView)
+        
+        scrollView.multipleSubviews(view: segmentedControl, productListView, ingredientListView)
+        
+        scrollView.snp.makeConstraints { make in
+            make.top.equalTo(view.safeAreaLayoutGuide)
+            make.width.equalToSuperview()
+            make.bottom.equalToSuperview()
+        }
         
         segmentedControl.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
-            make.top.equalTo(view.safeAreaLayoutGuide).offset(24)
+            make.top.equalToSuperview().offset(24)
             make.height.equalTo(37)
             make.width.equalToSuperview().offset(-40)
         }
@@ -95,9 +109,17 @@ class TreatmentsVC: UIViewController{
             make.top.equalTo(segmentedControl.snp.bottom).offset(36)
             make.width.bottom.equalToSuperview()
         }
+        
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
+    }
+}
+
+extension TreatmentsVC: ProductListDelegate {
+    func updateContentHeight(height: CGFloat) {
+        scrollView.contentSize = CGSize(width: UIScreen.main.bounds.width, height: height+120)
+        print(height)
     }
 }

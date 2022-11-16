@@ -12,6 +12,7 @@ import CoreData
 protocol IngredientsRepositoryDelegate{
     func fetchIngredientList(effect: String) -> [IngredientModel]
     func fetchIngredientList() -> [IngredientModel]
+    func fetchAllIngredients() -> [IngredientModel]
 }
 
 class IngredientsRepository: IngredientsRepositoryDelegate{
@@ -73,6 +74,25 @@ class IngredientsRepository: IngredientsRepositoryDelegate{
         } else {
             request.predicate = goodForPredicate
         }
+        
+        do{
+            if let results = try context.fetch(request) as? [IngredientModel] {
+                ingredientList = results
+            }
+        }
+        catch{
+            print("Fetch ingredient list failed")
+        }
+        
+        return ingredientList
+    }
+    
+    func fetchAllIngredients() -> [IngredientModel]{
+        var ingredientList: [IngredientModel] = []
+        
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let context: NSManagedObjectContext = appDelegate.persistentContainer.viewContext
+        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Ingredients")
         
         do{
             if let results = try context.fetch(request) as? [IngredientModel] {

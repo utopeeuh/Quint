@@ -10,8 +10,14 @@ import UIKit
 import SnapKit
 import Kingfisher
 
+protocol ProductListDelegate {
+    func updateContentHeight(height: CGFloat)
+}
+
 class ProductListView: UIView{
     
+    private let heightWithoutCollection : CGFloat = 338
+    var height : CGFloat = 0
     
     let productCollection = ProductListCollectionView()
     private var productEffectScroll = HorizontalScrollButtons()
@@ -19,6 +25,10 @@ class ProductListView: UIView{
     private var categories = K.Category.product
     private var recProductsLabel = HeaderLabel()
     private var usageGuideLabel = HeaderLabel()
+    
+    private var catButtons: [SmallCategoryButton] = []
+    
+    var delegate : ProductListDelegate?
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -40,7 +50,6 @@ class ProductListView: UIView{
         recProductsLabel.text = "Recommended products"
         
         // Generate buttons for filter category scroll and guide scroll
-        var catButtons: [SmallCategoryButton] = []
         var guideButtons: [LargeUsageButton] = []
         for i in 0..<categories.count {
             
@@ -57,19 +66,18 @@ class ProductListView: UIView{
         }
         
         productEffectScroll.setButtons(catButtons)
-        selectTopCategory(catButtons[0])
-        
-        // Select for the second time fixes layout erros, not sure why
-        selectTopCategory(catButtons[0])
         
         usageGuideScroll.setButtons(guideButtons)
+        
+        height = heightWithoutCollection
     }
     
     override func configureLayout(){
-        multipleSubviews(view: usageGuideLabel, usageGuideScroll)
-        addSubview(recProductsLabel)
-        addSubview(productEffectScroll)
-        addSubview(productCollection)
+        multipleSubviews(view: usageGuideLabel, usageGuideScroll, recProductsLabel, productEffectScroll, productCollection)
+        
+        self.snp.makeConstraints { make in
+            make.height.equalTo(height)
+        }
         
         usageGuideLabel.snp.makeConstraints { make in
             make.top.equalToSuperview()
@@ -92,13 +100,14 @@ class ProductListView: UIView{
         productEffectScroll.snp.makeConstraints { make in
             make.top.equalTo(recProductsLabel.snp.bottom).offset(16)
             make.height.equalTo(40)
-            make.left.right.equalToSuperview()
+            make.width.equalToSuperview()
         }
         
         productCollection.snp.makeConstraints { make in
             make.top.equalTo(productEffectScroll.snp.bottom).offset(36)
-            make.centerX.bottom.equalToSuperview()
+            make.centerX.equalToSuperview()
             make.width.equalToSuperview().offset(-20)
+            make.height.equalTo(0)
         }
     }
     
@@ -109,16 +118,37 @@ class ProductListView: UIView{
             }
         }
         sender.select()
-        print(sender.id)
+        refreshProducts(categoryId: sender.id)
+    }
+    
+    func refreshProducts(categoryId: Int){
+        let productList = ProductsRepository.shared.fetchProducts(categoryId: categoryId)
+        
+        productCollection.setSource(productList){ [self] in
+            
+            height = heightWithoutCollection + productCollection.height
+            
+            productCollection.snp.updateConstraints({ make in
+                make.height.equalTo(productCollection.height)
+            })
+            
+            self.snp.updateConstraints { make in
+                make.height.equalTo(height)
+            }
+            
+            delegate?.updateContentHeight(height: height)
+        }
     }
     
     @objc func guideOnClick(_ sender: LargeUsageButton){
         let controller = UsageGuideVC()
         controller.categoryId = sender.id
-        (superview?.next as? UIViewController)?.navigationController?.pushViewController(controller, animated: true)
+        (superview?.superview?.next as? UIViewController)?.navigationController?.pushViewController(controller, animated: true)
+        
     }
     
     func fadeIn(){
+        selectTopCategory(catButtons.first!)
         UIView.animate(withDuration: 0.2) {
             self.productCollection.alpha = 1
         }

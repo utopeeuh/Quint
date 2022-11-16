@@ -157,8 +157,8 @@ class IngDetailLowerView: UIView{
         var newEffectList: [EffectModel] = []
         
         effectList.forEach { effect in
-            print(ingredient!.effects!)
-            if ingredient!.effects!.contains(effect.title!.lowercased()){
+            print(ingredient!.effects)
+            if ingredient!.effects.contains(effect.title!.lowercased()){
                 newEffectList.append(effect)
             }
         }

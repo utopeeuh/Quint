@@ -14,10 +14,14 @@ import CoreData
 class ProductModel: NSManagedObject{
     @NSManaged var id: NSNumber
     @NSManaged var categoryId: NSNumber
-    @NSManaged var brand: String?
-    @NSManaged var name: String?
-    @NSManaged var price: String?
-    @NSManaged var url: String?
-    @NSManaged var image: String?
-    @NSManaged var ingredients: [String]?
+    @NSManaged var brand: String
+    @NSManaged var name: String
+    @NSManaged var price: String
+    @NSManaged var url: String
+    @NSManaged var image: String
+    @NSManaged var ingredients: String
+    @NSManaged var matchingIngredients: NSNumber
+    @NSManaged var isRecommended: Bool
+    @NSManaged var thumbsUp: NSNumber
+    @NSManaged var thumbsDown: NSNumber
 }

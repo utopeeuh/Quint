@@ -45,8 +45,8 @@ class PinterestLayout: UICollectionViewLayout {
     for item in 0..<collectionView.numberOfItems(inSection: 0) {
       let indexPath = IndexPath(item: item, section: 0)
       let photoHeight = delegate?.collectionView( collectionView,
-        heightForPhotoAtIndexPath: indexPath , cellWidth: columnWidth) ?? 180
-      let height = cellPadding * 2 + photoHeight
+        heightForPhotoAtIndexPath: indexPath , cellWidth: columnWidth) ?? 150
+      let height = photoHeight
       let frame = CGRect(x: xOffset[column],y: yOffset[column],width: columnWidth,height: height)
       let insetFrame = frame.insetBy(dx: cellPadding, dy: cellPadding)
 
@@ -71,9 +71,4 @@ class PinterestLayout: UICollectionViewLayout {
     }
     return visibleLayoutAttributes
   }
-  
-  override func layoutAttributesForItem(at indexPath: IndexPath) -> UICollectionViewLayoutAttributes? {
-    return cache[indexPath.item]
-  }
-
 }

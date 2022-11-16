@@ -152,19 +152,19 @@ class IngredientListView: UIView {
     @objc func seeMoreOnClick(_ sender: UIButton){
         let controller = AllIngredientsVC()
         controller.effectList = effectList
-        (superview?.next as? UIViewController)?.navigationController?.pushViewController(controller, animated: true)
+        (superview?.superview?.next as? UIViewController)?.navigationController?.pushViewController(controller, animated: true)
     }
     
     @objc func goToCategoryDetail (_ sender: LargeEffectButton){
         let controller = IngredientCategoryDetailVC()
         controller.effect = effectList[sender.id-1]
-        (superview?.next as? UIViewController)?.navigationController?.pushViewController(controller, animated: true)
+        (superview?.superview?.next as? UIViewController)?.navigationController?.pushViewController(controller, animated: true)
     }
     
     @objc func goToIngredientDetail(_ sender: IngredientButton){
         let controller = IngredientDetailVC()
         controller.ingredient = ingredientList.first(where: {$0.id == sender.id as! NSObject})
-        (superview?.next as? UIViewController)?.navigationController?.pushViewController(controller, animated: true)
+        (superview?.superview?.next as? UIViewController)?.navigationController?.pushViewController(controller, animated: true)
     }
 
 }

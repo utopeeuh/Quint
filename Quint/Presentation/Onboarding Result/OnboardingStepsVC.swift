@@ -121,7 +121,18 @@ class OnboardingStepsVC: UIViewController {
     @objc func goToHome() {
         
         // Save onboarding data
-        DataHelper.shared.saveOnboardingData(data: data!)
+        let group = DispatchGroup()
+        
+        group.enter()
+        DispatchQueue.main.async {
+            DataHelper.shared.saveOnboardingData(data: self.data!)
+            group.leave()
+        }
+        
+        group.notify(queue: .main){
+            // Generate recommended products
+            ProductsRepository.shared.generateRecommendedProducts()
+        }
         
         // Change userdefaults
         UserDefaults.standard.set(true, forKey: K.UD.hasDoneOnboarding)

@@ -12,9 +12,22 @@ import SMIconLabel
 
 class ProductListCell: UICollectionViewCell {
     
+    var product: ProductModel? {
+        didSet {
+            setData()
+        }
+    }
+    
+    var imgPlaceholder : UIView = {
+        let view = UIView()
+        view.backgroundColor = K.Color.bgQuint
+        view.layer.cornerRadius = 10
+        return view
+    }()
+    
     var img : UIImageView = {
         let img = UIImageView()
-        img.backgroundColor = .gray
+        img.backgroundColor = K.Color.bgQuint
         img.contentMode = .scaleAspectFill
         img.layer.cornerRadius = 10
         img.clipsToBounds = true
@@ -24,6 +37,8 @@ class ProductListCell: UICollectionViewCell {
     }()
     
     var nameLabel : UILabel = {
+        
+        let labelWidth = (UIScreen.main.bounds.width - 124)/2
         let label = UILabel()
         label.textColor = .black
         label.numberOfLines = 0
@@ -31,11 +46,14 @@ class ProductListCell: UICollectionViewCell {
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = .interMedium(size: 16)
         label.textAlignment = .center
+        label.frame = CGRect(x: 0, y: 0, width: labelWidth, height: 0)
         label.setContentHuggingPriority(.defaultHigh, for: .vertical)
         return label
     }()
         
     var brandLabel : UILabel = {
+        let labelWidth = (UIScreen.main.bounds.width - 124)/2
+        
         let label = UILabel()
         label.textColor = K.Color.greyDarkQuint
         label.numberOfLines = 0
@@ -43,6 +61,7 @@ class ProductListCell: UICollectionViewCell {
         label.textAlignment = .center
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = .interRegular(size: 13)
+        label.frame = CGRect(x: 0, y: 0, width: labelWidth, height: 0)
         label.setContentHuggingPriority(.defaultHigh, for: .vertical)
         return label
     }()
@@ -54,14 +73,15 @@ class ProductListCell: UICollectionViewCell {
         label.lineBreakMode = .byWordWrapping
         label.textAlignment = .center
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "99%"
         label.font = .interSemiBold(size: 14)
         
         label.setContentHuggingPriority(.defaultHigh, for: .vertical)
         
         // add icon
-        label.icon = UIImage(named: "ThumbsUpFilledIcon")  // Set icon image
-        label.iconPadding = 4                  // Set padding between icon and label
+        label.icon = UIImage(named: "MatchingIngredientIcon")  // Set icon image
+        label.iconPadding = 6              // Set padding between icon and label
+        label.topOffset = 2.5
+        
         label.iconPosition = (.left, .top)   // Icon position
         
         return label
@@ -89,6 +109,7 @@ class ProductListCell: UICollectionViewCell {
     override func prepareForReuse() {
         super.prepareForReuse()
         info = nil
+        imgPlaceholder.removeFromSuperview()
         img.removeFromSuperview()
         nameLabel.removeFromSuperview()
         brandLabel.removeFromSuperview()
@@ -103,38 +124,50 @@ class ProductListCell: UICollectionViewCell {
         layer.cornerRadius = 10
         backgroundColor = K.Color.whiteQuint
 
-        contentView.addSubview(img)
-        contentView.addSubview(nameLabel)
-        contentView.addSubview(brandLabel)
-        contentView.addSubview(ratingLabel)
+        contentView.multipleSubviews(view: img,
+                                     imgPlaceholder, nameLabel, brandLabel, ratingLabel)
     }
     
     override func configureLayout(){
+        
+        imgPlaceholder.snp.makeConstraints { make in
+            make.top.equalTo(contentView.snp.top).offset(20)
+            make.height.width.equalTo(150)
+            make.centerX.equalTo(contentView)
+        }
+        
         img.snp.makeConstraints { make in
             make.top.equalTo(contentView.snp.top).offset(20)
             make.height.width.equalTo(150)
             make.centerX.equalTo(contentView)
-//            make.width.equalTo(contentView)
         }
         
         nameLabel.snp.makeConstraints { make in
-            make.top.equalTo(img.snp.bottom).offset(12)
+            make.top.equalTo(imgPlaceholder.snp.bottom).offset(12)
             make.centerX.equalTo(contentView)
-            make.width.equalTo(contentView).offset(-24)
+            make.width.equalTo(contentView).offset(-40)
         }
       
         brandLabel.snp.makeConstraints { make in
             make.top.equalTo(nameLabel.snp.bottom).offset(4)
-//            make.bottom.equalTo(contentView.snp.bottom).offset(-12)
-            make.width.equalTo(contentView).offset(-24)
+            make.width.equalTo(contentView).offset(-40)
             make.centerX.equalTo(contentView)
         }
         
         ratingLabel.snp.makeConstraints { make in
             make.top.equalTo(brandLabel.snp.bottom).offset(12)
-            make.width.equalTo(contentView)
+            make.width.equalTo(contentView).offset(-40)
             make.centerX.equalTo(contentView)
         }
+    }
+    
+    func setData(){
+        nameLabel.text = product?.name
+        brandLabel.text = product?.brand.uppercased()
+        ratingLabel.text = "\(String(describing: product!.matchingIngredients)) Matching ingredients"
+        
+        nameLabel.sizeToFit()
+        brandLabel.sizeToFit()
     }
     
     func assignPhoto(){
@@ -145,6 +178,13 @@ class ProductListCell: UICollectionViewCell {
         img.kf.setImage(with: URL(string: data.download_url)!) { res in
             if case .success(let value)  = res   {
                 ImageCache.default.store(value.image, forKey: data.download_url)
+                
+                UIView.animate(withDuration: 0.2, animations: {
+                    self.imgPlaceholder.alpha = 0
+                }) { completion in
+                    self.imgPlaceholder.isHidden = true
+                }
+                
             }
         }
     }

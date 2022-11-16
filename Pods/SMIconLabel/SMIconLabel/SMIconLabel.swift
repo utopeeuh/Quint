@@ -35,6 +35,8 @@ open class SMIconLabel: UILabel {
             setNeedsDisplay()
         }
     }
+    /// Icon top offset
+    open var topOffset: CGFloat = 0
     /// Position of an image
     open var iconPosition: Position = ( .left, .top )
     /// Additional spacing between text and image
@@ -63,7 +65,7 @@ open class SMIconLabel: UILabel {
             context: nil).size
 
         guard let iconView = iconView else { return }
-        let iconYPosition = (frame.height - iconView.frame.height) / 2
+        let iconYPosition = ((frame.height - iconView.frame.height) / 2)
         let height = frame.height
 
         if iconPosition.horizontal == .left {
@@ -109,13 +111,13 @@ open class SMIconLabel: UILabel {
 
         switch iconPosition.vertical {
         case .top:
-            iconView.frame.origin.y = (frame.height - size.height) / 2
+            iconView.frame.origin.y = (frame.height - size.height) / 2 + topOffset
 
         case .center:
-            iconView.frame.origin.y = (frame.height - iconView.frame.height) / 2
+            iconView.frame.origin.y = (frame.height - iconView.frame.height) / 2 + topOffset
 
         case .bottom:
-            iconView.frame.origin.y = frame.height - (frame.height - size.height) / 2
+            iconView.frame.origin.y = frame.height - (frame.height - size.height) / 2 + topOffset
                 - iconView.frame.size.height
         }
 

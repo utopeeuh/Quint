@@ -23,6 +23,7 @@
 		950508542914FBBA00FAE957 /* OnboardingResultVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 950508522914FBBA00FAE957 /* OnboardingResultVC.swift */; };
 		950508552914FBBA00FAE957 /* OnboardingStepsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 950508532914FBBA00FAE957 /* OnboardingStepsVC.swift */; };
 		950508592914FC8400FAE957 /* RoutineDetailStepCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 950508582914FC8400FAE957 /* RoutineDetailStepCell.swift */; };
+		9509908A292493A600F69080 /* String+NoneIfEmpty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95099089292493A600F69080 /* String+NoneIfEmpty.swift */; };
 		950B32E128F912440095EFB5 /* RatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 950B32E028F912440095EFB5 /* RatingView.swift */; };
 		950D428B28FDC9B400657816 /* IngDetailLowerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 950D428A28FDC9B400657816 /* IngDetailLowerView.swift */; };
 		951034C828EFF51F0011AE39 /* UIViewController+DismissKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951034C328EFF51F0011AE39 /* UIViewController+DismissKeyboard.swift */; };
@@ -245,6 +246,7 @@
 		950508522914FBBA00FAE957 /* OnboardingResultVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingResultVC.swift; sourceTree = "<group>"; };
 		950508532914FBBA00FAE957 /* OnboardingStepsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingStepsVC.swift; sourceTree = "<group>"; };
 		950508582914FC8400FAE957 /* RoutineDetailStepCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutineDetailStepCell.swift; sourceTree = "<group>"; };
+		95099089292493A600F69080 /* String+NoneIfEmpty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+NoneIfEmpty.swift"; sourceTree = "<group>"; };
 		950B32E028F912440095EFB5 /* RatingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingView.swift; sourceTree = "<group>"; };
 		950D428A28FDC9B400657816 /* IngDetailLowerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngDetailLowerView.swift; sourceTree = "<group>"; };
 		951034C328EFF51F0011AE39 /* UIViewController+DismissKeyboard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+DismissKeyboard.swift"; sourceTree = "<group>"; };
@@ -973,6 +975,7 @@
 				95F3834E290FBF4B00FA1815 /* String+LetterCase.swift */,
 				959C2BF428ED341E007B1251 /* CAGradientLayer+SetGradient.swift */,
 				95CC136628FE67C000D3396A /* AttributedString+Styles.swift */,
+				95099089292493A600F69080 /* String+NoneIfEmpty.swift */,
 			);
 			path = "Data Types";
 			sourceTree = "<group>";
@@ -1512,6 +1515,7 @@
 				9590E3AA2922158100A2AFC9 /* LargeUsageButton.swift in Sources */,
 				9572F0BB28F698F90035BCA3 /* IngredientDetailVC.swift in Sources */,
 				958254152908FFF20053AABC /* SkinTypeSeeder.swift in Sources */,
+				9509908A292493A600F69080 /* String+NoneIfEmpty.swift in Sources */,
 				958254092908F9310053AABC /* EffectSeeder.swift in Sources */,
 				A0F519EB290064CC00623A7F /* StepContainerView.swift in Sources */,
 				A0EF1F0B28FD08100065AB9A /* ResultProblemView.swift in Sources */,

@@ -20,6 +20,7 @@ class IngredientListView: UIView {
     var largeCategoryScroll = HorizontalScrollButtons()
     
     private var effectList : [EffectModel] = []
+    private var ingredientList : [IngredientModel] = []
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -75,7 +76,7 @@ class IngredientListView: UIView {
         for i in 0..<effectList.count {
             let newBtn = LargeEffectButton(id: Int(truncating: effectList[i].id))
             newBtn.effect = effectList[i]
-            newBtn.addTarget(self, action: #selector(goToIngredientDetail), for: .touchUpInside)
+            newBtn.addTarget(self, action: #selector(goToCategoryDetail), for: .touchUpInside)
             largeCatButtons.append(newBtn)
         }
         largeCategoryScroll.setButtons(largeCatButtons)
@@ -91,12 +92,6 @@ class IngredientListView: UIView {
         addSubview(categoryLabel)
         addSubview(largeCategoryScroll)
         
-//        searchBar.snp.makeConstraints { make in
-//            make.top.equalToSuperview().offset(-8)
-//            make.width.equalToSuperview().offset(-28)
-//            make.centerX.equalToSuperview()
-//        }
-//
         headerStack.snp.makeConstraints { make in
             make.top.equalToSuperview()
             make.width.equalToSuperview().offset(-40)
@@ -142,7 +137,7 @@ class IngredientListView: UIView {
     
     func refreshIngredients(effect: String){
         var ingredientButtons: [IngredientButton] = []
-        let ingredientList = IngredientsRepository.shared.fetchIngredientList(effect: effect)
+        ingredientList = IngredientsRepository.shared.fetchIngredientList(effect: effect)
         for i in 0..<ingredientList.count {
             let newBtn = IngredientButton(id: Int(truncating: ingredientList[i].id))
             newBtn.setText(ingredientList[i].name)
@@ -160,9 +155,15 @@ class IngredientListView: UIView {
         (superview?.next as? UIViewController)?.navigationController?.pushViewController(controller, animated: true)
     }
     
-    @objc func goToIngredientDetail (_ sender: IngredientButton){
+    @objc func goToCategoryDetail (_ sender: LargeEffectButton){
         let controller = IngredientCategoryDetailVC()
         controller.effect = effectList[sender.id-1]
+        (superview?.next as? UIViewController)?.navigationController?.pushViewController(controller, animated: true)
+    }
+    
+    @objc func goToIngredientDetail(_ sender: IngredientButton){
+        let controller = IngredientDetailVC()
+        controller.ingredient = ingredientList.first(where: {$0.id == sender.id as! NSObject})
         (superview?.next as? UIViewController)?.navigationController?.pushViewController(controller, animated: true)
     }
 

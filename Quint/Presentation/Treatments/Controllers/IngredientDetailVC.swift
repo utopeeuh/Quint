@@ -12,7 +12,11 @@ import SnapKit
 
 class IngredientDetailVC: UIViewController{
     
-    var ingredientId: Int!
+    var ingredient: IngredientModel?
+    
+    private let viewTitle = UILabel()
+    private let backBtn = UIButton(type: .custom)
+    
     private var nameLbl = UILabel()
     private var descLbl = UILabel()
     private var seeMoreBtn = SMIconLabel()
@@ -28,23 +32,31 @@ class IngredientDetailVC: UIViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
         self.tabBarController?.tabBar.isHidden = true
+        self.navigationController?.isNavigationBarHidden = true
         configureUI()
     }
     
     override func configureComponents() {
-        navigationController?.hidesBarsOnSwipe = true
         
         view.backgroundColor = K.Color.bgQuint
         
+        viewTitle.font = .interMedium(size: 16)
+        viewTitle.text = "Ingredient detail"
+
+        backBtn.setImage(UIImage(named: "arrow_back"), for: .normal)
+        backBtn.setTitle("", for: .normal)
+        backBtn.sizeToFit()
+        backBtn.addTarget(self, action: #selector(backOnClick), for: .touchUpInside)
+        
         nameLbl.frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width-40, height: 0)
-        nameLbl.text = "Salicylic Acid"
+        nameLbl.text = ingredient?.name
         nameLbl.font = .clashGroteskMedium(size: 30)
         nameLbl.numberOfLines = 0
         nameLbl.lineBreakMode = .byWordWrapping
         nameLbl.sizeToFit()
 
         descLbl.frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width-40, height: 0)
-        descLbl.text = "I ran in the problem that this solution didnt work for me. The problem was that my image had top, bottom, trailing and leading and height constrains to its parent. The fix was to have only 'align center x' and 'align center y' contains to be available for this imageView. So the imageView can compute its own instrict size, taking the insets into count. "
+        descLbl.text = ingredient?.desc
         descLbl.font = .interRegular(size: 16)
         descLbl.numberOfLines = 3
         descLbl.lineBreakMode = .byTruncatingTail
@@ -64,22 +76,19 @@ class IngredientDetailVC: UIViewController{
         
         descBlanket.backgroundColor = K.Color.bgQuint
         
-        lowerSection = IngDetailLowerView(id: 5)
+        lowerSection = IngDetailLowerView(ingredient: ingredient!)
         lowerSection.backgroundColor = K.Color.bgQuint
         
         detailSection.backgroundColor = K.Color.bgQuint
         detailSection.addSubview(seeMoreBtn)
         detailSection.addSubview(lowerSection)
         
-        scrollHeight = nameLbl.requiredHeight + descTruncHeight + seeMoreBtn.requiredHeight + lowerSection.getTotalHeight() + 151
+        scrollHeight = nameLbl.requiredHeight + descTruncHeight + seeMoreBtn.requiredHeight + lowerSection.getTotalHeight() + 229
         
         mainScroll.showsVerticalScrollIndicator = false
         mainScroll.contentSize = CGSize(width: view.frame.width, height: scrollHeight)
         
-        mainScroll.addSubview(nameLbl)
-        mainScroll.addSubview(descLbl)
-        mainScroll.addSubview(descBlanket)
-        mainScroll.addSubview(detailSection)
+        mainScroll.multipleSubviews(view: backBtn, viewTitle, nameLbl, descLbl, descBlanket, detailSection)
         
         collapseDesc()
     }
@@ -92,9 +101,21 @@ class IngredientDetailVC: UIViewController{
             make.height.equalTo(UIScreen.main.bounds.height)
         }
         
+        backBtn.snp.makeConstraints { make in
+            make.left.equalToSuperview().offset(20)
+            make.top.equalToSuperview().offset(11)
+            make.size.equalTo(24)
+        }
+        
+        viewTitle.snp.makeConstraints { make in
+            make.centerY.equalTo(backBtn)
+            make.centerX.equalToSuperview()
+        }
+        
         nameLbl.snp.makeConstraints { make in
             make.width.equalToSuperview().offset(-40)
-            make.top.centerX.equalToSuperview()
+            make.top.equalTo(viewTitle.snp.bottom).offset(45)
+            make.centerX.equalToSuperview()
             make.height.equalTo(nameLbl.requiredHeight)
         }
         
@@ -183,5 +204,9 @@ class IngredientDetailVC: UIViewController{
         seeMoreBtn.sizeToFit()
         mainScroll.contentSize.height = scrollHeight
         print(scrollHeight!)
+    }
+    
+    @objc func backOnClick(){
+        navigationController?.popViewController(animated: true)
     }
 }

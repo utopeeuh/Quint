@@ -27,7 +27,13 @@ class IngredientsRepository: IngredientsRepositoryDelegate{
         
         let effectPredicate = NSPredicate(format: "effects CONTAINS[c] %@", effect)
         
-        request.predicate = effectPredicate
+        if UserRepository.shared.fetchUser().isSensitive {
+            let sensPredicate = NSPredicate(format: "avoidIfSens == false")
+            let compoundPredicate = NSCompoundPredicate(type: .and, subpredicates: [effectPredicate, sensPredicate])
+            request.predicate = compoundPredicate
+        } else {
+            request.predicate = effectPredicate
+        }
         
         do{
             let results:NSArray = try context.fetch(request) as NSArray
@@ -60,7 +66,13 @@ class IngredientsRepository: IngredientsRepositoryDelegate{
         
         let goodForPredicate = NSPredicate(format: "\(skinTypesGoodFor[Int(truncating: currUser.skinTypeId)]!) != \(K.RecommendationLevel.avoid)")
         
-        request.predicate = goodForPredicate
+        if currUser.isSensitive {
+            let sensPredicate = NSPredicate(format: "avoidIfSens == false")
+            let compoundPredicate = NSCompoundPredicate(type: .and, subpredicates: [goodForPredicate, sensPredicate])
+            request.predicate = compoundPredicate
+        } else {
+            request.predicate = goodForPredicate
+        }
         
         do{
             if let results = try context.fetch(request) as? [IngredientModel] {

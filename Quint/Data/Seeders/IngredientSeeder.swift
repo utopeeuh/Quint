@@ -33,13 +33,16 @@ class IngredientSeeder: Seeder{
             newIngredient.alt = subJson["Alt"].cleanString()
             newIngredient.desc = subJson["Description"].cleanString()
             newIngredient.effects = subJson["Effects"].cleanString()
+            newIngredient.avoidIfSens = subJson["AvoidSens"].cleanString() == "Yes" ? true : false
             newIngredient.goodNormal = goodForValue(subJson["GoodNormal"])
             newIngredient.goodDry = goodForValue(subJson["GoodDry"])
             newIngredient.goodCombination = goodForValue(subJson["GoodCombination"])
             newIngredient.goodOily = goodForValue(subJson["GoodOily"])
-            newIngredient.allergen = subJson["Allergens"].cleanString()
-            newIngredient.usage = subJson["Usage"].cleanString()
-            newIngredient.source = subJson["Source"].cleanString()
+            newIngredient.allergen = subJson["Allergens"].cleanString().setNoneIfEmpty()
+            newIngredient.usage = subJson["Usage"].cleanString().setNoneIfEmpty()
+            
+            let source = subJson["Source"].cleanString()
+            newIngredient.source = source != "" ? source : "Data taken from Incidecoder and Byrdie"
         }
         
         do{

@@ -17,6 +17,7 @@ class IngredientModel: NSManagedObject{
     @NSManaged var alt: String?
     @NSManaged var desc: String?
     @NSManaged var effects: String?
+    @NSManaged var avoidIfSens : Bool
     @NSManaged var goodNormal: NSNumber
     @NSManaged var goodDry: NSNumber
     @NSManaged var goodCombination: NSNumber

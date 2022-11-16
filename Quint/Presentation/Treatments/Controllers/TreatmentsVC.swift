@@ -41,6 +41,10 @@ class TreatmentsVC: UIViewController{
         productListView.fadeIn()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        tabBarController?.tabBar.isHidden = false
+    }
+    
     @objc func changeTab(sender: UISegmentedControl) {
         print("Switched tabs")
         

@@ -15,6 +15,7 @@
     <entity name="Ingredients" representedClassName="IngredientModel" syncable="YES">
         <attribute name="allergen" optional="YES" attributeType="String"/>
         <attribute name="alt" optional="YES" attributeType="String"/>
+        <attribute name="avoidIfSens" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
         <attribute name="desc" optional="YES" attributeType="String"/>
         <attribute name="effects" optional="YES" attributeType="String"/>
         <attribute name="goodCombination" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>

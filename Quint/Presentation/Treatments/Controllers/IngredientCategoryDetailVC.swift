@@ -25,12 +25,16 @@ class IngredientCategoryDetailVC: UIViewController{
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.tabBarController?.tabBar.isHidden = true
+        self.tabBarController?.tabBar.isHidden = false
         view.backgroundColor = K.Color.whiteQuint
         
         ingredientList = IngredientsRepository.shared.fetchIngredientList(effect: effect?.title ?? "")
         
         configureUI()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        self.tabBarController?.tabBar.isHidden = false
     }
     
     override func configureComponents() {
@@ -55,12 +59,12 @@ class IngredientCategoryDetailVC: UIViewController{
         catDescLabel.lineBreakMode = .byWordWrapping
         
         ingredientCollection.setSource(ingredientList)
+        
         bottomView.backgroundColor = K.Color.bgQuint
-        bottomView.addSubview(ingredientCollection)
     }
     
     override func configureLayout() {
-        view.multipleSubviews(view: backBtn, viewTitle, catImageView, catNameLabel, catDescLabel, bottomView)
+        view.multipleSubviews(view: backBtn, viewTitle, catImageView, catNameLabel, catDescLabel, bottomView, ingredientCollection)
         
         backBtn.snp.makeConstraints { make in
             make.left.equalToSuperview().offset(20)
@@ -107,5 +111,9 @@ class IngredientCategoryDetailVC: UIViewController{
     
     @objc func backOnClick(){
         navigationController?.popViewController(animated: true)
+    }
+    
+    @objc func text(){
+        print("DDD")
     }
 }

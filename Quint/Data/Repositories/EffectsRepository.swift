@@ -10,6 +10,7 @@ import UIKit
 import CoreData
 
 protocol EffectsRepositoryDelegate{
+    func fetchEffectList() -> [EffectModel]
     func fetchEffectList(ids: [Int]) -> [EffectModel]
 }
 

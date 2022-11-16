@@ -23,7 +23,7 @@ class LargeCategoryButton: CategoryButton {
                 
         title.textColor = K.Color.greenQuint
         title.font = .interMedium(size: 16)
-        title.frame = CGRect(x: 0, y: 0, width: 104, height: 0)
+        title.frame = CGRect(x: 0, y: 0, width: 120, height: 0)
         title.numberOfLines = 0
         title.lineBreakMode = .byWordWrapping
         title.textAlignment = .center

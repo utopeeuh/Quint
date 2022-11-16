@@ -32,6 +32,7 @@ class IngredientListCollectionView: UIView {
         feedCollection.register(IngredientListCell.self, forCellWithReuseIdentifier: "IngredientListCell")
         feedCollection.backgroundColor = K.Color.bgQuint
         feedCollection.dataSource = self
+        feedCollection.delegate = self
         feedCollection.showsVerticalScrollIndicator = false
         
         self.addSubview(feedCollection)
@@ -56,6 +57,12 @@ extension IngredientListCollectionView : UICollectionViewDataSource , UICollecti
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return source.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let controller = IngredientDetailVC()
+        controller.ingredient = source[indexPath.row]
+        (superview?.next as? UIViewController)?.navigationController?.pushViewController(controller, animated: true)
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {

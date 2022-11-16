@@ -9,23 +9,15 @@ import Foundation
 import SnapKit
 import UIKit
 
-struct DummyFact{
-    var title: String!
-    var desc: String!
-}
-
 class IngDetailLowerView: UIView{
-    private var ingredientId: Int!
+    private var ingredient: IngredientModel?
     
     private var factLbl = HeaderLabel()
-    private var facts: [DummyFact] = []
     private var factStack = UIStackView()
     private var factStackH: CGFloat = 0
     
     private var allergenLbl = HeaderLabel()
-    private var allergens: [String] = []
-    private var allergenStack = UIStackView()
-    private var allergenStackH: CGFloat = 0
+    private var allergenCell: AllergenCell!
     
     private var sensLbl = HeaderLabel()
     private var sensCell: SensitivityCell!
@@ -38,9 +30,9 @@ class IngDetailLowerView: UIView{
     
     private var totalHeight: CGFloat = 0
     
-    required init(id: Int) {
+    required init(ingredient: IngredientModel) {
         super.init(frame: .zero)
-        ingredientId = id
+        self.ingredient = ingredient
         configureUI()
     }
     
@@ -64,34 +56,28 @@ class IngDetailLowerView: UIView{
         factStack.axis = .vertical
         factStack.spacing = 12
         
-        facts = [DummyFact(title: "Anti-acne", desc: "Prevent and fight against acne by preventing and unclogging clogged pores"), DummyFact(title: "Anti-aging", desc: "Slows your skin aging, reduce age spots, or prevent wrinkles")]
+        let effectList = generateEffectList()
         
-        for f in 0..<facts.count {
-            let newCell = QuickFactCell(title: facts[f].title, desc: facts[f].desc, number: f+1)
+        var i = 1
+        effectList.forEach { e in
+            let newCell = QuickFactCell(title: e.title!, desc: e.desc!, number: i)
             factStack.addArrangedSubview(newCell)
-            factStackH += QuickFactCell(title: facts[f].title, desc: facts[f].desc, number: f+1).getHeight()
+            factStackH += QuickFactCell(title: e.title!, desc: e.desc!, number: i).getHeight()
+            i += 1
         }
-        factStackH += CGFloat((facts.count-1)*12)
+        factStackH += CGFloat((effectList.count-1)*12)
         
-        allergenStack.axis = .vertical
-        allergenStack.spacing = 12
+        allergenCell = AllergenCell(ingredient?.allergen ?? "")
+        sensCell = SensitivityCell(ingredient?.avoidIfSens ?? true ? "Sensitive to several skin types" : "None")
         
-        allergens = ["Contains tea tree oil", "Allergic to bees"]
-        for a in allergens {
-            let newCell = AllergenCell(a)
-            allergenStack.addArrangedSubview(newCell)
-            allergenStackH += AllergenCell(a).getHeight()
-        }
-        allergenStackH += CGFloat((allergens.count-1)*12)
+        usageCell = UsageCell(ingredient?.usage ?? "")
         
-        sensCell = SensitivityCell("Sensitive to several skin types")
-        usageCell = UsageCell("Avoid using with hyaluronic acid")
-        sourceCell = SourceCell("https://www.innisfree.com/id/en/product/productView.do?prdSeq=31641&catCd01=UA")
+        sourceCell = SourceCell(ingredient?.source ?? "")
         
         // Add heights and offsets
         addToHeight(factLbl.requiredHeight*5)
-        addToHeight(allergenStackH)
         addToHeight(factStackH)
+        addToHeight(allergenCell.getHeight())
         addToHeight(sensCell.getHeight())
         addToHeight(usageCell.getHeight())
         addToHeight(sourceCell.linkLabel.requiredHeight+28)
@@ -99,16 +85,16 @@ class IngDetailLowerView: UIView{
     }
     
     override func configureLayout(){
-        addSubview(factLbl)
-        addSubview(factStack)
-        addSubview(allergenLbl)
-        addSubview(allergenStack)
-        addSubview(sensLbl)
-        addSubview(sensCell)
-        addSubview(usageLbl)
-        addSubview(usageCell)
-        addSubview(sourceLbl)
-        addSubview(sourceCell)
+        multipleSubviews(view: factLbl,
+                               factStack,
+                               allergenLbl,
+                               allergenCell,
+                               sensLbl,
+                               sensCell,
+                               usageLbl,
+                               usageCell,
+                               sourceLbl,
+                               sourceCell)
         
         factLbl.snp.makeConstraints { make in
             make.top.equalToSuperview()
@@ -127,13 +113,13 @@ class IngDetailLowerView: UIView{
             make.width.centerX.equalToSuperview()
         }
         
-        allergenStack.snp.makeConstraints { make in
+        allergenCell.snp.makeConstraints { make in
             make.top.equalTo(allergenLbl.snp.bottom).offset(18)
             make.width.centerX.equalToSuperview()
         }
         
         sensLbl.snp.makeConstraints { make in
-            make.top.equalTo(allergenStack.snp.bottom).offset(48)
+            make.top.equalTo(allergenCell.snp.bottom).offset(48)
             make.height.equalTo(sensLbl.requiredHeight)
             make.width.centerX.equalToSuperview()
         }
@@ -164,6 +150,20 @@ class IngDetailLowerView: UIView{
             make.top.equalTo(sourceLbl.snp.bottom).offset(18)
             make.width.centerX.equalToSuperview()
         }
+    }
+    
+    func generateEffectList() -> [EffectModel]{
+        var effectList = EffectsRepository.shared.fetchEffectList()
+        var newEffectList: [EffectModel] = []
+        
+        effectList.forEach { effect in
+            print(ingredient!.effects!)
+            if ingredient!.effects!.contains(effect.title!.lowercased()){
+                newEffectList.append(effect)
+            }
+        }
+        
+        return newEffectList
     }
     
     func addToHeight(_ height: CGFloat){

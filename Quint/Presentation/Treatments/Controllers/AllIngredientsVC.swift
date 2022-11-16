@@ -21,9 +21,12 @@ class AllIngredientsVC: UIViewController{
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.tabBarController?.tabBar.isHidden = true
         view.backgroundColor = K.Color.bgQuint
         configureUI()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        self.tabBarController?.tabBar.isHidden = false
     }
     
     override func configureComponents() {

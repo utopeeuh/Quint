@@ -17,6 +17,7 @@ class IngredientListCell: UICollectionViewCell {
         label.numberOfLines = 0
         label.lineBreakMode = .byWordWrapping
         label.translatesAutoresizingMaskIntoConstraints = false
+        label.isUserInteractionEnabled = false
         label.font = .interMedium(size: 18)
         label.textAlignment = .center
         label.setContentHuggingPriority(.defaultHigh, for: .vertical)

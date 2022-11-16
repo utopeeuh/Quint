@@ -26,14 +26,19 @@ class SourceCell: UIView{
         linkLabel.lineBreakMode = .byWordWrapping
         linkLabel.frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width-68, height: 0)
         
-        let underlineAttribute = [NSAttributedString.Key.underlineStyle: NSUnderlineStyle.single.rawValue]
-        let underlineAttributedString = NSAttributedString(string: url, attributes: underlineAttribute)
-        linkLabel.attributedText = underlineAttributedString
-        linkLabel.sizeToFit()
-        
-        let labelTap = UITapGestureRecognizer(target: self, action: #selector(self.linkLabelTapped(_:)))
-        self.linkLabel.isUserInteractionEnabled = true
-        self.linkLabel.addGestureRecognizer(labelTap)
+        if url.contains("http"){
+            let underlineAttribute = [NSAttributedString.Key.underlineStyle: NSUnderlineStyle.single.rawValue]
+            let underlineAttributedString = NSAttributedString(string: url, attributes: underlineAttribute)
+            linkLabel.attributedText = underlineAttributedString
+            linkLabel.sizeToFit()
+            
+            let labelTap = UITapGestureRecognizer(target: self, action: #selector(self.linkLabelTapped(_:)))
+            self.linkLabel.isUserInteractionEnabled = true
+            self.linkLabel.addGestureRecognizer(labelTap)
+        } else {
+            linkLabel.text = url
+            linkLabel.sizeToFit()
+        }
         
         addSubview(linkLabel)
         

@@ -397,7 +397,12 @@ class DailyLogVC: UIViewController, UIImagePickerControllerDelegate & UINavigati
         }
         
         logData.sleep = sleepHours.getSleepNumber()
-        LogRepository.shared.updateLogData(date: logDate!, logData: logData)
+        if LogRepository.shared.doesLogExists(date: logDate!) {
+            LogRepository.shared.updateLogData(date: logDate!, logData: logData)
+        }else {
+            LogRepository.shared.createLog(date: logDate!)
+        }
+        
         
         navigationController?.popViewController(animated: true)
         delegate?.backFromLog(didCreate: true)

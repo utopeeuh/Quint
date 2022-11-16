@@ -28,6 +28,10 @@ class RoutineHistoryVC: UIViewController {
         configureUI()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        refreshLogData(date: selectedDate!)
+    }
+    
     override func configureComponents() {
         
         view.backgroundColor = K.Color.bgQuint
@@ -148,6 +152,7 @@ class RoutineHistoryVC: UIViewController {
         
         let controller = DailyLogVC()
         controller.logDate = selectedDate
+        print(controller.logDate)
         navigationController?.pushViewController(controller, animated: true)
         navigationController?.navigationBar.isHidden = true
     }
@@ -204,7 +209,8 @@ extension RoutineHistoryVC: UICalendarViewDelegate, UICalendarSelectionSingleDat
     }
     
     func dateSelection(_ selection: UICalendarSelectionSingleDate, didSelectDate dateComponents: DateComponents?) {
-        refreshLogData(date: selection.selectedDate!.date!)
+        selectedDate = selection.selectedDate!.date!
+        refreshLogData(date: selectedDate!)
     }
     
     func refreshLogData(date: Date){

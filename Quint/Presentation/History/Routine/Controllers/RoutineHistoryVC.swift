@@ -156,7 +156,7 @@ class RoutineHistoryVC: UIViewController {
     
     @objc func goToHistoryPage() {
         let controller = SummaryHistoryVC()
-        navigationController?.pushViewController(controller, animated: true)
+        navigationController?.pushViewController(controller, animated: false)
         navigationController?.navigationBar.isHidden = true
     }
 

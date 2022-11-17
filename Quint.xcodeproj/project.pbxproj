@@ -19,6 +19,8 @@
 		72BF72D528F6A93C0036C456 /* UIButton+MoveImageTextLeft.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72BF72D428F6A93C0036C456 /* UIButton+MoveImageTextLeft.swift */; };
 		72BF72D728F7B3FD0036C456 /* SleepHourUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72BF72D628F7B3FD0036C456 /* SleepHourUIView.swift */; };
 		72BF72D928F838B00036C456 /* MoodSliderUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72BF72D828F838B00036C456 /* MoodSliderUIView.swift */; };
+		72F5BC502925D30E0057F77F /* NavigationBarUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72F5BC4F2925D30E0057F77F /* NavigationBarUIView.swift */; };
+		72F5BC522925DB1A0057F77F /* UIButton+BottomTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72F5BC512925DB1A0057F77F /* UIButton+BottomTitle.swift */; };
 		950404C329010E0100B37DFD /* CollapsableStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 950404C229010E0100B37DFD /* CollapsableStack.swift */; };
 		950404C72901283300B37DFD /* CollapsableHeaderButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 950404C62901283300B37DFD /* CollapsableHeaderButton.swift */; };
 		950508542914FBBA00FAE957 /* OnboardingResultVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 950508522914FBBA00FAE957 /* OnboardingResultVC.swift */; };
@@ -238,6 +240,8 @@
 		72BF72D428F6A93C0036C456 /* UIButton+MoveImageTextLeft.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+MoveImageTextLeft.swift"; sourceTree = "<group>"; };
 		72BF72D628F7B3FD0036C456 /* SleepHourUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SleepHourUIView.swift; sourceTree = "<group>"; };
 		72BF72D828F838B00036C456 /* MoodSliderUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodSliderUIView.swift; sourceTree = "<group>"; };
+		72F5BC4F2925D30E0057F77F /* NavigationBarUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBarUIView.swift; sourceTree = "<group>"; };
+		72F5BC512925DB1A0057F77F /* UIButton+BottomTitle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+BottomTitle.swift"; sourceTree = "<group>"; };
 		950404C229010E0100B37DFD /* CollapsableStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollapsableStack.swift; sourceTree = "<group>"; };
 		950404C62901283300B37DFD /* CollapsableHeaderButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollapsableHeaderButton.swift; sourceTree = "<group>"; };
 		950508522914FBBA00FAE957 /* OnboardingResultVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingResultVC.swift; sourceTree = "<group>"; };
@@ -480,6 +484,14 @@
 				721F0AF2291A0CE8004EDC8B /* Calendar+StartOfMonth.swift */,
 			);
 			path = Calendar;
+			sourceTree = "<group>";
+		};
+		72F5BC4E2925D21E0057F77F /* Navigation Bar */ = {
+			isa = PBXGroup;
+			children = (
+				72F5BC4F2925D30E0057F77F /* NavigationBarUIView.swift */,
+			);
+			path = "Navigation Bar";
 			sourceTree = "<group>";
 		};
 		95078B1728EC7F8500093069 /* Treatments */ = {
@@ -954,6 +966,7 @@
 			isa = PBXGroup;
 			children = (
 				72BF72D428F6A93C0036C456 /* UIButton+MoveImageTextLeft.swift */,
+				72F5BC512925DB1A0057F77F /* UIButton+BottomTitle.swift */,
 			);
 			path = UIButton;
 			sourceTree = "<group>";
@@ -1117,6 +1130,7 @@
 		A0360C412906BB300021C0E1 /* History */ = {
 			isa = PBXGroup;
 			children = (
+				72F5BC4E2925D21E0057F77F /* Navigation Bar */,
 				956A702729154436004FC262 /* Summary */,
 				A0360C422906BB5C0021C0E1 /* Routine */,
 			);
@@ -1503,6 +1517,7 @@
 				958254152908FFF20053AABC /* SkinTypeSeeder.swift in Sources */,
 				958254092908F9310053AABC /* EffectSeeder.swift in Sources */,
 				A0F519EB290064CC00623A7F /* StepContainerView.swift in Sources */,
+				72F5BC522925DB1A0057F77F /* UIButton+BottomTitle.swift in Sources */,
 				A0EF1F0B28FD08100065AB9A /* ResultProblemView.swift in Sources */,
 				956BE5D12914F11400380D71 /* MoodModel.swift in Sources */,
 				951034E228EFF8820011AE39 /* (null) in Sources */,
@@ -1527,6 +1542,7 @@
 				958253EF2908D64D0053AABC /* ProductSeeder.swift in Sources */,
 				956A703729154437004FC262 /* MorningUIView.swift in Sources */,
 				A0EF1F1228FD0BAA0065AB9A /* DescriptionLabel.swift in Sources */,
+				72F5BC502925D30E0057F77F /* NavigationBarUIView.swift in Sources */,
 				9595D37A290A39BA00167C41 /* CategorySeeder.swift in Sources */,
 				95935206291B71C100CF9A7A /* TimePickerView.swift in Sources */,
 				95E6D4BF2916DEF2007BFF6D /* OnboardingQuizVC.swift in Sources */,

@@ -20,7 +20,7 @@ class RoutineHistoryVC: UIViewController {
     private var activityView = ActivityView()
     var logModel: LogModel?
     var selectedDate: Date?
-    
+    var navBar = NavigationBarUIView()
     var btnTes = UIButton()
     
     override func viewDidLoad() {
@@ -35,6 +35,11 @@ class RoutineHistoryVC: UIViewController {
     override func configureComponents() {
         
         view.backgroundColor = K.Color.bgQuint
+        
+        navBar.historyButton.setImage(UIImage(named: "receiptDisabled"), for: .normal)
+        navBar.historyButton.setTitleColor(K.Color.disableBgBtnQuint, for: .normal)
+        navBar.historyButton.addTarget(self, action: #selector(goToHistoryPage), for: .touchUpInside)
+        navBar.lineWhiteHistory.isHidden = true
         
         viewBlanket.backgroundColor = K.Color.bgQuint
         
@@ -79,15 +84,14 @@ class RoutineHistoryVC: UIViewController {
         scrollView.showsHorizontalScrollIndicator = false
         scrollView.backgroundColor = K.Color.bgQuint
         
-//        noActivityView.isHidden = false
-//        activityView.isHidden = true
         activityView.editButton.addTarget(self, action: #selector(goToDailyLog), for: .touchUpInside)
         noActivityView.logButton.addTarget(self, action: #selector(goToDailyLog), for: .touchUpInside)
     }
     
     override func configureLayout() {
         
-        view.multipleSubviews(view: calendarView,
+        view.multipleSubviews(view: navBar,
+                                    calendarView,
                                     viewBlanket,
                                     scrollView,
                                     expandButton)
@@ -95,9 +99,14 @@ class RoutineHistoryVC: UIViewController {
         scrollView.addSubview(noActivityView)
         scrollView.addSubview(activityView)
         
+        navBar.snp.makeConstraints { make in
+            make.top.width.equalToSuperview()
+            make.height.equalTo(123)
+        }
+        
         calendarView.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
-            make.top.equalTo(view.safeAreaLayoutGuide)
+            make.top.equalTo(navBar.snp.bottom).offset(10)
             make.width.equalToSuperview()
             make.bottom.equalTo(viewBlanket.snp.bottom)
         }
@@ -143,6 +152,12 @@ class RoutineHistoryVC: UIViewController {
             return
         }
         collapseCalendar()
+    }
+    
+    @objc func goToHistoryPage() {
+        let controller = SummaryHistoryVC()
+        navigationController?.pushViewController(controller, animated: true)
+        navigationController?.navigationBar.isHidden = true
     }
 
     @objc func goToDailyLog() {

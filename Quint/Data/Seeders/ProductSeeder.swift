@@ -38,8 +38,6 @@ class ProductSeeder: Seeder{
             
             newProduct.matchingIngredients = 0
             newProduct.isRecommended = false
-            newProduct.thumbsUp = 0
-            newProduct.thumbsDown = 0
         }
         
         do{

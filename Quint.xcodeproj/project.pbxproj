@@ -165,6 +165,8 @@
 		95CC136328FE4A1400D3396A /* QuickFactCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CC136228FE4A1400D3396A /* QuickFactCell.swift */; };
 		95CC136528FE4BDC00D3396A /* UITextView+RequiredHeight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CC136428FE4BDC00D3396A /* UITextView+RequiredHeight.swift */; };
 		95CC136728FE67C000D3396A /* AttributedString+Styles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CC136628FE67C000D3396A /* AttributedString+Styles.swift */; };
+		95CD1EC9292609580086F6D0 /* RatingRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CD1EC8292609580086F6D0 /* RatingRepository.swift */; };
+		95CD1ECB29260AAB0086F6D0 /* RatingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CD1ECA29260AAB0086F6D0 /* RatingModel.swift */; };
 		95CED62B291DFAC200E0AD98 /* UIApplication+TopVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CED62A291DFAC200E0AD98 /* UIApplication+TopVC.swift */; };
 		95DC5F372925324A006ADDA1 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 95DC5F362925324A006ADDA1 /* GoogleService-Info.plist */; };
 		95E6D4A42916DB01007BFF6D /* UIScrollView+RemoveSubviews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95233BDD28EF3F3E00A4470E /* UIScrollView+RemoveSubviews.swift */; };
@@ -388,6 +390,8 @@
 		95CC136228FE4A1400D3396A /* QuickFactCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickFactCell.swift; sourceTree = "<group>"; };
 		95CC136428FE4BDC00D3396A /* UITextView+RequiredHeight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextView+RequiredHeight.swift"; sourceTree = "<group>"; };
 		95CC136628FE67C000D3396A /* AttributedString+Styles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AttributedString+Styles.swift"; sourceTree = "<group>"; };
+		95CD1EC8292609580086F6D0 /* RatingRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RatingRepository.swift; sourceTree = "<group>"; };
+		95CD1ECA29260AAB0086F6D0 /* RatingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingModel.swift; sourceTree = "<group>"; };
 		95CED62A291DFAC200E0AD98 /* UIApplication+TopVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+TopVC.swift"; sourceTree = "<group>"; };
 		95DC5F362925324A006ADDA1 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		95E6D4BD2916DEF2007BFF6D /* OnboardingQuizVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingQuizVC.swift; sourceTree = "<group>"; };
@@ -910,6 +914,7 @@
 			isa = PBXGroup;
 			children = (
 				95E6D4C72916DF8A007BFF6D /* CategoriesRepository.swift */,
+				95CD1EC8292609580086F6D0 /* RatingRepository.swift */,
 				95E6D4C52916DF7E007BFF6D /* EffectsRepository.swift */,
 				95E6D4C32916DF72007BFF6D /* IngredientsRepository.swift */,
 				95E6D4D32916DFDF007BFF6D /* LogsRepository.swift */,
@@ -1113,6 +1118,7 @@
 				95FB6A612906DC3300F18E33 /* UserModel.swift */,
 				9595D377290A36A900167C41 /* TipModel.swift */,
 				956BE5D02914F11400380D71 /* MoodModel.swift */,
+				95CD1ECA29260AAB0086F6D0 /* RatingModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -1464,6 +1470,7 @@
 				95F3834F290FBF4B00FA1815 /* String+LetterCase.swift in Sources */,
 				95CC136728FE67C000D3396A /* AttributedString+Styles.swift in Sources */,
 				9572F0B928F694F90035BCA3 /* SensitivityCell.swift in Sources */,
+				95CD1ECB29260AAB0086F6D0 /* RatingModel.swift in Sources */,
 				9590E3A62921F2F100A2AFC9 /* ReminderNotification.swift in Sources */,
 				A0D11F992908090B00B4F508 /* CustomLogView.swift in Sources */,
 				95A902DC28F54925007B7F5C /* IngredientSegmentView.swift in Sources */,
@@ -1510,6 +1517,7 @@
 				958253F92908D7720053AABC /* ProductModel.swift in Sources */,
 				9510352B28F007DB0011AE39 /* LargeEffectButton.swift in Sources */,
 				956A70472915477E004FC262 /* SettingsUIView.swift in Sources */,
+				95CD1EC9292609580086F6D0 /* RatingRepository.swift in Sources */,
 				950D428B28FDC9B400657816 /* IngDetailLowerView.swift in Sources */,
 				9572F0BD28F6AF5A0035BCA3 /* SourceCell.swift in Sources */,
 				951034CB28EFF51F0011AE39 /* UIImageView+DropShadow.swift in Sources */,

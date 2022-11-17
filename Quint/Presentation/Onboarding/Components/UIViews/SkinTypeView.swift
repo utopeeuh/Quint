@@ -11,7 +11,7 @@ import SnapKit
 @available(iOS 16.0, *)
 class SkinTypeView: OnboardingParentView {
     
-    private let skinTypeLabel = UILabel()
+    public let skinTypeLabel = UILabel()
     public var nextButton = NextButton()
     
     private var buttons: [CollapsableButton] = []
@@ -45,7 +45,6 @@ class SkinTypeView: OnboardingParentView {
         
         collapsableStack.buttons.forEach { b in
             b.headerBtn.addTarget(self, action: #selector(onClickExpand), for: .touchUpInside)
-
         }
         
     }
@@ -79,11 +78,15 @@ class SkinTypeView: OnboardingParentView {
     func getSkinType() -> Int{
         return collapsableStack.selectedIndex
     }
+
+    func selectSkinType(index: Int){
+//        onClickExpand(collapsableStack.buttons[index-1])
+    }
 }
 
 @available(iOS 16.0, *)
 extension SkinTypeView: CollapsableStackDelegate{
-    @objc func onClickExpand(_ sender: UIButton){
+    @objc func onClickExpand(_ sender: CollapsableButton){
         if let collapsable = sender.superview as? CollapsableButton{
             collapsableStack.showView(collapsable)
             nextButton.setEnabled()

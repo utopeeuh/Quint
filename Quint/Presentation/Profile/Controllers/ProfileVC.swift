@@ -7,14 +7,21 @@
 
 import UIKit
 
+@available(iOS 16.0, *)
 class ProfileVC: UIViewController {
     
     var headerProfile = HeaderProfileUIView()
     var reminderNotification = SettingsUIView()
     var deleteAcc = SettingsUIView()
+
     var skinType = AboutMySkinUIView()
     var skinProblem = AboutMySkinUIView()
     var sensitiveSkin = AboutMySkinUIView()
+
+    var aboutMySkinCells : [AboutMySkinUIView] = []
+
+    var user : UserModel?
+    var problemList : [ProblemModel] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,13 +31,14 @@ class ProfileVC: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         self.tabBarController?.tabBar.isHidden = false
+
+        user = UserRepository.shared.fetchUser()
+        problemList = ProblemsRepository.shared.fetchProblemIsActive()
+
+        aboutMySkinCells.forEach { cell in
+            cell.refreshData()
+        }
     }
-    
-    private let mainScrollView: UIScrollView = {
-        let view = UIScrollView()
-        view.translatesAutoresizingMaskIntoConstraints = false
-        return view
-    }()
     
     private var aboutMySkinLabel: UILabel = {
         let label = UILabel()
@@ -63,69 +71,92 @@ class ProfileVC: UIViewController {
         })
     }
     
+    @objc func goToSkinType() {
+        let vc = SkinTypeParentVC()
+        vc.user = user
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    @objc func goToSkinProblem() {
+        let vc = SkinProblemParentVC()
+        vc.problemList = problemList
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    @objc func goToSensitiveSkin() {
+        let vc = SkinCondParentVC()
+        vc.user = user
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
     @objc func goToReminderSettings() {
         let vc = ReminderVC()
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
     override func configureComponents() {
-        view.addSubview(mainScrollView)
-        mainScrollView.showsVerticalScrollIndicator = false
-        mainScrollView.contentSize = CGSize(width: view.frame.width, height: 800)
-        mainScrollView.addSubview(headerProfile)
         
-        mainScrollView.addSubview(aboutMySkinLabel)
         skinType = AboutMySkinUIView(frame: skinType.frame, idCollectionView: 1)
         skinType.iconImage.image = UIImage(named: "skinTypeIcon")
         skinType.namelabel.text = "Skin type"
         skinType.chevronImage.image = UIImage(systemName: "chevron.right")
-        mainScrollView.addSubview(skinType)
+        
+        let tapSkinType = UITapGestureRecognizer(target: self, action: #selector(goToSkinType))
+        skinType.addGestureRecognizer(tapSkinType)
         
         skinProblem = AboutMySkinUIView(frame: skinType.frame, idCollectionView: 2)
         skinProblem.iconImage.image = UIImage(named: "skinProblemIcon")
         skinProblem.namelabel.text = "Skin problem"
         skinProblem.chevronImage.image = UIImage(systemName: "chevron.right")
-        mainScrollView.addSubview(skinProblem)
+        
+        let tapSkinProblem = UITapGestureRecognizer(target: self, action: #selector(goToSkinProblem))
+        skinProblem.addGestureRecognizer(tapSkinProblem)
         
         sensitiveSkin = AboutMySkinUIView(frame: skinType.frame, idCollectionView: 3)
         sensitiveSkin.iconImage.image = UIImage(named: "sensitiveSkinIcon")
         sensitiveSkin.namelabel.text = "Sensitive skin"
         sensitiveSkin.chevronImage.image = UIImage(systemName: "chevron.right")
-        mainScrollView.addSubview(sensitiveSkin)
         
-        mainScrollView.addSubview(settingsLabel)
+        let tapSensitiveSkin = UITapGestureRecognizer(target: self, action: #selector(goToSensitiveSkin))
+        sensitiveSkin.addGestureRecognizer(tapSensitiveSkin)
+        
         reminderNotification.iconImage.image = UIImage(named: "reminderProfileIcon")
         reminderNotification.namelabel.text = "Reminder notification"
         reminderNotification.chevronImage.image = UIImage(systemName: "chevron.right")
         reminderNotification.isUserInteractionEnabled = true
+        
         let tapReminderNotif = UITapGestureRecognizer(target: self, action: #selector(goToReminderSettings))
         reminderNotification.addGestureRecognizer(tapReminderNotif)
-        
-        mainScrollView.addSubview(reminderNotification)
         
         deleteAcc.iconImage.image = UIImage(named: "deleteAccIcon")
         deleteAcc.namelabel.text = "Delete user data"
         deleteAcc.namelabel.textColor = UIColor(red: 242/255, green: 53/255, blue: 53/255, alpha: 1)
+        
         let deleteGesture = UITapGestureRecognizer(target: self, action: #selector(deleteHandler))
         deleteAcc.addGestureRecognizer(deleteGesture)
-        mainScrollView.addSubview(deleteAcc)
+
+        aboutMySkinCells = [skinType, skinProblem, sensitiveSkin]
     }
     
     override func configureLayout() {
-        mainScrollView.snp.makeConstraints { make in
-            make.width.equalToSuperview()
-            make.height.equalTo(UIScreen.main.bounds.height)
-        }
+        
+        view.multipleSubviews(view: headerProfile,
+                                    aboutMySkinLabel,
+                                    skinType,
+                                    skinProblem,
+                                    sensitiveSkin,
+                                    settingsLabel,
+                                    reminderNotification,
+                                    deleteAcc)
         
         headerProfile.snp.makeConstraints { make in
-            make.height.equalTo(60)
+            make.top.equalToSuperview().offset(67)
             make.left.equalTo(view.safeAreaLayoutGuide).offset(20)
             make.right.equalTo(view.safeAreaLayoutGuide).offset(-20)
-            make.top.equalTo(view.safeAreaLayoutGuide).offset(-40)
         }
         
         aboutMySkinLabel.snp.makeConstraints { make in
-            make.top.equalTo(headerProfile.snp.bottom)
+            make.top.equalTo(headerProfile.snp.bottom).offset(62)
             make.left.equalTo(view.safeAreaLayoutGuide).offset(20)
             make.right.equalTo(view.safeAreaLayoutGuide).offset(-20)
         }

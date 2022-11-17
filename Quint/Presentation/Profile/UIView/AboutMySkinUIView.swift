@@ -7,9 +7,11 @@
 
 import UIKit
 import TTGTags
+import CoreData
 
 class AboutMySkinUIView: UIView , TTGTextTagCollectionViewDelegate{
     
+    var user: UserModel?
     var collectionView = TTGTextTagCollectionView.init(frame: CGRect(x: 0, y: 0, width: 270, height: 55))
     var idCollectionView: Int!
     var content = TTGTextTagStringContent()
@@ -17,15 +19,13 @@ class AboutMySkinUIView: UIView , TTGTextTagCollectionViewDelegate{
 
     override init(frame: CGRect) {
         super.init(frame: frame)
-        self.backgroundColor = .white
-        self.layer.cornerRadius = 8.0
-        configureUI()
-        collectionView.delegate = self
-        collectionView.reload()
     }
     
     init(frame: CGRect, idCollectionView: Int) {
         super.init(frame: frame)
+        
+        user = UserRepository.shared.fetchUser()
+        
         self.idCollectionView = idCollectionView
         self.backgroundColor = .white
         self.layer.cornerRadius = 8.0
@@ -57,8 +57,9 @@ class AboutMySkinUIView: UIView , TTGTextTagCollectionViewDelegate{
     }()
     
     override func configureComponents() {
-        self.addSubview(iconImage)
-        self.addSubview(namelabel)
+       
+        self.multipleSubviews(view: iconImage,
+                                    namelabel)
         
         collectionView.alignment = .left
         
@@ -73,23 +74,7 @@ class AboutMySkinUIView: UIView , TTGTextTagCollectionViewDelegate{
         style.shadowColor = K.Color.shadowQuint
         style.shadowOpacity = 5.0
         
-        if idCollectionView == 1 {
-            content.text = "Normal"
-            let textTag = TTGTextTag(content: content, style: style)
-            collectionView.addTag(textTag)
-        }else if idCollectionView == 2 {
-            for i in 0..<K.Category.skinProblem.count {
-                
-                content.text = K.Category.skinProblem[i+1]!
-                
-                let textTag = TTGTextTag(content: content, style: style)
-                collectionView.addTag(textTag)
-            }
-        }else if idCollectionView == 3 {
-            content.text = "No"
-            let textTag = TTGTextTag(content: content, style: style)
-            collectionView.addTag(textTag)
-        }
+        refreshData()
         
         self.addSubview(collectionView)
         
@@ -125,4 +110,78 @@ class AboutMySkinUIView: UIView , TTGTextTagCollectionViewDelegate{
         }
     }
 
+    func refreshData(){
+
+        user = UserRepository.shared.fetchUser()
+
+        if idCollectionView == 1 {
+            getSkinType()
+        } else if idCollectionView == 2 {
+
+            getSkinProblem()
+
+        } else if idCollectionView == 3 {
+
+            getSensitiveSkin()
+
+        } else {
+            print("skipped")
+        }
+    }
+
+    func getSkinType() {
+        
+        //fetch skin type
+        let skinType = SkinTypesRepository.shared.fetchSkinType(id: Int(truncating: user!.skinTypeId))
+
+        //remove inital tags
+        collectionView.removeAllTags()
+
+        //set text here
+        content.text = skinType.title ?? "no data!"
+        let textTag = TTGTextTag(content: content, style: style)
+        collectionView.addTag(textTag)
+        collectionView.reload()
+        
+    }
+    
+    func getSkinProblem() {
+
+        //remove initial tags
+        collectionView.removeAllTags()
+
+        //fetch skin problem
+        let skinProblemList = ProblemsRepository.shared.fetchProblemIsActive()
+        
+        //set text here
+        for i in 0..<skinProblemList.count {
+            content.text = skinProblemList[i].title ?? "no data!"
+            let textTag = TTGTextTag(content: content, style: style)
+            collectionView.addTag(textTag)
+        }
+        collectionView.reload()
+        
+    }
+    
+    func getSensitiveSkin() {
+
+        //remove initial tags
+        collectionView.removeAllTags()
+
+        //fetch sensitive skin
+        var sensitiveSkin = user?.isSensitive
+        
+        //set text here
+        if sensitiveSkin == false {
+            content.text = "No"
+        } else {
+            content.text = "Yes"
+        }
+
+        let textTag = TTGTextTag(content: content, style: style)
+        collectionView.addTag(textTag)
+        collectionView.reload()
+        
+    }
+    
 }

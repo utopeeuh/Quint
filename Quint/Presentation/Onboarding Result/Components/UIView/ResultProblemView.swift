@@ -111,10 +111,10 @@ class ResultProblemView: UIView {
         var titleString = ""
         for i in 0..<problemList.count{
             if (i == 0){
-                titleString += problemList[i].title!.firstUppercased
+                titleString += problemList[i].title.firstUppercased
             }
             else{
-                titleString += problemList[i].title!.lowercased()
+                titleString += problemList[i].title.lowercased()
             }
             
             if(i != problemList.count-1){
@@ -128,9 +128,9 @@ class ResultProblemView: UIView {
     func generateDesc() -> NSMutableAttributedString{
         let desc = NSMutableAttributedString(string: "")
         problemList.forEach { problem in
-            desc.append(NSMutableAttributedString(string: "\u{2022} \(problem.title!): ", attributes: [NSAttributedString.Key.font : UIFont.interSemiBold(size: 14)! ]))
+            desc.append(NSMutableAttributedString(string: "\u{2022} \(problem.title): ", attributes: [NSAttributedString.Key.font : UIFont.interSemiBold(size: 14)! ]))
             
-            desc.append(NSMutableAttributedString(string: problem.desc!, attributes: [NSAttributedString.Key.font : UIFont.interRegular(size: 14)! ]))
+            desc.append(NSMutableAttributedString(string: problem.desc, attributes: [NSAttributedString.Key.font : UIFont.interRegular(size: 14)! ]))
                         
             if(problem != problemList.last){
                 desc.append(NSAttributedString(string: "\n\n"))

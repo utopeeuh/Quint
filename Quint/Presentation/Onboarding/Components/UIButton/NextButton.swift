@@ -15,7 +15,7 @@ class NextButton: UIButton {
         frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width-40, height: 50)
         
         isEnabled = false
-        backgroundColor = K.Color.disableBgBtnQuint
+        applyGradient(colours: [K.Color.disableBgBtnQuint,K.Color.disableBgBtnQuint], locations: [0,1], radius: 8)
         setTitleColor(K.Color.greyQuint, for: .normal)
         titleLabel?.font = .clashGroteskMedium(size: 18)
         layer.cornerRadius = 8
@@ -28,10 +28,19 @@ class NextButton: UIButton {
     }
     
     func setEnabled(){
+        removeSublayer(layerIndex: 0)
         isEnabled = true
         applyGradient(colours: [K.Color.greenLightQuint, K.Color.greenQuint], locations: [0, 1], radius: 8)
         setTitleColor(K.Color.whiteQuint, for: .normal)
     }
+
+    func setDisabled(){
+        removeSublayer(layerIndex: 0)
+        isEnabled = false
+        applyGradient(colours: [K.Color.disableBgBtnQuint,K.Color.disableBgBtnQuint], locations: [0,1], radius: 8)
+        setTitleColor(K.Color.greyQuint, for: .normal)
+    }
+
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")

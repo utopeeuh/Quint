@@ -12,6 +12,7 @@ import CoreData
 protocol IngredientsRepositoryDelegate{
     func fetchIngredientList(effect: String) -> [IngredientModel]
     func fetchIngredientList() -> [IngredientModel]
+    func fetchIngredientList(product: ProductModel) -> [IngredientModel]
     func fetchAllIngredients() -> [IngredientModel]
 }
 
@@ -104,5 +105,22 @@ class IngredientsRepository: IngredientsRepositoryDelegate{
         }
         
         return ingredientList
+    }
+    
+    func fetchIngredientList(product: ProductModel) -> [IngredientModel] {
+        
+        var productIngredientList : [IngredientModel] = []
+        let ingredientList = fetchAllIngredients()
+        
+        ingredientList.forEach { ingredient in
+            
+            let productIngredients = product.ingredients.lowercased()
+            //Check if ingredient is in product
+            if productIngredients.contains(ingredient.name.lowercased()) || (productIngredients.contains(ingredient.alt.lowercased()) && ingredient.alt != "") {
+                productIngredientList.append(ingredient)
+            }
+        }
+        
+        return productIngredientList
     }
 }

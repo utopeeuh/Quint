@@ -63,6 +63,8 @@ extension IngredientListCollectionView : UICollectionViewDataSource , UICollecti
         let controller = IngredientDetailVC()
         controller.ingredient = source[indexPath.row]
         (superview?.next as? UIViewController)?.navigationController?.pushViewController(controller, animated: true)
+        
+        (superview?.superview?.superview?.superview?.next as? UIViewController)?.navigationController?.pushViewController(controller, animated: true)
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {

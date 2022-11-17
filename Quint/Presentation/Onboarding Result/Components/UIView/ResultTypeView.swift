@@ -82,7 +82,7 @@ class ResultTypeView: UIView {
     
     func setType(typeId: Int){
         //fetch type
-        let skinType = SkinTypesRepository.shared.fetchSkinType(id: typeId)
+        let skinType = SkinTypesRepository.shared.fetchSkinType(id: typeId+1)
         
         //set text here
         resultLabel.text = skinType.title

@@ -12,6 +12,8 @@ import Kingfisher
 
 class ProductDetailTopView: UIView{
     
+    private var product: ProductModel!
+    
     private var imageFrame = UIView()
     private var imageView = UIImageView()
     
@@ -22,8 +24,9 @@ class ProductDetailTopView: UIView{
     
     private var ratingView = RatingView()
     
-    override init(frame: CGRect) {
-        super.init(frame: frame)
+    init(product: ProductModel) {
+        super.init(frame: .zero)
+        self.product = product
         configureUI()
     }
     
@@ -38,19 +41,20 @@ class ProductDetailTopView: UIView{
         imageFrame.addSubview(imageView)
         
         //set image
-        let newPhoto = Photo("1", 150, "", "https://www.soco.id/cdn-cgi/image/w=150,format=auto,dpr=1.45/https://images.soco.id/29fbc95c-e81a-4afb-8c68-57530c3d7a94-.jpg")
+        let newPhoto = Photo(String(describing: product.id), 150, "", product.image)
         assignPhoto(newPhoto)
         
         //adjust labels
-        typeLabel = ProductCategoryLabel("toner")
+        let category = CategoriesRepository.shared.fetchCategory(id: Int(truncating: product.categoryId))
+        typeLabel = ProductCategoryLabel(category.title)
         
         nameLabel.numberOfLines = 0
-        nameLabel.text = "Forest Fresh Skin"
+        nameLabel.text = product.name
         nameLabel.lineBreakMode = .byWordWrapping
         nameLabel.font = .clashGroteskMedium(size: 24)
         nameLabel.sizeToFit()
         
-        brandLabel.text = "by Innisfree"
+        brandLabel.text = "by \(product.brand.uppercased())"
         brandLabel.numberOfLines = 0
         brandLabel.lineBreakMode = .byWordWrapping
         brandLabel.font = .interRegular(size: 16)

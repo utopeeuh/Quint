@@ -82,14 +82,13 @@ class ProductsRepository: ProductsRepositoryDelegate{
                     }
                     
                     matchingIngredients += 1
+                    
                 }
             }
             
             product.isRecommended = isRecommended
             
             if product.isRecommended {
-                // fetch product ratings here
-                
                 // update matching ingredients
                 product.matchingIngredients = matchingIngredients as NSNumber
             }

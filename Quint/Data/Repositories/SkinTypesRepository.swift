@@ -23,7 +23,7 @@ class SkinTypesRepository: SkinTypesRepositoryDelegate{
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         let context: NSManagedObjectContext = appDelegate.persistentContainer.viewContext
         let request = NSFetchRequest<NSFetchRequestResult>(entityName: "SkinTypes")
-        let idPredicate = NSPredicate(format: "id == %@", String(describing:id+1))
+        let idPredicate = NSPredicate(format: "id == %@", String(describing:id))
         request.predicate = idPredicate
         
         do{

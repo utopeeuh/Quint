@@ -11,15 +11,17 @@ import SnapKit
 
 class IngredientSegmentView: UIView{
 
-    var mainScrollView = UIScrollView()
-    var goodIngCollection = IngredientListSection()
-    var notableIngCollection = IngredientListSection()
-    var otherIngredientLabel = HeaderLabel()
-    var ingredientList = UILabel()
+    private var product: ProductModel?
     
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        backgroundColor = K.Color.bgQuint
+    private var mainScrollView = UIScrollView()
+    private var goodIngCollection = IngredientListSection()
+    private var otherIngredientLabel = HeaderLabel()
+    private var ingredientList = UILabel()
+    
+    init(product: ProductModel) {
+        super.init(frame: .zero)
+        self.product = product
+        
         configureUI()
     }
     
@@ -29,15 +31,16 @@ class IngredientSegmentView: UIView{
     
     override func configureComponents() {
         
-        goodIngCollection.setSource(IngredientsRepository.shared.fetchIngredientList())
+        backgroundColor = K.Color.bgQuint
+        
+        let goodIngredientList = IngredientsRepository.shared.fetchIngredientList(product: product!)
+        
+        goodIngCollection.setSource(goodIngredientList)
         goodIngCollection.setHeader("Good for you")
         
-        notableIngCollection.setSource(IngredientsRepository.shared.fetchIngredientList())
-        notableIngCollection.setHeader("Notable ingredients")
+        otherIngredientLabel.text = "Full ingredients list"
         
-        otherIngredientLabel.text = "Other ingredients"
-        
-        ingredientList.text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam, purus sit amet luctus venenatis, lectus magna fringilla urna, porttitor rhoncus dolor purus non enim praesent elementum facilisis leo, vel fringilla est"
+        ingredientList.text = product?.ingredients
         ingredientList.font = .interRegular(size: 16)
         ingredientList.textColor = K.Color.greyQuint
         ingredientList.frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width-40, height: 0)
@@ -46,13 +49,12 @@ class IngredientSegmentView: UIView{
     }
     
     func getTotalHeight() -> CGFloat{
-        return goodIngCollection.getHeight() + notableIngCollection.getHeight() + 24 + otherIngredientLabel.requiredHeight + 12 + ingredientList.requiredHeight + 24
+        return goodIngCollection.getHeight() + otherIngredientLabel.requiredHeight + 12 + ingredientList.requiredHeight + 24
     }
     
     override func configureLayout() {
         
        addSubview(goodIngCollection)
-       addSubview(notableIngCollection)
        addSubview(otherIngredientLabel)
        addSubview(ingredientList)
         
@@ -61,14 +63,8 @@ class IngredientSegmentView: UIView{
             make.height.equalTo(goodIngCollection.getHeight())
         }
         
-        notableIngCollection.snp.makeConstraints { make in
-            make.top.equalTo(goodIngCollection.snp.bottom).offset(24)
-            make.width.equalToSuperview()
-            make.height.equalTo(notableIngCollection.getHeight())
-        }
-        
         otherIngredientLabel.snp.makeConstraints { make in
-            make.top.equalTo(notableIngCollection.snp.bottom).offset(24)
+            make.top.equalTo(goodIngCollection.snp.bottom).offset(24)
             make.width.equalToSuperview().offset(-40)
             make.centerX.equalToSuperview()
             make.height.equalTo(otherIngredientLabel.requiredHeight)

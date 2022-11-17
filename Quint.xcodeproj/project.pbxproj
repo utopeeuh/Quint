@@ -206,6 +206,9 @@
 		A03857D728F84C5C00A4B566 /* ViewControllerPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = A03857D628F84C5C00A4B566 /* ViewControllerPreview.swift */; };
 		A049AB492907A848002C5143 /* NoActivityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A049AB482907A848002C5143 /* NoActivityView.swift */; };
 		A04BD72329012B0200BEBDAB /* CustomCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04BD72229012B0200BEBDAB /* CustomCellView.swift */; };
+		A0B936AE29248BE9007F9F29 /* SkinTypeParentVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B936AD29248BE9007F9F29 /* SkinTypeParentVC.swift */; };
+		A0B936B029248F29007F9F29 /* SkinCondParentVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B936AF29248F29007F9F29 /* SkinCondParentVC.swift */; };
+		A0B936B229248F80007F9F29 /* SkinProblemParentVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B936B129248F80007F9F29 /* SkinProblemParentVC.swift */; };
 		A0C33EE929102A51002BF2AC /* DatePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C33EE829102A51002BF2AC /* DatePickerView.swift */; };
 		A0C8A0E32907881B00002D8C /* IngredientListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C8A0E22907881B00002D8C /* IngredientListView.swift */; };
 		A0C8A0E52907883700002D8C /* TreatmentsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C8A0E42907883700002D8C /* TreatmentsVC.swift */; };
@@ -429,6 +432,9 @@
 		A03857D628F84C5C00A4B566 /* ViewControllerPreview.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllerPreview.swift; sourceTree = "<group>"; };
 		A049AB482907A848002C5143 /* NoActivityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoActivityView.swift; sourceTree = "<group>"; };
 		A04BD72229012B0200BEBDAB /* CustomCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCellView.swift; sourceTree = "<group>"; };
+		A0B936AD29248BE9007F9F29 /* SkinTypeParentVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkinTypeParentVC.swift; sourceTree = "<group>"; };
+		A0B936AF29248F29007F9F29 /* SkinCondParentVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkinCondParentVC.swift; sourceTree = "<group>"; };
+		A0B936B129248F80007F9F29 /* SkinProblemParentVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkinProblemParentVC.swift; sourceTree = "<group>"; };
 		A0C33EE829102A51002BF2AC /* DatePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePickerView.swift; sourceTree = "<group>"; };
 		A0C8A0E22907881B00002D8C /* IngredientListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IngredientListView.swift; sourceTree = "<group>"; };
 		A0C8A0E42907883700002D8C /* TreatmentsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TreatmentsVC.swift; sourceTree = "<group>"; };
@@ -686,6 +692,9 @@
 			children = (
 				95935209291B721F00CF9A7A /* ProfileVC.swift */,
 				95935207291B71D400CF9A7A /* ReminderVC.swift */,
+				A0B936AD29248BE9007F9F29 /* SkinTypeParentVC.swift */,
+				A0B936AF29248F29007F9F29 /* SkinCondParentVC.swift */,
+				A0B936B129248F80007F9F29 /* SkinProblemParentVC.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -1461,6 +1470,7 @@
 				95CC136728FE67C000D3396A /* AttributedString+Styles.swift in Sources */,
 				9572F0B928F694F90035BCA3 /* SensitivityCell.swift in Sources */,
 				9590E3A62921F2F100A2AFC9 /* ReminderNotification.swift in Sources */,
+				A0B936B029248F29007F9F29 /* SkinCondParentVC.swift in Sources */,
 				A0D11F992908090B00B4F508 /* CustomLogView.swift in Sources */,
 				95A902DC28F54925007B7F5C /* IngredientSegmentView.swift in Sources */,
 				95436F712913A5CF00B72ED4 /* RoutineCellTrashButton.swift in Sources */,
@@ -1517,6 +1527,7 @@
 				958254152908FFF20053AABC /* SkinTypeSeeder.swift in Sources */,
 				9509908A292493A600F69080 /* String+NoneIfEmpty.swift in Sources */,
 				958254092908F9310053AABC /* EffectSeeder.swift in Sources */,
+				A0B936B229248F80007F9F29 /* SkinProblemParentVC.swift in Sources */,
 				A0F519EB290064CC00623A7F /* StepContainerView.swift in Sources */,
 				A0EF1F0B28FD08100065AB9A /* ResultProblemView.swift in Sources */,
 				956BE5D12914F11400380D71 /* MoodModel.swift in Sources */,
@@ -1553,6 +1564,7 @@
 				72B6EDC328FFAFA30056B374 /* UVPointView.swift in Sources */,
 				951034D828EFF54C0011AE39 /* (null) in Sources */,
 				95A1E05A28F3F61D00386972 /* DailySkincareTipsView.swift in Sources */,
+				A0B936AE29248BE9007F9F29 /* SkinTypeParentVC.swift in Sources */,
 				72BF72D928F838B00036C456 /* MoodSliderUIView.swift in Sources */,
 				A0C8A0E32907881B00002D8C /* IngredientListView.swift in Sources */,
 				95A1E05828F3F5AE00386972 /* RoutineCell.swift in Sources */,

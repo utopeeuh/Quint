@@ -11,10 +11,8 @@ import SnapKit
 @available(iOS 16.0, *)
 class SkinConditionView: OnboardingParentView, CollapsableStackDelegate {
     
-    private let skinConditionLabel = UILabel()
-    
+    public let skinConditionLabel = UILabel()
     private var collapsableStack = CollapsableStack()
-    
     public let nextButton = NextButton()
     
     override init(frame: CGRect) {
@@ -82,7 +80,7 @@ class SkinConditionView: OnboardingParentView, CollapsableStackDelegate {
         return false
     }
     
-    func onClickExpand(_ sender: UIButton) {
+    @objc func onClickExpand(_ sender: CollapsableButton) {
         if let collapsable = sender.superview as? CollapsableButton{
             collapsableStack.showView(collapsable)
             nextButton.setEnabled()

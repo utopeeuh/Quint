@@ -41,5 +41,6 @@ class SkinTypesRepository: SkinTypesRepositoryDelegate{
         
         return skinType!
     }
+    
 }
 

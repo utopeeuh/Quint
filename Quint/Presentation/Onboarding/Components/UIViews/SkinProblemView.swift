@@ -13,7 +13,7 @@ import TTGTags
 class SkinProblemView: OnboardingParentView {
     
     private var selections = [String]()
-    private let skinProblemLabel = UILabel()
+    public let skinProblemLabel = UILabel()
     private let collectionView = TTGTextTagCollectionView()
     public let nextButton = NextButton()
     
@@ -22,6 +22,7 @@ class SkinProblemView: OnboardingParentView {
         configureUI()
         collectionView.delegate = self
         collectionView.reload()
+        loadSelectedProblems(tagIndexes: [])
     }
         
     required init?(coder: NSCoder) {
@@ -75,8 +76,7 @@ class SkinProblemView: OnboardingParentView {
             collectionView.addTag(textTag)
             
         }
-        
-        nextButton.isEnabled = false
+
         nextButton.setText("Next")
         nextButton.addTarget(self, action: #selector(nextOnClick), for: .touchUpInside)
         
@@ -84,9 +84,9 @@ class SkinProblemView: OnboardingParentView {
     
     override func configureLayout() {
         
-        addSubview(skinProblemLabel)
-        addSubview(collectionView)
-        addSubview(nextButton)
+        multipleSubviews(view: skinProblemLabel,
+                               collectionView,
+                               nextButton)
         
         skinProblemLabel.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
@@ -107,39 +107,56 @@ class SkinProblemView: OnboardingParentView {
         }
         
     }
-    
+
     func getSelectedProblems() -> [Int]{
         var selectedIndexes: [Int] = []
+        let firstTagId = collectionView.allTags().first?.tagId ?? 1
         collectionView.allSelectedTags().forEach { textTag in
-            selectedIndexes.append(Int(textTag.tagId))
+            var newId = textTag.tagId - firstTagId
+            selectedIndexes.append(Int(newId))
         }
         return selectedIndexes
     }
-    
+
+    func loadSelectedProblems(tagIndexes: [Int]){
+
+        let problems = ProblemsRepository.shared.fetchProblemIsActive()
+
+        //Load pre-selected tags
+        collectionView.allTags().forEach { tag in
+            let currentTagText = String(describing: tag.content.value(forKey: "text")!)
+            problemLoop: for problem in problems {
+                if problem.title ?? "" == currentTagText {
+                    tag.selected = true
+                }
+            }
+        }
+
+    }
+
 }
 
 @available(iOS 16.0, *)
 extension SkinProblemView: TTGTextTagCollectionViewDelegate {
     
     func textTagCollectionView(_ textTagCollectionView: TTGTextTagCollectionView!, didTap tag: TTGTextTag!, at index: UInt) {
-        
+
         for i in 0..<K.Category.skinProblem.count {
-            
+
+            if textTagCollectionView.allTags().count == 0 {
+                break
+            }
+
             let tag = textTagCollectionView.getTagAt(UInt(i))
             
             if tag?.selected == true {
-                nextButton.isEnabled = true
-                nextButton.applyGradient(colours: [K.Color.greenLightQuint, K.Color.greenQuint], locations: [0, 1], radius: 8)
-                nextButton.setTitleColor(K.Color.whiteQuint, for: .normal)
+                nextButton.setEnabled()
                 return
             }
             
         }
-        
-        nextButton.removeSublayer(layerIndex: 0)
-        nextButton.isEnabled = false
-        nextButton.backgroundColor = K.Color.disableBgBtnQuint
-        nextButton.setTitleColor(K.Color.greyQuint, for: .normal)
+
+        nextButton.setDisabled()
         
     }
     

@@ -13,7 +13,7 @@ import CoreData
 
 class ProblemModel: NSManagedObject{
     @NSManaged var id: NSNumber
-    @NSManaged var title: String?
-    @NSManaged var desc: String?
+    @NSManaged var title: String
+    @NSManaged var desc: String
     @NSManaged var isActive: Bool
 }

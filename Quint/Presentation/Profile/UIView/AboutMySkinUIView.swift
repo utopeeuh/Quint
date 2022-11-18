@@ -62,6 +62,7 @@ class AboutMySkinUIView: UIView , TTGTextTagCollectionViewDelegate{
                                     namelabel)
         
         collectionView.alignment = .left
+        collectionView.isUserInteractionEnabled = false
         
         content.textFont = .interMedium(size: 12)!
         content.textColor = K.Color.blackQuint
@@ -131,11 +132,11 @@ class AboutMySkinUIView: UIView , TTGTextTagCollectionViewDelegate{
 
     func getSkinType() {
         
-        //fetch skin type
-        let skinType = SkinTypesRepository.shared.fetchSkinType(id: Int(truncating: user!.skinTypeId))
-
         //remove inital tags
         collectionView.removeAllTags()
+        
+        //fetch skin type
+        let skinType = SkinTypesRepository.shared.fetchSkinType(id: Int(truncating: user!.skinTypeId))
 
         //set text here
         content.text = skinType.title ?? "no data!"

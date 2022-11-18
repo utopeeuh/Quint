@@ -80,6 +80,7 @@ class SkinCondParentVC: UIViewController {
     
     @objc func didTapSave() {
         UserRepository.shared.updateUserSkinCondition(isSensitive: skinCondView.isSensitive())
+        ProductsRepository.shared.generateRecommendedProducts()
         navigationController?.popViewController(animated: true)
     }
 }

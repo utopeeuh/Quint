@@ -29,8 +29,10 @@ class RatingRepository: RatingRepositoryDelegate{
     func updateRating(rating: RatingModel, upvote: Bool, undo: Bool) async {
         
         do {
+            let currUser = UserRepository.shared.fetchUser()
             let snapshot = try await rootRating
                                     .whereField("productId", isEqualTo: rating.productId)
+                                    .whereField("skinTypeId", isEqualTo: currUser.skinTypeId)
                                     .getDocuments()
             
             if let document = snapshot.documents.first {
@@ -66,9 +68,10 @@ class RatingRepository: RatingRepositoryDelegate{
         var rating: RatingModel?
         
         do {
-            
+            let currUser = UserRepository.shared.fetchUser()
             let snapshot = try await rootRating
                                     .whereField("productId", isEqualTo: productId)
+                                    .whereField("skinTypeId", isEqualTo: currUser.skinTypeId)
                                     .getDocuments()
             
             if let document = snapshot.documents.first {
@@ -93,12 +96,15 @@ class RatingRepository: RatingRepositoryDelegate{
         var success = false
         
         do {
+            let currUser = UserRepository.shared.fetchUser()
+            
             let newRatingRef = rootRating.document()
             
             try await newRatingRef.setData([
                                         "productId": productId,
                                         "thumbsUp": 0,
-                                        "thumbsDown": 0])
+                                        "thumbsDown": 0,
+                                        "skinTypeId": currUser.skinTypeId])
             
             success = true
             

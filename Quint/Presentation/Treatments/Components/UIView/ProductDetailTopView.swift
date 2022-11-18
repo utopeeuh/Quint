@@ -20,6 +20,7 @@ class ProductDetailTopView: UIView{
     
     private var textStack = UIStackView()
     private var typeLabel: ProductCategoryLabel!
+    private var matchingLabel : ProductCategoryLabel!
     private var nameLabel = UILabel()
     private var brandLabel = UILabel()
     
@@ -49,7 +50,9 @@ class ProductDetailTopView: UIView{
         
         //adjust labels
         let category = CategoriesRepository.shared.fetchCategory(id: Int(truncating: product.categoryId))
-        typeLabel = ProductCategoryLabel(category.title)
+        typeLabel = ProductCategoryLabel(text: category.title.uppercased(), icon: nil)
+        
+        matchingLabel = ProductCategoryLabel(text: "\(product.matchingIngredients) Matching Ingredients", icon: UIImage(named: "MatchingIngredientIcon"))
         
         nameLabel.numberOfLines = 0
         nameLabel.text = product.name
@@ -110,6 +113,7 @@ class ProductDetailTopView: UIView{
         
         addSubview(imageFrame)
         addSubview(typeLabel)
+        addSubview(matchingLabel)
         addSubview(nameLabel)
         addSubview(brandLabel)
         addSubview(ratingPlaceholder)
@@ -133,6 +137,14 @@ class ProductDetailTopView: UIView{
             make.left.equalToSuperview().offset(40)
             make.height.equalTo(typeLabel.height)
         }
+        
+        matchingLabel.snp.makeConstraints { make in
+            make.centerY.equalTo(typeLabel)
+            make.width.equalTo(matchingLabel.width)
+            make.left.equalTo(typeLabel.snp.right).offset(8)
+            make.height.equalTo(matchingLabel.height)
+        }
+        
         
         nameLabel.snp.makeConstraints { make in
             make.top.equalTo(typeLabel.snp.bottom).offset(12)

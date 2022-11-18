@@ -80,7 +80,8 @@ class SkinTypeParentVC: UIViewController {
     }
     
     @objc func didTapSave() {
-        UserRepository.shared.updateUserSkinType(skinTypeId: skinTypeView.getSkinType())
+        UserRepository.shared.updateUserSkinType(skinTypeId: skinTypeView.getSkinType()+1)
+        ProductsRepository.shared.generateRecommendedProducts()
         navigationController?.popViewController(animated: true)
     }
     

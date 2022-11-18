@@ -31,7 +31,6 @@ class ProfileVC: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         self.tabBarController?.tabBar.isHidden = false
-
         user = UserRepository.shared.fetchUser()
         problemList = ProblemsRepository.shared.fetchProblemIsActive()
 

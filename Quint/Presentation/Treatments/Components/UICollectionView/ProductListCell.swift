@@ -10,6 +10,7 @@ import UIKit
 import Kingfisher
 import SMIconLabel
 
+@available(iOS 16.0, *)
 class ProductListCell: UICollectionViewCell {
     
     var product: ProductModel? {

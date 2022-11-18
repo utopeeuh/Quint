@@ -9,7 +9,7 @@ import Foundation
 import FirebaseFirestore
 
 protocol RatingRepositoryDelegate{
-    func updateRating(rating: RatingModel, upvote: Bool) async
+    func updateRating(rating: RatingModel, upvote: Bool, undo: Bool) async
     func fetchRatings(productId: Int) async -> RatingModel?
 }
 
@@ -26,21 +26,35 @@ class RatingRepository: RatingRepositoryDelegate{
         rootRating = db.collection("ratings")
     }
     
-    func updateRating(rating: RatingModel, upvote: Bool) async {
-        
+    func updateRating(rating: RatingModel, upvote: Bool, undo: Bool) async {
         
         do {
             let snapshot = try await rootRating
-                                    .whereField("productTd", isEqualTo: rating.productId)
+                                    .whereField("productId", isEqualTo: rating.productId)
                                     .getDocuments()
             
             if let document = snapshot.documents.first {
                 if upvote {
                     // thumbs up
-                    try await document.reference.updateData(["thumbsUp": rating.thumbsUp+1])
+                    if undo {
+                        try await document.reference.updateData(["thumbsUp": rating.thumbsUp-1])
+                        print(rating.thumbsUp-1)
+                    }
+                    
+                    else {
+                        try await document.reference.updateData(["thumbsUp": rating.thumbsUp+1])
+                    }
+                    
                 } else {
                     // thumbs down
-                    try await document.reference.updateData(["thumbsDown": rating.thumbsDown+1])
+                    if undo {
+                        try await document.reference.updateData(["thumbsDown": rating.thumbsDown-1])
+                    }
+                    
+                    else {
+                        try await document.reference.updateData(["thumbsDown": rating.thumbsDown+1])
+                    }
+                    
                 }
             }
         } catch {
@@ -49,13 +63,12 @@ class RatingRepository: RatingRepositoryDelegate{
     }
 
     func fetchRatings(productId: Int) async -> RatingModel? {
-        
         var rating: RatingModel?
         
         do {
             
             let snapshot = try await rootRating
-                                    .whereField("productTd", isEqualTo: productId)
+                                    .whereField("productId", isEqualTo: productId)
                                     .getDocuments()
             
             if let document = snapshot.documents.first {
@@ -65,13 +78,14 @@ class RatingRepository: RatingRepositoryDelegate{
                 rating = RatingModel(productId: productId)
                 rating?.thumbsUp = thumbsUp ?? 0
                 rating?.thumbsDown = thumbsDown ?? 0
+                return rating
             }
             
         } catch {
             print("Error: \(error.localizedDescription)")
         }
         
-        return rating
+        return nil
     }
     
     func createRating(productId: Int) async -> Bool {

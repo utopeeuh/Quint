@@ -9,6 +9,7 @@ import Foundation
 import UIKit
 import SnapKit
 
+@available(iOS 16.0, *)
 class ProductDetailVC: UIViewController{
     
     private var mainScrollView = UIScrollView()

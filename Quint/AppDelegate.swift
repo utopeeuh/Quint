@@ -19,7 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         FirebaseApp.configure()
         
         // Conduct inital seedings
-        let seeders = [IngredientSeeder(), EffectSeeder(), CategorySeeder(), UsageStepSeeder(), ProductSeeder(), SkinTypeSeeder(), ProblemSeeder(), RoutineSeeder(), UserSeeder(), TipSeeder(), MoodSeeder()]
+        let seeders = [IngredientSeeder(), EffectSeeder(), CategorySeeder(), UsageStepSeeder(), ProductSeeder(), SkinTypeSeeder(), ProblemSeeder(), RoutineSeeder(), UserSeeder(), TipSeeder(), MoodSeeder(), RatingCoreSeeder()]
         
         let isFirstTime = UserDefaults.standard.object(forKey: K.UD.firstTime) ?? true
         

@@ -7,6 +7,7 @@
 
 import UIKit
 
+@available(iOS 16.0, *)
 class ProductListCollectionView: UIView {
 
     var feedCollection: UICollectionView!
@@ -82,6 +83,7 @@ class ProductListCollectionView: UIView {
     }
 }
 
+@available(iOS 16.0, *)
 extension ProductListCollectionView : UICollectionViewDataSource , UICollectionViewDelegate  {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -105,6 +107,7 @@ extension ProductListCollectionView : UICollectionViewDataSource , UICollectionV
     }
 }
 
+@available(iOS 16.0, *)
 extension ProductListCollectionView : PinterestLayoutDelegate {
    
     func collectionView(_ collectionView: UICollectionView, heightForPhotoAtIndexPath indexPath: IndexPath, cellWidth: CGFloat) -> CGFloat {

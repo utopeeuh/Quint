@@ -12,6 +12,7 @@ import SnapKit
 @available(iOS 16.0, *)
 class DailyLogVC: UIViewController, UIImagePickerControllerDelegate & UINavigationControllerDelegate {
     
+    var logDate: Date?
     private let backBtn = UIButton()
     private let pageTitle = UILabel()
     private let mainScrollView = UIScrollView()
@@ -387,6 +388,7 @@ class DailyLogVC: UIViewController, UIImagePickerControllerDelegate & UINavigati
     
     @objc func didTapBack(){
         delegate?.backFromLog(didCreate: false)
+        navigationController?.popViewController(animated: true)
     }
     
     @objc func createLog(){
@@ -395,10 +397,14 @@ class DailyLogVC: UIViewController, UIImagePickerControllerDelegate & UINavigati
         }
         
         logData.sleep = sleepHours.getSleepNumber()
-        LogRepository.shared.updateLogData(date: Date.now, logData: logData)
+        if LogRepository.shared.doesLogExists(date: logDate!) {
+            LogRepository.shared.updateLogData(date: logDate!, logData: logData)
+        }else {
+            LogRepository.shared.createLog(date: logDate!)
+        }
+        
         
         navigationController?.popViewController(animated: true)
-        
         delegate?.backFromLog(didCreate: true)
     }
 

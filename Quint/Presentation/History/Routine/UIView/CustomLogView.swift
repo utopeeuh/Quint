@@ -17,6 +17,7 @@ class CustomLogView: UIView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
+        self.isUserInteractionEnabled = true
         configureUI()
     }
     
@@ -37,6 +38,7 @@ class CustomLogView: UIView {
         descLabel.text = ""
         descLabel.font = .interSemiBold(size: 18)
         descLabel.textColor = K.Color.blackQuint
+        descLabel.numberOfLines = 0
 
     }
     
@@ -59,6 +61,7 @@ class CustomLogView: UIView {
         descLabel.snp.makeConstraints { make in
             make.top.equalTo(titleLabel.snp.bottom).offset(5)
             make.leading.equalTo(titleLabel)
+            make.width.equalTo(100)
         }
         
     }

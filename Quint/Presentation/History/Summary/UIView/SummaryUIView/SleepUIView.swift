@@ -38,7 +38,7 @@ class SleepUIView: SummaryUIView {
         self.titleImage.image = UIImage(named: "sIcon")
         self.titleLabel.text = "Sleep"
         self.subTitleLabel.text = "Your average time of sleep is"
-        self.bigNumLabel.text = "\(sleepHour)"
+        self.bigNumLabel.text = String(format: "%.1f", sleepHour)
         self.bigTitleLabel.text = "hours"
         self.bigTitleImage.image = UIImage(named: imageName)
         self.descLabel.text = descriptionText

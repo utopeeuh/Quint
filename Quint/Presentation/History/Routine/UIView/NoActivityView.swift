@@ -13,10 +13,11 @@ class NoActivityView: UIView {
     private var activityImage = UIImageView()
     private var titleLabel = UILabel()
     private var captionLabel = UILabel()
-    private var logButton = UIButton()
+    var logButton = UIButton()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
+        self.isUserInteractionEnabled = true
         configureUI()
     }
 
@@ -44,6 +45,7 @@ class NoActivityView: UIView {
         logButton.applyGradient(colours: [K.Color.greenLightQuint, K.Color.greenQuint], locations: [0,1], radius: 8)
         
     }
+    
 
     override func configureLayout() {
 

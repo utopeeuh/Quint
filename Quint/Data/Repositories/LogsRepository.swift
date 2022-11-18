@@ -157,7 +157,7 @@ class LogRepository: LogRepositoryDelegate{
             log.isBetter = logData.isBetter!
             
             //Check if log already has image from onboarding
-            if(log.image == nil){
+            if(log.image == nil && logData.image != nil){
                 log.image = logData.image!.jpegData(compressionQuality: 0.5)
             }
             

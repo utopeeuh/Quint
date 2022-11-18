@@ -7,6 +7,7 @@
 
 import UIKit
 
+@available(iOS 16.0, *)
 class SummaryHistoryVC: UIViewController {
     var vwDropDown = DropDownUIView()
     var spacer = UIView()
@@ -18,6 +19,7 @@ class SummaryHistoryVC: UIViewController {
     var activityLevel = ActivityLevelUIView()
     let monthYearPickerView = MonthYearWheelPicker()
     var logList: [LogModel] = []
+    var navBar = NavigationBarUIView()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -127,16 +129,28 @@ class SummaryHistoryVC: UIViewController {
         monthYearPickerView.isHidden = true
         spacer.isHidden = true
         scrollView.showsVerticalScrollIndicator = false
-        scrollView.contentSize = CGSize(width: view.frame.width, height: 1265)
+        scrollView.contentSize = CGSize(width: view.frame.width, height: 1400)
+    }
+    
+    @objc func goToRoutinePage() {
+        let controller = RoutineHistoryVC()
+        navigationController?.pushViewController(controller, animated: false)
+        navigationController?.navigationBar.isHidden = true
     }
     
     override func configureComponents() {
+        view.addSubview(navBar)
+        navBar.routineButton.setImage(UIImage(named: "calendarMonthDisabled"), for: .normal)
+        navBar.routineButton.setTitleColor(K.Color.disableBgBtnQuint, for: .normal)
+        navBar.routineButton.addTarget(self, action: #selector(goToRoutinePage), for: .touchUpInside)
+        navBar.lineWhiteRoutine.isHidden = true
+        
         view.addSubview(scrollView)
         let touchAnyWhereGesture = UITapGestureRecognizer(target: self, action: #selector(anyWhereHandler))
         view.addGestureRecognizer(touchAnyWhereGesture)
         scrollView.addSubview(scrollStackViewContainer)
         scrollView.showsVerticalScrollIndicator = false
-        scrollView.contentSize = CGSize(width: view.frame.width, height: 1265)
+        scrollView.contentSize = CGSize(width: view.frame.width, height: 1400)
         
         scrollView.addSubview(vwDropDown)
         vwDropDown.lblTitle.text = "November 2022"
@@ -156,6 +170,11 @@ class SummaryHistoryVC: UIViewController {
     }
     
     override func configureLayout() {
+        navBar.snp.makeConstraints { make in
+            make.top.width.equalToSuperview()
+            make.height.equalTo(123)
+        }
+        
         vwDropDown.snp.makeConstraints { make in
             make.width.equalTo(150)
             make.height.equalTo(30)
@@ -185,6 +204,7 @@ class SummaryHistoryVC: UIViewController {
         scrollView.snp.makeConstraints { make in
             make.width.equalToSuperview()
             make.height.equalTo(UIScreen.main.bounds.height)
+            make.top.equalTo(navBar.snp.bottom).offset(10)
         }
         
         scrollStackViewContainer.snp.makeConstraints { make in

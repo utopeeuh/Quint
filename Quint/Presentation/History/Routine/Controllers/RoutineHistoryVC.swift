@@ -70,6 +70,8 @@ class RoutineHistoryVC: UIViewController {
         scrollView.showsHorizontalScrollIndicator = false
         scrollView.backgroundColor = K.Color.bgQuint
         
+        scrollView.contentSize = CGSize(width: UIScreen.main.bounds.width, height: 500)
+        
         noActivityView.isHidden = true
 //        activityView.isHidden = true
         activityView.editButton.addTarget(self, action: #selector(goToEditLog), for: .touchUpInside)
@@ -176,7 +178,7 @@ class RoutineHistoryVC: UIViewController {
             
             expandButton.setImage(UIImage(named: "arrow_down_icon"), for: .normal)
             expandButton.sizeToFit()
-            scrollView.contentSize = CGSize(width: UIScreen.main.bounds.width, height: 530)
+            scrollView.contentSize = CGSize(width: UIScreen.main.bounds.width, height: 500)
             viewBlanket.backgroundColor = K.Color.bgQuint
             
         }

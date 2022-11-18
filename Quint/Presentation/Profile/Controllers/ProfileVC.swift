@@ -150,9 +150,8 @@ class ProfileVC: UIViewController {
                                     deleteAcc)
         
         headerProfile.snp.makeConstraints { make in
-            make.top.equalToSuperview().offset(67)
-            make.left.equalTo(view.safeAreaLayoutGuide).offset(20)
-            make.right.equalTo(view.safeAreaLayoutGuide).offset(-20)
+            make.top.equalTo(view.safeAreaLayoutGuide)
+            make.left.equalToSuperview().offset(20)
         }
         
         aboutMySkinLabel.snp.makeConstraints { make in

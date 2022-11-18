@@ -109,12 +109,12 @@ class ReminderVC: UIViewController {
         
         backButton.snp.makeConstraints { make in
             make.leading.equalToSuperview().offset(20)
-            make.top.equalToSuperview().offset(60)
+            make.top.equalTo(view.safeAreaLayoutGuide).offset(9)
         }
         
         titleLabel.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
-            make.top.equalToSuperview().offset(60)
+            make.centerY.equalTo(backButton)
         }
         
         morningReminderView.snp.makeConstraints { make in

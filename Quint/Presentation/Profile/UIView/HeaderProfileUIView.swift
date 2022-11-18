@@ -8,6 +8,8 @@
 import UIKit
 
 class HeaderProfileUIView: UIView {
+    
+    var height = 28
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -33,7 +35,7 @@ class HeaderProfileUIView: UIView {
     
     override func configureLayout() {
         namelabel.snp.makeConstraints { make in
-            make.left.equalTo(self.safeAreaInsets)
+            make.top.left.equalToSuperview()
         }
         
     }

@@ -51,12 +51,12 @@ class SkinProblemParentVC: UIViewController {
         
         backBtn.snp.makeConstraints { make in
             make.leading.equalToSuperview().offset(20)
-            make.top.equalToSuperview().offset(60)
+            make.top.equalTo(view.safeAreaLayoutGuide).offset(9)
         }
         
         skinProblemLabel.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
-            make.top.equalToSuperview().offset(60)
+            make.centerY.equalTo(backBtn)
         }
         
         skinProblemView.snp.makeConstraints { make in

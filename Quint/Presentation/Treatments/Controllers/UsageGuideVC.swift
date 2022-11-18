@@ -94,7 +94,7 @@ class UsageGuideVC: UIViewController{
 }
 
 extension UsageGuideVC: CollapsableStackDelegate{
-    func onClickExpand(_ sender: UIButton) {
+    func onClickExpand(_ sender: CollapsableButton) {
         if let collapsable = sender.superview as? CollapsableButton{
             collapsableStack.showView(collapsable)
         }

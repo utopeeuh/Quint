@@ -183,7 +183,7 @@ extension ProductDetailTopView : RatingViewDelegate {
         let currUser = UserRepository.shared.fetchUser()
         let skinType = SkinTypesRepository.shared.fetchSkinType(id: Int(truncating: currUser.skinTypeId))
         
-        ratedByLabel.text = "rated by \(skinType.title?.lowercased() ?? "") people"
+        ratedByLabel.text = "rated by \(skinType.title?.lowercased() ?? "") user"
         ratedByLabel.sizeToFit()
         
         ratedByLabel.snp.updateConstraints { make in

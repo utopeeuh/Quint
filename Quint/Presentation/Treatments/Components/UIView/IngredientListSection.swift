@@ -32,7 +32,10 @@ class IngredientListSection: UIView{
     }
     
     func getHeight() -> CGFloat {
-        return CGFloat(ingredientCollection.getCount()*(88+22)/2) 
+        let oldCount = ingredientCollection.getCount()
+        let newCount = oldCount % 2 == 0 ? oldCount/2 : (oldCount+1)/2
+        
+        return CGFloat((newCount)*100+50)
     }
     
     override func configureComponents(){

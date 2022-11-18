@@ -10,6 +10,7 @@ import UIKit
 import Kingfisher
 import SMIconLabel
 
+@available(iOS 16.0, *)
 class ProductListCell: UICollectionViewCell {
     
     var product: ProductModel? {
@@ -121,11 +122,23 @@ class ProductListCell: UICollectionViewCell {
     }
     
     override func configureComponents(){
+        
+        let g = UITapGestureRecognizer(target: self, action: #selector(goToProductDetail))
+        
+        addGestureRecognizer(g)
         layer.cornerRadius = 10
+        
         backgroundColor = K.Color.whiteQuint
 
         contentView.multipleSubviews(view: img,
                                      imgPlaceholder, nameLabel, brandLabel, ratingLabel)
+    }
+    
+    @objc func goToProductDetail (){
+        let controller = ProductDetailVC()
+        controller.product = product
+        
+        (superview?.superview?.superview?.superview?.superview?.next as? UIViewController)?.navigationController?.pushViewController(controller, animated: true)
     }
     
     override func configureLayout(){

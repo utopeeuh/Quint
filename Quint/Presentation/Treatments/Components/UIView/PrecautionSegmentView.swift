@@ -11,6 +11,8 @@ import SnapKit
 
 class PrecautionSegmentView: UIView{
     
+    private var product : ProductModel!
+    
     var mainScrollView = UIScrollView()
     private var totalHeight: CGFloat = 0
     private var allergenLabel = HeaderLabel()
@@ -21,12 +23,18 @@ class PrecautionSegmentView: UIView{
     private var allergens: [String] = []
     private var allergenStack = UIStackView()
     private var allergenStackH: CGFloat = 0
-    private var usageCell: UsageCell!
+    
+    private var usages: [String] = []
+    private var usageStack = UIStackView()
+    private var usageStackH: CGFloat = 0
+    
     private var safetyCell = SafetyCell()
     private var sourceCell: SourceCell!
 
-    required init() {
+    init(product: ProductModel) {
         super.init(frame: .zero)
+        self.product = product
+        generateInfo()
         configureUI()
     }
     
@@ -35,6 +43,7 @@ class PrecautionSegmentView: UIView{
     }
     
     override func configureComponents(){
+        
         allergenLabel.text = "Allergen"
         usageLabel.text = "Usage precaution"
         safetyLabel.text = "Safety precaution"
@@ -43,7 +52,6 @@ class PrecautionSegmentView: UIView{
         allergenStack.axis = .vertical
         allergenStack.spacing = 12
         
-        allergens = ["Allergen 1", "Allergen 2", "Loooooooooooooooooooooooooooooooooooongggggggg"]
         for a in allergens {
             let newCell = AllergenCell(a)
             allergenStack.addArrangedSubview(newCell)
@@ -51,12 +59,20 @@ class PrecautionSegmentView: UIView{
         }
         allergenStackH = allergenStackH + CGFloat((allergens.count-1)*12)
         
-        usageCell = UsageCell("Usage")
-        sourceCell = SourceCell("https://github.com/utopeeuh/Quint")
+        usageStack.axis = .vertical
+        usageStack.spacing = 12
+        for u in usages {
+            let newCell = UsageCell(u)
+            usageStack.addArrangedSubview(newCell)
+            usageStackH = usageStackH + UsageCell(u).getHeight()
+        }
+        usageStackH = usageStackH + CGFloat((allergens.count-1)*12)
+        
+        sourceCell = SourceCell(product.url)
         
         // Add offsets and height
         addToHeight(allergenStackH)
-        addToHeight(usageCell.getHeight())
+        addToHeight(usageStackH)
         addToHeight(sourceCell.linkLabel.requiredHeight+28)
         addToHeight(safetyCell.getHeight())
         addToHeight((allergenLabel.font.pointSize+1)*4)
@@ -68,7 +84,7 @@ class PrecautionSegmentView: UIView{
         addSubview(allergenLabel)
         addSubview(allergenStack)
         addSubview(usageLabel)
-        addSubview(usageCell)
+        addSubview(usageStack)
         addSubview(safetyLabel)
         addSubview(safetyCell)
         addSubview(sourceLabel)
@@ -94,14 +110,14 @@ class PrecautionSegmentView: UIView{
             make.centerX.equalToSuperview()
         }
         
-        usageCell.snp.makeConstraints { make in
+        usageStack.snp.makeConstraints { make in
             make.top.equalTo(usageLabel.snp.bottom).offset(18)
             make.width.equalToSuperview().offset(-40)
             make.centerX.equalToSuperview()
         }
         
         safetyLabel.snp.makeConstraints { make in
-            make.top.equalTo(usageCell.snp.bottom).offset(48)
+            make.top.equalTo(usageStack.snp.bottom).offset(48)
             make.height.equalTo(safetyLabel.requiredHeight)
             make.width.equalToSuperview().offset(-40)
             make.centerX.equalToSuperview()
@@ -124,6 +140,30 @@ class PrecautionSegmentView: UIView{
             make.top.equalTo(sourceLabel.snp.bottom).offset(18)
             make.width.equalToSuperview().offset(-40)
             make.centerX.equalToSuperview()
+        }
+    }
+    
+    func generateInfo(){
+        let ingredientList = IngredientsRepository.shared.fetchIngredientList(product: product)
+        ingredientList.forEach { ingredient in
+            let currUsage = ingredient.usage
+            let currAllergen = ingredient.allergen
+            
+            if !usages.contains(currUsage) && currUsage != "None" {
+                usages.append(currUsage)
+            }
+            
+            if !allergens.contains(currAllergen) && currAllergen != "None" {
+                allergens.append(currAllergen)
+            }
+        }
+        
+        if usages.isEmpty {
+            usages.append("None")
+        }
+        
+        if allergens.isEmpty {
+            allergens.append("None")
         }
     }
     

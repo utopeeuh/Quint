@@ -14,6 +14,7 @@ protocol ProductListDelegate {
     func updateContentHeight(height: CGFloat)
 }
 
+@available(iOS 16.0, *)
 class ProductListView: UIView{
     
     private let heightWithoutCollection : CGFloat = 338

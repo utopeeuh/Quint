@@ -22,6 +22,5 @@ class ProductModel: NSManagedObject{
     @NSManaged var ingredients: String
     @NSManaged var matchingIngredients: NSNumber
     @NSManaged var isRecommended: Bool
-    @NSManaged var thumbsUp: NSNumber
-    @NSManaged var thumbsDown: NSNumber
+    @NSManaged var rated: Bool
 }

@@ -10,6 +10,7 @@ import Kingfisher
 import RxSwift
 import RxCocoa
 
+@available(iOS 16.0, *)
 class TreatmentsVC: UIViewController{
     
     private var scrollView = UIScrollView()
@@ -117,6 +118,7 @@ class TreatmentsVC: UIViewController{
     }
 }
 
+@available(iOS 16.0, *)
 extension TreatmentsVC: ProductListDelegate {
     func updateContentHeight(height: CGFloat) {
         scrollView.contentSize = CGSize(width: UIScreen.main.bounds.width, height: height+120)

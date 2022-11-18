@@ -13,4 +13,5 @@ target 'Quint' do
   pod 'SwiftyJSON', '~> 4.0'
   pod 'DropDown'
   pod "MonthYearPicker"
+  pod 'FirebaseFirestore'
 end

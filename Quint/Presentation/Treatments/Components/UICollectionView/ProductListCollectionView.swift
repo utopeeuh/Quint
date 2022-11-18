@@ -7,6 +7,7 @@
 
 import UIKit
 
+@available(iOS 16.0, *)
 class ProductListCollectionView: UIView {
 
     var feedCollection: UICollectionView!
@@ -42,7 +43,6 @@ class ProductListCollectionView: UIView {
         feedCollection.dataSource = self
         feedCollection.showsVerticalScrollIndicator = false
         feedCollection.isScrollEnabled = false
-        feedCollection.toggleActivityIndicator()
         
         self.addSubview(feedCollection)
         feedCollection.snp.makeConstraints { make in
@@ -55,8 +55,6 @@ class ProductListCollectionView: UIView {
             if let photos = res {
                 
                 DispatchQueue.main.async {
-                    
-                    self.feedCollection.toggleActivityIndicator()
                     
                     self.photos = photos
                     
@@ -75,6 +73,7 @@ class ProductListCollectionView: UIView {
         self.source = source
         
         self.feedCollection.reloadData()
+        self.feedCollection.frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: height)
         
         let layout = PinterestLayout()
         layout.delegate = self
@@ -84,6 +83,7 @@ class ProductListCollectionView: UIView {
     }
 }
 
+@available(iOS 16.0, *)
 extension ProductListCollectionView : UICollectionViewDataSource , UICollectionViewDelegate  {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -105,9 +105,9 @@ extension ProductListCollectionView : UICollectionViewDataSource , UICollectionV
         
         return cell
     }
-
 }
 
+@available(iOS 16.0, *)
 extension ProductListCollectionView : PinterestLayoutDelegate {
    
     func collectionView(_ collectionView: UICollectionView, heightForPhotoAtIndexPath indexPath: IndexPath, cellWidth: CGFloat) -> CGFloat {

@@ -119,7 +119,7 @@ class StepsRepository: StepsRepositoryDelegate{
             
             stepList.forEach { step in
                 let currCat = CategoriesRepository.shared.fetchCategory(id: Int(truncating: step.categoryId))
-                stepInfoList.append(RoutineStepInfo(title: currCat.title!, position: Int(truncating: step.position)))
+                stepInfoList.append(RoutineStepInfo(title: currCat.title, position: Int(truncating: step.position)))
             }
         }
         catch{

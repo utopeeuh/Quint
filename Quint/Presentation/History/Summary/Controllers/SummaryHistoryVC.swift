@@ -25,6 +25,7 @@ class SummaryHistoryVC: UIViewController {
         super.viewDidLoad()
         view.backgroundColor =  UIColor(red: 244/255, green: 244/255, blue: 244/255, alpha: 1)
         logList = LogRepository.shared.fetchLogList(dateStart: Calendar.current.startOfMonth(Date.now), dateEnd: Calendar.current.startOfDay(for: Date.now))
+        
         morningRoutine.logList = logList
         nightRoutine.logList = logList
         sleep.logList = logList
@@ -86,7 +87,7 @@ class SummaryHistoryVC: UIViewController {
                 case 11:
                     string = String("November \(year)")
                 case 12:
-                    string = String("Desember \(year)")
+                    string = String("December \(year)")
                 default:
                     string = String("\(month) \(year)")
             }
@@ -110,7 +111,7 @@ class SummaryHistoryVC: UIViewController {
     
     @objc private func monthYearWheelPickerDidChange() {
         let date = monthYearPickerView.date
-        print(date)
+        
         if Calendar.current.startOfMonth(date) == Calendar.current.startOfMonth(Date.now) {
             logList = LogRepository.shared.fetchLogList(dateStart: Calendar.current.startOfMonth(Date.now), dateEnd: Calendar.current.startOfDay(for: Date.now))
         }else {
@@ -122,7 +123,6 @@ class SummaryHistoryVC: UIViewController {
         sleep.logList = logList
         moodLevel.logList = logList
         activityLevel.logList = logList
-        
     }
     
     @objc func anyWhereHandler() {

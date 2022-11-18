@@ -8,8 +8,6 @@
 import UIKit
 
 class NightUIView: SummaryUIView {
-    
-    var nightRoutineCounter = 0
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -20,8 +18,8 @@ class NightUIView: SummaryUIView {
     }
     
     override func setData() {
+        var nightRoutineCounter = 0
         var denom = 1
-        var parameterPersentage: Float = Float(nightRoutineCounter/denom*100)
         
         if Calendar.current.startOfMonth(logList.first?.date ?? Date.now) == Calendar.current.startOfMonth(Date.now) {
             denom = Int(Calendar.current.component(.day, from: Date.now))
@@ -29,11 +27,19 @@ class NightUIView: SummaryUIView {
             denom = Int(Calendar.current.component(.day, from: Calendar.current.endOfMonth(logList.first!.date)))
         }
         
-        logList.forEach { log in
+        logLoop: for log in logList {
+            
+            if logList.first == nil {
+                break logLoop
+            }
+            
             if log.isDayDone == true {
                 nightRoutineCounter += 1
             }
         }
+        
+        let parameterPersentage = Float(nightRoutineCounter/denom*100)
+        
         if parameterPersentage > 90.0 {
             descriptionText = "That’s a really good number! Keep it up!"
             imageName = "trumpetIcon"
@@ -46,7 +52,7 @@ class NightUIView: SummaryUIView {
         }else if parameterPersentage >= 30.0 && parameterPersentage <= 65.0 {
             descriptionText = "Ohhh no, please don't let all your skincare be wasted. Let us help you with reminders. Go to profile to check it out!"
             imageName = "confusedIcon"
-        }else if parameterPersentage < 30.0{
+        }else {
             descriptionText = "Go go go! We believe you could do it. If you need any help, check reminders on profile section."
             imageName = "steamIcon"
         }

@@ -9,13 +9,6 @@ import UIKit
 
 class MoodLevelUIView: SummaryUIView {
     
-    var joyfulCounter = 0
-    var happyCounter = 0
-    var normalCounter = 0
-    var sadCounter = 0
-    var stressedCounter = 0
-    var moodLevel: String!
-    
     override init(frame: CGRect) {
         super.init(frame: frame)
     }
@@ -25,6 +18,14 @@ class MoodLevelUIView: SummaryUIView {
     }
 
     override func setData() {
+        
+        var joyfulCounter = 0
+        var happyCounter = 0
+        var normalCounter = 0
+        var sadCounter = 0
+        var stressedCounter = 0
+        var moodLevel: String!
+        
         logList.forEach { log in
             switch log.moodId {
             case 1:
@@ -62,6 +63,10 @@ class MoodLevelUIView: SummaryUIView {
             moodLevel = "Stressed"
             imageName = "steamIcon"
             descriptionText = "You Rock!! Lots of pressures and stressful moments this month but you survived. Be sure to do your morning and night routines even when it gets hard."
+        } else {
+            moodLevel = "None"
+            imageName = "raisedEyebrowIcon"
+            descriptionText = "Make sure to fill in your daily log!"
         }
         
         self.titleImage.image = UIImage(named: "mlIcon")

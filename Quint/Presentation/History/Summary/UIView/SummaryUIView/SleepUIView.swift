@@ -9,7 +9,6 @@ import UIKit
 
 class SleepUIView: SummaryUIView {
     
-    var sleepHour: Float = 0.0
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -20,11 +19,15 @@ class SleepUIView: SummaryUIView {
     }
     
     override func setData() {
+        
         var sleepHourCounter: Float = 0.0
+        
         logList.forEach { log in
-            sleepHourCounter += Float(log.sleep)
+            sleepHourCounter += Float(truncating: log.sleep)
         }
-        sleepHour = sleepHourCounter/Float(logList.count)
+        
+        var sleepHour = sleepHourCounter/Float(logList.count)
+        
         if sleepHour > 9.0 {
             imageName = "confusedIcon"
             descriptionText = "You are sleeping more than you should be. You only need 7-9 hours to sleep. Oversleeping may potentially cause health problems."
@@ -34,7 +37,12 @@ class SleepUIView: SummaryUIView {
         }else if sleepHour < 7.0 {
             imageName = "confusedIcon"
             descriptionText = "Let your skin have time to regenerate and heal. You need to increase your sleep time to ideally 7-9 hours."
+        } else if logList.count == 0 {
+            imageName = "confusedIcon"
+            descriptionText = "Make sure to fill in your daily log!"
+            sleepHour = 0
         }
+        
         self.titleImage.image = UIImage(named: "sIcon")
         self.titleLabel.text = "Sleep"
         self.subTitleLabel.text = "Your average time of sleep is"

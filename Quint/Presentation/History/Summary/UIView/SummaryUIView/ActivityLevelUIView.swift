@@ -8,11 +8,6 @@
 import UIKit
 
 class ActivityLevelUIView: SummaryUIView {
-    
-    var veryActiveCounter = 0
-    var activeCounter = 0
-    var sedentaryCounter = 0 
-    var activityLevel: String!
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -23,6 +18,12 @@ class ActivityLevelUIView: SummaryUIView {
     }
     
     override func setData() {
+        
+        var veryActiveCounter = 0
+        var activeCounter = 0
+        var sedentaryCounter = 0
+        var activityLevel: String!
+        
         logList.forEach { log in
             switch log.activityLevel {
             case 1:
@@ -47,7 +48,12 @@ class ActivityLevelUIView: SummaryUIView {
             activityLevel = "Sedentary"
             imageName = "monkeyIcon"
             descriptionText = "This month has been really active for you.  Be sure to reapply your sunscreen every 2 hours and wash your face thoroughly after the activity."
+        } else {
+            activityLevel = "None"
+            imageName = "monkeyIcon"
+            descriptionText = "Please fill in your daily log!"
         }
+        
         self.titleImage.image = UIImage(named: "alIcon")
         self.titleLabel.text = "Activity level"
         self.subTitleLabel.text = "Your average activity level is"

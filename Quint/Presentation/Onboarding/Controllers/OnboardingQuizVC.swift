@@ -139,7 +139,7 @@ class OnboardingQuizVC: UIViewController, PhotoConfirmationVCDelegate {
         
         switch(childContents[currIndex]){
         case is SkinTypeView:
-            data.selectedSkinType = (childContents[currIndex] as! SkinTypeView).getSkinType()
+            data.selectedSkinType = (childContents[currIndex] as! SkinTypeView).getSkinType()+1
             print(data.selectedSkinType!)
             break
         case is SkinConditionView:

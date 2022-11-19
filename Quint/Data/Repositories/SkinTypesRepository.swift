@@ -27,13 +27,12 @@ class SkinTypesRepository: SkinTypesRepositoryDelegate{
         request.predicate = idPredicate
         
         do{
-            let results:NSArray = try context.fetch(request) as NSArray
+            let results = try context.fetch(request) as? [SkinTypeModel]
             
-            for result in results {
-                skinType  = result as? SkinTypeModel
-            }
+            skinType = results?.first
             
-            return skinType!
+            print(results)
+            
         }
         catch{
             print("fetch failed")

@@ -31,6 +31,7 @@ class ProfileVC: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         self.tabBarController?.tabBar.isHidden = false
+        navigationController?.isNavigationBarHidden = true
         user = UserRepository.shared.fetchUser()
         problemList = ProblemsRepository.shared.fetchProblemIsActive()
 
@@ -149,7 +150,7 @@ class ProfileVC: UIViewController {
                                     deleteAcc)
         
         headerProfile.snp.makeConstraints { make in
-            make.top.equalTo(view.safeAreaLayoutGuide)
+            make.top.equalTo(view.safeAreaLayoutGuide).offset(20)
             make.left.equalToSuperview().offset(20)
         }
         

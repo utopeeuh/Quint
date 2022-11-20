@@ -112,13 +112,13 @@ class OnboardingQuizVC: UIViewController, PhotoConfirmationVCDelegate {
         }
         
         backButton.snp.makeConstraints { make in
-            make.top.equalTo(view.safeAreaLayoutGuide)
+            make.top.equalTo(view.safeAreaLayoutGuide).offset(20)
             make.left.equalToSuperview().offset(20)
         }
         
         progressBar.snp.makeConstraints { make in
             make.height.equalTo(7)
-            make.top.equalTo(backButton).offset(7)
+            make.centerY.equalTo(backButton)
             make.left.equalTo(backButton.snp.right).offset(20)
             make.right.equalToSuperview().offset(-20)
         }

@@ -47,6 +47,10 @@ class LoginVC: UIViewController {
         captionLabel.text = "Find the best skin care product and ingredients for yourself with personalized information while tracking your facial skin routine progress."
         captionLabel.font = .interRegular(size: 16)
         captionLabel.textAlignment = .center
+        captionLabel.numberOfLines = 0
+        captionLabel.lineBreakMode = .byWordWrapping
+        captionLabel.frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width-40, height: 0)
+        captionLabel.sizeToFit()
 
         startButton.setText("Get started")
         startButton.addTarget(self, action: #selector(didTapGetStart), for: .touchUpInside)
@@ -56,26 +60,14 @@ class LoginVC: UIViewController {
     
     override func configureLayout() {
         
-        view.multipleSubviews(view: topSpacer,
-                                    logoImage,
+        view.multipleSubviews(view: logoImage,
                                     taglineLabel,
                                     captionLabel,
-                                    startButton,
-                                    signInButton,
-                                    bottomSpacer)
-        
-        topSpacer.snp.makeConstraints { make in
-            make.centerX.equalToSuperview()
-            make.width.equalTo(1)
-            make.height.equalTo(bottomSpacer)
-            make.top.equalTo(self.view.safeAreaLayoutGuide.snp.top)
-            make.bottom.equalTo(logoImage)
-        }
+                                    startButton)
         
         logoImage.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
-            make.width.equalToSuperview().offset(-300)
-            make.height.equalTo(118)
+            make.top.equalTo(view.safeAreaLayoutGuide).offset((UIScreen.main.bounds.height-47)/5000*671)
         }
 
         taglineLabel.snp.makeConstraints { make in
@@ -87,8 +79,8 @@ class LoginVC: UIViewController {
 
         captionLabel.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
-            make.height.equalTo(100)
-            make.width.equalToSuperview().offset(-33)
+            make.height.equalTo(120)
+            make.width.equalToSuperview().offset(-40)
             make.top.equalTo(taglineLabel.snp.bottom).offset(18)
         }
 
@@ -99,20 +91,20 @@ class LoginVC: UIViewController {
             make.width.equalToSuperview().offset(-40)
         }
 
-        signInButton.snp.makeConstraints { make in
-            make.centerX.equalToSuperview()
-            make.height.equalTo(50)
-            make.top.equalTo(startButton.snp.bottom).offset(12)
-            make.width.equalToSuperview().offset(-40)
-        }
+//        signInButton.snp.makeConstraints { make in
+//            make.centerX.equalToSuperview()
+//            make.height.equalTo(50)
+//            make.top.equalTo(startButton.snp.bottom).offset(12)
+//            make.width.equalToSuperview().offset(-40)
+//        }
         
-        bottomSpacer.snp.makeConstraints { make in
-            make.centerX.equalToSuperview()
-            make.width.equalTo(1)
-            make.height.equalTo(topSpacer)
-            make.top.equalTo(signInButton)
-            make.bottom.equalTo(self.view.safeAreaLayoutGuide.snp.bottom)
-        }
+//        bottomSpacer.snp.makeConstraints { make in
+//            make.centerX.equalToSuperview()
+//            make.width.equalTo(1)
+//            make.height.equalTo(topSpacer)
+//            make.top.equalTo(signInButton)
+//            make.bottom.equalTo(self.view.safeAreaLayoutGuide.snp.bottom)
+//        }
 
     }
     

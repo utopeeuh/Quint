@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21225" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
     <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -16,17 +16,20 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="splashscreen" translatesAutoresizingMaskIntoConstraints="NO" id="RBo-9G-cTE">
-                                <rect key="frame" x="-3" y="-3" width="381" height="820"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" semanticContentAttribute="forceLeftToRight" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="SplashScreen" highlightedImage="SplashScreen" translatesAutoresizingMaskIntoConstraints="NO" id="RBo-9G-cTE">
+                                <rect key="frame" x="-21" y="-45" width="417" height="903"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="RBo-9G-cTE" secondAttribute="height" multiplier="195:422" id="33u-Au-LTd"/>
+                                    <constraint firstAttribute="height" constant="903" id="wek-IX-BWP"/>
+                                </constraints>
                             </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="RBo-9G-cTE" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="-50" id="MMR-jR-TMz"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="RBo-9G-cTE" secondAttribute="trailing" constant="-3" id="Xa9-uM-zRA"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="RBo-9G-cTE" secondAttribute="bottom" constant="-39" id="YND-pY-n4x"/>
-                            <constraint firstItem="RBo-9G-cTE" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="-3" id="frU-Lw-WaZ"/>
+                            <constraint firstItem="RBo-9G-cTE" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="OHe-fr-c3Z"/>
+                            <constraint firstItem="RBo-9G-cTE" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" constant="-6" id="fYs-yI-aT4"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -36,6 +39,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="splashscreen" width="390" height="844"/>
+        <image name="SplashScreen" width="390" height="844"/>
     </resources>
 </document>

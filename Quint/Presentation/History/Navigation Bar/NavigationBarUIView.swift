@@ -64,22 +64,20 @@ class NavigationBarUIView: UIView {
     
     override func configureLayout() {
         horizontalStack.snp.makeConstraints { make in
-            make.height.equalToSuperview()
-            make.top.equalTo(self.safeAreaInsets).offset(20)
+            make.top.equalToSuperview().offset(10)
+            make.bottom.equalToSuperview()
         }
         
         lineWhiteRoutine.snp.makeConstraints { make in
             make.width.equalTo(routineButton.snp.width)
-            make.left.equalToSuperview()
+            make.left.bottom.equalToSuperview()
             make.height.equalTo(3)
-            make.bottom.equalTo(self.safeAreaLayoutGuide)
         }
         
         lineWhiteHistory.snp.makeConstraints { make in
             make.width.equalTo(routineButton.snp.width)
-            make.right.equalToSuperview()
+            make.right.bottom.equalToSuperview()
             make.height.equalTo(3)
-            make.bottom.equalTo(self.safeAreaLayoutGuide)
         }
         
         routineButton.snp.makeConstraints { make in

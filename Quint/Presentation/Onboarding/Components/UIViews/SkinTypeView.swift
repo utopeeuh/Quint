@@ -76,7 +76,7 @@ class SkinTypeView: OnboardingParentView {
     }
     
     func getSkinType() -> Int{
-        return collapsableStack.selectedIndex
+        return collapsableStack.selectedIndex+1
     }
 
     func selectSkinType(index: Int){

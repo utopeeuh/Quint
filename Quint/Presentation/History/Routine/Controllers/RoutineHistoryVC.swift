@@ -29,6 +29,7 @@ class RoutineHistoryVC: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        tabBarController?.tabBar.isHidden = false
         refreshLogData(date: selectedDate!)
     }
     

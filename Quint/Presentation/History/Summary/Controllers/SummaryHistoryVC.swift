@@ -22,6 +22,12 @@ class SummaryHistoryVC: UIViewController {
     var logList: [LogModel] = []
     var navBar = NavigationBarUIView()
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(false)
+        
+        tabBarController?.tabBar.isHidden = false
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor =  UIColor(red: 244/255, green: 244/255, blue: 244/255, alpha: 1)

@@ -60,8 +60,7 @@ class LoginVC: UIViewController {
         view.multipleSubviews(view: logoImage,
                                     taglineLabel,
                                     captionLabel,
-                                    startButton,
-                                    bottomSpacer)
+                                    startButton)
         
         logoImage.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
@@ -87,14 +86,6 @@ class LoginVC: UIViewController {
             make.height.equalTo(50)
             make.top.equalTo(captionLabel.snp.bottom).offset(20)
             make.width.equalToSuperview().offset(-40)
-        }
-
-        bottomSpacer.snp.makeConstraints { make in
-            make.centerX.equalToSuperview()
-            make.width.equalTo(1)
-            make.height.equalTo(topSpacer)
-            make.top.equalTo(startButton)
-            make.bottom.equalTo(self.view.safeAreaLayoutGuide.snp.bottom)
         }
 
     }

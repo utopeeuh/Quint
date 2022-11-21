@@ -11,7 +11,6 @@ import SnapKit
 import SwiftUI
 
 @available(iOS 16.0, *)
-@available(iOS 16.0, *)
 class LoginVC: UIViewController {
 
     private let topSpacer = UIView()
@@ -20,7 +19,6 @@ class LoginVC: UIViewController {
     private let taglineLabel = UILabel()
     private let captionLabel = UILabel()
     private let startButton = OnboardingButton()
-    private let signInButton = SignInAppleButton()
     
     // MARK: - Lifecycle
     
@@ -54,7 +52,6 @@ class LoginVC: UIViewController {
 
         startButton.setText("Get started")
         startButton.addTarget(self, action: #selector(didTapGetStart), for: .touchUpInside)
-        signInButton.addTarget(self, action: #selector(didTapSignIn), for: .touchUpInside)
     
     }
     
@@ -63,7 +60,8 @@ class LoginVC: UIViewController {
         view.multipleSubviews(view: logoImage,
                                     taglineLabel,
                                     captionLabel,
-                                    startButton)
+                                    startButton,
+                                    bottomSpacer)
         
         logoImage.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
@@ -91,99 +89,21 @@ class LoginVC: UIViewController {
             make.width.equalToSuperview().offset(-40)
         }
 
-//        signInButton.snp.makeConstraints { make in
-//            make.centerX.equalToSuperview()
-//            make.height.equalTo(50)
-//            make.top.equalTo(startButton.snp.bottom).offset(12)
-//            make.width.equalToSuperview().offset(-40)
-//        }
-        
-//        bottomSpacer.snp.makeConstraints { make in
-//            make.centerX.equalToSuperview()
-//            make.width.equalTo(1)
-//            make.height.equalTo(topSpacer)
-//            make.top.equalTo(signInButton)
-//            make.bottom.equalTo(self.view.safeAreaLayoutGuide.snp.bottom)
-//        }
+        bottomSpacer.snp.makeConstraints { make in
+            make.centerX.equalToSuperview()
+            make.width.equalTo(1)
+            make.height.equalTo(topSpacer)
+            make.top.equalTo(startButton)
+            make.bottom.equalTo(self.view.safeAreaLayoutGuide.snp.bottom)
+        }
 
     }
     
     // MARK: - Selectors
     
-    @objc func didTapSignIn() {
-
-        let provider = ASAuthorizationAppleIDProvider()
-        let request = provider.createRequest()
-        request.requestedScopes = [.fullName, .email]
-
-        let controller = ASAuthorizationController(authorizationRequests: [request])
-        controller.delegate = self
-        controller.presentationContextProvider = self
-        controller.performRequests()
-    }
-
     @objc func didTapGetStart() {
         let controller = OnboardingQuizVC()
         navigationController?.pushViewController(controller, animated: true)
-    }
-    
-}
-
-@available(iOS 16.0, *)
-extension LoginVC: ASAuthorizationControllerDelegate {
-    
-    func authorizationController(controller: ASAuthorizationController, didCompleteWithError error: Error) {
-        
-        let alertController = UIAlertController(title: "Error",
-                                                message: error.localizedDescription,
-                                                preferredStyle: .alert)
-        
-        let okAction = UIAlertAction(title: "Ok",
-                                     style: .cancel,
-                                     handler: nil)
-        
-        alertController.addAction(okAction)
-        
-        self.present(alertController,
-                     animated: true,
-                     completion: nil)
-        
-    }
-    
-    func authorizationController(controller: ASAuthorizationController, didCompleteWithAuthorization authorization: ASAuthorization) {
-        
-        switch authorization.credential {
-        case let appleIDCredential as ASAuthorizationAppleIDCredential:
-            
-            let userIdentifier = appleIDCredential.user
-            let fullName = appleIDCredential.fullName
-            let email = appleIDCredential.email
-            
-            break
-            
-        case let passwordCredential as ASPasswordCredential:
-        
-            let username = passwordCredential.user
-            let password = passwordCredential.password
-            
-            break
-            
-        default:
-            
-            print("Failed!")
-            
-            break
-        }
-        
-    }
-    
-}
-
-@available(iOS 16.0, *)
-extension LoginVC: ASAuthorizationControllerPresentationContextProviding {
-    
-    func presentationAnchor(for controller: ASAuthorizationController) -> ASPresentationAnchor {
-        return self.view.window!
     }
     
 }

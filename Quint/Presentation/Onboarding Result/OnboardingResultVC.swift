@@ -44,7 +44,7 @@ class OnboardingResultVC: UIViewController {
         titleLabel.textColor = K.Color.blackQuint
         
         scrollView.isScrollEnabled = true
-        scrollView.contentSize = CGSize(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height * 1.8)
+        scrollView.contentSize = CGSize(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height * 1.5)
         scrollView.autoresizingMask = .flexibleHeight
         scrollView.showsVerticalScrollIndicator = false
         scrollView.showsHorizontalScrollIndicator = false

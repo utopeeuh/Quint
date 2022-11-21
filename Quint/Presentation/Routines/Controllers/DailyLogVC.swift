@@ -25,6 +25,11 @@ class DailyLogVC: UIViewController, UIImagePickerControllerDelegate & UINavigati
     
     var delegate : RoutineDetailDelegate?
     var isEditingLog = false
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.isNavigationBarHidden = true
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()

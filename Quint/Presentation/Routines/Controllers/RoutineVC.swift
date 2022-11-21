@@ -255,6 +255,7 @@ extension RoutineVC: UIImagePickerControllerDelegate & UINavigationControllerDel
             if LogRepository.shared.fetchLog(date: Date.now).image != nil{
                 // Skip image picker
                 let controller = DailyLogVC()
+                controller.logDate = Date.now
                 controller.delegate = self
                 navigationController?.pushViewController(controller, animated: true)
                 return

@@ -43,6 +43,11 @@ class TreatmentsVC: UIViewController{
         productListView.fadeIn()
 
         scrollView.contentSize = CGSize(width: UIScreen.main.bounds.width, height: productListView.height+120)
+        
+        if (productListView.isHidden) {
+            self.scrollView.contentSize = CGSize(width: UIScreen.main.bounds.width, height: 452)
+        }
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -60,6 +65,7 @@ class TreatmentsVC: UIViewController{
                 self.ingredientListView.transform = self.moveRight
             }) { completion in
                 self.ingredientListView.isHidden = true
+                self.scrollView.contentSize = CGSize(width: UIScreen.main.bounds.width, height: self.productListView.height+120)
             }
         default:
             ingredientListView.isHidden = false
@@ -78,6 +84,7 @@ class TreatmentsVC: UIViewController{
         segmentedControl.addTarget(self, action: #selector(changeTab), for: .valueChanged)
         
         scrollView.frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
+        scrollView.showsVerticalScrollIndicator = false
         
         productListView.delegate = self
     }

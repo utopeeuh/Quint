@@ -36,10 +36,6 @@ class ResultProblemView: UIView {
         self.layer.shadowColor = K.Color.shadowQuint.cgColor
         self.layer.cornerRadius = 10
         
-//        backgroundImage.image = UIImage(named: "warning_logo")
-//        backgroundImage.layer.compositingFilter = "overlayBlendMode"
-//        backgroundImage.sizeToFit()
-        
         titleLabel.text = "SKIN PROBLEM"
         titleLabel.sizeToFit()
         titleLabel.textColor = K.Color.redSkinProblemQuint
@@ -54,11 +50,6 @@ class ResultProblemView: UIView {
         multipleSubviews(view: titleLabel,
                                resultLabel,
                                descriptionLabel)
-        
-//        backgroundImage.snp.makeConstraints { make in
-//            make.leading.equalTo(148)
-//            make.top.equalTo(-56)
-//        }
         
         titleLabel.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
@@ -80,6 +71,10 @@ class ResultProblemView: UIView {
             make.top.equalTo(resultLabel.snp.bottom).offset(10)
         }
         
+    }
+    
+    func getHeight() -> CGFloat {
+        return textHeight + 134 + 28
     }
     
     func setProblems(problemIds: [Int]){

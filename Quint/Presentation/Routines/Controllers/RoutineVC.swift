@@ -4,14 +4,17 @@
 //
 //  Created by Stefanus Hermawan Sebastian on 04/10/22.
 //
+
 import CoreLocation
 import UIKit
 import WeatherKit
 import AVFoundation
+import SnapKit
 
 @available(iOS 16.0, *)
 class RoutineVC: UIViewController, CLLocationManagerDelegate, LogModalDelegate {
 
+    private var scrollView = UIScrollView()
     private var whiteTopBar = UIView()
     private var uvSection = UVSection()
     private var reminderView = ReminderUIView()
@@ -44,6 +47,7 @@ class RoutineVC: UIViewController, CLLocationManagerDelegate, LogModalDelegate {
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        self.navigationController?.isNavigationBarHidden = true
         self.tabBarController?.tabBar.isHidden = false
         updateUV()
     }
@@ -70,6 +74,12 @@ class RoutineVC: UIViewController, CLLocationManagerDelegate, LogModalDelegate {
     override func configureComponents() {
         
         whiteTopBar.backgroundColor = .white
+        
+        scrollView.isUserInteractionEnabled = true
+        scrollView.isScrollEnabled = true
+        scrollView.showsVerticalScrollIndicator = false
+        scrollView.frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height - 117)
+        scrollView.contentSize = CGSize(width: UIScreen.main.bounds.width - 40, height: 560 + dailyTips.height)
         
         routineLbl.text = "Today's routines"
         routineLbl.font = .clashGroteskMedium(size: 20)
@@ -103,15 +113,28 @@ class RoutineVC: UIViewController, CLLocationManagerDelegate, LogModalDelegate {
     
     override func configureLayout() {
         
-        view.multipleSubviews(view: whiteTopBar, uvSection, reminderView, routineLbl, routineCellsStack, dailyTips, logModal)
+        view.multipleSubviews(view: scrollView,
+                                    whiteTopBar,
+                                    uvSection,
+                                    logModal)
+        
+        scrollView.multipleSubviews(view: reminderView,
+                                          routineLbl,
+                                          routineCellsStack,
+                                          dailyTips)
+        
+        scrollView.snp.makeConstraints { make in
+            make.top.equalTo(uvSection.snp.bottom)
+            make.size.equalToSuperview()
+        }
         
         whiteTopBar.snp.makeConstraints { make in
             make.top.left.right.equalToSuperview()
-            make.height.equalTo(50)
+            make.bottom.equalTo(uvSection.snp.top)
         }
         
         uvSection.snp.makeConstraints { make in
-            make.top.equalTo(whiteTopBar.snp.bottom).offset(-3)
+            make.top.equalTo(view.safeAreaLayoutGuide)
             make.width.equalTo(view.safeAreaLayoutGuide)
             make.height.equalTo(70)
         }
@@ -120,7 +143,7 @@ class RoutineVC: UIViewController, CLLocationManagerDelegate, LogModalDelegate {
             make.height.equalTo(reminderView.height)
             make.centerX.equalToSuperview()
             make.width.equalTo(UIScreen.main.bounds.width-40)
-            make.top.equalTo(uvSection.snp.bottom).offset(28)
+            make.top.equalToSuperview().offset(28)
         }
         
         routineLbl.snp.makeConstraints { make in
@@ -201,6 +224,7 @@ extension RoutineVC: RoutineReminderDelegate{
         }
         
         reminderView.hide()
+        scrollView.contentSize = CGSize(width: UIScreen.main.bounds.width - 40, height: 424 + dailyTips.height)
         
         let moveUpHeight = -(reminderView.height + 40)
         

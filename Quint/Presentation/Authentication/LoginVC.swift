@@ -13,8 +13,6 @@ import SwiftUI
 @available(iOS 16.0, *)
 class LoginVC: UIViewController {
 
-    private let topSpacer = UIView()
-    private let bottomSpacer = UIView()
     private let logoImage = UIImageView()
     private let taglineLabel = UILabel()
     private let captionLabel = UILabel()

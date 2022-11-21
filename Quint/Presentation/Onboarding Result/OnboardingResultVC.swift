@@ -48,7 +48,7 @@ class OnboardingResultVC: UIViewController {
         if data?.chosenImage == nil {
             scrollView.contentSize = CGSize(width: UIScreen.main.bounds.width, height: 900 + resultProblemView.getHeight())
         } else {
-            scrollView.contentSize = CGSize(width: UIScreen.main.bounds.width, height: 1200 + resultProblemView.getHeight())
+            scrollView.contentSize = CGSize(width: UIScreen.main.bounds.width, height: 1400 + resultProblemView.getHeight())
         }
         
         scrollView.autoresizingMask = .flexibleHeight

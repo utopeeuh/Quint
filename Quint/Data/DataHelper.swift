@@ -23,6 +23,7 @@ class DataHelper{
     
     public func saveOnboardingData(data: OnboardingData){
 
+        let allProblems = ProblemsRepository.shared.fetchProblemList()
         let problems = ProblemsRepository.shared.fetchProblemList(ids: data.skinProblems!)
         let user = UserRepository.shared.fetchUser()
         let routineCategories = CategoriesRepository.shared.fetchCategoryList(ids: data.routineCategoryList)
@@ -33,8 +34,12 @@ class DataHelper{
             user.skinTypeId = data.selectedSkinType! as NSNumber
             
             //  Set problems as active
-            problems.forEach { problem in
-                problem.isActive = true
+            
+            allProblems.forEach { problem in
+                problem.isActive = false
+                if problems.contains(problem){
+                    problem.isActive = true
+                }
             }
             
             // Update routines
@@ -66,18 +71,48 @@ class DataHelper{
         }
     }
     
-    func clearDatabase(entityName: String) {
-
-        let persistentContainer = NSPersistentContainer(name: entityName)
-        guard let url = persistentContainer.persistentStoreDescriptions.first?.url else { return }
+    func clearDatabase() {
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let context: NSManagedObjectContext = appDelegate.persistentContainer.viewContext
         
-        let persistentStoreCoordinator = persistentContainer.persistentStoreCoordinator
-
-         do {
-             try persistentStoreCoordinator.destroyPersistentStore(at:url, ofType: NSSQLiteStoreType, options: nil)
-             try persistentStoreCoordinator.addPersistentStore(ofType: NSSQLiteStoreType, configurationName: nil, at: url, options: nil)
-         } catch {
-             print("Attempted to clear persistent store: " + error.localizedDescription)
-         }
+        // Delete logs, user and routine steps
+        
+        let logRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Logs")
+        
+        let userRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "User")
+        
+        let stepsRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Steps")
+        
+        // Set problems to inactive
+        let problemsRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Problems")
+        
+        do{
+            let logResults:NSArray = try context.fetch(logRequest) as NSArray
+            
+            let userResults:NSArray = try context.fetch(userRequest) as NSArray
+            
+            let stepsResults:NSArray = try context.fetch(stepsRequest) as NSArray
+            
+            let problemResults = try context.fetch(stepsRequest) as? [ProblemModel]
+            
+            logResults.forEach { log in
+                context.delete(log as! NSManagedObject)
+            }
+            
+            context.delete(userResults.firstObject as! NSManagedObject)
+            
+            stepsResults.forEach { step in
+                context.delete(step as! NSManagedObject)
+            }
+            
+            problemResults?.forEach { problem in
+                problem.isActive = false
+            }
+            
+            try context.save()
+        }
+        catch{
+            print("Delete data failed")
+        }
     }
 }

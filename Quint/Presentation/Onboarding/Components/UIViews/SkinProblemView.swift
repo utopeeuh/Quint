@@ -22,7 +22,14 @@ class SkinProblemView: OnboardingParentView {
         configureUI()
         collectionView.delegate = self
         collectionView.reload()
-        loadSelectedProblems(tagIndexes: [])
+        
+        let hasDoneOnboarding = UserDefaults.standard.object(forKey: K.UD.hasDoneOnboarding) ?? false
+        
+        
+        if hasDoneOnboarding as! Bool{
+            loadSelectedProblems(tagIndexes: [])
+        }
+        
     }
         
     required init?(coder: NSCoder) {
@@ -30,6 +37,8 @@ class SkinProblemView: OnboardingParentView {
     }
     
     override func configureComponents() {
+        
+        selections = []
         
         collectionView.alignment = .left
         

@@ -25,6 +25,7 @@ class SummaryHistoryVC: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(false)
         
+        navigationController?.isNavigationBarHidden = true
         tabBarController?.tabBar.isHidden = false
     }
     

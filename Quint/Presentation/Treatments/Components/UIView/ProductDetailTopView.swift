@@ -134,7 +134,7 @@ class ProductDetailTopView: UIView{
         typeLabel.snp.makeConstraints { make in
             make.top.equalTo(imageFrame.snp.bottom).offset(24)
             make.width.equalTo(typeLabel.width)
-            make.left.equalToSuperview().offset(40)
+            make.left.equalToSuperview().offset(20)
             make.height.equalTo(typeLabel.height)
         }
         
@@ -148,14 +148,14 @@ class ProductDetailTopView: UIView{
         
         nameLabel.snp.makeConstraints { make in
             make.top.equalTo(typeLabel.snp.bottom).offset(12)
-            make.left.equalToSuperview().offset(40)
+            make.left.equalToSuperview().offset(20)
             make.height.equalTo(nameLabel.requiredHeight)
             make.width.equalTo(UIScreen.main.bounds.width-179)
         }
         
         brandLabel.snp.makeConstraints { make in
             make.top.equalTo(nameLabel.snp.bottom).offset(12)
-            make.left.equalToSuperview().offset(40)
+            make.left.equalToSuperview().offset(20)
             make.height.equalTo(brandLabel.requiredHeight)
             make.width.equalTo(UIScreen.main.bounds.width-179)
         }

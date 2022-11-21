@@ -149,7 +149,10 @@ class ProductListView: UIView{
     }
     
     func fadeIn(){
-        selectTopCategory(catButtons.first!)
+        if productCollection.source.isEmpty {
+            selectTopCategory(catButtons.first!)
+        }
+        
         UIView.animate(withDuration: 0.2) {
             self.productCollection.alpha = 1
         }

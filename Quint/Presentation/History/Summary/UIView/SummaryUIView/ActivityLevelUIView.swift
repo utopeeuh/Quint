@@ -27,11 +27,11 @@ class ActivityLevelUIView: SummaryUIView {
         logList.forEach { log in
             switch log.activityLevel {
             case 1:
-                veryActiveCounter += 1
+                sedentaryCounter += 1
             case 2:
                 activeCounter += 1
             case 3:
-                sedentaryCounter += 1
+                veryActiveCounter += 1
             default:
                 print("error")
             }

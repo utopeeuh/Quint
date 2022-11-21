@@ -9,6 +9,8 @@ import UIKit
 
 class RoutineDetailStepCell: UITableViewCell {
     
+    private var isEditingTable = false
+    
     let containerView: UIView = {
         let view = UIView()
         view.backgroundColor = .white
@@ -145,6 +147,7 @@ class RoutineDetailStepCell: UITableViewCell {
             make.right.equalToSuperview()
         }
         containerView.layoutIfNeeded()
+        isEditingTable = false
     }
     
     func setEditingOn(){
@@ -160,6 +163,8 @@ class RoutineDetailStepCell: UITableViewCell {
                 make.right.equalToSuperview().offset(-40)
             }
             self.bringSubviewToFront(self.trashBtn)
+            
+            self.isEditingTable = true
         }
         
     }

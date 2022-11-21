@@ -243,6 +243,7 @@ extension RoutineDetailVC: UITableViewDelegate, UITableViewDataSource{
         cell.layer.borderWidth = 1
         cell.layer.cornerRadius = 8
         cell.selectionStyle = .none
+    
         routineTime == .morning ? cell.setMorningCell() : cell.setNightCell()
         cell.trashBtn.addTarget(self, action: #selector(deleteStep), for: .touchUpInside)
        
@@ -273,7 +274,12 @@ extension RoutineDetailVC: UITableViewDelegate, UITableViewDataSource{
     
     // method to run when table view cell is tapped
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print("You tapped cell number \(indexPath.row).")
+        
+        let category = CategoriesRepository.shared.fetchCategory(title: routineSteps[indexPath.row].title)
+        
+        let controller = UsageGuideVC()
+        controller.categoryId = Int(truncating: category.id)
+        navigationController?.pushViewController(controller, animated: true)
     }
     
     func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {

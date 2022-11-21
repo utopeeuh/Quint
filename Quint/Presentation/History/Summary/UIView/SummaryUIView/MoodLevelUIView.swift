@@ -28,18 +28,18 @@ class MoodLevelUIView: SummaryUIView {
         
         logList.forEach { log in
             switch log.moodId {
-            case 1:
-                joyfulCounter += 1
-            case 2:
-                happyCounter += 1
-            case 3:
-                normalCounter += 1
-            case 4:
-                sadCounter += 1
-            case 5:
-                stressedCounter += 1
-            default:
-                print("error")
+                case 1:
+                   stressedCounter += 1
+                case 2:
+                   sadCounter += 1
+                case 3:
+                   normalCounter += 1
+                case 4:
+                   happyCounter += 1
+                case 5:
+                   joyfulCounter += 1
+                default:
+                    print("error")
             }
         }
         

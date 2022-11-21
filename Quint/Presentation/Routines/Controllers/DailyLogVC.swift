@@ -24,7 +24,7 @@ class DailyLogVC: UIViewController, UIImagePickerControllerDelegate & UINavigati
     private var feelButtons : [UIView] = []
     
     var delegate : RoutineDetailDelegate?
-    
+    var isEditingLog = false
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,8 +40,6 @@ class DailyLogVC: UIViewController, UIImagePickerControllerDelegate & UINavigati
         feelBetterHandler()
         sedentaryHandler()
     }
-    
-    private var mainContainer = UIView()
     
     private var moodLabel: UILabel = {
         let label = UILabel()
@@ -75,12 +73,11 @@ class DailyLogVC: UIViewController, UIImagePickerControllerDelegate & UINavigati
         return label
     }()
     
-    private let createLogBtn: UIButton = {
+    public let createLogBtn: UIButton = {
         let button = UIButton()
         button.setTitleColor(.white, for: .normal)
         button.titleLabel?.font = .clashGroteskMedium(size: 18)
         button.setTitle("Create log", for: .normal)
-        button.layer.cornerRadius = 8.0
         return button
     }()
     
@@ -271,7 +268,7 @@ class DailyLogVC: UIViewController, UIImagePickerControllerDelegate & UINavigati
         
         mainScrollView.isUserInteractionEnabled = true
         mainScrollView.frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width-40, height: UIScreen.main.bounds.height)
-        mainScrollView.contentSize.height = 990
+        mainScrollView.contentSize.height = 1016
         mainScrollView.showsVerticalScrollIndicator = false
         
         backBtn.setImage(UIImage(named: "arrow_back"), for: .normal)
@@ -300,7 +297,11 @@ class DailyLogVC: UIViewController, UIImagePickerControllerDelegate & UINavigati
         feelBetterBtn.frame = CGRect(x: 0, y: 0, width: 150, height: 45)
         feelWorseBtn.frame = CGRect(x: 0, y: 0, width: 150, height: 45)
         
-        createLogBtn.frame = CGRect(x: 0, y: 0, width: 352, height: 45)
+        if isEditingLog == true {
+            createLogBtn.setTitle("Update Log", for: .normal)
+        }
+
+        createLogBtn.frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width-40, height: 50)
         createLogBtn.applyGradient(colours: [K.Color.greenLightQuint, K.Color.greenQuint], locations: [0, 1], radius: 8)
         createLogBtn.addTarget(self, action: #selector(createLog), for: .touchUpInside)
     }
@@ -324,8 +325,8 @@ class DailyLogVC: UIViewController, UIImagePickerControllerDelegate & UINavigati
         )
         
         mainScrollView.snp.makeConstraints { make in
-            make.width.equalTo(UIScreen.main.bounds.width-40)
             make.centerX.equalToSuperview()
+            make.width.equalTo(UIScreen.main.bounds.width-40)
             make.top.bottom.equalTo(view.safeAreaLayoutGuide)
         }
         
@@ -380,6 +381,7 @@ class DailyLogVC: UIViewController, UIImagePickerControllerDelegate & UINavigati
         }
         
         createLogBtn.snp.makeConstraints { make in
+            make.centerX.equalTo(mainScrollView.center.x)
             make.width.equalToSuperview()
             make.height.equalTo(50)
             make.top.equalTo(feelStack.snp.bottom).offset(72)

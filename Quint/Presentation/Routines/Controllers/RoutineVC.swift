@@ -4,6 +4,7 @@
 //
 //  Created by Stefanus Hermawan Sebastian on 04/10/22.
 //
+
 import CoreLocation
 import UIKit
 import WeatherKit
@@ -12,6 +13,7 @@ import AVFoundation
 @available(iOS 16.0, *)
 class RoutineVC: UIViewController, CLLocationManagerDelegate, LogModalDelegate {
 
+    private var scrollView = UIScrollView()
     private var whiteTopBar = UIView()
     private var uvSection = UVSection()
     private var reminderView = ReminderUIView()
@@ -44,6 +46,7 @@ class RoutineVC: UIViewController, CLLocationManagerDelegate, LogModalDelegate {
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        self.navigationController?.isNavigationBarHidden = true
         self.tabBarController?.tabBar.isHidden = false
         updateUV()
     }
@@ -70,6 +73,11 @@ class RoutineVC: UIViewController, CLLocationManagerDelegate, LogModalDelegate {
     override func configureComponents() {
         
         whiteTopBar.backgroundColor = .white
+        
+        scrollView.isUserInteractionEnabled = true
+        scrollView.isScrollEnabled = true
+        scrollView.frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height - 159)
+        scrollView.contentSize = CGSize(width: UIScreen.main.bounds.width - 40, height: 489 + dailyTips.height)
         
         routineLbl.text = "Today's routines"
         routineLbl.font = .clashGroteskMedium(size: 20)
@@ -103,7 +111,20 @@ class RoutineVC: UIViewController, CLLocationManagerDelegate, LogModalDelegate {
     
     override func configureLayout() {
         
-        view.multipleSubviews(view: whiteTopBar, uvSection, reminderView, routineLbl, routineCellsStack, dailyTips, logModal)
+        view.multipleSubviews(view: whiteTopBar,
+                                    uvSection,
+                                    scrollView)
+        
+        scrollView.multipleSubviews(view: reminderView,
+                                          routineLbl,
+                                          routineCellsStack,
+                                          dailyTips,
+                                          logModal)
+        
+        scrollView.snp.makeConstraints { make in
+            make.top.equalToSuperview().offset(-40)
+            make.size.equalToSuperview()
+        }
         
         whiteTopBar.snp.makeConstraints { make in
             make.top.left.right.equalToSuperview()

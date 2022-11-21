@@ -85,10 +85,11 @@ class RoutineHistoryVC: UIViewController {
         scrollView.showsHorizontalScrollIndicator = false
         scrollView.backgroundColor = K.Color.bgQuint
         
-        scrollView.contentSize = CGSize(width: UIScreen.main.bounds.width, height: 500)
+        scrollView.contentSize = CGSize(width: UIScreen.main.bounds.width, height: 550)
         
         activityView.editButton.addTarget(self, action: #selector(goToDailyLog), for: .touchUpInside)
         noActivityView.logButton.addTarget(self, action: #selector(goToDailyLog), for: .touchUpInside)
+        
     }
     
     override func configureLayout() {
@@ -163,14 +164,20 @@ class RoutineHistoryVC: UIViewController {
         navigationController?.navigationBar.isHidden = true
     }
 
-    @objc func goToDailyLog() {
+    @objc func goToDailyLog(sender: UIButton) {
+        
         if LogRepository.shared.doesLogExists(date: selectedDate ?? Date.now) == false {
             LogRepository.shared.createLog(date: selectedDate ?? Date.now)
         }
         
         let controller = DailyLogVC()
+        
         controller.logDate = selectedDate
-        print(controller.logDate)
+        
+        if sender == activityView.editButton {
+            controller.isEditingLog = true
+        }
+        
         navigationController?.pushViewController(controller, animated: true)
         navigationController?.navigationBar.isHidden = true
     }
@@ -189,7 +196,7 @@ class RoutineHistoryVC: UIViewController {
             
             expandButton.setImage(UIImage(named: "arrow_up_icon"), for: .normal)
             expandButton.sizeToFit()
-            scrollView.contentSize = CGSize(width: UIScreen.main.bounds.width, height: 800)
+            scrollView.contentSize = CGSize(width: UIScreen.main.bounds.width, height: 830)
             
         }
         
@@ -210,7 +217,7 @@ class RoutineHistoryVC: UIViewController {
             
             expandButton.setImage(UIImage(named: "arrow_down_icon"), for: .normal)
             expandButton.sizeToFit()
-            scrollView.contentSize = CGSize(width: UIScreen.main.bounds.width, height: 500)
+            scrollView.contentSize = CGSize(width: UIScreen.main.bounds.width, height: 550)
             viewBlanket.backgroundColor = K.Color.bgQuint
             
         }

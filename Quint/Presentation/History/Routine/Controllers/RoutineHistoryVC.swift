@@ -160,7 +160,6 @@ class RoutineHistoryVC: UIViewController {
     @objc func goToHistoryPage() {
         let controller = SummaryHistoryVC()
         navigationController?.pushViewController(controller, animated: false)
-        navigationController?.navigationBar.isHidden = true
     }
 
     @objc func goToDailyLog() {
@@ -170,7 +169,6 @@ class RoutineHistoryVC: UIViewController {
         
         let controller = DailyLogVC()
         controller.logDate = selectedDate
-        print(controller.logDate)
         navigationController?.pushViewController(controller, animated: true)
         navigationController?.navigationBar.isHidden = true
     }

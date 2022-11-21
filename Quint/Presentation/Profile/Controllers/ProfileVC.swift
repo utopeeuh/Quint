@@ -57,18 +57,35 @@ class ProfileVC: UIViewController {
     }()
     
     @objc func deleteHandler() {
-        let alert = UIAlertController(title: "", message: "Are you sure you want to delete your account?", preferredStyle: .actionSheet)
-        alert.addAction(UIAlertAction(title: "Delete", style: .destructive, handler: { (_) in
-            print("User click Delete button")
+        let alert = UIAlertController(title: "", message: "Are you sure you want reset the app's data? Doing this will delete all of your skin logs.", preferredStyle: .actionSheet)
+        alert.addAction(UIAlertAction(title: "Reset", style: .destructive, handler: { (_) in
+            
+            // Clear database
+            DataHelper.shared.clearDatabase()
+            
+            let userSeeder = UserSeeder()
+            userSeeder.seedFromJson()
+            
+            // Set userdefaults
+            UserDefaults.standard.set(false, forKey: K.UD.hasDoneOnboarding)
+            
+            // Set onboarding as root vc
+            let vc = UINavigationController(rootViewController: LoginVC())
+            let foregroundedScenes = UIApplication.shared.connectedScenes.filter { $0.activationState == .foregroundActive }
+            let window = foregroundedScenes.map { $0 as? UIWindowScene }.compactMap { $0 }.first?.windows.filter { $0.isKeyWindow }.first
+            
+            guard let uWindow = window else { return }
+
+            uWindow.rootViewController = vc
+            UIView.transition(with: uWindow, duration: 0.3, options: [.transitionCrossDissolve], animations: {}, completion: nil)
+            
         }))
 
         alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: { (_) in
             print("User click Cancel button")
         }))
 
-        self.present(alert, animated: true, completion: {
-            print("completion block")
-        })
+        self.present(alert, animated: true, completion: nil)
     }
     
     @objc func goToSkinType() {

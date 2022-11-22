@@ -33,7 +33,7 @@ class NightUIView: SummaryUIView {
                 break logLoop
             }
             
-            if log.isDayDone == true {
+            if log.isNightDone == true {
                 nightRoutineCounter += 1
             }
         }

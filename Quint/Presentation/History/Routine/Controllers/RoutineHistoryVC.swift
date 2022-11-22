@@ -110,7 +110,7 @@ class RoutineHistoryVC: UIViewController {
         
         calendarView.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
-            make.top.equalTo(navBar.snp.bottom).offset(10)
+            make.top.equalTo(navBar.snp.bottom)
             make.width.equalToSuperview()
             make.bottom.equalTo(viewBlanket.snp.bottom)
         }

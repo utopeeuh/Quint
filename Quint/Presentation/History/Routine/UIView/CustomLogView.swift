@@ -7,7 +7,6 @@
 
 import UIKit
 import SnapKit
-import SwiftUI
 
 class CustomLogView: UIView {
     
@@ -27,7 +26,6 @@ class CustomLogView: UIView {
 
     override func configureComponents() {
         
-        frame = CGRect(x: 0, y: 0, width: 169, height: 78)
         backgroundColor = K.Color.whiteQuint
         layer.cornerRadius = 8
         
@@ -61,7 +59,6 @@ class CustomLogView: UIView {
         descLabel.snp.makeConstraints { make in
             make.top.equalTo(titleLabel.snp.bottom).offset(5)
             make.leading.equalTo(titleLabel)
-            make.width.equalTo(100)
         }
         
     }
@@ -87,22 +84,4 @@ class CustomLogView: UIView {
         sizeToFit()
     }
     
-}
-
-struct CustomLogViewPreview: PreviewProvider {
-    static var previews: some View {
-        ViewPreview {
-            CustomLogView()
-        }
-        .previewDevice(PreviewDevice(rawValue: "iPhone 14"))
-        .previewDisplayName("iPhone 14")
-        .ignoresSafeArea()
-        
-        ViewPreview {
-            CustomLogView()
-        }
-        .previewDevice(PreviewDevice(rawValue: "iPhone 8"))
-        .previewDisplayName("iPhone 8")
-        .ignoresSafeArea()
-    }
 }

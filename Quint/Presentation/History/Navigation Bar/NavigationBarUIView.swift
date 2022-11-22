@@ -81,13 +81,13 @@ class NavigationBarUIView: UIView {
         }
         
         routineButton.snp.makeConstraints { make in
-            make.top.equalToSuperview()
+            make.top.equalToSuperview().offset(16)
             make.width.equalTo(192)
             make.height.equalToSuperview()
         }
         
         historyButton.snp.makeConstraints { make in
-            make.top.equalToSuperview()
+            make.top.equalToSuperview().offset(16)
             make.width.equalTo(routineButton.snp.width)
             make.height.equalToSuperview()
         }

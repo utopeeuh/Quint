@@ -79,4 +79,14 @@ class NoActivityView: UIView {
         
     }
     
+    func enable(){
+        logButton.isHidden = false
+        captionLabel.text = "You have to fill today skin log first"
+    }
+    
+    func disable(){
+        logButton.isHidden = true
+        captionLabel.text = "Wait until it's time to fill this log"
+    }
+    
 }

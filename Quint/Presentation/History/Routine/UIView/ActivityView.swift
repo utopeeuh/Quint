@@ -40,7 +40,6 @@ class ActivityView: CustomLogView {
         dateFormatterPrint.dateFormat = "dd MMMM yyyy"
 
         let exactlyCurrentTime: Date = Date()
-        print(dateFormatterPrint.string(from: exactlyCurrentTime))
         dateLabel.text = dateFormatterPrint.string(from: exactlyCurrentTime)
         dateLabel.textColor = K.Color.blackQuint
         dateLabel.font = .clashGroteskMedium(size: 24)
@@ -154,6 +153,11 @@ class ActivityView: CustomLogView {
     func refreshData(logModel: LogModel){
         self.logModel = logModel
         
+        let dateFormatterPrint = DateFormatter()
+        dateFormatterPrint.dateFormat = "dd MMMM yyyy"
+
+        dateLabel.text = dateFormatterPrint.string(from: logModel.date)
+        
         sleepCell.setDesc("\(String(describing: logModel.sleep)) hours", K.Color.blackQuint)
         
         if logModel.isDayDone == true {
@@ -217,9 +221,7 @@ class ActivityView: CustomLogView {
             skinCondCell.setImage(UIImage(named: "worsenIcon"))
             skinCondCell.setDesc("Worsen", K.Color.blackQuint)
         }
-        
-        
-        
+
     }
     
 }

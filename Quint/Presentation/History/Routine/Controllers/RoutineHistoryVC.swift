@@ -23,6 +23,8 @@ class RoutineHistoryVC: UIViewController {
     var navBar = NavigationBarUIView()
     var btnTes = UIButton()
     
+    private let calenderHeight = (95/284*UIScreen.main.bounds.height)+(852-UIScreen.main.bounds.height)
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         configureUI()
@@ -112,14 +114,13 @@ class RoutineHistoryVC: UIViewController {
             make.centerX.equalToSuperview()
             make.top.equalTo(navBar.snp.bottom)
             make.width.equalToSuperview()
-            make.bottom.equalTo(viewBlanket.snp.bottom)
         }
         
         viewBlanket.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
             make.top.equalTo(calendarView).offset(125)
             make.width.equalToSuperview()
-            make.height.equalTo(285)
+            make.bottom.equalTo(calendarView.snp.bottom)
         }
         
         expandButton.snp.makeConstraints { make in
@@ -187,14 +188,19 @@ class RoutineHistoryVC: UIViewController {
         
         UIView.animate(withDuration: 1.0, animations: { [self] in
             
-            expandButton.transform = CGAffineTransformMakeTranslation(0, 285)
-            scrollView.transform = CGAffineTransformMakeTranslation(0, 285)
+            expandButton.snp.remakeConstraints { make in
+                make.top.equalTo(viewBlanket.snp.bottom).offset(-40)
+                make.width.equalToSuperview()
+            }
+            
+            view.layoutIfNeeded()
+            
             viewBlanket.alpha = 0
             
         }) { [self] completion in
             
             expandButton.setImage(UIImage(named: "arrow_up_icon"), for: .normal)
-            expandButton.sizeToFit()
+            
             scrollView.contentSize = CGSize(width: UIScreen.main.bounds.width, height: 830)
             
         }
@@ -208,8 +214,11 @@ class RoutineHistoryVC: UIViewController {
 
         UIView.animate(withDuration: 1.0, animations: { [self] in
             
-            expandButton.transform = CGAffineTransformMakeTranslation(0, 0)
-            scrollView.transform = CGAffineTransformMakeTranslation(0, 0)
+            expandButton.snp.remakeConstraints { make in
+                make.top.equalTo(viewBlanket)
+                make.width.equalToSuperview()
+            }
+            view.layoutIfNeeded()
             viewBlanket.alpha = 1
             
         }) { [self] completion in
@@ -234,7 +243,16 @@ extension RoutineHistoryVC: UICalendarViewDelegate, UICalendarSelectionSingleDat
     
     func dateSelection(_ selection: UICalendarSelectionSingleDate, didSelectDate dateComponents: DateComponents?) {
         selectedDate = selection.selectedDate!.date!
-        refreshLogData(date: selectedDate!)
+        if selectedDate! <= Date.now{
+            noActivityView.enable()
+            refreshLogData(date: selectedDate!)
+        }
+        else {
+            noActivityView.isHidden = false
+            noActivityView.disable()
+            activityView.isHidden = true
+        }
+        
     }
     
     func refreshLogData(date: Date){

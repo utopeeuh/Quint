@@ -161,6 +161,8 @@ class ActivityView: CustomLogView {
             morningCell.setImage(UIImage(named: "morning_color_icon"))
             morningCell.setDesc("Done", K.Color.blackQuint)
         }else {
+            morningCell.setBackground(K.Color.disableBgBtnQuint)
+            morningCell.setImage(UIImage(named: "morning_grey_icon"))
             morningCell.setDesc("Not yet", K.Color.greyQuint)
         }
         
@@ -169,6 +171,8 @@ class ActivityView: CustomLogView {
             nightCell.setImage(UIImage(named: "night_color_icon"))
             nightCell.setDesc("Done", K.Color.blackQuint)
         }else {
+            nightCell.setBackground(K.Color.disableBgBtnQuint)
+            nightCell.setImage(UIImage(named: "night_icon"))
             nightCell.setDesc("Not yet", K.Color.greyQuint)
         }
         

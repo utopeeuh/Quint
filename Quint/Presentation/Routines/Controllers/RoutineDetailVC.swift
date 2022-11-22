@@ -6,9 +6,6 @@
 //
 
 import UIKit
-import RxSwift
-import RxCocoa
-import RxDataSources
 import SnapKit
 
 @available(iOS 16.0, *)

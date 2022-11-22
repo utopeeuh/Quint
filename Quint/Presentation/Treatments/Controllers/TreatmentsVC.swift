@@ -7,9 +7,6 @@
 import UIKit
 import SnapKit
 import Kingfisher
-import RxSwift
-import RxCocoa
-
 @available(iOS 16.0, *)
 class TreatmentsVC: UIViewController{
     

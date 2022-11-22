@@ -61,7 +61,8 @@ class ActivityView: CustomLogView {
         editButton.backgroundColor = K.Color.disableBgBtnQuint
         editButton.layer.cornerRadius = 15
         
-        morningCell.setImage(UIImage(named: "morning_icon"))
+        morningCell.setImage(UIImage(named: "morning_grey_icon"))
+        morningCell.setBackground(K.Color.disableBgBtnQuint)
         morningCell.setTitle("Morning", K.Color.greyQuint)
 
         nightCell.setImage(UIImage(named: "night_icon"))
@@ -102,8 +103,8 @@ class ActivityView: CustomLogView {
         morningCell.snp.makeConstraints { make in
             make.top.equalTo(routineLabel.snp.bottom).offset(20)
             make.leading.equalTo(20)
-            make.width.equalTo(171)
-            make.height.equalTo(90)
+            make.width.equalTo(169)
+            make.height.equalTo(78)
         }
         
         nightCell.snp.makeConstraints { make in
@@ -156,12 +157,16 @@ class ActivityView: CustomLogView {
         sleepCell.setDesc("\(String(describing: logModel.sleep)) hours", K.Color.blackQuint)
         
         if logModel.isDayDone == true {
+            morningCell.setBackground(K.Color.whiteQuint)
+            morningCell.setImage(UIImage(named: "morning_color_icon"))
             morningCell.setDesc("Done", K.Color.blackQuint)
         }else {
             morningCell.setDesc("Not yet", K.Color.greyQuint)
         }
         
         if logModel.isNightDone == true {
+            nightCell.setBackground(K.Color.whiteQuint)
+            nightCell.setImage(UIImage(named: "night_color_icon"))
             nightCell.setDesc("Done", K.Color.blackQuint)
         }else {
             nightCell.setDesc("Not yet", K.Color.greyQuint)
@@ -169,19 +174,19 @@ class ActivityView: CustomLogView {
         
         switch logModel.moodId {
             case 1:
-                moodCell.setImage(UIImage(named: "stressedEmoji"))
+                moodCell.setImage(UIImage(named: "stressed_mood_icon"))
                 moodCell.setDesc("Stressed", K.Color.blackQuint)
             case 2:
-                moodCell.setImage(UIImage(named: "sadEmoji"))
+                moodCell.setImage(UIImage(named: "sad_mood_icon"))
                 moodCell.setDesc("Sad", K.Color.blackQuint)
             case 3:
-                moodCell.setImage(UIImage(named: "neutralEmoji"))
-                moodCell.setDesc("Nothing special", K.Color.blackQuint)
+                moodCell.setImage(UIImage(named: "neutral_mood_icon"))
+                moodCell.setDesc("Normal", K.Color.blackQuint)
             case 4:
-                moodCell.setImage(UIImage(named: "happyEmoji"))
+                moodCell.setImage(UIImage(named: "happy_mood_icon"))
                 moodCell.setDesc("Happy", K.Color.blackQuint)
             case 5:
-                moodCell.setImage(UIImage(named: "joyfulEmoji"))
+                moodCell.setImage(UIImage(named: "joyful_mood_icon"))
                 moodCell.setDesc("Joyful", K.Color.blackQuint)
             default:
                 print("error")

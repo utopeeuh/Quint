@@ -130,7 +130,7 @@ struct K{
     struct CategoryImage{
         static let ingredient = [1: UIImage(named: "AntiAcneCategory"), 2: UIImage(named: "AntiAgingCategory"), 3: UIImage(named: "AntiBacterialCategory"), 4: UIImage(named: "BrighteningCategory"), 5: UIImage(named: "HydratingCategory"), 6: UIImage(named: "MoisturizingCategory"), 7: UIImage(named: "PhBalanceCategory"), 8: UIImage(named: "SoothingCategory"), 9: UIImage(named: "UVCategory")]
         
-        static let product = [1: UIImage(named: "CleanserGuideIcon"), 2: UIImage(named: "TonerGuideIcon"), 3: UIImage(named: "SerumGuideIcon"), 4: UIImage(named: "EyeCareGuideIcon"), 5: UIImage(named: "MoisturizerGuideIcon"), 6: UIImage(named: "AcneCareGuideIcon"), 7: UIImage(named: "SunscreenGuideIcon"), 8: UIImage(named: "ExfoliatorGuideIcon"), 9: UIImage(named: "MicellarGuideIcon")]
+        static let product = [1: UIImage(named: "CleanserGuideIcon"), 2: UIImage(named: "TonerGuideIcon"), 3: UIImage(named: "SerumGuideIcon"), 4: UIImage(named: "EyeCareGuideIcon"), 5: UIImage(named: "MoisturizerGuideIcon"), 6: UIImage(named: "AcneCareGuideIcon"), 7: UIImage(named: "SunScreenGuideIcon"), 8: UIImage(named: "ExfoliatorGuideIcon"), 9: UIImage(named: "MicellarGuideIcon")]
     }
     
     struct Rated{

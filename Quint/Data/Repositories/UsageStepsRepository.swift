@@ -26,6 +26,9 @@ class UsageStepsRepository: UsageStepsRepositoryDelegate{
         let categoryPredicate = NSPredicate(format: "categoryId == %@", categoryId as NSNumber)
         request.predicate = categoryPredicate
         
+        let sortById = NSSortDescriptor(key: "id", ascending: true)
+        request.sortDescriptors = [sortById]
+        
         do{
             let results = try context.fetch(request) as? [UsageStepModel]
             usageStepList = results!
@@ -35,25 +38,5 @@ class UsageStepsRepository: UsageStepsRepositoryDelegate{
         }
         
         return usageStepList
-    }
-    
-    func fetchCategory(title: String) -> CategoryModel{
-        var category = CategoryModel()
-        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        let context: NSManagedObjectContext = appDelegate.persistentContainer.viewContext
-        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Categories")
-        
-        let idPredicate = NSPredicate(format: "title == %@", title)
-        request.predicate = idPredicate
-        
-        do{
-            let results:NSArray = try context.fetch(request) as NSArray
-            category = (results.firstObject) as! CategoryModel
-        }
-        catch{
-            print("fetch failed")
-        }
-        
-        return category
     }
 }

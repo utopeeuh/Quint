@@ -45,7 +45,7 @@ class CollapsableButton: UIView{
         
         border.backgroundColor = K.Color.greenQuint
         
-        descView.backgroundColor = .clear
+        descView.backgroundColor = K.Color.bgQuint
         descView.addSubview(descText)
         descView.addSubview(border)
         

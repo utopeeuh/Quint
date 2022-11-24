@@ -202,6 +202,7 @@ class RoutineDetailVC: UIViewController{
     
     @objc func editMenu() {
         tableView.isEditing = !tableView.isEditing
+        tableView.reloadData()
         
         UIView.animate(withDuration: 0.4, animations: { [self] in
             if(tableView.isEditing){
@@ -244,17 +245,14 @@ extension RoutineDetailVC: UITableViewDelegate, UITableViewDataSource{
         cell.layer.borderWidth = 1
         cell.layer.cornerRadius = 8
         cell.selectionStyle = .none
-    
+        cell.showsReorderControl = false
         routineTime == .morning ? cell.setMorningCell() : cell.setNightCell()
         cell.trashBtn.addTarget(self, action: #selector(deleteStep), for: .touchUpInside)
        
         if tableView.isEditing == true {
             cell.setEditingOn()
-            cell.showsReorderControl = false
-            
         } else {
             cell.setEditingOff()
-            cell.showsReorderControl = false
             //re-number steps
             for i in 0..<routineSteps.count{
                 if(cell.titleLabel.text == routineSteps[i].title){

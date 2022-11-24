@@ -59,6 +59,7 @@ class RoutineDetailStepCell: UITableViewCell {
         superview?.subviews.filter({ "\(type(of: $0))" == "UIShadowView" }).forEach { (sv: UIView) in
             sv.removeFromSuperview()
         }
+        contentView.frame = self.bounds
     }
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
@@ -83,9 +84,7 @@ class RoutineDetailStepCell: UITableViewCell {
         
         containerView.multipleSubviews(view: numLabel, titleLabel, imageRight)
         containerView.autoresizesSubviews = false
-        
     }
-    
     override func configureLayout() {
         addSubview(trashBtn)
         addSubview(containerView)
@@ -122,6 +121,13 @@ class RoutineDetailStepCell: UITableViewCell {
             make.height.equalTo(60)
             make.top.left.right.equalToSuperview()
         }
+        
+        contentView.backgroundColor = .clear
+        contentView.layer.zPosition = 10
+        
+        trashBtn.layer.zPosition = 11
+        containerView.layer.zPosition = 12
+        spacerView.layer.zPosition = 12
     }
     
     func setMorningCell(){
@@ -135,6 +141,8 @@ class RoutineDetailStepCell: UITableViewCell {
     func setEditingOff(){
         imageRight.image = UIImage(systemName: "chevron.right")
         imageRight.transform = CGAffineTransform(translationX: -40, y: 0)
+        showsReorderControl = false
+        
         self.bringSubviewToFront(containerView)
         UIView.animate(withDuration: 0.4) { [self] in
             imageRight.transform = CGAffineTransform(translationX: 0, y: 0)

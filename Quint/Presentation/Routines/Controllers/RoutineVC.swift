@@ -49,6 +49,13 @@ class RoutineVC: UIViewController, CLLocationManagerDelegate, LogModalDelegate {
     override func viewWillAppear(_ animated: Bool) {
         self.navigationController?.isNavigationBarHidden = true
         self.tabBarController?.tabBar.isHidden = false
+        
+        overrideUserInterfaceStyle = .light
+        
+        navigationController?.navigationBar.barStyle = .black
+
+        navigationController?.navigationBar.isTranslucent = true
+        
         updateUV()
     }
     

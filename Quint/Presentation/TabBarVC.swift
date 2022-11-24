@@ -58,6 +58,7 @@ class TabBarVC: UITabBarController, UITabBarControllerDelegate {
         tabTwo.tabBarItem = tabTwoBarItem
         
         let tabThree = UINavigationController(rootViewController: RoutineHistoryVC())
+        
         let tabThreeBarItem = UITabBarItem(title: "History", image: UIImage(named:"TabBarHistory"), selectedImage: UIImage(named: "TabBarHistorySelected"))
         
         tabThree.tabBarItem = tabThreeBarItem

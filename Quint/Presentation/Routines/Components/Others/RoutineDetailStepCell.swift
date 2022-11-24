@@ -152,6 +152,7 @@ class RoutineDetailStepCell: UITableViewCell {
     
     func setEditingOn(){
         imageRight.image = UIImage(named: "GridDots")
+        
         UIView.animate(withDuration: 0.4, animations: { [self] in
             imageRight.transform = CGAffineTransform(translationX: -40, y: 0)
             containerView.transform = CGAffineTransform(translationX: 40, y: 0)

@@ -31,11 +31,14 @@ class RoutineDetailVC: UIViewController{
     
     private var subViews : [UIView] = []
     
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+            return .lightContent
+        }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationController?.isNavigationBarHidden = true
         self.tabBarController?.tabBar.isHidden = true
-        overrideUserInterfaceStyle = .dark
         configureUI()
     }
     
@@ -57,6 +60,7 @@ class RoutineDetailVC: UIViewController{
         //main title
         mainTitle.text = "Morning routine"
         mainTitle.font = .clashGroteskMedium(size: 30)
+        mainTitle.textColor = .white
         
         if(routineTime == .night){
             mainTitle.text = "Night routine"
@@ -246,9 +250,11 @@ extension RoutineDetailVC: UITableViewDelegate, UITableViewDataSource{
        
         if tableView.isEditing == true {
             cell.setEditingOn()
+            cell.showsReorderControl = false
+            
         } else {
             cell.setEditingOff()
-            
+            cell.showsReorderControl = false
             //re-number steps
             for i in 0..<routineSteps.count{
                 if(cell.titleLabel.text == routineSteps[i].title){

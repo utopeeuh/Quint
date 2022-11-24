@@ -22,6 +22,8 @@
 		<string>ClashGrotesk-Regular.otf</string>
 		<string>ClashGrotesk-Semibold.otf</string>
 	</array>
+	<key>UIStatusBarStyle</key>
+	<string>Dark</string>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>

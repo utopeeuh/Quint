@@ -173,6 +173,7 @@
 		95CD1EC9292609580086F6D0 /* RatingRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CD1EC8292609580086F6D0 /* RatingRepository.swift */; };
 		95CD1ECB29260AAB0086F6D0 /* RatingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CD1ECA29260AAB0086F6D0 /* RatingModel.swift */; };
 		95CED62B291DFAC200E0AD98 /* UIApplication+TopVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CED62A291DFAC200E0AD98 /* UIApplication+TopVC.swift */; };
+		95D2CAA0292F0BCF0075F2F5 /* StatusBarStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D2CA9F292F0BCF0075F2F5 /* StatusBarStyle.swift */; };
 		95DC5F372925324A006ADDA1 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 95DC5F362925324A006ADDA1 /* GoogleService-Info.plist */; };
 		95E6D4A42916DB01007BFF6D /* UIScrollView+RemoveSubviews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95233BDD28EF3F3E00A4470E /* UIScrollView+RemoveSubviews.swift */; };
 		95E6D4BF2916DEF2007BFF6D /* OnboardingQuizVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E6D4BD2916DEF2007BFF6D /* OnboardingQuizVC.swift */; };
@@ -405,6 +406,7 @@
 		95CD1EC8292609580086F6D0 /* RatingRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RatingRepository.swift; sourceTree = "<group>"; };
 		95CD1ECA29260AAB0086F6D0 /* RatingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingModel.swift; sourceTree = "<group>"; };
 		95CED62A291DFAC200E0AD98 /* UIApplication+TopVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIApplication+TopVC.swift"; sourceTree = "<group>"; };
+		95D2CA9F292F0BCF0075F2F5 /* StatusBarStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusBarStyle.swift; sourceTree = "<group>"; };
 		95DC5F362925324A006ADDA1 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		95E6D4BD2916DEF2007BFF6D /* OnboardingQuizVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingQuizVC.swift; sourceTree = "<group>"; };
 		95E6D4BE2916DEF2007BFF6D /* PhotoConfirmationVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoConfirmationVC.swift; sourceTree = "<group>"; };
@@ -974,6 +976,7 @@
 				95E6D4A72916DB4E007BFF6D /* UIButton */,
 				95E6D4A62916DB3E007BFF6D /* UICollectionView */,
 				95E6D4A52916DB36007BFF6D /* UITextView */,
+				95D2CA9F292F0BCF0075F2F5 /* StatusBarStyle.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -1450,6 +1453,7 @@
 				A0D11F972908082D00B4F508 /* ActivityView.swift in Sources */,
 				95E6D4DA2916E008007BFF6D /* StepsRepository.swift in Sources */,
 				9538752128EDE2A1001979A8 /* UICollectionView+Loading.swift in Sources */,
+				95D2CAA0292F0BCF0075F2F5 /* StatusBarStyle.swift in Sources */,
 				95935205291B71C100CF9A7A /* CustomReminderView.swift in Sources */,
 				950B32E128F912440095EFB5 /* RatingView.swift in Sources */,
 				958E32F52907BCF300171AF3 /* Seeder.swift in Sources */,

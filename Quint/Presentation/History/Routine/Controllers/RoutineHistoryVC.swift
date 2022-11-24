@@ -25,6 +25,10 @@ class RoutineHistoryVC: UIViewController {
     
     private let calenderHeight = (95/284*UIScreen.main.bounds.height)+(852-UIScreen.main.bounds.height)
     
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+            return .lightContent
+        }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         configureUI()
@@ -32,6 +36,7 @@ class RoutineHistoryVC: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         tabBarController?.tabBar.isHidden = false
+        navigationController?.navigationBar.barStyle = .black
         refreshLogData(date: selectedDate!)
     }
     

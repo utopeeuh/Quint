@@ -144,6 +144,20 @@ class LogRepository: LogRepositoryDelegate{
         return logList
     }
     
+    func fetchLogListWithImage(dateStart: Date, dateEnd: Date) -> [LogModel] {
+        let logList = fetchLogList(dateStart: dateStart, dateEnd: dateEnd)
+        
+        var newLogList : [LogModel] = []
+        
+        logList.forEach { log in
+            if log.image != nil {
+                newLogList.append(log)
+            }
+        }
+        
+        return newLogList
+    }
+    
     func updateLogData(date: Date, logData: LogData) {
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         let context: NSManagedObjectContext = appDelegate.persistentContainer.viewContext

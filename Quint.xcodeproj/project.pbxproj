@@ -74,6 +74,12 @@
 		9543DA7828F85A7A00E37A28 /* ProductCategoryLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9543DA7728F85A7A00E37A28 /* ProductCategoryLabel.swift */; };
 		9553C801292737740048D902 /* RatingCoreSeeder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9553C800292737740048D902 /* RatingCoreSeeder.swift */; };
 		9553C803292738620048D902 /* RatingCoreRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9553C802292738620048D902 /* RatingCoreRepository.swift */; };
+		95557E97293EF4FA006D2C92 /* ProgressHistoryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95557E96293EF4FA006D2C92 /* ProgressHistoryVC.swift */; };
+		95557E9B293EF685006D2C92 /* DateIterator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95557E9A293EF685006D2C92 /* DateIterator.swift */; };
+		95557E9D293F0A98006D2C92 /* WatchButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95557E9C293F0A98006D2C92 /* WatchButton.swift */; };
+		95557E9F293F0C64006D2C92 /* ProgressLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95557E9E293F0C64006D2C92 /* ProgressLayout.swift */; };
+		95557EA1293F0E20006D2C92 /* ProgressCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95557EA0293F0E20006D2C92 /* ProgressCollectionView.swift */; };
+		95557EA3293F0FF4006D2C92 /* ProgressCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95557EA2293F0FF4006D2C92 /* ProgressCell.swift */; };
 		955F63A5291AC48E00B2553A /* RoutineDetailProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955F63A4291AC48E00B2553A /* RoutineDetailProtocol.swift */; };
 		956A703529154437004FC262 /* DropDownUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956A702A29154436004FC262 /* DropDownUIView.swift */; };
 		956A703629154437004FC262 /* MonthYearWheelPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956A702B29154436004FC262 /* MonthYearWheelPicker.swift */; };
@@ -307,6 +313,12 @@
 		9543DA7728F85A7A00E37A28 /* ProductCategoryLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCategoryLabel.swift; sourceTree = "<group>"; };
 		9553C800292737740048D902 /* RatingCoreSeeder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingCoreSeeder.swift; sourceTree = "<group>"; };
 		9553C802292738620048D902 /* RatingCoreRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingCoreRepository.swift; sourceTree = "<group>"; };
+		95557E96293EF4FA006D2C92 /* ProgressHistoryVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressHistoryVC.swift; sourceTree = "<group>"; };
+		95557E9A293EF685006D2C92 /* DateIterator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateIterator.swift; sourceTree = "<group>"; };
+		95557E9C293F0A98006D2C92 /* WatchButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchButton.swift; sourceTree = "<group>"; };
+		95557E9E293F0C64006D2C92 /* ProgressLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressLayout.swift; sourceTree = "<group>"; };
+		95557EA0293F0E20006D2C92 /* ProgressCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressCollectionView.swift; sourceTree = "<group>"; };
+		95557EA2293F0FF4006D2C92 /* ProgressCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressCell.swift; sourceTree = "<group>"; };
 		955F63A4291AC48E00B2553A /* RoutineDetailProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutineDetailProtocol.swift; sourceTree = "<group>"; };
 		956A702A29154436004FC262 /* DropDownUIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DropDownUIView.swift; sourceTree = "<group>"; };
 		956A702B29154436004FC262 /* MonthYearWheelPicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MonthYearWheelPicker.swift; sourceTree = "<group>"; };
@@ -652,6 +664,35 @@
 				9543DA7728F85A7A00E37A28 /* ProductCategoryLabel.swift */,
 			);
 			path = UILabel;
+			sourceTree = "<group>";
+		};
+		95557E95293EF4D3006D2C92 /* Progress */ = {
+			isa = PBXGroup;
+			children = (
+				95557E98293EF546006D2C92 /* Controller */,
+				95557E99293EF553006D2C92 /* Components */,
+			);
+			path = Progress;
+			sourceTree = "<group>";
+		};
+		95557E98293EF546006D2C92 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				95557E96293EF4FA006D2C92 /* ProgressHistoryVC.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		95557E99293EF553006D2C92 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				95557E9A293EF685006D2C92 /* DateIterator.swift */,
+				95557E9C293F0A98006D2C92 /* WatchButton.swift */,
+				95557E9E293F0C64006D2C92 /* ProgressLayout.swift */,
+				95557EA0293F0E20006D2C92 /* ProgressCollectionView.swift */,
+				95557EA2293F0FF4006D2C92 /* ProgressCell.swift */,
+			);
+			path = Components;
 			sourceTree = "<group>";
 		};
 		956A702729154436004FC262 /* Summary */ = {
@@ -1169,6 +1210,7 @@
 		A0360C412906BB300021C0E1 /* History */ = {
 			isa = PBXGroup;
 			children = (
+				95557E95293EF4D3006D2C92 /* Progress */,
 				72F5BC4E2925D21E0057F77F /* Navigation Bar */,
 				956A702729154436004FC262 /* Summary */,
 				A0360C422906BB5C0021C0E1 /* Routine */,
@@ -1471,6 +1513,7 @@
 				956A703A29154437004FC262 /* NightUIView.swift in Sources */,
 				95E6D4CC2916DFA2007BFF6D /* TipsRepository.swift in Sources */,
 				A0E7EB1428F8545500F56802 /* ViewPreview.swift in Sources */,
+				95557E9D293F0A98006D2C92 /* WatchButton.swift in Sources */,
 				95EB50E328EA821400412176 /* AppDelegate.swift in Sources */,
 				957F0CF42906436200FFFB06 /* UIView+ApplyGradient.swift in Sources */,
 				958254172908FFFD0053AABC /* ProblemSeeder.swift in Sources */,
@@ -1495,6 +1538,8 @@
 				950508552914FBBA00FAE957 /* OnboardingStepsVC.swift in Sources */,
 				95436F732913E0D300B72ED4 /* RoutineDetailVC.swift in Sources */,
 				956A703829154437004FC262 /* SummaryUIView.swift in Sources */,
+				95557E97293EF4FA006D2C92 /* ProgressHistoryVC.swift in Sources */,
+				95557EA1293F0E20006D2C92 /* ProgressCollectionView.swift in Sources */,
 				A014EA1328FEAF2A0020DC35 /* UIView+MultipleSubviews.swift in Sources */,
 				95E6D4D22916DFBE007BFF6D /* UserRepository.swift in Sources */,
 				A03857B628F7C7E100A4B566 /* UILabel+RequiredHeight.swift in Sources */,
@@ -1529,6 +1574,7 @@
 				957F0CE82906410000FFFB06 /* ApiService.swift in Sources */,
 				958253FF2908F7EF0053AABC /* RoutineModel.swift in Sources */,
 				957F0D0A2906573900FFFB06 /* SmallCategoryButton.swift in Sources */,
+				95557E9F293F0C64006D2C92 /* ProgressLayout.swift in Sources */,
 				950404C72901283300B37DFD /* CollapsableHeaderButton.swift in Sources */,
 				95E6D4D02916DFB9007BFF6D /* MoodRepository.swift in Sources */,
 				A03857D028F8353400A4B566 /* BackButton.swift in Sources */,
@@ -1536,6 +1582,7 @@
 				958E32FD2907E0E400171AF3 /* JSON+CleanString.swift in Sources */,
 				A03857D728F84C5C00A4B566 /* ViewControllerPreview.swift in Sources */,
 				95FB6A622906DC3300F18E33 /* UserModel.swift in Sources */,
+				95557E9B293EF685006D2C92 /* DateIterator.swift in Sources */,
 				A0F560EF28FAA91E0091DF7B /* SkinNotifView.swift in Sources */,
 				A0EF1F0E28FD0A300065AB9A /* TitleLabel.swift in Sources */,
 				95EB50E528EA821400412176 /* SceneDelegate.swift in Sources */,
@@ -1553,6 +1600,7 @@
 				958253F92908D7720053AABC /* ProductModel.swift in Sources */,
 				9510352B28F007DB0011AE39 /* LargeEffectButton.swift in Sources */,
 				956A70472915477E004FC262 /* SettingsUIView.swift in Sources */,
+				95557EA3293F0FF4006D2C92 /* ProgressCell.swift in Sources */,
 				95CD1EC9292609580086F6D0 /* RatingRepository.swift in Sources */,
 				950D428B28FDC9B400657816 /* IngDetailLowerView.swift in Sources */,
 				9572F0BD28F6AF5A0035BCA3 /* SourceCell.swift in Sources */,

@@ -25,17 +25,21 @@ class ProgressHistoryVC: UIViewController {
         configureUI()
     }
     
-    override func configureComponents() {
-        
-        statusBarBg.backgroundColor = .white
+    override func viewWillAppear(_ animated: Bool) {
+        navigationController?.isNavigationBarHidden = true
         
         dateIterator.delegate = self
-        
-        watchButton.addTarget(self, action: #selector(watchProgressOnClick), for: .touchUpInside)
         
         let logs = LogRepository.shared.fetchLogListWithImage(dateStart: dateIterator.currDate, dateEnd: Calendar.current.endOfMonth(dateIterator.currDate))
         
         progressCollection.setSource(logs)
+    }
+    
+    override func configureComponents() {
+        
+        statusBarBg.backgroundColor = .white
+        
+        watchButton.addTarget(self, action: #selector(watchProgressOnClick), for: .touchUpInside) 
         
         view.multipleSubviews(view: statusBarBg, dateIterator, watchButton, progressCollection)
     }
@@ -79,3 +83,12 @@ extension ProgressHistoryVC: DateIteratorDelegate {
         progressCollection.setSource(logs)
     }
 }
+//
+//extension ProgressHistoryVC: ProgressCollectionViewDelegate{
+//    func goToPhotoDetail(willDisplay log: LogModel) {
+//        let controller = PhotoDetailVC()
+//        controller.log = log
+//        print("YO")
+//        navigationController?.pushViewController(controller, animated: true)
+//    }
+//}

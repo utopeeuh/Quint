@@ -46,6 +46,7 @@ class ProgressCollectionView: UIView {
     func setSource(_ source: [LogModel]){
         self.source = source
         feedCollection.reloadData()
+        
         feedCollection.setContentOffset(CGPoint(x: 0.0, y: 0.0), animated: true)
     }
     
@@ -61,11 +62,13 @@ extension ProgressCollectionView : UICollectionViewDataSource , UICollectionView
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-//        let controller = IngredientDetailVC()
-//        controller.ingredient = source[indexPath.row]
-//        (superview?.next as? UIViewController)?.navigationController?.pushViewController(controller, animated: true)
-//
-//        (superview?.superview?.superview?.superview?.next as? UIViewController)?.navigationController?.pushViewController(controller, animated: true)
+        print("YOO")
+        let controller = PhotoDetailVC()
+        controller.log = source[indexPath.row]
+        
+        let keyWindow = UIApplication.shared.windows.filter {$0.isKeyWindow}.first
+
+        keyWindow?.topViewController()?.navigationController?.pushViewController(controller, animated: true)
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {

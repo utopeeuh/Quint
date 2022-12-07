@@ -15,7 +15,6 @@ class ProgressCell: UICollectionViewCell{
     
     var imageView : UIImageView = {
         let imageView = UIImageView()
-        imageView.backgroundColor = .yellow
         imageView.contentMode = .scaleAspectFill
         imageView.layer.cornerRadius = 8
         imageView.layer.masksToBounds = true

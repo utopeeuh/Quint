@@ -199,4 +199,19 @@ class LogRepository: LogRepositoryDelegate{
             print("Insert log image failed")
         }
     }
+    
+    func deleteLogPhoto(log: LogModel){
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let context: NSManagedObjectContext = appDelegate.persistentContainer.viewContext
+
+        let currLog = fetchLog(date: log.date)
+        
+        do{
+            currLog.image = nil
+            try context.save()
+        }
+        catch{
+            print("Delete log image failed")
+        }
+    }
 }

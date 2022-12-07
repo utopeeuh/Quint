@@ -22,7 +22,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         if hasDoneOnboarding as! Bool{
 //            window?.rootViewController = TabBarVC()
-            window?.rootViewController = ProgressHistoryVC()
+            window?.rootViewController = UINavigationController(rootViewController:  ProgressHistoryVC())
         } else{
             window?.rootViewController = UINavigationController(rootViewController: LoginVC())
         }

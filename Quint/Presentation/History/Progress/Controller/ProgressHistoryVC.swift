@@ -19,6 +19,17 @@ class ProgressHistoryVC: UIViewController {
     
     private let progressCollection = ProgressCollectionView()
     
+    private var logs: [LogModel] = [] {
+        didSet {
+            progressCollection.setSource(logs)
+            if logs.isEmpty {
+                watchButton.isHidden = true
+            } else {
+                watchButton.isHidden = false
+            }
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = K.Color.bgQuint
@@ -30,9 +41,7 @@ class ProgressHistoryVC: UIViewController {
         
         dateIterator.delegate = self
         
-        let logs = LogRepository.shared.fetchLogListWithImage(dateStart: dateIterator.currDate, dateEnd: Calendar.current.endOfMonth(dateIterator.currDate))
-        
-        progressCollection.setSource(logs)
+        logs = LogRepository.shared.fetchLogListWithImage(dateStart: dateIterator.currDate, dateEnd: Calendar.current.endOfMonth(dateIterator.currDate))
     }
     
     override func configureComponents() {
@@ -73,22 +82,14 @@ class ProgressHistoryVC: UIViewController {
     
     @objc private func watchProgressOnClick(){
         print("watch progress")
+        let controller = ProgressSlideshowVC()
+        controller.logs = logs
+        navigationController?.pushViewController(controller, animated: true)
     }
 }
 
 extension ProgressHistoryVC: DateIteratorDelegate {
     func dateIterator(willDisplay date: Date) {
-        let logs = LogRepository.shared.fetchLogListWithImage(dateStart: date, dateEnd: Calendar.current.endOfMonth(date))
-        
-        progressCollection.setSource(logs)
+        logs = LogRepository.shared.fetchLogListWithImage(dateStart: date, dateEnd: Calendar.current.endOfMonth(date))
     }
 }
-//
-//extension ProgressHistoryVC: ProgressCollectionViewDelegate{
-//    func goToPhotoDetail(willDisplay log: LogModel) {
-//        let controller = PhotoDetailVC()
-//        controller.log = log
-//        print("YO")
-//        navigationController?.pushViewController(controller, animated: true)
-//    }
-//}

@@ -77,7 +77,7 @@ class PhotoDetailVC: UIViewController {
         }
         
         deleteBtn.snp.makeConstraints { make in
-            make.bottom.equalToSuperview().offset(-44)
+            make.bottom.equalTo(view.safeAreaLayoutGuide).offset(-44)
             make.size.equalTo(deleteBtn.frame.size)
             make.centerX.equalToSuperview()
         }

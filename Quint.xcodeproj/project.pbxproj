@@ -75,6 +75,7 @@
 		954D96DE29403ED1003C3E4A /* UIWindow+TopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 954D96DD29403ED1003C3E4A /* UIWindow+TopViewController.swift */; };
 		954D96E029403F78003C3E4A /* PhotoDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 954D96DF29403F78003C3E4A /* PhotoDetailVC.swift */; };
 		954D96E229404320003C3E4A /* DeleteButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 954D96E129404320003C3E4A /* DeleteButton.swift */; };
+		954D96E42941063B003C3E4A /* ProgressSlideshowVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 954D96E32941063B003C3E4A /* ProgressSlideshowVC.swift */; };
 		9553C801292737740048D902 /* RatingCoreSeeder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9553C800292737740048D902 /* RatingCoreSeeder.swift */; };
 		9553C803292738620048D902 /* RatingCoreRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9553C802292738620048D902 /* RatingCoreRepository.swift */; };
 		95557E97293EF4FA006D2C92 /* ProgressHistoryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95557E96293EF4FA006D2C92 /* ProgressHistoryVC.swift */; };
@@ -317,6 +318,7 @@
 		954D96DD29403ED1003C3E4A /* UIWindow+TopViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIWindow+TopViewController.swift"; sourceTree = "<group>"; };
 		954D96DF29403F78003C3E4A /* PhotoDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoDetailVC.swift; sourceTree = "<group>"; };
 		954D96E129404320003C3E4A /* DeleteButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteButton.swift; sourceTree = "<group>"; };
+		954D96E32941063B003C3E4A /* ProgressSlideshowVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressSlideshowVC.swift; sourceTree = "<group>"; };
 		9553C800292737740048D902 /* RatingCoreSeeder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingCoreSeeder.swift; sourceTree = "<group>"; };
 		9553C802292738620048D902 /* RatingCoreRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingCoreRepository.swift; sourceTree = "<group>"; };
 		95557E96293EF4FA006D2C92 /* ProgressHistoryVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressHistoryVC.swift; sourceTree = "<group>"; };
@@ -694,6 +696,7 @@
 			children = (
 				95557E96293EF4FA006D2C92 /* ProgressHistoryVC.swift */,
 				954D96DF29403F78003C3E4A /* PhotoDetailVC.swift */,
+				954D96E32941063B003C3E4A /* ProgressSlideshowVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1495,6 +1498,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				954D96E42941063B003C3E4A /* ProgressSlideshowVC.swift in Sources */,
 				9538752B28EDE53C001979A8 /* Photo.swift in Sources */,
 				957F0CFB290655C200FFFB06 /* UIFont+CustomFont.swift in Sources */,
 				95E6D4CE2916DFAD007BFF6D /* UsageStepsRepository.swift in Sources */,

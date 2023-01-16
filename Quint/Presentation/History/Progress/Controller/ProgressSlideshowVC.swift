@@ -59,6 +59,7 @@ class ProgressSlideshowVC: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         navigationController?.isNavigationBarHidden = true
+        tabBarController?.tabBar.isHidden = true
     }
     
     override func viewDidLoad() {
@@ -123,11 +124,15 @@ class ProgressSlideshowVC: UIViewController {
         
         var index = 1
         _ = Timer.scheduledTimer(withTimeInterval: photoDuration, repeats: true){ [self] t in
-            currLog = logs[index]
-            index += 1
-            if index == logs.count-1{
+            
+            if index > logs.count-1{
                 t.invalidate()
+                return
             }
+
+            currLog = logs[index]
+            
+            index += 1
         }
         
         let playTime = photoDuration * Double(logs.count-1)

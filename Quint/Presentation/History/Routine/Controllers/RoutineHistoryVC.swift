@@ -44,10 +44,7 @@ class RoutineHistoryVC: UIViewController {
         
         view.backgroundColor = K.Color.bgQuint
         
-        navBar.historyButton.setImage(UIImage(named: "receiptDisabled"), for: .normal)
-        navBar.historyButton.setTitleColor(K.Color.disableBgBtnQuint, for: .normal)
-        navBar.historyButton.addTarget(self, action: #selector(goToHistoryPage), for: .touchUpInside)
-        navBar.lineWhiteHistory.isHidden = true
+        navBar.selectedPage = .routine
         
         viewBlanket.backgroundColor = K.Color.bgQuint
         
@@ -164,11 +161,6 @@ class RoutineHistoryVC: UIViewController {
         collapseCalendar()
     }
     
-    @objc func goToHistoryPage() {
-        let controller = SummaryHistoryVC()
-        navigationController?.pushViewController(controller, animated: false)
-    }
-
     @objc func goToDailyLog(sender: UIButton) {
         
         if LogRepository.shared.doesLogExists(date: selectedDate ?? Date.now) == false {

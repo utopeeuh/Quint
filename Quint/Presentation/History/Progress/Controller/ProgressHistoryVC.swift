@@ -19,6 +19,8 @@ class ProgressHistoryVC: UIViewController {
     
     private let progressCollection = ProgressCollectionView()
     
+    var navBar = NavigationBarUIView()
+    
     private var logs: [LogModel] = [] {
         didSet {
             progressCollection.setSource(logs)
@@ -36,8 +38,15 @@ class ProgressHistoryVC: UIViewController {
         configureUI()
     }
     
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+            return .lightContent
+        }
+    
     override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(false)
+        
         navigationController?.isNavigationBarHidden = true
+        tabBarController?.tabBar.isHidden = false
         
         dateIterator.delegate = self
         
@@ -46,22 +55,30 @@ class ProgressHistoryVC: UIViewController {
     
     override func configureComponents() {
         
+        navBar.selectedPage = .progress
+        
         statusBarBg.backgroundColor = .white
         
         watchButton.addTarget(self, action: #selector(watchProgressOnClick), for: .touchUpInside) 
         
-        view.multipleSubviews(view: statusBarBg, dateIterator, watchButton, progressCollection)
+        view.multipleSubviews(view: navBar, statusBarBg, dateIterator, watchButton, progressCollection)
     }
     
     override func configureLayout() {
         
-        statusBarBg.snp.makeConstraints { make in
+        navBar.snp.makeConstraints { make in
             make.top.width.equalToSuperview()
+            make.height.equalTo(123)
+        }
+        
+        statusBarBg.snp.makeConstraints { make in
+            make.top.equalTo(navBar.snp.bottom)
+            make.width.equalToSuperview()
             make.bottom.equalTo(dateIterator.snp.top)
         }
         
         dateIterator.snp.makeConstraints { make in
-            make.top.equalTo(view.safeAreaLayoutGuide)
+            make.top.equalTo(navBar.snp.bottom)
             make.width.equalToSuperview()
             make.height.equalTo(dateIterator.frame.height)
         }

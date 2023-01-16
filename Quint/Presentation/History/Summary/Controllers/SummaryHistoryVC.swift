@@ -152,10 +152,7 @@ class SummaryHistoryVC: UIViewController {
     
     override func configureComponents() {
         view.addSubview(navBar)
-        navBar.routineButton.setImage(UIImage(named: "calendarMonthDisabled"), for: .normal)
-        navBar.routineButton.setTitleColor(K.Color.disableBgBtnQuint, for: .normal)
-        navBar.routineButton.addTarget(self, action: #selector(goToRoutinePage), for: .touchUpInside)
-        navBar.lineWhiteRoutine.isHidden = true
+        navBar.selectedPage = .summary
         
         view.addSubview(scrollView)
         let touchAnyWhereGesture = UITapGestureRecognizer(target: self, action: #selector(anyWhereHandler))

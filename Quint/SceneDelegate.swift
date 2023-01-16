@@ -21,8 +21,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let hasDoneOnboarding = UserDefaults.standard.object(forKey: K.UD.hasDoneOnboarding) ?? false
         
         if hasDoneOnboarding as! Bool{
-//            window?.rootViewController = TabBarVC()
-            window?.rootViewController = UINavigationController(rootViewController:  ProgressHistoryVC())
+            window?.rootViewController = TabBarVC()
         } else{
             window?.rootViewController = UINavigationController(rootViewController: LoginVC())
         }

@@ -48,6 +48,7 @@ class PhotoDetailVC: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         navigationController?.isNavigationBarHidden = true
+        tabBarController?.tabBar.isHidden = true
     }
     
     override func configureComponents() {

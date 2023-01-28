@@ -48,7 +48,7 @@ class OnboardingStepsVC: UIViewController {
         titleLabel.sizeToFit()
         
         scrollView.isScrollEnabled = true
-        scrollView.contentSize = CGSize(width: UIScreen.main.bounds.width, height: 800)
+        scrollView.contentSize = CGSize(width: UIScreen.main.bounds.width, height: 900)
         scrollView.autoresizingMask = .flexibleHeight
         scrollView.showsVerticalScrollIndicator = false
         scrollView.showsHorizontalScrollIndicator = false

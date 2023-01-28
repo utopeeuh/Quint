@@ -37,6 +37,10 @@ class RoutineVC: UIViewController, CLLocationManagerDelegate, LogModalDelegate {
     
     private var dailyTips = DailySkincareTips()
     
+    var weatherTrademark = UILabel()
+    var weatherLink = UILabel()
+    var attributedString = NSMutableAttributedString()
+    
     private var logModal = LogModal()
     
     override func viewDidLoad() {
@@ -77,19 +81,38 @@ class RoutineVC: UIViewController, CLLocationManagerDelegate, LogModalDelegate {
     func locationManagerDidChangeAuthorization(_ manager: CLLocationManager) {
         updateUV()
     }
-
+    
     override func configureComponents() {
         
         whiteTopBar.backgroundColor = .white
-        
+
         scrollView.isUserInteractionEnabled = true
         scrollView.isScrollEnabled = true
         scrollView.showsVerticalScrollIndicator = false
         scrollView.frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height - 117)
-        scrollView.contentSize = CGSize(width: UIScreen.main.bounds.width - 40, height: 560 + dailyTips.height)
+        scrollView.contentSize = CGSize(width: UIScreen.main.bounds.width - 40, height: 660 + dailyTips.height)
         
         routineLbl.text = "Today's routines"
         routineLbl.font = .clashGroteskMedium(size: 20)
+        
+        weatherTrademark.text = "Weather data taken from  Weather"
+        weatherTrademark.font = .interRegular(size: 14)
+        weatherTrademark.textColor = K.Color.greyQuint
+        
+        weatherLink.text = "https://weatherkit.apple.com/legal-attribution.html"
+        weatherLink.font = .interRegular(size: 12)
+        weatherLink.textColor = K.Color.greyQuint
+        
+        let linkString = "https://weatherkit.apple.com/legal-attribution.html"
+        
+        attributedString = NSMutableAttributedString(string: weatherLink.text!)
+        attributedString.addAttribute(.link, value: "https://weatherkit.apple.com/legal-attribution.html", range: NSRange(location: weatherLink.text!.count - linkString.count, length: linkString.count))
+        
+        weatherLink.attributedText = attributedString
+        
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(labelTapped))
+        weatherLink.isUserInteractionEnabled = true
+        weatherLink.addGestureRecognizer(tapGesture)
         
         // morning routine
         let morningGesture = UITapGestureRecognizer(target: self, action: #selector(goToMorningRoutine))
@@ -128,7 +151,9 @@ class RoutineVC: UIViewController, CLLocationManagerDelegate, LogModalDelegate {
         scrollView.multipleSubviews(view: reminderView,
                                           routineLbl,
                                           routineCellsStack,
-                                          dailyTips)
+                                          dailyTips,
+                                          weatherTrademark,
+                                          weatherLink)
         
         scrollView.snp.makeConstraints { make in
             make.top.equalTo(uvSection.snp.bottom)
@@ -180,6 +205,16 @@ class RoutineVC: UIViewController, CLLocationManagerDelegate, LogModalDelegate {
             make.top.equalTo(routineCellsStack.snp.bottom).offset(48)
         }
         
+        weatherTrademark.snp.makeConstraints { make in
+            make.centerX.equalToSuperview()
+            make.top.equalTo(dailyTips.snp.bottom).offset(48)
+        }
+        
+        weatherLink.snp.makeConstraints { make in
+            make.centerX.equalToSuperview()
+            make.top.equalTo(weatherTrademark.snp.bottom).offset(10)
+        }
+        
         logModal.snp.makeConstraints { make in
             make.edges.equalToSuperview()
         }
@@ -216,6 +251,13 @@ class RoutineVC: UIViewController, CLLocationManagerDelegate, LogModalDelegate {
         controller.delegate = self
         navigationController?.pushViewController(controller, animated: true)
     }
+    
+    @objc func labelTapped(_ sender:UITapGestureRecognizer) {
+        if let url = attributedString.attribute(.link, at: 0, effectiveRange: nil) as? URL {
+            UIApplication.shared.open(url, options: [:], completionHandler: nil)
+      }
+    }
+    
 }
 
 @available(iOS 16.0, *)

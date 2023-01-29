@@ -37,6 +37,18 @@ class RoutineVC: UIViewController, CLLocationManagerDelegate, LogModalDelegate {
     
     private var dailyTips = DailySkincareTips()
     
+    var weatherTrademark = UILabel()
+    var weatherLink = UILabel()
+    
+    var weatherKitAttString : NSMutableAttributedString = {
+        let weatherKitLink = "https://weatherkit.apple.com/legal-attribution.html"
+        
+        let attributedString = NSMutableAttributedString(string: weatherKitLink)
+        attributedString.addAttribute(.link, value: weatherKitLink, range: NSRange(location: 0, length: weatherKitLink.count))
+        
+        return attributedString
+    }()
+    
     private var logModal = LogModal()
     
     override func viewDidLoad() {
@@ -77,19 +89,30 @@ class RoutineVC: UIViewController, CLLocationManagerDelegate, LogModalDelegate {
     func locationManagerDidChangeAuthorization(_ manager: CLLocationManager) {
         updateUV()
     }
-
+    
     override func configureComponents() {
         
         whiteTopBar.backgroundColor = .white
-        
+
         scrollView.isUserInteractionEnabled = true
         scrollView.isScrollEnabled = true
         scrollView.showsVerticalScrollIndicator = false
         scrollView.frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height - 117)
-        scrollView.contentSize = CGSize(width: UIScreen.main.bounds.width - 40, height: 560 + dailyTips.height)
+        scrollView.contentSize = CGSize(width: UIScreen.main.bounds.width - 40, height: 652 + dailyTips.height)
         
         routineLbl.text = "Today's routines"
         routineLbl.font = .clashGroteskMedium(size: 20)
+        
+        weatherTrademark.text = "Weather data provided by  Weather"
+        weatherTrademark.font = .interRegular(size: 12)
+        weatherTrademark.textColor = K.Color.greyQuint
+        
+        weatherLink.isUserInteractionEnabled = true
+        weatherLink.attributedText = weatherKitAttString
+        weatherLink.font = .interRegular(size: 12)
+        
+        let weatherKitGesture = UITapGestureRecognizer(target: self, action: #selector(weatherHyperlinkTapped))
+        weatherLink.addGestureRecognizer(weatherKitGesture)
         
         // morning routine
         let morningGesture = UITapGestureRecognizer(target: self, action: #selector(goToMorningRoutine))
@@ -128,7 +151,9 @@ class RoutineVC: UIViewController, CLLocationManagerDelegate, LogModalDelegate {
         scrollView.multipleSubviews(view: reminderView,
                                           routineLbl,
                                           routineCellsStack,
-                                          dailyTips)
+                                          dailyTips,
+                                          weatherTrademark,
+                                          weatherLink)
         
         scrollView.snp.makeConstraints { make in
             make.top.equalTo(uvSection.snp.bottom)
@@ -180,6 +205,16 @@ class RoutineVC: UIViewController, CLLocationManagerDelegate, LogModalDelegate {
             make.top.equalTo(routineCellsStack.snp.bottom).offset(48)
         }
         
+        weatherTrademark.snp.makeConstraints { make in
+            make.centerX.equalToSuperview()
+            make.top.equalTo(dailyTips.snp.bottom).offset(48)
+        }
+        
+        weatherLink.snp.makeConstraints { make in
+            make.centerX.equalToSuperview()
+            make.top.equalTo(weatherTrademark.snp.bottom).offset(10)
+        }
+        
         logModal.snp.makeConstraints { make in
             make.edges.equalToSuperview()
         }
@@ -216,6 +251,12 @@ class RoutineVC: UIViewController, CLLocationManagerDelegate, LogModalDelegate {
         controller.delegate = self
         navigationController?.pushViewController(controller, animated: true)
     }
+    
+    @objc func weatherHyperlinkTapped() {
+        let url = URL(string: weatherKitAttString.string)!
+        UIApplication.shared.open(url)
+    }
+    
 }
 
 @available(iOS 16.0, *)

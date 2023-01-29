@@ -39,7 +39,15 @@ class RoutineVC: UIViewController, CLLocationManagerDelegate, LogModalDelegate {
     
     var weatherTrademark = UILabel()
     var weatherLink = UILabel()
-    var attributedString = NSMutableAttributedString()
+    
+    var weatherKitAttString : NSMutableAttributedString = {
+        let weatherKitLink = "https://weatherkit.apple.com/legal-attribution.html"
+        
+        let attributedString = NSMutableAttributedString(string: weatherKitLink)
+        attributedString.addAttribute(.link, value: weatherKitLink, range: NSRange(location: 0, length: weatherKitLink.count))
+        
+        return attributedString
+    }()
     
     private var logModal = LogModal()
     
@@ -90,29 +98,21 @@ class RoutineVC: UIViewController, CLLocationManagerDelegate, LogModalDelegate {
         scrollView.isScrollEnabled = true
         scrollView.showsVerticalScrollIndicator = false
         scrollView.frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height - 117)
-        scrollView.contentSize = CGSize(width: UIScreen.main.bounds.width - 40, height: 660 + dailyTips.height)
+        scrollView.contentSize = CGSize(width: UIScreen.main.bounds.width - 40, height: 652 + dailyTips.height)
         
         routineLbl.text = "Today's routines"
         routineLbl.font = .clashGroteskMedium(size: 20)
         
-        weatherTrademark.text = "Weather data taken from  Weather"
-        weatherTrademark.font = .interRegular(size: 14)
+        weatherTrademark.text = "Weather data provided by  Weather"
+        weatherTrademark.font = .interRegular(size: 12)
         weatherTrademark.textColor = K.Color.greyQuint
         
-        weatherLink.text = "https://weatherkit.apple.com/legal-attribution.html"
-        weatherLink.font = .interRegular(size: 12)
-        weatherLink.textColor = K.Color.greyQuint
-        
-        let linkString = "https://weatherkit.apple.com/legal-attribution.html"
-        
-        attributedString = NSMutableAttributedString(string: weatherLink.text!)
-        attributedString.addAttribute(.link, value: "https://weatherkit.apple.com/legal-attribution.html", range: NSRange(location: weatherLink.text!.count - linkString.count, length: linkString.count))
-        
-        weatherLink.attributedText = attributedString
-        
-        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(labelTapped))
         weatherLink.isUserInteractionEnabled = true
-        weatherLink.addGestureRecognizer(tapGesture)
+        weatherLink.attributedText = weatherKitAttString
+        weatherLink.font = .interRegular(size: 12)
+        
+        let weatherKitGesture = UITapGestureRecognizer(target: self, action: #selector(weatherHyperlinkTapped))
+        weatherLink.addGestureRecognizer(weatherKitGesture)
         
         // morning routine
         let morningGesture = UITapGestureRecognizer(target: self, action: #selector(goToMorningRoutine))
@@ -252,10 +252,9 @@ class RoutineVC: UIViewController, CLLocationManagerDelegate, LogModalDelegate {
         navigationController?.pushViewController(controller, animated: true)
     }
     
-    @objc func labelTapped(_ sender:UITapGestureRecognizer) {
-        if let url = attributedString.attribute(.link, at: 0, effectiveRange: nil) as? URL {
-            UIApplication.shared.open(url, options: [:], completionHandler: nil)
-      }
+    @objc func weatherHyperlinkTapped() {
+        let url = URL(string: weatherKitAttString.string)!
+        UIApplication.shared.open(url)
     }
     
 }
